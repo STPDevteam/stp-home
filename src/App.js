@@ -45,6 +45,9 @@ import { ReactComponent as Twitter } from "./assets/twitter.svg"
 import { ReactComponent as Medium } from "./assets/medium-fill.svg"
 import { ReactComponent as Wechat } from "./assets/wechat.svg"
 import { ReactComponent as Email } from "./assets/email.svg"
+import { ReactComponent as MobileMenu } from "./assets/mobile_menu.svg"
+import { ReactComponent as Close } from './assets/close.svg'
+
 import Collapse from "@kunukn/react-collapse";
 
 const isClient = typeof window === 'object'
@@ -139,7 +142,28 @@ const navData = [
     url: "https://kpalliances.com/"
   },
 ]
-
+const mediaData = [
+  {
+    logo: <Telegram />,
+    link: "https://t.me/STPofficial"
+  },
+  {
+    logo: <Twitter />,
+    link: "https://twitter.com/STP_Networks"
+  },
+  {
+    logo: <Medium />,
+    link: "https://standardtokenizationprotocol.medium.com/"
+  },
+  {
+    logo: <Wechat />,
+    link: "https://stp.network/wp-content/uploads/2021/01/QR.jpg"
+  },
+  {
+    logo: <Email />,
+    link: "mailto:contact@stp.network"
+  },
+]
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState(getSize)
 
@@ -162,9 +186,44 @@ export function useWindowSize() {
 
 function App() {
   const { width } = useWindowSize()
+  const [isShowCollapseOpen, setIsShowCollapseOpen] = useState(false)
   console.log("width", width)
   return (
     <div className="App">
+      {width < 767 ? (
+        <>
+          <MobileHeader>
+            <MobileHeaderContent>
+              <HeaderLogo src={stpLogo} />
+              {isShowCollapseOpen ? <Close onClick={() => setIsShowCollapseOpen(false)} /> :
+                <MobileMenu onClick={() => setIsShowCollapseOpen(true)} />
+              }
+            </MobileHeaderContent>
+            <Collapse isOpen={isShowCollapseOpen}>
+              <CollapseContent>
+                <ul>
+                  {navData.map((data) => {
+                    return (
+                      <li>
+                        <a href={data.url} >
+                          {data.text}
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </CollapseContent>
+            </Collapse>
+          </MobileHeader>
+          <MobileDappButton>
+            <ButtonContent>
+              Go to APP
+              (Testnet)
+            </ButtonContent>
+            <ArrowIcon />
+          </MobileDappButton>
+        </>
+      ) : (
       <Header>
         <div className="container headerContent" >
           <HeaderLogo src={stpLogo} />
@@ -194,6 +253,7 @@ function App() {
           </HeaderRight>
         </div>
       </Header>
+      )}
       <Banner>
         <BannerTitle>
           STANDARD TOKENIZATION PROTOCOL
@@ -202,6 +262,7 @@ function App() {
           Evolution of Tokenization on web 3.0
         </BannerDescription>
       </Banner>
+      <div className="container">
       <Title>About Us</Title>
       <Description>
         STP 2.0 gives users access to multi-chain assets and new financial products on different blockchains without heavy over-collateralization or expensive bridge fees.
@@ -339,15 +400,22 @@ function App() {
             })}
         </PartnerRow>
       <Title>One-stop Community Platform for STPT</Title>
-      <BlockZoneLogo src={blockzone} />
+      <a href="https://www.blockzone.com/en_US/" target="_blank" >
+        <BlockZoneLogo src={blockzone} />
+      </a>
       <Title>Contact Us</Title>
         <Media>
-          <MediaWraper><Twitter /></MediaWraper>
-          <MediaWraper><Telegram /></MediaWraper>
-          <MediaWraper><Medium /></MediaWraper>
-          <MediaWraper><Wechat /></MediaWraper>
-          <MediaWraper><Email /></MediaWraper>
+          {mediaData.map(data =>{
+            return (
+              <a href={data.link} target="_blank" >
+                <MediaWraper>
+                  {data.logo}
+                </MediaWraper>
+              </a>
+            )
+          })}
         </Media>
+      </div>
     </div>
   );
 }
@@ -439,6 +507,9 @@ const BannerTitle = styled.div`
   color: #FFFFFF;
   padding-top: 60px;
   margin-bottom: 15px;
+  @media(max-width: 767px) {
+    padding-top: 30px;
+  }
 `
 
 const BannerDescription = styled.div`
@@ -679,6 +750,10 @@ const MediaWraper = styled.div`
   &:hover {
     background-color: #3399CC;
   }
+  @media(max-width: 767px) {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
 `
 
 const Media = styled.div`
@@ -688,9 +763,30 @@ const Media = styled.div`
   padding-bottom: 100px;
 `
 const MobileHeader = styled.div`
-  /* display: flex; */
-  /* justify-content: space-between; */
+
   padding: 20px;
   text-align: left;
+`
+
+const MobileHeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const CollapseContent = styled.div`
+  padding-top: 20px;
+  ul {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    li {
+      padding: 10px 0;
+      a {
+        font-weight: bold;
+        color: #FFFFFF;
+      }
+    }
+  }
 `
 export default App;
