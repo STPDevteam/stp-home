@@ -48,11 +48,12 @@ import Platform7 from '../../assets/images/home/platform7.png'
 import Platform8 from '../../assets/images/home/platform8.png'
 import Platform9 from '../../assets/images/home/platform9.png'
 import Platform10 from '../../assets/images/home/platform10.png'
+import WechatQR from '../../assets/images/home/QR.jpeg'
 import {ReactComponent as TwitterLogo} from '../../assets/images/home/svg/Twitter.svg'
 import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.svg'
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
-import {ReactComponent as Wechat} from '../../assets/images/home/svg/Wechat.svg'
+import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
@@ -350,10 +351,11 @@ const EighthContent = styled.div`
     }
     &>div{
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 100px auto 0;
         padding: 0 50px;
         @media (max-width: 767px) {
             padding: 20px;
+            margin: 0 auto;
         }
     }
     h2{
@@ -561,12 +563,12 @@ const Home: React.FC = () =>  {
         <Menu>
             <Menu.Item>
                 <a rel="noopener noreferrer" href="#Ecosystem">
-                Ecosystem Projects
+                    Ecosystem Projects
                 </a>
             </Menu.Item>
             <Menu.Item>
                 <a rel="noopener noreferrer" href="#Strategic">
-                Strategic Partners
+                    Strategic Partners
                 </a>
             </Menu.Item>
         </Menu>
@@ -574,8 +576,8 @@ const Home: React.FC = () =>  {
     const resourcesMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="#">
-                Whitepaper
+                <a target="_blank" rel="noopener noreferrer" href="/STP-2.0-Updated-WP.pdf">
+                    Whitepaper
                 </a>
             </Menu.Item>
             <Menu.Item>
@@ -585,7 +587,7 @@ const Home: React.FC = () =>  {
             </Menu.Item>
             <Menu.Item>
                 <a target="_blank" rel="noopener noreferrer" href="">
-                Build with STP
+                    Build with STP
                 </a>
             </Menu.Item>
         </Menu>
@@ -593,8 +595,8 @@ const Home: React.FC = () =>  {
     const learnMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="">
-                STP News
+                <a target="_blank" rel="noopener noreferrer" href="https://standardtokenizationprotocol.medium.com/">
+                    STP News
                 </a>
             </Menu.Item>
         </Menu>
@@ -639,7 +641,7 @@ const Home: React.FC = () =>  {
                                 Learn <DownOutlined />
                                 </a>
                             </Dropdown>
-                            <Button type="primary"><a target="_blank" href="https://betapro.rai.finance">Launch Beta</a></Button>
+                            <Button type="primary"><a target="_blank" href="https://app.stp.network">Launch Beta</a></Button>
                         </nav>
                     </CSSTransition>
                     <button onClick={toggleNav} className="Burger">
@@ -656,7 +658,7 @@ const Home: React.FC = () =>  {
                                 <p>
                                 A layer2 on Ethereum optimized for scalable and smarter DAO solutions
                                 </p>
-                                <Button type="primary"><a href="https://betapro.rai.finance" target="_blank">Launch APPs</a></Button>
+                                <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
                             </Col>
                             <Col md={12} sm={24}>
                             </Col>
@@ -968,23 +970,23 @@ const Home: React.FC = () =>  {
                             <p>
                             Explore partnership and integration possibility of your project with STP.
                             </p>
-                            <Button type="primary"><a href="https://betapro.rai.finance" target="_blank">Contact</a></Button>
+                            <Button type="primary"><a href="mailto:contact@stp.network">Contact</a></Button>
                         </div>
                         <ul>
                             <li>
-                                <a href=""><TelegramLogo/><span>Telegram</span></a>
+                                <a target="_blank" href="https://t.me/STPofficial"><TelegramLogo/><span>Telegram</span></a>
                             </li>
                             <li>
-                                <a href=""><TwitterLogo/><span>Twitter</span></a>
+                                <a target="_blank" href="https://twitter.com/STP_Networks"><TwitterLogo/><span>Twitter</span></a>
                             </li>
                             <li>
-                                <a href=""><MediumLogo/><span>Medium</span></a>
+                                <a target="_blank" href="https://standardtokenizationprotocol.medium.com"><MediumLogo/><span>Medium</span></a>
                             </li>
                             <li>
-                                <a href=""><Wechat/><span>Wechat</span></a>
+                                <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
                             </li>
                             <li>
-                                <a href=""><Email/><span>Email</span></a>
+                                <a href="mailto:contact@stp.network"><Email/><span>Email</span></a>
                             </li>
                         </ul>
                     </div>
