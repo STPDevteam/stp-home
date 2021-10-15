@@ -13,7 +13,6 @@ import Image4 from '../../assets/images/home/image4.png'
 import Image6 from '../../assets/images/home/image6.jpg'
 import Image8 from '../../assets/images/home/image8.jpg'
 import Image8H5 from '../../assets/images/home/image8-h5.jpg'
-import Image9 from '../../assets/images/home/image9.jpg'
 import Image10_1 from '../../assets/images/home/image10-1.png'
 import Image10_2 from '../../assets/images/home/image10-2.png'
 import SmartChain1 from '../../assets/images/home/smartchain1.png'
@@ -49,6 +48,7 @@ import Platform8 from '../../assets/images/home/platform8.png'
 import Platform9 from '../../assets/images/home/platform9.png'
 import Platform10 from '../../assets/images/home/platform10.png'
 import WechatQR from '../../assets/images/home/QR.jpeg'
+import STPT from '../../assets/images/home/STPT.png'
 import {ReactComponent as TwitterLogo} from '../../assets/images/home/svg/Twitter.svg'
 import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.svg'
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
@@ -94,18 +94,55 @@ const FirstContent = styled.div`
         width: 100%;
         max-width: 480px;
     }
+    h3{
+        color: #727272;
+        font-size: 21px;
+        display:inline-block;
+    }
+    .whereBuy{
+        position: absolute;
+        width: 100%;
+        bottom: 40px;
+        left: 0;
+        .stpt{
+            width: 24px;
+            margin-left: 10px;
+        }
+        @media (max-width: 767px) {
+           display: none;
+        }
+    }
 `
 
 const SecondContent = styled.div`
-    background: url(${Image2}) no-repeat;
+    background: url(${Image2}) no-repeat, #fff;
     background-size: 50%;
     background-position: center right;
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 200px 500px 100px 50px;
+        padding: 150px 500px 100px 150px;
         @media (max-width: 767px) {
-            padding: 100px 20px;
+            padding: 30px 20px 50px;
+        }
+    }
+    .whereBuy{
+        display: none;
+        width: 100%;
+        padding: 30px;
+        background: radial-gradient(75.22% 75.22% at 20.49% 12.79%, #FFFFFF 0%, rgba(228, 231, 233, 0.502295) 100%);
+        margin-bottom: 50px;
+        @media (max-width: 767px) {
+            display: block;
+         }
+        .stpt{
+            width: 15px;
+            margin-left: 10px;
+        }
+        h3{
+            margin-top: 0;
+            color: #727272;
+            text-align: center;
         }
     }
 `
@@ -388,37 +425,11 @@ const EighthContent = styled.div`
     }
 `
 const NinthContent = styled.div`
-    background: url(${Image9}) no-repeat;
-    background-position: center center;
-    background-size: 80%;
-    padding-bottom: 250px;
-    h2{
-        font-size: 64px;
-        text-align: center;
-        color: #111029; 
-        margin-top: 150px;
-        margin-bottom: 50px;
-        @media (max-width: 767px) {
-            font-size: 24px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-    }
-    &>div{
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 50px;
-        @media (max-width: 767px) {
-            padding: 20px;
-        }
-    }
-`
-const TenthContent = styled.div`
     background: url(${Image10_2}) no-repeat, url(${Image10_1}) no-repeat;
     background-position: 100% 0,-300px 0; 
     background-size: 100%, 40%;
     padding: 100px 0 0; 
-    margin-top: -150px;
+    margin-top: 150px;
     @media (max-width: 767px) {
         background-position: 100% 0, 0 0; 
         background-size: cover, 40%
@@ -654,30 +665,100 @@ const Home: React.FC = () =>  {
                     <div>
                         <Row>
                             <Col md={12} sm={24}>
-                                <h1 id="$STPT">DAV Sidechain by STPT</h1>
+                                <h1 id="$STPT">Verse by STP</h1>
                                 <p>
-                                A layer2 on Ethereum optimized for scalable and smarter DAO solutions
+                                A layer2 on Ethereum optimized for DAOs
                                 </p>
                                 <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
                             </Col>
                             <Col md={12} sm={24}>
                             </Col>
                         </Row>
+                        <div className="whereBuy">
+                            <h3>Where you can buy STPT?<img className="stpt" src={STPT}/></h3>
+                            <div className="platforms">
+                                <div>
+                                    <img src={Platform1} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform2} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform3} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform4} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform5} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform6} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform7} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform8} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform9} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform10} alt="" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </FirstContent>
                 <SecondContent>
+                    <div className="whereBuy">
+                        <h3>Where you can buy STPT?<img className="stpt" src={STPT}/></h3>
+                            <div className="platforms">
+                                <div>
+                                    <img src={Platform1} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform2} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform3} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform4} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform5} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform6} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform7} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform8} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform9} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform10} alt="" />
+                                </div>
+                            </div>
+                        </div>
                     <div>
-                        <p>Our vision is to shift the paradigm of how organizations should be run by creating an optimized Layer2 blockchain designed for DAOs. We exist to evangelize the DAO concept for enhancing management structure and unlocking value. 
+                        <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer2 blockchain designed for DAOs. 
                             <br/>
                             <br/>
-                            STP DAOverse is a fully functional platform powered by STP Chain with native tools and infrastructures. We aspire to be an all-encompassing platform for any organization to decentralize decision-making effectively and developers to launch decentralized applications. 
+                            We exist to evangelize the DAO concept for optimizing the efficiency and unlocking value of networks, communities and organizations.
                         </p>
-                        <h2 id="Finance">Changing Management One DAO at a Time</h2>
+                        <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
                     </div>
                 </SecondContent> 
                 <ThirdContent>
                     <div id="STPChain">
-                        <h2 id="Experience" className="defiTitle">STP Smart Chain</h2>
+                        <h2 id="Experience" className="defiTitle">STP Verse</h2>
                         <p>A Layer2 blockchain optimized for all DAOs</p>
                         <ul>
                             <li>
@@ -730,31 +811,26 @@ const Home: React.FC = () =>  {
                         <div className="web system">
                             <div className="item">
                                 <img className="blue" src={System3} alt="" />
-                                <h3>Governance</h3>
-                                <p>STPT Holders are allowed to vote on key proposals in the ecosystem.</p>
+                                <h3>Node Rewards</h3>
+                                <p>Incentivizes network participants and contributors.</p>
                             </div>
                             <div className="item">
                                 <img className="green" src={System4} alt="" />
-                                <h3>Transaction Fees</h3>
-                                <p>Serves as gas fees for transaction and smart contract execution.</p>
+                                <h3>Tuning Key Parameters</h3>
+                                <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                             </div>
                             <div className="item">
                                 <img className="blue" src={System5} alt="" />
-                                <h3>Transaction Fees</h3>
-                                <p>Serves as gas fees for transaction and smart contract execution.</p>
+                                <h3>USTP</h3>
+                                <p>A native stablecoin on STP Smart Chain based on STPT staking</p>
                             </div>
                         </div>
                         <div className="h5 system">
                             <Carousel autoplay ref={carouselRef as any}>
-                                {/* <div className="item">
+                                <div className="item">
                                     <img className="green" src={System1} alt="" />
                                     <h3>Governance</h3>
                                     <p>STPT Holders are allowed to vote on key proposals in the ecosystem.</p>
-                                </div> */}
-                                <div className="item">
-                                    <img className="blue" src={System2} alt="" />
-                                    <h3>Transaction Fees</h3>
-                                    <p>Serves as gas fees for transaction and smart contract execution.</p>
                                 </div>
                                 <div className="item">
                                     <img className="blue" src={System2} alt="" />
@@ -763,18 +839,18 @@ const Home: React.FC = () =>  {
                                 </div>
                                 <div className="item">
                                     <img className="blue" src={System3} alt="" />
-                                    <h3>Governance</h3>
-                                    <p>STPT Holders are allowed to vote on key proposals in the ecosystem.</p>
+                                    <h3>Node Rewards</h3>
+                                    <p>Incentivizes network participants and contributors.</p>
                                 </div>
                                 <div className="item">
                                     <img className="green" src={System4} alt="" />
-                                    <h3>Transaction Fees</h3>
-                                    <p>Serves as gas fees for transaction and smart contract execution.</p>
+                                    <h3>Tuning Key Parameters</h3>
+                                    <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                                 </div>
                                 <div className="item">
                                     <img className="blue" src={System5} alt="" />
-                                    <h3>Transaction Fees</h3>
-                                    <p>Serves as gas fees for transaction and smart contract execution.</p>
+                                    <h3>USTP</h3>
+                                    <p>A native stablecoin on STP Smart Chain based on STPT staking</p>
                                 </div>
                             </Carousel>
                         </div>
@@ -884,7 +960,7 @@ const Home: React.FC = () =>  {
                         <h2>Roadmap</h2>
                         <div className="roadmap">
                             <div>
-                                <h3>Q4 2021</h3>
+                                <h3>2021 Q4</h3>
                                 <ul>
                                     <li>Launch STP Smart Chain Testnet</li>
                                     <li>DAO Builder V1.0 - with basic DAO templates</li>
@@ -894,76 +970,33 @@ const Home: React.FC = () =>  {
                                 </ul>
                             </div>
                             <div>
-                                <h3>Q4 2021</h3>
+                                <h3>2022 Q1</h3>
                                 <ul>
-                                    <li>Launch STP Smart Chain Testnet</li>
-                                    <li>DAO Builder V1.0 - with basic DAO templates</li>
-                                    <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
-                                    <li>DAO Scan  - Track transaction history and real-time chain info of STP Smart Chain</li>
-                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering STP DAOverse</li>
+                                    <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
+                                    <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
+                                    <li>Cross-chain bridge - enhance interoperability between STP Smart Chain and mainstream public chains</li>
+                                    <li>Smart DAO Builder V2.0 - More DAO solutions for off-chain organizations</li>
                                 </ul>
                             </div>
                             <div>
-                                <h3>Q4 2021</h3>
+                                <h3>2022 Q2</h3>
                                 <ul>
-                                    <li>Launch STP Smart Chain Testnet</li>
-                                    <li>DAO Builder V1.0 - with basic DAO templates</li>
-                                    <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
-                                    <li>DAO Scan  - Track transaction history and real-time chain info of STP Smart Chain</li>
-                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering STP DAOverse</li>
+                                    <li>Smart DAO Builder V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
+                                    <li>Testing Dapp Developer Kit on STP Smart Chain</li>
+                                    <li>Launch DAO Infrastructures for STP Smart Chain</li>
                                 </ul>
                             </div>
                             <div>
-                                <h3>Q4 2021</h3>
+                                <h3>2022 Q3 and Further</h3>
                                 <ul>
-                                    <li>Launch STP Smart Chain Testnet</li>
-                                    <li>DAO Builder V1.0 - with basic DAO templates</li>
-                                    <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
-                                    <li>DAO Scan  - Track transaction history and real-time chain info of STP Smart Chain</li>
-                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering STP DAOverse</li>
+                                    <li>Launch STP Smart Chain Mainnet</li>
+                                    <li>Continue to expand ecosystem and onboard developer tools of STP Smart Chain</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </EighthContent>
                 <NinthContent>
-                    <div>
-                        <h2>Where you can buy STPT?</h2>
-                        <div className="platforms">
-                            <div>
-                                <img src={Platform1} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform2} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform3} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform4} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform5} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform6} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform7} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform8} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform9} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform10} alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </NinthContent>
-                <TenthContent>
                     <div>
                         <div className="integrate">
                             <h2>Want to Integrate with STP</h2>
@@ -990,7 +1023,7 @@ const Home: React.FC = () =>  {
                             </li>
                         </ul>
                     </div>
-                </TenthContent>
+                </NinthContent>
             </Content>     
         </Layout>
     )
