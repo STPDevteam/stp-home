@@ -19,6 +19,7 @@ import SmartChain1 from '../../assets/images/home/smartchain1.png'
 import SmartChain2 from '../../assets/images/home/smartchain2.png'
 import SmartChain3 from '../../assets/images/home/smartchain3.png'
 import SmartChain4 from '../../assets/images/home/smartchain4.png'
+import SmartChain5 from '../../assets/images/home/smartchain5.png'
 import System1 from '../../assets/images/home/system1.png'
 import System2 from '../../assets/images/home/system2.png'
 import System3 from '../../assets/images/home/system3.png'
@@ -69,30 +70,42 @@ const HeaderContent = styled.div`
 
 const FirstContent = styled.div`
     background: url(${Image1}) no-repeat;
-    background-size: 100%;
-    background-position: 100% -50px;
+    background-size: cover;
+    background-position: center bottom;
     margin-top: 100px;
+    height: calc(100vh - 100px);
     @media (max-width: 767px) {
         background: url(${Image1H5}) no-repeat;
         background-position: center bottom;
         background-size: cover;
-        height: calc(100vh - 100px);
     }
     &>div{
+        position: relative;
+        height: 100%;
+        min-height: 400px;
         max-width: 1200px;
         padding: 0 50px;
         margin: 0 auto;
-        padding: 200px 50px 200px;
-        position: relative;
+        padding: 0 50px;
         overflow: hidden;
         @media (max-width: 767px) {
-           padding: 20px 30px 300px;
+            padding: 20px 30px 300px;
+        }
+        &>div{
+            &:first-of-type{
+                position: relative;
+                top: calc(50% - 100px);
+                transform: translateY(-50%);
+            }
         }
     }
     p{
         color: #25AAE1;
         width: 100%;
         max-width: 480px;
+    }
+    h1{
+        margin-bottom: 0;
     }
     h3{
         color: #727272;
@@ -103,7 +116,10 @@ const FirstContent = styled.div`
         position: absolute;
         width: 100%;
         bottom: 40px;
+        padding-left: 50px;
         left: 0;
+        max-width: 1200px;
+        magrin: 0 auto;
         .stpt{
             width: 24px;
             margin-left: 10px;
@@ -219,6 +235,9 @@ const ThirdContent = styled.div`
             }
             &:nth-of-type(4){
                 width: 840px
+            }
+            &:nth-of-type(5){
+                width: 900px
             }
             @media (max-width: 767px) {
                 width: 100%!important;
@@ -652,7 +671,7 @@ const Home: React.FC = () =>  {
                                 Learn <DownOutlined />
                                 </a>
                             </Dropdown>
-                            <Button type="primary"><a target="_blank" href="https://app.stp.network">Launch Beta</a></Button>
+                            <Button type="primary"><a target="_blank" href="https://app.stp.network">APP</a></Button>
                         </nav>
                     </CSSTransition>
                     <button onClick={toggleNav} className="Burger">
@@ -785,9 +804,16 @@ const Home: React.FC = () =>  {
                             <li>
                                 <div><img src={SmartChain4} alt="" /></div>
                                 <div>
-                                    <h3>Cross DAO Interoperobility</h3>
+                                    <h3>Cross DAO Interoperability</h3>
                                     <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
                                 </div>
+                            </li>
+                            <li>
+                                <div><img src={SmartChain5} alt="" /></div>
+                                <div>
+                                    <h3>Off-chain Verifiable Proofs</h3>
+                                    <p>Allows for weighted off-chain voting census trustlessly determined by on-chain token proofs</p>
+                                </div>  
                             </li>
                         </ul>
                     </div>
@@ -798,29 +824,29 @@ const Home: React.FC = () =>  {
                         <h2>Powering DAO Ecosystem</h2>
                         <div className="web system">
                             <div className="item">
-                                <img className="green" src={System1} alt="" />
+                                <div className="green"><img src={System1} alt="" /></div>
                                 <h3>Governance</h3>
                                 <p>STPT Holders are allowed to vote on key proposals in the ecosystem.</p>
                             </div>
                             <div className="item">
-                                <img className="blue" src={System2} alt="" />
+                                <div className="blue"><img src={System2} alt="" /></div>
                                 <h3>Transaction Fees</h3>
                                 <p>Serves as gas fees for transaction and smart contract execution.</p>
                             </div>
                         </div>
                         <div className="web system">
                             <div className="item">
-                                <img className="blue" src={System3} alt="" />
+                                <div className="blue"><img src={System3} alt="" /></div>
                                 <h3>Node Rewards</h3>
                                 <p>Incentivizes network participants and contributors.</p>
                             </div>
                             <div className="item">
-                                <img className="green" src={System4} alt="" />
+                                <div className="green"><img src={System4} alt="" /></div>
                                 <h3>Tuning Key Parameters</h3>
                                 <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                             </div>
                             <div className="item">
-                                <img className="blue" src={System5} alt="" />
+                                <div className="blue"><img src={System5} alt="" /></div>
                                 <h3>USTP</h3>
                                 <p>A native stablecoin on STP Smart Chain based on STPT staking</p>
                             </div>
