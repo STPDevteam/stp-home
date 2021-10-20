@@ -154,7 +154,7 @@ const SecondContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 150px 500px 100px 150px;
+        padding: 150px 500px 100px 50px;
         @media (max-width: 767px) {
             padding: 100px 20px;
         }
@@ -628,7 +628,7 @@ const Home: React.FC = () =>  {
     const stpMenu = (
         <Menu>
             <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            <a rel="noopener noreferrer" href="#DAO">
                 STP DAO
             </a>
             </Menu.Item>
@@ -711,7 +711,7 @@ const Home: React.FC = () =>  {
                     >
                         <nav className="Nav">
                             <a className="active" href="/">Home</a>
-                            <Dropdown overlay={stpMenu} trigger={['click']}>
+                            <Dropdown overlay={stpMenu} trigger={['click', 'hover']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                                 STP <Arrow />
                                 </a>
@@ -831,7 +831,7 @@ const Home: React.FC = () =>  {
                                 </div>
                             </div>
                         </div>
-                    <div>
+                    <div id="DAO">
                         <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer2 blockchain designed for DAOs. 
                             <br/>
                             <br/>
