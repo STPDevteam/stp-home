@@ -11,6 +11,7 @@ import Image3 from '../../assets/images/home/image3.jpg'
 import Image3H5 from '../../assets/images/home/image3-h5.png'
 import Image4 from '../../assets/images/home/image4.png'
 import Image6 from '../../assets/images/home/image6.jpg'
+import Image6H5 from '../../assets/images/home/image6-h5.png'
 import Image8 from '../../assets/images/home/image8.jpg'
 import Image8H5 from '../../assets/images/home/image8-h5.jpg'
 import Image10_1 from '../../assets/images/home/image10-1.png'
@@ -55,6 +56,7 @@ import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
 import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
+import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
@@ -89,13 +91,17 @@ const FirstContent = styled.div`
         padding: 0 50px;
         overflow: hidden;
         @media (max-width: 767px) {
-            padding: 20px 30px 300px;
+            padding: 0 30px 300px;
         }
         &>div{
             &:first-of-type{
                 position: relative;
                 top: calc(50% - 100px);
                 transform: translateY(-50%);
+                @media (max-width: 767px) {
+                    top: 145px;
+                    transform: translateY(0);
+                }
             }
         }
     }
@@ -109,23 +115,34 @@ const FirstContent = styled.div`
     }
     h3{
         color: #727272;
-        font-size: 21px;
+        font-size: 16px;
         display:inline-block;
+        margin: 0;
     }
     .whereBuy{
+        display: flex;
+        justify-content: space-between;
         position: absolute;
-        width: 100%;
+        width: calc(100% - 100px);
         bottom: 40px;
-        padding-left: 50px;
-        left: 0;
+        left: 50px;
         max-width: 1200px;
         magrin: 0 auto;
+        h3{
+            width: 240px;
+        }
         .stpt{
             width: 24px;
             margin-left: 10px;
         }
         @media (max-width: 767px) {
            display: none;
+        }
+    }
+    .ant-btn{
+        box-shadow: 5px 5px 20px #A3A3A3;
+        &:hover{
+            box-shadow: 5px 5px 20px #676767;
         }
     }
 `
@@ -139,7 +156,7 @@ const SecondContent = styled.div`
         max-width: 1200px;
         padding: 150px 500px 100px 150px;
         @media (max-width: 767px) {
-            padding: 30px 20px 50px;
+            padding: 100px 20px;
         }
     }
     .whereBuy{
@@ -147,7 +164,6 @@ const SecondContent = styled.div`
         width: 100%;
         padding: 30px;
         background: radial-gradient(75.22% 75.22% at 20.49% 12.79%, #FFFFFF 0%, rgba(228, 231, 233, 0.502295) 100%);
-        margin-bottom: 50px;
         @media (max-width: 767px) {
             display: block;
          }
@@ -160,6 +176,23 @@ const SecondContent = styled.div`
             color: #727272;
             text-align: center;
         }
+    }
+    p{
+        color: #727272;
+        font-size: 24px;
+        @media (max-width: 767px) {
+            font-size: 14px;
+            padding-right: 60px;
+        }
+    }
+    h2{
+        color: #111029;
+        line-height: 1.2;
+    }
+    hr{
+        border-top: 1px solid #ECECEC;
+        border-bottom: none;
+        margin: 40px 0;
     }
 `
 
@@ -180,7 +213,7 @@ const ThirdContent = styled.div`
             padding: 100px 50px;
         }
         @media (max-width: 767px) {
-            padding: 20px;
+            padding: 100px 20px 30px;
         }
     }
     p{
@@ -204,6 +237,11 @@ const ThirdContent = styled.div`
         color: #fff; 
         margin-top: 0;
         margin-bottom: 0px;
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
     }
     ul{
         list-style: none;
@@ -219,6 +257,7 @@ const ThirdContent = styled.div`
             display: flex;
             flex-direction: row;
             align-items: center;
+            height: 114px;
             img{
                 width: 60px;
                 margin-right: 15px;
@@ -241,11 +280,16 @@ const ThirdContent = styled.div`
             }
             @media (max-width: 767px) {
                 width: 100%!important;
+                height: 137px;
             }
         }
         p{
             font-size: 14px;
             margin-bottom: 0;
+            @media (max-width: 767px) {
+                font-size: 8px;
+                line-height: 1.2;
+            }
         }
     }
 `
@@ -254,17 +298,14 @@ const FourthContent = styled.div`
     &>div{
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 50px;
+        padding: 0 50px 80px;
         @media (max-width: 767px) {
-            padding: 0;
+            padding: 20px 0 100px;
         }
     }
     background: rgba(0, 0, 0, 0.05);
     background: url(${Image4}) no-repeat, radial-gradient(75.22% 75.22% at 20.49% 12.79%, #FFFFFF 0%, rgba(228, 231, 233, 0.502295) 100%);;
     background-size: 100%;
-    @media (max-width: 767px) {
-        margin-top: -10px;
-    }
        
     h1{
         font-size: 40px;
@@ -279,7 +320,7 @@ const FourthContent = styled.div`
     h2{
         font-size: 64px;
         text-align: center;
-        color: #111029; 
+        color: #727272;
         @media (max-width: 767px) {
             font-size: 24px;
         }
@@ -338,6 +379,12 @@ const SixthContent = styled.div`
     background: url(${Image6}) no-repeat;
     background-size: 80%;
     background-position: center right;
+    @media (max-width: 767px) {
+        padding-bottom: 460px;
+        background: url(${Image6H5}) no-repeat;
+        background-position: 100% 150px;
+        background-size: 80%;
+    }
     &>div{
         margin: 0 auto;
         max-width: 1200px;
@@ -374,7 +421,7 @@ const SeventhContent = styled.div`
     &>div{
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 50px;
+        padding: 100px 50px;
         @media (max-width: 767px) {
             padding: 20px;
         }
@@ -395,6 +442,10 @@ const SeventhContent = styled.div`
     .ant-btn{
         margin: 0 auto;
         display: block;
+        box-shadow: 5px 5px 20px #A3A3A3;
+        &:hover{
+            box-shadow: 5px 5px 20px #676767;
+        }
     }
 `
 const EighthContent = styled.div`
@@ -403,14 +454,15 @@ const EighthContent = styled.div`
     background-size: 100%;
     @media (max-width: 767px) {
         background: url(${Image8H5}) no-repeat;
-        background-position: 20px 160px;
+        background-position: 10px 200px;
+        background-size: 18%;
     }
     &>div{
         max-width: 1200px;
         margin: 100px auto 0;
         padding: 0 50px;
         @media (max-width: 767px) {
-            padding: 20px;
+            padding: 100px 20px;
             margin: 0 auto;
         }
     }
@@ -420,14 +472,15 @@ const EighthContent = styled.div`
         color: #111029; 
         margin-bottom: 140px;
         @media (max-width: 767px) {
-            margin-top: 50px;
+            margin-top: 0;
             font-size: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 60px;
         }
     }
     h3{
         font-size: 18px;
         color: #151517;
+        margin-top: 0;
         @media (max-width: 767px) {
             padding-left: 60px;
         }
@@ -439,7 +492,7 @@ const EighthContent = styled.div`
         }
     }
     li{
-        font-size: 16px;
+        font-size: 14px;
         color: #727272;
     }
 `
@@ -467,16 +520,28 @@ const NinthContent = styled.div`
         color: #111029; 
         @media (max-width: 767px) {
             font-size: 24px;
+            text-align: left;
         }
     }
     p{
         font-size: 16px;
         text-align: center;
         color: #727272;
+        margin-bottom: 40px;
+        @media (max-width: 767px) {
+            text-align: left;
+        }
     }
     .ant-btn{
         margin: 0 auto;
         display: block;
+        box-shadow: 5px 5px 20px #A3A3A3;
+        @media (max-width: 767px) {
+            margin-left: 0;
+        }
+        &:hover{
+            box-shadow: 5px 5px 20px #676767;
+        }
     }
     ul{
         margin: 50px 0;
@@ -645,30 +710,30 @@ const Home: React.FC = () =>  {
                         unmountOnExit
                     >
                         <nav className="Nav">
-                            <a href="/">Home</a>
-                            <Dropdown overlay={stpMenu} trigger={['click', 'hover']}>
+                            <a className="active" href="/">Home</a>
+                            <Dropdown overlay={stpMenu} trigger={['click']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                STP <DownOutlined />
+                                STP <Arrow />
                                 </a>
                             </Dropdown>
                             <Dropdown overlay={productsMenu} trigger={['click', 'hover']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                Products <DownOutlined />
+                                Products <Arrow />
                                 </a>
                             </Dropdown>
                             <Dropdown overlay={ecosystemMenu} trigger={['click', 'hover']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                STP Ecosystem <DownOutlined />
+                                STP Ecosystem <Arrow />
                                 </a>
                             </Dropdown>
                             <Dropdown overlay={resourcesMenu} trigger={['click', 'hover']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                Resources <DownOutlined />
+                                Resources <Arrow />
                                 </a>
                             </Dropdown>
                             <Dropdown overlay={learnMenu} trigger={['click', 'hover']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                Learn <DownOutlined />
+                                Learn <Arrow />
                                 </a>
                             </Dropdown>
                             <Button type="primary"><a target="_blank" href="https://app.stp.network">APP</a></Button>
@@ -772,6 +837,7 @@ const Home: React.FC = () =>  {
                             <br/>
                             We exist to evangelize the DAO concept for optimizing the efficiency and unlocking value of networks, communities and organizations.
                         </p>
+                        <hr />
                         <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
                     </div>
                 </SecondContent> 
@@ -784,7 +850,7 @@ const Home: React.FC = () =>  {
                                 <div><img src={SmartChain1} alt="" /></div>
                                 <div>
                                     <h3>Low cost</h3>
-                                    <p>Lower governance cost compared to DAOs on Ethereum</p>
+                                    <p>Less governance cost compared to DAOs on ETH enabling our ecosystem to track more valuable data</p>
                                 </div>
                             </li>
                             <li>
@@ -854,27 +920,27 @@ const Home: React.FC = () =>  {
                         <div className="h5 system">
                             <Carousel autoplay ref={carouselRef as any}>
                                 <div className="item">
-                                    <img className="green" src={System1} alt="" />
+                                    <div className="green"><img src={System1} alt="" /></div>
                                     <h3>Governance</h3>
                                     <p>STPT Holders are allowed to vote on key proposals in the ecosystem.</p>
                                 </div>
                                 <div className="item">
-                                    <img className="blue" src={System2} alt="" />
+                                    <div className="blue"><img src={System2} alt="" /></div>
                                     <h3>Transaction Fees</h3>
                                     <p>Serves as gas fees for transaction and smart contract execution.</p>
                                 </div>
                                 <div className="item">
-                                    <img className="blue" src={System3} alt="" />
+                                    <div className="blue"><img src={System3} alt="" /></div>
                                     <h3>Node Rewards</h3>
                                     <p>Incentivizes network participants and contributors.</p>
                                 </div>
                                 <div className="item">
-                                    <img className="green" src={System4} alt="" />
+                                    <div className="green"><img src={System4} alt="" /></div>
                                     <h3>Tuning Key Parameters</h3>
                                     <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                                 </div>
                                 <div className="item">
-                                    <img className="blue" src={System5} alt="" />
+                                    <div className="blue"><img src={System5} alt="" /></div>
                                     <h3>USTP</h3>
                                     <p>A native stablecoin on STP Smart Chain based on STPT staking</p>
                                 </div>

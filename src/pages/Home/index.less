@@ -1,5 +1,10 @@
 .ant-dropdown-menu{
-    left: -12px;          
+    left: -12px;  
+    border-radius: 10px; 
+    a{
+      font-weight: 500;
+      color: #999FAE;
+    }       
 }
 .homePage{
     width: 100%;
@@ -32,6 +37,10 @@
               margin-right: 0;
             }
             .ant-btn{
+              box-shadow: 3px 3px 20px #A3A3A3;
+              &:hover{
+                box-shadow: 5px 5px 20px #676767;
+              }
               a{
                 color: #fff;
               }
@@ -67,9 +76,13 @@
           .Nav a {
             color: #999FAE;
             font-size: 16px;
-            font-weight: normal;
+            font-weight: 500;
             transition: 0.5s;
             text-decoration: none;
+            line-height: 40px;
+            &.active{
+              border-bottom: 2px solid #0B1CB5;
+            }
           }
           
           .Burger {
@@ -167,6 +180,7 @@
     p{
         font-size: 20px;
         line-height: 28px;
+        font-weight: 400;
         color: #79869F;
     }
     img{
@@ -215,7 +229,7 @@
       .item{
         width: 320px;
         height: 240px;
-        margin: 60px 40px;
+        margin: 60px 20px;
         padding: 60px 10px 0;;
         background: #fff;
         box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
@@ -254,7 +268,6 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-
         }
         h3,p{
           text-align: center;
@@ -276,7 +289,7 @@
       grid-template-rows: repeat(2, 270px);
       justify-content: center;
       align-items: center;
-      margin: 50px auto;
+      margin: 60px auto;
       grid-gap: 40px;
       padding: 0;
       @media (max-width: 767px) {
@@ -299,6 +312,9 @@
           }
         }
         p{
+          color: #000;
+          text-align: left;
+          font-size: 14px;
           @media (max-width: 767px) {
             font-size: 10px;
             text-align: left;
@@ -322,18 +338,26 @@
           margin: 20px 0;
           color: #111029;
           font-size: 28px;
+          height: 90px;
+          line-height: 90px;
+          @media (max-width: 767px) {
+            font-size: 16px;
+            height: 60px;
+            line-height: 60px;
+          }
           &:nth-of-type(even){
             margin-left: 40px;
           }
           div{
             display: inline-block;
             background: #FFFFFF;
-            padding: 20px;
             border-radius: 15px;
+            padding: 0 40px;
             box-shadow: 5px 5px 10px #E5E5E5;
           }
           img{
-            width: 56px;
+            width: 40px;
+            margin-right: 10px;
           }
         }
       }
@@ -359,25 +383,30 @@
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 30px;
       @media (max-width: 767px) {
-        grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 100%;
       }
     }
     .platforms{
       display: grid;
-      grid-template-columns: repeat(auto-fill, 80px);
+      width: calc(100% - 240px);
+      grid-template-columns: repeat(10, 60px);
       align-items: center;
-      grid-gap: 30px;
+      grid-gap: 20px;
       text-align: center;
+      justify-content: flex-end;
       @media (max-width: 767px) {
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(2, 30px);
         grid-gap: 10px;
+        width: 100%;
       }
       img{
         -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
         filter: grayscale(100%);
-        width: 80px;
+        max-height: 30px;
+        max-width: 60px;
+        width: 100%;
+        height: 100%;
         @media (max-width: 767px) {
           width: 50px;
         }
