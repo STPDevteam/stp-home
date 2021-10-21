@@ -108,10 +108,19 @@ const FirstContent = styled.div`
     p{
         color: #25AAE1;
         width: 100%;
+        font-size: 24px;
+        @media (max-width: 767px) {
+            font-size: 21px;
+        }
         max-width: 480px;
+        margin-bottom: 80px;
     }
     h1{
         margin-bottom: 0;
+        font-size: 96px;
+        @media (max-width: 767px) {
+            font-size: 40px;
+        }
     }
     h3{
         color: #727272;
@@ -154,7 +163,16 @@ const SecondContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 150px 500px 100px 50px;
+        padding: 180px 400px 150px 50px;
+        @media (max-width: 1100px) {
+            padding: 180px 300px 150px 50px;
+        }
+        @media (max-width: 1020px) {
+            padding: 180px 200px 150px 50px;
+        }
+        @media (max-width: 920px) {
+            padding: 180px 0 150px 50px;
+        }
         @media (max-width: 767px) {
             padding: 100px 20px;
         }
@@ -187,12 +205,16 @@ const SecondContent = styled.div`
     }
     h2{
         color: #111029;
+        font-size: 72px;
         line-height: 1.2;
+        @media (max-width: 767px) {
+            font-size: 32px;
+        }
     }
     hr{
         border-top: 1px solid #ECECEC;
         border-bottom: none;
-        margin: 40px 0;
+        margin: 64px 0;
     }
 `
 
@@ -325,6 +347,9 @@ const FourthContent = styled.div`
             font-size: 24px;
         }
     }
+    h3{
+        font-weight: 600;
+    }
 `
 const FifthContent = styled.div`
     &>div{
@@ -361,6 +386,7 @@ const FifthContent = styled.div`
         font-size: 24px;
         color: #111029;
         margin-top: 0;
+        font-weight: 600;
         @media (max-width: 767px) {
             font-size: 16px;
         } 
@@ -481,6 +507,7 @@ const EighthContent = styled.div`
         font-size: 18px;
         color: #151517;
         margin-top: 0;
+        font-weight: 600;
         @media (max-width: 767px) {
             padding-left: 60px;
         }
@@ -493,12 +520,13 @@ const EighthContent = styled.div`
     }
     li{
         font-size: 14px;
+        font-weight: 400;
         color: #727272;
     }
 `
 const NinthContent = styled.div`
     background: url(${Image10_2}) no-repeat, url(${Image10_1}) no-repeat;
-    background-position: 100% 0,-300px 0; 
+    background-position: 100% bottom,-300px bottom; 
     background-size: 100%, 40%;
     padding: 100px 0 0; 
     margin-top: 150px;
@@ -711,7 +739,7 @@ const Home: React.FC = () =>  {
                     >
                         <nav className="Nav">
                             <a className="active" href="/">Home</a>
-                            <Dropdown overlay={stpMenu} trigger={['click', 'hover']}>
+                            <Dropdown overlay={stpMenu} trigger={['click']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                                 STP <Arrow />
                                 </a>
@@ -748,14 +776,12 @@ const Home: React.FC = () =>  {
                 <FirstContent>
                     <div>
                         <Row>
-                            <Col md={12} sm={24}>
+                            <Col md={18} sm={24}>
                                 <h1 id="$STPT">Verse by STP</h1>
                                 <p>
                                 A layer2 on Ethereum optimized for DAOs
                                 </p>
                                 <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
-                            </Col>
-                            <Col md={12} sm={24}>
                             </Col>
                         </Row>
                         <div className="whereBuy">

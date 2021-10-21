@@ -1,8 +1,15 @@
 .ant-dropdown-menu{
     left: -12px;  
-    border-radius: 10px; 
+    border-radius: 10px;
+    padding: 0;
+    li{
+      padding: 0;
+    } 
     a{
       font-weight: 500;
+      font-size: 16px;
+      line-height: 48px;
+      padding: 0 16px;
       color: #999FAE;
     }       
 }
@@ -82,6 +89,7 @@
             line-height: 40px;
             &.active{
               border-bottom: 2px solid #0B1CB5;
+              color: #292930;
             }
           }
           
@@ -353,6 +361,7 @@
             background: #FFFFFF;
             border-radius: 15px;
             padding: 0 40px;
+            font-weight: 400;
             box-shadow: 5px 5px 10px #E5E5E5;
           }
           img{
@@ -389,7 +398,7 @@
     .platforms{
       display: grid;
       width: calc(100% - 240px);
-      grid-template-columns: repeat(10, 60px);
+      grid-template-columns: repeat(auto-fill, 60px);
       align-items: center;
       grid-gap: 20px;
       text-align: center;
