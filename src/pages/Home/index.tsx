@@ -777,7 +777,7 @@ const Home: React.FC = () =>  {
                     <div>
                         <Row>
                             <Col md={18} sm={24}>
-                                <h1 id="$STPT">Verse by STP</h1>
+                                <h1>Verse by STP</h1>
                                 <p>
                                 A layer2 on Ethereum optimized for DAOs
                                 </p>
@@ -910,8 +910,8 @@ const Home: React.FC = () =>  {
                         </ul>
                     </div>
                 </ThirdContent>
-                <FourthContent>
-                    <div id="Ecosystem">
+                <FourthContent id="$STPT">
+                    <div>
                         <h1>STPT</h1>
                         <h2>Powering DAO Ecosystem</h2>
                         <div className="web system">
@@ -974,7 +974,7 @@ const Home: React.FC = () =>  {
                         </div>
                     </div>
                 </FourthContent>
-                <FifthContent>
+                <FifthContent id="Tools">
                     <div>
                         <h1>STP DAOverse</h1>
                         <h2>Tools and Infrastructure</h2>
@@ -1055,7 +1055,7 @@ const Home: React.FC = () =>  {
                         </ul>
                     </div>
                 </SixthContent>
-                <SeventhContent>
+                <SeventhContent id="Ecosystem">
                     <div>
                         <h2>Ecosystem Projects</h2>
                         <p>
