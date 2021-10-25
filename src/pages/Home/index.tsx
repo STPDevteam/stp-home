@@ -14,8 +14,8 @@ import Image6 from '../../assets/images/home/image6.jpg'
 import Image6H5 from '../../assets/images/home/image6-h5.png'
 import Image8 from '../../assets/images/home/image8.jpg'
 import Image8H5 from '../../assets/images/home/image8-h5.jpg'
-import Image10_1 from '../../assets/images/home/image10-1.png'
-import Image10_2 from '../../assets/images/home/image10-2.png'
+import Image10 from '../../assets/images/home/image10.png'
+import Image10H5 from '../../assets/images/home/image10-h5.png'
 import SmartChain1 from '../../assets/images/home/smartchain1.png'
 import SmartChain2 from '../../assets/images/home/smartchain2.png'
 import SmartChain3 from '../../assets/images/home/smartchain3.png'
@@ -26,10 +26,10 @@ import System2 from '../../assets/images/home/system2.png'
 import System3 from '../../assets/images/home/system3.png'
 import System4 from '../../assets/images/home/system4.png'
 import System5 from '../../assets/images/home/system5.png'
-import Tools1 from '../../assets/images/home/tools1.jpg'
-import Tools2 from '../../assets/images/home/tools2.jpg'
-import Tools3 from '../../assets/images/home/tools3.jpg'
-import Tools4 from '../../assets/images/home/tools4.jpg'
+import Tools1 from '../../assets/images/home/tools1.png'
+import Tools2 from '../../assets/images/home/tools2.png'
+import Tools3 from '../../assets/images/home/tools3.png'
+import Tools4 from '../../assets/images/home/tools4.png'
 import Structure1 from '../../assets/images/home/structure1.jpg'
 import Structure2 from '../../assets/images/home/structure2.jpg'
 import Structure3 from '../../assets/images/home/structure3.jpg'
@@ -112,7 +112,6 @@ const FirstContent = styled.div`
         @media (max-width: 767px) {
             font-size: 21px;
         }
-        max-width: 480px;
         margin-bottom: 80px;
     }
     h1{
@@ -130,9 +129,9 @@ const FirstContent = styled.div`
     }
     .whereBuy{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         position: absolute;
-        width: calc(100% - 100px);
+        width: calc(100% - 120px);
         bottom: 40px;
         left: 50px;
         max-width: 1200px;
@@ -207,6 +206,7 @@ const SecondContent = styled.div`
         color: #111029;
         font-size: 72px;
         line-height: 1.2;
+        font-weight: 600;
         @media (max-width: 767px) {
             font-size: 32px;
         }
@@ -309,8 +309,8 @@ const ThirdContent = styled.div`
             font-size: 14px;
             margin-bottom: 0;
             @media (max-width: 767px) {
-                font-size: 8px;
-                line-height: 1.2;
+                font-size: 10px;
+                line-height: 15px;
             }
         }
     }
@@ -342,7 +342,7 @@ const FourthContent = styled.div`
     h2{
         font-size: 64px;
         text-align: center;
-        color: #727272;
+        color: #111029;
         @media (max-width: 767px) {
             font-size: 24px;
         }
@@ -364,22 +364,14 @@ const FifthContent = styled.div`
     @media (max-width: 767px) {
         padding: 65px 0;
     }
-    h1{
-        font-size: 40px;
-        color: #25AAE1;
-        text-align: center;
-        padding-top: 60px;
-        @media (max-width: 767px) {
-            font-size: 16px;
-            padding-top: 60px;
-        }
-    }
     h2{
         font-size: 64px;
         text-align: center;
         color: #111029; 
+        padding-top: 60px;
         @media (max-width: 767px) {
             font-size: 24px;
+            padding-top: 60px;
         }
     }
     h3{
@@ -447,7 +439,7 @@ const SeventhContent = styled.div`
     &>div{
         max-width: 1200px;
         margin: 0 auto;
-        padding: 100px 50px;
+        padding: 150px 50px;
         @media (max-width: 767px) {
             padding: 20px;
         }
@@ -481,11 +473,11 @@ const EighthContent = styled.div`
     @media (max-width: 767px) {
         background: url(${Image8H5}) no-repeat;
         background-position: 10px 200px;
-        background-size: 18%;
+        background-size: 13%;
     }
     &>div{
         max-width: 1200px;
-        margin: 100px auto 0;
+        margin: 50px auto 0;
         padding: 0 50px;
         @media (max-width: 767px) {
             padding: 100px 20px;
@@ -522,17 +514,22 @@ const EighthContent = styled.div`
         font-size: 14px;
         font-weight: 400;
         color: #727272;
+        @media (max-width: 767px) {
+            font-size: 10px;
+            line-height: 15px;
+        }
     }
 `
 const NinthContent = styled.div`
-    background: url(${Image10_2}) no-repeat, url(${Image10_1}) no-repeat;
-    background-position: 100% bottom,-300px bottom; 
-    background-size: 100%, 40%;
+    background: url(${Image10}) no-repeat;
+    background-position: center top; 
+    background-size: 100%;
     padding: 100px 0 0; 
     margin-top: 150px;
     @media (max-width: 767px) {
-        background-position: 100% 0, 0 0; 
-        background-size: cover, 40%
+        background: url(${Image10H5}) no-repeat;
+        background-size: 100%;
+        background-position: center top; 
     }
     &>div{
         max-width: 1200px;
@@ -547,7 +544,7 @@ const NinthContent = styled.div`
         text-align: center;
         color: #111029; 
         @media (max-width: 767px) {
-            font-size: 24px;
+            font-size: 32px;
             text-align: left;
         }
     }
@@ -557,6 +554,7 @@ const NinthContent = styled.div`
         color: #727272;
         margin-bottom: 40px;
         @media (max-width: 767px) {
+            font-size: 14px;
             text-align: left;
         }
     }
@@ -582,16 +580,15 @@ const NinthContent = styled.div`
             line-height: 20px;
             a{
                 color: #9f9fa9; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             span{
                 margin-left: 10px;
                 @media (max-width: 767px) {
                     display: none;
                 }
-            }
-            svg{
-                display:inline-block;
-                line-height: 20px;
             }
         }
     }
@@ -784,7 +781,7 @@ const Home: React.FC = () =>  {
                                 <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
                             </Col>
                         </Row>
-                        <div className="whereBuy">
+                        {/* <div className="whereBuy">
                             <h3>Where you can buy STPT?<img className="stpt" src={STPT}/></h3>
                             <div className="platforms">
                                 <div>
@@ -818,45 +815,45 @@ const Home: React.FC = () =>  {
                                     <img src={Platform10} alt="" />
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </FirstContent>
                 <SecondContent>
-                    <div className="whereBuy">
+                    {/* <div className="whereBuy">
                         <h3>Where you can buy STPT?<img className="stpt" src={STPT}/></h3>
-                            <div className="platforms">
-                                <div>
-                                    <img src={Platform1} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform2} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform3} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform4} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform5} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform6} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform7} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform8} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform9} alt="" />
-                                </div>
-                                <div>
-                                    <img src={Platform10} alt="" />
-                                </div>
+                        <div className="platforms">
+                            <div>
+                                <img src={Platform1} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform2} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform3} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform4} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform5} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform6} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform7} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform8} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform9} alt="" />
+                            </div>
+                            <div>
+                                <img src={Platform10} alt="" />
                             </div>
                         </div>
+                    </div> */}
                     <div id="DAO">
                         <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer2 blockchain designed for DAOs. 
                             <br/>
@@ -912,8 +909,8 @@ const Home: React.FC = () =>  {
                 </ThirdContent>
                 <FourthContent id="$STPT">
                     <div>
-                        <h1>STPT</h1>
-                        <h2>Powering DAO Ecosystem</h2>
+                        <h1>STP Verse</h1>
+                        <h2>Powering The DAO Ecosystem</h2>
                         <div className="web system">
                             <div className="item">
                                 <div className="green"><img src={System1} alt="" /></div>
@@ -940,7 +937,7 @@ const Home: React.FC = () =>  {
                             <div className="item">
                                 <div className="blue"><img src={System5} alt="" /></div>
                                 <h3>USTP</h3>
-                                <p>A native stablecoin on STP Smart Chain based on STPT staking</p>
+                                <p>A native stablecoin on STP Verse based on STPT staking</p>
                             </div>
                         </div>
                         <div className="h5 system">
@@ -976,17 +973,16 @@ const Home: React.FC = () =>  {
                 </FourthContent>
                 <FifthContent id="Tools">
                     <div>
-                        <h1>STP DAOverse</h1>
                         <h2>Tools and Infrastructure</h2>
-                        <p>STP DAOverse is a fully functional platform powered by STP Chain with native tools and infrastructures. We aspire to be an all-encompassing platform for any organization to decentralize decision-making effectively and developers to launch decentralized applications.</p>
+                        <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
                         <div className="tools">
                             <div className="item">
                                 <div>
                                     <img src={Tools1} alt="" />
                                 </div>
                                 <div>
-                                    <h3>Clique Dapp</h3>
-                                    <p>An aggregated dashboard to  browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on STP Smart Chain</p>
+                                    <h3>Clique</h3>
+                                    <p>An aggregated dashboard to  browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on STP Verse</p>
                                 </div>
                             </div>
                             <div className="item">
@@ -994,8 +990,8 @@ const Home: React.FC = () =>  {
                                     <img src={Tools2} alt="" />
                                 </div>
                                 <div>
-                                    <h3>DAO Scan Tool</h3>
-                                    <p>Track all DAO transaction history and onchain data on STP chain</p>
+                                    <h3>Framework</h3>
+                                    <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
                                 </div>
                             </div>
                             <div className="item">
@@ -1003,8 +999,8 @@ const Home: React.FC = () =>  {
                                     <img src={Tools3} alt="" />
                                 </div>
                                 <div>
-                                    <h3>Orblox Dapp</h3>
-                                    <p>Build on-chain decentralized  organizations and issue governance token running on STP Smart Chain by using industry-based templates</p>
+                                    <h3>DAO Scan Tool</h3>
+                                    <p>Track all DAO transaction history and onchain data on STP Verse</p>
                                 </div>
                             </div>
                             <div className="item">
@@ -1080,11 +1076,11 @@ const Home: React.FC = () =>  {
                             <div>
                                 <h3>2021 Q4</h3>
                                 <ul>
-                                    <li>Launch STP Smart Chain Testnet</li>
+                                    <li>Launch STP Verse Testnet</li>
                                     <li>DAO Builder V1.0 - with basic DAO templates</li>
                                     <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
-                                    <li>DAO Scan  - Track transaction history and real-time chain info of STP Smart Chain</li>
-                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering STP DAOverse</li>
+                                    <li>DAO Scan - Track transaction history and real-time chain info of STP Verse</li>
+                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering STP DAO Verse</li>
                                 </ul>
                             </div>
                             <div>
@@ -1092,7 +1088,7 @@ const Home: React.FC = () =>  {
                                 <ul>
                                     <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
                                     <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
-                                    <li>Cross-chain bridge - enhance interoperability between STP Smart Chain and mainstream public chains</li>
+                                    <li>Cross-chain bridge - enhance interoperability between STP Verse and mainstream public chains</li>
                                     <li>Smart DAO Builder V2.0 - More DAO solutions for off-chain organizations</li>
                                 </ul>
                             </div>
@@ -1100,15 +1096,15 @@ const Home: React.FC = () =>  {
                                 <h3>2022 Q2</h3>
                                 <ul>
                                     <li>Smart DAO Builder V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
-                                    <li>Testing Dapp Developer Kit on STP Smart Chain</li>
-                                    <li>Launch DAO Infrastructures for STP Smart Chain</li>
+                                    <li>Testing Dapp Developer Kit on STP Verse</li>
+                                    <li>Launch DAO Infrastructures for STP Verse</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3>2022 Q3 and Further</h3>
                                 <ul>
-                                    <li>Launch STP Smart Chain Mainnet</li>
-                                    <li>Continue to expand ecosystem and onboard developer tools of STP Smart Chain</li>
+                                    <li>Launch STP Verse Mainnet</li>
+                                    <li>Continue to expand ecosystem and onboard developer tools of STP Verse</li>
                                 </ul>
                             </div>
                         </div>
