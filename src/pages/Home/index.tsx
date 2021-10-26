@@ -116,9 +116,11 @@ const FirstContent = styled.div`
     }
     h1{
         margin-bottom: 0;
-        font-size: 96px;
+        font-size: 88px;
+        margin-top: 40px;
         @media (max-width: 767px) {
             font-size: 40px;
+            margin-top: 0;
         }
     }
     h3{
@@ -197,8 +199,10 @@ const SecondContent = styled.div`
     p{
         color: #727272;
         font-size: 24px;
+        line-height: 32px;
         @media (max-width: 767px) {
             font-size: 14px;
+            line-height: 20px;
             padding-right: 60px;
         }
     }
