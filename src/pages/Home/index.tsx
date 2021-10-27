@@ -111,16 +111,22 @@ const FirstContent = styled.div`
         font-size: 24px;
         @media (max-width: 767px) {
             font-size: 21px;
+            line-height: 30px;
         }
         margin-bottom: 80px;
     }
     h1{
-        margin-bottom: 0;
-        font-size: 88px;
-        margin-top: 40px;
+        margin-top: 180px;
+        margin-bottom: 32px;
+        margin-right: 260px;
+        font-size: 72px;
+        line-height: 80px;
+        font-weight: 600;
         @media (max-width: 767px) {
             font-size: 40px;
-            margin-top: 0;
+            line-height: 48px;
+            margin-top: -40px;
+            margin-right: 0px;
         }
     }
     h3{
@@ -164,7 +170,7 @@ const SecondContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 180px 400px 150px 50px;
+        padding: 180px 500px 150px 50px;
         @media (max-width: 1100px) {
             padding: 180px 300px 150px 50px;
         }
@@ -175,7 +181,7 @@ const SecondContent = styled.div`
             padding: 180px 0 150px 50px;
         }
         @media (max-width: 767px) {
-            padding: 100px 20px;
+            padding: 100px 30px;
         }
     }
     .whereBuy{
@@ -198,21 +204,22 @@ const SecondContent = styled.div`
     }
     p{
         color: #727272;
-        font-size: 24px;
+        font-size: 21px;
         line-height: 32px;
         @media (max-width: 767px) {
             font-size: 14px;
-            line-height: 20px;
             padding-right: 60px;
+            line-height: 20px;
         }
     }
     h2{
         color: #111029;
-        font-size: 72px;
-        line-height: 1.2;
-        font-weight: 600;
+        font-size: 64px;
+        line-height: 90px;
+        font-weight: 800;
         @media (max-width: 767px) {
             font-size: 32px;
+            line-height: 40px;
         }
     }
     hr{
@@ -239,13 +246,13 @@ const ThirdContent = styled.div`
             padding: 100px 50px;
         }
         @media (max-width: 767px) {
-            padding: 100px 20px 30px;
+            padding: 100px 30px 30px;
         }
     }
     p{
         font-size: 24px;
         color: #fff;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         @media (max-width: 767px) {
             font-size: 16px;
         }
@@ -260,13 +267,15 @@ const ThirdContent = styled.div`
     }
     h3{
         font-size: 21px;
+        line-height: 36px;
+        font-weight: 600;
         color: #fff; 
         margin-top: 0;
         margin-bottom: 0px;
         @media (max-width: 767px) {
             font-size: 16px;
             line-height: 1.2;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
     }
     ul{
@@ -278,7 +287,7 @@ const ThirdContent = styled.div`
         li{
             margin: 20px 0;
             background: #2436D9;
-            padding: 20px 40px;
+            padding: 20px 24px;
             border-radius: 15px; 
             display: flex;
             flex-direction: row;
@@ -326,7 +335,7 @@ const FourthContent = styled.div`
         margin: 0 auto;
         padding: 0 50px 80px;
         @media (max-width: 767px) {
-            padding: 20px 0 100px;
+            padding: 46px 0 100px;
         }
     }
     background: rgba(0, 0, 0, 0.05);
@@ -347,6 +356,7 @@ const FourthContent = styled.div`
         font-size: 64px;
         text-align: center;
         color: #111029;
+        padding: 0px 30px 30px;
         @media (max-width: 767px) {
             font-size: 24px;
         }
@@ -364,7 +374,7 @@ const FifthContent = styled.div`
             padding: 0 30px;
         }
     }
-    padding: 100px 0;
+    padding: 10px 0;
     @media (max-width: 767px) {
         padding: 65px 0;
     }
@@ -372,7 +382,7 @@ const FifthContent = styled.div`
         font-size: 64px;
         text-align: center;
         color: #111029; 
-        padding-top: 60px;
+        padding-top: 150px;
         @media (max-width: 767px) {
             font-size: 24px;
             padding-top: 60px;
@@ -391,6 +401,10 @@ const FifthContent = styled.div`
         font-size: 16px;
         text-align: center;
         color: #727272;
+        padding-bottom: 0px;
+        @media (max-width: 767px) {
+            font-size: 12px;
+        }
     }
 `
 const SixthContent = styled.div`
@@ -410,7 +424,7 @@ const SixthContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 50px;
+        padding: 120px 50px 50px 50px;
         @media (max-width: 1200px) {
             padding: 100px 50px;
         }
@@ -430,7 +444,7 @@ const SixthContent = styled.div`
         padding: 20px 100px;
         text-align: center;
         @media (max-width: 767px) {
-            padding: 20px;
+            padding: 20px 30px;
         }
     }
     .ant-card-body{
@@ -445,7 +459,7 @@ const SeventhContent = styled.div`
         margin: 0 auto;
         padding: 150px 50px;
         @media (max-width: 767px) {
-            padding: 20px;
+            padding: 20px 30px;
         }
     }
     h2{
@@ -460,6 +474,9 @@ const SeventhContent = styled.div`
         font-size: 16px;
         text-align: center;
         color: #727272;
+        @media (max-width: 767px) {
+            font-size: 12px;
+        }
     }
     .ant-btn{
         margin: 0 auto;
@@ -484,7 +501,7 @@ const EighthContent = styled.div`
         margin: 50px auto 0;
         padding: 0 50px;
         @media (max-width: 767px) {
-            padding: 100px 20px;
+            padding: 100px 30px;
             margin: 0 auto;
         }
     }
@@ -492,11 +509,11 @@ const EighthContent = styled.div`
         font-size: 64px;
         text-align: center;
         color: #111029; 
-        margin-bottom: 140px;
+        margin-bottom: 160px;
         @media (max-width: 767px) {
             margin-top: 0;
             font-size: 24px;
-            margin-bottom: 60px;
+            margin-bottom: 64px;
         }
     }
     h3{
@@ -527,13 +544,15 @@ const EighthContent = styled.div`
 const NinthContent = styled.div`
     background: url(${Image10}) no-repeat;
     background-position: center top; 
-    background-size: 100%;
-    padding: 100px 0 0; 
+    background-size: cover;
+    background-position-x: 100%;
+    padding: 100px 0 100px; 
     margin-top: 150px;
     @media (max-width: 767px) {
         background: url(${Image10H5}) no-repeat;
         background-size: 100%;
         background-position: center top; 
+        margin-top: 0px;
     }
     &>div{
         max-width: 1200px;
@@ -587,6 +606,43 @@ const NinthContent = styled.div`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+            span{
+                margin-left: 10px;
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+    }
+`
+
+const Footer = styled.div`
+    background: #00113B;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    &>div{
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 48px;
+    }
+    ul{
+        padding-left: 0;
+        margin: 0;
+        height: 48px;
+        dispaly: flex;
+        li{
+            color: #9f9fa9;
+            display: inline-block;
+            width: 20%;
+            text-align: center;
+            line-height: 48px;
+            height: 48px;
+            a{
+                color: #9f9fa9; 
+                display: inline-block;
             }
             span{
                 margin-left: 10px;
@@ -778,7 +834,7 @@ const Home: React.FC = () =>  {
                     <div>
                         <Row>
                             <Col md={18} sm={24}>
-                                <h1>Verse by STP</h1>
+                                <h1>Verse Network by STP</h1>
                                 <p>
                                 A layer2 on Ethereum optimized for DAOs
                                 </p>
@@ -1123,6 +1179,10 @@ const Home: React.FC = () =>  {
                             </p>
                             <Button type="primary"><a href="mailto:contact@stp.network">Contact</a></Button>
                         </div>
+                    </div>
+                </NinthContent>
+                <Footer>
+                    <div>
                         <ul>
                             <li>
                                 <a target="_blank" href="https://t.me/STPofficial"><TelegramLogo/><span>Telegram</span></a>
@@ -1141,7 +1201,7 @@ const Home: React.FC = () =>  {
                             </li>
                         </ul>
                     </div>
-                </NinthContent>
+                </Footer>
             </Content>     
         </Layout>
     )

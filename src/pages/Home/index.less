@@ -238,7 +238,7 @@
         width: 320px;
         height: 240px;
         margin: 60px 20px;
-        padding: 60px 28px 0;
+        padding: 64px 32px 32px;
         background: #fff;
         box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
         border-radius: 40px;
@@ -286,8 +286,11 @@
           margin-top: 20px;
         }
         p{
-          font-size: 14px;
+          font-size: 16px;
           color: #727272;
+          @media (max-width: 767px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -308,7 +311,7 @@
         height: 100%;
         background: #fff;
         box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 40px;
+        border-radius: 24px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -317,7 +320,10 @@
           background: #CEF1FF;
         }
         &>div{
-          padding: 20px;
+          padding: 20px 24px;
+          @media (max-width: 767px) {
+            padding: 20px 16px;
+          }
           &:last-of-type{
             padding-left: 0;
           }
@@ -349,7 +355,7 @@
         li{
           margin: 20px 0;
           color: #111029;
-          font-size: 28px;
+          font-size: 24px;
           height: 90px;
           line-height: 90px;
           @media (max-width: 767px) {
@@ -364,9 +370,12 @@
             display: inline-block;
             background: #FFFFFF;
             border-radius: 15px;
-            padding: 0 40px;
+            padding: 0 64px;
             font-weight: 400;
             box-shadow: 5px 5px 10px #E5E5E5;
+            @media (max-width: 767px) {
+              padding: 0 40px;
+            }
           }
           img{
             width: 40px;
@@ -380,7 +389,7 @@
       grid-template-columns: repeat(4, 1fr);
       align-items: center;
       text-align: center;
-      margin-bottom: 56px;
+      padding-bottom: 40px;
       img{
         width: 182px;
         @media (max-width: 767px) {
@@ -398,6 +407,7 @@
       grid-gap: 30px;
       @media (max-width: 767px) {
         grid-template-columns: 100%;
+        grid-gap: 40px;
       }
     }
     .platforms{
