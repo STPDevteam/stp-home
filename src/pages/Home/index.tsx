@@ -135,6 +135,13 @@ const FirstContent = styled.div`
         display:inline-block;
         margin: 0;
     }
+    .stpt{
+        width: 58px;
+        margin-left: 10px;
+        @media (max-width: 767px) {
+            width: 25px;
+        }
+    }
     .whereBuy{
         display: flex;
         justify-content: space-around;
@@ -146,10 +153,6 @@ const FirstContent = styled.div`
         magrin: 0 auto;
         h3{
             width: 240px;
-        }
-        .stpt{
-            width: 24px;
-            margin-left: 10px;
         }
         @media (max-width: 767px) {
            display: none;
@@ -170,7 +173,7 @@ const SecondContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 180px 500px 150px 50px;
+        padding: 180px 560px 150px 50px;
         @media (max-width: 1100px) {
             padding: 180px 300px 150px 50px;
         }
@@ -204,8 +207,8 @@ const SecondContent = styled.div`
     }
     p{
         color: #727272;
-        font-size: 21px;
-        line-height: 32px;
+        font-size: 16px;
+        line-height: 24px;
         @media (max-width: 767px) {
             font-size: 14px;
             padding-right: 60px;
@@ -214,8 +217,8 @@ const SecondContent = styled.div`
     }
     h2{
         color: #111029;
-        font-size: 64px;
-        line-height: 90px;
+        font-size: 56px;
+        line-height: 70px;
         font-weight: 800;
         @media (max-width: 767px) {
             font-size: 32px;
@@ -241,7 +244,7 @@ const ThirdContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 200px 50px;
+        padding: 160px 50px;
         @media (max-width: 1200px) {
             padding: 100px 50px;
         }
@@ -250,7 +253,7 @@ const ThirdContent = styled.div`
         }
     }
     p{
-        font-size: 24px;
+        font-size: 18px;
         color: #fff;
         margin-bottom: 50px;
         @media (max-width: 767px) {
@@ -258,7 +261,7 @@ const ThirdContent = styled.div`
         }
     }
     h2{
-        font-size: 72px;
+        font-size: 56px;
         color:#fff;
         margin-bottom: 0;
         @media (max-width: 767px) {
@@ -266,8 +269,8 @@ const ThirdContent = styled.div`
         }
     }
     h3{
-        font-size: 21px;
-        line-height: 36px;
+        font-size: 16px;
+        line-height: 24px;
         font-weight: 600;
         color: #fff; 
         margin-top: 0;
@@ -287,14 +290,14 @@ const ThirdContent = styled.div`
         li{
             margin: 20px 0;
             background: #2436D9;
-            padding: 20px 24px;
+            padding: 16px 20px;
             border-radius: 15px; 
             display: flex;
             flex-direction: row;
             align-items: center;
-            height: 114px;
+            height: 80px;
             img{
-                width: 60px;
+                width: 48px;
                 margin-right: 15px;
             }
             box-shadow: 11px 10px 20px rgba(0, 0, 0, 0.6);
@@ -319,7 +322,7 @@ const ThirdContent = styled.div`
             }
         }
         p{
-            font-size: 14px;
+            font-size: 12px;
             margin-bottom: 0;
             @media (max-width: 767px) {
                 font-size: 10px;
@@ -333,7 +336,7 @@ const FourthContent = styled.div`
     &>div{
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 50px 80px;
+        padding: 0 50px 100px;
         @media (max-width: 767px) {
             padding: 46px 0 100px;
         }
@@ -343,17 +346,17 @@ const FourthContent = styled.div`
     background-size: 100%;
        
     h1{
-        font-size: 40px;
+        font-size: 32px;
         color: #25AAE1;
         text-align: center;
-        padding-top: 280px;
+        padding-top: 195px;
         @media (max-width: 767px) {
             font-size: 16px;
             padding-top: 80px;
         }
     }
     h2{
-        font-size: 64px;
+        font-size: 48px;
         text-align: center;
         color: #111029;
         padding: 0px 30px 30px;
@@ -379,7 +382,7 @@ const FifthContent = styled.div`
         padding: 65px 0;
     }
     h2{
-        font-size: 64px;
+        font-size: 48px;
         text-align: center;
         color: #111029; 
         padding-top: 150px;
@@ -389,7 +392,7 @@ const FifthContent = styled.div`
         }
     }
     h3{
-        font-size: 24px;
+        font-size: 20px;
         color: #111029;
         margin-top: 0;
         font-weight: 600;
@@ -401,9 +404,10 @@ const FifthContent = styled.div`
         font-size: 16px;
         text-align: center;
         color: #727272;
-        padding-bottom: 0px;
+        padding: 0px 150px;
         @media (max-width: 767px) {
             font-size: 12px;
+            padding: 0;
         }
     }
 `
@@ -474,7 +478,9 @@ const SeventhContent = styled.div`
         font-size: 16px;
         text-align: center;
         color: #727272;
+        padding: 0px 150px;
         @media (max-width: 767px) {
+            padding: 0;
             font-size: 12px;
         }
     }
@@ -506,13 +512,14 @@ const EighthContent = styled.div`
         }
     }
     h2{
-        font-size: 64px;
+        font-size: 56px;
         text-align: center;
         color: #111029; 
         margin-bottom: 160px;
+        padding-top: 32px;
         @media (max-width: 767px) {
             margin-top: 0;
-            font-size: 24px;
+            font-size: 32px;
             margin-bottom: 64px;
         }
     }
@@ -532,7 +539,7 @@ const EighthContent = styled.div`
         }
     }
     li{
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 400;
         color: #727272;
         @media (max-width: 767px) {
@@ -563,7 +570,7 @@ const NinthContent = styled.div`
         }
     }
     h2{
-        font-size: 64px;
+        font-size: 56px;
         text-align: center;
         color: #111029; 
         @media (max-width: 767px) {
@@ -713,13 +720,13 @@ const Home: React.FC = () =>  {
     const stpMenu = (
         <Menu>
             <Menu.Item>
-            <a rel="noopener noreferrer" href="#DAO">
-                STP DAO
+            <a rel="noopener noreferrer" href="#About">
+                About
             </a>
             </Menu.Item>
             <Menu.Item>
-            <a rel="noopener noreferrer" href="#$STPT">
-                $STPT
+            <a rel="noopener noreferrer" href="#Features">
+                Features
             </a>
             </Menu.Item>
       </Menu>
@@ -798,19 +805,15 @@ const Home: React.FC = () =>  {
                             <a className="active" href="/">Home</a>
                             <Dropdown overlay={stpMenu} trigger={['click']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                STP <Arrow />
+                                Verse <Arrow/>
                                 </a>
                             </Dropdown>
-                            <Dropdown overlay={productsMenu} trigger={['click', 'hover']}>
-                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                Products <Arrow />
-                                </a>
-                            </Dropdown>
-                            <Dropdown overlay={ecosystemMenu} trigger={['click', 'hover']}>
-                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                                STP Ecosystem <Arrow />
-                                </a>
-                            </Dropdown>
+                            <a className="ant-dropdown-link" href="#Products">
+                            Products 
+                            </a>
+                            <a className="ant-dropdown-link" href="#Ecosystem">
+                            Partnerships
+                            </a>
                             <Dropdown overlay={resourcesMenu} trigger={['click', 'hover']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                                 Resources <Arrow />
@@ -834,7 +837,7 @@ const Home: React.FC = () =>  {
                     <div>
                         <Row>
                             <Col md={18} sm={24}>
-                                <h1>Verse Network by STP</h1>
+                                <h1>Verse Network by <img className="stpt" src={STPT}/></h1>
                                 <p>
                                 A layer2 on Ethereum optimized for DAOs
                                 </p>
@@ -914,7 +917,7 @@ const Home: React.FC = () =>  {
                             </div>
                         </div>
                     </div> */}
-                    <div id="DAO">
+                    <div id="About">
                         <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer2 blockchain designed for DAOs. 
                             <br/>
                             <br/>
@@ -925,8 +928,8 @@ const Home: React.FC = () =>  {
                     </div>
                 </SecondContent> 
                 <ThirdContent>
-                    <div id="STPChain">
-                        <h2 id="Experience" className="defiTitle">STP Verse</h2>
+                    <div id="Features">
+                        <h2 id="Experience" className="defiTitle">Verse</h2>
                         <p>A Layer2 blockchain optimized for all DAOs</p>
                         <ul>
                             <li>
@@ -967,9 +970,9 @@ const Home: React.FC = () =>  {
                         </ul>
                     </div>
                 </ThirdContent>
-                <FourthContent id="$STPT">
+                <FourthContent id="Products">
                     <div>
-                        <h1>STP Verse</h1>
+                        <h1>Verse</h1>
                         <h2>Powering The DAO Ecosystem</h2>
                         <div className="web system">
                             <div className="item">
@@ -992,7 +995,7 @@ const Home: React.FC = () =>  {
                             <div className="item">
                                 <div className="green"><img src={System4} alt="" /></div>
                                 <h3>Tuning Key Parameters</h3>
-                                <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
+                                <p className="parameters">Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                             </div>
                             <div className="item">
                                 <div className="blue"><img src={System5} alt="" /></div>
