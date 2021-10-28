@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import { Anchor, Layout, Row, Col, Button, Select, Carousel, Menu, Dropdown } from 'antd';
+import { Anchor, Layout, Row, Col, Button, Carousel, Menu, Dropdown } from 'antd';
 import { CSSTransition } from "react-transition-group";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
@@ -404,7 +404,7 @@ const FifthContent = styled.div`
         font-size: 16px;
         text-align: center;
         color: #727272;
-        padding: 0px 150px;
+        padding: 0px 50px;
         @media (max-width: 767px) {
             font-size: 12px;
             padding: 0;
@@ -478,7 +478,7 @@ const SeventhContent = styled.div`
         font-size: 16px;
         text-align: center;
         color: #727272;
-        padding: 0px 150px;
+        padding: 0px 50px;
         @media (max-width: 767px) {
             padding: 0;
             font-size: 12px;
@@ -674,13 +674,7 @@ const Home: React.FC = () =>  {
     //     }
     // }, [])
 
-    const goTo = (index: number) => {
-        if(carouselRef.current){
-            carouselRef.current.goTo(index);
-        }
-    }
-
-    const scrollHeader = () => {
+    const scrollTop = () => {
         if (!document.querySelector('.ant-layout-header')) {
             return;
         }
@@ -720,12 +714,10 @@ const Home: React.FC = () =>  {
     const stpMenu = (
         <Menu>
             <Menu.Item>
-            <a rel="noopener noreferrer" href="#About">
-                About
-            </a>
+                <a href="#About">About</a>
             </Menu.Item>
             <Menu.Item>
-            <a rel="noopener noreferrer" href="#Features">
+            <a href="#Features">
                 Features
             </a>
             </Menu.Item>
@@ -735,12 +727,12 @@ const Home: React.FC = () =>  {
     const productsMenu = (
         <Menu>
             <Menu.Item>
-                <a rel="noopener noreferrer" href="#STPChain">
+                <a href="#STPChain">
                     STP Chain
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a rel="noopener noreferrer" href="#Tools">
+                <a href="#Tools">
                     Tools
                 </a>
             </Menu.Item>
@@ -749,12 +741,12 @@ const Home: React.FC = () =>  {
     const ecosystemMenu = (
         <Menu>
             <Menu.Item>
-                <a rel="noopener noreferrer" href="#Ecosystem">
+                <a href="#Ecosystem">
                     Ecosystem Projects
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a rel="noopener noreferrer" href="#Strategic">
+                <a href="#Strategic">
                     Strategic Partners
                 </a>
             </Menu.Item>
@@ -763,17 +755,17 @@ const Home: React.FC = () =>  {
     const resourcesMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="/STP-2.0-Updated-WP.pdf">
+                <a target="_blank" href="/STP-2.0-Updated-WP.pdf">
                     Whitepaper
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a rel="noopener noreferrer" href="#Roadmap">
+                <a href="#Roadmap">
                 Roadmap
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="">
+                <a target="_blank" href="">
                     Build with STP
                 </a>
             </Menu.Item>
