@@ -765,7 +765,7 @@ const Home: React.FC = () =>  {
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a target="_blank" href="">
+                <a href="mailto:contact@stp.network">
                     Build with STP
                 </a>
             </Menu.Item>
@@ -1121,7 +1121,7 @@ const Home: React.FC = () =>  {
                         <p>
                         More Coming Soon
                         </p>
-                        <Button type="primary"><a href="https://betapro.rai.finance" target="_blank">Build with STP</a></Button>
+                        <Button type="primary"><a href="mailto:contact@stp.network">Build with STP</a></Button>
                     </div>
                 </SeventhContent>
                 <EighthContent>
