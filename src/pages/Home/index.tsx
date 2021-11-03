@@ -108,7 +108,7 @@ const FirstContent = styled.div`
     p{
         color: #25AAE1;
         width: 100%;
-        font-size: 24px;
+        font-size: 22px;
         @media (max-width: 767px) {
             font-size: 21px;
             line-height: 30px;
@@ -136,10 +136,10 @@ const FirstContent = styled.div`
         margin: 0;
     }
     .stpt{
-        width: 58px;
+        width: 190px;
         margin-left: 10px;
         @media (max-width: 767px) {
-            width: 25px;
+            width: 100px;
         }
     }
     .whereBuy{
@@ -829,7 +829,7 @@ const Home: React.FC = () =>  {
                     <div>
                         <Row>
                             <Col md={18} sm={24}>
-                                <h1>Verse Network by <img className="stpt" src={STPT}/></h1>
+                                <h1>Verse Network by <img className="stpt" src={Logo}/></h1>
                                 <p>
                                 A layer2 on Ethereum optimized for DAOs
                                 </p>
