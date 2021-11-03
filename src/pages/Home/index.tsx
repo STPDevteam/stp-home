@@ -77,6 +77,7 @@ const FirstContent = styled.div`
     margin-top: 100px;
     height: calc(100vh - 100px);
     @media (max-width: 767px) {
+        margin-top: 64px;
         background: url(${Image1H5}) no-repeat;
         background-position: center bottom;
         background-size: cover;
