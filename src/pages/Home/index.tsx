@@ -436,7 +436,7 @@ const SixthContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 120px 50px 50px 50px;
+        padding: 180px 50px 50px 50px;
         @media (max-width: 1200px) {
             padding: 100px 50px;
         }
