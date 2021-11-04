@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
-import { Anchor, Layout, Row, Col, Button, Carousel, Menu, Dropdown } from 'antd';
+import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel } from 'antd';
 import { CSSTransition } from "react-transition-group";
+import Slider from "react-slick";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
 import Logo from '../../assets/images/logo.png'
@@ -30,6 +31,10 @@ import Tools1 from '../../assets/images/home/tools1.png'
 import Tools2 from '../../assets/images/home/tools2.png'
 import Tools3 from '../../assets/images/home/tools3.png'
 import Tools4 from '../../assets/images/home/tools4.png'
+import Dao1 from '../../assets/images/home/dao1.jpg'
+import Dao2 from '../../assets/images/home/dao2.jpg'
+import Dao3 from '../../assets/images/home/dao3.jpg'
+import Dao4 from '../../assets/images/home/dao4.jpg'
 import Structure1 from '../../assets/images/home/structure1.jpg'
 import Structure2 from '../../assets/images/home/structure2.jpg'
 import Structure3 from '../../assets/images/home/structure3.jpg'
@@ -57,6 +62,8 @@ import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Teleg
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
 import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
 import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
+import {ReactComponent as ArrowLeft} from '../../assets/images/home/svg/arrow-left.svg'
+import {ReactComponent as ArrowRight} from '../../assets/images/home/svg/arrow-right.svg'
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
@@ -378,9 +385,9 @@ const FifthContent = styled.div`
             padding: 0 30px;
         }
     }
-    padding: 10px 0;
+    padding: 10px 0 200px;
     @media (max-width: 767px) {
-        padding: 65px 0;
+        padding: 65px 0 250px;
     }
     h2{
         font-size: 48px;
@@ -668,12 +675,31 @@ const Home: React.FC = () =>  {
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const carouselRef = useRef<any>()
-    // useEffect(() => {
-    //     window.addEventListener('scroll', scrollHeader, false);
-    //     return () => {
-    //         window.removeEventListener('scroll', scrollHeader, false);
-    //     }
-    // }, [])
+
+    const getCustomPaging = (i: number) => {
+        switch (i) {
+            case 1: 
+                return <><div><img src={Tools1}/></div><div> Clique</div></>
+            case 2: 
+                return <><div><img src={Tools2}/></div><div> Framework</div></>
+            case 3: 
+                return <><div><img src={Tools3}/></div><div> DAO Scan Tool</div></>
+            case 4: 
+                return <><div><img src={Tools4}/></div><div> DAO MarketCap Tool</div></>
+        }
+    }
+
+    const settings = {
+        customPaging: function(i: number) { return <a>{getCustomPaging(i+1)}</a> },
+        dots: true,
+        dotsClass: "slick-dots slick-thumb",
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <ArrowRight/>,
+        prevArrow: <ArrowLeft/>,
+      };
 
     const scrollTop = () => {
         if (!document.querySelector('.ant-layout-header')) {
@@ -997,7 +1023,7 @@ const Home: React.FC = () =>  {
                             </div>
                         </div>
                         <div className="h5 system">
-                            <Carousel autoplay ref={carouselRef as any}>
+                            <Carousel ref={carouselRef as any}>
                                 <div className="item">
                                     <div className="green"><img src={System1} alt="" /></div>
                                     <h3>Governance</h3>
@@ -1032,42 +1058,62 @@ const Home: React.FC = () =>  {
                         <h2>Tools and Infrastructure</h2>
                         <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
                         <div className="tools">
-                            <div className="item">
+                            <Slider {...settings}>
+                                <div className="item">
+                                    <div>
+                                        <img src={Dao1} alt="" />
+                                    </div>
+                                    <div>
+                                        <h3>Clique</h3>
+                                        <p>An aggregated dashboard to  browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on STP Verse</p>
+                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
+                                    </div>
+                                </div>
+                                <div className="item">
+                                    <div>
+                                        <img src={Dao2} alt="" />
+                                    </div>
+                                    <div>
+                                        <h3>Framework</h3>
+                                        <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
+                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
+                                    </div>
+                                </div>
+                                <div className="item">
+                                    <div>
+                                        <img src={Dao3} alt="" />
+                                    </div>
+                                    <div>
+                                        <h3>DAO Scan Tool</h3>
+                                        <p>Track all DAO transaction history and onchain data on STP Verse</p>
+                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
+                                    </div>
+                                </div>
+                                <div className="item">
+                                    <div>
+                                        <img src={Dao4} alt="" />
+                                    </div>
+                                    <div>
+                                        <h3>DAO MarketCap Tool</h3>
+                                        <p>A DAO ranking and data analysis platform for the STP ecosystem</p>
+                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
+                                    </div>
+                                </div>
+                            </Slider>
+                            {/* <div className="control">
                                 <div>
-                                    <img src={Tools1} alt="" />
+                                    <ArrowLeft/>
                                 </div>
                                 <div>
-                                    <h3>Clique</h3>
-                                    <p>An aggregated dashboard to  browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on STP Verse</p>
+                                    <ArrowRight/>
                                 </div>
-                            </div>
-                            <div className="item">
-                                <div>
-                                    <img src={Tools2} alt="" />
-                                </div>
-                                <div>
-                                    <h3>Framework</h3>
-                                    <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div>
-                                    <img src={Tools3} alt="" />
-                                </div>
-                                <div>
-                                    <h3>DAO Scan Tool</h3>
-                                    <p>Track all DAO transaction history and onchain data on STP Verse</p>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div>
-                                    <img src={Tools4} alt="" />
-                                </div>
-                                <div>
-                                    <h3>DAO MarketCap Tool</h3>
-                                    <p>A DAO ranking and data analysis platform for the STP ecosystem</p>
-                                </div>
-                            </div>
+                            </div> */}
+                            {/* <div className="dots">
+                                <div><img src={Tools1} alt="" />Clique</div>
+                                <div><img src={Tools2} alt="" />Framework</div>
+                                <div><img src={Tools3} alt="" />DAO Scan Tool</div>
+                                <div><img src={Tools4} alt="" />DAO MaketCap Tool</div>
+                            </div> */}
                         </div>
                     </div>
                 </FifthContent>
