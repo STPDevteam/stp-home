@@ -1048,7 +1048,7 @@ const Home: React.FC = () =>  {
                 <FifthContent id="Tools">
                     <div>
                         <h2>Tools and Infrastructure</h2>
-                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
+                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
                         <div className="tools">
                             <Slider {...settings}>
                                 <div className="item">
@@ -1066,7 +1066,7 @@ const Home: React.FC = () =>  {
                                     </div>
                                     <div>
                                         <h3>Framework</h3>
-                                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations..</p>
+                                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
                                     </div>
                                 </div>
                                 <div className="item">
