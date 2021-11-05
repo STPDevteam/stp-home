@@ -229,7 +229,7 @@ const SecondContent = styled.div`
         line-height: 70px;
         font-weight: 800;
         @media (max-width: 767px) {
-            font-size: 32px;
+            font-size: 24px;
             line-height: 40px;
         }
     }
@@ -273,7 +273,7 @@ const ThirdContent = styled.div`
         color:#fff;
         margin-bottom: 0;
         @media (max-width: 767px) {
-            font-size: 32px;
+            font-size: 24px;
         }
     }
     h3{
@@ -519,7 +519,7 @@ const EighthContent = styled.div`
         padding-top: 32px;
         @media (max-width: 767px) {
             margin-top: 0;
-            font-size: 32px;
+            font-size: 24px;
             margin-bottom: 64px;
         }
     }
@@ -574,7 +574,7 @@ const NinthContent = styled.div`
         text-align: center;
         color: #111029; 
         @media (max-width: 767px) {
-            font-size: 32px;
+            font-size: 24px;
             text-align: left;
         }
     }
