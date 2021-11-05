@@ -118,7 +118,7 @@ const FirstContent = styled.div`
         width: 100%;
         font-size: 16px;
         @media (max-width: 767px) {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 30px;
         }
         margin-bottom: 40px;
@@ -420,9 +420,9 @@ const SixthContent = styled.div`
     background-size: 80%;
     background-position: center right;
     @media (max-width: 767px) {
-        padding-bottom: 460px;
+        padding-bottom: 350px;
         background: url(${Image6H5}) no-repeat;
-        background-position: 100% 150px;
+        background-position: 100% 300px;
         background-size: 80%;
     }
     &>div{
@@ -1192,8 +1192,8 @@ const Home: React.FC = () =>  {
                             <div>
                                 <h3>2022 Q3 and Further</h3>
                                 <ul>
-                                    <li>Launch STP Verse Mainnet</li>
-                                    <li>Continue to expand ecosystem and onboard developer tools of STP Verse</li>
+                                    <li>Launch Verse Mainnet</li>
+                                    <li>Continue to expand ecosystem and onboard developer tools of Verse</li>
                                 </ul>
                             </div>
                         </div>
