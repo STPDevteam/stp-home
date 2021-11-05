@@ -31,10 +31,10 @@ import Tools1 from '../../assets/images/home/tools1.png'
 import Tools2 from '../../assets/images/home/tools2.png'
 import Tools3 from '../../assets/images/home/tools3.png'
 import Tools4 from '../../assets/images/home/tools4.png'
-import Dao1 from '../../assets/images/home/dao1.jpg'
-import Dao2 from '../../assets/images/home/dao2.jpg'
-import Dao3 from '../../assets/images/home/dao3.jpg'
-import Dao4 from '../../assets/images/home/dao4.jpg'
+import Dao1 from '../../assets/images/home/dao1.png'
+import Dao2 from '../../assets/images/home/dao2.png'
+import Dao3 from '../../assets/images/home/dao3.png'
+import Dao4 from '../../assets/images/home/dao4.png'
 import Structure1 from '../../assets/images/home/structure1.jpg'
 import Structure2 from '../../assets/images/home/structure2.jpg'
 import Structure3 from '../../assets/images/home/structure3.jpg'
@@ -116,18 +116,18 @@ const FirstContent = styled.div`
     p{
         color: #25AAE1;
         width: 100%;
-        font-size: 22px;
+        font-size: 16px;
         @media (max-width: 767px) {
-            font-size: 21px;
+            font-size: 16px;
             line-height: 30px;
         }
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
     h1{
         margin-top: 180px;
         margin-bottom: 32px;
         margin-right: 260px;
-        font-size: 72px;
+        font-size: 56px;
         line-height: 80px;
         font-weight: 600;
         @media (max-width: 767px) {
@@ -144,7 +144,7 @@ const FirstContent = styled.div`
         margin: 0;
     }
     .stpt{
-        width: 190px;
+        width: 150px;
         margin-left: 10px;
         @media (max-width: 767px) {
             width: 100px;
@@ -181,7 +181,7 @@ const SecondContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 180px 560px 150px 50px;
+        padding: 180px 600px 150px 50px;
         @media (max-width: 1100px) {
             padding: 180px 300px 150px 50px;
         }
@@ -225,7 +225,7 @@ const SecondContent = styled.div`
     }
     h2{
         color: #111029;
-        font-size: 56px;
+        font-size: 48px;
         line-height: 70px;
         font-weight: 800;
         @media (max-width: 767px) {
@@ -269,7 +269,7 @@ const ThirdContent = styled.div`
         }
     }
     h2{
-        font-size: 56px;
+        font-size: 48px;
         color:#fff;
         margin-bottom: 0;
         @media (max-width: 767px) {
@@ -353,23 +353,15 @@ const FourthContent = styled.div`
     background: url(${Image4}) no-repeat, radial-gradient(75.22% 75.22% at 20.49% 12.79%, #FFFFFF 0%, rgba(228, 231, 233, 0.502295) 100%);;
     background-size: 100%;
        
-    h1{
-        font-size: 32px;
-        color: #25AAE1;
-        text-align: center;
-        padding-top: 195px;
-        @media (max-width: 767px) {
-            font-size: 16px;
-            padding-top: 80px;
-        }
-    }
     h2{
         font-size: 48px;
         text-align: center;
         color: #111029;
         padding: 0px 30px 30px;
+        padding-top: 195px;
         @media (max-width: 767px) {
             font-size: 24px;
+            padding-top: 80px;
         }
     }
     h3{
@@ -380,14 +372,14 @@ const FifthContent = styled.div`
     &>div{
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 50px;
+        padding: 0 120px;
         @media (max-width: 767px) {
             padding: 0 30px;
         }
     }
     padding: 10px 0 200px;
     @media (max-width: 767px) {
-        padding: 65px 0 250px;
+        padding: 65px 0 100px;
     }
     h2{
         font-size: 48px;
@@ -445,7 +437,7 @@ const SixthContent = styled.div`
         }
     }
     h2{
-        font-size: 64px;
+        font-size: 48px;
         text-align: center;
         color: #111029; 
         @media (max-width: 767px) {
@@ -475,7 +467,7 @@ const SeventhContent = styled.div`
         }
     }
     h2{
-        font-size: 64px;
+        font-size: 48px;
         text-align: center;
         color: #111029; 
         @media (max-width: 767px) {
@@ -520,7 +512,7 @@ const EighthContent = styled.div`
         }
     }
     h2{
-        font-size: 56px;
+        font-size: 48px;
         text-align: center;
         color: #111029; 
         margin-bottom: 160px;
@@ -578,7 +570,7 @@ const NinthContent = styled.div`
         }
     }
     h2{
-        font-size: 56px;
+        font-size: 48px;
         text-align: center;
         color: #111029; 
         @media (max-width: 767px) {
@@ -697,8 +689,8 @@ const Home: React.FC = () =>  {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <ArrowRight/>,
-        prevArrow: <ArrowLeft/>,
+        nextArrow: <></>,
+        prevArrow: <></>,
       };
 
     const scrollTop = () => {
@@ -805,6 +797,11 @@ const Home: React.FC = () =>  {
                     STP News
                 </a>
             </Menu.Item>
+            <Menu.Item>
+                <a target="_blank" rel="noopener noreferrer" href="https://stp-network.gitbook.io">
+                    Wiki
+                </a>
+            </Menu.Item>
         </Menu>
     )
 
@@ -856,7 +853,7 @@ const Home: React.FC = () =>  {
                     <div>
                         <Row>
                             <Col md={18} sm={24}>
-                                <h1>Verse Network by <img className="stpt" src={Logo}/></h1>
+                                <h1>Verse Network <br/> by <img className="stpt" src={Logo}/></h1>
                                 <p>
                                 A layer2 on Ethereum optimized for DAOs
                                 </p>
@@ -979,19 +976,11 @@ const Home: React.FC = () =>  {
                                     <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
                                 </div>
                             </li>
-                            <li>
-                                <div><img src={SmartChain5} alt="" /></div>
-                                <div>
-                                    <h3>Off-chain Verifiable Proofs</h3>
-                                    <p>Allows for weighted off-chain voting census trustlessly determined by on-chain token proofs</p>
-                                </div>  
-                            </li>
                         </ul>
                     </div>
                 </ThirdContent>
                 <FourthContent id="Products">
                     <div>
-                        <h1>Verse</h1>
                         <h2>Powering The DAO Ecosystem</h2>
                         <div className="web system">
                             <div className="item">
@@ -1056,7 +1045,7 @@ const Home: React.FC = () =>  {
                 <FifthContent id="Tools">
                     <div>
                         <h2>Tools and Infrastructure</h2>
-                        <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
+                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
                         <div className="tools">
                             <Slider {...settings}>
                                 <div className="item">
@@ -1066,7 +1055,6 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Clique</h3>
                                         <p>An aggregated dashboard to  browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on STP Verse</p>
-                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1076,7 +1064,6 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Framework</h3>
                                         <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
-                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1086,7 +1073,6 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>DAO Scan Tool</h3>
                                         <p>Track all DAO transaction history and onchain data on STP Verse</p>
-                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1096,7 +1082,6 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>DAO MarketCap Tool</h3>
                                         <p>A DAO ranking and data analysis platform for the STP ecosystem</p>
-                                        <Button type="primary"><a target="_blank" href="https://app.stp.network">Go</a></Button>
                                     </div>
                                 </div>
                             </Slider>
