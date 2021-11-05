@@ -218,7 +218,7 @@ const SecondContent = styled.div`
         font-size: 16px;
         line-height: 24px;
         @media (max-width: 767px) {
-            font-size: 14px;
+            font-size: 12px;
             padding-right: 60px;
             line-height: 20px;
         }
@@ -265,7 +265,7 @@ const ThirdContent = styled.div`
         color: #fff;
         margin-bottom: 50px;
         @media (max-width: 767px) {
-            font-size: 16px;
+            font-size: 14px;
         }
     }
     h2{
@@ -420,9 +420,9 @@ const SixthContent = styled.div`
     background-size: 80%;
     background-position: center right;
     @media (max-width: 767px) {
-        padding-bottom: 350px;
+        padding-bottom: 300px;
         background: url(${Image6H5}) no-repeat;
-        background-position: 100% 300px;
+        background-position: 100% 210px;
         background-size: 80%;
     }
     &>div{
