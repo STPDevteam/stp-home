@@ -687,8 +687,11 @@ const Home: React.FC = () =>  {
         dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
+        autoplay: true,
+        autoplaySpeed: 4000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        cssEase: "linear",
         nextArrow: <></>,
         prevArrow: <></>,
       };
@@ -830,12 +833,12 @@ const Home: React.FC = () =>  {
                             <a className="ant-dropdown-link" href="#Ecosystem">
                             Partnerships
                             </a>
-                            <Dropdown overlay={resourcesMenu} trigger={['click', 'hover']}>
+                            <Dropdown overlay={resourcesMenu} trigger={['click']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                                 Resources <Arrow />
                                 </a>
                             </Dropdown>
-                            <Dropdown overlay={learnMenu} trigger={['click', 'hover']}>
+                            <Dropdown overlay={learnMenu} trigger={['click']}>
                                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                                 Learn <Arrow />
                                 </a>
@@ -946,7 +949,7 @@ const Home: React.FC = () =>  {
                 <ThirdContent>
                     <div id="Features">
                         <h2 id="Experience" className="defiTitle">Verse</h2>
-                        <p>A Layer2 blockchain optimized for all DAOs</p>
+                        <p>A Layer2 blockchain optimized for smarter DAO solution</p>
                         <ul>
                             <li>
                                 <div><img src={SmartChain1} alt="" /></div>
@@ -958,14 +961,14 @@ const Home: React.FC = () =>  {
                             <li>
                                 <div><img src={SmartChain2} alt="" /></div>
                                 <div>
-                                    <h3>Developer Friendly</h3>
-                                    <p>Build various Dapps and customized DAOs using developer tool (support EVM)</p>
+                                    <h3>Multi Chain Compatibility</h3>
+                                    <p>Build various Dapps and customized DAOs using developer tool (support EVM, WESM, MOVE)</p>
                                 </div>
                             </li>
                             <li>
                                 <div><img src={SmartChain3} alt="" /></div>
                                 <div>
-                                    <h3>Data Traceability and Transparancy</h3>
+                                    <h3>Data Traceability and Transparency</h3>
                                     <p>Record on-chain governance activities and bring off-chain social participation data on-chain from native forums and popular social mediums</p>
                                 </div>
                             </li>
@@ -1008,7 +1011,7 @@ const Home: React.FC = () =>  {
                             <div className="item">
                                 <div className="blue"><img src={System5} alt="" /></div>
                                 <h3>USTP</h3>
-                                <p>A native stablecoin on STP Verse based on STPT staking</p>
+                                <p>A native stablecoin on Verse  based on STPT staking</p>
                             </div>
                         </div>
                         <div className="h5 system">
@@ -1036,7 +1039,7 @@ const Home: React.FC = () =>  {
                                 <div className="item">
                                     <div className="blue"><img src={System5} alt="" /></div>
                                     <h3>USTP</h3>
-                                    <p>A native stablecoin on STP Smart Chain based on STPT staking</p>
+                                    <p>A native stablecoin on Verse  based on STPT staking</p>
                                 </div>
                             </Carousel>
                         </div>
@@ -1054,7 +1057,7 @@ const Home: React.FC = () =>  {
                                     </div>
                                     <div>
                                         <h3>Clique</h3>
-                                        <p>An aggregated dashboard to  browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on STP Verse</p>
+                                        <p>An aggregated dashboard to browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on Verse</p>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1063,7 +1066,7 @@ const Home: React.FC = () =>  {
                                     </div>
                                     <div>
                                         <h3>Framework</h3>
-                                        <p>A full suite of native tools and infrastructure built on STP Verse facilitates efficient decentralized decision-making for users, communities and organizations.</p>
+                                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations..</p>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1072,7 +1075,7 @@ const Home: React.FC = () =>  {
                                     </div>
                                     <div>
                                         <h3>DAO Scan Tool</h3>
-                                        <p>Track all DAO transaction history and onchain data on STP Verse</p>
+                                        <p>Track all DAO transaction history and onchain data globally</p>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1081,7 +1084,7 @@ const Home: React.FC = () =>  {
                                     </div>
                                     <div>
                                         <h3>DAO MarketCap Tool</h3>
-                                        <p>A DAO ranking and data analysis platform for the STP ecosystem</p>
+                                        <p>A global DAO ranking and data analysis platform</p>
                                     </div>
                                 </div>
                             </Slider>
@@ -1142,8 +1145,7 @@ const Home: React.FC = () =>  {
                     <div>
                         <h2>Ecosystem Projects</h2>
                         <p>
-                        STP DAO aspires to be an all-encompassing platform for any organization to decentralize decision-making effectively and developers to launch decentralized applications. Organizations leverage our powerful solutions and templates to best tailor its governance structure with their specific industry use-cases and decision styles.
-                        </p>
+                        Verse aspires to be an all-encompassing platform for any organization to decentralize decision-making effectively and developers to launch decentralized applications. Organizations leverage our powerful solutions and templates to best tailor its governance structure with their specific industry use-cases and decision styles.                        </p>
                         <div className="projects">
                             <div><img src={Projects1} alt="" /></div>
                             <div><img src={Projects2} alt="" /></div>
@@ -1163,11 +1165,11 @@ const Home: React.FC = () =>  {
                             <div>
                                 <h3>2021 Q4</h3>
                                 <ul>
-                                    <li>Launch STP Verse Testnet</li>
+                                    <li>Launch Verse Testnet</li>
                                     <li>DAO Builder V1.0 - with basic DAO templates</li>
-                                    <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
-                                    <li>DAO Scan - Track transaction history and real-time chain info of STP Verse</li>
-                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering STP DAO Verse</li>
+                                    <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management </li>
+                                    <li>DAO Scan - Track transaction history and real-time chain info of Verse</li>
+                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering Verse</li>
                                 </ul>
                             </div>
                             <div>
@@ -1175,7 +1177,7 @@ const Home: React.FC = () =>  {
                                 <ul>
                                     <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
                                     <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
-                                    <li>Cross-chain bridge - enhance interoperability between STP Verse and mainstream public chains</li>
+                                    <li>Cross-chain bridge - enhance interoperability between Verse and mainstream public chains</li>
                                     <li>Smart DAO Builder V2.0 - More DAO solutions for off-chain organizations</li>
                                 </ul>
                             </div>
@@ -1183,8 +1185,8 @@ const Home: React.FC = () =>  {
                                 <h3>2022 Q2</h3>
                                 <ul>
                                     <li>Smart DAO Builder V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
-                                    <li>Testing Dapp Developer Kit on STP Verse</li>
-                                    <li>Launch DAO Infrastructures for STP Verse</li>
+                                    <li>Testing Dapp Developer Kit on Verse</li>
+                                    <li>Launch DAO Infrastructures for Verse</li>
                                 </ul>
                             </div>
                             <div>
@@ -1200,9 +1202,9 @@ const Home: React.FC = () =>  {
                 <NinthContent>
                     <div>
                         <div className="integrate">
-                            <h2>Want to Integrate with STP</h2>
+                            <h2>Want to Collaborate with Verse?</h2>
                             <p>
-                            Explore partnership and integration possibility of your project with STP.
+                            Explore partnership and integration possibilities for your project with Verse.
                             </p>
                             <Button type="primary"><a href="mailto:contact@stp.network">Contact</a></Button>
                         </div>
