@@ -124,7 +124,7 @@ const FirstContent = styled.div`
         margin-bottom: 40px;
     }
     h1{
-        margin-top: 180px;
+        margin-top: 120px;
         margin-bottom: 32px;
         margin-right: 260px;
         font-size: 56px;
