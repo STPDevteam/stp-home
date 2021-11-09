@@ -762,11 +762,11 @@ const Home: React.FC = () =>  {
     )
     const ecosystemMenu = (
         <Menu>
-            <Menu.Item>
+            {/* <Menu.Item>
                 <a href="#Ecosystem">
                     Ecosystem Projects
                 </a>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item>
                 <a href="#Strategic">
                     Strategic Partners
@@ -858,7 +858,7 @@ const Home: React.FC = () =>  {
                             <Col md={18} sm={24}>
                                 <h1>Verse Network <br/> by <img className="stpt" src={Logo}/></h1>
                                 <p>
-                                A layer2 on Ethereum optimized for DAOs
+                                A layer 2 blockchain optimized for DAOs
                                 </p>
                                 <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
                             </Col>
@@ -937,7 +937,7 @@ const Home: React.FC = () =>  {
                         </div>
                     </div> */}
                     <div id="About">
-                        <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer2 blockchain designed for DAOs. 
+                        <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer 2 blockchain designed for DAOs. 
                             <br/>
                             <br/>
                             We exist to evangelize the DAO concept for optimizing the efficiency and unlocking value of networks, communities and organizations.
@@ -1141,7 +1141,7 @@ const Home: React.FC = () =>  {
                         </ul>
                     </div>
                 </SixthContent>
-                <SeventhContent id="Ecosystem">
+                {/* <SeventhContent id="Ecosystem">
                     <div>
                         <h2>Ecosystem Projects</h2>
                         <p>
@@ -1157,7 +1157,7 @@ const Home: React.FC = () =>  {
                         </p>
                         <Button type="primary"><a href="mailto:contact@stp.network">Build with STP</a></Button>
                     </div>
-                </SeventhContent>
+                </SeventhContent> */}
                 <EighthContent>
                     <div id="Roadmap">
                         <h2>Roadmap</h2>
@@ -1166,8 +1166,8 @@ const Home: React.FC = () =>  {
                                 <h3>2021 Q4</h3>
                                 <ul>
                                     <li>Launch Verse Testnet</li>
-                                    <li>DAO Builder V1.0 - with basic DAO templates</li>
-                                    <li>DAO Aggregator V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management </li>
+                                    <li>Framework V1.0 - with basic DAO templates</li>
+                                    <li>Clique V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management </li>
                                     <li>DAO Scan - Track transaction history and real-time chain info of Verse</li>
                                     <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering Verse</li>
                                 </ul>
@@ -1178,13 +1178,13 @@ const Home: React.FC = () =>  {
                                     <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
                                     <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
                                     <li>Cross-chain bridge - enhance interoperability between Verse and mainstream public chains</li>
-                                    <li>Smart DAO Builder V2.0 - More DAO solutions for off-chain organizations</li>
+                                    <li>Framework V2.0 - More DAO solutions for off-chain organizations</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3>2022 Q2</h3>
                                 <ul>
-                                    <li>Smart DAO Builder V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
+                                    <li>Framework V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
                                     <li>Testing Dapp Developer Kit on Verse</li>
                                     <li>Launch DAO Infrastructures for Verse</li>
                                 </ul>
