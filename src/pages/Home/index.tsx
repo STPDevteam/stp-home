@@ -666,8 +666,81 @@ const Home: React.FC = () =>  {
 
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [visibleSection, setVisibleSection] = useState('Home');
     const carouselRef = useRef<any>()
 
+    const headerRef = useRef(null);
+    const homeRef = useRef(null);
+    const verseRef = useRef(null);
+    const productsRef = useRef(null);
+    const partnershipsRef = useRef(null);
+    const resourcesRef = useRef(null);
+    const learnRef = useRef(null);
+  
+    const sectionRefs = [
+      { section: "Home", ref: homeRef },
+      { section: "Verse", ref: verseRef },
+      { section: "Products", ref: productsRef },
+      { section: "Partnerships", ref: partnershipsRef },
+      { section: "Resources", ref: resourcesRef },
+      { section: "Learn", ref: learnRef },
+    ];
+    const getDimensions = (ele: any) => {
+        if(!ele){
+            return {}
+        }
+        const { height } = ele.getBoundingClientRect();
+        const offsetTop = ele.offsetTop;
+        const offsetBottom = offsetTop + height;
+      
+        return {
+          height,
+          offsetTop,
+          offsetBottom,
+        };
+      };
+      
+    const scrollTo = (ele: any) => {
+        if(!ele){
+            return
+        }
+        ele.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
+    
+    useEffect(() => {
+        const handleScroll = () => {
+            if(!headerRef && !sectionRefs){
+                return;
+            }
+            const { height: headerHeight } = getDimensions(headerRef.current);
+            const scrollPosition = window.scrollY + headerHeight;
+
+            const selected: any = sectionRefs.find(({ section, ref }) => {
+                const ele = ref.current;
+                if (ele) {
+                    const { offsetBottom, offsetTop } = getDimensions(ele);
+                    return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+                }
+            });
+
+            if (selected && selected.section !== visibleSection) {
+                setVisibleSection(selected.section);
+            } else if (!selected && visibleSection) {
+                setVisibleSection('');
+            }
+        };
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [visibleSection]);
+
+    
     const getCustomPaging = (i: number) => {
         switch (i) {
             case 1: 
@@ -696,21 +769,6 @@ const Home: React.FC = () =>  {
         prevArrow: <></>,
       };
 
-    const scrollTop = () => {
-        if (!document.querySelector('.ant-layout-header')) {
-            return;
-        }
-
-        var scrollTop = document.documentElement.scrollTop;
-        if (scrollTop >= 60) {
-            //@ts-ignore
-            document.querySelector('.ant-layout-header').style.background = '#fff';
-        } else {
-            //@ts-ignore
-            document.querySelector('.ant-layout-header').style.background = 'transparent';
-        }
-    }
-  
     useEffect(() => {
       const mediaQuery = window.matchMedia("(max-width: 767px)");
       mediaQuery.addListener(handleMediaQueryChange);
@@ -808,11 +866,10 @@ const Home: React.FC = () =>  {
         </Menu>
     )
 
-
     return (
         <Layout className="homePage">
             <Header>
-                <HeaderContent className="header">
+                <HeaderContent className="header" ref={headerRef}>
                     <img className="Logo" src={Logo} alt="logo" />
                     <CSSTransition
                         in={!isSmallScreen || isNavVisible}
@@ -821,25 +878,37 @@ const Home: React.FC = () =>  {
                         unmountOnExit
                     >
                         <nav className="Nav">
-                            <a className="active" href="/">Home</a>
+                            <a className={`${visibleSection === "Home" ? "active" : ""}`} 
+                                onClick={() => {
+                                    scrollTo(homeRef.current);
+                                }}>Home</a>
                             <Dropdown overlay={stpMenu} trigger={['click']}>
-                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                <a className={`${visibleSection === "Verse" ? "active" : ""}`}   
+                                onClick={() => {
+                                    scrollTo(verseRef.current);
+                                }}>
                                 Verse <Arrow/>
                                 </a>
                             </Dropdown>
-                            <a className="ant-dropdown-link" href="#Products">
+                            <a className={`${visibleSection === "Products" ? "active" : ""}`}    
+                                onClick={() => {
+                                    scrollTo(productsRef.current);
+                                }}>
                             Products 
                             </a>
                             <a className="ant-dropdown-link" href="#Ecosystem">
                             Partnerships
                             </a>
                             <Dropdown overlay={resourcesMenu} trigger={['click']}>
-                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                <a className={`${visibleSection === "Resources" ? "active" : ""}`} 
+                                onClick={() => {
+                                    scrollTo(resourcesRef.current);
+                                }}>
                                 Resources <Arrow />
                                 </a>
                             </Dropdown>
                             <Dropdown overlay={learnMenu} trigger={['click']}>
-                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                <a onClick={e => e.preventDefault()}>
                                 Learn <Arrow />
                                 </a>
                             </Dropdown>
@@ -852,7 +921,7 @@ const Home: React.FC = () =>  {
                 </HeaderContent>
             </Header>
             <Content>
-                <FirstContent>
+                <FirstContent className="section" id="Home" ref={homeRef}>
                     <div>
                         <Row>
                             <Col md={18} sm={24}>
@@ -900,89 +969,91 @@ const Home: React.FC = () =>  {
                         </div> */}
                     </div>
                 </FirstContent>
-                <SecondContent>
-                    {/* <div className="whereBuy">
-                        <h3>Where you can buy STPT?<img className="stpt" src={STPT}/></h3>
-                        <div className="platforms">
-                            <div>
-                                <img src={Platform1} alt="" />
+                <div className="section" id="Verse" ref={verseRef}>
+                    <SecondContent>
+                        {/* <div className="whereBuy">
+                            <h3>Where you can buy STPT?<img className="stpt" src={STPT}/></h3>
+                            <div className="platforms">
+                                <div>
+                                    <img src={Platform1} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform2} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform3} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform4} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform5} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform6} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform7} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform8} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform9} alt="" />
+                                </div>
+                                <div>
+                                    <img src={Platform10} alt="" />
+                                </div>
                             </div>
-                            <div>
-                                <img src={Platform2} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform3} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform4} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform5} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform6} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform7} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform8} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform9} alt="" />
-                            </div>
-                            <div>
-                                <img src={Platform10} alt="" />
-                            </div>
+                        </div> */}
+                        <div id="About">
+                            <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer 2 blockchain designed for DAOs. 
+                                <br/>
+                                <br/>
+                                We exist to evangelize the DAO concept for optimizing the efficiency and unlocking value of networks, communities and organizations.
+                            </p>
+                            <hr />
+                            <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
                         </div>
-                    </div> */}
-                    <div id="About">
-                        <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer 2 blockchain designed for DAOs. 
-                            <br/>
-                            <br/>
-                            We exist to evangelize the DAO concept for optimizing the efficiency and unlocking value of networks, communities and organizations.
-                        </p>
-                        <hr />
-                        <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
-                    </div>
-                </SecondContent> 
-                <ThirdContent>
-                    <div id="Features">
-                        <h2 id="Experience" className="defiTitle">Verse</h2>
-                        <p>A Layer2 blockchain optimized for smarter DAO solution</p>
-                        <ul>
-                            <li>
-                                <div><img src={SmartChain1} alt="" /></div>
-                                <div>
-                                    <h3>Low cost</h3>
-                                    <p>Less governance cost compared to DAOs on ETH enabling our ecosystem to track more valuable data</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div><img src={SmartChain2} alt="" /></div>
-                                <div>
-                                    <h3>Multi Chain Compatibility</h3>
-                                    <p>Build various Dapps and customized DAOs using developer tool (support EVM, WESM, MOVE)</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div><img src={SmartChain3} alt="" /></div>
-                                <div>
-                                    <h3>Data Traceability and Transparency</h3>
-                                    <p>Record on-chain governance activities and bring off-chain social participation data on-chain from native forums and popular social mediums</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div><img src={SmartChain4} alt="" /></div>
-                                <div>
-                                    <h3>Cross DAO Interoperability</h3>
-                                    <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </ThirdContent>
-                <FourthContent id="Products">
+                    </SecondContent> 
+                    <ThirdContent>
+                        <div id="Features">
+                            <h2 id="Experience" className="defiTitle">Verse</h2>
+                            <p>A Layer2 blockchain optimized for smarter DAO solution</p>
+                            <ul>
+                                <li>
+                                    <div><img src={SmartChain1} alt="" /></div>
+                                    <div>
+                                        <h3>Low cost</h3>
+                                        <p>Less governance cost compared to DAOs on ETH enabling our ecosystem to track more valuable data</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><img src={SmartChain2} alt="" /></div>
+                                    <div>
+                                        <h3>Multi Chain Compatibility</h3>
+                                        <p>Build various Dapps and customized DAOs using developer tool (support EVM, WESM, MOVE)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><img src={SmartChain3} alt="" /></div>
+                                    <div>
+                                        <h3>Data Traceability and Transparency</h3>
+                                        <p>Record on-chain governance activities and bring off-chain social participation data on-chain from native forums and popular social mediums</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><img src={SmartChain4} alt="" /></div>
+                                    <div>
+                                        <h3>Cross DAO Interoperability</h3>
+                                        <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </ThirdContent>
+                </div>
+                <FourthContent>
                     <div>
                         <h2>Powering The DAO Ecosystem</h2>
                         <div className="web system">
@@ -1045,7 +1116,7 @@ const Home: React.FC = () =>  {
                         </div>
                     </div>
                 </FourthContent>
-                <FifthContent id="Tools">
+                <FifthContent className="section" id="Products" ref={productsRef}>
                     <div>
                         <h2>Tools and Infrastructure</h2>
                         <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
@@ -1158,7 +1229,7 @@ const Home: React.FC = () =>  {
                         <Button type="primary"><a href="mailto:contact@stp.network">Build with STP</a></Button>
                     </div>
                 </SeventhContent> */}
-                <EighthContent>
+                <EighthContent className="section" id="Resources" ref={resourcesRef}>
                     <div id="Roadmap">
                         <h2>Roadmap</h2>
                         <div className="roadmap">
