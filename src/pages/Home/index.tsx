@@ -896,9 +896,6 @@ const Home: React.FC = () =>  {
                                 }}>
                             Products 
                             </a>
-                            <a className="ant-dropdown-link" href="#Ecosystem">
-                            Partnerships
-                            </a>
                             <Dropdown overlay={resourcesMenu} trigger={['click']}>
                                 <a className={`${visibleSection === "Resources" ? "active" : ""}`} 
                                 onClick={() => {
@@ -1019,7 +1016,7 @@ const Home: React.FC = () =>  {
                     <ThirdContent>
                         <div id="Features">
                             <h2 id="Experience" className="defiTitle">Verse</h2>
-                            <p>A Layer2 blockchain optimized for smarter DAO solution</p>
+                            <p>A layer 2 blockchain optimized for DAOs</p>
                             <ul>
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
