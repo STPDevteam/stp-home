@@ -1173,7 +1173,7 @@ const Home: React.FC = () =>  {
                         </div>
                     </div>
                 </FifthContent>
-                <SixthContent>
+                {/* <SixthContent>
                     <div className="tools2">
                         <ul>
                             <li>
@@ -1208,7 +1208,7 @@ const Home: React.FC = () =>  {
                             </li>
                         </ul>
                     </div>
-                </SixthContent>
+                </SixthContent> */}
                 {/* <SeventhContent id="Ecosystem">
                     <div>
                         <h2>Ecosystem Projects</h2>
