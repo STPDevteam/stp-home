@@ -261,7 +261,7 @@ const ThirdContent = styled.div`
         }
     }
     p{
-        font-size: 18px;
+        font-size: 16px;
         color: #fff;
         margin-bottom: 50px;
         @media (max-width: 767px) {
@@ -1016,7 +1016,7 @@ const Home: React.FC = () =>  {
                     <ThirdContent>
                         <div id="Features">
                             <h2 id="Experience" className="defiTitle">Verse</h2>
-                            <p>A layer 2 blockchain optimized for DAOs</p>
+                            <p>A censorship resistant, front running resistant high performance interconnected cloud for next gen DAO and DeFi.</p>
                             <ul>
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
