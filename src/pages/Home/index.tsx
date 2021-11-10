@@ -215,8 +215,8 @@ const SecondContent = styled.div`
     }
     p{
         color: #727272;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 28px;
         @media (max-width: 767px) {
             font-size: 12px;
             padding-right: 60px;
@@ -261,11 +261,9 @@ const ThirdContent = styled.div`
         }
     }
     p{
-        font-size: 16px;
+        font-size: 18px;
         color: #fff;
         margin-bottom: 50px;
-        width: 630px;
-        line-height: 1.2;
         @media (max-width: 767px) {
             font-size: 14px;
             width: 100%;
@@ -1008,10 +1006,8 @@ const Home: React.FC = () =>  {
                             </div>
                         </div> */}
                         <div id="About">
-                            <p>Our vision is to shift the paradigm of how people interact by creating an optimized Layer 2 blockchain designed for DAOs. 
-                                <br/>
-                                <br/>
-                                We exist to evangelize the DAO concept for optimizing the efficiency and unlocking value of networks, communities and organizations.
+                            <p>
+                            Verse is a censorship resistant, front running resistant, high performance interconnected cloud for next gen DAO and DeFi.
                             </p>
                             <hr />
                             <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
@@ -1020,7 +1016,7 @@ const Home: React.FC = () =>  {
                     <ThirdContent>
                         <div id="Features">
                             <h2 id="Experience" className="defiTitle">Verse</h2>
-                            <p>A censorship resistant, front running resistant, high performance interconnected cloud for next gen DAO and DeFi.</p>
+                            <p>A layer 2 blockchain optimized for DAOs</p>
                             <ul>
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
