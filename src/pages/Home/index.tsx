@@ -264,8 +264,11 @@ const ThirdContent = styled.div`
         font-size: 16px;
         color: #fff;
         margin-bottom: 50px;
+        width: 630px;
+        line-height: 1.2;
         @media (max-width: 767px) {
             font-size: 14px;
+            width: 100%;
         }
     }
     h2{
@@ -332,6 +335,7 @@ const ThirdContent = styled.div`
         p{
             font-size: 12px;
             margin-bottom: 0;
+            width: 100%;
             @media (max-width: 767px) {
                 font-size: 10px;
                 line-height: 15px;
