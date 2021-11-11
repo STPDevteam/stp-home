@@ -181,7 +181,7 @@ const SecondContent = styled.div`
     &>div{
         margin: 0 auto;
         max-width: 1200px;
-        padding: 180px 600px 150px 50px;
+        padding: 180px 640px 150px 50px;
         @media (max-width: 1100px) {
             padding: 180px 300px 150px 50px;
         }
@@ -215,8 +215,8 @@ const SecondContent = styled.div`
     }
     p{
         color: #727272;
-        font-size: 20px;
-        line-height: 28px;
+        font-size: 18px;
+        line-height: 24px;
         @media (max-width: 767px) {
             font-size: 12px;
             padding-right: 60px;
@@ -236,7 +236,10 @@ const SecondContent = styled.div`
     hr{
         border-top: 1px solid #ECECEC;
         border-bottom: none;
-        margin: 64px 0;
+        margin: 64px 0; 
+        @media (max-width: 767px) {
+            margin: 48px 80px 48px 0px;
+        }
     }
 `
 
@@ -265,7 +268,8 @@ const ThirdContent = styled.div`
         color: #fff;
         margin-bottom: 50px;
         @media (max-width: 767px) {
-            font-size: 14px;
+            margin-bottom: 30px;
+            font-size: 12px;
             width: 100%;
         }
     }
@@ -278,14 +282,14 @@ const ThirdContent = styled.div`
         }
     }
     h3{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 20px;
         font-weight: 600;
         color: #fff; 
         margin-top: 0;
         margin-bottom: 0px;
         @media (max-width: 767px) {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.2;
             margin-bottom: 5px;
         }
@@ -300,7 +304,7 @@ const ThirdContent = styled.div`
             margin: 20px 0;
             background: #2436D9;
             padding: 16px 20px;
-            border-radius: 15px; 
+            border-radius: 16px; 
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -327,7 +331,7 @@ const ThirdContent = styled.div`
             }
             @media (max-width: 767px) {
                 width: 100%!important;
-                height: 137px;
+                height: 120px;
             }
         }
         p{
@@ -336,7 +340,7 @@ const ThirdContent = styled.div`
             width: 100%;
             @media (max-width: 767px) {
                 font-size: 10px;
-                line-height: 15px;
+                line-height: 14px;
             }
         }
     }
@@ -348,7 +352,7 @@ const FourthContent = styled.div`
         margin: 0 auto;
         padding: 0 50px 100px;
         @media (max-width: 767px) {
-            padding: 46px 0 100px;
+            padding: 30px 0 80px;
         }
     }
     background: rgba(0, 0, 0, 0.05);
@@ -364,6 +368,7 @@ const FourthContent = styled.div`
         @media (max-width: 767px) {
             font-size: 24px;
             padding-top: 80px;
+            padding-bottom: 10px;
         }
     }
     h3{
@@ -407,6 +412,7 @@ const FifthContent = styled.div`
         text-align: center;
         color: #727272;
         padding: 0px 50px;
+        line-height: 20px;
         @media (max-width: 767px) {
             font-size: 12px;
             padding: 0;
@@ -526,7 +532,7 @@ const EighthContent = styled.div`
         }
     }
     h3{
-        font-size: 18px;
+        font-size: 16px;
         color: #151517;
         margin-top: 0;
         font-weight: 600;
@@ -586,7 +592,7 @@ const NinthContent = styled.div`
         color: #727272;
         margin-bottom: 40px;
         @media (max-width: 767px) {
-            font-size: 14px;
+            font-size: 12px;
             text-align: left;
         }
     }
