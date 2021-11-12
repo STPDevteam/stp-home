@@ -1253,6 +1253,7 @@ const Home: React.FC = () =>  {
                                     <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
                                     <li>Cross-chain bridge - enhance interoperability between Verse and mainstream public chains</li>
                                     <li>Framework V2.0 - More DAO solutions for off-chain organizations</li>
+                                    <li>Launch Verse Mainnet</li>
                                 </ul>
                             </div>
                             <div>
@@ -1266,7 +1267,6 @@ const Home: React.FC = () =>  {
                             <div>
                                 <h3>2022 Q3 and Further</h3>
                                 <ul>
-                                    <li>Launch Verse Mainnet</li>
                                     <li>Continue to expand ecosystem and onboard developer tools of Verse</li>
                                 </ul>
                             </div>
