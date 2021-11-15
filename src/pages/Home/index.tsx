@@ -917,7 +917,7 @@ const Home: React.FC = () =>  {
                                 Learn <Arrow />
                                 </a>
                             </Dropdown>
-                            <Button type="primary"><a target="_blank" href="https://app.stp.network">APP</a></Button>
+                            {/* <Button type="primary"><a target="_blank" href="https://app.stp.network">APP</a></Button> */}
                         </nav>
                     </CSSTransition>
                     <button onClick={toggleNav} className="Burger">
@@ -934,7 +934,7 @@ const Home: React.FC = () =>  {
                                 <p>
                                 A Layer 2 Sidechain Optimized for DAOs
                                 </p>
-                                <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
+                                {/* <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button> */}
                             </Col>
                         </Row>
                         {/* <div className="whereBuy">
