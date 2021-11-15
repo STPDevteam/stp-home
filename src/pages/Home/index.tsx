@@ -932,7 +932,7 @@ const Home: React.FC = () =>  {
                             <Col md={18} sm={24}>
                                 <h1>Verse Network <br/> by <img className="stpt" src={Logo}/></h1>
                                 <p>
-                                A Layer Sidechain Optimized for DAOs
+                                A Layer 2 Sidechain Optimized for DAOs
                                 </p>
                                 <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button>
                             </Col>
@@ -1022,7 +1022,7 @@ const Home: React.FC = () =>  {
                     <ThirdContent>
                         <div id="Features">
                             <h2 id="Experience" className="defiTitle">Verse</h2>
-                            <p>A Layer Sidechain Optimized for DAOs</p>
+                            <p>A Layer 2 Sidechain Optimized for DAOs</p>
                             <ul>
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
