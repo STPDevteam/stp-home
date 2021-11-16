@@ -17,6 +17,32 @@
     color: #999FAE;
   }       
 }
+.comingModal{
+  .ant-modal-content{
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    box-shadow: -5px -5px 10px rgba(229, 229, 229, 0.25), 5px 5px 10px rgba(229, 229, 229, 0.25);
+    border-radius: 20px;
+    img{
+      width: 108px;
+      margin: 0 auto;
+      display: block;
+    }
+    p{
+      color: #0B1CB5;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .ant-btn{
+      margin: 0 auto;
+      display: block;
+      border-radius: 15px;
+      width: 160px;
+      height: 48px;
+    }
+  }
+}
 .homePage{
   width: 100%;
   overflow: hidden;
@@ -43,7 +69,7 @@
       .Nav {
           display: grid;
           grid-area: nav;
-          grid-template-columns: repeat(5, auto);
+          grid-template-columns: repeat(6, auto);
           align-items: center;
           justify-items: center;
           margin-right: -18px;
@@ -128,7 +154,7 @@
         
         @media (max-width: 767px) {
           .Nav {
-              grid-template-rows: repeat(7, auto);
+              grid-template-rows: repeat(6, auto);
               grid-template-columns: none;
               grid-row-gap: 10px;
               padding: 0;

@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel } from 'antd';
+import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } from 'antd';
 import { CSSTransition } from "react-transition-group";
 import Slider from "react-slick";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
@@ -35,6 +35,7 @@ import Dao1 from '../../assets/images/home/dao1.png'
 import Dao2 from '../../assets/images/home/dao2.png'
 import Dao3 from '../../assets/images/home/dao3.png'
 import Dao4 from '../../assets/images/home/dao4.png'
+import Cube from '../../assets/images/home/cube.png'
 import Structure1 from '../../assets/images/home/structure1.jpg'
 import Structure2 from '../../assets/images/home/structure2.jpg'
 import Structure3 from '../../assets/images/home/structure3.jpg'
@@ -684,6 +685,21 @@ const Home: React.FC = () =>  {
     const partnershipsRef = useRef(null);
     const resourcesRef = useRef(null);
     const learnRef = useRef(null);
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+      setIsModalVisible(true);
+    };
+  
+    const handleOk = () => {
+      setIsModalVisible(false);
+    };
+  
+    const handleCancel = () => {
+      setIsModalVisible(false);
+    };
+  
   
     const sectionRefs = [
       { section: "Home", ref: homeRef },
@@ -876,6 +892,11 @@ const Home: React.FC = () =>  {
 
     return (
         <Layout className="homePage">
+            <Modal className="comingModal" visible={isModalVisible} footer={null} closable={false} width={320} centered>
+                <img src={Cube} alt="" />
+                <p>Coming Soon...</p>
+            <Button type="primary" onClick={handleCancel}>Close</Button>
+            </Modal>
             <Header>
                 <HeaderContent className="header" ref={headerRef}>
                     <img className="Logo" src={Logo} alt="logo" />
@@ -917,7 +938,7 @@ const Home: React.FC = () =>  {
                                 Learn <Arrow />
                                 </a>
                             </Dropdown>
-                            {/* <Button type="primary"><a target="_blank" href="https://app.stp.network">APP</a></Button> */}
+                            <Button type="primary" onClick={showModal}>APP</Button>
                         </nav>
                     </CSSTransition>
                     <button onClick={toggleNav} className="Burger">
@@ -934,7 +955,7 @@ const Home: React.FC = () =>  {
                                 <p>
                                 A Layer 2 Sidechain Optimized for DAOs
                                 </p>
-                                {/* <Button type="primary"><a href="https://app.stp.network" target="_blank">Launch APPs</a></Button> */}
+                                <Button type="primary" onClick={showModal}>Launch APPs</Button>
                             </Col>
                         </Row>
                         {/* <div className="whereBuy">
