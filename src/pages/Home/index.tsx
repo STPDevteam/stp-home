@@ -859,11 +859,6 @@ const Home: React.FC = () =>  {
     const resourcesMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" href="/STP-2.0-Updated-WP.pdf">
-                    Whitepaper
-                </a>
-            </Menu.Item>
-            <Menu.Item>
                 <a href="#Roadmap">
                 Roadmap
                 </a>
