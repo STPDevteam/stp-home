@@ -873,7 +873,7 @@ const Home: React.FC = () =>  {
     const learnMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="https://standardtokenizationprotocol.medium.com/">
+                <a target="_blank" rel="noopener noreferrer" href="https://medium.com/@versenetwork">
                     STP News
                 </a>
             </Menu.Item>
@@ -1257,19 +1257,16 @@ const Home: React.FC = () =>  {
                                 <ul>
                                     <li>Launch Verse Testnet</li>
                                     <li>Framework V1.0 - with basic DAO templates</li>
-                                    <li>Clique V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management </li>
-                                    <li>DAO Scan - Track transaction history and real-time chain info of Verse</li>
-                                    <li>Announce new STPT Token economy - a dual token ecosystem with STPT and USTP powering Verse</li>
+                                    <li>Clique V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3>2022 Q1</h3>
                                 <ul>
-                                    <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
-                                    <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
+                                    <li>Launch Verse Mainnet</li>
                                     <li>Cross-chain bridge - enhance interoperability between Verse and mainstream public chains</li>
                                     <li>Framework V2.0 - More DAO solutions for off-chain organizations</li>
-                                    <li>Launch Verse Mainnet</li>
+                                    <li>DAO Scan - Track transaction history and real-time chain info of Verse</li>
                                 </ul>
                             </div>
                             <div>
@@ -1278,12 +1275,14 @@ const Home: React.FC = () =>  {
                                     <li>Framework V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
                                     <li>Testing Dapp Developer Kit on Verse</li>
                                     <li>Launch DAO Infrastructures for Verse</li>
+                                    <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3>2022 Q3 and Further</h3>
                                 <ul>
                                     <li>Continue to expand ecosystem and onboard developer tools of Verse</li>
+                                    <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
                                 </ul>
                             </div>
                         </div>
