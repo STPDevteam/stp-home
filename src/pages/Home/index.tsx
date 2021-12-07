@@ -757,7 +757,6 @@ const Home: React.FC = () =>  {
             }
         };
 
-        handleScroll();
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
