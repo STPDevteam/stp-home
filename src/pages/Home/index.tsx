@@ -1309,7 +1309,7 @@ const Home: React.FC = () =>  {
                                 <a target="_blank" href="https://twitter.com/STP_Networks"><TwitterLogo/><span>Twitter</span></a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://standardtokenizationprotocol.medium.com"><MediumLogo/><span>Medium</span></a>
+                                <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>
                             </li>
                             <li>
                                 <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
