@@ -1043,14 +1043,14 @@ const Home: React.FC = () =>  {
                                     <div><img src={SmartChain1} alt="" /></div>
                                     <div>
                                         <h3>Low cost</h3>
-                                        <p>Less governance cost compared to DAOs on ETH enabling our ecosystem to track more valuable data</p>
+                                        <p>Verse will allow DAOs to expand their activities beyond voting while incentivizing participation and engagement at low cost</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div><img src={SmartChain2} alt="" /></div>
                                     <div>
                                         <h3>Multi Chain Compatibility</h3>
-                                        <p>Build various Dapps and customized DAOs using developer tool (support EVM, WESM, MOVE)</p>
+                                        <p>The Meter SDK is backward compatible with EVM and Ethereum RPC and will support containerized VMs like MOVE and WASM on the same consensus and network layers</p>
                                     </div>
                                 </li>
                                 <li>
