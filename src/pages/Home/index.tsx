@@ -57,6 +57,10 @@ import Platform9 from '../../assets/images/home/platform9.png'
 import Platform10 from '../../assets/images/home/platform10.png'
 import WechatQR from '../../assets/images/home/QR.jpeg'
 import STPT from '../../assets/images/home/STPT.png'
+import {ReactComponent as Infrastructure1} from '../../assets/images/home/svg/infrastructure1.svg'
+import {ReactComponent as Infrastructure2} from '../../assets/images/home/svg/infrastructure2.svg'
+import {ReactComponent as Infrastructure3} from '../../assets/images/home/svg/infrastructure3.svg'
+import {ReactComponent as Infrastructure4} from '../../assets/images/home/svg/infrastructure4.svg'
 import {ReactComponent as TwitterLogo} from '../../assets/images/home/svg/Twitter.svg'
 import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.svg'
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
@@ -1070,6 +1074,57 @@ const Home: React.FC = () =>  {
                             </ul>
                         </div>
                     </ThirdContent>
+                </div>
+                <div className="infrastructure">
+                    <h2>
+                    Verse Infrastructure
+                    </h2>
+                    <div className="list">
+                        <div>
+                            <div><Infrastructure1/></div>
+                            <div>
+                                <h3>
+                                Application Layer 
+                                </h3>
+                                <p>
+                                Smart Contracts, DAPPs, User Interface
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div><Infrastructure2/></div>
+                            <div>
+                                <h3>
+                                Execution Layer 
+                                </h3>
+                                <p>
+                                Supporting multiple VMs (EVM, WASM, MOVE) inside separate containers 
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div><Infrastructure3/></div>
+                            <div>
+                                <h3>
+                                Network Layer 
+                                </h3>
+                                <p>
+                                1,000s of Full Node Operation with low hardware specifications 
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div><Infrastructure4/></div>
+                            <div>
+                                <h3>
+                                Consensus Layer
+                                </h3>
+                                <p>
+                                Scale to 1,000s of validators without effect on performance
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <FourthContent>
                     <div>
