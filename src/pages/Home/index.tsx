@@ -862,6 +862,11 @@ const Home: React.FC = () =>  {
     const resourcesMenu = (
         <Menu>
             <Menu.Item>
+                <a target="_blank" href="/Verse Network White Paper.pdf">
+                Whitepaper
+                </a>
+            </Menu.Item>
+            <Menu.Item>
                 <a href="#Roadmap">
                 Roadmap
                 </a>
