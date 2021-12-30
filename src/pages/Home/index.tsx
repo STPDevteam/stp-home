@@ -681,6 +681,7 @@ const Home: React.FC = () =>  {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [visibleSection, setVisibleSection] = useState('Home');
     const [infrastructureActive, setInfrastructureActive] = useState(false);
+    const [elementHeight, setElementHeight] = useState(568);
     const carouselRef = useRef<any>()
 
     const headerRef = useRef(null);
@@ -798,15 +799,18 @@ const Home: React.FC = () =>  {
       };
 
     useEffect(() => {
-      const mediaQuery = window.matchMedia("(max-width: 767px)");
-      mediaQuery.addListener(handleMediaQueryChange);
-      handleMediaQueryChange(mediaQuery);
-      window.addEventListener("scroll", reveal);
-
-      return () => {
-        mediaQuery.removeListener(handleMediaQueryChange);
-        window.removeEventListener("scroll", reveal);
-      };
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
+        mediaQuery.addListener(handleMediaQueryChange);
+        handleMediaQueryChange(mediaQuery);
+        window.addEventListener("scroll", reveal);
+        const revealElement = document.getElementById("infrastructure-list");
+        if(revealElement){
+            setElementHeight(revealElement.getBoundingClientRect().height)
+        }  
+        return () => {
+            mediaQuery.removeListener(handleMediaQueryChange);
+            window.removeEventListener("scroll", reveal);
+        };
     }, []);
   
     const handleMediaQueryChange = (mediaQuery: any) => {
@@ -826,11 +830,8 @@ const Home: React.FC = () =>  {
         if(revealElement){
             const windowHeight = window.innerHeight;
             const elementTop = revealElement.getBoundingClientRect().top;
-            console.log('elementTop:', elementTop)
-            console.log('windowHeight:', windowHeight)
-            const elementVisible = 500;
         
-            if (elementTop < windowHeight - elementVisible) {
+            if (elementTop < windowHeight - (elementHeight + 50)) {
                 setInfrastructureActive(true)
             } else {
                 setInfrastructureActive(false)
