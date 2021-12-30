@@ -680,6 +680,7 @@ const Home: React.FC = () =>  {
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [visibleSection, setVisibleSection] = useState('Home');
+    const [infrastructureActive, setInfrastructureActive] = useState(false);
     const carouselRef = useRef<any>()
 
     const headerRef = useRef(null);
@@ -800,9 +801,11 @@ const Home: React.FC = () =>  {
       const mediaQuery = window.matchMedia("(max-width: 767px)");
       mediaQuery.addListener(handleMediaQueryChange);
       handleMediaQueryChange(mediaQuery);
-  
+      window.addEventListener("scroll", reveal);
+
       return () => {
         mediaQuery.removeListener(handleMediaQueryChange);
+        window.removeEventListener("scroll", reveal);
       };
     }, []);
   
@@ -818,6 +821,23 @@ const Home: React.FC = () =>  {
       setNavVisibility(!isNavVisible);
     };
 
+    const reveal = () => {
+        const revealElement = document.getElementById("infrastructure-list");
+        if(revealElement){
+            const windowHeight = window.innerHeight;
+            const elementTop = revealElement.getBoundingClientRect().top;
+            console.log('elementTop:', elementTop)
+            console.log('windowHeight:', windowHeight)
+            const elementVisible = 500;
+        
+            if (elementTop < windowHeight - elementVisible) {
+                setInfrastructureActive(true)
+            } else {
+                setInfrastructureActive(false)
+            }
+        } 
+    }
+      
     const stpMenu = (
         <Menu>
             <Menu.Item>
@@ -1084,16 +1104,24 @@ const Home: React.FC = () =>  {
                     <h2>
                     Verse Infrastructure
                     </h2>
-                    <div className="list">
+                    <div id="infrastructure-list" className={`list ${infrastructureActive ? 'active' : ''}`}>
                         <div>
                             <div><Infrastructure1/></div>
                             <div>
                                 <h3>
                                 Application Layer 
                                 </h3>
-                                <p>
-                                Smart Contracts, DAPPs, User Interface
-                                </p>
+                                {infrastructureActive ? 
+                                    <ul>
+                                        <li>Ethereum Emulation – EVM & RPC emulation mode</li>
+                                        <li>Cross-chain Interoperability</li>
+                                        <li>DAPP Deployment – Low and stable Gas Costs</li>
+                                    </ul> :
+                                    <p>
+                                    Smart Contracts, DAPPs, User Interface
+                                    </p>
+                                }
+                                <hr />
                             </div>
                         </div>
                         <div>
@@ -1102,9 +1130,17 @@ const Home: React.FC = () =>  {
                                 <h3>
                                 Execution Layer 
                                 </h3>
-                                <p>
-                                Supporting multiple VMs (EVM, WASM, MOVE) inside separate containers 
-                                </p>
+                                {infrastructureActive ? 
+                                    <ul>
+                                        <li>High Throughput (~1500 TPS per EVM chain) </li>
+                                        <li>Front Running Resistant</li>
+                                        <li>Low Gas Fees (~5 to 50 Cents)</li>
+                                    </ul> :
+                                    <p>
+                                    Supporting multiple VMs (EVM, WASM, MOVE) inside separate containers 
+                                    </p>
+                                }
+                                <hr />
                             </div>
                         </div>
                         <div>
@@ -1113,9 +1149,19 @@ const Home: React.FC = () =>  {
                                 <h3>
                                 Network Layer 
                                 </h3>
-                                <p>
-                                1,000s of Full Node Operation with low hardware specifications 
-                                </p>
+                                {infrastructureActive ? 
+                                    <ul>
+                                        <li>O(log(n)) network communication overhead BLS and layered gossip network design </li>
+                                        <li>Scale to 1,000s of Validators – None to minimal effect of network performance </li>
+                                        <li>Potential of further scaling through Sharding</li>
+                                        <li>Potential of Shared hub with Parallel/shared chains with Instant Finality </li>
+                                        <li>Low Hardware Specifications</li>
+                                    </ul> :
+                                    <p>
+                                    1,000s of Full Node Operation with low hardware specifications 
+                                    </p>
+                                }
+                                <hr />
                             </div>
                         </div>
                         <div>
@@ -1124,9 +1170,18 @@ const Home: React.FC = () =>  {
                                 <h3>
                                 Consensus Layer
                                 </h3>
-                                <p>
-                                Scale to 1,000s of validators without effect on performance
-                                </p>
+                                {infrastructureActive ? 
+                                    <ul>
+                                        <li>Scale to 1,000s of Validators – None to minimal effect of network performance </li>
+                                        <li>High Sybil Resistance – 67% </li>
+                                        <li>Instant deterministic Finality – 2.4 Sec or lower</li>
+                                        <li>Best performance for totally order linear blockchains</li>
+                                    </ul> :
+                                    <p>
+                                    Scale to 1,000s of validators without effect on performance
+                                    </p>
+                                }
+                                <hr />
                             </div>
                         </div>
                     </div>
