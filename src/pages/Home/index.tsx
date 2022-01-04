@@ -1153,7 +1153,6 @@ const Home: React.FC = () =>  {
                                 {infrastructureActive ? 
                                     <ul>
                                         <li>O(log(n)) network communication overhead BLS and layered gossip network design </li>
-                                        <li>Scale to 1,000s of Validators – None to minimal effect of network performance </li>
                                         <li>Potential of further scaling through Sharding</li>
                                         <li>Potential of Shared hub with Parallel/shared chains with Instant Finality </li>
                                         <li>Low Hardware Specifications</li>
