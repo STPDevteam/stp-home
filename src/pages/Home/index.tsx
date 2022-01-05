@@ -66,6 +66,7 @@ import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
 import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
+import {ReactComponent as Discord} from '../../assets/images/home/svg/discord.svg'
 import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
 import {ReactComponent as ArrowLeft} from '../../assets/images/home/svg/arrow-left.svg'
 import {ReactComponent as ArrowRight} from '../../assets/images/home/svg/arrow-right.svg'
@@ -652,11 +653,11 @@ const Footer = styled.div`
         padding-left: 0;
         margin: 0;
         height: 48px;
-        dispaly: flex;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
         li{
             color: #9f9fa9;
             display: inline-block;
-            width: 20%;
             text-align: center;
             line-height: 48px;
             height: 48px;
@@ -1424,6 +1425,9 @@ const Home: React.FC = () =>  {
                             </li>
                             <li>
                                 <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://discord.gg/H23QnaMRTT"><Discord/><span>Discord</span></a>
                             </li>
                             <li>
                                 <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
