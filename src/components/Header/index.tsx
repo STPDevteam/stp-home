@@ -104,6 +104,12 @@ const Header: React.FC = () =>  {
             window.removeEventListener("scroll", reveal);
         };
     }, []);
+
+    useEffect(() => {
+        if(open){
+            toggle(false)
+        }
+    },[location.pathname])
   
     const handleMediaQueryChange = (mediaQuery: any) => {
       if (mediaQuery.matches) {
