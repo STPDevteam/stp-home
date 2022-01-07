@@ -224,7 +224,7 @@ const Header: React.FC = () =>  {
                             Resources <Arrow />
                             </a>
                         </Dropdown>
-                        <Link to="/news">News</Link>
+                        <a href="https://medium.com/@versenetwork" target="_blank">News</a>
                         <Button type="primary" onClick={showModal}>APP</Button>
                     </nav>
                 </CSSTransition>
