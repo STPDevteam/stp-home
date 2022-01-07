@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } from 'antd';
-import { CSSTransition } from "react-transition-group";
+import { useHistory } from "react-router";
 import Slider from "react-slick";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
@@ -615,6 +615,7 @@ const Home: React.FC = () =>  {
     const [infrastructureActive, setInfrastructureActive] = useState(false);
     const [elementHeight, setElementHeight] = useState(568);
     const carouselRef = useRef<any>()
+    const history = useHistory();
 
     const headerRef = useRef(null);
     const homeRef = useRef(null);
@@ -925,8 +926,8 @@ const Home: React.FC = () =>  {
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
                                     <div>
-                                        <h3>Low cost</h3>
-                                        <p>Verse will allow DAOs to expand their activities beyond voting while incentivizing participation and engagement at low cost</p>
+                                        <h3>Fast with Low and Stable Transaction Costs</h3>
+                                        <p>Verse can process over 1500 transactions per second, more than 100x faster than Ethereum. And transactions cost less than $0.01 per transaction</p>
                                     </div>
                                 </li>
                                 <li>
@@ -948,6 +949,13 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Cross DAO Interoperability</h3>
                                         <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><img src={SmartChain5} alt="" /></div>
+                                    <div>
+                                        <h3>The Most Decentralized Ethereum-compatible Chain</h3>
+                                        <p>Verse uses PoS consensus which is much more decentralized and censorship resistant than other existing side chains, which all use a variant of Proof of Authority</p>
                                     </div>
                                 </li>
                             </ul>
@@ -1038,6 +1046,7 @@ const Home: React.FC = () =>  {
                             </div>
                         </div>
                     </div>
+                    <Button type="primary" onClick={() => {history.push('/tech')}}>Learn more</Button>
                 </div>
                 <FourthContent>
                     <div>

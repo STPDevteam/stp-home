@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
 import Logo from '../../assets/images/logo.png'
+import Cube from '../../assets/images/home/cube.png'
 import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
 import './index.less';
 
@@ -175,13 +176,13 @@ const Header: React.FC = () =>  {
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a href="#Roadmap">
-                Roadmap
+                <a href="https://github.com/STPDevteam" target="_blank">
+                    Github
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a href="mailto:contact@stp.network">
-                    Build with STP
+                <a onClick={showModal}>
+                    Documentation
                 </a>
             </Menu.Item>
         </Menu>
@@ -230,6 +231,11 @@ const Header: React.FC = () =>  {
                     <MenuOutlined />
                 </button>
             </HeaderContent>
+            <Modal className="comingModal" visible={isModalVisible} footer={null} closable={false} width={320} centered>
+                <img src={Cube} alt="" />
+                <p>Coming Soon...</p>
+            <Button type="primary" onClick={handleCancel}>Close</Button>
+            </Modal>
         </LayoutHeader>
     )
 }

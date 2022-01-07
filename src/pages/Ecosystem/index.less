@@ -10,11 +10,12 @@
         }
     }
     .banner{
-        background: url('../../assets/images/ecosystem/ecosystem1.png'), #0D1DB4;
+        background: url('../../assets/images/ecosystem/ecosystem1.png') no-repeat, #0D1DB4;
         background-size: 100%, 100%;
         height: 378px;  
         display: flex;  
         align-items: center;
+        background-position: right bottom;
     }
     h2{
         font-size: 48px;
@@ -39,6 +40,9 @@
         align-items: center;
         margin: 0 auto;
         padding: 0; 
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
         .item{
             margin: 40px 20px;
             width: 280px;
@@ -47,6 +51,9 @@
             background: #fff;
             border-radius: 40px;
             box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+            @media (max-width: 767px) {
+                margin: 20px;
+            }
             h4{
                 color: #727272;
                 font-size: 18px;
