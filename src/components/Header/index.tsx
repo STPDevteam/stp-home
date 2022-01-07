@@ -3,6 +3,8 @@ import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } fro
 import { CSSTransition } from "react-transition-group";
 import { Link, useLocation } from "react-router-dom";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
+import { useToggle } from '../../hooks/useToggle';
 import styled from 'styled-components'
 import Logo from '../../assets/images/logo.png'
 import Cube from '../../assets/images/home/cube.png'
@@ -22,12 +24,12 @@ const HeaderContent = styled.div`
 
 const Header: React.FC = () =>  {
 
-    const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [infrastructureActive, setInfrastructureActive] = useState(false);
     const [elementHeight, setElementHeight] = useState(568);
     const carouselRef = useRef<any>()
     const location = useLocation();
+    const [open, toggle] = useToggle(false)
 
     const headerRef = useRef(null);
     const homeRef = useRef(null);
@@ -36,6 +38,8 @@ const Header: React.FC = () =>  {
     const partnershipsRef = useRef(null);
     const resourcesRef = useRef(null);
     const learnRef = useRef(null);
+    useOnClickOutside(headerRef, open ? toggle : undefined)
+
 
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -108,10 +112,7 @@ const Header: React.FC = () =>  {
         setIsSmallScreen(false);
       }
     };
-  
-    const toggleNav = () => {
-      setNavVisibility(!isNavVisible);
-    };
+
 
     const reveal = () => {
         const revealElement = document.getElementById("infrastructure-list");
@@ -207,7 +208,7 @@ const Header: React.FC = () =>  {
             <HeaderContent className="header" ref={headerRef}>
                 <img className="Logo" src={Logo} alt="logo" />
                 <CSSTransition
-                    in={!isSmallScreen || isNavVisible}
+                    in={!isSmallScreen || open}
                     timeout={350}
                     classNames="NavAnimation"
                     unmountOnExit
@@ -227,7 +228,7 @@ const Header: React.FC = () =>  {
                         <Button type="primary" onClick={showModal}>APP</Button>
                     </nav>
                 </CSSTransition>
-                <button onClick={toggleNav} className="Burger">
+                <button onClick={toggle} className="Burger">
                     <MenuOutlined />
                 </button>
             </HeaderContent>
