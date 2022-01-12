@@ -7,6 +7,8 @@ import Vee from '../../assets/images/ecosystem/Vee.png';
 import Cere from '../../assets/images/ecosystem/Cere.png';
 import Define from '../../assets/images/ecosystem/Define.png';
 import Deesse from '../../assets/images/ecosystem/Deesse.png';
+import Meter from '../../assets/images/ecosystem/Meter.png';
+import Voltswap from '../../assets/images/ecosystem/Voltswap.png';
 
 import './index.less'
 
@@ -35,6 +37,18 @@ const Ecosystem: React.FC = () =>  {
                     <h4>Infrastructure</h4>
                     <img src={Thegraph} alt="" />
                     <p>The Graph</p>
+                </div>
+            </div>
+            <div className="list">
+                <div className="item">
+                    <h4>Cross-chain Bridge</h4>
+                    <img src={Meter} alt="" />
+                    <p>Meter Passport</p>
+                </div>
+                <div className="item">
+                    <h4>AMM</h4>
+                    <img src={Voltswap} alt="" />
+                    <p>Voltswap</p>
                 </div>
             </div>
             <h3>Token Projects on Verse represent over $5B in value</h3>

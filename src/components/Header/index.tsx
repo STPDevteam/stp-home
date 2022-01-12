@@ -1,11 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } from 'antd';
+import styled from 'styled-components'
 import { CSSTransition } from "react-transition-group";
 import { Link, useLocation } from "react-router-dom";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { useToggle } from '../../hooks/useToggle';
-import styled from 'styled-components'
 import Logo from '../../assets/images/logo.png'
 import Cube from '../../assets/images/home/cube.png'
 import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
