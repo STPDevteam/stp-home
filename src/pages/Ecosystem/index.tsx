@@ -9,6 +9,8 @@ import Define from '../../assets/images/ecosystem/Define.png';
 import Deesse from '../../assets/images/ecosystem/Deesse.png';
 import Meter from '../../assets/images/ecosystem/Meter.png';
 import Voltswap from '../../assets/images/ecosystem/Voltswap.png';
+import Cobak from '../../assets/images/ecosystem/cobak.png';
+import MovieBloc from '../../assets/images/ecosystem/moviebloc.png';
 
 import './index.less'
 
@@ -22,7 +24,7 @@ const Ecosystem: React.FC = () =>  {
         </div>
         <div className="content">
             <h3>Integrated Key Infrastructure</h3>
-            <div className="list">
+            <div className="list list1">
                 <div className="item">
                     <h4>Oracles</h4>
                     <img src={Chainlink} alt="" />
@@ -39,7 +41,7 @@ const Ecosystem: React.FC = () =>  {
                     <p>The Graph</p>
                 </div>
             </div>
-            <div className="list">
+            <div className="list list1">
                 <div className="item">
                     <h4>Cross-chain Bridge</h4>
                     <img src={Meter} alt="" />
@@ -52,7 +54,7 @@ const Ecosystem: React.FC = () =>  {
                 </div>
             </div>
             <h3>Token Projects on Verse represent over $5B in value</h3>
-            <div className="list">
+            <div className="list list2">
                 <div className="item">
                     <h4>DeFi Projects</h4>
                     <img src={Rai} alt="" />
@@ -64,12 +66,6 @@ const Ecosystem: React.FC = () =>  {
                     <p>Lending Platforms</p>
                 </div>
                 <div className="item">
-                    <h4>Decentralized Storage Projects</h4>
-                    <img src={Cere} alt="" />
-                </div>
-            </div>
-            <div className="list">
-                <div className="item">
                     <h4>NFT Projects</h4>
                     <img src={Define} alt="" />
                     <p>NFT Marketplaces</p>
@@ -78,6 +74,20 @@ const Ecosystem: React.FC = () =>  {
                     <h4>NFT Projects</h4>
                     <img src={Deesse} alt="" />
                     <p>Gamefi Projects</p>
+                </div>
+            </div>
+            <div className="list list2">
+                <div className="item">
+                    <h4>Decentralized Storage Projects</h4>
+                    <img src={Cere} alt="" />
+                </div>
+                <div className="item">
+                    <h4>Community Projects</h4>
+                    <img src={Cobak} alt="" />
+                </div>
+                <div className="item">
+                    <h4>Entertainment Projects</h4>
+                    <img src={MovieBloc} alt="" />
                 </div>
             </div>
         </div>

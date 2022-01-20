@@ -6,6 +6,7 @@ import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Teleg
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
 import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
 import {ReactComponent as Discord} from '../../assets/images/home/svg/discord.svg'
+import {ReactComponent as Mirror} from '../../assets/images/home/svg/Mirror.svg'
 import WechatQR from '../../assets/images/home/QR.jpeg'
 
 const FooterContent = styled.div`
@@ -33,7 +34,9 @@ const FooterContent = styled.div`
             height: 48px;
             a{
                 color: #9f9fa9; 
-                display: inline-block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             span{
                 margin-left: 10px;
@@ -59,7 +62,7 @@ const Footer: React.FC = () =>  {
                     <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://discord.gg/H23QnaMRTT"><Discord/><span>Discord</span></a>
+                    <a target="_blank" href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"><Mirror/><span>Mirror</span></a>
                 </li>
                 <li>
                     <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
