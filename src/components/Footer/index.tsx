@@ -37,6 +37,7 @@ const FooterContent = styled.div`
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                height: 48px;
             }
             span{
                 margin-left: 10px;
