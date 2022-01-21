@@ -62,7 +62,7 @@ const Ecosystem: React.FC = () =>  {
                 </div>
                 <div className="item">
                     <h4>DeFi Projects</h4>
-                    <img src={Vee} alt="" />
+                    <img src={Vee} style={{height: '55px', margin: '8px auto'}} alt="" />
                     <p>Lending Platforms</p>
                 </div>
                 <div className="item">
@@ -78,15 +78,15 @@ const Ecosystem: React.FC = () =>  {
             </div>
             <div className="list list2">
                 <div className="item">
-                    <h4>Decentralized Storage Projects</h4>
+                    <h4>Decentralized<br/>Storage Projects</h4>
                     <img src={Cere} alt="" />
                 </div>
                 <div className="item">
-                    <h4>Community Projects</h4>
-                    <img src={Cobak} alt="" />
+                    <h4>Community<br/>Projects</h4>
+                    <img src={Cobak} style={{height: '35px'}} alt="" />
                 </div>
                 <div className="item">
-                    <h4>Entertainment Projects</h4>
+                    <h4>Entertainment<br/>Projects</h4>
                     <img src={MovieBloc} alt="" />
                 </div>
             </div>
