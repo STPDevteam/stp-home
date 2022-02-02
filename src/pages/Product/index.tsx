@@ -1,3 +1,4 @@
+import { Button } from 'antd'
 import React from 'react'
 import Dao1 from '../../assets/images/home/dao1.png'
 import Dao2 from '../../assets/images/home/dao2.png'
@@ -21,6 +22,10 @@ const Product: React.FC = () =>  {
                                 <div>
                                     <h3>Clique</h3>
                                     <p>An aggregated dashboard to browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on Verse</p>
+                                    <div className="btns">
+                                        <Button type="primary"><a href="https://myclique.io" target="_blank">Launch App</a></Button>
+                                        <Button type="primary">Learn More</Button>
+                                    </div>
                                 </div>
                             </div>
                         <div className="item">
@@ -30,6 +35,10 @@ const Product: React.FC = () =>  {
                             <div>
                                 <h3>Framework</h3>
                                 <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
+                                <div className="btns">
+                                    <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
+                                    <Button type="primary">Learn More</Button>
+                                </div>
                             </div>
                         </div>
                         <div className="item">
@@ -39,9 +48,12 @@ const Product: React.FC = () =>  {
                             <div>
                                 <h3>DAO Scan Tool</h3>
                                 <p>Track all DAO transaction history and onchain data globally</p>
+                                <div className="btns">
+                                    <Button type="primary">Coming Soon</Button>
+                                </div>
                             </div>
                         </div>
-                        <div className="item">
+                        {/* <div className="item">
                             <div>
                                 <img src={Dao4} alt="" />
                             </div>
@@ -49,7 +61,7 @@ const Product: React.FC = () =>  {
                                 <h3>DAO MarketCap Tool</h3>
                                 <p>A global DAO ranking and data analysis platform</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <h3>DAOs Launching on Verse</h3>

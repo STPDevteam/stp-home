@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } from 'antd';
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
@@ -43,7 +44,6 @@ import {ReactComponent as Infrastructure4} from '../../assets/images/home/svg/in
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
-const { Link } = Anchor;
 const HeaderContent = styled.div`
     max-width: 1200px;
     margin: 0 auto;
@@ -833,7 +833,7 @@ const Home: React.FC = () =>  {
                                 <p>
                                 A Layer 2 Sidechain Optimized for DAOs
                                 </p>
-                                <Button type="primary" onClick={showModal}>Launch APPs</Button>
+                                <Button type="primary"><Link to="/product">Launch APPs</Link></Button>
                             </Col>
                         </Row>
                         {/* <div className="whereBuy">
@@ -1124,6 +1124,10 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Clique</h3>
                                         <p>An aggregated dashboard to browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on Verse</p>
+                                        <div className="btns">
+                                            <Button type="primary"><a href="https://myclique.io" target="_blank">Launch App</a></Button>
+                                            <Button type="primary">Learn More</Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1133,6 +1137,10 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Framework</h3>
                                         <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
+                                        <div className="btns">
+                                            <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
+                                            <Button type="primary">Learn More</Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1142,6 +1150,9 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>DAO Scan Tool</h3>
                                         <p>Track all DAO transaction history and onchain data globally</p>
+                                        <div className="btns">
+                                            <Button type="primary">Coming Soon</Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">

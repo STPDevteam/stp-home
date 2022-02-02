@@ -1,5 +1,11 @@
 .product{
     padding-bottom: 200px;
+    .ant-btn-primary{
+      background: #3C17B8;
+      border-radius: 15px;
+      height: 50px;
+      padding: 0 40px;
+    }
     .content{
         max-width: 1200px;
         margin: 0 auto;
@@ -43,6 +49,11 @@
             background: rgba(219, 222, 225, 0.4);
             border-radius: 24px;
             margin-bottom: 40px;
+            .btns{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-gap: 20px;
+            }
       
             @media (max-width: 767px) {
               width: 100%;

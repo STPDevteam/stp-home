@@ -20,6 +20,16 @@ const HeaderContent = styled.div`
         padding: 0 20px;
     }
 `
+const HeaderLink = styled.a`
+    background: #0B1CB5;
+    display: block;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+    text-decoration: underline;
+`
 
 
 const Header: React.FC = () =>  {
@@ -192,6 +202,11 @@ const Header: React.FC = () =>  {
                     Documentation
                 </a>
             </Menu.Item>
+            <Menu.Item>
+                <a href="https://explorer.stp.network/" target="_blank">
+                    Explorer
+                </a>
+            </Menu.Item>
         </Menu>
     )
     const learnMenu = (
@@ -211,6 +226,7 @@ const Header: React.FC = () =>  {
 
     return (
         <LayoutHeader>
+            <HeaderLink href="https://docs.google.com/forms/d/1J3MJO4jJDCTz8ZEYjRccTZukZYO-Y1oTc85IvnZmzpc/edit">Sign up to participate in Verse product test event.</HeaderLink>
             <HeaderContent className="header" ref={headerRef}>
                 <img className="Logo" src={Logo} alt="logo" />
                 <CSSTransition
@@ -231,7 +247,7 @@ const Header: React.FC = () =>  {
                             </a>
                         </Dropdown>
                         <a href="https://medium.com/@versenetwork" target="_blank">News</a>
-                        <Button type="primary" onClick={showModal}>APP</Button>
+                        <Button type="primary"><Link to="/product">APP</Link></Button>
                     </nav>
                 </CSSTransition>
                 <button onClick={toggle} className="Burger">

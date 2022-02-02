@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 import { Modal, Button } from 'antd'
+import { Link } from "react-router-dom";
 import Cube from '../../assets/images/home/cube.png'
 import './index.less'
 
@@ -23,19 +24,19 @@ const Developers: React.FC = () =>  {
                 <h3>Developer tools</h3>
                 <div className="tools content">
                     <div className="item">
-                        <button onClick={showModal}>API Documentation</button>
-                        <p>Learn how the API works with our docs</p>
+                        <button><a href="https://wallet.stp.network/">Wallet</a></button>
+                        <p>Paticipate with Verse web wallet</p>
                     </div>
                     <div className="item">
-                        <button onClick={showModal}>Test Token</button>
+                        <button><a href="https://faucet.stp.network/">Test Token</a></button>
                         <p>Claim testnet tokens and build</p>
                     </div>
                     <div className="item">
-                        <button onClick={showModal}>Wallet</button>
-                        <p>Download Verse desktop wallet</p>
+                        <button onClick={showModal}><Link to="/">Documentation</Link></button>
+                        <p>Learn how it works with our document</p>
                     </div>
                     <div className="item">
-                        <button onClick={showModal}>Open Source Code</button>
+                        <button onClick={showModal}>Github</button>
                         <p>Learn our code base and start to contribute</p>
                     </div>
                 </div>
