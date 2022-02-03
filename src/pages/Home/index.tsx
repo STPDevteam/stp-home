@@ -1126,7 +1126,7 @@ const Home: React.FC = () =>  {
                                         <p>An aggregated dashboard to browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on Verse</p>
                                         <div className="btns">
                                             <Button type="primary"><a href="https://myclique.io" target="_blank">Launch App</a></Button>
-                                            <Button type="primary">Learn More</Button>
+                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/clique">Learn More</a></Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1139,7 +1139,7 @@ const Home: React.FC = () =>  {
                                         <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
                                         <div className="btns">
                                             <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
-                                            <Button type="primary">Learn More</Button>
+                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/framework" target="_blank">Learn More</a></Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1162,6 +1162,9 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>DAO MarketCap Tool</h3>
                                         <p>A global DAO ranking and data analysis platform</p>
+                                        <div className="btns">
+                                            <Button type="primary">Coming Soon</Button>
+                                        </div>
                                     </div>
                                 </div>
                             </Slider>
