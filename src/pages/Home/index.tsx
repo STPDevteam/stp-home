@@ -147,6 +147,16 @@ const FirstContent = styled.div`
             box-shadow: 5px 5px 20px #676767;
         }
     }
+    .btns{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 200px;
+        grid-gap: 20px;
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+            width: 100px;
+        }
+    }
 `
 
 const SecondContent = styled.div`
@@ -833,7 +843,10 @@ const Home: React.FC = () =>  {
                                 <p>
                                 A Layer 2 Sidechain Optimized for DAOs
                                 </p>
-                                <Button type="primary"><Link to="/product">Launch APPs</Link></Button>
+                                <div className="btns">
+                                    <Button type="primary"><Link to="/product">Launch APPs</Link></Button>
+                                    <Button type="primary"><Link to="/developers">Launch Testnet</Link></Button>
+                                </div>
                             </Col>
                         </Row>
                         {/* <div className="whereBuy">
