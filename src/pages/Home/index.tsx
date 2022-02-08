@@ -149,12 +149,17 @@ const FirstContent = styled.div`
     }
     .btns{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         width: 200px;
         grid-gap: 20px;
         @media (max-width: 767px) {
-            grid-template-columns: 1fr;
             width: 100px;
+        }
+        .ant-btn{
+            &:last-of-type{
+                background: #3898FC;
+                border-color: #3898FC;
+            }
         }
     }
 `
@@ -844,8 +849,8 @@ const Home: React.FC = () =>  {
                                 A Layer 2 Sidechain Optimized for DAOs
                                 </p>
                                 <div className="btns">
-                                    <Button type="primary"><Link to="/product">Launch APPs</Link></Button>
-                                    <Button type="primary"><Link to="/developers">Launch Testnet</Link></Button>
+                                    <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
+                                    <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button>
                                 </div>
                             </Col>
                         </Row>
