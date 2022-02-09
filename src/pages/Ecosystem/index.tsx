@@ -41,18 +41,6 @@ const Ecosystem: React.FC = () =>  {
                     <p>The Graph</p>
                 </div>
             </div>
-            <div className="list list1">
-                <div className="item">
-                    <h4>Cross-chain Bridge</h4>
-                    <img src={Meter} alt="" />
-                    <p>Meter Passport</p>
-                </div>
-                <div className="item">
-                    <h4>AMM</h4>
-                    <img src={Voltswap} alt="" />
-                    <p>Voltswap</p>
-                </div>
-            </div>
             <h3>Token Projects on Verse represent over $5B in value</h3>
             <div className="list list2">
                 <div className="item">
@@ -75,8 +63,6 @@ const Ecosystem: React.FC = () =>  {
                     <img src={Deesse} alt="" />
                     <p>Gamefi Projects</p>
                 </div>
-            </div>
-            <div className="list list2">
                 <div className="item">
                     <h4>Decentralized<br/>Storage Projects</h4>
                     <img src={Cere} alt="" />
@@ -88,6 +74,16 @@ const Ecosystem: React.FC = () =>  {
                 <div className="item">
                     <h4>Entertainment<br/>Projects</h4>
                     <img src={MovieBloc} alt="" />
+                </div>
+                <div className="item">
+                    <h4>Cross-chain Bridge</h4>
+                    <img src={Meter} alt="" />
+                    <p>Meter Passport</p>
+                </div>
+                <div className="item">
+                    <h4>AMM</h4>
+                    <img src={Voltswap} alt="" />
+                    <p>Voltswap</p>
                 </div>
             </div>
         </div>
