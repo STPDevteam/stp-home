@@ -155,12 +155,12 @@ const FirstContent = styled.div`
         @media (max-width: 767px) {
             width: 100px;
         }
-        .ant-btn{
-            &:last-of-type{
-                background: #3898FC;
-                border-color: #3898FC;
-            }
-        }
+        // .ant-btn{
+        //     &:last-of-type{
+        //         background: #3898FC;
+        //         border-color: #3898FC;
+        //     }
+        // }
     }
 `
 
@@ -850,7 +850,7 @@ const Home: React.FC = () =>  {
                                 </p>
                                 <div className="btns">
                                     <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
-                                    <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button>
+                                    {/* <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button> */}
                                 </div>
                             </Col>
                         </Row>
@@ -1092,11 +1092,11 @@ const Home: React.FC = () =>  {
                                 <h3>Tuning Key Parameters</h3>
                                 <p className="parameters">Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                             </div>
-                            <div className="item">
+                            {/* <div className="item">
                                 <div className="blue"><img src={System5} alt="" /></div>
                                 <h3>USTP</h3>
                                 <p>A native stablecoin on Verse  based on STPT staking</p>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="h5 system">
                             <Carousel ref={carouselRef as any}>
@@ -1120,11 +1120,11 @@ const Home: React.FC = () =>  {
                                     <h3>Tuning Key Parameters</h3>
                                     <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                                 </div>
-                                <div className="item">
+                                {/* <div className="item">
                                     <div className="blue"><img src={System5} alt="" /></div>
                                     <h3>USTP</h3>
                                     <p>A native stablecoin on Verse  based on STPT staking</p>
-                                </div>
+                                </div> */}
                             </Carousel>
                         </div>
                     </div>

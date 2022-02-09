@@ -212,7 +212,7 @@ const Header: React.FC = () =>  {
     const learnMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="https://medium.com/@versenetwork">
+                <a target="_blank" rel="noopener noreferrer" href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1">
                     STP News
                 </a>
             </Menu.Item>
@@ -240,13 +240,13 @@ const Header: React.FC = () =>  {
                         <Link to="/tech" className={location.pathname === '/tech' ? 'active': ''}>Tech</Link>
                         <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link>
                         <Link to="/product" className={location.pathname === '/product' ? 'active': ''}>Product</Link>
-                        <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link>
+                        {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
                         <Dropdown overlay={resourcesMenu} trigger={['click']}>
                             <a>
                             Resources <Arrow />
                             </a>
                         </Dropdown>
-                        <a href="https://medium.com/@versenetwork" target="_blank">News</a>
+                        <a href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1" target="_blank">News</a>
                         <Button type="primary"><Link to="/product">APP</Link></Button>
                     </nav>
                 </CSSTransition>
