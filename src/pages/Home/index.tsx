@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } from 'antd';
-import { CSSTransition } from "react-transition-group";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { MenuOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
@@ -36,45 +37,13 @@ import Dao2 from '../../assets/images/home/dao2.png'
 import Dao3 from '../../assets/images/home/dao3.png'
 import Dao4 from '../../assets/images/home/dao4.png'
 import Cube from '../../assets/images/home/cube.png'
-import Structure1 from '../../assets/images/home/structure1.jpg'
-import Structure2 from '../../assets/images/home/structure2.jpg'
-import Structure3 from '../../assets/images/home/structure3.jpg'
-import Structure4 from '../../assets/images/home/structure4.jpg'
-import Structure5 from '../../assets/images/home/structure5.jpg'
-import Projects1 from '../../assets/images/home/projects1.jpg'
-import Projects2 from '../../assets/images/home/projects2.jpg'
-import Projects3 from '../../assets/images/home/projects3.jpg'
-import Projects4 from '../../assets/images/home/projects4.jpg'
-import Platform1 from '../../assets/images/home/platform1.png'
-import Platform2 from '../../assets/images/home/platform2.png'
-import Platform3 from '../../assets/images/home/platform3.png'
-import Platform4 from '../../assets/images/home/platform4.png'
-import Platform5 from '../../assets/images/home/platform5.png'
-import Platform6 from '../../assets/images/home/platform6.png'
-import Platform7 from '../../assets/images/home/platform7.png'
-import Platform8 from '../../assets/images/home/platform8.png'
-import Platform9 from '../../assets/images/home/platform9.png'
-import Platform10 from '../../assets/images/home/platform10.png'
-import WechatQR from '../../assets/images/home/QR.jpeg'
-import STPT from '../../assets/images/home/STPT.png'
 import {ReactComponent as Infrastructure1} from '../../assets/images/home/svg/infrastructure1.svg'
 import {ReactComponent as Infrastructure2} from '../../assets/images/home/svg/infrastructure2.svg'
 import {ReactComponent as Infrastructure3} from '../../assets/images/home/svg/infrastructure3.svg'
 import {ReactComponent as Infrastructure4} from '../../assets/images/home/svg/infrastructure4.svg'
-import {ReactComponent as TwitterLogo} from '../../assets/images/home/svg/Twitter.svg'
-import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.svg'
-import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
-import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
-import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
-import {ReactComponent as Discord} from '../../assets/images/home/svg/discord.svg'
-import {ReactComponent as Mirror} from '../../assets/images/home/svg/Mirror.svg'
-import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
-import {ReactComponent as ArrowLeft} from '../../assets/images/home/svg/arrow-left.svg'
-import {ReactComponent as ArrowRight} from '../../assets/images/home/svg/arrow-right.svg'
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
-const { Link } = Anchor;
 const HeaderContent = styled.div`
     max-width: 1200px;
     margin: 0 auto;
@@ -88,7 +57,6 @@ const FirstContent = styled.div`
     background: url(${Image1}) no-repeat;
     background-size: cover;
     background-position: center bottom;
-    margin-top: 100px;
     height: calc(100vh - 100px);
     @media (max-width: 767px) {
         margin-top: 64px;
@@ -178,6 +146,21 @@ const FirstContent = styled.div`
         &:hover{
             box-shadow: 5px 5px 20px #676767;
         }
+    }
+    .btns{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 200px;
+        grid-gap: 20px;
+        @media (max-width: 767px) {
+            width: 100px;
+        }
+        // .ant-btn{
+        //     &:last-of-type{
+        //         background: #3898FC;
+        //         border-color: #3898FC;
+        //     }
+        // }
     }
 `
 
@@ -639,55 +622,15 @@ const NinthContent = styled.div`
     }
 `
 
-const Footer = styled.div`
-    background: #00113B;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    &>div{
-        max-width: 1200px;
-        margin: 0 auto;
-        height: 48px;
-    }
-    ul{
-        padding-left: 0;
-        margin: 0;
-        height: 48px;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        li{
-            color: #9f9fa9;
-            display: inline-block;
-            text-align: center;
-            line-height: 48px;
-            height: 48px;
-            a{
-                color: #9f9fa9; 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 48px;
-            }
-            span{
-                margin-left: 10px;
-                @media (max-width: 767px) {
-                    display: none;
-                }
-            }
-        }
-    }
-`
-
 
 const Home: React.FC = () =>  {
 
     const [isNavVisible, setNavVisibility] = useState(false);
     const [isSmallScreen, setIsSmallScreen] = useState(false);
-    const [visibleSection, setVisibleSection] = useState('Home');
     const [infrastructureActive, setInfrastructureActive] = useState(false);
     const [elementHeight, setElementHeight] = useState(568);
     const carouselRef = useRef<any>()
+    const history = useHistory();
 
     const headerRef = useRef(null);
     const homeRef = useRef(null);
@@ -744,35 +687,6 @@ const Home: React.FC = () =>  {
             block: "start",
         });
     };
-    
-    useEffect(() => {
-        const handleScroll = () => {
-            if(!headerRef && !sectionRefs){
-                return;
-            }
-            const { height: headerHeight } = getDimensions(headerRef.current);
-            const scrollPosition = window.scrollY + headerHeight;
-
-            const selected: any = sectionRefs.find(({ section, ref }) => {
-                const ele = ref.current;
-                if (ele) {
-                    const { offsetBottom, offsetTop } = getDimensions(ele);
-                    return scrollPosition > offsetTop && scrollPosition < offsetBottom;
-                }
-            });
-
-            if (selected && selected.section !== visibleSection) {
-                setVisibleSection(selected.section);
-            } else if (!selected && visibleSection) {
-                setVisibleSection('');
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [visibleSection]);
 
     
     const getCustomPaging = (i: number) => {
@@ -926,56 +840,6 @@ const Home: React.FC = () =>  {
                 <p>Coming Soon...</p>
             <Button type="primary" onClick={handleCancel}>Close</Button>
             </Modal>
-            <Header>
-                <HeaderContent className="header" ref={headerRef}>
-                    <img className="Logo" src={Logo} alt="logo" />
-                    <CSSTransition
-                        in={!isSmallScreen || isNavVisible}
-                        timeout={350}
-                        classNames="NavAnimation"
-                        unmountOnExit
-                    >
-                        <nav className="Nav">
-                            <a className={`${visibleSection === "Home" ? "active" : ""}`} 
-                                onClick={() => {
-                                    scrollTo(homeRef.current);
-                                }}>Home</a>
-                            <Dropdown overlay={stpMenu} trigger={['click']}>
-                                <a className={`${visibleSection === "Verse" ? "active" : ""}`}   
-                                onClick={() => {
-                                    scrollTo(verseRef.current);
-                                }}>
-                                Verse <Arrow/>
-                                </a>
-                            </Dropdown>
-                            <a className={`${visibleSection === "Products" ? "active" : ""}`}    
-                                onClick={() => {
-                                    scrollTo(productsRef.current);
-                                }}>
-                            Products 
-                            </a>
-                            <Dropdown overlay={resourcesMenu} trigger={['click']}>
-                                <a className={`${visibleSection === "Resources" ? "active" : ""}`} 
-                                onClick={() => {
-                                    scrollTo(resourcesRef.current);
-                                }}>
-                                Resources <Arrow />
-                                </a>
-                            </Dropdown>
-                            <Dropdown overlay={learnMenu} trigger={['click']}>
-                                <a onClick={e => e.preventDefault()}>
-                                Learn <Arrow />
-                                </a>
-                            </Dropdown>
-                            <Button type="primary" onClick={showModal}>APP</Button>
-                        </nav>
-                    </CSSTransition>
-                    <button onClick={toggleNav} className="Burger">
-                        <MenuOutlined />
-                    </button>
-                </HeaderContent>
-            </Header>
-            <Content>
                 <FirstContent className="section" id="Home" ref={homeRef}>
                     <div>
                         <Row>
@@ -984,7 +848,10 @@ const Home: React.FC = () =>  {
                                 <p>
                                 A Layer 2 Sidechain Optimized for DAOs
                                 </p>
-                                <Button type="primary" onClick={showModal}>Launch APPs</Button>
+                                <div className="btns">
+                                    <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
+                                    {/* <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button> */}
+                                </div>
                             </Col>
                         </Row>
                         {/* <div className="whereBuy">
@@ -1077,8 +944,8 @@ const Home: React.FC = () =>  {
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
                                     <div>
-                                        <h3>Low cost</h3>
-                                        <p>Verse will allow DAOs to expand their activities beyond voting while incentivizing participation and engagement at low cost</p>
+                                        <h3>Fast with Low and Stable Transaction Costs</h3>
+                                        <p>Verse can process over 1500 transactions per second, more than 100x faster than Ethereum. And transactions cost less than $0.01 per transaction</p>
                                     </div>
                                 </li>
                                 <li>
@@ -1100,6 +967,13 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Cross DAO Interoperability</h3>
                                         <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div><img src={SmartChain5} alt="" /></div>
+                                    <div>
+                                        <h3>The Most Decentralized Ethereum-compatible Chain</h3>
+                                        <p>Verse uses PoS consensus which is much more decentralized and censorship resistant than other existing side chains, which all use a variant of Proof of Authority</p>
                                     </div>
                                 </li>
                             </ul>
@@ -1190,6 +1064,7 @@ const Home: React.FC = () =>  {
                             </div>
                         </div>
                     </div>
+                    <Button type="primary" onClick={() => {history.push('/tech')}}>Learn more</Button>
                 </div>
                 <FourthContent>
                     <div>
@@ -1217,11 +1092,11 @@ const Home: React.FC = () =>  {
                                 <h3>Tuning Key Parameters</h3>
                                 <p className="parameters">Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                             </div>
-                            <div className="item">
+                            {/* <div className="item">
                                 <div className="blue"><img src={System5} alt="" /></div>
                                 <h3>USTP</h3>
                                 <p>A native stablecoin on Verse  based on STPT staking</p>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="h5 system">
                             <Carousel ref={carouselRef as any}>
@@ -1245,11 +1120,11 @@ const Home: React.FC = () =>  {
                                     <h3>Tuning Key Parameters</h3>
                                     <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                                 </div>
-                                <div className="item">
+                                {/* <div className="item">
                                     <div className="blue"><img src={System5} alt="" /></div>
                                     <h3>USTP</h3>
                                     <p>A native stablecoin on Verse  based on STPT staking</p>
-                                </div>
+                                </div> */}
                             </Carousel>
                         </div>
                     </div>
@@ -1267,6 +1142,10 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Clique</h3>
                                         <p>An aggregated dashboard to browse, manage and socially participate in all DAOs, asset holdings, proposals, and ongoing events on Verse</p>
+                                        <div className="btns">
+                                            <Button type="primary"><a href="https://myclique.io" target="_blank">Launch App</a></Button>
+                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/clique">Learn More</a></Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1276,6 +1155,10 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Framework</h3>
                                         <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
+                                        <div className="btns">
+                                            <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
+                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/framework" target="_blank">Learn More</a></Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1285,6 +1168,9 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>DAO Scan Tool</h3>
                                         <p>Track all DAO transaction history and onchain data globally</p>
+                                        <div className="btns">
+                                            <Button type="primary">Coming Soon</Button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="item">
@@ -1294,6 +1180,9 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>DAO MarketCap Tool</h3>
                                         <p>A global DAO ranking and data analysis platform</p>
+                                        <div className="btns">
+                                            <Button type="primary">Coming Soon</Button>
+                                        </div>
                                     </div>
                                 </div>
                             </Slider>
@@ -1314,59 +1203,6 @@ const Home: React.FC = () =>  {
                         </div>
                     </div>
                 </FifthContent>
-                {/* <SixthContent>
-                    <div className="tools2">
-                        <ul>
-                            <li>
-                                <div>
-                                    <img src={Structure1} alt="" />
-                                    Decentralized Exchange
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src={Structure2} alt="" />
-                                    Lending Platform
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src={Structure3} alt="" />
-                                    NFT Marketplace
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src={Structure4} alt="" />
-                                    Stablecoin system
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src={Structure5} alt="" />
-                                    Prediction market
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </SixthContent> */}
-                {/* <SeventhContent id="Ecosystem">
-                    <div>
-                        <h2>Ecosystem Projects</h2>
-                        <p>
-                        Verse aspires to be an all-encompassing platform for any organization to decentralize decision-making effectively and developers to launch decentralized applications. Organizations leverage our powerful solutions and templates to best tailor its governance structure with their specific industry use-cases and decision styles.                        </p>
-                        <div className="projects">
-                            <div><img src={Projects1} alt="" /></div>
-                            <div><img src={Projects2} alt="" /></div>
-                            <div><img src={Projects3} alt="" /></div>
-                            <div><img src={Projects4} alt="" /></div>
-                        </div>
-                        <p>
-                        More Coming Soon
-                        </p>
-                        <Button type="primary"><a href="mailto:contact@stp.network">Build with STP</a></Button>
-                    </div>
-                </SeventhContent> */}
                 <EighthContent className="section" id="Resources" ref={resourcesRef}>
                     <div id="Roadmap">
                         <h2>Roadmap</h2>
@@ -1417,32 +1253,7 @@ const Home: React.FC = () =>  {
                             <Button type="primary"><a href="mailto:contact@stp.network">Contact</a></Button>
                         </div>
                     </div>
-                </NinthContent>
-                <Footer>
-                    <div>
-                        <ul>
-                            <li>
-                                <a target="_blank" href="https://t.me/STPofficial"><TelegramLogo/><span>Telegram</span></a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://twitter.com/STP_Networks"><TwitterLogo/><span>Twitter</span></a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"><Mirror/><span>Mirror</span></a>
-                            </li>
-                            <li>
-                                <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
-                            </li>
-                            <li>
-                                <a href="mailto:contact@stp.network"><Email/><span>Email</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </Footer>
-            </Content>     
+                </NinthContent>  
         </Layout>
     )
 }
