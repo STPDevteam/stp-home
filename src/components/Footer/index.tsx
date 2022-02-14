@@ -25,7 +25,7 @@ const FooterContent = styled.div`
         margin: 0;
         height: 48px;
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         li{
             color: #9f9fa9;
             display: inline-block;
@@ -59,9 +59,9 @@ const Footer: React.FC = () =>  {
                 <li>
                     <a target="_blank" href="https://twitter.com/STP_Networks"><TwitterLogo/><span>Twitter</span></a>
                 </li>
-                <li>
+                {/* <li>
                     <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>
-                </li>
+                </li> */}
                 <li>
                     <a target="_blank" href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"><Mirror/><span>Mirror</span></a>
                 </li>
