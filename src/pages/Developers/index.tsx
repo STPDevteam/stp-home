@@ -32,11 +32,11 @@ const Developers: React.FC = () =>  {
                         <p>Claim testnet tokens and build</p>
                     </div>
                     <div className="item">
-                        <button onClick={showModal}><Link to="/">Documentation</Link></button>
+                        <button><a href="https://stp-dao.gitbook.io/verse-network/verse-network/master" target="_blank">Documentation</a></button>
                         <p>Learn how it works with our document</p>
                     </div>
                     <div className="item">
-                        <button onClick={showModal}>Github</button>
+                        <button><a href="https://github.com/STPDevteam/verse-pov" target="_blank">Github</a></button>
                         <p>Learn our code base and start to contribute</p>
                     </div>
                 </div>

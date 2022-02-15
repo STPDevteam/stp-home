@@ -198,7 +198,7 @@ const Header: React.FC = () =>  {
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a onClick={showModal}>
+                <a href="https://stp-dao.gitbook.io/verse-network/verse-network/master" target="_blank">
                     Documentation
                 </a>
             </Menu.Item>
