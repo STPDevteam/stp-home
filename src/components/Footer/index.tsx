@@ -66,7 +66,7 @@ const Footer: React.FC = () =>  {
                     <a target="_blank" href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"><Mirror/><span>Mirror</span></a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://discord.gg/H23QnaMRTT"><Discord/><span>Mirror</span></a>
+                    <a target="_blank" href="https://discord.gg/H23QnaMRTT"><Discord/><span>Discord</span></a>
                 </li>
                 <li>
                     <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
