@@ -155,12 +155,12 @@ const FirstContent = styled.div`
         @media (max-width: 767px) {
             width: 100px;
         }
-        // .ant-btn{
-        //     &:last-of-type{
-        //         background: #3898FC;
-        //         border-color: #3898FC;
-        //     }
-        // }
+        .ant-btn{
+            &:last-of-type{
+                background: #3898FC;
+                border-color: #3898FC;
+            }
+        }
     }
 `
 
@@ -850,7 +850,7 @@ const Home: React.FC = () =>  {
                                 </p>
                                 <div className="btns">
                                     <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
-                                    {/* <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button> */}
+                                    <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button>
                                 </div>
                             </Col>
                         </Row>
