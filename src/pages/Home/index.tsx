@@ -155,12 +155,12 @@ const FirstContent = styled.div`
         @media (max-width: 767px) {
             width: 100px;
         }
-        // .ant-btn{
-        //     &:last-of-type{
-        //         background: #3898FC;
-        //         border-color: #3898FC;
-        //     }
-        // }
+        .ant-btn{
+            &:last-of-type{
+                background: #3898FC;
+                border-color: #3898FC;
+            }
+        }
     }
 `
 
@@ -850,7 +850,7 @@ const Home: React.FC = () =>  {
                                 </p>
                                 <div className="btns">
                                     <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
-                                    {/* <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button> */}
+                                    <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button>
                                 </div>
                             </Col>
                         </Row>
@@ -1169,7 +1169,7 @@ const Home: React.FC = () =>  {
                                         <h3>DAO Scan Tool</h3>
                                         <p>Track all DAO transaction history and onchain data globally</p>
                                         <div className="btns">
-                                            <Button type="primary">Coming Soon</Button>
+                                            <Button type="primary"><a href="https://explorer.stp.network" target="_blank">Launch</a></Button>
                                         </div>
                                     </div>
                                 </div>

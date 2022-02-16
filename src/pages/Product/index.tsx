@@ -49,7 +49,7 @@ const Product: React.FC = () =>  {
                                 <h3>DAO Scan Tool</h3>
                                 <p>Track all DAO transaction history and onchain data globally</p>
                                 <div className="btns">
-                                    <Button type="primary">Coming Soon</Button>
+                                    <Button type="primary"><a href="https://explorer.stp.network" target="_blank">Launch</a></Button>
                                 </div>
                             </div>
                         </div>
