@@ -36,7 +36,7 @@ const Developers: React.FC = () =>  {
                         <p>Learn how it works with our document</p>
                     </div>
                     <div className="item">
-                        <button><a href="https://github.com/STPDevteam/verse-pov" target="_blank">Github</a></button>
+                        <button onClick={showModal}><a>Github</a></button>
                         <p>Learn our code base and start to contribute</p>
                     </div>
                 </div>
