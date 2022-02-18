@@ -202,11 +202,6 @@ const Header: React.FC = () =>  {
                     Documentation
                 </a>
             </Menu.Item>
-            <Menu.Item>
-                <a href="https://explorer.stp.network/" target="_blank">
-                    Explorer
-                </a>
-            </Menu.Item>
         </Menu>
     )
     const learnMenu = (
