@@ -28,9 +28,19 @@ const Developers: React.FC = () =>  {
                         <p>Paticipate with Verse web wallet</p>
                     </div>
                     <div className="item">
+                        <button>
+                            <a href="https://explorer.stp.network/" target="_blank">
+                                Explorer
+                            </a>
+                        </button>
+                        <p>Blockchain explorer for Verse Network</p>
+                    </div>
+                    <div className="item">
                         <button><a href="https://faucet.stp.network/">Test Token</a></button>
                         <p>Claim testnet tokens and build</p>
                     </div>
+                </div>
+                <div className="tools content">
                     <div className="item">
                         <button><a href="https://stp-dao.gitbook.io/verse-network/verse-network/master" target="_blank">Documentation</a></button>
                         <p>Learn how it works with our document</p>
