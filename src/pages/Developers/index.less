@@ -46,8 +46,10 @@
         padding: 0;
         &:first-of-type{
           grid-template-columns: repeat(3, 1fr);
+          margin-bottom: 20px;
           @media (max-width: 767px) {
             grid-template-columns: repeat(1, auto);
+            margin-bottom: 0;
           }
         }
         &:last-of-type{
