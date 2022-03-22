@@ -498,12 +498,12 @@ const EighthContent = styled.div`
     @media (max-width: 767px) {
         background: url(${Image8H5}) no-repeat;
         background-position: 10px 200px;
-        background-size: 13%;
+        background-size: 11%;
     }
     &>div{
         max-width: 1200px;
         margin: 50px auto 0;
-        padding: 0 50px;
+        padding: 0 40px 0 60px;
         @media (max-width: 767px) {
             padding: 100px 30px;
             margin: 0 auto;
