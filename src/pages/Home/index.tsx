@@ -494,16 +494,17 @@ const SeventhContent = styled.div`
 const EighthContent = styled.div`
     background: url(${Image8}) no-repeat;
     background-position-y: 150px;
+    background-position-x: -10px;
     background-size: 100%;
     @media (max-width: 767px) {
         background: url(${Image8H5}) no-repeat;
         background-position: 10px 200px;
-        background-size: 13%;
+        background-size: 11%;
     }
     &>div{
         max-width: 1200px;
         margin: 50px auto 0;
-        padding: 0 50px;
+        padding: 0 40px 0 60px;
         @media (max-width: 767px) {
             padding: 100px 30px;
             margin: 0 auto;
@@ -513,7 +514,7 @@ const EighthContent = styled.div`
         font-size: 48px;
         text-align: center;
         color: #111029; 
-        margin-bottom: 160px;
+        margin-bottom: 120px;
         padding-top: 32px;
         @media (max-width: 767px) {
             margin-top: 0;
@@ -1208,35 +1209,29 @@ const Home: React.FC = () =>  {
                         <h2>Roadmap</h2>
                         <div className="roadmap">
                             <div>
-                                <h3>2021 Q4</h3>
-                                <ul>
-                                    <li>Launch Verse Testnet</li>
-                                    <li>Framework V1.0 - with basic DAO templates</li>
-                                    <li>Clique V1.0 - All in one DAO hub for joint DAOs and proposals and DAO token management</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3>2022 Q1</h3>
-                                <ul>
-                                    <li>Launch Verse Mainnet</li>
-                                    <li>Framework V2.0 - More DAO solutions for off-chain organizations</li>
-                                    <li>DAO Scan - Track transaction history and real-time chain info of Verse</li>
-                                </ul>
-                            </div>
-                            <div>
                                 <h3>2022 Q2</h3>
                                 <ul>
-                                    <li>Framework V3.0 - Support cross-DAO interoperability and DAO token issuance</li>
-                                    <li>Testing Dapp Developer Kit on Verse</li>
-                                    <li>Launch DAO Infrastructures for Verse</li>
+                                    <li>Complete Verse Network infrastructure including Chainlink, Gnosis, The Graph and etc.</li>
+                                    <li>Launch Cross-chain Governance Features and Data Bridge System</li>
+                                    <li>Launch DApp developer kit and document</li>
+                                    <li>Klaytyn Network Integration</li>
                                 </ul>
                             </div>
                             <div>
-                                <h3>2022 Q3 and Further</h3>
+                                <h3>2022 Q3</h3>
                                 <ul>
-                                    <li>Continue to expand ecosystem and onboard developer tools of Verse</li>
-                                    <li>Social media integration - connecting with popular off-chain social media to optimize the Social Identity system</li>
+                                    <li>Launch Verse Network Mainnet</li>
+                                    <li>DAO Scan - a tracker of transaction history and real-time chain info on Verse</li>
                                     <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
+                                    <li>Launch DApp product on Ethereum, Verse and Klaytn Network</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>2022 Q4 and Further</h3>
+                                <ul>
+                                    <li>Continue to expand infrastructures and cross-chain DAO interoperability on Verse Network</li>
+                                    <li>Continue to expand DAO ecosystem and Verse Network with more featured projects and DApps</li>
+                                    <li>Explore deployment on other blockchains like Terra, Cosmos and multiple blockchains</li>
                                 </ul>
                             </div>
                         </div>
