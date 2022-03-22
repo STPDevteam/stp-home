@@ -494,6 +494,7 @@ const SeventhContent = styled.div`
 const EighthContent = styled.div`
     background: url(${Image8}) no-repeat;
     background-position-y: 150px;
+    background-position-x: -10px;
     background-size: 100%;
     @media (max-width: 767px) {
         background: url(${Image8H5}) no-repeat;
