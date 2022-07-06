@@ -369,7 +369,7 @@ const FifthContent = styled.div`
     &>div{
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 120px;
+        padding: 0 50px;
         @media (max-width: 767px) {
             padding: 0 30px;
         }
@@ -695,10 +695,8 @@ const Home: React.FC = () =>  {
             case 1: 
                 return <><div><img src={Tools1}/></div><div> Clique</div></>
             case 2: 
-                return <><div><img src={Tools2}/></div><div> Framework</div></>
+                return <><div><img src={Tools3}/></div><div> Governance SDK</div></>
             case 3: 
-                return <><div><img src={Tools3}/></div><div> DAO Scan Tool</div></>
-            case 4: 
                 return <><div><img src={Tools4}/></div><div> DAO MarketCap Tool</div></>
         }
     }
@@ -1149,20 +1147,19 @@ const Home: React.FC = () =>  {
                                         <h3>Governance SDK</h3>
                                         <p>Using Clique, DAOs can implement cross chain governance to take advantage of greatly reduced gas fees. DAOs on Ethereum (or any EVM chain) can execute governance on Polygon without the need to issue new tokens or bridge their existing tokens. </p>
                                         <div className="btns">
-                                            <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
-                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/framework" target="_blank">Learn More</a></Button>
+                                            <Button type="primary" onClick={showModal}>Coming soon</Button>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="item">
                                     <div>
-                                        <img src={Dao3} alt="" />
+                                        <img src={Dao4} alt="" />
                                     </div>
                                     <div>
-                                        <h3>DAO Scan Tool</h3>
-                                        <p>Track all DAO transaction history and onchain data globally</p>
+                                        <h3>DAO MarketCap Tool</h3>
+                                        <p>A global DAO ranking and data analysis platform</p>
                                         <div className="btns">
-                                            <Button type="primary"><a href="https://explorer.stp.network" target="_blank">Launch</a></Button>
+                                            <Button type="primary" onClick={showModal}>Coming soon</Button>
                                         </div>
                                     </div>
                                 </div>

@@ -1,5 +1,5 @@
-import { Button } from 'antd'
-import React from 'react'
+import { Button, Modal } from 'antd'
+import React, { useState } from 'react'
 import Dao1 from '../../assets/images/home/dao1.png'
 import Dao2 from '../../assets/images/home/dao2.png'
 import Dao3 from '../../assets/images/home/dao3.png'
@@ -8,10 +8,25 @@ import Daos1 from '../../assets/images/product/daos1.png'
 import Daos2 from '../../assets/images/product/daos2.png'
 import Daos3 from '../../assets/images/product/daos3.png'
 import Daos4 from '../../assets/images/product/daos4.png'
+import Cube from '../../assets/images/home/cube.png'
 import './index.less'
 
 const Product: React.FC = () =>  {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+    
     return <div className="product">
+            <Modal className="comingModal" visible={isModalVisible} footer={null} closable={false} width={320} centered>
+                <img src={Cube} alt="" />
+                <p>Coming Soon...</p>
+            <Button type="primary" onClick={handleCancel}>Close</Button>
+            </Modal>
                 <div className="content">
                     <h2>Product</h2>
                     <div className="product-box">
@@ -36,20 +51,19 @@ const Product: React.FC = () =>  {
                                 <h3>Governance SDK</h3>
                                 <p>Using Clique, DAOs can implement cross chain governance to take advantage of greatly reduced gas fees. DAOs on Ethereum (or any EVM chain) can execute governance on Polygon without the need to issue new tokens or bridge their existing tokens. </p>
                                 <div className="btns">
-                                    <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
-                                    <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/framework" target="_blank">Learn More</a></Button>
+                                    <Button type="primary" onClick={showModal}>Coming soon</Button>
                                 </div>
                             </div>
                         </div>
                         <div className="item">
                             <div>
-                                <img src={Dao3} alt="" />
+                                <img src={Dao4} alt="" />
                             </div>
                             <div>
-                                <h3>DAO Scan Tool</h3>
-                                <p>Track all DAO transaction history and onchain data globally</p>
+                                <h3>DAO MarketCap Tool</h3>
+                                <p>A global DAO ranking and data analysis platform</p>
                                 <div className="btns">
-                                    <Button type="primary"><a href="https://explorer.stp.network" target="_blank">Launch</a></Button>
+                                    <Button type="primary" onClick={showModal}>Coming soon</Button>
                                 </div>
                             </div>
                         </div>
