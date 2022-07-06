@@ -709,7 +709,7 @@ const Home: React.FC = () =>  {
         dotsClass: "slick-dots slick-thumb",
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 4000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -847,7 +847,7 @@ const Home: React.FC = () =>  {
                             <Col md={18} sm={24}>
                                 <h1>Verse Network <br/> by <img className="stpt" src={Logo}/></h1>
                                 <p>
-                                A Layer 2 Sidechain Optimized for DAOs
+                                An ecosystem optimized for DAOs
                                 </p>
                                 <div className="btns">
                                     <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
@@ -931,8 +931,7 @@ const Home: React.FC = () =>  {
                         </div> */}
                         <div id="About">
                             <p>
-                            Verse is a censorship resistant, front running resistant, high performance interconnected cloud for next gen DAO and DeFi.
-                            </p>
+                            Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.                            </p>
                             <hr />
                             <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
                         </div>
@@ -940,7 +939,7 @@ const Home: React.FC = () =>  {
                     <ThirdContent>
                         <div id="Features">
                             <h2 id="Experience" className="defiTitle">Verse</h2>
-                            <p>A Layer 2 Sidechain Optimized for DAOs</p>
+                            <p>A blockchain optimized for DAOs</p>
                             <ul>
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
@@ -952,8 +951,8 @@ const Home: React.FC = () =>  {
                                 <li>
                                     <div><img src={SmartChain2} alt="" /></div>
                                     <div>
-                                        <h3>Multi Chain Compatibility</h3>
-                                        <p>The Meter SDK is backward compatible with EVM and Ethereum RPC and will support containerized VMs like MOVE and WASM on the same consensus and network layers</p>
+                                        <h3>Cross-chain data bridge</h3>
+                                        <p>Verse Network utilizes a Data Bridge to serve as a cross-chain synchronizer to communicate data and voting results between the DAO’s EVM chain and Polygon chain</p>
                                     </div>
                                 </li>
                                 <li>
@@ -968,13 +967,6 @@ const Home: React.FC = () =>  {
                                     <div>
                                         <h3>Cross DAO Interoperability</h3>
                                         <p>Build bridges to different DAOs to enable seamless partnership that allows for conjoined votes and community sharing</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><img src={SmartChain5} alt="" /></div>
-                                    <div>
-                                        <h3>The Most Decentralized Ethereum-compatible Chain</h3>
-                                        <p>Verse uses PoS consensus which is much more decentralized and censorship resistant than other existing side chains, which all use a variant of Proof of Authority</p>
                                     </div>
                                 </li>
                             </ul>
@@ -1154,8 +1146,8 @@ const Home: React.FC = () =>  {
                                         <img src={Dao2} alt="" />
                                     </div>
                                     <div>
-                                        <h3>Framework</h3>
-                                        <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
+                                        <h3>Governance SDK</h3>
+                                        <p>Using Clique, DAOs can implement cross chain governance to take advantage of greatly reduced gas fees. DAOs on Ethereum (or any EVM chain) can execute governance on Polygon without the need to issue new tokens or bridge their existing tokens. </p>
                                         <div className="btns">
                                             <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
                                             <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/framework" target="_blank">Learn More</a></Button>
@@ -1171,18 +1163,6 @@ const Home: React.FC = () =>  {
                                         <p>Track all DAO transaction history and onchain data globally</p>
                                         <div className="btns">
                                             <Button type="primary"><a href="https://explorer.stp.network" target="_blank">Launch</a></Button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div>
-                                        <img src={Dao4} alt="" />
-                                    </div>
-                                    <div>
-                                        <h3>DAO MarketCap Tool</h3>
-                                        <p>A global DAO ranking and data analysis platform</p>
-                                        <div className="btns">
-                                            <Button type="primary">Coming Soon</Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1211,27 +1191,24 @@ const Home: React.FC = () =>  {
                             <div>
                                 <h3>2022 Q2</h3>
                                 <ul>
-                                    <li>Complete Verse Network infrastructure including Chainlink, Gnosis, The Graph and etc.</li>
-                                    <li>Launch Cross-chain Governance Features and Data Bridge System</li>
-                                    <li>Launch DApp developer kit and document</li>
-                                    <li>Klaytyn Network Integration</li>
+                                    <li>Launch Cross-chain Governance Features and Data Bridge System on Polygon (Done)</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3>2022 Q3</h3>
                                 <ul>
-                                    <li>Launch Verse Network Mainnet</li>
-                                    <li>DAO Scan - a tracker of transaction history and real-time chain info on Verse</li>
+                                    <li>Launch Clique V2.0 with more DAO tooling features such as Airdrop, Fundraising, etc</li>
+                                    <li>Launch Governance SDK that enables projects to deploy decentralized governance feature on their own websites</li>
+                                    <li>Launch on Binance Side-chain (BAS) optimized for DAO ecosystem</li>
                                     <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
-                                    <li>Launch DApp product on Ethereum, Verse and Klaytn Network</li>
                                 </ul>
                             </div>
                             <div>
                                 <h3>2022 Q4 and Further</h3>
                                 <ul>
-                                    <li>Continue to expand infrastructures and cross-chain DAO interoperability on Verse Network</li>
-                                    <li>Continue to expand DAO ecosystem and Verse Network with more featured projects and DApps</li>
-                                    <li>Explore deployment on other blockchains like Terra, Cosmos and multiple blockchains</li>
+                                    <li>Continue to expand infrastructures and cross-chain DAO interoperability</li>
+                                    <li>Continue to expand Clique DAO ecosystem with more featured projects and DApps</li>
+                                    <li>Explore deployment on other EVM-based Blockchains</li>
                                 </ul>
                             </div>
                         </div>

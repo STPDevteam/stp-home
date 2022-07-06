@@ -33,8 +33,8 @@ const Product: React.FC = () =>  {
                                 <img src={Dao2} alt="" />
                             </div>
                             <div>
-                                <h3>Framework</h3>
-                                <p>A full suite of native tools and infrastructure built on Verse facilitates efficient decentralized decision-making for users, communities and organizations</p>
+                                <h3>Governance SDK</h3>
+                                <p>Using Clique, DAOs can implement cross chain governance to take advantage of greatly reduced gas fees. DAOs on Ethereum (or any EVM chain) can execute governance on Polygon without the need to issue new tokens or bridge their existing tokens. </p>
                                 <div className="btns">
                                     <Button type="primary"><a href="https://daoframe.com" target="_blank">Launch App</a></Button>
                                     <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/framework" target="_blank">Learn More</a></Button>
@@ -50,18 +50,6 @@ const Product: React.FC = () =>  {
                                 <p>Track all DAO transaction history and onchain data globally</p>
                                 <div className="btns">
                                     <Button type="primary"><a href="https://explorer.stp.network" target="_blank">Launch</a></Button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div>
-                                <img src={Dao4} alt="" />
-                            </div>
-                            <div>
-                                <h3>DAO MarketCap Tool</h3>
-                                <p>A global DAO ranking and data analysis platform</p>
-                                <div className="btns">
-                                    <Button type="primary">Coming Soon</Button>
                                 </div>
                             </div>
                         </div>
