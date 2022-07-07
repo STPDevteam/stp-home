@@ -25,7 +25,7 @@ function App() {
               <Route component={Ecosystem} exact path="/ecosystem" />
               <Route component={Product} exact path="/product" />
               <Route component={Tech} exact path="/tech" />
-              <Route component={Developers} exact path="/developers" />
+              {/* <Route component={Developers} exact path="/developers" /> */}
             </Switch>
           </Content>
           <Footer/>

@@ -155,12 +155,12 @@ const FirstContent = styled.div`
         @media (max-width: 767px) {
             width: 100px;
         }
-        .ant-btn{
-            &:last-of-type{
-                background: #3898FC;
-                border-color: #3898FC;
-            }
-        }
+        // .ant-btn{
+        //     &:last-of-type{
+        //         background: #3898FC;
+        //         border-color: #3898FC;
+        //     }
+        // }
     }
 `
 
@@ -849,7 +849,7 @@ const Home: React.FC = () =>  {
                                 </p>
                                 <div className="btns">
                                     <Button type="primary"><Link to="/product">Launch DAO APPs</Link></Button>
-                                    <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button>
+                                    {/* <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button> */}
                                 </div>
                             </Col>
                         </Row>
@@ -971,7 +971,7 @@ const Home: React.FC = () =>  {
                         </div>
                     </ThirdContent>
                 </div>
-                <div className="infrastructure">
+                {/* <div className="infrastructure">
                     <h2>
                     Verse Infrastructure
                     </h2>
@@ -1056,7 +1056,7 @@ const Home: React.FC = () =>  {
                         </div>
                     </div>
                     <Button type="primary" onClick={() => {history.push('/tech')}}>Learn more</Button>
-                </div>
+                </div> */}
                 <FourthContent>
                     <div>
                         <h2>Powering The DAO Ecosystem</h2>
@@ -1071,18 +1071,18 @@ const Home: React.FC = () =>  {
                                 <h3>Transaction Fees</h3>
                                 <p>Serves as gas fees for transaction and smart contract execution.</p>
                             </div>
-                        </div>
-                        <div className="web system">
+                        {/* </div>
+                        <div className="web system"> */}
                             <div className="item">
                                 <div className="blue"><img src={System3} alt="" /></div>
                                 <h3>Node Rewards</h3>
                                 <p>Incentivizes network participants and contributors.</p>
                             </div>
-                            <div className="item">
+                            {/* <div className="item">
                                 <div className="green"><img src={System4} alt="" /></div>
                                 <h3>Tuning Key Parameters</h3>
                                 <p className="parameters">Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
-                            </div>
+                            </div> */}
                             {/* <div className="item">
                                 <div className="blue"><img src={System5} alt="" /></div>
                                 <h3>USTP</h3>
