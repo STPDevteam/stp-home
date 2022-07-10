@@ -13,142 +13,37 @@ const Tech: React.FC = () =>  {
                     <h2>Verse</h2>
                     <h3>The Verse Network</h3>
                     <p>
-                    Verse is a censorship resistant, front running resistant, high performance, and interconnected cloud for next gen DAOs and DeFi. It enables networks, developers and organizations to decentralize decision making effectively and scale their communities and decentralized applications. It is highly scalable, through its Proof of Stake (POS) consensus. It is censorship-resistant, unlike ZK Rollups and Optimistic Rollups. It can also support multiple virtual machines, not only the EVM. Furthermore, it is resistant to front-running, meaning that nobody
-                    can pay a higher gas fee than someone in order to have their transaction approved/validated before them.</p>
-
+                        Verse Network brings an all-in-one DAO creation and management ecosystem to your fingertips. Running a DAO has never been easier thanks to the range of DAO tooling, native dApps and third party integrations available on the Verse. Verse Network supports a range of EVM compatible chains that comprise the vast majority of all DAO activity. 
+                        Our ecosystem was built with the goal of scaling DAOs by lowering barriers to on-chain DAO activity. Centralized DAO tooling on the Verse removes barriers to entry such as high gas fees while also simplifying the user experiences and streamlining DAO governance. Verse Network is optimized for both new and existing DAOs, and projects of all sizes across the range of DAO use cases. 
+                    </p>
                     <h3>Verse Network Architecture</h3>
-                    <p>Co-Developed with the Meter Foundation, Verse Network is built on the upcoming Meter SDK, a HotStuff consensus-based framework scalable to 1000s of validators and with a throughput of 1000s of transactions per second on each chain. The Meter SDK is backward compatible with EVM and Ethereum RPC and will support containerized VMs like MOVE and WASM on the same consensus and network layers. The Meter SDK cross chain protocol enables the communication between parallel chains through a hub model while providing the ability to communicate across heterogeneous chains through Meter Passport infrastructure. With Meter SDK, you can interconnect with blockchain clouds like Ethereum, BSC and Polkadot.</p>
-
-                    <h3>Infrastructure</h3>
-
-                    <p>Application Layer - Smart Contracts, DAPPs, User Interface</p>
+                    <p>Clique is a native dApp on the Verse serving as a centralized dashboard for a range of DAO activity.</p>
+                    <p><b>DAO Participation:</b> Clique allows DAO members to browse, govern and socially participate in their projects through this aggregated dashboard. Community members can view asset holdings, proposals, and ongoing events through their dashboard. Clique empowers users to easily participate in multiple DAOs where they have membership. At any time, users are able to:</p>
                     <ul>
-                        <li>
-                        Ethereum Emulation – EVM & RPC emulation mode
-                        </li>
-                        <li>
-                        Cross-chain Interoperability
-                        </li>
-                        <li>
-                        DAPP Deployment – Low and stable Gas Costs
-                        </li>
+                        <li>Participate in public token offerings for open DAO projects</li>
+                        <li>Manage DAO community memberships</li>
+                        <li>View holders and governance structure within DAOs</li>
+                        <li>Vote on open proposals, and view results of closed proposals </li>
+                    </ul>
+                    <p><b>DAO Creation:</b> Tools and infrastructure for projects to build DAOs using Verse. All aspects of DAO creation can be executed on Verse </p>
+                    <ul>
+                        <li>Issue new tokens, or bridge existing tokens (cross-chain)</li>
+                        <li>Implement custom token distribution schedule with reserved token allocation and vesting</li>
+                        <li>Customize and execute whitelist and public sale</li>
+                        <li> Optimize DAO parameters for DAO use case, including: Membership DAO, Project DAO, or Investment DAO </li>
                     </ul>
 
-                    <p>Execution Layer– Supporting multiple VMs (EVM, WASM, MOVE) inside
-                    separate containers</p>
+                    <p><b>DAO Governance and Management:</b> Verse Network provides efficient decentralized decision-making for communities. DAOs can configure onchain governance parameters including:</p>
                     <ul>
-                        <li>High Throughput ( 1500 TPS per EVM chain)</li>
-                        <li>
-                        Front Running Resistant
-                        </li>
-                        <li>Low Gas Fees (5 to 50 Cents)</li>
+                        <li>Token holding requirements for voting and proposal creation</li>
+                        <li>Community voting customization including voting duration and minimum total votes </li>
                     </ul>
-
-                    <p>Network Layer – 1,000s of full node operation with low hardware specifications</p>
-                    <ul>
-                        <li> O(log(n)) network communication overhead BLS and layered gossip network design</li>
-                        <li>Potential of further scaling through Sharding</li>
-                        <li>Potential of shared hub with parallel/shared chains with Instant Finality</li>
-                        <li>Low Hardware Specifications</li>
-                    </ul>
-                
-
-                    <p>Consensus Layer – Scale to 1,000s of validators without effect on performance</p>
-                    <ul>
-                        <li>High Sybil Resistance – 67%</li>
-                        <li>Instant deterministic finality – 2.4 Sec or lower</li>
-                        <li>Best performance for totally order linear blockchains</li>
-                    </ul>
-                    <div className="infrastructure">
-                        <div id="infrastructure-list" className={`list`}>
-                            <div>
-                                <div><Infrastructure1/></div>
-                                <div>
-                                    <h3>
-                                    Application Layer 
-                                    </h3>
-                    
-                                    <p>
-                                    Smart Contracts, DAPPs, User Interface
-                                    </p>
-                                    
-                                    <hr />
-                                </div>
-                            </div>
-                            <div>
-                                <div><Infrastructure2/></div>
-                                <div>
-                                    <h3>
-                                    Execution Layer 
-                                    </h3>
-                    
-                                        <p>
-                                        Supporting multiple VMs (EVM, WASM, MOVE) inside separate containers 
-                                        </p>
-                                    
-                                    <hr />
-                                </div>
-                            </div>
-                            <div>
-                                <div><Infrastructure3/></div>
-                                <div>
-                                    <h3>
-                                    Network Layer 
-                                    </h3>
-                    
-                                        <p>
-                                        1,000s of Full Node Operation with low hardware specifications 
-                                        </p>
-                                    
-                                    <hr />
-                                </div>
-                            </div>
-                            <div>
-                                <div><Infrastructure4/></div>
-                                <div>
-                                    <h3>
-                                    Consensus Layer
-                                    </h3>
-                        
-                                        <p>
-                                        Scale to 1,000s of validators without effect on performance
-                                        </p>
-                                    
-                                    <hr />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        <h3>Platform Infrastructure</h3>
-
-                        <h3>Containerized Virtual Machine</h3>
-                        <ul>
-                            <li>
-                            POS chain has the capability to run multiple Virtual Machines (EVM, MOVE, WASM) on the same consensus layer
-                            </li>
-                            <li>
-                            Projects can choose multiple VMs to meet diverse application requirements while benefiting from common set of consensus layer and network
-                        layer capabilities
-                            </li>
-                        </ul>
-
-                        <h3>Parallel / Side Chain</h3>
-                        <ul>
-                            <li>
-                            A parallel / side-chain infrastructure allows completely independent interchain communications
-                            </li>
-                            <li>
-                            A parallel / side-chain can choose its own set of validators or leverage the
-                        validator setup of the main chain
-                            </li>
-                            <li>
-                            Built-in cross-chain support: Communicate across all parallel/ side chains
-                        with instant finality
-                            </li>
-                            <li>
-                            External heterogeneous chain communications
-                            </li>
-                        </ul>
+                    <p>
+                    Cross-chain governance is possible with Clique, enabling proposal creation and cross-chain voting for DAOs on Ethereum to the Polygon network.
+                    </p>
+                    <p>
+                    The cross-chain governance solution comes without the need for projects to issue new tokens or bridge existing tokens to the Polygon. The low gas fees are an advantage for DAOs implementing on-chain governance. Gas fees on Polygon are dramatically reduced compared to Ethereum for all governance activities, including voting and proposal creation.
+                    </p>       
                 </div>
             </div>
 }
