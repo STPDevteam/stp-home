@@ -1,9 +1,5 @@
 import React from 'react'
-
-import {ReactComponent as Infrastructure1} from '../../assets/images/home/svg/infrastructure1.svg'
-import {ReactComponent as Infrastructure2} from '../../assets/images/home/svg/infrastructure2.svg'
-import {ReactComponent as Infrastructure3} from '../../assets/images/home/svg/infrastructure3.svg'
-import {ReactComponent as Infrastructure4} from '../../assets/images/home/svg/infrastructure4.svg'
+import TechImg from '../../assets/images/tech/tech.jpg'
 import './index.less'
 
 const Tech: React.FC = () =>  {
@@ -43,7 +39,10 @@ const Tech: React.FC = () =>  {
                     </p>
                     <p>
                     The cross-chain governance solution comes without the need for projects to issue new tokens or bridge existing tokens to the Polygon. The low gas fees are an advantage for DAOs implementing on-chain governance. Gas fees on Polygon are dramatically reduced compared to Ethereum for all governance activities, including voting and proposal creation.
-                    </p>       
+                    </p>   
+                    <div>
+                        <img src={TechImg} alt="" />
+                    </div>    
                 </div>
             </div>
 }
