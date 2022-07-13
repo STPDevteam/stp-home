@@ -235,7 +235,7 @@ const Header: React.FC = () =>  {
                         <Link to="/tech" className={location.pathname === '/tech' ? 'active': ''}>Tech</Link>
                         <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link>
                         <Link to="/product" className={location.pathname === '/product' ? 'active': ''}>Product</Link>
-                        <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link>
+                        {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
                         <Dropdown overlay={resourcesMenu} trigger={['click']}>
                             <a>
                             Resources <Arrow />
