@@ -18,8 +18,10 @@ const Ecosystem: React.FC = () =>  {
     return <div className="ecosystem">
         <div className="banner">
             <div className="content">
-                <h2>Ecosystem</h2>
-                <p>The initial launch is supported by the existing 15,000 on-chain token holder community</p>
+                <h2>Verse Architecture on BAS</h2>
+                <p>Powered by Ankr BNB Chain-Application-Sidechain (BAS) framework, Verse Network’s chain is built with flexible, convenient, and easy-to-use multi-modular blockchain architecture. The core modules for this purpose include Parlia Consensus Engine, Pool & Staking, Governance, Dynamic Runtime Upgrades, and Reward Management, and these modules will be built with System Smart Contract and Ethereum Virtual Machine (EVM) machines. Verse solves the virtual machine security issues by fully trusting the EVM of the official Go-Ethereum codebase. EVM, which has been audited thousands of times, is widely used in blockchain networks.
+                <br/>
+                To fully manage and validate governance and reward distribution in an EVM runtime environment, Verse implements the relevant logic directly using Smart Contract without relying on third-party services.</p>
             </div>
         </div>
         <div className="content">

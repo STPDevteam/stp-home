@@ -60,8 +60,8 @@ const Product: React.FC = () =>  {
                                 <img src={Dao4} alt="" />
                             </div>
                             <div>
-                                <h3>DAO MarketCap Tool</h3>
-                                <p>A global DAO ranking and data analysis platform</p>
+                                <h3>Multi-modular blockchain architecture</h3>
+                                <p>Powered by Ankr BNB Chain-Application-Sidechain (BAS) framework, Verse Network’s chain includes core modules including Parlia Consensus Engine, Pool & Staking, Governance, Dynamic Runtime Upgrades, and Reward Management.</p>
                                 <div className="btns">
                                     <Button type="primary" onClick={showModal}>Coming soon</Button>
                                 </div>
