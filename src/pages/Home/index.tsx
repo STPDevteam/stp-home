@@ -277,7 +277,7 @@ const ThirdContent = styled.div`
         font-weight: 600;
         color: #fff; 
         margin-top: 0;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         @media (max-width: 767px) {
             font-size: 14px;
             line-height: 1.2;
@@ -298,7 +298,7 @@ const ThirdContent = styled.div`
             display: flex;
             flex-direction: row;
             align-items: center;
-            height: 80px;
+            height: 114px;
             img{
                 width: 48px;
                 margin-right: 15px;
@@ -322,6 +322,12 @@ const ThirdContent = styled.div`
             @media (max-width: 767px) {
                 width: 100%!important;
                 height: 120px;
+                &:first-of-type{
+                    height: 150px;
+                }
+                &:nth-of-type(2){
+                    height: 160px;
+                }
             }
         }
         p{
@@ -693,11 +699,11 @@ const Home: React.FC = () =>  {
     const getCustomPaging = (i: number) => {
         switch (i) {
             case 1: 
-                return <><div><img src={Tools1}/></div><div> Clique</div></>
+                return <><div><img src={Tools1}/></div><div>Clique</div></>
             case 2: 
-                return <><div><img src={Tools3}/></div><div> Governance SDK</div></>
+                return <><div><img src={Tools3}/></div><div>Governance SDK</div></>
             case 3: 
-                return <><div><img src={Tools4}/></div><div> DAO MarketCap Tool</div></>
+                return <><div><img src={Tools4}/></div><div>Multi-modular blockchain architecture</div></>
         }
     }
 
@@ -929,7 +935,7 @@ const Home: React.FC = () =>  {
                         </div> */}
                         <div id="About">
                             <p>
-                            Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.                            </p>
+                            Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.                           </p>
                             <hr />
                             <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
                         </div>
@@ -937,20 +943,20 @@ const Home: React.FC = () =>  {
                     <ThirdContent>
                         <div id="Features">
                             <h2 id="Experience" className="defiTitle">Verse</h2>
-                            <p>A blockchain optimized for DAOs</p>
+                            <p>An Ecosystem Optimized for DAOs </p>
                             <ul>
                                 <li>
                                     <div><img src={SmartChain1} alt="" /></div>
                                     <div>
-                                        <h3>Fast with Low and Stable Transaction Costs</h3>
-                                        <p>Verse can process over 1500 transactions per second, more than 100x faster than Ethereum. And transactions cost less than $0.01 per transaction</p>
+                                        <h3>An all-in-one aggregated Dashboard</h3>
+                                        <p>Verse Network offers multiple native dApps optimized for all aspects of DAO creation and operations. We also offer integration with the most popular third party options for additional DAO tooling capabilities. </p>
                                     </div>
                                 </li>
                                 <li>
                                     <div><img src={SmartChain2} alt="" /></div>
                                     <div>
-                                        <h3>Cross-chain data bridge</h3>
-                                        <p>Verse Network utilizes a Data Bridge to serve as a cross-chain synchronizer to communicate data and voting results between the DAO’s EVM chain and Polygon chain</p>
+                                        <h3>DAO Goverance</h3>
+                                        <p>Verse Network offers seamless DAO governance for projects built on Ethereum, and EMV-compatible chains. Our governance dApp Clique covers the basics from proposal creation and voting, to more advanced features like cross chain governance. </p>
                                     </div>
                                 </li>
                                 <li>
@@ -1071,23 +1077,11 @@ const Home: React.FC = () =>  {
                                 <h3>Transaction Fees</h3>
                                 <p>Serves as gas fees for transaction and smart contract execution.</p>
                             </div>
-                        {/* </div>
-                        <div className="web system"> */}
                             <div className="item">
                                 <div className="blue"><img src={System3} alt="" /></div>
-                                <h3>Node Rewards</h3>
+                                <h3>Network Incentivize</h3>
                                 <p>Incentivizes network participants and contributors.</p>
                             </div>
-                            {/* <div className="item">
-                                <div className="green"><img src={System4} alt="" /></div>
-                                <h3>Tuning Key Parameters</h3>
-                                <p className="parameters">Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
-                            </div> */}
-                            {/* <div className="item">
-                                <div className="blue"><img src={System5} alt="" /></div>
-                                <h3>USTP</h3>
-                                <p>A native stablecoin on Verse  based on STPT staking</p>
-                            </div> */}
                         </div>
                         <div className="h5 system">
                             <Carousel ref={carouselRef as any}>
@@ -1103,13 +1097,8 @@ const Home: React.FC = () =>  {
                                 </div>
                                 <div className="item">
                                     <div className="blue"><img src={System3} alt="" /></div>
-                                    <h3>Node Rewards</h3>
+                                    <h3>Network Incentivize</h3>
                                     <p>Incentivizes network participants and contributors.</p>
-                                </div>
-                                <div className="item">
-                                    <div className="green"><img src={System4} alt="" /></div>
-                                    <h3>Tuning Key Parameters</h3>
-                                    <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                                 </div>
                                 {/* <div className="item">
                                     <div className="blue"><img src={System5} alt="" /></div>
@@ -1156,8 +1145,8 @@ const Home: React.FC = () =>  {
                                         <img src={Dao4} alt="" />
                                     </div>
                                     <div>
-                                        <h3>DAO MarketCap Tool</h3>
-                                        <p>A global DAO ranking and data analysis platform</p>
+                                        <h3>Multi-modular blockchain architecture</h3>
+                                        <p>Powered by Ankr BNB Chain-Application-Sidechain (BAS) framework, Verse Network’s chain includes core modules including Parlia Consensus Engine, Pool & Staking, Governance, Dynamic Runtime Upgrades, and Reward Management.</p>
                                         <div className="btns">
                                             <Button type="primary" onClick={showModal}>Coming soon</Button>
                                         </div>
