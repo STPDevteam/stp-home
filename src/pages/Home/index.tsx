@@ -322,6 +322,12 @@ const ThirdContent = styled.div`
             @media (max-width: 767px) {
                 width: 100%!important;
                 height: 120px;
+                &:first-of-type{
+                    height: 150px;
+                }
+                &:nth-of-type(2){
+                    height: 160px;
+                }
             }
         }
         p{
@@ -1071,23 +1077,11 @@ const Home: React.FC = () =>  {
                                 <h3>Transaction Fees</h3>
                                 <p>Serves as gas fees for transaction and smart contract execution.</p>
                             </div>
-                        {/* </div>
-                        <div className="web system"> */}
                             <div className="item">
                                 <div className="blue"><img src={System3} alt="" /></div>
                                 <h3>Network Incentivize</h3>
                                 <p>Incentivizes network participants and contributors.</p>
                             </div>
-                            {/* <div className="item">
-                                <div className="green"><img src={System4} alt="" /></div>
-                                <h3>Tuning Key Parameters</h3>
-                                <p className="parameters">Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
-                            </div> */}
-                            {/* <div className="item">
-                                <div className="blue"><img src={System5} alt="" /></div>
-                                <h3>USTP</h3>
-                                <p>A native stablecoin on Verse  based on STPT staking</p>
-                            </div> */}
                         </div>
                         <div className="h5 system">
                             <Carousel ref={carouselRef as any}>
@@ -1103,13 +1097,8 @@ const Home: React.FC = () =>  {
                                 </div>
                                 <div className="item">
                                     <div className="blue"><img src={System3} alt="" /></div>
-                                    <h3>Node Rewards</h3>
+                                    <h3>Network Incentivize</h3>
                                     <p>Incentivizes network participants and contributors.</p>
-                                </div>
-                                <div className="item">
-                                    <div className="green"><img src={System4} alt="" /></div>
-                                    <h3>Tuning Key Parameters</h3>
-                                    <p>Tuning collateralization ratio functions, price curve, and parameters such as different weightings on asset properties.</p>
                                 </div>
                                 {/* <div className="item">
                                     <div className="blue"><img src={System5} alt="" /></div>
