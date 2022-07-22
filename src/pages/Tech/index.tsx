@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect, useState, useRef} from 'react'
+import { Button, Modal } from 'antd';
 import Advantage1 from '../../assets/images/tech/advantage1.png';
 import Advantage2 from '../../assets/images/tech/advantage2.png';
 import Advantage3 from '../../assets/images/tech/advantage3.png';
@@ -8,11 +9,26 @@ import Tool2 from '../../assets/images/tech/tool2.png';
 import Tool3 from '../../assets/images/tech/tool3.png';
 import Tool4 from '../../assets/images/tech/tool4.png';
 import Network from '../../assets/images/tech/network.png';
+import Cube from '../../assets/images/home/cube.png'
 
 
 import './index.less'
 
 const Tech: React.FC = () =>  {
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+      setIsModalVisible(true);
+    };
+  
+    const handleOk = () => {
+      setIsModalVisible(false);
+    };
+  
+    const handleCancel = () => {
+      setIsModalVisible(false);
+    };
     return <div className="tech">
         <div className="banner">
             <div className="content">
@@ -48,31 +64,35 @@ const Tech: React.FC = () =>  {
                         <p>BNB Chain and BNB Sidechain are seamlessly integrated and BNB Chain DeFi/NFT liquidity and user base (&gt;2M DAU ATH)</p>
                     </div>
                 </div>
+                <img className='network' src={Network} alt="" />
             </div>
         </div>
         <div className='content'>
-            <img className='network' src={Network} alt="" />
             <h3>Tools</h3>
             <div className='tools'>
-                <div>
+                <div onClick={() => {window.open('https://bas-testnet-explorer.myclique.io', '_blank');}}>
                     <div className='img'><img src={Tool1} alt="" /></div>
                     <p>Testnet Explorer</p>
                 </div>
-                <div>
+                <div onClick={() => {window.open('https://bas-testnet-faucet.myclique.io', '_blank');}}>
                     <div className='img'><img src={Tool2} alt="" /></div>
                     <p>Testnet Explorer</p>
                 </div>
-                <div>
+                <div onClick={showModal}>
                     <div className='img'><img src={Tool3} alt="" /></div>
                     <p>Testnet Explorer</p>
                 </div>
-                <div>
+                <div onClick={showModal}>
                     <div className='img'><img src={Tool4} alt="" /></div>
                     <p>Testnet Explorer</p>
                 </div>
             </div>
         </div>
-
+        <Modal className="comingModal" visible={isModalVisible} footer={null} closable={false} width={320} centered>
+                <img src={Cube} alt="" />
+                <p>Coming Soon...</p>
+            <Button type="primary" onClick={handleCancel}>Close</Button>
+        </Modal>
     </div>
 }
 
