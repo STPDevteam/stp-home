@@ -4,18 +4,24 @@
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
-        padding: 0 50px;
+        padding: 100px 50px;
         @media (max-width: 767px) {
-            padding: 0 20px;
+            padding: 20px 20px 150px;
         }
     }
     .banner{
         background: url('../../assets/images/ecosystem/ecosystem1.png') no-repeat;
-        background-size: 100%, 100%;
-        height: 378px;  
+        background-size: 50%;
+        background-position: 105% 0;
         display: flex;  
         align-items: center;
-        background-position: right bottom;
+        @media (max-width: 992px) {
+            background-position: 105% 0;
+        }
+        @media (max-width: 767px) {
+            background-size: 60%;
+            background-position: 100% 100%;
+        }
     }
     h2{
         font-size: 48px;
@@ -27,34 +33,50 @@
     }
     h3{
         color: #111029;
-        font-size: 24px;
         text-align: center;
-        margin: 80px 0 40px;
         font-weight: 600;
+        font-size: 48px;
         @media (max-width: 767px) {
-            font-size: 18px;
+            font-size: 30px;
         }
     }
     p{
         font-size: 16px;
         color: #727272;
         max-width: 666px;
+        @media (max-width: 1200px) {
+            max-width: 600px;
+        }
+        @media (max-width: 992px) {
+            max-width: 500px;
+        }
         @media (max-width: 767px) {
             font-size: 12px;
         }
     }
+    .container{
+        background: radial-gradient(75.22% 75.22% at 20.49% 12.79%, #FFFFFF 0%, rgba(228, 231, 233, 0.502295) 100%);
+        p{
+            text-align: center;
+            margin: 0 auto 30px;
+
+        }
+    }
     .list{
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 35px;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
         padding: 0; 
+        // @media (max-width: 992px) {
+        //     grid-template-columns: repeat(2, 1fr);
+        // }
         @media (max-width: 767px) {
-            flex-direction: column;
+            grid-template-columns: repeat(1, 1fr);
         }
         .item{
-            margin: 0 20px 0;
             padding: 30px 20px;
             background: #fff;
             border-radius: 40px;
@@ -89,25 +111,62 @@
             }
         }
     }
-    .list1{
-        .item{
-            width: 290px;
-            height: 230px;
+    .network{
+        margin: 0 auto 100px;
+        display: block;
+        width: 80%;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+        @media (max-width: 767px) {
+            width: 100%;
         }
     }
-    .list2{
+    .tools{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 60px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 46px;
+        grid-row-gap: 100px;
+        margin-top: 120px;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
         @media (max-width: 767px) {
             grid-template-columns: repeat(1, 1fr);
         }
-        .item{
-            width: 100%;
-            height: 200px;
+        &>div{
+            border-radius: 40px;
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            height: 240px;
+            width: 255px;
+            color: #727272;
+            text-align: center;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 40px;
             margin: 0 auto;
-            @media (max-width: 767px) {
-                width: 80%;
+            p{
+                font-weight: 600;
+                font-size: 24px;
+            }
+            .img{
+                width: 120px;
+                height: 120px;
+                border-radius: 60px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                position: absolute;
+                top: -50%;
+                right: 50%;
+                transform: translate(50%, 50%);
+                padding: 30px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
