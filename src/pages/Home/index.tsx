@@ -807,7 +807,7 @@ const Home: React.FC = () =>  {
     const resourcesMenu = (
         <Menu>
             <Menu.Item>
-                <a target="_blank" href="/Verse Network White Paper.pdf">
+                <a target="_blank" href="/Verse Network WP.pdf">
                 Whitepaper
                 </a>
             </Menu.Item>
