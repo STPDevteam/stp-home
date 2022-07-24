@@ -76,15 +76,15 @@ const Tech: React.FC = () =>  {
                 </div>
                 <div onClick={() => {window.open('https://bas-testnet-faucet.myclique.io', '_blank');}}>
                     <div className='img'><img src={Tool2} alt="" /></div>
-                    <p>Testnet Explorer</p>
+                    <p>Testnet Faucet</p>
                 </div>
                 <div onClick={showModal}>
                     <div className='img'><img src={Tool3} alt="" /></div>
-                    <p>Testnet Explorer</p>
+                    <p>Staking</p>
                 </div>
                 <div onClick={showModal}>
                     <div className='img'><img src={Tool4} alt="" /></div>
-                    <p>Testnet Explorer</p>
+                    <p>Bridge</p>
                 </div>
             </div>
         </div>
