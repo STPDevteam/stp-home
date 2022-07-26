@@ -1079,8 +1079,8 @@ const Home: React.FC = () =>  {
                             </div>
                             <div className="item">
                                 <div className="blue"><img src={System3} alt="" /></div>
-                                <h3>Network Incentivizes</h3>
-                                <p>Incentivizes network participants and contributors.</p>
+                                <h3>Network Incentives</h3>
+                                <p>Incentives network participants and contributors.</p>
                             </div>
                         </div>
                         <div className="h5 system">
@@ -1097,8 +1097,8 @@ const Home: React.FC = () =>  {
                                 </div>
                                 <div className="item">
                                     <div className="blue"><img src={System3} alt="" /></div>
-                                    <h3>Network Incentivizes</h3>
-                                    <p>Incentivizes network participants and contributors.</p>
+                                    <h3>Network Incentives</h3>
+                                    <p>Incentives network participants and contributors.</p>
                                 </div>
                                 {/* <div className="item">
                                     <div className="blue"><img src={System5} alt="" /></div>
