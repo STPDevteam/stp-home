@@ -218,6 +218,7 @@ const SecondContent = styled.div`
         font-size: 48px;
         line-height: 70px;
         font-weight: 800;
+        margin-bottom: 0;
         @media (max-width: 767px) {
             font-size: 24px;
             line-height: 40px;
@@ -226,9 +227,9 @@ const SecondContent = styled.div`
     hr{
         border-top: 1px solid #ECECEC;
         border-bottom: none;
-        margin: 64px 0; 
+        margin: 16px 0; 
         @media (max-width: 767px) {
-            margin: 48px 80px 48px 0px;
+            margin: 16px 80px 16px 0px;
         }
     }
 `
@@ -934,10 +935,9 @@ const Home: React.FC = () =>  {
                             </div>
                         </div> */}
                         <div id="About">
-                            <p>
-                            Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.                           </p>
-                            <hr />
                             <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
+                            <hr />
+                            <p>Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.</p>
                         </div>
                     </SecondContent> 
                     <ThirdContent>
