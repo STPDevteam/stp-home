@@ -221,7 +221,7 @@ const Header: React.FC = () =>  {
 
     return (
         <LayoutHeader>
-            <HeaderLink href="https://docs.google.com/forms/d/1J3MJO4jJDCTz8ZEYjRccTZukZYO-Y1oTc85IvnZmzpc/edit">Sign up to participate in Verse product test event.</HeaderLink>
+            <HeaderLink target="_blank" href="https://immunefi.com/bounty/stp/">Look for bugs and vulnerabilities on Verse Network through our bug bounty on Immunefi</HeaderLink>
             <HeaderContent className="header" ref={headerRef}>
                 <img className="Logo" src={Logo} alt="logo" />
                 <CSSTransition
