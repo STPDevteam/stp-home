@@ -184,7 +184,7 @@ const SecondContent = styled.div`
             padding: 180px 0 150px 50px;
         }
         @media (max-width: 767px) {
-            padding: 0px 0px;
+            padding: 100px 0px 100px 0px;
             flex-direction: column;
         }
 
@@ -192,9 +192,12 @@ const SecondContent = styled.div`
             flex: 1;
             margin-right: 150px;
             @media (max-width: 767px) {
-                padding: 100px 30px;
+                padding: 0px 30px;
                 margin-right: 0;
             }
+        }
+        p {
+            margin: 0;
         }
     }
 
@@ -252,7 +255,7 @@ const SecondContent = styled.div`
 
         @media (max-width: 767px) {
             width: 100%;
-            padding: 30px;
+            padding: 30px 30px 0px 30px;
             /* height: 250px; */
         }
 
