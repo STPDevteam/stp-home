@@ -168,23 +168,32 @@ const SecondContent = styled.div`
     background: url(${Image2}) no-repeat, #fff;
     background-size: 50%;
     background-position: center right;
-    &>div{
+    .secondContent_main {
+        display: flex;
+        justify-content: space-between;
         margin: 0 auto;
         max-width: 1200px;
-        padding: 180px 640px 150px 50px;
+        padding: 180px 0px 150px 50px;
         @media (max-width: 1100px) {
-            padding: 180px 300px 150px 50px;
+            padding: 180px 0px 150px 50px;
         }
         @media (max-width: 1020px) {
-            padding: 180px 200px 150px 50px;
+            padding: 180px 0px 150px 50px;
         }
         @media (max-width: 920px) {
             padding: 180px 0 150px 50px;
         }
         @media (max-width: 767px) {
             padding: 100px 30px;
+            flex-direction: column;
+        }
+
+        .secondContent_info {
+            flex: 1;
+            margin-right: 150px;
         }
     }
+
     .whereBuy{
         display: none;
         width: 100%;
@@ -230,6 +239,15 @@ const SecondContent = styled.div`
         margin: 16px 0; 
         @media (max-width: 767px) {
             margin: 16px 80px 16px 0px;
+        }
+    }
+
+    .video_content {
+        width: 535px;
+        height: 299px;
+
+        @media (max-width: 767px) {
+            width: 100%;
         }
     }
 `
@@ -934,10 +952,15 @@ const Home: React.FC = () =>  {
                                 </div>
                             </div>
                         </div> */}
-                        <div id="About">
-                            <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
-                            <hr />
-                            <p>Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.</p>
+                        <div id="About" className='secondContent_main'>
+                            <div className='secondContent_info'>
+                                <h2 id="Finance">Redefining Value<br/> One DAO at a Time</h2>
+                                <hr />
+                                <p>Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.</p>
+                            </div>
+                            <div className='video_content'>
+                                <iframe title='youtube' src="https://www.youtube.com/embed/ZEDNduNedCc?autoplay=1" height="100%" width="100%"></iframe>                               
+                            </div>
                         </div>
                     </SecondContent> 
                     <ThirdContent>
