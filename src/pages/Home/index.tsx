@@ -252,6 +252,8 @@ const SecondContent = styled.div`
 
         @media (max-width: 767px) {
             width: 100%;
+            padding: 30px;
+            /* height: 250px; */
         }
 
         iframe {
