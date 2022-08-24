@@ -184,7 +184,7 @@ const SecondContent = styled.div`
             padding: 180px 0 150px 50px;
         }
         @media (max-width: 767px) {
-            padding: 100px 0px;
+            padding: 0px 0px;
             flex-direction: column;
         }
 
