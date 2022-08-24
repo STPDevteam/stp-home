@@ -184,13 +184,17 @@ const SecondContent = styled.div`
             padding: 180px 0 150px 50px;
         }
         @media (max-width: 767px) {
-            padding: 100px 30px;
+            padding: 100px 0px;
             flex-direction: column;
         }
 
         .secondContent_info {
             flex: 1;
             margin-right: 150px;
+            @media (max-width: 767px) {
+                padding: 100px 30px;
+                margin-right: 0;
+            }
         }
     }
 
