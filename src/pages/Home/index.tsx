@@ -249,6 +249,10 @@ const SecondContent = styled.div`
         @media (max-width: 767px) {
             width: 100%;
         }
+
+        iframe {
+            border: none;
+        }
     }
 `
 
