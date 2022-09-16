@@ -2,19 +2,130 @@ import React from 'react'
 import Chainlink from '../../assets/images/ecosystem/Chainlink.png';
 import GnosisSafe from '../../assets/images/ecosystem/GnosisSafe.png';
 import Thegraph from '../../assets/images/ecosystem/Thegraph.png';
+import Polygon from '../../assets/images/ecosystem/Polygon.png';
+import Klaytn from '../../assets/images/ecosystem/Klaytn.png';
 import Rai from '../../assets/images/ecosystem/RAI.png';
 import Vee from '../../assets/images/ecosystem/Vee.png';
 import Cere from '../../assets/images/ecosystem/Cere.png';
 import Define from '../../assets/images/ecosystem/Define.png';
 import Deesse from '../../assets/images/ecosystem/Deesse.png';
+import Layer3 from '../../assets/images/ecosystem/Layer3.png';
 import Meter from '../../assets/images/ecosystem/Meter.png';
 import Voltswap from '../../assets/images/ecosystem/Voltswap.png';
 import Cobak from '../../assets/images/ecosystem/cobak.png';
 import MovieBloc from '../../assets/images/ecosystem/moviebloc.png';
-
 import './index.less'
+import { Button, Typography } from 'antd'
+const { Paragraph } = Typography;
+const EcosystemDataList = [
+    {
+        img: Chainlink,
+        website: 'https://chain.link/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'Chainlink is the oracle to source external information on-chain '
+    },
+    {
+        img: GnosisSafe,
+        website: 'https://gnosis-safe.io/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'Gnosis Safe '
+    },
+    {
+        img: Thegraph,
+        website: 'https://thegraph.com/en/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'The Graph'
+    },
+    {
+        img: Klaytn,
+        website: 'https://www.klaytn.foundation/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'An open-source public blockchain for all who wish to build, work, or play in the metaverse.'
+    },
+    {
+        img: Polygon,
+        website: 'https://polygon.technology/',
+        category: 'Partnership',
+        sector: 'Infrastructure',
+        desc: 'Polygon believes in Web3 for all. '
+    },
+    {
+        img: Rai,
+        website: 'https://rai.finance/',
+        category: 'Incubated project',
+        sector: 'DeFi',
+        desc: 'DEX/IDO Platforms'
+    },
+    {
+        img: Vee,
+        website: 'https://vee.finance/home',
+        category: 'Incubated project',
+        sector: 'DeFi',
+        desc: 'Lending Platforms'
+    },
+    {
+        img: Define,
+        website: 'https://www.define.one/',
+        category: 'Incubated project',
+        sector: 'NFT',
+        desc: 'NFT Marketplaces'
+    },
+    {
+        img: Deesse,
+        website: 'https://deesse.art/',
+        category: 'Incubated project',
+        sector: 'NFT',
+        desc: 'Gamefi Projects'
+    },
+    {
+        img: Layer3,
+        website: 'https://beta.layer3.xyz/',
+        category: 'Partnership',
+        sector: 'Social',
+        desc: 'Gamefi Projects'
+    },
+    {
+        img: Cobak,
+        website: 'https://cobak.co/',
+        category: 'Partnership',
+        sector: 'Social',
+        desc: 'Community Projects'
+    },
+    {
+        img: MovieBloc,
+        website: 'https://www.moviebloc.com/',
+        category: 'Partnership',
+        sector: 'Social',
+        desc: 'Entertainment Projects'
+    },
+    {
+        img: Cere,
+        website: 'https://cere.network/',
+        category: 'Partnership',
+        sector: 'Infrastructure',
+        desc: 'Decentralized Storage Projects'
+    },
+    {
+        img: Meter,
+        website: 'https://meter.io/',
+        category: 'Partnership',
+        sector: 'Infrastructure',
+        desc: 'Cross-chain Bridge'
+    },
+    {
+        img: Voltswap,
+        website: 'https://voltswap.finance/#/swap',
+        category: 'Partnership',
+        sector: 'DeFi',
+        desc: 'Voltswap'
+    }
+]
 
-const Ecosystem: React.FC = () =>  {
+const Ecosystem: React.FC = () => {
     return <div className="ecosystem">
         <div className="banner">
             <div className="content">
@@ -23,68 +134,31 @@ const Ecosystem: React.FC = () =>  {
             </div>
         </div>
         <div className="content">
-            <h3>Integrated Key Infrastructure</h3>
-            <div className="list list1">
-                <div className="item">
-                    <h4>Oracles</h4>
-                    <img src={Chainlink} alt="" />
-                    <p>Chainlink is the oracle to source external information on-chain </p>
-                </div>
-                <div className="item">
-                    <h4>Multi-Sig</h4>
-                    <img src={GnosisSafe} alt="" />
-                    <p>Gnosis Safe </p>
-                </div>
-                <div className="item">
-                    <h4>Infrastructure</h4>
-                    <img src={Thegraph} alt="" />
-                    <p>The Graph</p>
-                </div>
-            </div>
-            <h3>Token Projects on Verse represent over $5B in value</h3>
+            <h3>15 results</h3>
             <div className="list list2">
-                <div className="item">
-                    <h4>DeFi Projects</h4>
-                    <img src={Rai} alt="" />
-                    <p>DEX/IDO Platforms</p>
-                </div>
-                <div className="item">
-                    <h4>DeFi Projects</h4>
-                    <img src={Vee} style={{height: '55px', margin: '8px auto'}} alt="" />
-                    <p>Lending Platforms</p>
-                </div>
-                <div className="item">
-                    <h4>NFT Projects</h4>
-                    <img src={Define} alt="" />
-                    <p>NFT Marketplaces</p>
-                </div>
-                <div className="item">
-                    <h4>NFT Projects</h4>
-                    <img src={Deesse} alt="" />
-                    <p>Gamefi Projects</p>
-                </div>
-                <div className="item">
-                    <h4>Decentralized<br/>Storage Projects</h4>
-                    <img src={Cere} alt="" />
-                </div>
-                <div className="item">
-                    <h4>Community<br/>Projects</h4>
-                    <img src={Cobak} style={{height: '35px'}} alt="" />
-                </div>
-                <div className="item">
-                    <h4>Entertainment<br/>Projects</h4>
-                    <img src={MovieBloc} alt="" />
-                </div>
-                <div className="item">
-                    <h4>Cross-chain Bridge</h4>
-                    <img src={Meter} alt="" />
-                    <p>Meter Passport</p>
-                </div>
-                <div className="item">
-                    <h4>AMM</h4>
-                    <img src={Voltswap} alt="" />
-                    <p>Voltswap</p>
-                </div>
+                {EcosystemDataList.map((item: any) => {
+                    return <div className='Ecosystem_item'>
+                        <div className='item_img'>
+                            <img src={item.img} alt="" />
+                        </div>
+                        <div className='item_type'>
+                            <div className='type_category'>{item.category}</div>
+                            <div className='type_sector'>{item.sector}</div>
+                        </div>
+                        {/* <div className='item_desc'>{item.desc}</div> */}
+                        <div className='item_desc'>
+                            <Paragraph ellipsis={{ rows: 2, tooltip: item.desc }}>
+                                {item.desc}
+                            </Paragraph>
+                        </div>
+
+                        <div className="item_btn">
+                            <Button onClick={() => {
+                                window.open(item.website)
+                            }} type="primary" >Website</Button>
+                        </div>
+                    </div>
+                })}
             </div>
         </div>
     </div>
