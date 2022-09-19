@@ -17,7 +17,6 @@ import MovieBloc from '../../assets/images/ecosystem/moviebloc.png';
 import Search from '../../assets/images/ecosystem/Search.png';
 import './index.less'
 import { Button, Typography, Input } from 'antd'
-import { SearchOutlined } from '@ant-design/icons';
 const { Paragraph } = Typography;
 const EcosystemDataList = [
     {
@@ -57,7 +56,7 @@ const EcosystemDataList = [
         website: 'https://polygon.technology/',
         category: 'Partnership',
         sector: 'Infrastructure',
-        desc: 'Polygon believes in Web3 for all. ',
+        desc: 'Decentralised Ethereum scaling platform',
         name: 'Polygon'
     },
     {
@@ -97,7 +96,7 @@ const EcosystemDataList = [
         website: 'https://beta.layer3.xyz/',
         category: 'Partnership',
         sector: 'Social',
-        desc: 'Gamefi Projects',
+        desc: 'Web3 discovery platform.',
         name: 'layer3'
     },
     {
