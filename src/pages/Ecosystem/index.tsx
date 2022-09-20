@@ -68,14 +68,6 @@ const EcosystemDataList = [
         name: 'rai'
     },
     {
-        img: Vee,
-        website: 'https://vee.finance/home',
-        category: 'Incubated project',
-        sector: 'DeFi',
-        desc: 'Lending Platforms',
-        name: 'vee'
-    },
-    {
         img: Define,
         website: 'https://www.define.one/',
         category: 'Incubated project',
