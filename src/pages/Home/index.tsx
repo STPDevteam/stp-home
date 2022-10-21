@@ -1172,7 +1172,8 @@ const Home: React.FC = () =>  {
                                         <h3>Governance SDK</h3>
                                         <p>Using Clique, DAOs can implement cross chain governance to take advantage of greatly reduced gas fees. DAOs on Ethereum (or any EVM chain) can execute governance on Polygon without the need to issue new tokens or bridge their existing tokens. </p>
                                         <div className="btns">
-                                            <Button type="primary" onClick={showModal}>Coming soon</Button>
+                                            <Button type="primary"><a href="https://myclique.io/governance" target="_blank">Launch App</a></Button>
+                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/clique/clique-sdk-beta">Learn More</a></Button>
                                         </div>
                                     </div>
                                 </div>
