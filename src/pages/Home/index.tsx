@@ -1172,7 +1172,8 @@ const Home: React.FC = () =>  {
                                         <h3>Governance SDK</h3>
                                         <p>Using Clique, DAOs can implement cross chain governance to take advantage of greatly reduced gas fees. DAOs on Ethereum (or any EVM chain) can execute governance on Polygon without the need to issue new tokens or bridge their existing tokens. </p>
                                         <div className="btns">
-                                            <Button type="primary" onClick={showModal}>Coming soon</Button>
+                                            <Button type="primary"><a href="https://myclique.io/governance" target="_blank">Launch App</a></Button>
+                                            <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/clique/clique-sdk-beta">Learn More</a></Button>
                                         </div>
                                     </div>
                                 </div>
@@ -1211,26 +1212,28 @@ const Home: React.FC = () =>  {
                         <h2>Roadmap</h2>
                         <div className="roadmap">
                             <div>
-                                <h3>2022 Q2</h3>
+                                <h3>2023 Q1</h3>
                                 <ul>
-                                    <li>Launch Cross-chain Governance Features and Data Bridge System on Polygon (Done)</li>
+                                    <li>Launch Community Workspace Management Platform</li>
+                                    <li>Launch Contribution Task Marketplace</li>
+                                    <li>Debut Clique dApp’s SDK and API</li>
                                 </ul>
                             </div>
                             <div>
-                                <h3>2022 Q3</h3>
+                                <h3>2023 Q2</h3>
                                 <ul>
-                                    <li>Launch Clique V2.0 with more DAO tooling features such as Airdrop, Fundraising, etc</li>
-                                    <li>Launch Governance SDK that enables projects to deploy decentralized governance feature on their own websites</li>
-                                    <li>Launch on Binance Side-chain (BAS) optimized for DAO ecosystem</li>
-                                    <li>DAO Social Identity and Scoring Mechanism with Credibility Score and Reputation score</li>
+                                   <li>Launch Web3 Tooling Aggregator</li>
+                                    <li>Enable Omnichain DAO Creation & Management</li>
+                                    <li>Enable Customizable Community Workspace Management Platform & Contribution Task Marketplace</li>
+                                    <li>Enhance Platform’s dApp SDK and API</li>
                                 </ul>
                             </div>
                             <div>
-                                <h3>2022 Q4 and Further</h3>
+                                <h3>2023 Q3 and Q4</h3>
                                 <ul>
-                                    <li>Continue to expand infrastructures and cross-chain DAO interoperability</li>
-                                    <li>Continue to expand Clique DAO ecosystem with more featured projects and DApps</li>
-                                    <li>Explore deployment on other EVM-based Blockchains</li>
+                                    <li>Integrate More Workflow Tools into Web3 Tooling Aggregator</li>
+                                    <li>Launch developer kit for the Web3 Tooling Aggregator that enables developers and projects to plug-in their DApps with Clique</li>
+                                    <li> Explore emerging technologies (i.e. AI, Zero-Knowledge Proof) integration into DAOs to reduce governance costs and enable privacy</li>
                                 </ul>
                             </div>
                         </div>
