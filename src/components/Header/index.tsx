@@ -56,16 +56,16 @@ const Header: React.FC = () =>  {
     const showModal = () => {
       setIsModalVisible(true);
     };
-  
+
     const handleOk = () => {
       setIsModalVisible(false);
     };
-  
+
     const handleCancel = () => {
       setIsModalVisible(false);
     };
-  
-  
+
+
     const sectionRefs = [
       { section: "Home", ref: homeRef },
       { section: "Verse", ref: verseRef },
@@ -81,14 +81,14 @@ const Header: React.FC = () =>  {
         const { height } = ele.getBoundingClientRect();
         const offsetTop = ele.offsetTop;
         const offsetBottom = offsetTop + height;
-      
+
         return {
           height,
           offsetTop,
           offsetBottom,
         };
       };
-      
+
     const scrollTo = (ele: any) => {
         if(!ele){
             return
@@ -108,7 +108,7 @@ const Header: React.FC = () =>  {
         const revealElement = document.getElementById("infrastructure-list");
         if(revealElement){
             setElementHeight(revealElement.getBoundingClientRect().height)
-        }  
+        }
         return () => {
             mediaQuery.removeListener(handleMediaQueryChange);
             window.removeEventListener("scroll", reveal);
@@ -120,7 +120,7 @@ const Header: React.FC = () =>  {
             toggle(false)
         }
     },[location.pathname])
-  
+
     const handleMediaQueryChange = (mediaQuery: any) => {
       if (mediaQuery.matches) {
         setIsSmallScreen(true);
@@ -135,15 +135,15 @@ const Header: React.FC = () =>  {
         if(revealElement){
             const windowHeight = window.innerHeight;
             const elementTop = revealElement.getBoundingClientRect().top;
-        
+
             if (elementTop < windowHeight - (elementHeight + 50)) {
                 setInfrastructureActive(true)
             } else {
                 setInfrastructureActive(false)
             }
-        } 
+        }
     }
-      
+
     const stpMenu = (
         <Menu>
             <Menu.Item>
@@ -221,7 +221,7 @@ const Header: React.FC = () =>  {
 
     return (
         <LayoutHeader>
-            <HeaderLink target="_blank" href="https://immunefi.com/bounty/stp/">Look for bugs and vulnerabilities on Verse Network through our bug bounty on Immunefi</HeaderLink>
+            <HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">Sign up for STP DAO Booster Program!</HeaderLink>
             <HeaderContent className="header" ref={headerRef}>
                 <img className="Logo" src={Logo} alt="logo" />
                 <CSSTransition
