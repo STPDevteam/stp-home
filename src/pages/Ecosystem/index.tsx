@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from "react-router";
 import Chainlink from '../../assets/images/ecosystem/Chainlink.png';
 import GnosisSafe from '../../assets/images/ecosystem/GnosisSafe.png';
 import Thegraph from '../../assets/images/ecosystem/Thegraph.png';
@@ -151,6 +152,7 @@ const Ecosystem: React.FC = () => {
     const [sectorSelect, setSectorSelect] = useState('All')
     const [ecosystemDisplay, setEcosystemDisplay] = useState(EcosystemDataList)
     const [resultNum, setResultNum] = useState(ecosystemDisplay.length)
+    const history = useHistory();
     function existOneIncludeTwo(oneStr: string, twoStr: string) {
         
         return oneStr.toUpperCase().includes(twoStr.toUpperCase());
@@ -186,6 +188,7 @@ const Ecosystem: React.FC = () => {
             <div className="content">
                 <h2>Ecosystem</h2>
                 <p>The initial launch is supported by the existing 15,000 on-chain token holder community</p>
+                <div className='go' onClick={() => history.push('/dao')}>DAO Booster Program</div>
             </div>
         </div>
         <div className='filter'>

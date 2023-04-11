@@ -8,6 +8,7 @@ import Tech from "./pages/Tech";
 import Developers from "./pages/Developers";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import DAO from './pages/DAO'
 import './App.less';
 
 const { Content } = Layout;
@@ -25,6 +26,7 @@ function App() {
               <Route component={Ecosystem} exact path="/ecosystem" />
               <Route component={Product} exact path="/product" />
               <Route component={Tech} exact path="/tech" />
+              <Route component={DAO} exact path="/dao"/>
               {/* <Route component={Developers} exact path="/developers" /> */}
             </Switch>
           </Content>
