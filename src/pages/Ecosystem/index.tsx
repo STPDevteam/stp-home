@@ -50,7 +50,7 @@ const EcosystemDataList = [
     {
         img: Polygon,
         website: 'https://polygon.technology/',
-        category: 'Partnership',
+        category: 'Integration',
         sector: 'Infrastructure',
         desc: 'Decentralised Ethereum scaling platform',
         name: 'Polygon'
@@ -74,7 +74,7 @@ const EcosystemDataList = [
     {
         img: Chainlink,
         website: 'https://chain.link/',
-        category: 'Integration',
+        category: 'Partnership',
         sector: 'Infrastructure',
         desc: 'Chainlink is the oracle to source external information on-chain ',
         name: 'Chainlink'
