@@ -292,7 +292,8 @@ const categoryFilterDataList = [
     'All',
     'Partnership',
     'Integration',
-    'Incubated project'
+    'Incubated project',
+    'Listed Exchanges'
 ]
 
 const sectorFilterDataList = [
@@ -300,7 +301,7 @@ const sectorFilterDataList = [
     'DeFi',
     'Social',
     'NFT',
-    'Infrastructure'
+    'Infrastructure',
 ]
 const Ecosystem: React.FC = () => {
     const [categorySelect, setCategorySelect] = useState('All')
