@@ -16,41 +16,36 @@ import Voltswap from '../../assets/images/ecosystem/Voltswap.png';
 import Cobak from '../../assets/images/ecosystem/cobak.png';
 import MovieBloc from '../../assets/images/ecosystem/moviebloc.png';
 import Search from '../../assets/images/ecosystem/Search.png';
+import Binance from '../../assets/images/ecosystem/binance.png';
+import BinanceListf from '../../assets/images/ecosystem/binanceList.png';
+import Bithumb from '../../assets/images/ecosystem/bithumb.png';
+import CoinDCX from '../../assets/images/ecosystem/coinDCX.png';
+import CoinOne from '../../assets/images/ecosystem/coinOne.png';
+import DeepDAO from '../../assets/images/ecosystem/deepDAO.png';
+import Gate from '../../assets/images/ecosystem/gate.png';
+import Her from '../../assets/images/ecosystem/her.png';
+import HuoBi from '../../assets/images/ecosystem/huobi.png';
+import Immunefi from '../../assets/images/ecosystem/immunefi.png';
+import Jenny from '../../assets/images/ecosystem/Jenny.png';
+import Knn from '../../assets/images/ecosystem/knn.png';
+import MapPro from '../../assets/images/ecosystem/mapPro.png';
+import Poloniex from '../../assets/images/ecosystem/poloniex.png';
+import PolygonDAO from '../../assets/images/ecosystem/polygonDAO.png';
+import PushPro from '../../assets/images/ecosystem/pushPro.png';
+import UpBit from '../../assets/images/ecosystem/upbit.png';
+import Zeta from '../../assets/images/ecosystem/zeta.png';
+import ZkEVM from '../../assets/images/ecosystem/zkEvm.png';
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
 const EcosystemDataList = [
     {
-        img: Chainlink,
-        website: 'https://chain.link/',
+        img: Binance,
+        website: 'https://www.bnbchain.org/',
         category: 'Integration',
         sector: 'Infrastructure',
-        desc: 'Chainlink is the oracle to source external information on-chain ',
-        name: 'Chainlink'
-    },
-    {
-        img: GnosisSafe,
-        website: 'https://gnosis-safe.io/',
-        category: 'Integration',
-        sector: 'Infrastructure',
-        desc: 'Gnosis Safe',
-        name: 'Gnosis Safe'
-    },
-    {
-        img: Thegraph,
-        website: 'https://thegraph.com/en/',
-        category: 'Integration',
-        sector: 'Infrastructure',
-        desc: 'The Graph',
-        name: 'The Graph'
-    },
-    {
-        img: Klaytn,
-        website: 'https://www.klaytn.foundation/',
-        category: 'Integration',
-        sector: 'Infrastructure',
-        desc: 'An open-source public blockchain for all who wish to build, work, or play in the metaverse.',
-        name: 'klaytn'
+        desc: 'BNB Chain',
+        name: 'BNB Chain'   
     },
     {
         img: Polygon,
@@ -61,12 +56,90 @@ const EcosystemDataList = [
         name: 'Polygon'
     },
     {
+        img: Klaytn,
+        website: 'https://www.klaytn.foundation/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'An open-source public blockchain for all who wish to build, work, or play in the metaverse.',
+        name: 'klaytn'
+    },
+    {
+        img: ZkEVM,
+        website: 'https://polygon.technology/polygon-zkevm',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'Polygon zkevm',
+        name: 'Polygon zkevm'
+    },
+    {
+        img: Chainlink,
+        website: 'https://chain.link/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'Chainlink is the oracle to source external information on-chain ',
+        name: 'Chainlink'
+    },
+    {
+        img: Thegraph,
+        website: 'https://thegraph.com/en/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'The Graph',
+        name: 'The Graph'
+    },
+    {
+        img: PolygonDAO,
+        website: 'https://polygon.community/#/',
+        category: 'Partnership',
+        // sector: '',
+        desc: 'Polygon DAO',
+        name: 'Polygon DAO'
+    },
+    {
+        img: Zeta,
+        website: 'https://www.zetachain.com/',
+        category: 'Partnership',
+        desc: 'Zetachain',
+        name: 'Zetachain'
+    },
+    {
+        img: GnosisSafe,
+        website: 'https://gnosis-safe.io/',
+        category: 'Integration',
+        sector: 'Infrastructure',
+        desc: 'Gnosis Safe',
+        name: 'Gnosis Safe'
+    },
+    {
+        img: Layer3,
+        website: 'https://beta.layer3.xyz/',
+        category: 'Partnership',
+        sector: 'Social',
+        desc: 'Web3 discovery platform.',
+        name: 'layer3'
+    },
+    {
         img: Rai,
         website: 'https://rai.finance/',
         category: 'Incubated project',
         sector: 'DeFi',
         desc: 'DEX/IDO Platforms',
         name: 'rai'
+    },
+    {
+        img: MapPro,
+        website: 'https://www.mapprotocol.io/',
+        category: 'Partnership',
+        desc: 'Map Protocol',
+        name: 'Map Protocol'
+    },
+    {
+        img: Meter,
+        website: 'https://meter.io/',
+        category: 'Partnership',
+        sector: 'Infrastructure',
+        desc: 'Cross-chain Bridge',
+        name: 'Meter'
     },
     {
         img: Define,
@@ -77,20 +150,11 @@ const EcosystemDataList = [
         name: 'define'
     },
     {
-        img: Deesse,
-        website: 'https://deesse.art/',
-        category: 'Incubated project',
-        sector: 'NFT',
-        desc: 'Gamefi Projects',
-        name: 'deesc'
-    },
-    {
-        img: Layer3,
-        website: 'https://beta.layer3.xyz/',
+        img: Immunefi,
+        website: 'https://immunefi.com/',
         category: 'Partnership',
-        sector: 'Social',
-        desc: 'Web3 discovery platform.',
-        name: 'layer3'
+        desc: 'Immunefi',
+        name: 'Immunefi'
     },
     {
         img: Cobak,
@@ -109,6 +173,14 @@ const EcosystemDataList = [
         name: 'MovieBloc'
     },
     {
+        img: Deesse,
+        website: 'https://deesse.art/',
+        category: 'Incubated project',
+        sector: 'NFT',
+        desc: 'Gamefi Projects',
+        name: 'deesc'
+    },
+    {
         img: Cere,
         website: 'https://cere.network/',
         category: 'Partnership',
@@ -117,21 +189,104 @@ const EcosystemDataList = [
         name: 'Cere'
     },
     {
-        img: Meter,
-        website: 'https://meter.io/',
+        img: DeepDAO,
+        website: 'https://deepdao.io/',
         category: 'Partnership',
-        sector: 'Infrastructure',
-        desc: 'Cross-chain Bridge',
-        name: 'Meter'
+        desc: 'Deep DAO',
+        name: 'Deep DAO'
+    },
+    {
+        img: Jenny,
+        website: 'https://www.jennynft.io/',
+        category: 'Partnership',
+        desc: 'Jenny DAO',
+        name: 'Jenny DAO'
+    },
+    {
+        img: Her,
+        website: 'https://www.her-dao.xyz/',
+        category: 'Partnership',
+        desc: 'H.E.E DAO',
+        name: 'H.E.R DAO'
+    },
+    {
+        img: Knn,
+        website: 'https://www.knn3.xyz/',
+        category: 'Partnership',
+        desc: 'Knn3 Network',
+        name: 'Knn3 Network'
     },
     {
         img: Voltswap,
         website: 'https://voltswap.finance/#/swap',
         category: 'Partnership',
-        sector: 'DeFi',
         desc: 'Voltswap',
         name: 'Voltswap'
-    }
+    },
+    {
+        img: PushPro,
+        website: 'https://push.org/',
+        category: 'Partnership',
+        desc: 'Push protocol',
+        name: 'Push protocol'
+    },
+    {
+        img: BinanceListf,
+        website: 'https://www.binance.com/',
+        category: 'Listed Exchanges',
+        desc: 'Binance',
+        name: 'Binance'
+    },
+    {
+        img: UpBit,
+        website: 'https://www.upbit.com/',
+        category: 'Listed Exchanges',
+        desc: 'Upbit',
+        name: 'Upbit'
+    },
+    {
+        img: Bithumb,
+        website: 'https://www.bithumb.com/',
+        category: 'Listed Exchanges',
+        desc: 'Bithumb',
+        name: 'Bithumb'
+    },
+    {
+        img: HuoBi,
+        website: 'https://www.huobi.com/',
+        category: 'Listed Exchanges',
+        desc: 'Huobi',
+        name: 'Huobi'
+    },
+    {
+        img: Gate,
+        website: 'https://www.gate.io/',
+        category: 'Listed Exchanges',
+        desc: 'Gate',
+        name: 'Gate'
+    },
+    {
+        img: CoinOne,
+        website: 'https://coinone.co.kr/',
+        category: 'Listed Exchanges',
+        desc: 'Coinone',
+        name: 'Coinone'
+    },
+    {
+        img: Poloniex,
+        website: 'https://poloniex.com/',
+        category: 'Listed Exchanges',
+        desc: 'Poloniex',
+        name: 'Poloniex'
+    },
+    {
+        img: CoinDCX,
+        website: 'https://coindcx.com/',
+        category: 'Listed Exchanges',
+        desc: 'CoinDCX',
+        name: 'CoinDCX'
+    },
+    
 ]
 const categoryFilterDataList = [
     'All',
@@ -234,7 +389,7 @@ const Ecosystem: React.FC = () => {
                         </div>
                         <div className='item_type'>
                             <div className='type_category'>{item.category}</div>
-                            <div className='type_sector'>{item.sector}</div>
+                            { item.sector && <div className='type_sector'>{item.sector}</div> }
                         </div>
                         {/* <div className='item_desc'>{item.desc}</div> */}
                         <div className='item_desc'>
