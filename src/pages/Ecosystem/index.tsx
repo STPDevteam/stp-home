@@ -292,7 +292,6 @@ const categoryFilterDataList = [
     'All',
     'Partnership',
     'Integration',
-    'Incubated project',
     'Listed Exchanges'
 ]
 
