@@ -1122,8 +1122,8 @@ const Home: React.FC = () =>  {
                                 Empowering DAOs on Clique
                                 </p>
                                 <div className="btns">
-                                    <Button type="primary"><Link to="/product">Launch More</Link></Button>
-                                    <Button type="primary"><Link to="/product">Apply for Grant</Link></Button>
+                                    <Button type="primary"><a href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/rRQ7limbMglccq68gojGxh3Wbf4Hy2rTODHfkKragjA" target="_blank">Learn More</a></Button>
+                                    <Button type="primary"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdSl2HuWLXMQDRjB4npQP0BoAcpGL2e3BQK9HldkU7TZMgSRQ/viewform">Apply for Grant</a></Button>
                                     {/* <Button type="primary"><Link to="/developers">Launch Verse Testnet</Link></Button> */}
                                 </div>
                             </Col>
@@ -1221,10 +1221,10 @@ const Home: React.FC = () =>  {
                         </div>
                         <div className="btns">
                             <div className='btn-w'>
-                                Learn More
+                                <a href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/rRQ7limbMglccq68gojGxh3Wbf4Hy2rTODHfkKragjA" target="_blank">Learn More</a>
                             </div>
                             <div className='btn-w'>
-                            Apply for Grant
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSl2HuWLXMQDRjB4npQP0BoAcpGL2e3BQK9HldkU7TZMgSRQ/viewform">Apply for Grant</a>
                             </div>
                             {/* <Button type="primary"><a href="https://myclique.io" target="_blank">Learn More</a></Button> */}
                             {/* <Button type="primary"><a href="https://stp-dao.gitbook.io/verse-network/dapps/clique">Apply for Grant</a></Button> */}
