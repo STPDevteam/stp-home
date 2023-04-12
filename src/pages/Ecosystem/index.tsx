@@ -82,7 +82,7 @@ const EcosystemDataList = [
     {
         img: Thegraph,
         website: 'https://thegraph.com/en/',
-        category: 'Integration',
+        category: 'Partnership',
         sector: 'Infrastructure',
         desc: 'The Graph',
         name: 'The Graph'
@@ -105,7 +105,7 @@ const EcosystemDataList = [
     {
         img: GnosisSafe,
         website: 'https://gnosis-safe.io/',
-        category: 'Integration',
+        category: 'Partnership',
         sector: 'Infrastructure',
         desc: 'Gnosis Safe',
         name: 'Gnosis Safe'
@@ -121,7 +121,7 @@ const EcosystemDataList = [
     {
         img: Rai,
         website: 'https://rai.finance/',
-        category: 'Incubated project',
+        category: 'Partnership',
         sector: 'DeFi',
         desc: 'DEX/IDO Platforms',
         name: 'rai'
@@ -144,7 +144,7 @@ const EcosystemDataList = [
     {
         img: Define,
         website: 'https://www.define.one/',
-        category: 'Incubated project',
+        category: 'Partnership',
         sector: 'NFT',
         desc: 'NFT Marketplaces',
         name: 'define'
@@ -175,7 +175,7 @@ const EcosystemDataList = [
     {
         img: Deesse,
         website: 'https://deesse.art/',
-        category: 'Incubated project',
+        category: 'Partnership',
         sector: 'NFT',
         desc: 'Gamefi Projects',
         name: 'deesc'

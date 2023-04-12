@@ -174,12 +174,12 @@ const Header: React.FC = () =>  {
     const ecosystemMenu = (
         <Menu>
             <Menu.Item>
-                <a href="/ecosystem">
+                <a href="/#/ecosystem">
                 Ecosystem
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a href="/dao">
+                <a href="/#/dao">
                 Dao Booster Program
                 </a>
             </Menu.Item>
