@@ -49,9 +49,11 @@ import DaoTypes3 from '../../assets/images/dao/dao3.png'
 import DaoTypes4 from '../../assets/images/dao/dao4.png'
 import DaoTypes5 from '../../assets/images/dao/dao5.png'
 import Bol1 from '../../assets/images/dao/bol1.png';
+import Bol2Svg from '../../assets/images/dao/bol2.svg';
 import Bol2 from '../../assets/images/dao/bol2.png';
 import Bol3 from '../../assets/images/dao/bol3.png';
 import Bol4 from '../../assets/images/dao/bol4.png';
+import DaoBg from '../../assets/images/dao/daoBg.png';
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
@@ -68,12 +70,13 @@ const FirstContent = styled.div`
     background: url(${CubeSvg}), url(${Boot});
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
-    background-position: center bottom, center center;
+    // background-position: center bottom, center center;
+    center center,bottom 10px center;
     height: calc(100vh - 200px);
     @media (max-width: 767px) {
-        margin-top: 64px;
-        background: url(${Image1H5}) no-repeat;
-        background-position: center bottom;
+        // margin-top: 64px;
+        background: url(${CubeSvg}) no-repeat;
+        // background-position: center center;
         background-size: cover;
     }
     &>div{
@@ -92,9 +95,11 @@ const FirstContent = styled.div`
             &:first-of-type{
                 position: relative;
                 top: calc(50% - 100px);
+                left: 19%;
                 transform: translateY(-50%);
                 @media (max-width: 767px) {
                     top: 145px;
+                    left: 20px;
                     transform: translateY(0);
                 }
             }
@@ -123,6 +128,8 @@ const FirstContent = styled.div`
             line-height: 48px;
             margin-top: -40px;
             margin-right: 0px;
+            min-width: 240px;
+            font-size: 32px;
         }
     }
     h3{
@@ -167,14 +174,28 @@ const FirstContent = styled.div`
         grid-gap: 20px;
         grid-auto-rows: 100px;
         @media (max-width: 767px) {
-            width: 100px;
+            // width: 100px;
         }
-        // .ant-btn{
-        //     &:last-of-type{
-        //         background: #3898FC;
-        //         border-color: #3898FC;
-        //     }
-        // }
+        .ant-btn{
+            &:nth-of-type(1){
+                // background: #3898FC;
+                // border-color: #3898FC;
+                @media (max-width: 767px) {
+                    width: 100px;
+                    font-size: 12px;
+                    padding: 0;
+                }
+            }
+            &:nth-of-type(2){
+                // background: #3898FC;
+                // border-color: #3898FC;
+                @media (max-width: 767px) {
+                    width: 130px;
+                    font-size: 12px;
+                    padding: 0;
+                }
+            }
+        }
     }
 `
 
@@ -199,7 +220,7 @@ const SecondContent = styled.div`
             padding: 180px 0 150px 50px;
         }
         @media (max-width: 767px) {
-            padding: 100px 0px 100px 0px;
+            padding: 0px 50px 100px 50px;
             flex-direction: column;
         }
         .secondContent_info_box {
@@ -209,17 +230,36 @@ const SecondContent = styled.div`
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            .hrStyle {
+                // background-color: #1E1E89;
+                border-bottom: 1px solid #1E1E89;
+                width: 54%;
+                height: 2px;
+                margin-right: 8%;
+                @media (max-width: 1020px) {
+                    width: 70%;
+                }
+                @media (max-width: 920px) {
+                    width: 80%;
+                    background-color: #1E1E89;
+                }
+                @media (max-width: 767px) {
+                    margin-top: 18%;
+                    width: 90%;
+                }
+            }
         }
 
         .secondContent_info {
             flex: 1;
             // margin-right: 150px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            // padding: 0px 30px 0px 30px;
             @media (max-width: 767px) {
-                padding: 0px 30px;
                 margin-right: 0;
+                flex-direction: column;
             }
             p {
                 max-width: 540px;
@@ -231,6 +271,17 @@ const SecondContent = styled.div`
                 font-weight: 400;
                 line-height: 28px;
                 color: #6B6B6B;
+                @media (max-width: 767px) {
+                    margin-left: 0px;
+                    text-align: left;
+                    max-width: 100%;
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 28px;
+                    margin-top: 20px;
+                }
             }
             h2 {
                 color: #111029;
@@ -270,7 +321,7 @@ const SecondContent = styled.div`
         line-height: 24px;
         @media (max-width: 767px) {
             font-size: 12px;
-            padding-right: 60px;
+            // padding-right: 60px;
             line-height: 20px;
         }
     }
@@ -311,13 +362,12 @@ const SecondContent = styled.div`
 `
 
 const ThirdContent = styled.div`
-    // background: url(${Image3}) no-repeat;
-    
-    background: #1B1B87;
+    background: url(${DaoBg}) no-repeat;
+    // background: #1B1B87;
     background-size: cover;
     @media (max-width: 767px) {
-        padding-bottom: 360px;
-        background: url(${Image3H5}) no-repeat,#1b1b87;
+        padding-bottom: 60px;
+        background: url(${DaoBg}) no-repeat,#1b1b87;
         background-position: 50% 120%, center;
         background-size: 100%, 100%;
     }
@@ -325,12 +375,19 @@ const ThirdContent = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-around;
+        @media (max-width: 767px) {
+            flex-direction: column;
+
+        }
         .defiTitle {
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 600;
             font-size: 48px;
             line-height: 60px;
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
     }
     &>div{
@@ -368,11 +425,11 @@ const ThirdContent = styled.div`
         font-weight: 600;
         color: #fff; 
         margin-top: 0;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
         @media (max-width: 767px) {
             font-size: 14px;
             line-height: 1.2;
-            margin-bottom: 5px;
+            // margin-bottom: 5px;
         }
     }
     ul{
@@ -412,12 +469,12 @@ const ThirdContent = styled.div`
             }
             @media (max-width: 767px) {
                 width: 100%!important;
-                height: 120px;
+                height: 64px;
                 &:first-of-type{
-                    height: 150px;
+                    width: 150px;
                 }
                 &:nth-of-type(2){
-                    height: 160px;
+                    width: 160px;
                 }
             }
         }
@@ -655,7 +712,7 @@ const NinthContent = styled.div`
         background: url(${Image10H5}) no-repeat;
         background-size: 100%;
         background-position: center top; 
-        margin-top: 0px;
+        margin-top: 100px;
     }
     .inner {
         margin-top: -100px;
@@ -669,7 +726,9 @@ const NinthContent = styled.div`
             grid-gap: 20px;
             margin-top: 144px;
             @media (max-width: 767px) {
-                width: 100px;
+                grid-template-columns: 1fr;
+                margin-top: 0px;
+                justify-items: center;
             }
             .btn-w {
                 height: 50px;
@@ -685,8 +744,18 @@ const NinthContent = styled.div`
                 line-height: 1.5;
                 cursor: pointer;
                 padding: 12px 36px 12px 36px;
+                &:nth-of-type(1) {
+                    width: 180px;
+                }
+                &:nth-of-type(2) {
+                    width: 210px;
+                }
                 &:hover {
                     background: #CCCCCC;
+                }
+                @media (max-width: 767px) {
+                    font-size: 14px;
+                    // min-width: 160px;
                 }
             }
         }
@@ -698,6 +767,12 @@ const NinthContent = styled.div`
         // display: grid;
         // grid-template-columns: 1fr 1fr 1fr 1fr;
         // grid-gap: 23px;
+        @media (max-width: 767px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 20px;
+        }
         .bol {
             display: flex;
             flex-direction: column;
@@ -710,6 +785,14 @@ const NinthContent = styled.div`
             border-radius: 40px;
             margin-right: 43px;
             cursor: pointer;
+            position: relative;
+            @media (max-width: 767px) {
+                width: 140px;
+                height: 140px;
+                flex-direction: column;
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
             .imgBox {
                 width: 80px;
                 height: 80px;
@@ -721,9 +804,16 @@ const NinthContent = styled.div`
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                // position: absolute;
+                margin-top: -50px;
+                @media (max-width: 767px) {
+
+                }
                 img {
                     width: 27px;
                     height: 40px;
+                    // transform: translateY(-1000px);
+                    // filter: drop-shadow(#1B1B87 0 1000px);
                 }
             }
             .text {
@@ -734,6 +824,13 @@ const NinthContent = styled.div`
                 line-height: 30px;
                 text-align: center;
                 color: #727272;
+                @media (max-width: 767px) {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 21px;
+                }
             }
         }
     }
@@ -1042,7 +1139,7 @@ const Home: React.FC = () =>  {
                                     <p>Native tools and infrastructure that facilitate more efficient decentralized decision-making for users, communities, and organizations.</p>
                                 </div>
                                 
-                                <hr style={{ backgroundColor: '#1E1E89', width: '54%', height: '2px', marginRight: '8%' }}/>
+                                <hr className='hrStyle'/>
                             </div>
                         </div>
                     </SecondContent> 
@@ -1099,7 +1196,7 @@ const Home: React.FC = () =>  {
                             </div>
                             <div className='bol'>
                                 <div className='imgBox'>
-                                    <img src={Bol2} alt="" />
+                                    <img src={Bol2Svg} alt="" />
                                 </div>
                                 <div className='text'>
                                 Feasibility
