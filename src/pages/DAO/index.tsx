@@ -1196,7 +1196,7 @@ const Home: React.FC = () =>  {
                             </div>
                             <div className='bol'>
                                 <div className='imgBox'>
-                                    <img src={Bol2Svg} alt="" />
+                                    <img src={Bol2} alt="" />
                                 </div>
                                 <div className='text'>
                                 Feasibility
