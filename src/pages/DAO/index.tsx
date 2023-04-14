@@ -54,6 +54,7 @@ import Bol2 from '../../assets/images/dao/bol2.png';
 import Bol3 from '../../assets/images/dao/bol3.png';
 import Bol4 from '../../assets/images/dao/bol4.png';
 import DaoBg from '../../assets/images/dao/daoBg.png';
+import bootBG from '../../assets/images/dao/bg-boot.png'
 import './index.less';
 
 const { Header, Sider, Content } = Layout;
@@ -67,12 +68,15 @@ const HeaderContent = styled.div`
 `
 
 const FirstContent = styled.div`
-    background: url(${CubeSvg}), url(${Boot});
-    background-repeat: no-repeat, no-repeat;
-    background-size: cover, cover;
+    // background: url(${CubeSvg}), url(${Boot});
+    // background-repeat: no-repeat, no-repeat;
+    // background-size: cover, cover;
     // background-position: center bottom, center center;
-    center center,bottom 10px center;
-    height: calc(100vh - 200px);
+    // center center,bottom 10px center;
+    background: url(${bootBG}) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    // height: calc(100vh - 200px);
     @media (max-width: 767px) {
         // margin-top: 64px;
         background: url(${CubeSvg}) no-repeat;
@@ -96,7 +100,7 @@ const FirstContent = styled.div`
                 position: relative;
                 top: calc(50% - 100px);
                 left: 19%;
-                transform: translateY(-50%);
+                transform: translateY(-10%);
                 @media (max-width: 767px) {
                     top: 145px;
                     left: 20px;
