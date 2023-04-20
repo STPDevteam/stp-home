@@ -5,20 +5,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/infrastructure.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/initiatives1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/initiatives2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/initiatives3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/avatar-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/avatar-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/avatar-3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/clique-sdk.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/dapp-store.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/data-bg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/elips.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/header-bottom-circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/header-top-circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/logo1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/logo2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/logo3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/logo4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/logo5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/stp-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/socialmedia/cylinder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/socialmedia/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/socialmedia/medium.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/socialmedia/telegramsvg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/socialmedia/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/socialmedia/wechat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="homepage" />
+                    <option name="lastUsedInstant" value="1681804532" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1681804531" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23M175OXBs1hOIp0i9DoDo1sUup" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,15 +95,28 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/socialmedia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Users/qiu/Desktop/stp/stp-home/node_modules/typescript/lib",
+    "prettierjs.PrettierConfiguration.Package": "/Users/huangmei/Dapp/stp-home/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/huangmei/Dapp/stp-home/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/socialmedia" />
+      <recent name="$PROJECT_DIR$/src/assets/images/home/svg" />
+      <recent name="$PROJECT_DIR$/src/assets/images/home" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/home" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +128,12 @@
       <workItem from="1641528972694" duration="778000" />
       <workItem from="1676882448708" duration="307000" />
       <workItem from="1681312783422" duration="1342000" />
+      <workItem from="1681804482302" duration="805000" />
+      <workItem from="1681812542266" duration="619000" />
+      <workItem from="1681897074903" duration="2432000" />
+      <workItem from="1681899780089" duration="3181000" />
+      <workItem from="1681960884540" duration="57000" />
+      <workItem from="1681972074792" duration="19487000" />
     </task>
     <servers />
   </component>

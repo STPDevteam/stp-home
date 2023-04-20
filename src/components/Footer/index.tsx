@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ReactComponent as TwitterLogo} from '../../assets/images/home/svg/Twitter.svg'
-import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.svg'
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
 import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
