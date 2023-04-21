@@ -7,6 +7,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import { useToggle } from "../../hooks/useToggle";
 import Logo from "../../assets/images/home/svg/stp-logo.svg";
+import DarkLogo from "../../assets/images/logo.png";
 import Cube from "../../assets/images/home/cube.png";
 import { ReactComponent as Arrow } from "../../assets/images/home/svg/arrow.svg";
 import "./index.less";
@@ -17,7 +18,6 @@ const HeaderContent = styled.div`
   width: 100vw;
   padding: 0 50px;
   height: auto !important;
-  background: #1b1aff !important;
   @media (max-width: 767px) {
     padding: 0 20px;
   }
@@ -34,6 +34,7 @@ const Header: React.FC = () => {
   const headerRef = useRef(null);
   useOnClickOutside(headerRef, open ? toggle : undefined);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const currentPath = useLocation();
 
   const handleCancel = () => {
     setIsModalVisible(false);
@@ -119,8 +120,20 @@ const Header: React.FC = () => {
       {/*<HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">*/}
       {/*  Sign up for STP DAO Booster Program!*/}
       {/*</HeaderLink>*/}
-      <HeaderContent className="header" ref={headerRef}>
-        <img className="Logo" src={Logo} alt="logo" />
+      <HeaderContent
+        className="header"
+        ref={headerRef}
+        style={{
+          background: currentPath.pathname.includes("dao")
+            ? "white"
+            : "#1B1AFF",
+        }}
+      >
+        <img
+          className="Logo"
+          src={currentPath.pathname.includes("dao") ? DarkLogo : Logo}
+          alt="logo"
+        />
         <CSSTransition
           in={!isSmallScreen || open}
           timeout={350}

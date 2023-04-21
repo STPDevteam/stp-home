@@ -11,6 +11,7 @@ import DAO from "./pages/DAO";
 import "./App.less";
 import Homepage from "./pages/Home/homepage";
 import EcosystemPage from "./pages/Ecosystem/EcosystemPage";
+import DaoPage from "./pages/DAO/daoPage";
 
 const { Content } = Layout;
 
@@ -28,7 +29,7 @@ function App() {
               <Route component={EcosystemPage} exact path="/ecosystem" />
               <Route component={Product} exact path="/product" />
               <Route component={Tech} exact path="/tech" />
-              <Route component={DAO} exact path="/dao" />
+              <Route component={DaoPage} exact path="/dao" />
               {/* <Route component={Developers} exact path="/developers" /> */}
             </Switch>
           </Content>

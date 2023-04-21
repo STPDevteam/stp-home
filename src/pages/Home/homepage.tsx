@@ -76,6 +76,7 @@ export const HeadText = styled(Typography)`
 `;
 export const GreenBtn = styled(Button)`
   display: flex;
+  border: 0;
   flex-direction: row;
   justify-content: center;
   align-items: center;
