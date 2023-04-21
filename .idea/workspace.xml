@@ -5,46 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Add: ecosystem page">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/Chainlink_Logo_Blue.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/binance-smart-chain.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/binance.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/bithumb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/cere.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/cobak.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/coin-dcx.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/coinone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/deep-dao.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/deesse.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/define.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/gate-io.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/gnosis-safe.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/her.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/huobi.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/immunefi.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/jenny-metaverse-dao.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/klaytn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/knnb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/layer3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/map-protocol.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/meter-passport.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/moviebloc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/poloniex.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/polygon-ecosystem-dao.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/polygon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/push.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/rai-finance.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/the-graph.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/up-bit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/volt-swap.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/zetachain.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform/zkevm.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/svg/star-ecosystem.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +24,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -97,23 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/ecosystem/svg/platform",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "/Users/huangmei/Dapp/stp-home/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/huangmei/Dapp/stp-home/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/huangmei/Dapp/stp-home/src/assets/images/ecosystem/svg/platform&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/huangmei/Dapp/stp-home/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/huangmei/Dapp/stp-home/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform" />
@@ -142,7 +105,8 @@
       <workItem from="1681897074903" duration="2432000" />
       <workItem from="1681899780089" duration="3181000" />
       <workItem from="1681960884540" duration="57000" />
-      <workItem from="1681972074792" duration="25984000" />
+      <workItem from="1681972074792" duration="26071000" />
+      <workItem from="1682062392079" duration="3736000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -151,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681998620246</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add: ecosystem page">
+      <created>1682059506892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682059506892</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

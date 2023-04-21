@@ -45,11 +45,13 @@ import TheGraph from "../../assets/images/ecosystem/svg/platform/the-graph.svg";
 import UpBit from "../../assets/images/ecosystem/svg/platform/up-bit.svg";
 import VoltSwap from "../../assets/images/ecosystem/svg/platform/volt-swap.svg";
 import Zetachain from "../../assets/images/ecosystem/svg/platform/zetachain.svg";
+import Grid2 from "@mui/material/Unstable_Grid2";
 
 export default function () {
   return (
     <ContentWrapper>
       <Head />
+      <Platforms />
       <Footer />
     </ContentWrapper>
   );
@@ -126,7 +128,8 @@ function Head() {
   );
 }
 
-const SearchBox = styled(Input)`
+const SearchBg = styled(Box)`
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -138,6 +141,9 @@ const SearchBox = styled(Input)`
   background: #ffffff;
   border: 1px solid #d6d6d6;
   border-radius: 15px;
+`;
+
+const SearchBox = styled(Input)`
   flex: none;
   order: 1;
   align-self: stretch;
@@ -146,52 +152,218 @@ const SearchBox = styled(Input)`
 
 function Search() {
   return (
-    <SearchBox placeholder={"Search DAO name"}>
-      <BlueButton>Search</BlueButton>
-    </SearchBox>
+    <SearchBg>
+      <SearchBox placeholder={"Search DAO name"} disableUnderline={true} />
+      <BlueButton
+        style={{
+          position: "absolute",
+          height: "52px",
+          top: "50%",
+          bottom: "50%",
+          right: "8px",
+          transform: "translateY(-50%)",
+        }}
+      >
+        Search
+      </BlueButton>
+    </SearchBg>
   );
 }
 
+const PlatformBox = styled(Box)`
+  padding: 24px 40px;
+  height: 235px;
+  background: #ffffff;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+`;
+
+const TagBox = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px 16px;
+  gap: 8px;
+  border: 1px solid #d6d6d6;
+  border-radius: 14px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
+
+const PlatformDesc = styled(Typography)`
+  font-family: "DM Sans";
+  margin-top: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  /* or 21px */
+
+  display: flex;
+  align-items: center;
+
+  /* text */
+
+  color: #777e91;
+`;
+
 function Platforms() {
+  const TagColors = ["#F9F9FF", "#F8FFFE", "#F8FEFF", "#FFF8F8", "#FAF8FF"];
   return (
-    <Box>
+    <Box
+      sx={{
+        maxWidth: "1441px",
+        padding: "80px 0 120px",
+      }}
+    >
       <Search />
+      <Grid2 container spacing={"36px"} mt={"39px"}>
+        {DaosList.map((dao, idx) => {
+          return (
+            <Grid2 md={4}>
+              <PlatformBox>
+                <Row justifyContent={"space-between"} width={"100%"}>
+                  <img src={dao.icon} />
+                  <ArrowOutwardIcon sx={{ color: "#1B1AFF" }} />
+                </Row>
+                <Row gap={"4px"} mt={"24px"}>
+                  {dao.tag.map((t, idx) => (
+                    <TagBox
+                      key={idx}
+                      sx={{
+                        background:
+                          TagColors[
+                            Math.floor(Math.random() * TagColors.length)
+                          ],
+                      }}
+                    >
+                      {t}
+                    </TagBox>
+                  ))}
+                </Row>
+                <PlatformDesc>{dao.desc}</PlatformDesc>
+              </PlatformBox>
+            </Grid2>
+          );
+        })}
+      </Grid2>
     </Box>
   );
 }
 
 const DaosList = [
-  { icon: BinanceSmartChain, tag: [], desc: "", link: "" },
-  { icon: Polygon, tag: [], desc: "", link: "" },
-  { icon: Klaytn, tag: [], desc: "", link: "" },
-  { icon: Zkevm, tag: [], desc: "", link: "" },
-  { icon: ChainlinkLogoBlue, tag: [], desc: "", link: "" },
-  { icon: TheGraph, tag: [], desc: "", link: "" },
-  { icon: PolygonEcosystemDao, tag: [], desc: "", link: "" },
-  { icon: Zetachain, tag: [], desc: "", link: "" },
-  { icon: GnosisSafe, tag: [], desc: "", link: "" },
-  { icon: Layer3, tag: [], desc: "", link: "" },
-  { icon: RaiFinance, tag: [], desc: "", link: "" },
-  { icon: MapProtocol, tag: [], desc: "", link: "" },
-  { icon: MeterPassport, tag: [], desc: "", link: "" },
-  { icon: Define, tag: [], desc: "", link: "" },
-  { icon: Immunefi, tag: [], desc: "", link: "" },
-  { icon: Cobak, tag: [], desc: "", link: "" },
-  { icon: Moviebloc, tag: [], desc: "", link: "" },
-  { icon: Deesse, tag: [], desc: "", link: "" },
-  { icon: Cere, tag: [], desc: "", link: "" },
-  { icon: DeepDao, tag: [], desc: "", link: "" },
-  { icon: JennyMetaverseDao, tag: [], desc: "", link: "" },
-  { icon: Her, tag: [], desc: "", link: "" },
-  { icon: Knnb, tag: [], desc: "", link: "" },
-  { icon: VoltSwap, tag: [], desc: "", link: "" },
-  { icon: Push, tag: [], desc: "", link: "" },
-  { icon: Binance, tag: [], desc: "", link: "" },
-  { icon: UpBit, tag: [], desc: "", link: "" },
-  { icon: Bithumb, tag: [], desc: "", link: "" },
-  { icon: Huobi, tag: [], desc: "", link: "" },
-  { icon: GateIo, tag: [], desc: "", link: "" },
-  { icon: Coinone, tag: [], desc: "", link: "" },
-  { icon: Poloniex, tag: [], desc: "", link: "" },
-  { icon: CoinDcx, tag: [], desc: "", link: "" },
+  {
+    icon: BinanceSmartChain,
+    tag: ["Integration"],
+    desc: "BNB chain",
+    link: "",
+  },
+  {
+    icon: Polygon,
+    tag: ["Integration", "Infrastructure"],
+    desc: "Polygon believes in Web3 for all. ",
+    link: "",
+  },
+  {
+    icon: Klaytn,
+    tag: ["Integration", "Infrastructure"],
+    desc: "An open-source public blockchain for all who wish to build, work, or play in the metaverse.",
+    link: "",
+  },
+  { icon: Zkevm, tag: ["Integration"], desc: "Polygon zkevm", link: "" },
+  {
+    icon: ChainlinkLogoBlue,
+    tag: ["Partnership", "Infrastructure"],
+    desc: "Chainlink is the oracle to source external information on-chain ",
+    link: "",
+  },
+  {
+    icon: TheGraph,
+    tag: ["Partnership", "Infrastructure"],
+    desc: "The Graph",
+    link: "",
+  },
+  {
+    icon: PolygonEcosystemDao,
+    tag: ["Partnership"],
+    desc: "Polygon DAO",
+    link: "",
+  },
+  { icon: Zetachain, tag: ["Partnership"], desc: "Zetachain", link: "" },
+  {
+    icon: GnosisSafe,
+    tag: ["Partnership", "Infrastructure"],
+    desc: "Gnosis Safe ",
+    link: "",
+  },
+  {
+    icon: Layer3,
+    tag: ["Partnership", "Social"],
+    desc: "The fastest smart contracts platform in the blockchain industry.",
+    link: "",
+  },
+  {
+    icon: RaiFinance,
+    tag: ["Partnership", "DeFi"],
+    desc: "DEX/IDO Platforms",
+    link: "",
+  },
+  { icon: MapProtocol, tag: ["Partnership"], desc: "Map Protocol ", link: "" },
+  {
+    icon: MeterPassport,
+    tag: ["Partnership", "Infrastructure"],
+    desc: "Cross-chain Bridge",
+    link: "",
+  },
+  {
+    icon: Define,
+    tag: ["Partnership", "NFT"],
+    desc: "NFT Marketplaces",
+    link: "",
+  },
+  { icon: Immunefi, tag: ["Partnership"], desc: "Immunefi", link: "" },
+  {
+    icon: Cobak,
+    tag: ["Partnership", "Social"],
+    desc: "Community Projects",
+    link: "",
+  },
+  {
+    icon: Moviebloc,
+    tag: ["Partnership", "Social"],
+    desc: "Entertainment Projects",
+    link: "",
+  },
+  {
+    icon: Deesse,
+    tag: ["Partnership", "NFT"],
+    desc: "Gamefi Projects",
+    link: "",
+  },
+  {
+    icon: Cere,
+    tag: ["Partnership", "Infrastructure"],
+    desc: "Decentralized Storage Projects",
+    link: "",
+  },
+  { icon: DeepDao, tag: ["Partnership"], desc: "DeepDAO", link: "" },
+  {
+    icon: JennyMetaverseDao,
+    tag: ["Partnership"],
+    desc: "Jenny DAO",
+    link: "",
+  },
+  { icon: Her, tag: ["Partnership"], desc: "H.E.R. DAO", link: "" },
+  { icon: Knnb, tag: ["Partnership"], desc: "Knn3 Network", link: "" },
+  { icon: VoltSwap, tag: ["Partnership", "DeFi"], desc: "Voltswap", link: "" },
+  { icon: Push, tag: ["Partnership"], desc: "Push protocol ", link: "" },
+  { icon: Binance, tag: ["Listed Exchanges"], desc: "Binance", link: "" },
+  { icon: UpBit, tag: ["Listed Exchanges"], desc: "Upbit ", link: "" },
+  { icon: Bithumb, tag: ["Listed Exchanges"], desc: "Bithumb", link: "" },
+  { icon: Huobi, tag: ["Listed Exchanges"], desc: "Huobi", link: "" },
+  { icon: GateIo, tag: ["Listed Exchanges"], desc: "Gate", link: "" },
+  { icon: Coinone, tag: ["Listed Exchanges"], desc: "Coinone", link: "" },
+  { icon: Poloniex, tag: ["Listed Exchanges"], desc: "Poloniex", link: "" },
+  { icon: CoinDcx, tag: ["Listed Exchanges"], desc: "CoinDCX", link: "" },
 ];
