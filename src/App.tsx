@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import DAO from "./pages/DAO";
 import "./App.less";
 import Homepage from "./pages/Home/homepage";
+import EcosystemPage from "./pages/Ecosystem/EcosystemPage";
 
 const { Content } = Layout;
 
@@ -24,7 +25,7 @@ function App() {
           <Content>
             <Switch>
               <Route component={Homepage} exact path="/" />
-              <Route component={Ecosystem} exact path="/ecosystem" />
+              <Route component={EcosystemPage} exact path="/ecosystem" />
               <Route component={Product} exact path="/product" />
               <Route component={Tech} exact path="/tech" />
               <Route component={DAO} exact path="/dao" />

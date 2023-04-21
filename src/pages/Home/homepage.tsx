@@ -1,4 +1,4 @@
-import { Box, keyframes, Tab, Tabs } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import styled from "styled-components";
 import { Button, Divider, Typography } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -26,17 +26,18 @@ import Medium from "../../assets/images/socialmedia/medium.svg";
 import Tele from "../../assets/images/socialmedia/telegramsvg.svg";
 import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
+export const ContentWrapper = styled(Box)`
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
 export default function Homepage() {
   return (
-    <Box
-      position={"absolute"}
-      top={0}
-      display={"flex"}
-      alignItems={"center"}
-      flexDirection={"column"}
-    >
+    <ContentWrapper>
       <Head />
       <Infrastructure />
       <Data />
@@ -44,18 +45,18 @@ export default function Homepage() {
       <Ecosystem />
       <BuildWithUs />
       <Footer />
-    </Box>
+    </ContentWrapper>
   );
 }
 
-const HeadBox = styled(Box)`
+export const HeadBox = styled(Box)`
   background: #1b1aff;
   position: relative;
   height: 669px;
   width: 100vw;
   padding-left: 252px;
 `;
-const HeadH1 = styled(Typography)`
+export const HeadH1 = styled(Typography)`
   font-family: "Urbanist";
   font-style: normal;
   font-weight: 600;
@@ -64,7 +65,7 @@ const HeadH1 = styled(Typography)`
   padding-top: 179px;
   color: #ffffff;
 `;
-const HeadText = styled(Typography)`
+export const HeadText = styled(Typography)`
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
@@ -73,12 +74,15 @@ const HeadText = styled(Typography)`
   line-height: 30px;
   color: #b4b4b4;
 `;
-const GreenBtn = styled(Button)`
+export const GreenBtn = styled(Button)`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 16px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
   gap: 8px;
   background: #a7f46a;
   border-radius: 8px;
@@ -435,7 +439,7 @@ interface InitiativesData {
   desc: string;
 }
 
-const Row = styled(Box)`
+export const Row = styled(Box)`
   display: flex;
 `;
 
@@ -633,7 +637,7 @@ function BuildWithUs() {
   );
 }
 
-const BlueButton = styled(Button)`
+export const BlueButton = styled(Button)`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -672,7 +676,7 @@ const SocialMedia = styled.img`
   height: 20px;
 `;
 
-function Footer() {
+export function Footer() {
   const footList = [
     [
       "Products",

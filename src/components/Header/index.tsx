@@ -14,21 +14,13 @@ import "./index.less";
 const { Header: LayoutHeader } = Layout;
 const HeaderContent = styled.div`
   margin: 0 auto;
+  width: 100vw;
   padding: 0 50px;
+  height: auto !important;
   background: #1b1aff !important;
   @media (max-width: 767px) {
     padding: 0 20px;
   }
-`;
-const HeaderLink = styled.a`
-  background: #0b1cb5;
-  display: block;
-  height: 40px;
-  color: #fff;
-  text-align: center;
-  line-height: 40px;
-  font-size: 12px;
-  text-decoration: underline;
 `;
 
 const Header: React.FC = () => {
