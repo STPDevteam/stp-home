@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: EcosystemPage">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/Ellipse1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/Ellipse2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/ai.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/arts.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/criteria-elips.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/defi.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/flag.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/phone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/pic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/roker.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/social.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/dao/svg/star-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" afterDir="false" />
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Add: Dao page">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/header/clique-dapp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/header/clique-sdk.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/header/clique-workspace.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,30 +67,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/dao/svg",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "/Users/huangmei/Dapp/stp-home/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/huangmei/Dapp/stp-home/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/huangmei/Dapp/stp-home/src/assets/images/header&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/huangmei/Dapp/stp-home/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/huangmei/Dapp/stp-home/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/header" />
       <recent name="$PROJECT_DIR$/src/assets/images/dao/svg" />
       <recent name="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform" />
       <recent name="$PROJECT_DIR$/src/assets/images/ecosystem/svg" />
       <recent name="$PROJECT_DIR$/src/assets/images/socialmedia" />
-      <recent name="$PROJECT_DIR$/src/assets/images/home/svg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
@@ -123,7 +113,9 @@
       <workItem from="1681899780089" duration="3181000" />
       <workItem from="1681960884540" duration="57000" />
       <workItem from="1681972074792" duration="26071000" />
-      <workItem from="1682062392079" duration="9533000" />
+      <workItem from="1682062392079" duration="10264000" />
+      <workItem from="1682229854822" duration="4092000" />
+      <workItem from="1682241199322" duration="2899000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -146,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682067569579</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add: Dao page">
+      <created>1682072884338</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682072884338</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +166,7 @@
     <MESSAGE value="Add: new homepage" />
     <MESSAGE value="Add: ecosystem page" />
     <MESSAGE value="Edit: EcosystemPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit: EcosystemPage" />
+    <MESSAGE value="Add: Dao page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: Dao page" />
   </component>
 </project>

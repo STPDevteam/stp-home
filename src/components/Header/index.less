@@ -72,15 +72,6 @@
   display: grid;
   grid-template-areas: "logo nav";
 
-  .ant-btn {
-    background: #0B1CB5;
-    box-shadow: 3px 3px 20px #A3A3A3;
-    border-radius: 15px;
-    padding: 0 30px;
-    height: 50px;
-    line-height: 50px;
-  }
-
   .Nav {
     display: grid;
     grid-area: nav;
@@ -90,22 +81,6 @@
     margin-right: -18px;
     @media (max-width: 767px) {
       margin-right: 0;
-    }
-
-    .ant-btn {
-      box-shadow: 3px 3px 20px #A3A3A3;
-
-      &:hover {
-        box-shadow: 5px 5px 20px #676767;
-      }
-
-      a {
-        color: #fff;
-      }
-    }
-
-    svg {
-      fill: #999FAE;
     }
 
     .ant-dropdown-link {
@@ -162,6 +137,10 @@
     text-decoration: none;
     line-height: 40px;
     color: #B4B4B4;
+
+    svg {
+      fill: #999FAE;
+    }
 
     &.active {
       color: #A7F46A;

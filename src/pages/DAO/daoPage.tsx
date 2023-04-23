@@ -247,8 +247,18 @@ function Criteria() {
         ))}
       </Box>
       <Row mt={"40px"} gap={"24px"}>
-        <GreenBtn style={{ height: "56px" }}>Learn More</GreenBtn>
-        <GreenBtn style={{ height: "56px" }}>Apply for Grant</GreenBtn>
+        <GreenBtn style={{ height: "56px" }} onClick={() =>
+          window.open(
+            "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/rRQ7limbMglccq68gojGxh3Wbf4Hy2rTODHfkKragjA",
+            "_blank"
+          )
+        }>Learn More</GreenBtn>
+        <GreenBtn style={{ height: "56px" }} onClick={() =>
+          window.open(
+            "https://docs.google.com/forms/d/e/1FAIpQLSdSl2HuWLXMQDRjB4npQP0BoAcpGL2e3BQK9HldkU7TZMgSRQ/viewform",
+            "_blank"
+          )
+        }>Apply for Grant</GreenBtn>
       </Row>
       <img
         src={CriteriaElips}

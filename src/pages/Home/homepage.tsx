@@ -27,9 +27,11 @@ import Tele from "../../assets/images/socialmedia/telegramsvg.svg";
 import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
+  width: 100vw;
   top: 0;
   display: flex;
   align-items: center;
@@ -53,7 +55,7 @@ export const HeadBox = styled(Box)`
   background: #1b1aff;
   position: relative;
   height: 669px;
-  width: 100vw;
+  width: 100%;
   padding-left: 252px;
 `;
 export const HeadH1 = styled(Typography)`
@@ -83,6 +85,7 @@ export const GreenBtn = styled(Button)`
   padding: 16px 24px;
   font-weight: 700;
   font-size: 16px;
+  height: 56px;
   line-height: 24px;
   gap: 8px;
   background: #a7f46a;
@@ -96,6 +99,7 @@ const BottomCircleImg = styled("img")`
 `;
 
 function Head() {
+  const history = useHistory();
   return (
     <HeadBox>
       <HeadH1>
@@ -106,7 +110,10 @@ function Head() {
         Launch your DAO on an All-In-One platform offering seamless <br />
         crosschain governance and integration with essential tooling.
       </HeadText>
-      <GreenBtn style={{ marginTop: "40px" }}>
+      <GreenBtn
+        style={{ marginTop: "40px" }}
+        onClick={() => history.push("/product")}
+      >
         Launch DAO
         <ArrowOutwardIcon />
       </GreenBtn>
@@ -465,7 +472,10 @@ function InitList({ data }: { data: InitiativesData }) {
         ))}
       </Row>
       <InitListDesc mt={"24px"}>{data.desc}</InitListDesc>
-      <GreenBtn style={{ position: "absolute", bottom: "42px", right: "47px" }}>
+      <GreenBtn
+        style={{ position: "absolute", bottom: "42px", right: "47px" }}
+
+      >
         Learn more
         <ArrowOutwardIcon />
       </GreenBtn>
@@ -627,8 +637,16 @@ function BuildWithUs() {
         Explore partnership and integration possibilities for your project.
       </BuildContent>
       <GreenBtn style={{ marginTop: "66px" }}>
-        Contact
-        <ArrowOutwardIcon />
+        <a
+          href="mailto:contact@stp.network"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          Contact <ArrowOutwardIcon style={{ marginLeft: "8px" }} />
+        </a>
       </GreenBtn>
       <img
         style={{ position: "absolute", right: 0, bottom: 0 }}

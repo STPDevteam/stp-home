@@ -38,7 +38,7 @@ import ZkEVM from '../../assets/images/ecosystem/zkEvm.png';
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
-const EcosystemDataList = [
+export const EcosystemDataList = [
     {
         img: Binance,
         website: 'https://www.bnbchain.org/',
@@ -286,7 +286,6 @@ const EcosystemDataList = [
         desc: 'CoinDCX',
         name: 'CoinDCX'
     },
-    
 ]
 const categoryFilterDataList = [
     'All',
