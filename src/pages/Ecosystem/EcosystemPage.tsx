@@ -9,9 +9,9 @@ import {
   Row,
 } from "../Home/homepage";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Star from "../../assets/images/ecosystem/svg/star-ecosystem.svg";
-import { Box, Input, Stack, styled, Typography } from "@mui/material";
+import { Box, Stack, styled, Input, Typography } from "@mui/material";
 import Zkevm from "../../assets/images/ecosystem/svg/platform/zkevm.svg";
 import BinanceSmartChain from "../../assets/images/ecosystem/svg/platform/binance-smart-chain.svg";
 import Binance from "../../assets/images/ecosystem/svg/platform/binance.svg";
@@ -46,12 +46,24 @@ import UpBit from "../../assets/images/ecosystem/svg/platform/up-bit.svg";
 import VoltSwap from "../../assets/images/ecosystem/svg/platform/volt-swap.svg";
 import Zetachain from "../../assets/images/ecosystem/svg/platform/zetachain.svg";
 import Grid2 from "@mui/material/Unstable_Grid2";
+import {
+  categoryFilterDataList,
+  EcosystemDataList,
+  sectorFilterDataList,
+} from "./index";
 
 export default function () {
+  const [categorySelect, setCategorySelect] = useState("All");
+  const [sectorSelect, setSectorSelect] = useState("All");
   return (
     <ContentWrapper>
-      <Head />
-      <Platforms />
+      <Head
+        categorySelect={categorySelect}
+        setCategorySelect={setCategorySelect}
+        sectorSelect={sectorSelect}
+        setSectorSelect={setSectorSelect}
+      />
+      <Platforms categorySelect={categorySelect} sectorSelect={sectorSelect} />
       <Footer />
     </ContentWrapper>
   );
@@ -63,8 +75,16 @@ const Tag = styled(Box)`
   padding: 8px 32px;
   gap: 8px;
   height: 37px;
-  background: #a7f46a;
   border-radius: 24px;
+  background: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    background: #a7f46a;
+  }
 `;
 
 const FilterTitle = styled(Typography)`
@@ -76,17 +96,17 @@ const FilterTitle = styled(Typography)`
   color: #ededed;
 `;
 
-function Head() {
-  const filterList = [
-    {
-      title: "Category",
-      tags: ["All", "Partnership", "Integration", "Listed Exchanges"],
-    },
-    {
-      title: "Sector",
-      tags: ["All", "Defi", "Social", "NFT", "Infrastructure"],
-    },
-  ];
+function Head({
+  categorySelect,
+  setCategorySelect,
+  sectorSelect,
+  setSectorSelect,
+}: {
+  categorySelect: string;
+  setCategorySelect: (category: string) => void;
+  sectorSelect: string;
+  setSectorSelect: (sector: string) => void;
+}) {
   return (
     <HeadBox>
       <HeadH1>Ecosystem</HeadH1>
@@ -98,23 +118,38 @@ function Head() {
         DAO Booster Program <ArrowOutwardIcon />
       </GreenBtn>
       <Stack spacing={"24px"} mt={"80px"}>
-        {filterList.map((type, idx) => {
-          return (
-            <Row gap={"16px"} alignItems={"center"}>
-              <FilterTitle key={idx}>{type.title}</FilterTitle>
-              <Row gap={"4px"}>
-                {type.tags.map((tag, tagIdx) => (
-                  <Tag
-                    key={tagIdx}
-                    sx={{ background: tag === "All" ? "#a7f46a" : "white" }}
-                  >
-                    {tag}
-                  </Tag>
-                ))}
-              </Row>
-            </Row>
-          );
-        })}
+        <Row gap={"16px"} alignItems={"center"}>
+          <FilterTitle>Category</FilterTitle>
+          <Row gap={"4px"}>
+            {categoryFilterDataList.map((tag, tagIdx) => (
+              <Tag
+                key={tagIdx}
+                onClick={() => {
+                  setCategorySelect(tag);
+                }}
+                className={categorySelect === tag ? "active" : ""}
+              >
+                {tag}
+              </Tag>
+            ))}
+          </Row>
+        </Row>
+        <Row gap={"16px"} alignItems={"center"}>
+          <FilterTitle>Sector</FilterTitle>
+          <Row gap={"4px"}>
+            {sectorFilterDataList.map((tag, tagIdx) => (
+              <Tag
+                key={tagIdx}
+                onClick={() => {
+                  setSectorSelect(tag);
+                }}
+                className={sectorSelect === tag ? "active" : ""}
+              >
+                {tag}
+              </Tag>
+            ))}
+          </Row>
+        </Row>
       </Stack>
       <img
         src={Star}
@@ -150,10 +185,16 @@ const SearchBox = styled(Input)`
   flex-grow: 1;
 `;
 
-function Search() {
+function Search({ onSearch }: { onSearch: (input: string) => void }) {
+  const [input, setInput] = useState("");
   return (
     <SearchBg>
-      <SearchBox placeholder={"Search DAO name"} disableUnderline={true} />
+      <SearchBox
+        placeholder={"Search DAO name"}
+        value={input}
+        disableUnderline={true}
+        onChange={(e) => setInput(e.target.value)}
+      />
       <BlueButton
         style={{
           position: "absolute",
@@ -162,6 +203,9 @@ function Search() {
           bottom: "50%",
           right: "8px",
           transform: "translateY(-50%)",
+        }}
+        onClick={() => {
+          onSearch(input);
         }}
       >
         Search
@@ -208,27 +252,79 @@ const PlatformDesc = styled(Typography)`
   color: #777e91;
 `;
 
-function Platforms() {
+function Platforms({
+  categorySelect,
+  sectorSelect,
+}: {
+  categorySelect: string;
+  sectorSelect: string;
+}) {
+  const [ecosystemDisplay, setEcosystemDisplay] = useState(EcosystemDataList);
   const TagColors = ["#F9F9FF", "#F8FFFE", "#F8FEFF", "#FFF8F8", "#FAF8FF"];
+
+  function existOneIncludeTwo(oneStr: string, twoStr: string) {
+    return oneStr.toUpperCase().includes(twoStr.toUpperCase());
+  }
+
+  const onSearch = (value: string) => {
+    console.log(value);
+    const result = [];
+    for (let i in EcosystemDataList) {
+      let arr = Object.values(EcosystemDataList[i]);
+
+      if (
+        arr.some((item) => {
+          return existOneIncludeTwo(item, value);
+        })
+      ) {
+        result.push(EcosystemDataList[i]);
+      }
+    }
+
+    setEcosystemDisplay(result);
+  };
+  useEffect(() => {
+    setEcosystemDisplay(
+      EcosystemDataList.filter((item) => {
+        return (
+          (categorySelect !== "All"
+            ? item.category === categorySelect
+            : true) &&
+          (sectorSelect !== "All" ? item.sector === sectorSelect : true)
+        );
+      })
+    );
+  }, [categorySelect, sectorSelect]);
+
   return (
     <Box
       sx={{
         maxWidth: "1441px",
+        width: "100%",
         padding: "80px 0 120px",
       }}
     >
-      <Search />
-      <Grid2 container spacing={"36px"} mt={"39px"}>
-        {DaosList.map((dao, idx) => {
+      <Search onSearch={onSearch} />
+      <Grid2 container spacing={"36px"} mt={"39px"} width={"100%"}>
+        {ecosystemDisplay.map((dao, idx) => {
           return (
             <Grid2 md={4}>
               <PlatformBox>
                 <Row justifyContent={"space-between"} width={"100%"}>
-                  <img src={dao.icon} />
-                  <ArrowOutwardIcon sx={{ color: "#1B1AFF" }} />
+                  <img src={dao.img} />
+                  <Box
+                    sx={{
+                      ":hover": {
+                        cursor: "pointer",
+                      },
+                    }}
+                    onClick={() => window.open(dao.website, "_blank")}
+                  >
+                    <ArrowOutwardIcon sx={{ color: "#1B1AFF" }} />
+                  </Box>
                 </Row>
                 <Row gap={"4px"} mt={"24px"}>
-                  {dao.tag.map((t, idx) => (
+                  {dao.category && (
                     <TagBox
                       key={idx}
                       sx={{
@@ -238,9 +334,22 @@ function Platforms() {
                           ],
                       }}
                     >
-                      {t}
+                      {dao.category}
                     </TagBox>
-                  ))}
+                  )}
+                  {dao.sector && (
+                    <TagBox
+                      key={idx}
+                      sx={{
+                        background:
+                          TagColors[
+                            Math.floor(Math.random() * TagColors.length)
+                          ],
+                      }}
+                    >
+                      {dao.sector}
+                    </TagBox>
+                  )}
                 </Row>
                 <PlatformDesc>{dao.desc}</PlatformDesc>
               </PlatformBox>

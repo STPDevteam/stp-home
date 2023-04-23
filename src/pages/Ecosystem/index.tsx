@@ -287,14 +287,14 @@ export const EcosystemDataList = [
         name: 'CoinDCX'
     },
 ]
-const categoryFilterDataList = [
+export const categoryFilterDataList = [
     'All',
     'Partnership',
     'Integration',
     'Listed Exchanges'
 ]
 
-const sectorFilterDataList = [
+export const sectorFilterDataList = [
     'All',
     'DeFi',
     'Social',
