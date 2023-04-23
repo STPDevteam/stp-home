@@ -472,10 +472,7 @@ function InitList({ data }: { data: InitiativesData }) {
         ))}
       </Row>
       <InitListDesc mt={"24px"}>{data.desc}</InitListDesc>
-      <GreenBtn
-        style={{ position: "absolute", bottom: "42px", right: "47px" }}
-
-      >
+      <GreenBtn style={{ position: "absolute", bottom: "42px", right: "47px" }}>
         Learn more
         <ArrowOutwardIcon />
       </GreenBtn>
@@ -696,6 +693,7 @@ const SocialMedia = styled.img`
 `;
 
 export function Footer() {
+  return <></>;
   const footList = [
     [
       "Products",

@@ -33,6 +33,7 @@ function App() {
               {/* <Route component={Developers} exact path="/developers" /> */}
             </Switch>
           </Content>
+          <Footer />
         </HashRouter>
       </Suspense>
     </StrictMode>
