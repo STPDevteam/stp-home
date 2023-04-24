@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Add: links">
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: footer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DAO/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DAO/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.less" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +112,7 @@
       <workItem from="1681972074792" duration="26071000" />
       <workItem from="1682062392079" duration="10264000" />
       <workItem from="1682229854822" duration="4092000" />
-      <workItem from="1682241199322" duration="6463000" />
+      <workItem from="1682241199322" duration="10722000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -152,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682247568036</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Edit: footer">
+      <created>1682247707580</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682247707580</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +186,7 @@
     <MESSAGE value="Edit: EcosystemPage" />
     <MESSAGE value="Add: Dao page" />
     <MESSAGE value="Add: links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: links" />
+    <MESSAGE value="Edit: footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit: footer" />
   </component>
 </project>

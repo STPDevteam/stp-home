@@ -182,7 +182,15 @@ const Header: React.FC = () => {
   );
 
   return (
-    <LayoutHeader style={{ zIndex: 3 }}>
+    <LayoutHeader
+      style={{
+        zIndex: 3,
+        width: "100vw",
+        height: "auto !important",
+        background: "transparent",
+        overflowX: "hidden",
+      }}
+    >
       {/*<HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">*/}
       {/*  Sign up for STP DAO Booster Program!*/}
       {/*</HeaderLink>*/}
