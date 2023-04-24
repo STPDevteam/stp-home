@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: homepage adapt to mobile">
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: ecosystem adapt to mobile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,7 @@
       <workItem from="1681972074792" duration="26071000" />
       <workItem from="1682062392079" duration="10264000" />
       <workItem from="1682229854822" duration="4092000" />
-      <workItem from="1682241199322" duration="17978000" />
+      <workItem from="1682241199322" duration="19739000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682320933934</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Edit: ecosystem adapt to mobile">
+      <created>1682324364538</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682324364538</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +206,7 @@
     <MESSAGE value="Edit: footer" />
     <MESSAGE value="Edit: header mobile style" />
     <MESSAGE value="Edit: homepage adapt to mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit: homepage adapt to mobile" />
+    <MESSAGE value="Edit: ecosystem adapt to mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit: ecosystem adapt to mobile" />
   </component>
 </project>

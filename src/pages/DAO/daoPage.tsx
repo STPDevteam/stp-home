@@ -22,6 +22,7 @@ import Roker from "../../assets/images/dao/svg/roker.svg";
 import CriteriaElips from "../../assets/images/dao/svg/criteria-elips.svg";
 import Ellipse1 from "../../assets/images/dao/svg/Ellipse1.svg";
 import Ellipse2 from "../../assets/images/dao/svg/Ellipse2.svg";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 export default function () {
   return (
@@ -36,13 +37,19 @@ export default function () {
 }
 
 function Head() {
+  const isDownSm = useBreakpoint("sm");
   return (
     <HeadBox sx={{ background: "white" }}>
       <HeadH1 style={{ color: "#111029" }}>DAO Booster Program</HeadH1>
       <HeadText style={{ color: "#777E90" }}>
         Empowering DAOs on Clique
       </HeadText>
-      <Row mt={"48px"} gap={"24px"}>
+      <Row
+        mt={"48px"}
+        gap={"24px"}
+        flexDirection={isDownSm ? "column" : "row"}
+        width={"178px"}
+      >
         <GreenBtn style={{ height: "56px" }}>Learn More</GreenBtn>
         <BlueButton style={{ height: "56px" }}>Apply for Grant</BlueButton>
       </Row>
@@ -67,6 +74,7 @@ function Head() {
 }
 
 function Mission() {
+  const isDownSm = useBreakpoint("sm");
   return (
     <Box
       sx={{
@@ -75,14 +83,25 @@ function Mission() {
         height: "410px",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: isDownSm ? "left" : "center",
+        padding: isDownSm ? "0 80px 0 20px" : 0,
         flexDirection: "column",
       }}
     >
-      <Typography fontWeight={600} fontSize={64} sx={{ color: "white" }}>
+      <Typography
+        fontWeight={600}
+        fontSize={isDownSm ? 48 : 64}
+        lineHeight={isDownSm ? "58px" : "90px"}
+        sx={{ color: "white" }}
+      >
         Mission
       </Typography>
-      <Typography mt={"24px"} fontSize={16} sx={{ color: "#B4B4B4" }}>
+      <Typography
+        mt={"24px"}
+        fontSize={isDownSm ? 20 : 16}
+        lineHeight={isDownSm ? "30px" : "28px"}
+        sx={{ color: "#B4B4B4" }}
+      >
         The DAO Booster Program seeks to bridge this gap by providing funding
         and resources to eligible DAOs to help them jumpstart their DAO and
         achieve their goals.{" "}
@@ -97,6 +116,11 @@ const TypesBox = styled(Box)`
   position: relative;
   background: #f5f8fe;
   padding: 100px 164px;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0;
+    padding: 80px 20px;
+  }
 `;
 
 const TypeItemBg = styled(Box)`
@@ -106,6 +130,9 @@ const TypeItemBg = styled(Box)`
   width: 436px;
   gap: 24px;
   border-bottom: 1px solid #e9ecf2;
+  @media (max-width: 767px) {
+    width: auto;
+  }
 `;
 
 const DaoTitle = styled(Typography)`
@@ -116,9 +143,14 @@ const DaoTitle = styled(Typography)`
   font-size: 48px;
   right: 185px;
   transform: translateY(-50%);
+  @media (max-width: 767px) {
+    position: unset;
+    transform: translateY(0%);
+  }
 `;
 
 function Types() {
+  const isDownSm = useBreakpoint("sm");
   const TypesList = [
     {
       icon: IconDefi,
@@ -143,13 +175,17 @@ function Types() {
   ];
   return (
     <TypesBox>
+      <DaoTitle>DAO Types</DaoTitle>
       {TypesList.map((type, idx) => {
         return (
           <TypeItemBg key={idx}>
-            <img src={type.icon} />
+            <img
+              src={type.icon}
+              style={{ width: isDownSm ? "48px" : "auto" }}
+            />
             <Typography
               sx={{ color: "#1D1E25" }}
-              fontSize={20}
+              fontSize={isDownSm ? 16 : 20}
               fontWeight={500}
             >
               {type.text}
@@ -157,15 +193,16 @@ function Types() {
           </TypeItemBg>
         );
       })}
-      <DaoTitle>DAO Types</DaoTitle>
-      <img
-        src={StarCircle}
-        style={{
-          position: "absolute",
-          bottom: 0,
-          right: 0,
-        }}
-      />
+      {!isDownSm && (
+        <img
+          src={StarCircle}
+          style={{
+            position: "absolute",
+            bottom: 0,
+            right: 0,
+          }}
+        />
+      )}
     </TypesBox>
   );
 }
@@ -221,6 +258,7 @@ function CriteriaItem({ icon, text }: { icon: string; text: string }) {
 }
 
 function Criteria() {
+  const isDownSm = useBreakpoint("sm");
   const CriteriaList = [
     {
       icon: Roker,
@@ -241,24 +279,38 @@ function Criteria() {
   ];
   return (
     <CriteriaBox>
-      <Box display={"flex"} gap={"29px"}>
+      <Box
+        display={"flex"}
+        gap={"29px"}
+        flexDirection={isDownSm ? "column" : "row"}
+      >
         {CriteriaList.map((item, idx) => (
           <CriteriaItem icon={item.icon} text={item.text} />
         ))}
       </Box>
-      <Row mt={"40px"} gap={"24px"}>
-        <GreenBtn style={{ height: "56px" }} onClick={() =>
-          window.open(
-            "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/rRQ7limbMglccq68gojGxh3Wbf4Hy2rTODHfkKragjA",
-            "_blank"
-          )
-        }>Learn More</GreenBtn>
-        <GreenBtn style={{ height: "56px" }} onClick={() =>
-          window.open(
-            "https://docs.google.com/forms/d/e/1FAIpQLSdSl2HuWLXMQDRjB4npQP0BoAcpGL2e3BQK9HldkU7TZMgSRQ/viewform",
-            "_blank"
-          )
-        }>Apply for Grant</GreenBtn>
+      <Row mt={"40px"} gap={"24px"} flexDirection={isDownSm ? "column" : "row"}>
+        <GreenBtn
+          style={{ height: "56px" }}
+          onClick={() =>
+            window.open(
+              "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/rRQ7limbMglccq68gojGxh3Wbf4Hy2rTODHfkKragjA",
+              "_blank"
+            )
+          }
+        >
+          Learn More
+        </GreenBtn>
+        <GreenBtn
+          style={{ height: "56px" }}
+          onClick={() =>
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSdSl2HuWLXMQDRjB4npQP0BoAcpGL2e3BQK9HldkU7TZMgSRQ/viewform",
+              "_blank"
+            )
+          }
+        >
+          Apply for Grant
+        </GreenBtn>
       </Row>
       <img
         src={CriteriaElips}
@@ -271,8 +323,8 @@ function Criteria() {
       <Typography
         sx={{
           position: "absolute",
-          top: 120,
-          left: 120,
+          top: isDownSm ? 80 : 120,
+          left: isDownSm ? 20 : 120,
           color: "white",
           fontSize: 64,
           fontWeight: 600,
