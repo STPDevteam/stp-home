@@ -1,4 +1,4 @@
-import { Box, Tab, Tabs } from "@mui/material";
+import { Box, Grid, Tab, Tabs } from "@mui/material";
 import styled from "styled-components";
 import { Button, Divider, Typography } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -17,6 +17,7 @@ import Logo3 from "../../assets/images/home/svg/logo3.svg";
 import Logo4 from "../../assets/images/home/svg/logo4.svg";
 import Logo5 from "../../assets/images/home/svg/logo5.svg";
 import InfrastructurePic from "../../assets/images/home/infrastructure.png";
+import InfrastructureSmPic from "../../assets/images/home/infrastructure-sm.svg";
 import Initiatives1 from "../../assets/images/home/initiatives1.png";
 import Initiatives2 from "../../assets/images/home/initiatives2.png";
 import Initiatives3 from "../../assets/images/home/initiatives3.png";
@@ -28,6 +29,7 @@ import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -57,6 +59,9 @@ export const HeadBox = styled(Box)`
   height: 669px;
   width: 100%;
   padding-left: 252px;
+  @media (max-width: 767px) {
+    padding-left: 20px;
+  }
 `;
 export const HeadH1 = styled(Typography)`
   font-family: "Urbanist";
@@ -66,6 +71,11 @@ export const HeadH1 = styled(Typography)`
   line-height: 90px;
   padding-top: 179px;
   color: #ffffff;
+
+  @media (max-width: 767px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
 `;
 export const HeadText = styled(Typography)`
   font-family: "DM Sans";
@@ -75,6 +85,10 @@ export const HeadText = styled(Typography)`
   font-size: 20px;
   line-height: 30px;
   color: #b4b4b4;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 export const GreenBtn = styled(Button)`
   display: flex;
@@ -129,6 +143,10 @@ const InfraH1 = styled(Typography)`
   font-size: 64px;
   line-height: 90px;
   color: #1b1aff;
+  @media (max-width: 767px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
 `;
 
 const InfraSubH1 = styled(Typography)`
@@ -138,6 +156,10 @@ const InfraSubH1 = styled(Typography)`
   font-size: 32px;
   line-height: 110%;
   color: #1b1aff;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 `;
 
 const InfraH2 = styled(Typography)`
@@ -148,6 +170,11 @@ const InfraH2 = styled(Typography)`
   line-height: 110%;
   margin-top: 48px;
   color: #23262f;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 40px;
+  }
 `;
 
 const InfraText = styled(Typography)`
@@ -158,17 +185,20 @@ const InfraText = styled(Typography)`
   line-height: 30px;
   margin-top: 16px;
   color: #777e91;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 const InfraBoxBg = styled(Box)`
   padding: 27px 30px 30px;
-  width: 359px;
-  height: 205px;
-  left: 145px;
-  top: 363px;
-  flex: 1;
+  width: 100%;
   background: #f8fffe;
   border: 1px solid #d6d6d6;
   border-radius: 16px;
+  @media (max-width: 767px) {
+    padding: 24px;
+  }
 `;
 
 const InfraBoxTitle = styled(Typography)`
@@ -178,6 +208,10 @@ const InfraBoxTitle = styled(Typography)`
   font-size: 24px;
   line-height: 32px;
   color: #777e91;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 32px;
+  }
 `;
 
 const InfraBoxContent = styled(Typography)`
@@ -188,6 +222,10 @@ const InfraBoxContent = styled(Typography)`
   line-height: 24px;
   margin-top: 11px;
   color: #777e91;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 150%;
+  }
 `;
 
 function InfraBox({ title, content }: { title: string; content: string }) {
@@ -205,8 +243,6 @@ const CliqueBox = styled(Box)`
   background: rgba(240, 240, 255, 0.4);
   border: 1px solid #d6d6d6;
   border-radius: 16px;
-  width: 561px;
-  height: 483px;
 `;
 
 const CliqueTitle = styled(Typography)`
@@ -216,6 +252,10 @@ const CliqueTitle = styled(Typography)`
   font-size: 32px;
   line-height: 110%;
   color: #23262f;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 `;
 const CliqueText = styled(Typography)`
   font-family: "DM Sans";
@@ -224,13 +264,14 @@ const CliqueText = styled(Typography)`
   font-size: 16px;
   line-height: 24px;
   color: #777e91;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 const CliqueImg = styled("img")`
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
-  bottom: 0px;
+  width: 100%;
+  height: auto;
 `;
 
 function DappStore() {
@@ -265,8 +306,8 @@ const VideoContent = styled(Box)`
 
   @media (max-width: 767px) {
     width: 100%;
-    padding: 30px 30px 0px 30px;
-    /* height: 250px; */
+    height: 320px;
+    margin: 80px auto;
   }
 
   iframe {
@@ -275,11 +316,17 @@ const VideoContent = styled(Box)`
 `;
 
 const InfrastructureBox = styled(Box)`
+  width: 100%;
   padding: 120px;
   max-width: 1441px;
+
+  @media (max-width: 767px) {
+    padding: 80px 24px 0px;
+  }
 `;
 
 function Infrastructure() {
+  const isDownSm = useBreakpoint("sm");
   const CliqueBox = [
     {
       title: "Setup your team framework",
@@ -300,7 +347,12 @@ function Infrastructure() {
 
   return (
     <InfrastructureBox>
-      <Box display={"flex"} alignItems={"baseline"} gap={"20px"}>
+      <Box
+        display={"flex"}
+        alignItems={"baseline"}
+        gap={"20px"}
+        flexDirection={isDownSm ? "column" : "row"}
+      >
         <InfraH1>Clique</InfraH1>
         <InfraSubH1>The All-in-One Platform</InfraSubH1>
       </Box>
@@ -308,21 +360,29 @@ function Infrastructure() {
       <InfraText>
         Web3 community workspace for all builders with no code and gas required.
       </InfraText>
-      <Box
-        display={"flex"}
-        mt={"24px"}
-        justifyContent={"space-between"}
-        gap={"28px"}
-      >
+      <Grid container mt={isDownSm ? "0" : "24px"} spacing={"28px"}>
         {CliqueBox.map((c, idx) => (
-          <InfraBox title={c.title} content={c.content} />
+          <Grid item sm={12} md={4}>
+            <InfraBox title={c.title} content={c.content} />
+          </Grid>
         ))}
-      </Box>
-      <img style={{ marginTop: "40px" }} src={InfrastructurePic} />
-      <Box display={"flex"} justifyContent={"space-between"}>
-        <DappStore />
-        <CliqueSdk />
-      </Box>
+      </Grid>
+      <img
+        style={{ marginTop: "40px" }}
+        src={isDownSm ? InfrastructureSmPic : InfrastructurePic}
+      />
+      <Grid
+        container
+        spacing={isDownSm ? "24px" : "42px"}
+        direction={isDownSm ? "column" : "row"}
+      >
+        <Grid item sm={12} md={6}>
+          <DappStore />
+        </Grid>
+        <Grid item sm={12} md={6}>
+          <CliqueSdk />
+        </Grid>
+      </Grid>
       <VideoContent>
         <iframe
           title="youtube"
@@ -343,6 +403,10 @@ const DataBgBox = styled(Box)`
   gap: 200px;
   padding: 74px 0;
   background-size: cover;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 48px;
+  }
 `;
 
 const DataNumber = styled(Typography)`
@@ -394,6 +458,13 @@ const InitH1 = styled(Typography)`
   line-height: 90px;
   text-align: center;
   color: #23262f;
+  @media (max-width: 767px) {
+    font-size: 48px;
+    margin-top: 80px;
+    margin-left: 24px;
+    line-height: 56px;
+    text-align: left;
+  }
 `;
 
 const InitBox = styled(Box)`
@@ -562,6 +633,11 @@ const EcoH1 = styled(Typography)`
   text-align: center;
 
   color: #1b1aff;
+  @media (max-width: 767px) {
+    font-size: 48px;
+    line-height: 56px;
+    margin: 80px 0 40px;
+  }
 `;
 
 const EcoButton = styled(Button)`
@@ -576,6 +652,14 @@ const EcoButton = styled(Button)`
   border-radius: 80px;
 `;
 
+const EcoTab = styled(Tab)`
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 150%;
+    padding: 8px;
+  }
+`
+
 function Ecosystem() {
   const [value, setValue] = useState();
   const partners = [Logo1, Logo2, Logo3, Logo4, Logo5];
@@ -583,9 +667,9 @@ function Ecosystem() {
     <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
       <EcoH1>Ecosystem</EcoH1>
       <Tabs value={value} onChange={(e, value) => setValue(value)}>
-        <Tab label="Partners" />
-        <Tab label="Integrations" />
-        <Tab label="Listed exchanges" />
+        <EcoTab label="Partners" />
+        <EcoTab label="Integrations" />
+        <EcoTab label="Listed exchanges" />
       </Tabs>
       <Row mt={"60px"} gap={"80px"}>
         {partners.map((logo, idx) => (
@@ -605,6 +689,10 @@ const BuildBox = styled(Box)`
   position: relative;
   padding: 120px;
   background: #1b1aff;
+  @media (max-width: 767px) {
+    padding: 120px 80px 118px 20px;
+    margin-bottom: 48px;
+  }
 `;
 
 const BuildH1 = styled(Typography)`
@@ -614,6 +702,10 @@ const BuildH1 = styled(Typography)`
   font-size: 64px;
   line-height: 90px;
   color: #ffffff;
+  @media (max-width: 767px) {
+    font-size: 48px;
+    line-height: 58px;
+  }
 `;
 
 const BuildContent = styled(Typography)`
