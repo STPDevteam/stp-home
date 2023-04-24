@@ -61,6 +61,8 @@ export const HeadBox = styled(Box)`
   padding-left: 252px;
   @media (max-width: 767px) {
     padding-left: 20px;
+    height: auto;
+    padding-bottom: 79px;
   }
 `;
 export const HeadH1 = styled(Typography)`
@@ -88,6 +90,7 @@ export const HeadText = styled(Typography)`
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 24px;
+    margin-top: 40px;
   }
 `;
 export const GreenBtn = styled(Button)`

@@ -11,7 +11,7 @@ import {
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import React, { useEffect, useState } from "react";
 import Star from "../../assets/images/ecosystem/svg/star-ecosystem.svg";
-import { Box, Stack, styled, Input, Typography } from "@mui/material";
+import { Box, Stack, styled, Input, Typography, Grid } from "@mui/material";
 import Zkevm from "../../assets/images/ecosystem/svg/platform/zkevm.svg";
 import BinanceSmartChain from "../../assets/images/ecosystem/svg/platform/binance-smart-chain.svg";
 import Binance from "../../assets/images/ecosystem/svg/platform/binance.svg";
@@ -45,12 +45,12 @@ import TheGraph from "../../assets/images/ecosystem/svg/platform/the-graph.svg";
 import UpBit from "../../assets/images/ecosystem/svg/platform/up-bit.svg";
 import VoltSwap from "../../assets/images/ecosystem/svg/platform/volt-swap.svg";
 import Zetachain from "../../assets/images/ecosystem/svg/platform/zetachain.svg";
-import Grid2 from "@mui/material/Unstable_Grid2";
 import {
   categoryFilterDataList,
   EcosystemDataList,
   sectorFilterDataList,
 } from "./index";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 export default function () {
   const [categorySelect, setCategorySelect] = useState("All");
@@ -85,6 +85,11 @@ const Tag = styled(Box)`
   &.active {
     background: #a7f46a;
   }
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 150%;
+  }
 `;
 
 const FilterTitle = styled(Typography)`
@@ -94,6 +99,10 @@ const FilterTitle = styled(Typography)`
   font-size: 20px;
   line-height: 30px;
   color: #ededed;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 150%;
+  }
 `;
 
 function Head({
@@ -107,6 +116,7 @@ function Head({
   sectorSelect: string;
   setSectorSelect: (sector: string) => void;
 }) {
+  const isDownSm = useBreakpoint("sm");
   return (
     <HeadBox>
       <HeadH1>Ecosystem</HeadH1>
@@ -118,9 +128,14 @@ function Head({
         DAO Booster Program <ArrowOutwardIcon />
       </GreenBtn>
       <Stack spacing={"24px"} mt={"80px"}>
-        <Row gap={"16px"} alignItems={"center"}>
+        <Row gap={"16px"} alignItems={"flex-start"}>
           <FilterTitle>Category</FilterTitle>
-          <Row gap={"4px"}>
+          <Row
+            gap={"4px"}
+            sx={{
+              flexWrap: "wrap",
+            }}
+          >
             {categoryFilterDataList.map((tag, tagIdx) => (
               <Tag
                 key={tagIdx}
@@ -134,9 +149,14 @@ function Head({
             ))}
           </Row>
         </Row>
-        <Row gap={"16px"} alignItems={"center"}>
+        <Row gap={"16px"} alignItems={"flex-start"}>
           <FilterTitle>Sector</FilterTitle>
-          <Row gap={"4px"}>
+          <Row
+            gap={"4px"}
+            sx={{
+              flexWrap: "wrap",
+            }}
+          >
             {sectorFilterDataList.map((tag, tagIdx) => (
               <Tag
                 key={tagIdx}
@@ -156,7 +176,9 @@ function Head({
         style={{
           position: "absolute",
           right: "0",
-          bottom: "106px",
+          bottom: isDownSm ? "inherit" : "106px",
+          width: isDownSm ? "85px" : "auto",
+          top: isDownSm ? "157px" : "inherit",
         }}
       />
     </HeadBox>
@@ -176,6 +198,9 @@ const SearchBg = styled(Box)`
   background: #ffffff;
   border: 1px solid #d6d6d6;
   border-radius: 15px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `;
 
 const SearchBox = styled(Input)`
@@ -218,8 +243,12 @@ const PlatformBox = styled(Box)`
   padding: 24px 40px;
   height: 235px;
   background: #ffffff;
-  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  @media (max-width: 767px) {
+    height: auto;
+    width: 100%;
+  }
 `;
 
 const TagBox = styled(Box)`
@@ -261,6 +290,7 @@ function Platforms({
 }) {
   const [ecosystemDisplay, setEcosystemDisplay] = useState(EcosystemDataList);
   const TagColors = ["#F9F9FF", "#F8FFFE", "#F8FEFF", "#FFF8F8", "#FAF8FF"];
+  const isDownSm = useBreakpoint("sm");
 
   function existOneIncludeTwo(oneStr: string, twoStr: string) {
     return oneStr.toUpperCase().includes(twoStr.toUpperCase());
@@ -301,17 +331,25 @@ function Platforms({
       sx={{
         maxWidth: "1441px",
         width: "100%",
-        padding: "80px 0 120px",
+        padding: isDownSm ? "80px 21px" : "80px 0 120px",
       }}
     >
       <Search onSearch={onSearch} />
-      <Grid2 container spacing={"36px"} mt={"39px"} width={"100%"}>
+      <Grid
+        container
+        spacing={"30px"}
+        mt={isDownSm ? "21px" : "39px"}
+        direction={isDownSm ? "column" : "row"}
+      >
         {ecosystemDisplay.map((dao, idx) => {
           return (
-            <Grid2 md={4}>
+            <Grid item xs={12} md={4} width={"100%"}>
               <PlatformBox>
                 <Row justifyContent={"space-between"} width={"100%"}>
-                  <img src={dao.img} />
+                  <img
+                    src={dao.img}
+                    style={{ height: isDownSm ? "48px" : "auto" }}
+                  />
                   <Box
                     sx={{
                       ":hover": {
@@ -353,10 +391,10 @@ function Platforms({
                 </Row>
                 <PlatformDesc>{dao.desc}</PlatformDesc>
               </PlatformBox>
-            </Grid2>
+            </Grid>
           );
         })}
-      </Grid2>
+      </Grid>
     </Box>
   );
 }
