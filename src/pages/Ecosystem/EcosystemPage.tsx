@@ -215,7 +215,7 @@ function Search({ onSearch }: { onSearch: (input: string) => void }) {
   return (
     <SearchBg>
       <SearchBox
-        placeholder={"Search DAO name"}
+        placeholder={"Search DAO Name"}
         value={input}
         disableUnderline={true}
         onChange={(e) => setInput(e.target.value)}

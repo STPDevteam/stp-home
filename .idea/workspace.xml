@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: ecosystem adapt to mobile">
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: dao adapt to mobile">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/infrastruc-ellipse-left-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/infrastruc-ellipse-left-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/small-star.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/home/infrastructure.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/home/infrastructure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DAO/daoPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +73,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/home",
+    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/home/svg",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,11 +87,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/home/svg" />
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
       <recent name="$PROJECT_DIR$/src/hooks" />
       <recent name="$PROJECT_DIR$/src/assets/images/header" />
       <recent name="$PROJECT_DIR$/src/assets/images/dao/svg" />
-      <recent name="$PROJECT_DIR$/src/assets/images/ecosystem/svg/platform" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
@@ -108,7 +116,7 @@
       <workItem from="1681972074792" duration="26071000" />
       <workItem from="1682062392079" duration="10264000" />
       <workItem from="1682229854822" duration="4092000" />
-      <workItem from="1682241199322" duration="19739000" />
+      <workItem from="1682241199322" duration="26116000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -180,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682324364538</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Edit: dao adapt to mobile">
+      <created>1682326150487</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682326150487</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +222,7 @@
     <MESSAGE value="Edit: header mobile style" />
     <MESSAGE value="Edit: homepage adapt to mobile" />
     <MESSAGE value="Edit: ecosystem adapt to mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit: ecosystem adapt to mobile" />
+    <MESSAGE value="Edit: dao adapt to mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit: dao adapt to mobile" />
   </component>
 </project>

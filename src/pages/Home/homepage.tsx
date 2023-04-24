@@ -27,6 +27,9 @@ import Medium from "../../assets/images/socialmedia/medium.svg";
 import Tele from "../../assets/images/socialmedia/telegramsvg.svg";
 import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
+import SmallStar from "../../assets/images/home/svg/small-star.svg";
+import InfEllipse1 from "../../assets/images/home/svg/infrastruc-ellipse-left-1.svg";
+import InfEllipse2 from "../../assets/images/home/svg/infrastruc-ellipse-left-2.svg";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
@@ -38,6 +41,7 @@ export const ContentWrapper = styled(Box)`
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
 `;
 export default function Homepage() {
   return (
@@ -129,9 +133,9 @@ function Head() {
       </HeadText>
       <GreenBtn
         style={{ marginTop: "40px" }}
-        onClick={() => history.push("/product")}
+        onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
       >
-        Launch DAO
+        Build DAO
         <ArrowOutwardIcon />
       </GreenBtn>
       <BottomCircleImg src={BottomCircle} />
@@ -198,6 +202,7 @@ const InfraBoxBg = styled(Box)`
   width: 100%;
   background: #f8fffe;
   border: 1px solid #d6d6d6;
+  height: 100%;
   border-radius: 16px;
   @media (max-width: 767px) {
     padding: 24px;
@@ -322,10 +327,28 @@ const InfrastructureBox = styled(Box)`
   width: 100%;
   padding: 120px;
   max-width: 1441px;
+  position: relative;
 
   @media (max-width: 767px) {
     padding: 80px 24px 0px;
   }
+`;
+
+const InfraStar = styled("img")`
+  position: absolute;
+  top: 268px;
+  left: 67px;
+`;
+
+const Ellipse = styled("img")`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+const BottomStar = styled("img")`
+  position: absolute;
+  top: 30px;
+  left: -30px;
 `;
 
 function Infrastructure() {
@@ -349,52 +372,70 @@ function Infrastructure() {
   ];
 
   return (
-    <InfrastructureBox>
-      <Box
-        display={"flex"}
-        alignItems={"baseline"}
-        gap={"20px"}
-        flexDirection={isDownSm ? "column" : "row"}
-      >
-        <InfraH1>Clique</InfraH1>
-        <InfraSubH1>The All-in-One Platform</InfraSubH1>
-      </Box>
-      <InfraH2>Clique Workspace</InfraH2>
-      <InfraText>
-        Web3 community workspace for all builders with no code and gas required.
-      </InfraText>
-      <Grid container mt={isDownSm ? "0" : "24px"} spacing={"28px"}>
-        {CliqueBox.map((c, idx) => (
-          <Grid item sm={12} md={4}>
-            <InfraBox title={c.title} content={c.content} />
+    <Box
+      position={"relative"}
+      width={"100%"}
+      display={"flex"}
+      justifyContent={"center"}
+    >
+      {!isDownSm && <InfraStar src={SmallStar} />}
+      <Ellipse src={InfEllipse1} />
+      <Ellipse src={InfEllipse2} />
+      <InfrastructureBox>
+        <Box
+          display={"flex"}
+          alignItems={"baseline"}
+          gap={"20px"}
+          flexDirection={isDownSm ? "column" : "row"}
+        >
+          <InfraH1>Clique</InfraH1>
+          <InfraSubH1>The All-in-One Platform</InfraSubH1>
+        </Box>
+        <InfraH2>Clique Workspace</InfraH2>
+        <InfraText>
+          Web3 community workspace for all builders with no code and gas
+          required.
+        </InfraText>
+        <Grid
+          container
+          mt={isDownSm ? "0" : "24px"}
+          spacing={"28px"}
+          zIndex={2}
+        >
+          {CliqueBox.map((c, idx) => (
+            <Grid item sm={12} md={4}>
+              <InfraBox title={c.title} content={c.content} />
+            </Grid>
+          ))}
+        </Grid>
+        <img
+          style={{ marginTop: "40px", width: "100%" }}
+          src={isDownSm ? InfrastructureSmPic : InfrastructurePic}
+        />
+        <Grid
+          container
+          spacing={isDownSm ? "24px" : "42px"}
+          direction={isDownSm ? "column" : "row"}
+          position={"relative"}
+        >
+          {!isDownSm && <BottomStar src={SmallStar} />}
+          <Grid item sm={12} md={6}>
+            <DappStore />
           </Grid>
-        ))}
-      </Grid>
-      <img
-        style={{ marginTop: "40px" }}
-        src={isDownSm ? InfrastructureSmPic : InfrastructurePic}
-      />
-      <Grid
-        container
-        spacing={isDownSm ? "24px" : "42px"}
-        direction={isDownSm ? "column" : "row"}
-      >
-        <Grid item sm={12} md={6}>
-          <DappStore />
+          <Grid item sm={12} md={6}>
+            <CliqueSdk />
+          </Grid>
         </Grid>
-        <Grid item sm={12} md={6}>
-          <CliqueSdk />
-        </Grid>
-      </Grid>
-      <VideoContent>
-        <iframe
-          title="youtube"
-          src="https://www.youtube.com/embed/ZEDNduNedCc?autoplay=1"
-          height="100%"
-          width="100%"
-        ></iframe>
-      </VideoContent>
-    </InfrastructureBox>
+        <VideoContent>
+          <iframe
+            title="youtube"
+            src="https://www.youtube.com/embed/ZEDNduNedCc?autoplay=1"
+            height="100%"
+            width="100%"
+          ></iframe>
+        </VideoContent>
+      </InfrastructureBox>
+    </Box>
   );
 }
 
@@ -479,6 +520,7 @@ const InitBox = styled(Box)`
   box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   height: 676px;
+  width: 592px;
 `;
 
 const InitListH1 = styled(Typography)`
@@ -519,6 +561,7 @@ interface InitiativesData {
   tag: string[];
   tagColor: string[];
   desc: string;
+  link: string;
 }
 
 export const Row = styled(Box)`
@@ -546,7 +589,10 @@ function InitList({ data }: { data: InitiativesData }) {
         ))}
       </Row>
       <InitListDesc mt={"24px"}>{data.desc}</InitListDesc>
-      <GreenBtn style={{ position: "absolute", bottom: "42px", right: "47px" }}>
+      <GreenBtn
+        style={{ position: "absolute", bottom: "42px", right: "47px" }}
+        onClick={() => window.open(data.link, "_blank")}
+      >
         Learn more
         <ArrowOutwardIcon />
       </GreenBtn>
@@ -563,6 +609,7 @@ const Main = styled(Box)`
 
 const GroupMain = styled.div`
   display: flex;
+  gap: 43px;
   @keyframes slide {
     0% {
       transform: translateX(0); /* 初始位置 */
@@ -576,19 +623,20 @@ const GroupMain = styled.div`
 
 function Initiatives() {
   const dataList: InitiativesData[] = [
-    {
-      pic: Initiatives1,
-      avatar: Avatar1,
-      title: "Mighty Magic DAO",
-      tag: ["On-chain Game", "Zero-knowledge Proof"],
-      tagColor: ["#F8FEFF", "#ECFCF1"],
-      desc: "Mighty Magic DAO is a ecosystem to empower fully on chain games and bring the magic back to gaming.",
-    },
+    // {
+    //   pic: Initiatives1,
+    //   avatar: Avatar1,
+    //   title: "Mighty Magic DAO",
+    //   tag: ["On-chain Game", "Zero-knowledge Proof"],
+    //   tagColor: ["#F8FEFF", "#ECFCF1"],
+    //   desc: "Mighty Magic DAO is a ecosystem to empower fully on chain games and bring the magic back to gaming.",
+    // },
     {
       pic: Initiatives1,
       avatar: Avatar1,
       title: "ChatGPT DAO",
       tag: ["Artificial Intellegience"],
+      link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
       tagColor: ["#F8FEFF"],
       desc: "The Web3.0 space for all ChatGPT & AI enthusiasts.",
     },
@@ -598,14 +646,16 @@ function Initiatives() {
       title: "Bubble DAO",
       tag: ["Social", "Digital Identity"],
       tagColor: ["#FFFCF8", "#FCECF8"],
+      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
       desc: "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
     },
     {
       pic: Initiatives3,
       avatar: Avatar3,
-      title: "Mighty Magic DAO",
+      title: "Sonet",
       tag: ["Social", "Infrastructure"],
       tagColor: ["#FFFCF8", "#ECF0FC"],
+      link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
       desc: "Sonet is an open-source platform providing AWS-like services across Web2 and Web3 applications.",
     },
   ];
@@ -661,7 +711,7 @@ const EcoTab = styled(Tab)`
     line-height: 150%;
     padding: 8px;
   }
-`
+`;
 
 function Ecosystem() {
   const [value, setValue] = useState();

@@ -50,8 +50,28 @@ function Head() {
         flexDirection={isDownSm ? "column" : "row"}
         width={"178px"}
       >
-        <GreenBtn style={{ height: "56px" }}>Learn More</GreenBtn>
-        <BlueButton style={{ height: "56px" }}>Apply for Grant</BlueButton>
+        <GreenBtn
+          style={{ height: "56px" }}
+          onClick={() => {
+            window.open(
+              "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/rRQ7limbMglccq68gojGxh3Wbf4Hy2rTODHfkKragjA",
+              "_blank"
+            );
+          }}
+        >
+          Learn More
+        </GreenBtn>
+        <BlueButton
+          style={{ height: "56px" }}
+          onClick={() => {
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSdSl2HuWLXMQDRjB4npQP0BoAcpGL2e3BQK9HldkU7TZMgSRQ/viewform",
+              "_blank"
+            );
+          }}
+        >
+          Apply for Grant
+        </BlueButton>
       </Row>
       <img
         src={Ellipse1}
@@ -101,10 +121,11 @@ function Mission() {
         fontSize={isDownSm ? 20 : 16}
         lineHeight={isDownSm ? "30px" : "28px"}
         sx={{ color: "#B4B4B4" }}
+        textAlign={isDownSm ? "left" : "center"}
       >
         The DAO Booster Program seeks to bridge this gap by providing funding
-        and resources to eligible DAOs to help them jumpstart their DAO and
-        achieve their goals.{" "}
+        and resources to eligible DAOs
+        <br /> to help them jumpstart their DAO and achieve their goals.
       </Typography>
     </Box>
   );

@@ -220,6 +220,7 @@ export const EcosystemDataList = [
         img: Voltswap,
         website: 'https://voltswap.finance/#/swap',
         category: 'Partnership',
+        sector: 'Defi',
         desc: 'Voltswap',
         name: 'Voltswap'
     },
