@@ -1,6 +1,6 @@
-import { Box, Grid, Tab, Tabs } from "@mui/material";
+import { Box, Grid, Tab, Tabs, Typography } from "@mui/material";
 import styled from "styled-components";
-import { Button, Divider, Typography } from "antd";
+import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
@@ -30,9 +30,10 @@ import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import SmallStar from "../../assets/images/home/svg/small-star.svg";
 import InfEllipse1 from "../../assets/images/home/svg/infrastruc-ellipse-left-1.svg";
 import InfEllipse2 from "../../assets/images/home/svg/infrastruc-ellipse-left-2.svg";
-import React, { useState } from "react";
+import React, {useMemo, useState} from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
+import {useTotal} from "../../hooks/useHomepage";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -426,14 +427,16 @@ function Infrastructure() {
             <CliqueSdk />
           </Grid>
         </Grid>
-        <VideoContent>
-          <iframe
-            title="youtube"
-            src="https://www.youtube.com/embed/ZEDNduNedCc?autoplay=1"
-            height="100%"
-            width="100%"
-          ></iframe>
-        </VideoContent>
+        {false && (
+          <VideoContent>
+            <iframe
+              title="youtube"
+              src="https://www.youtube.com/embed/ZEDNduNedCc?autoplay=1"
+              height="100%"
+              width="100%"
+            ></iframe>
+          </VideoContent>
+        )}
       </InfrastructureBox>
     </Box>
   );
@@ -474,11 +477,14 @@ const DataContent = styled(Typography)`
 `;
 
 function Data() {
-  const dataList = [
-    { number: "+200", desc: "DAOs Created" },
-    { number: "+100,000", desc: "Community Members" },
-    { number: "+3,000", desc: "Proposals" },
-  ];
+  const {total} = useTotal()
+  const dataList = useMemo(()=>{
+    return [
+      { number: String(total?.totalDao), desc: "DAOs Created" },
+      { number: String(total?.totalAccount), desc: "Community Members" },
+      { number: String(total?.totalProposal), desc: "Proposals" },
+    ]
+  },[total?.totalAccount, total?.totalDao, total?.totalProposal])
   return (
     <DataBgBox>
       {dataList.map((d, idx) => {
@@ -714,21 +720,27 @@ const EcoTab = styled(Tab)`
 `;
 
 function Ecosystem() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("Partners");
   const partners = [Logo1, Logo2, Logo3, Logo4, Logo5];
   return (
     <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
       <EcoH1>Ecosystem</EcoH1>
       <Tabs value={value} onChange={(e, value) => setValue(value)}>
-        <EcoTab label="Partners" />
-        <EcoTab label="Integrations" />
-        <EcoTab label="Listed exchanges" />
+        <EcoTab value={"Partners"} label="Partners" />
+        <EcoTab value={"Integrations"} label="Integrations" />
+        <EcoTab value={"Listed exchanges"} label="Listed exchanges" />
       </Tabs>
-      <Row mt={"60px"} gap={"80px"}>
-        {partners.map((logo, idx) => (
-          <img key={idx} src={logo} />
-        ))}
-      </Row>
+      {value === "Partners" && (
+        <Row mt={"60px"} gap={"80px"}>
+          {partners.map((logo, idx) => (
+            <img key={idx} src={logo} />
+          ))}
+        </Row>
+      )}
+      {value === "Integrations" && <Typography mt={3}>Coming Soon</Typography>}
+      {value === "Listed exchanges" && (
+        <Typography mt={3}>Coming Soon</Typography>
+      )}
       <EcoButton style={{ marginTop: "50px", marginBottom: "120px" }}>
         Learn More
       </EcoButton>
@@ -860,7 +872,13 @@ export function Footer() {
         alignItems={"center"}
       >
         <img src={StpLogo} />
-        <BlueButton>Build DAO</BlueButton>
+        <BlueButton
+          onClick={() =>
+            window.open("https://www.myclique.io/creator", "_blank")
+          }
+        >
+          Build DAO
+        </BlueButton>
       </Box>
       <Divider style={{ background: "#757B8A" }} />
       <Box display={"flex"} gap={"120px"}>
