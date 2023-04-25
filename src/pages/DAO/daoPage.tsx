@@ -39,7 +39,7 @@ export default function () {
 function Head() {
   const isDownSm = useBreakpoint("sm");
   return (
-    <HeadBox sx={{ background: "white" }}>
+    <HeadBox style={{ background: "white" }}>
       <HeadH1 style={{ color: "#111029" }}>DAO Booster Program</HeadH1>
       <HeadText style={{ color: "#777E90" }}>
         Empowering DAOs on Clique

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Layout, Button, Menu, Dropdown, Modal } from "antd";
 import styled from "styled-components";
 import { CSSTransition } from "react-transition-group";
@@ -18,6 +18,8 @@ import { Box, Typography } from "@mui/material";
 import { GreenBtn } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import MobileMenu from "./mobileMenu";
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 
 const { Header: LayoutHeader } = Layout;
 const HeaderContent = styled.div`
@@ -30,6 +32,169 @@ const HeaderContent = styled.div`
     padding: 0 20px;
   }
 `;
+
+const MenuBg = styled(Box)`
+  padding: 80px 42.5px 68px;
+  background: white;
+  border-radius: 8px;
+  @media (max-width: 767px) {
+    padding: 0;
+    border-radius: 8px;
+    gap: 0;
+  }
+`;
+
+const MenuTitle = styled(Typography)`
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #23262f;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+`;
+const MenuText = styled(Typography)`
+  width: 100%;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #777e91;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    line-height: 150%;
+  }
+`;
+
+const MenuBox = styled(Box)`
+  width: 522px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 27px 24px;
+  gap: 16px;
+  margin-bottom: 12px;
+
+  &:hover {
+    background: #a7f46a;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`;
+
+export function ProductMenu() {
+  const menuList = [
+    {
+      icon: IconWorkSpace,
+      title: "Clique Workspace",
+      link: "",
+      text: " Web3 community workspace for all builders with no code and gas required",
+    },
+    {
+      icon: IconDapp,
+      title: "Clique DApp Store",
+      link: "",
+      text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
+    },
+    {
+      icon: IconSDK,
+      title: "Clique SDK",
+      link: "",
+      text: "Create a customized workspace platform for free with Clique SDK",
+    },
+  ];
+  return (
+    <MenuBg>
+      {menuList.map((menu, idx) => (
+        <MenuBox key={idx}>
+          <img src={menu.icon} />
+          <Box gap={"4px"}>
+            <MenuTitle>{menu.title}</MenuTitle>
+            <MenuText>{menu.text}</MenuText>
+          </Box>
+        </MenuBox>
+      ))}
+    </MenuBg>
+  );
+}
+
+const HeaderMenuBox = styled(Box)`
+  background: white;
+  padding: 12px;
+  display: flex;
+  left: -12px;
+  border-radius: 10px;
+  position: relative;
+  flex-direction: column;
+  @media (max-width: 767px) {
+    background: transparent;
+    left: 30px;
+  }
+`;
+
+const HeaderLink = styled("a")`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 48px;
+  padding: 0 16px;
+  color: #999fae;
+`;
+
+const resourcesMenu = (
+  <HeaderMenuBox>
+    <HeaderLink target="_blank" href="/Verse Network WP.pdf">
+      Whitepaper
+    </HeaderLink>
+    <HeaderLink href="https://github.com/STPDevteam" target="_blank">
+      Github
+    </HeaderLink>
+    <HeaderLink
+      href="https://stp-dao.gitbook.io/verse-network/verse-network/master"
+      target="_blank"
+    >
+      Documentation
+    </HeaderLink>
+  </HeaderMenuBox>
+);
+
+const ecosystemMenu = (
+  <HeaderMenuBox>
+    <HeaderLink href="/#/ecosystem">Ecosystem</HeaderLink>
+    <HeaderLink href="/#/dao">Dao Booster Program</HeaderLink>
+  </HeaderMenuBox>
+);
+export const MenuList: {
+  title: string;
+  subtitle?: ReactJSXElement;
+  link?: string;
+}[] = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Products",
+    subtitle: ProductMenu(),
+  },
+  {
+    title: "Resources",
+    subtitle: resourcesMenu,
+  },
+  {
+    title: "Ecosystem",
+    subtitle: ecosystemMenu,
+  },
+  {
+    title: "News",
+    link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+  },
+];
 
 const Header: React.FC = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -44,7 +209,11 @@ const Header: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const currentPath = useLocation();
   const history = useHistory();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleMobileMenueDismiss = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
   const handleCancel = () => {
     setIsModalVisible(false);
   };
@@ -91,74 +260,6 @@ const Header: React.FC = () => {
     }
   };
 
-  const MenuTitle = styled(Typography)`
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: #23262f;
-  `;
-  const MenuText = styled(Typography)`
-    width: 100%;
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #777e91;
-  `;
-
-  const MenuBox = styled(Box)`
-    width: 522px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    padding: 27px 24px;
-    gap: 16px;
-    margin-bottom: 12px;
-
-    &:hover {
-      background: #a7f46a;
-    }
-  `;
-
-  const productMenu = () => {
-    const menuList = [
-      {
-        icon: IconWorkSpace,
-        title: "Clique Workspace",
-        link: "",
-        text: " Web3 community workspace for all builders with no code and gas required",
-      },
-      {
-        icon: IconDapp,
-        title: "Clique DApp Store",
-        link: "",
-        text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
-      },
-      {
-        icon: IconSDK,
-        title: "Clique SDK",
-        link: "",
-        text: "Create a customized workspace platform for free with Clique SDK",
-      },
-    ];
-    return (
-      <Menu style={{ padding: "80px 42.5px 68px" }}>
-        {menuList.map((menu, idx) => (
-          <MenuBox key={idx}>
-            <img src={menu.icon} />
-            <Box gap={"4px"}>
-              <MenuTitle>{menu.title}</MenuTitle>
-              <MenuText>{menu.text}</MenuText>
-            </Box>
-          </MenuBox>
-        ))}
-      </Menu>
-    );
-  };
-
   const daoMenu = () => {
     const menuList = [
       {
@@ -186,43 +287,6 @@ const Header: React.FC = () => {
       </Menu>
     );
   };
-  const resourcesMenu = (
-    <Menu>
-      <Menu.Item>
-        <a target="_blank" href="/Verse Network WP.pdf">
-          Whitepaper
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a href="https://github.com/STPDevteam" target="_blank">
-          Github
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a
-          href="https://stp-dao.gitbook.io/verse-network/verse-network/master"
-          target="_blank"
-        >
-          Documentation
-        </a>
-      </Menu.Item>
-    </Menu>
-  );
-
-  const ecosystemMenu = (
-    <Menu>
-      <Menu.Item>
-        <a href="ecosystem">
-          Ecosystem
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a href="dao">
-          Dao Booster Program
-        </a>
-      </Menu.Item>
-    </Menu>
-  );
 
   return (
     <LayoutHeader
@@ -237,6 +301,10 @@ const Header: React.FC = () => {
       {/*<HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">*/}
       {/*  Sign up for STP DAO Booster Program!*/}
       {/*</HeaderLink>*/}
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        onDismiss={handleMobileMenueDismiss}
+      />
       <HeaderContent
         className="header"
         ref={headerRef}
@@ -261,7 +329,7 @@ const Header: React.FC = () => {
             <Link to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
             </Link>
-            <Dropdown overlay={productMenu} trigger={["click"]}>
+            <Dropdown overlay={ProductMenu} trigger={["click"]}>
               <a>
                 Product
                 <Arrow />
@@ -300,7 +368,12 @@ const Header: React.FC = () => {
             </GreenBtn>
           </nav>
         </CSSTransition>
-        <button onClick={toggle} className="Burger">
+        <button
+          onClick={() => {
+            setMobileMenuOpen((prevState) => !prevState);
+          }}
+          className="Burger"
+        >
           <MenuOutlined />
         </button>
       </HeaderContent>
