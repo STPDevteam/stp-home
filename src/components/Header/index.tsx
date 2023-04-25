@@ -109,7 +109,21 @@ const Header: React.FC = () => {
     color: #777e91;
   `;
 
-  const ecosystemMenu = () => {
+  const MenuBox = styled(Box)`
+    width: 522px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 27px 24px;
+    gap: 16px;
+    margin-bottom: 12px;
+
+    &:hover {
+      background: #a7f46a;
+    }
+  `;
+
+  const productMenu = () => {
     const menuList = [
       {
         icon: IconWorkSpace,
@@ -133,27 +147,41 @@ const Header: React.FC = () => {
     return (
       <Menu style={{ padding: "80px 42.5px 68px" }}>
         {menuList.map((menu, idx) => (
-          <Box
-            key={idx}
-            sx={{
-              width: "522px",
-              borderRadius: "8px",
-              display: "flex",
-              alignItems: "center",
-              padding: "27px 24px",
-              gap: "16px",
-              marginBottom: "12px",
-              ":hover": {
-                background: "#A7F46A",
-              },
-            }}
-          >
+          <MenuBox key={idx}>
             <img src={menu.icon} />
             <Box gap={"4px"}>
               <MenuTitle>{menu.title}</MenuTitle>
               <MenuText>{menu.text}</MenuText>
             </Box>
-          </Box>
+          </MenuBox>
+        ))}
+      </Menu>
+    );
+  };
+
+  const daoMenu = () => {
+    const menuList = [
+      {
+        title: "Chatgpt Dao",
+        link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
+      },
+      {
+        title: "Bubble",
+        link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
+      },
+      {
+        title: "Sonet",
+        link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
+      },
+    ];
+    return (
+      <Menu>
+        {menuList.map((menu, idx) => (
+          <Menu.Item>
+            <a target="_blank" href={menu.link}>
+              {menu.title}
+            </a>
+          </Menu.Item>
         ))}
       </Menu>
     );
@@ -176,6 +204,21 @@ const Header: React.FC = () => {
           target="_blank"
         >
           Documentation
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
+
+  const ecosystemMenu = (
+    <Menu>
+      <Menu.Item>
+        <a href="ecosystem">
+          Ecosystem
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a href="dao">
+          Dao Booster Program
         </a>
       </Menu.Item>
     </Menu>
@@ -217,8 +260,8 @@ const Header: React.FC = () => {
           <nav className="Nav">
             <Link to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
-            </Link>{" "}
-            <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
+            </Link>
+            <Dropdown overlay={productMenu} trigger={["click"]}>
               <a>
                 Product
                 <Arrow />
@@ -233,20 +276,14 @@ const Header: React.FC = () => {
             {/* <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link> */}
             <Dropdown overlay={resourcesMenu} trigger={["click"]}>
               <a>
-                DAOs <Arrow />
-              </a>
-            </Dropdown>
-            <Dropdown overlay={resourcesMenu} trigger={["click"]}>
-              <a>
                 Resources <Arrow />
               </a>
             </Dropdown>
-            <Link
-              to="/ecosystem"
-              className={location.pathname === "/product" ? "active" : ""}
-            >
-              Ecosystem
-            </Link>{" "}
+            <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
+              <a>
+                Ecosystem <Arrow />
+              </a>
+            </Dropdown>
             {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
             <a
               href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"
