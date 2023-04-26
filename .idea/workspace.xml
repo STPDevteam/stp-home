@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Fix: typo">
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: swiper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -109,7 +112,7 @@
       <workItem from="1682062392079" duration="10264000" />
       <workItem from="1682229854822" duration="4092000" />
       <workItem from="1682241199322" duration="40478000" />
-      <workItem from="1682481264806" duration="11451000" />
+      <workItem from="1682481264806" duration="20569000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -230,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682499136723</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Edit: change to main net">
+      <created>1682501212656</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682501212656</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +284,8 @@
     <MESSAGE value="Add: homepage data" />
     <MESSAGE value="Fix: trello bugs" />
     <MESSAGE value="Fix: typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: typo" />
+    <MESSAGE value="Edit: change to main net" />
+    <MESSAGE value="Edit: swiper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit: swiper" />
   </component>
 </project>

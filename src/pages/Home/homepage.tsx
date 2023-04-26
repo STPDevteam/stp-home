@@ -1,6 +1,6 @@
 import { Box, Grid, Tab, Tabs, Typography } from "@mui/material";
 import styled from "styled-components";
-import { Button, Divider } from "antd";
+import { Button, Carousel, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
@@ -34,6 +34,13 @@ import React, { useMemo, useState } from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
 import { useTotal } from "../../hooks/useHomepage";
+import "swiper/swiper.min.css";
+import "swiper/swiper-bundle.css";
+import "swiper/modules/autoplay/autoplay.min.css";
+import "swiper/modules/autoplay/autoplay.less"
+import "swiper/modules/autoplay/autoplay.js"
+import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -285,7 +292,7 @@ const CliqueImg = styled("img")`
 function DappStore() {
   return (
     <CliqueBox>
-      <CliqueTitle>Clique DApp Store</CliqueTitle>
+      <CliqueTitle>DApp Store</CliqueTitle>
       <CliqueText>
         Scale your DAO with unlimited ecosystem tools and infrastructures.
         Become part of our ecosystem by integrating your dApp with Clique.
@@ -298,7 +305,7 @@ function DappStore() {
 function CliqueSdk() {
   return (
     <CliqueBox style={{ background: "rgba(237, 252, 255, 0.4)" }}>
-      <CliqueTitle>Clique SDK</CliqueTitle>
+      <CliqueTitle>SDK</CliqueTitle>
       <CliqueText>
         Create a customized workspace platform for free with Clique SDK.
       </CliqueText>
@@ -391,7 +398,7 @@ function Infrastructure() {
           <InfraH1>Ecosystem Tools & Infrastructure</InfraH1>
           <InfraSubH1>Clique: The All-in-One Platform</InfraSubH1>
         </Box>
-        <InfraH2>Clique Workspace</InfraH2>
+        <InfraH2>Workspace</InfraH2>
         <InfraText>
           Web3 community workspace for all builders with no code and gas
           required.
@@ -537,7 +544,6 @@ const InitBox = styled(Box)`
   background: #ffffff;
   opacity: 0.9;
   border: 1px solid #e9ecf2;
-  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   height: 676px;
   width: 592px;
@@ -686,13 +692,35 @@ function Initiatives() {
       <InitH2>
         We are the place for builders to launch their Web3 Projects{" "}
       </InitH2>
-      <Main gap={"43px"} mt={"48px"}>
-        <GroupMain>
-          {dataList.map((d, idx) => (
+      {/*<Main gap={"43px"} mt={"48px"}>*/}
+      {/*<GroupMain>*/}
+      {/*  {dataList.map((d, idx) => (*/}
+      {/*    <InitList data={d} key={idx} />*/}
+      {/*  ))}*/}
+      {/*</GroupMain>*/}
+      <Swiper
+        modules={[Pagination]}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        loop
+        autoplay={{
+          delay: 1000,
+        }}
+        slidesPerView={2}
+        style={{
+          maxWidth: "1441px",
+          padding: '60px'
+        }}
+      >
+        {dataList.map((d, idx) => (
+          <SwiperSlide key={idx}>
             <InitList data={d} key={idx} />
-          ))}
-        </GroupMain>
-      </Main>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {/*</Main>*/}
     </Box>
   );
 }
