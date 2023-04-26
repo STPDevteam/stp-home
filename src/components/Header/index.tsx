@@ -369,7 +369,7 @@ const Header: React.FC = () => {
               }}
             >
               <a>
-                Product
+                Products
                 <Arrow />
               </a>
             </Dropdown>
