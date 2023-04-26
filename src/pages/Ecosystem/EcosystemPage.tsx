@@ -51,6 +51,7 @@ import {
   sectorFilterDataList,
 } from "./index";
 import useBreakpoint from "../../hooks/useBreakpoint";
+import { useHistory } from "react-router";
 
 export default function () {
   const [categorySelect, setCategorySelect] = useState("All");
@@ -117,6 +118,7 @@ function Head({
   setSectorSelect: (sector: string) => void;
 }) {
   const isDownSm = useBreakpoint("sm");
+  const history = useHistory();
   return (
     <HeadBox>
       <HeadH1>Ecosystem</HeadH1>
@@ -124,7 +126,10 @@ function Head({
         Our ecosystem is supported by the existing 15,000 on-chain token holder
         community.
       </HeadText>
-      <GreenBtn style={{ marginTop: "24px" }}>
+      <GreenBtn
+        style={{ marginTop: "24px" }}
+        onClick={() => history.push("/dao")}
+      >
         DAO Booster Program <ArrowOutwardIcon />
       </GreenBtn>
       <Stack spacing={"24px"} mt={"80px"}>

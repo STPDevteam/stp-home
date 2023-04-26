@@ -30,10 +30,10 @@ import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import SmallStar from "../../assets/images/home/svg/small-star.svg";
 import InfEllipse1 from "../../assets/images/home/svg/infrastruc-ellipse-left-1.svg";
 import InfEllipse2 from "../../assets/images/home/svg/infrastruc-ellipse-left-2.svg";
-import React, {useMemo, useState} from "react";
+import React, { useMemo, useState } from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
-import {useTotal} from "../../hooks/useHomepage";
+import { useTotal } from "../../hooks/useHomepage";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -48,9 +48,9 @@ export default function Homepage() {
   return (
     <ContentWrapper>
       <Head />
+      <Initiatives />
       <Infrastructure />
       <Data />
-      <Initiatives />
       <Ecosystem />
       <BuildWithUs />
       <Footer />
@@ -125,12 +125,11 @@ function Head() {
   return (
     <HeadBox>
       <HeadH1>
-        An ecosystem <br />
+        The ecosystem <br />
         optimized for DAOs
       </HeadH1>
       <HeadText>
-        Launch your DAO on an All-In-One platform offering seamless <br />
-        crosschain governance and integration with essential tooling.
+        STP optimizes Web3 for builders, communities and projects.
       </HeadText>
       <GreenBtn
         style={{ marginTop: "40px" }}
@@ -387,10 +386,10 @@ function Infrastructure() {
           display={"flex"}
           alignItems={"baseline"}
           gap={"20px"}
-          flexDirection={isDownSm ? "column" : "row"}
+          flexDirection={"column"}
         >
-          <InfraH1>Clique</InfraH1>
-          <InfraSubH1>The All-in-One Platform</InfraSubH1>
+          <InfraH1>Ecosystem Tools & Infrastructure</InfraH1>
+          <InfraSubH1>Clique: The All-in-One Platform</InfraSubH1>
         </Box>
         <InfraH2>Clique Workspace</InfraH2>
         <InfraText>
@@ -477,14 +476,14 @@ const DataContent = styled(Typography)`
 `;
 
 function Data() {
-  const {total} = useTotal()
-  const dataList = useMemo(()=>{
+  const { total } = useTotal();
+  const dataList = useMemo(() => {
     return [
       { number: String(total?.totalDao), desc: "DAOs Created" },
       { number: String(total?.totalAccount), desc: "Community Members" },
       { number: String(total?.totalProposal), desc: "Proposals" },
-    ]
-  },[total?.totalAccount, total?.totalDao, total?.totalProposal])
+    ];
+  }, [total?.totalAccount, total?.totalDao, total?.totalProposal]);
   return (
     <DataBgBox>
       {dataList.map((d, idx) => {
@@ -516,7 +515,19 @@ const InitH1 = styled(Typography)`
     text-align: left;
   }
 `;
-
+const InitH2 = styled(Typography)`
+  font-family: "Urbanist";
+  font-style: normal;
+  font-size: 24px;
+  text-align: center;
+  color: #777E90;
+  @media (max-width: 767px) {
+    font-size: 48px;
+    margin-left: 24px;
+    line-height: 56px;
+    text-align: left;
+  }
+`;
 const InitBox = styled(Box)`
   position: relative;
   padding: 42px 47px;
@@ -669,6 +680,7 @@ function Initiatives() {
   return (
     <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
       <InitH1>Leading DAO Initiatives</InitH1>
+      <InitH2>We are the place for builders to launch their Web3 Projects </InitH2>
       <Main gap={"43px"} mt={"48px"}>
         <GroupMain>
           {dataList.map((d, idx) => (
@@ -712,8 +724,13 @@ const EcoButton = styled(Button)`
 `;
 
 const EcoTab = styled(Tab)`
+  text-transform: none;
+  font-weight: 500;
+  margin: 0 32px;
+  font-size: 20px;
   @media (max-width: 767px) {
     font-size: 12px;
+    margin: 0;
     line-height: 150%;
     padding: 8px;
   }
@@ -722,10 +739,22 @@ const EcoTab = styled(Tab)`
 function Ecosystem() {
   const [value, setValue] = useState("Partners");
   const partners = [Logo1, Logo2, Logo3, Logo4, Logo5];
+  const isDownSm = useBreakpoint("sm");
+  const history = useHistory();
   return (
     <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
       <EcoH1>Ecosystem</EcoH1>
-      <Tabs value={value} onChange={(e, value) => setValue(value)}>
+      <Tabs
+        value={value}
+        onChange={(e, value) => setValue(value)}
+        sx={{
+          ".css-1aquho2-MuiTabs-indicator": {
+            background: "#A7F46A",
+            height: isDownSm ? "3px" : "5px",
+            borderRadius: isDownSm ? "1.5px" : "2.5px",
+          },
+        }}
+      >
         <EcoTab value={"Partners"} label="Partners" />
         <EcoTab value={"Integrations"} label="Integrations" />
         <EcoTab value={"Listed exchanges"} label="Listed exchanges" />
@@ -741,7 +770,10 @@ function Ecosystem() {
       {value === "Listed exchanges" && (
         <Typography mt={3}>Coming Soon</Typography>
       )}
-      <EcoButton style={{ marginTop: "50px", marginBottom: "120px" }}>
+      <EcoButton
+        style={{ marginTop: "50px", marginBottom: "120px" }}
+        onClick={() => history.push("/ecosystem")}
+      >
         Learn More
       </EcoButton>
     </Box>

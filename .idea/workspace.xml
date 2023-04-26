@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: mobile menu">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useHomepage.ts" afterDir="false" />
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Add: homepage data">
+      <change afterPath="$PROJECT_DIR$/src/pages/ComingSoon.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/EcosystemPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/home/svg",
+    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,11 +84,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/hooks" />
+      <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/src/assets/images/home/svg" />
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
-      <recent name="$PROJECT_DIR$/src/hooks" />
-      <recent name="$PROJECT_DIR$/src/assets/images/header" />
-      <recent name="$PROJECT_DIR$/src/assets/images/dao/svg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
@@ -112,7 +113,8 @@
       <workItem from="1681972074792" duration="26071000" />
       <workItem from="1682062392079" duration="10264000" />
       <workItem from="1682229854822" duration="4092000" />
-      <workItem from="1682241199322" duration="39072000" />
+      <workItem from="1682241199322" duration="40478000" />
+      <workItem from="1682481264806" duration="9404000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -212,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682411150734</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add: homepage data">
+      <created>1682415729634</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682415729634</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +263,7 @@
     <MESSAGE value="Fix: trello bugs" />
     <MESSAGE value="Edit: header menu" />
     <MESSAGE value="Edit: mobile menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit: mobile menu" />
+    <MESSAGE value="Add: homepage data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: homepage data" />
   </component>
 </project>

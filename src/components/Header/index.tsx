@@ -88,12 +88,18 @@ const MenuBox = styled(Box)`
   }
 `;
 
-export function ProductMenu() {
+export function ProductMenu({
+  setDropdownVisible,
+}: {
+  setDropdownVisible?: (visible: boolean) => void;
+}) {
+  // export function ProductMenu() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const menuList = [
     {
       icon: IconWorkSpace,
       title: "Clique Workspace",
-      link: "",
+      link: "https://www.myclique.io/governance",
       text: " Web3 community workspace for all builders with no code and gas required",
     },
     {
@@ -105,14 +111,27 @@ export function ProductMenu() {
     {
       icon: IconSDK,
       title: "Clique SDK",
-      link: "",
+      link: "https://www.npmjs.com/package/@myclique/governance-sdk",
       text: "Create a customized workspace platform for free with Clique SDK",
     },
   ];
+
   return (
     <MenuBg>
       {menuList.map((menu, idx) => (
-        <MenuBox key={idx}>
+        <MenuBox
+          key={idx}
+          onClick={() => {
+            if (menu.link) {
+              window.open(menu.link, "_blank");
+            } else {
+              if (setDropdownVisible) {
+                setDropdownVisible(false);
+              }
+              setIsModalOpen(true);
+            }
+          }}
+        >
           <img src={menu.icon} />
           <Box gap={"4px"}>
             <MenuTitle>{menu.title}</MenuTitle>
@@ -120,6 +139,15 @@ export function ProductMenu() {
           </Box>
         </MenuBox>
       ))}
+      <Modal
+        visible={isModalOpen}
+        title="Coming Soon"
+        onOk={() => setIsModalOpen(false)}
+        onCancel={() => setIsModalOpen(false)}
+      >
+        <p>This section is still implementing.</p>
+        <p>Please come back later</p>
+      </Modal>
     </MenuBg>
   );
 }
@@ -169,6 +197,32 @@ const ecosystemMenu = (
     <HeaderLink href="/#/dao">Dao Booster Program</HeaderLink>
   </HeaderMenuBox>
 );
+
+const daoMenu = () => {
+  const menuList = [
+    {
+      title: "Chatgpt Dao",
+      link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
+    },
+    {
+      title: "Bubble",
+      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
+    },
+    {
+      title: "Sonet",
+      link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
+    },
+  ];
+  return (
+    <HeaderMenuBox>
+      {menuList.map((menu, idx) => (
+        <HeaderLink target="_blank" href={menu.link}>
+          {menu.title}
+        </HeaderLink>
+      ))}
+    </HeaderMenuBox>
+  );
+};
 export const MenuList: {
   title: string;
   subtitle?: ReactJSXElement;
@@ -180,7 +234,11 @@ export const MenuList: {
   },
   {
     title: "Products",
-    subtitle: ProductMenu(),
+    subtitle: <ProductMenu />,
+  },
+  {
+    title: "DAOs",
+    subtitle: daoMenu(),
   },
   {
     title: "Resources",
@@ -210,6 +268,7 @@ const Header: React.FC = () => {
   const currentPath = useLocation();
   const history = useHistory();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownVisible, setVisible] = useState(false);
 
   const handleMobileMenueDismiss = useCallback(() => {
     setMobileMenuOpen(false);
@@ -260,34 +319,6 @@ const Header: React.FC = () => {
     }
   };
 
-  const daoMenu = () => {
-    const menuList = [
-      {
-        title: "Chatgpt Dao",
-        link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
-      },
-      {
-        title: "Bubble",
-        link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
-      },
-      {
-        title: "Sonet",
-        link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
-      },
-    ];
-    return (
-      <Menu>
-        {menuList.map((menu, idx) => (
-          <Menu.Item>
-            <a target="_blank" href={menu.link}>
-              {menu.title}
-            </a>
-          </Menu.Item>
-        ))}
-      </Menu>
-    );
-  };
-
   return (
     <LayoutHeader
       style={{
@@ -329,9 +360,22 @@ const Header: React.FC = () => {
             <Link to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
             </Link>
-            <Dropdown overlay={ProductMenu} trigger={["click"]}>
+            <Dropdown
+              overlay={<ProductMenu setDropdownVisible={setVisible} />}
+              visible={dropdownVisible}
+              trigger={["click"]}
+              onVisibleChange={(flag) => {
+                setVisible(flag);
+              }}
+            >
               <a>
                 Product
+                <Arrow />
+              </a>
+            </Dropdown>
+            <Dropdown overlay={daoMenu} trigger={["click"]}>
+              <a>
+                DAOs
                 <Arrow />
               </a>
             </Dropdown>
