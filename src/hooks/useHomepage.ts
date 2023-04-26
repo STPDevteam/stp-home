@@ -12,7 +12,7 @@ export function useTotal() {
   const [total, setTotal] = useState<TotalResp>();
   useEffect(()=>{
     axios
-      .get("http://devapiv2.myclique.io/stpdao/v2/overview/total")
+      .get("https://apiv2.myclique.io/stpdao/v2/overview/total")
       .then((resp) => setTotal(resp.data.data))
       .catch((e) => {
         console.error("useTotal", e);

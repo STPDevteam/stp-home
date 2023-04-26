@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Fix: trello bugs" />
+    <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Fix: typo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +109,7 @@
       <workItem from="1682062392079" duration="10264000" />
       <workItem from="1682229854822" duration="4092000" />
       <workItem from="1682241199322" duration="40478000" />
-      <workItem from="1682481264806" duration="10219000" />
+      <workItem from="1682481264806" duration="11451000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>
@@ -221,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682496706960</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fix: typo">
+      <created>1682499136723</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682499136723</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +273,7 @@
     <MESSAGE value="Edit: mobile menu" />
     <MESSAGE value="Add: homepage data" />
     <MESSAGE value="Fix: trello bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: trello bugs" />
+    <MESSAGE value="Fix: typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: typo" />
   </component>
 </project>

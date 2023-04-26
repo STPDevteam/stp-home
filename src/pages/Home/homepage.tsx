@@ -479,9 +479,12 @@ function Data() {
   const { total } = useTotal();
   const dataList = useMemo(() => {
     return [
-      { number: String(total?.totalDao), desc: "DAOs Created" },
-      { number: String(total?.totalAccount), desc: "Community Members" },
-      { number: String(total?.totalProposal), desc: "Proposals" },
+      { number: total?.totalDao.toLocaleString(), desc: "DAOs Created" },
+      {
+        number: total?.totalAccount.toLocaleString(),
+        desc: "Community Members",
+      },
+      { number: total?.totalProposal.toLocaleString(), desc: "Proposals" },
     ];
   }, [total?.totalAccount, total?.totalDao, total?.totalProposal]);
   return (
@@ -520,7 +523,7 @@ const InitH2 = styled(Typography)`
   font-style: normal;
   font-size: 24px;
   text-align: center;
-  color: #777E90;
+  color: #777e90;
   @media (max-width: 767px) {
     font-size: 48px;
     margin-left: 24px;
@@ -680,7 +683,9 @@ function Initiatives() {
   return (
     <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
       <InitH1>Leading DAO Initiatives</InitH1>
-      <InitH2>We are the place for builders to launch their Web3 Projects </InitH2>
+      <InitH2>
+        We are the place for builders to launch their Web3 Projects{" "}
+      </InitH2>
       <Main gap={"43px"} mt={"48px"}>
         <GroupMain>
           {dataList.map((d, idx) => (
