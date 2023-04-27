@@ -151,6 +151,11 @@ export const GreenBtn = styled(Button)`
   gap: 8px;
   background: #a7f46a;
   border-radius: 8px;
+  @media (max-width: 767px) {
+    height: 40px;
+    font-size: 14px;
+    line-height: 150%;
+  }
 `;
 const BottomCircleImg = styled("img")`
   position: absolute;
@@ -579,6 +584,11 @@ const InitBox = styled(Box)`
   border-radius: 20px;
   height: 676px;
   width: 592px;
+  @media (max-width: 767px) {
+    width: 288px;
+    padding: 24px;
+    height: 555px;
+  }
 `;
 
 const InitListH1 = styled(Typography)`
@@ -589,6 +599,10 @@ const InitListH1 = styled(Typography)`
   font-size: 32px;
   line-height: 110%;
   color: #23262f;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 
 const InitTag = styled(Box)`
@@ -632,11 +646,12 @@ const InitRow = styled(Row)`
 `;
 
 function InitList({ data }: { data: InitiativesData }) {
+  const isDownSm = useBreakpoint("sm");
   return (
     <InitBox>
-      <img src={data.pic} />
+      <img src={data.pic} width={"100%"} />
       <InitRow>
-        <img src={data.avatar} />
+        <img src={data.avatar} width={isDownSm ? "40px" : "60px"} />
         <InitListH1>{data.title}</InitListH1>
       </InitRow>
       <Row gap={"16px"} mt={"16px"}>
@@ -648,7 +663,11 @@ function InitList({ data }: { data: InitiativesData }) {
       </Row>
       <InitListDesc mt={"24px"}>{data.desc}</InitListDesc>
       <GreenBtn
-        style={{ position: "absolute", bottom: "42px", right: "47px" }}
+        style={{
+          position: "absolute",
+          bottom: isDownSm ? "24px" : "42px",
+          right: isDownSm ? "24px" : "47px",
+        }}
         onClick={() => window.open(data.link, "_blank")}
       >
         Learn more
@@ -680,6 +699,7 @@ const GroupMain = styled.div`
 `;
 
 function Initiatives() {
+  const isDownSm = useBreakpoint("sm");
   const dataList: InitiativesData[] = [
     // {
     //   pic: Initiatives1,
@@ -740,7 +760,7 @@ function Initiatives() {
         autoplay={{
           delay: 1000,
         }}
-        slidesPerView={2}
+        slidesPerView={isDownSm ? 0.8 : 2}
         style={{
           maxWidth: "1441px",
           padding: "60px",
