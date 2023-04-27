@@ -56,12 +56,19 @@ export default function MobileMenu({
         {MenuList.map((item, idx) => {
           if (item.subtitle) {
             return (
-              <Accordion children={item.subtitle} placeholder={item.title} />
+              <Accordion
+                children={item.subtitle}
+                placeholder={item.title}
+                onDismiss={onDismiss}
+              />
             );
           }
           return (
             <Typography
-              onClick={() => window.open(item.link, "_blank")}
+              onClick={() => {
+                window.open(item.link, "_blank");
+                onDismiss();
+              }}
               sx={navLinkSx}
             >
               {item.title}
@@ -84,9 +91,11 @@ export default function MobileMenu({
 
 function Accordion({
   children,
+  onDismiss,
   placeholder,
 }: {
   children: React.ReactNode;
+  onDismiss: () => void;
   placeholder: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +120,7 @@ function Accordion({
           }}
         />
       </Box>
-      {isOpen && <Box>{children}</Box>}
+      {isOpen && <Box onClick={onDismiss}>{children}</Box>}
     </>
   );
 }
