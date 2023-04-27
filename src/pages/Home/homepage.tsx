@@ -1,6 +1,6 @@
 import { Box, Grid, Tab, Tabs, Typography } from "@mui/material";
 import styled from "styled-components";
-import { Button, Carousel, Divider } from "antd";
+import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
@@ -11,16 +11,11 @@ import Avatar2 from "../../assets/images/home/svg/avatar-2.svg";
 import Avatar3 from "../../assets/images/home/svg/avatar-3.svg";
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
 import StpLogo from "../../assets/images/home/svg/stp-logo.svg";
-import Logo1 from "../../assets/images/home/svg/logo1.svg";
-import Logo2 from "../../assets/images/home/svg/logo2.svg";
-import Logo3 from "../../assets/images/home/svg/logo3.svg";
-import Logo4 from "../../assets/images/home/svg/logo4.svg";
-import Logo5 from "../../assets/images/home/svg/logo5.svg";
 import InfrastructurePic from "../../assets/images/home/infrastructure.png";
 import InfrastructureSmPic from "../../assets/images/home/infrastructure-sm.svg";
-import Initiatives1 from "../../assets/images/home/initiatives1.png";
 import Initiatives2 from "../../assets/images/home/initiatives2.png";
 import Initiatives3 from "../../assets/images/home/initiatives3.png";
+import InitiativesGpt from "../../assets/images/home/initiatives-chat-gpt.png";
 import Email from "../../assets/images/socialmedia/email.svg";
 import Cylinder from "../../assets/images/socialmedia/cylinder.svg";
 import Medium from "../../assets/images/socialmedia/medium.svg";
@@ -37,10 +32,47 @@ import { useTotal } from "../../hooks/useHomepage";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
 import "swiper/modules/autoplay/autoplay.min.css";
-import "swiper/modules/autoplay/autoplay.less"
-import "swiper/modules/autoplay/autoplay.js"
+import "swiper/modules/autoplay/autoplay.less";
+import "swiper/modules/autoplay/autoplay.js";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
+import { Autoplay } from "swiper";
+
+import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
+import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
+import Thegraph from "../../assets/images/ecosystem/Thegraph.png";
+import Polygon from "../../assets/images/ecosystem/Polygon.png";
+import Klaytn from "../../assets/images/ecosystem/Klaytn.png";
+import Rai from "../../assets/images/ecosystem/RAI.png";
+import Vee from "../../assets/images/ecosystem/Vee.png";
+import Cere from "../../assets/images/ecosystem/Cere.png";
+import Define from "../../assets/images/ecosystem/Define.png";
+import Deesse from "../../assets/images/ecosystem/Deesse.png";
+import Layer3 from "../../assets/images/ecosystem/Layer3.png";
+import Meter from "../../assets/images/ecosystem/Meter.png";
+import Voltswap from "../../assets/images/ecosystem/Voltswap.png";
+import Cobak from "../../assets/images/ecosystem/cobak.png";
+import MovieBloc from "../../assets/images/ecosystem/moviebloc.png";
+import Search from "../../assets/images/ecosystem/Search.png";
+import Binance from "../../assets/images/ecosystem/binance.png";
+import BinanceListf from "../../assets/images/ecosystem/binanceList.png";
+import Bithumb from "../../assets/images/ecosystem/bithumb.png";
+import CoinDCX from "../../assets/images/ecosystem/coinDCX.png";
+import CoinOne from "../../assets/images/ecosystem/coinOne.png";
+import DeepDAO from "../../assets/images/ecosystem/deepDAO.png";
+import Gate from "../../assets/images/ecosystem/gate.png";
+import Her from "../../assets/images/ecosystem/her.png";
+import HuoBi from "../../assets/images/ecosystem/huobi.png";
+import Immunefi from "../../assets/images/ecosystem/immunefi.png";
+import Jenny from "../../assets/images/ecosystem/Jenny.png";
+import Knn from "../../assets/images/ecosystem/knn.png";
+import MapPro from "../../assets/images/ecosystem/mapPro.png";
+import Poloniex from "../../assets/images/ecosystem/poloniex.png";
+import PolygonDAO from "../../assets/images/ecosystem/polygonDAO.png";
+import PushPro from "../../assets/images/ecosystem/pushPro.png";
+import UpBit from "../../assets/images/ecosystem/upbit.png";
+import Zeta from "../../assets/images/ecosystem/zeta.png";
+import ZkEVM from "../../assets/images/ecosystem/zkEvm.png";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -658,7 +690,7 @@ function Initiatives() {
     //   desc: "Mighty Magic DAO is a ecosystem to empower fully on chain games and bring the magic back to gaming.",
     // },
     {
-      pic: Initiatives1,
+      pic: InitiativesGpt,
       avatar: Avatar1,
       title: "ChatGPT DAO",
       tag: ["Artificial Intellegience"],
@@ -699,7 +731,7 @@ function Initiatives() {
       {/*  ))}*/}
       {/*</GroupMain>*/}
       <Swiper
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         pagination={{
           clickable: true,
           dynamicBullets: true,
@@ -711,7 +743,7 @@ function Initiatives() {
         slidesPerView={2}
         style={{
           maxWidth: "1441px",
-          padding: '60px'
+          padding: "60px",
         }}
       >
         {dataList.map((d, idx) => (
@@ -771,9 +803,48 @@ const EcoTab = styled(Tab)`
 
 function Ecosystem() {
   const [value, setValue] = useState("Partners");
-  const partners = [Logo1, Logo2, Logo3, Logo4, Logo5];
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
+  const PartnersLogos = [
+    Chainlink,
+    Thegraph,
+    PolygonDAO,
+    Zeta,
+    GnosisSafe,
+    Layer3,
+    Rai,
+    MapPro,
+    Meter,
+    Define,
+    Immunefi,
+    Cobak,
+    MovieBloc,
+    Deesse,
+    Cere,
+    DeepDAO,
+    Jenny,
+    Her,
+    Knn,
+    Voltswap,
+    PushPro,
+  ];
+  const IntegrationsLogos = [Binance, Polygon, Klaytn, ZkEVM];
+  const ListedLogos = [
+    BinanceListf,
+    UpBit,
+    Bithumb,
+    HuoBi,
+    Gate,
+    CoinOne,
+    Poloniex,
+    CoinDCX,
+  ];
+  const currentLogos =
+    value === "Partners"
+      ? PartnersLogos
+      : value === "Integrations"
+      ? IntegrationsLogos
+      : ListedLogos;
   return (
     <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
       <EcoH1>Ecosystem</EcoH1>
@@ -792,17 +863,28 @@ function Ecosystem() {
         <EcoTab value={"Integrations"} label="Integrations" />
         <EcoTab value={"Listed exchanges"} label="Listed exchanges" />
       </Tabs>
-      {value === "Partners" && (
-        <Row mt={"60px"} gap={"80px"}>
-          {partners.map((logo, idx) => (
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        loop
+        autoplay={{
+          delay: 1000,
+        }}
+        slidesPerView={5}
+        style={{
+          maxWidth: "1441px",
+          padding: "60px",
+        }}
+      >
+        {currentLogos.map((logo, idx) => (
+          <SwiperSlide key={idx}>
             <img key={idx} src={logo} />
-          ))}
-        </Row>
-      )}
-      {value === "Integrations" && <Typography mt={3}>Coming Soon</Typography>}
-      {value === "Listed exchanges" && (
-        <Typography mt={3}>Coming Soon</Typography>
-      )}
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <EcoButton
         style={{ marginTop: "50px", marginBottom: "120px" }}
         onClick={() => history.push("/ecosystem")}
