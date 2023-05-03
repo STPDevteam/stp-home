@@ -1,4 +1,4 @@
-import { Box, Grid, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
 import styled from "styled-components";
 import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -25,6 +25,11 @@ import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import SmallStar from "../../assets/images/home/svg/small-star.svg";
 import InfEllipse1 from "../../assets/images/home/svg/infrastruc-ellipse-left-1.svg";
 import InfEllipse2 from "../../assets/images/home/svg/infrastruc-ellipse-left-2.svg";
+import LearnCommunity from "../../assets/images/home/svg/learn-community.svg";
+import LearnCreateDao from "../../assets/images/home/svg/learn-create-dao.svg";
+import LearnCreateToken from "../../assets/images/home/svg/learn-create-token.svg";
+import LearnOnChain from "../../assets/images/home/svg/learn-on-chian.svg";
+import ArrowUpRight from "../../assets/images/home/svg/arrow-up-right.svg";
 import React, { useMemo, useState } from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
@@ -34,9 +39,13 @@ import "swiper/swiper-bundle.css";
 import "swiper/modules/autoplay/autoplay.min.css";
 import "swiper/modules/autoplay/autoplay.less";
 import "swiper/modules/autoplay/autoplay.js";
+import "swiper/modules/navigation/navigation.min.css";
+import "swiper/modules/navigation/navigation.js";
+import "swiper/modules/navigation/navigation.less";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { Autoplay } from "swiper";
+import { Navigation } from "swiper";
 
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
 import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
@@ -91,6 +100,7 @@ export default function Homepage() {
       <Infrastructure />
       <Data />
       <Ecosystem />
+      <Learn />
       <BuildWithUs />
       <Footer />
     </ContentWrapper>
@@ -245,7 +255,7 @@ const InfraBoxBg = styled(Box)`
   padding: 27px 30px 30px;
   width: 100%;
   background: #f8fffe;
-  border: 1px solid #d6d6d6;
+  border: 1px solid #a3a3a3;
   height: 100%;
   border-radius: 16px;
   @media (max-width: 767px) {
@@ -293,7 +303,7 @@ const CliqueBox = styled(Box)`
   position: relative;
   padding: 40px;
   background: rgba(240, 240, 255, 0.4);
-  border: 1px solid #d6d6d6;
+  border: 1px solid #a3a3a3;
   border-radius: 16px;
 `;
 
@@ -316,14 +326,16 @@ const CliqueText = styled(Typography)`
   font-size: 16px;
   line-height: 24px;
   color: #777e91;
+  min-height: 72px;
   @media (max-width: 767px) {
     font-size: 16px;
+    min-height: 0;
     line-height: 24px;
   }
 `;
 const CliqueImg = styled("img")`
   width: 100%;
-  height: auto;
+  height: 341px;
 `;
 
 function DappStore() {
@@ -751,15 +763,13 @@ function Initiatives() {
       {/*  ))}*/}
       {/*</GroupMain>*/}
       <Swiper
-        modules={[Pagination, Autoplay]}
+        className="mySwiper"
+        modules={[Pagination, Navigation]}
         pagination={{
           clickable: true,
           dynamicBullets: true,
         }}
         loop
-        autoplay={{
-          delay: 1000,
-        }}
         slidesPerView={isDownSm ? 0.8 : 2}
         style={{
           maxWidth: "1441px",
@@ -911,6 +921,97 @@ function Ecosystem() {
       >
         Learn More
       </EcoButton>
+    </Box>
+  );
+}
+
+const LearnBg = styled(Box)`
+  max-width: 275px;
+  background: #ffffff;
+  padding: 24px 40px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+const LearnText = styled(Typography)`
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  color: #777e91;
+`;
+
+function LearnBox({
+  icon,
+  link,
+  desc,
+}: {
+  icon: string;
+  link: string;
+  desc: string;
+}) {
+  return (
+    <LearnBg onClick={() => window.open(link, "_blank")}>
+      <Box display={"flex"} justifyContent={"space-between"}>
+        <img src={icon} />
+        <img src={ArrowUpRight} style={{ height: "fit-content" }} />
+      </Box>
+      <LearnText>{desc}</LearnText>
+    </LearnBg>
+  );
+}
+
+function Learn() {
+  const isDownSm = useBreakpoint("sm");
+  const data = [
+    {
+      icon: LearnCreateDao,
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-list-your-project-on-clique",
+      desc: "How to create a DAO with Clique",
+    },
+    {
+      icon: LearnCreateToken,
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-token",
+      desc: "How to create a DAO token on Clique",
+    },
+    {
+      icon: LearnOnChain,
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-proposal",
+      desc: "How does on-chain governance work on Clique",
+    },
+    {
+      icon: LearnCommunity,
+      link: "https://stp-dao.gitbook.io/verse-network/clique/dao-rewards",
+      desc: "How to create a community event with Clique",
+    },
+  ];
+  return (
+    <Box sx={{ background: "#F5F8FE", width: "100%", paddingBottom: "120px" }}>
+      <InitH1>Learn</InitH1>
+      <Stack
+        m={"48px auto 0"}
+        width={"fit-content"}
+        direction={isDownSm ? "column" : "row"}
+        spacing={"24px"}
+      >
+        {data.map((item, idx) => (
+          <LearnBox
+            key={idx}
+            icon={item.icon}
+            link={item.link}
+            desc={item.desc}
+          />
+        ))}
+      </Stack>
     </Box>
   );
 }
