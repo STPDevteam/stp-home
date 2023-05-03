@@ -82,6 +82,10 @@ import PushPro from "../../assets/images/ecosystem/pushPro.png";
 import UpBit from "../../assets/images/ecosystem/upbit.png";
 import Zeta from "../../assets/images/ecosystem/zeta.png";
 import ZkEVM from "../../assets/images/ecosystem/zkEvm.png";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { SwiperComponent } from "swiper/angular";
+import { Swiper as SwiperClass } from "swiper/types";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -712,6 +716,8 @@ const GroupMain = styled.div`
 
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
+  const [swiper, setSwiper] = useState<SwiperClass>();
+
   const dataList: InitiativesData[] = [
     // {
     //   pic: Initiatives1,
@@ -762,26 +768,47 @@ function Initiatives() {
       {/*    <InitList data={d} key={idx} />*/}
       {/*  ))}*/}
       {/*</GroupMain>*/}
-      <Swiper
-        className="mySwiper"
-        modules={[Pagination, Navigation]}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        loop
-        slidesPerView={isDownSm ? 0.8 : 2}
-        style={{
-          maxWidth: "1441px",
-          padding: "60px",
-        }}
-      >
-        {dataList.map((d, idx) => (
-          <SwiperSlide key={idx}>
-            <InitList data={d} key={idx} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <Row justifyContent={"ceenter"} alignItems={"center"} padding={"0 30px"}>
+        <ArrowBackIosIcon
+          fontSize={"large"}
+          onClick={() => swiper?.slidePrev()}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+        />
+        <Swiper
+          className="mySwiper"
+          onSwiper={setSwiper}
+          modules={[Pagination, Navigation]}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          loop
+          slidesPerView={isDownSm ? 0.8 : 2}
+          style={{
+            maxWidth: "1441px",
+            padding: "60px",
+          }}
+        >
+          {dataList.map((d, idx) => (
+            <SwiperSlide key={idx}>
+              <InitList data={d} key={idx} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <ArrowForwardIosIcon
+          fontSize={"large"}
+          onClick={() => swiper?.slideNext()}
+          sx={{
+            "&:hover": {
+              cursor: "pointer",
+            },
+          }}
+        />
+      </Row>
       {/*</Main>*/}
     </Box>
   );
