@@ -37,6 +37,7 @@ const MenuBg = styled(Box)`
   padding: 80px 42.5px 68px;
   background: white;
   border-radius: 8px;
+  gap: 12px;
   @media (max-width: 767px) {
     padding: 0;
     border-radius: 8px;
@@ -77,7 +78,6 @@ const MenuBox = styled(Box)`
   align-items: center;
   padding: 27px 24px;
   gap: 16px;
-  margin-bottom: 12px;
 
   &:hover {
     background: #a7f46a;

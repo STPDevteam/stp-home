@@ -84,7 +84,6 @@ import Zeta from "../../assets/images/ecosystem/zeta.png";
 import ZkEVM from "../../assets/images/ecosystem/zkEvm.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { SwiperComponent } from "swiper/angular";
 import { Swiper as SwiperClass } from "swiper/types";
 
 export const ContentWrapper = styled(Box)`
@@ -144,7 +143,7 @@ export const HeadText = styled(Typography)`
   margin-top: 48px;
   font-size: 20px;
   line-height: 30px;
-  color: #b4b4b4;
+  color: #ececec;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 24px;
@@ -183,8 +182,8 @@ function Head() {
   return (
     <HeadBox>
       <HeadH1>
-        The ecosystem <br />
-        optimized for DAOs
+        The Ecosystem <br />
+        Optimized for DAOs
       </HeadH1>
       <HeadText>
         STP optimizes Web3 for builders, communities and projects.
@@ -248,7 +247,7 @@ const InfraText = styled(Typography)`
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
-  margin-top: 16px;
+  margin-top: 8px;
   color: #777e91;
   @media (max-width: 767px) {
     font-size: 16px;
@@ -273,7 +272,7 @@ const InfraBoxTitle = styled(Typography)`
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  color: #777e91;
+  color: #23262f;
   @media (max-width: 767px) {
     font-size: 20px;
     line-height: 32px;
@@ -317,6 +316,7 @@ const CliqueTitle = styled(Typography)`
   font-weight: 700;
   font-size: 32px;
   line-height: 110%;
+  margin-bottom: 24px;
   color: #23262f;
   @media (max-width: 767px) {
     font-size: 20px;
@@ -445,7 +445,7 @@ function Infrastructure() {
         <Box
           display={"flex"}
           alignItems={"baseline"}
-          gap={"20px"}
+          gap={"16px"}
           flexDirection={"column"}
         >
           <InfraH1>Ecosystem Tools & Infrastructure</InfraH1>
@@ -529,10 +529,10 @@ const DataContent = styled(Typography)`
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 30px;
   text-align: center;
-  color: #b4b4b4;
+  color: #ececec;
 `;
 
 function Data() {
@@ -663,6 +663,14 @@ const InitRow = styled(Row)`
 
 function InitList({ data }: { data: InitiativesData }) {
   const isDownSm = useBreakpoint("sm");
+  const buttonStyle = {
+    position: "absolute",
+    bottom: isDownSm ? "24px" : "42px",
+    right: isDownSm ? "24px" : "47px",
+  };
+  const buttonHoverStyle = {
+    background: "#A7F46A",
+  };
   return (
     <InitBox>
       <img src={data.pic} width={"100%"} />
@@ -683,6 +691,12 @@ function InitList({ data }: { data: InitiativesData }) {
           position: "absolute",
           bottom: isDownSm ? "24px" : "42px",
           right: isDownSm ? "24px" : "47px",
+        }}
+        onMouseOver={() => {
+          Object.assign(buttonStyle, buttonHoverStyle);
+        }}
+        onMouseOut={() => {
+          Object.assign(buttonStyle);
         }}
         onClick={() => window.open(data.link, "_blank")}
       >
@@ -909,6 +923,10 @@ function Ecosystem() {
         value={value}
         onChange={(e, value) => setValue(value)}
         sx={{
+          color: "#777E90",
+          ".css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected": {
+            color: "#777E90",
+          },
           ".css-1aquho2-MuiTabs-indicator": {
             background: "#A7F46A",
             height: isDownSm ? "3px" : "5px",
@@ -918,7 +936,7 @@ function Ecosystem() {
       >
         <EcoTab value={"Partners"} label="Partners" />
         <EcoTab value={"Integrations"} label="Integrations" />
-        <EcoTab value={"Listed exchanges"} label="Listed exchanges" />
+        <EcoTab value={"Listed Exchanges"} label="Listed Exchanges" />
       </Tabs>
       <Swiper
         modules={[Pagination, Autoplay]}
@@ -1013,12 +1031,12 @@ function Learn() {
     {
       icon: LearnOnChain,
       link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-proposal",
-      desc: "How does on-chain governance work on Clique",
+      desc: "How Does On-chain Governance Work on Clique",
     },
     {
       icon: LearnCommunity,
       link: "https://stp-dao.gitbook.io/verse-network/clique/dao-rewards",
-      desc: "How to create a community event with Clique",
+      desc: "How to Create a Community Event with Clique",
     },
   ];
   return (
@@ -1075,7 +1093,7 @@ const BuildContent = styled(Typography)`
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
-  color: #b4b4b4;
+  color: #ececec;
 `;
 
 function BuildWithUs() {
