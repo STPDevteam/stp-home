@@ -113,7 +113,7 @@ export default function Homepage() {
 export const HeadBox = styled(Box)`
   background: #1b1aff;
   position: relative;
-  height: 669px;
+  height: 900px;
   width: 100%;
   padding-left: 252px;
   @media (max-width: 767px) {
