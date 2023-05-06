@@ -592,14 +592,16 @@ const InitH2 = styled(Typography)`
   }
 `;
 const InitBox = styled(Box)`
+  display: flex;
   position: relative;
   padding: 42px 47px;
   background: #ffffff;
   opacity: 0.9;
   border: 1px solid #e9ecf2;
   border-radius: 20px;
-  height: 676px;
-  width: 592px;
+  height: 446px;
+  width: 1150px;
+  gap: 40px;
   @media (max-width: 767px) {
     width: 288px;
     padding: 24px;
@@ -663,46 +665,38 @@ const InitRow = styled(Row)`
 
 function InitList({ data }: { data: InitiativesData }) {
   const isDownSm = useBreakpoint("sm");
-  const buttonStyle = {
-    position: "absolute",
-    bottom: isDownSm ? "24px" : "42px",
-    right: isDownSm ? "24px" : "47px",
-  };
-  const buttonHoverStyle = {
-    background: "#A7F46A",
-  };
   return (
     <InitBox>
-      <img src={data.pic} width={"100%"} />
-      <InitRow>
-        <img src={data.avatar} width={isDownSm ? "40px" : "60px"} />
-        <InitListH1>{data.title}</InitListH1>
-      </InitRow>
-      <Row gap={"16px"} mt={"16px"}>
-        {data.tag.map((tag, idx) => (
-          <InitTag key={idx} sx={{ background: data.tagColor[idx] }}>
-            {tag}
-          </InitTag>
-        ))}
-      </Row>
-      <InitListDesc mt={"24px"}>{data.desc}</InitListDesc>
-      <GreenBtn
-        style={{
-          position: "absolute",
-          bottom: isDownSm ? "24px" : "42px",
-          right: isDownSm ? "24px" : "47px",
-        }}
-        onMouseOver={() => {
-          Object.assign(buttonStyle, buttonHoverStyle);
-        }}
-        onMouseOut={() => {
-          Object.assign(buttonStyle);
-        }}
-        onClick={() => window.open(data.link, "_blank")}
+      <img src={data.pic} width={"600px"} />
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"space-between"}
       >
-        Learn more
-        <ArrowOutwardIcon />
-      </GreenBtn>
+        <Box>
+          <InitRow>
+            <img src={data.avatar} width={isDownSm ? "40px" : "60px"} />
+            <InitListH1>{data.title}</InitListH1>
+          </InitRow>
+          <Row gap={"16px"} mt={"16px"}>
+            {data.tag.map((tag, idx) => (
+              <InitTag key={idx} sx={{ background: data.tagColor[idx] }}>
+                {tag}
+              </InitTag>
+            ))}
+          </Row>
+          <InitListDesc mt={"24px"}>{data.desc}</InitListDesc>
+        </Box>
+        <GreenBtn
+          style={{
+            width: "184px",
+          }}
+          onClick={() => window.open(data.link, "_blank")}
+        >
+          Learn more
+          <ArrowOutwardIcon />
+        </GreenBtn>
+      </Box>
     </InitBox>
   );
 }
@@ -801,7 +795,7 @@ function Initiatives() {
             dynamicBullets: true,
           }}
           loop
-          slidesPerView={isDownSm ? 0.8 : 2}
+          slidesPerView={isDownSm ? 0.8 : 1}
           style={{
             maxWidth: "1441px",
             padding: "60px",
@@ -857,6 +851,12 @@ const EcoButton = styled(Button)`
   height: 48px;
   border: 1px solid #b4b4b4;
   border-radius: 80px;
+
+  :hover {
+    background: #a7f46a;
+    color: #23262f;
+    border: 1px solid #ececec;
+  }
 `;
 
 const EcoTab = styled(Tab)`
