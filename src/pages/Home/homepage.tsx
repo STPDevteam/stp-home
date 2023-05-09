@@ -6,9 +6,12 @@ import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg"
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
 import CliqueSdkPic from "../../assets/images/home/svg/clique-sdk.svg";
 import DataBg from "../../assets/images/home/svg/data-bg.svg";
-import Avatar1 from "../../assets/images/home/svg/avatar-1.svg";
-import Avatar2 from "../../assets/images/home/svg/avatar-2.svg";
-import Avatar3 from "../../assets/images/home/svg/avatar-3.svg";
+import Label1 from "../../assets/images/home/svg/label1.svg";
+import { ReactComponent as UserIcon } from "../../assets/images/home/svg/usericon.svg";
+import UserActive from "../../assets/images/home/svg/user-active.svg";
+import AlarmIcon from "../../assets/images/home/svg/alarmicon.svg";
+import FileIcon from "../../assets/images/home/svg/file-icon.svg";
+
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
 import StpLogo from "../../assets/images/home/svg/stp-logo.svg";
 import InfrastructurePic from "../../assets/images/home/infrastructure.png";
@@ -722,102 +725,356 @@ const GroupMain = styled.div`
   animation: slide 15s linear infinite;
 `;
 
+interface InfoDataType {
+    avatar:string,
+    name:string,
+    group:string,
+    comment:string,
+    item1:string,
+    item2:string,
+    item3:string
+}
+const InfoName = styled(Typography)`
+    padding-right:12px;
+    height: 30px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #1B1D21;
+`;
+const InfoNameIcon = styled("img")`
+  height:16px;
+  width:16px
+`;
+const InfoTitle = styled(Typography)`
+    height: 24px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1B1D21;
+`;
+const InfoConetne = styled(Typography)`
+    margin-top:16px;
+    height:42px;
+    width:100%;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;    
+    color: #808191;    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+`;
+const IfonBoxs = styled(Box)`
+    padding:0 120px;
+    max-width: 1441px;
+    @media (max-width: 767px) {
+      padding: 80px 24px 0px;
+    } 
+
+`;
+const InfoBottomText = styled(Typography)`
+    padding-left:10px;
+    width: 31px;
+    height: 24px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1B1D21;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+`;
+const InfoUserIcon = styled(UserIcon)`
+  :hover path {
+    fill: #A7F46A;
+  }
+`;
+const InfoFileIcon = styled("img")`
+  height:16.6px;
+  width:20px
+`;
+const InfoAlarmIcon = styled("img")`
+  height:17.5px;
+  width:17.5px
+`;
+
+const AllInfo = styled(Box)`
+    margin-top:31px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 191px;
+    height: 48px;
+    border: 1px solid #A3A3A3;
+    border-radius: 80px;
+`;
+
+const ContributorsImg = styled("img")`
+    height:153px;
+    width:153px
+`;
+const ContributorsName = styled(Box)`
+    width: 99px;
+    height: 24px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0049C6;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+`;
+const ContributorsTitle = styled(Box)`
+    width: 99px;
+    height: 18px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #23262F;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+`;
+
+function InfoBox({avatar,name,group,comment,item1,item2,item3}:{avatar:string,name:string,group:string,comment:string,item1:string,item2:string,item3:string}) {
+  
+  
+  return (
+    <Box  sx={{
+      height:196,
+      padding:"24px",
+      backgroundColor: '#fff',
+      border:"1px solid #A3A3A3",
+      borderRadius:"24px",
+      '&:hover': {
+        border:"1px solid #1B1AFF",
+      },
+    }}>
+
+      <Row>
+        <img alt="" src={avatar} style={{ width: '48px', height: '48px',borderRadius:"50%"}} />
+        <Box sx={{pl:"14px"}}>
+
+        <Row sx={{alignItems:"center"}}>
+        <InfoName> {name} </InfoName>
+        <InfoNameIcon src={Label1}></InfoNameIcon>
+        </Row>
+        <InfoTitle> {group} </InfoTitle>
+        </Box>
+        
+      </Row>
+
+      <InfoConetne> {comment} </InfoConetne>
+      <Row sx={{pt:"16px",alignItems:"center"}}>
+
+      <Row sx={{alignItems:"center"}}>
+
+        <InfoUserIcon />         
+         <InfoBottomText> {item1}</InfoBottomText>
+        </Row>
+
+        <Row sx={{alignItems:"center",ml:"40px"}}>
+        <InfoFileIcon src={FileIcon}></InfoFileIcon> 
+        <InfoBottomText> {item2}</InfoBottomText>
+        </Row>
+
+        <Row sx={{alignItems:"center",ml:"40px"}}>
+        <InfoAlarmIcon src={AlarmIcon}></InfoAlarmIcon>
+        <InfoBottomText> {item3}</InfoBottomText>
+        </Row>
+
+        </Row>
+
+    </Box>  
+
+  );
+}
+
+function ContributorsBox({img,name, group}:{img:string,name:string,group:string}){
+  return (
+    <Box  sx={{
+      height:235,
+      padding:"16px 15px 11px 16px",
+      backgroundColor: '#fff',
+      border:"1px solid #A3A3A3",
+      borderRadius:"12px",
+      '&:hover': {
+        background: "#FFFFFF",
+        border: "1px solid #1B1AFF",
+        boxShadow: "0px 4px 60px rgba(0, 0, 0, 0.08)",
+      },
+    }}>
+      <ContributorsImg src={img}></ContributorsImg>
+
+      <ContributorsName>{name}</ContributorsName>
+      <ContributorsTitle>{group}</ContributorsTitle>
+
+    </Box>
+  )
+}
+
+
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
-  const [swiper, setSwiper] = useState<SwiperClass>();
-
-  const dataList: InitiativesData[] = [
-    // {
-    //   pic: Initiatives1,
-    //   avatar: Avatar1,
-    //   title: "Mighty Magic DAO",
-    //   tag: ["On-chain Game", "Zero-knowledge Proof"],
-    //   tagColor: ["#F8FEFF", "#ECFCF1"],
-    //   desc: "Mighty Magic DAO is a ecosystem to empower fully on chain games and bring the magic back to gaming.",
-    // },
+  const dataList = [
     {
-      pic: InitiativesGpt,
-      avatar: Avatar1,
-      title: "ChatGPT DAO",
-      tag: ["Artificial Intellegience"],
-      link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
-      tagColor: ["#F8FEFF"],
-      desc: "The Web3.0 space for all ChatGPT & AI enthusiasts.",
+    avatar:Label1,
+    name:"DAO Test",
+    group:"@STP",
+    comment:"Build decentralized automated organization, Build decentralized automated organization...",
+    item1:"3.3k",
+    item2:"60",
+    item3:"1"
     },
     {
-      pic: Initiatives2,
-      avatar: Avatar2,
-      title: "Bubble DAO",
-      tag: ["Social", "Digital Identity"],
-      tagColor: ["#FFFCF8", "#FCECF8"],
-      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
-      desc: "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
+      avatar:Label1,
+      name:"DAO Test",
+      group:"@STP",
+      comment:"Build decentralized automated organization, Build decentralized automated organization...",
+      item1:"3.3k",
+      item2:"60",
+      item3:"1"
     },
     {
-      pic: Initiatives3,
-      avatar: Avatar3,
-      title: "Sonet",
-      tag: ["Social", "Infrastructure"],
-      tagColor: ["#FFFCF8", "#ECF0FC"],
-      link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
-      desc: "Sonet is an open-source platform providing AWS-like services across Web2 and Web3 applications.",
+      avatar:Label1,
+      name:"DAO Test",
+      group:"@STP",
+      comment:"Build decentralized automated organization, Build decentralized automated organization...",
+      item1:"3.3k",
+      item2:"60",
+      item3:"1"
+    }
+  ]
+  const  ContributorsData = [
+    {
+      avatar:Label1,
+      name:"UserName",
+      group:"Follower 200",
     },
-  ];
+    {
+      avatar:Label1,
+      name:"UserName",
+      group:"Follower 200",
+    },
+    {
+      avatar:Label1,
+      name:"UserName",
+      group:"Follower 200",
+    },
+    {
+      avatar:Label1,
+      name:"UserName",
+      group:"Follower 200",
+    },
+    {
+      avatar:Label1,
+      name:"UserName",
+      group:"Follower 200",
+    },
+    {
+      avatar:Label1,
+      name:"UserName",
+      group:"Follower 200",
+    },
+  ]
 
   return (
-    <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
+    <Box sx={{ background: "#F8FBFF"}} width={"100vw"}>
       <InitH1>Leading DAO Initiatives</InitH1>
       <InitH2>
         We are the place for builders to launch their Web3 Projects{" "}
       </InitH2>
-      {/*<Main gap={"43px"} mt={"48px"}>*/}
-      {/*<GroupMain>*/}
-      {/*  {dataList.map((d, idx) => (*/}
-      {/*    <InitList data={d} key={idx} />*/}
-      {/*  ))}*/}
-      {/*</GroupMain>*/}
-      <Row justifyContent={"ceenter"} alignItems={"center"} padding={"0 30px"}>
-        <ArrowBackIosIcon
-          fontSize={"large"}
-          onClick={() => swiper?.slidePrev()}
-          sx={{
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        />
-        <Swiper
-          className="mySwiper"
-          onSwiper={setSwiper}
-          modules={[Pagination, Navigation]}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          loop
-          slidesPerView={isDownSm ? 0.8 : 1}
-          style={{
-            maxWidth: "1441px",
-            padding: "60px",
-          }}
-        >
-          {dataList.map((d, idx) => (
-            <SwiperSlide key={idx}>
-              <InitList data={d} key={idx} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <ArrowForwardIosIcon
-          fontSize={"large"}
-          onClick={() => swiper?.slideNext()}
-          sx={{
-            "&:hover": {
-              cursor: "pointer",
-            },
-          }}
-        />
-      </Row>
-      {/*</Main>*/}
+      <Box sx={{display:"flex",justifyContent:"center"}}>
+        <IfonBoxs>    
+          <Grid
+              container
+              mt={isDownSm ? "0" : "24px"}
+              spacing={"28px"}
+              zIndex={2}
+            >
+              {dataList.map((c, idx) => (
+                <Grid item sm={12} md={4}>
+                  <InfoBox avatar={c.avatar} name={c.name} group={c.group} comment={c.comment} item1={c.item1} item2={c.item2} item3={c.item3}/>
+                </Grid>
+              ))}        
+            </Grid>
+        </IfonBoxs>       
+      </Box> 
+
+      <Box sx={{display:"flex",justifyContent:"center"}}>
+        <AllInfo sx={{
+              '&:hover': {
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "10px",
+                gap: "10px",
+                position: "relative",
+                width: "191px",
+                height: "48px",
+                background: "#A7F46A",
+                border: "1px solid #ECECEC",
+                borderRadius: "80px",
+              }}
+        }>View All</AllInfo>
+      </Box>
+      <InitH1>Top Contributors</InitH1>
+      <Box sx={{display:"flex",justifyContent:"center"}}>         
+        <IfonBoxs>    
+            <Grid
+                container
+                mt={isDownSm ? "0" : "16px"}
+                spacing={"16px"}
+                zIndex={2}
+              >
+                {ContributorsData.map((c, idx) => (
+                  <Grid item sm={12} md={2}>
+                    <ContributorsBox img={c.avatar} name={c.name}  group={c.group} ></ContributorsBox>
+                  </Grid>
+                ))}        
+            </Grid>  
+        </IfonBoxs>
+        
+      </Box>
+      <Box sx={{display:"flex",justifyContent:"center"}}>
+      <AllInfo sx={{
+              mb:"132px",
+              '&:hover': {
+                boxSizing: "border-box",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "10px",
+                gap: "10px",
+                position: "relative",
+                width: "191px",
+                height: "48px",
+                background: "#A7F46A",
+                border: "1px solid #ECECEC",
+                borderRadius: "80px",
+              }}
+        }>View All</AllInfo>
+      </Box>
     </Box>
   );
 }
