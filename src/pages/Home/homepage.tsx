@@ -843,6 +843,7 @@ const ContributorsName = styled(Box)`
   flex: none;
   order: 0;
   flex-grow: 0;
+  margin-top: 9px;
 `;
 const ContributorsTitle = styled(Box)`
   width: 99px;
@@ -856,6 +857,7 @@ const ContributorsTitle = styled(Box)`
   flex: none;
   order: 1;
   flex-grow: 0;
+  margin-top: 4px;
 `;
 
 function InfoBox({
@@ -1086,7 +1088,7 @@ function Initiatives() {
           View All
         </AllInfo>
       </Box>
-      <InitH1>Top Contributors</InitH1>
+      {/* <InitH1>Top Contributors</InitH1>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
@@ -1096,7 +1098,7 @@ function Initiatives() {
             zIndex={2}
           >
             {ContributorsData.map((c, idx) => (
-              <Grid item sm={4} md={2}>
+              <Grid item>
                 <ContributorsBox
                   img={c.avatar}
                   name={c.name}
@@ -1134,7 +1136,7 @@ function Initiatives() {
         >
           View All
         </AllInfo>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
