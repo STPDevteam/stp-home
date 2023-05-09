@@ -726,354 +726,414 @@ const GroupMain = styled.div`
 `;
 
 interface InfoDataType {
-    avatar:string,
-    name:string,
-    group:string,
-    comment:string,
-    item1:string,
-    item2:string,
-    item3:string
+  avatar: string;
+  name: string;
+  group: string;
+  comment: string;
+  item1: string;
+  item2: string;
+  item3: string;
 }
 const InfoName = styled(Typography)`
-    padding-right:12px;
-    height: 30px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-    color: #1B1D21;
+  padding-right: 12px;
+  height: 30px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #1b1d21;
 `;
 const InfoNameIcon = styled("img")`
-  height:16px;
-  width:16px
+  height: 16px;
+  width: 16px;
 `;
 const InfoTitle = styled(Typography)`
-    height: 24px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #1B1D21;
+  height: 24px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1b1d21;
 `;
 const InfoConetne = styled(Typography)`
-    margin-top:16px;
-    height:42px;
-    width:100%;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;    
-    color: #808191;    
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+  margin-top: 16px;
+  height: 42px;
+  width: 100%;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #808191;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 const IfonBoxs = styled(Box)`
-    padding:0 120px;
-    max-width: 1441px;
-    @media (max-width: 767px) {
-      padding: 80px 24px 0px;
-    } 
-
+  padding: 0 120px;
+  max-width: 1441px;
+  @media (max-width: 767px) {
+    padding: 80px 24px 0px;
+  }
 `;
 const InfoBottomText = styled(Typography)`
-    padding-left:10px;
-    width: 31px;
-    height: 24px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #1B1D21;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-
+  padding-left: 10px;
+  width: 31px;
+  height: 24px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1b1d21;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 `;
 const InfoUserIcon = styled(UserIcon)`
   :hover path {
-    fill: #A7F46A;
+    fill: #a7f46a;
   }
 `;
 const InfoFileIcon = styled("img")`
-  height:16.6px;
-  width:20px
+  height: 16.6px;
+  width: 20px;
 `;
 const InfoAlarmIcon = styled("img")`
-  height:17.5px;
-  width:17.5px
+  height: 17.5px;
+  width: 17.5px;
 `;
 
 const AllInfo = styled(Box)`
-    margin-top:31px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    width: 191px;
-    height: 48px;
-    border: 1px solid #A3A3A3;
-    border-radius: 80px;
+  margin-top: 31px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 191px;
+  height: 48px;
+  border: 1px solid #a3a3a3;
+  border-radius: 80px;
 `;
 
 const ContributorsImg = styled("img")`
-    height:153px;
-    width:153px
+  height: 153px;
+  width: 153px;
 `;
 const ContributorsName = styled(Box)`
-    width: 99px;
-    height: 24px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    color: #0049C6;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+  width: 99px;
+  height: 24px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0049c6;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 `;
 const ContributorsTitle = styled(Box)`
-    width: 99px;
-    height: 18px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 150%;
-    color: #23262F;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+  width: 99px;
+  height: 18px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #23262f;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
 `;
 
-function InfoBox({avatar,name,group,comment,item1,item2,item3}:{avatar:string,name:string,group:string,comment:string,item1:string,item2:string,item3:string}) {
-  
-  
+function InfoBox({
+  avatar,
+  name,
+  group,
+  comment,
+  item1,
+  item2,
+  item3,
+}: {
+  avatar: string;
+  name: string;
+  group: string;
+  comment: string;
+  item1: string;
+  item2: string;
+  item3: string;
+}) {
   return (
-    <Box  sx={{
-      height:196,
-      padding:"24px",
-      backgroundColor: '#fff',
-      border:"1px solid #A3A3A3",
-      borderRadius:"24px",
-      '&:hover': {
-        border:"1px solid #1B1AFF",
-      },
-    }}>
-
+    <Box
+      sx={{
+        height: 196,
+        padding: "24px",
+        backgroundColor: "#fff",
+        border: "1px solid #A3A3A3",
+        borderRadius: "24px",
+        "&:hover": {
+          border: "1px solid #1B1AFF",
+        },
+      }}
+    >
       <Row>
-        <img alt="" src={avatar} style={{ width: '48px', height: '48px',borderRadius:"50%"}} />
-        <Box sx={{pl:"14px"}}>
-
-        <Row sx={{alignItems:"center"}}>
-        <InfoName> {name} </InfoName>
-        <InfoNameIcon src={Label1}></InfoNameIcon>
-        </Row>
-        <InfoTitle> {group} </InfoTitle>
+        <img
+          alt=""
+          src={avatar}
+          style={{ width: "48px", height: "48px", borderRadius: "50%" }}
+        />
+        <Box sx={{ pl: "14px" }}>
+          <Row sx={{ alignItems: "center" }}>
+            <InfoName> {name} </InfoName>
+            <InfoNameIcon src={Label1}></InfoNameIcon>
+          </Row>
+          <InfoTitle> {group} </InfoTitle>
         </Box>
-        
       </Row>
 
       <InfoConetne> {comment} </InfoConetne>
-      <Row sx={{pt:"16px",alignItems:"center"}}>
-
-      <Row sx={{alignItems:"center"}}>
-
-        <InfoUserIcon />         
-         <InfoBottomText> {item1}</InfoBottomText>
+      <Row sx={{ pt: "16px", alignItems: "center" }}>
+        <Row sx={{ alignItems: "center" }}>
+          <InfoUserIcon />
+          <InfoBottomText> {item1}</InfoBottomText>
         </Row>
 
-        <Row sx={{alignItems:"center",ml:"40px"}}>
-        <InfoFileIcon src={FileIcon}></InfoFileIcon> 
-        <InfoBottomText> {item2}</InfoBottomText>
+        <Row sx={{ alignItems: "center", ml: "40px" }}>
+          <InfoFileIcon src={FileIcon}></InfoFileIcon>
+          <InfoBottomText> {item2}</InfoBottomText>
         </Row>
 
-        <Row sx={{alignItems:"center",ml:"40px"}}>
-        <InfoAlarmIcon src={AlarmIcon}></InfoAlarmIcon>
-        <InfoBottomText> {item3}</InfoBottomText>
+        <Row sx={{ alignItems: "center", ml: "40px" }}>
+          <InfoAlarmIcon src={AlarmIcon}></InfoAlarmIcon>
+          <InfoBottomText> {item3}</InfoBottomText>
         </Row>
-
-        </Row>
-
-    </Box>  
-
+      </Row>
+    </Box>
   );
 }
 
-function ContributorsBox({img,name, group}:{img:string,name:string,group:string}){
+function ContributorsBox({
+  img,
+  name,
+  group,
+}: {
+  img: string;
+  name: string;
+  group: string;
+}) {
   return (
-    <Box  sx={{
-      height:235,
-      padding:"16px 15px 11px 16px",
-      backgroundColor: '#fff',
-      border:"1px solid #A3A3A3",
-      borderRadius:"12px",
-      '&:hover': {
-        background: "#FFFFFF",
-        border: "1px solid #1B1AFF",
-        boxShadow: "0px 4px 60px rgba(0, 0, 0, 0.08)",
-      },
-    }}>
+    <Box
+      sx={{
+        width: 184,
+        height: 235,
+        padding: "16px 15px 11px 16px",
+        backgroundColor: "#fff",
+        border: "1px solid #A3A3A3",
+        borderRadius: "12px",
+        "&:hover": {
+          background: "#FFFFFF",
+          border: "1px solid #1B1AFF",
+          boxShadow: "0px 4px 60px rgba(0, 0, 0, 0.08)",
+        },
+      }}
+    >
       <ContributorsImg src={img}></ContributorsImg>
 
       <ContributorsName>{name}</ContributorsName>
       <ContributorsTitle>{group}</ContributorsTitle>
-
     </Box>
-  )
+  );
 }
-
 
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
   const dataList = [
     {
-    avatar:Label1,
-    name:"DAO Test",
-    group:"@STP",
-    comment:"Build decentralized automated organization, Build decentralized automated organization...",
-    item1:"3.3k",
-    item2:"60",
-    item3:"1"
+      avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
+      name: "Bubble",
+      group: "@STP",
+      comment:
+        "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
+      item1: "12.7K",
+      item2: "57",
+      item3: "0",
     },
     {
-      avatar:Label1,
-      name:"DAO Test",
-      group:"@STP",
-      comment:"Build decentralized automated organization, Build decentralized automated organization...",
-      item1:"3.3k",
-      item2:"60",
-      item3:"1"
+      avatar: "https://apiv2.myclique.io/static/1665737754979172019.png",
+      name: "Sonet",
+      group: "@STP",
+      comment:
+        "Sonet is an open-source platform providing AWS-like services across Web2 and Web3 applications",
+      item1: "10.4k",
+      item2: "36",
+      item3: "0",
     },
     {
-      avatar:Label1,
-      name:"DAO Test",
-      group:"@STP",
-      comment:"Build decentralized automated organization, Build decentralized automated organization...",
-      item1:"3.3k",
-      item2:"60",
-      item3:"1"
-    }
-  ]
-  const  ContributorsData = [
+      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
+      name: "ChatGPT DAO",
+      group: "@STP",
+      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
+      item1: "1.5k",
+      item2: "4",
+      item3: "0",
+    },
+  ];
+  const ContributorsData = [
     {
-      avatar:Label1,
-      name:"UserName",
-      group:"Follower 200",
+      avatar: Label1,
+      name: "UserName",
+      group: "Follower 200",
     },
     {
-      avatar:Label1,
-      name:"UserName",
-      group:"Follower 200",
+      avatar: Label1,
+      name: "UserName",
+      group: "Follower 200",
     },
     {
-      avatar:Label1,
-      name:"UserName",
-      group:"Follower 200",
+      avatar: Label1,
+      name: "UserName",
+      group: "Follower 200",
     },
     {
-      avatar:Label1,
-      name:"UserName",
-      group:"Follower 200",
+      avatar: Label1,
+      name: "UserName",
+      group: "Follower 200",
     },
     {
-      avatar:Label1,
-      name:"UserName",
-      group:"Follower 200",
+      avatar: Label1,
+      name: "UserName",
+      group: "Follower 200",
     },
     {
-      avatar:Label1,
-      name:"UserName",
-      group:"Follower 200",
+      avatar: Label1,
+      name: "UserName",
+      group: "Follower 200",
     },
-  ]
+  ];
 
   return (
-    <Box sx={{ background: "#F8FBFF"}} width={"100vw"}>
+    <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
       <InitH1>Leading DAO Initiatives</InitH1>
       <InitH2>
         We are the place for builders to launch their Web3 Projects{" "}
       </InitH2>
-      <Box sx={{display:"flex",justifyContent:"center"}}>
-        <IfonBoxs>    
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <IfonBoxs>
           <Grid
-              container
-              mt={isDownSm ? "0" : "24px"}
-              spacing={"28px"}
-              zIndex={2}
-            >
-              {dataList.map((c, idx) => (
-                <Grid item sm={12} md={4}>
-                  <InfoBox avatar={c.avatar} name={c.name} group={c.group} comment={c.comment} item1={c.item1} item2={c.item2} item3={c.item3}/>
-                </Grid>
-              ))}        
-            </Grid>
-        </IfonBoxs>       
-      </Box> 
+            container
+            mt={isDownSm ? "0" : "24px"}
+            spacing={"28px"}
+            zIndex={2}
+          >
+            {dataList.map((c, idx) => (
+              <Grid item sm={12} md={4}>
+                <InfoBox
+                  avatar={c.avatar}
+                  name={c.name}
+                  group={c.group}
+                  comment={c.comment}
+                  item1={c.item1}
+                  item2={c.item2}
+                  item3={c.item3}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </IfonBoxs>
+      </Box>
 
-      <Box sx={{display:"flex",justifyContent:"center"}}>
-        <AllInfo sx={{
-              '&:hover': {
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "10px",
-                gap: "10px",
-                position: "relative",
-                width: "191px",
-                height: "48px",
-                background: "#A7F46A",
-                border: "1px solid #ECECEC",
-                borderRadius: "80px",
-              }}
-        }>View All</AllInfo>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <AllInfo
+          sx={{
+            "&:hover": {
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "10px",
+              gap: "10px",
+              position: "relative",
+              width: "191px",
+              height: "48px",
+              background: "#A7F46A",
+              border: "1px solid #ECECEC",
+              borderRadius: "80px",
+              cursor: "pointer",
+            },
+          }}
+          onClick={() => {
+            window.open("https://www.myclique.io/governance", "_blank");
+          }}
+        >
+          View All
+        </AllInfo>
       </Box>
       <InitH1>Top Contributors</InitH1>
-      <Box sx={{display:"flex",justifyContent:"center"}}>         
-        <IfonBoxs>    
-            <Grid
-                container
-                mt={isDownSm ? "0" : "16px"}
-                spacing={"16px"}
-                zIndex={2}
-              >
-                {ContributorsData.map((c, idx) => (
-                  <Grid item sm={12} md={2}>
-                    <ContributorsBox img={c.avatar} name={c.name}  group={c.group} ></ContributorsBox>
-                  </Grid>
-                ))}        
-            </Grid>  
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <IfonBoxs>
+          <Grid
+            container
+            mt={isDownSm ? "0" : "16px"}
+            spacing={"16px"}
+            zIndex={2}
+          >
+            {ContributorsData.map((c, idx) => (
+              <Grid item sm={4} md={2}>
+                <ContributorsBox
+                  img={c.avatar}
+                  name={c.name}
+                  group={c.group}
+                ></ContributorsBox>
+              </Grid>
+            ))}
+          </Grid>
         </IfonBoxs>
-        
       </Box>
-      <Box sx={{display:"flex",justifyContent:"center"}}>
-      <AllInfo sx={{
-              mb:"132px",
-              '&:hover': {
-                boxSizing: "border-box",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "10px",
-                gap: "10px",
-                position: "relative",
-                width: "191px",
-                height: "48px",
-                background: "#A7F46A",
-                border: "1px solid #ECECEC",
-                borderRadius: "80px",
-              }}
-        }>View All</AllInfo>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <AllInfo
+          sx={{
+            mb: "132px",
+            "&:hover": {
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "10px",
+              gap: "10px",
+              position: "relative",
+              width: "191px",
+              height: "48px",
+              background: "#A7F46A",
+              border: "1px solid #ECECEC",
+              borderRadius: "80px",
+              cursor: "pointer",
+            },
+          }}
+          onClick={() => {
+            window.open("https://www.myclique.io/governance", "_blank");
+          }}
+        >
+          View All
+        </AllInfo>
       </Box>
     </Box>
   );
