@@ -314,7 +314,7 @@ const CliqueBox = styled(Box)`
 `;
 
 const CliqueTitle = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -582,9 +582,11 @@ const InitH1 = styled(Typography)`
   }
 `;
 const InitH2 = styled(Typography)`
+  margin-top: 16px;
   font-family: "Urbanist";
   font-style: normal;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
   color: #777e90;
   @media (max-width: 767px) {
@@ -887,6 +889,7 @@ function InfoBox({
         borderRadius: "24px",
         "&:hover": {
           border: "1px solid #1B1AFF",
+          boxShadow: "0 0 10px 2px rgba(0,0,0,0.25)",
         },
       }}
     >
@@ -1040,7 +1043,7 @@ function Initiatives() {
             zIndex={2}
           >
             {dataList.map((c, idx) => (
-              <Grid item sm={12} md={4}>
+              <Grid item sm={12} md={6}>
                 <InfoBox
                   avatar={c.avatar}
                   name={c.name}
@@ -1060,6 +1063,7 @@ function Initiatives() {
         sx={{
           display: "flex",
           justifyContent: "center",
+          paddingBottom: "120px",
         }}
       >
         <AllInfo
@@ -1274,7 +1278,8 @@ function Ecosystem() {
         }}
       >
         {currentLogos.map((logo, idx) => (
-          <SwiperSlide key={idx}>
+          // init width 0px
+          <SwiperSlide key={idx} style={{ width: "264.2px" }}>
             <img key={idx} src={logo} />
           </SwiperSlide>
         ))}
