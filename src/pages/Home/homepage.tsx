@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
+import TopCircle from "../../assets/images/home/svg/header-top-circle.svg";
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
 import CliqueSdkPic from "../../assets/images/home/svg/clique-sdk.svg";
 import DataBg from "../../assets/images/home/svg/data-bg.svg";
@@ -180,6 +181,19 @@ const BottomCircleImg = styled("img")`
   bottom: 0;
 `;
 
+const TopCircleImg = styled("img")`
+  position: absolute;
+  right: -10px;
+  top: 0;
+  z-index: 4; // header nav is 3
+  @media (max-width: 767px) {
+    position: absolute;
+    right: -56px;
+    top: 20px;
+    transform: rotate(15deg);
+    width: 50%;
+  }
+`;
 function Head() {
   const history = useHistory();
   return (
@@ -199,6 +213,7 @@ function Head() {
         <ArrowOutwardIcon />
       </GreenBtn>
       <BottomCircleImg src={BottomCircle} />
+      <TopCircleImg src={TopCircle} />
     </HeadBox>
   );
 }
@@ -343,6 +358,9 @@ const CliqueText = styled(Typography)`
 const CliqueImg = styled("img")`
   width: 100%;
   height: 341px;
+  @media (max-width: 767px) {
+    height: auto;
+  }
 `;
 
 function DappStore() {
@@ -526,6 +544,9 @@ const DataNumber = styled(Typography)`
   line-height: 60px;
   text-align: center;
   color: #ffffff;
+  @media (max-width: 767px) {
+    font-size: 32px;
+  }
 `;
 
 const DataContent = styled(Typography)`
@@ -536,6 +557,9 @@ const DataContent = styled(Typography)`
   line-height: 30px;
   text-align: center;
   color: #ececec;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 function Data() {
@@ -590,7 +614,7 @@ const InitH2 = styled(Typography)`
   text-align: center;
   color: #777e90;
   @media (max-width: 767px) {
-    font-size: 48px;
+    font-size: 20px;
     margin-left: 24px;
     line-height: 56px;
     text-align: left;
@@ -1188,7 +1212,7 @@ const EcoTab = styled(Tab)`
   margin: 0 32px;
   font-size: 20px;
   @media (max-width: 767px) {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     line-height: 150%;
     padding: 8px;
@@ -1276,6 +1300,7 @@ function Ecosystem() {
           maxWidth: "1441px",
           padding: "60px",
         }}
+        grid={{ rows: 1 }}
       >
         {currentLogos.map((logo, idx) => (
           // init width 0px
@@ -1284,6 +1309,7 @@ function Ecosystem() {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <EcoButton
         style={{ marginTop: "50px", marginBottom: "120px" }}
         onClick={() => history.push("/ecosystem")}

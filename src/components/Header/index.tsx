@@ -172,13 +172,16 @@ const HeaderLink = styled("a")`
   line-height: 48px;
   padding: 0 16px;
   color: #999fae;
+  &:hover {
+    color: #1b1aff;
+  }
 `;
 
 const resourcesMenu = (
   <HeaderMenuBox>
-    <HeaderLink target="_blank" href="/Verse Network WP.pdf">
+    {/* <HeaderLink target="_blank" href="/Verse Network WP.pdf">
       Whitepaper
-    </HeaderLink>
+    </HeaderLink> */}
     <HeaderLink href="https://github.com/STPDevteam" target="_blank">
       Github
     </HeaderLink>
