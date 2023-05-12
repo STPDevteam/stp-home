@@ -1408,25 +1408,25 @@ const LearnText = styled(Typography)`
   color: #777e91;
 `;
 
-function LearnBox({
-  icon,
-  link,
-  desc,
-}: {
-  icon: string;
-  link: string;
-  desc: string;
-}) {
-  return (
-    <LearnBg onClick={() => window.open(link, "_blank")}>
-      <Box display={"flex"} justifyContent={"space-between"}>
-        <img src={icon} />
-        <img src={ArrowUpRight} style={{ height: "fit-content" }} />
-      </Box>
-      <LearnText>{desc}</LearnText>
-    </LearnBg>
-  );
-}
+// function LearnBox({
+//   icon,
+//   link,
+//   desc,
+// }: {
+//   icon: string;
+//   link: string;
+//   desc: string;
+// }) {
+//   return (
+//     <LearnBg onClick={() => window.open(link, "_blank")}>
+//       <Box display={"flex"} justifyContent={"space-between"}>
+//         <img src={icon} />
+//         <img src={ArrowUpRight} style={{ height: "fit-content" }} />
+//       </Box>
+//       <LearnText>{desc}</LearnText>
+//     </LearnBg>
+//   );
+// }
 
 // function Learn() {
 //   const isDownSm = useBreakpoint("sm");
@@ -1530,7 +1530,6 @@ function Learn() {
     },
   ];
   const isDownSm = useBreakpoint("sm");
-  console.log(isDownSm);
 
   return (
     <Box pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
@@ -1539,9 +1538,9 @@ function Learn() {
         mt={isDownSm ? "40px" : "48px"}
         sx={{ display: "flex", justifyContent: "center" }}
       >
-        <IfonBoxs>
+        <LearnBox>
           <Grid container spacing={"24px"}>
-            {data.map((item, index) => {
+            {data.map((item) => {
               return (
                 <Grid item xs={12} sm={6} md={4} lg={3}>
                   <LearnItemBox>
@@ -1553,11 +1552,18 @@ function Learn() {
               );
             })}
           </Grid>
-        </IfonBoxs>
+        </LearnBox>
       </Box>
     </Box>
   );
 }
+const LearnBox = styled(Box)`
+  padding: 0 120px;
+  max-width: 1441px;
+  @media (max-width: 767px) {
+    padding: 0px 24px 0;
+  }
+`;
 const LearnItemBox = styled(Box)`
   padding: 16px;
   border: 1px solid #a3a3a3;
