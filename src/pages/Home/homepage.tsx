@@ -1529,11 +1529,16 @@ function Learn() {
         "As revealed in our 2023 roadmap article, STP is focused on its mission to build an ecosystem optimized for DAOs. We are progressing on our early initiative to build a platform of tools & infrastructure that empower DAO creation & management while improving daily workflows and efficiency in Web3. ",
     },
   ];
+  const isDownSm = useBreakpoint("sm");
+  console.log(isDownSm);
 
   return (
     <Box pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
       <InitH1 style={{ textAlign: "center" }}>Learn</InitH1>
-      <Box mt={"48px"} sx={{ display: "flex", justifyContent: "center" }}>
+      <Box
+        mt={isDownSm ? "40px" : "48px"}
+        sx={{ display: "flex", justifyContent: "center" }}
+      >
         <IfonBoxs>
           <Grid container spacing={"24px"}>
             {data.map((item, index) => {
