@@ -762,6 +762,7 @@ interface InfoDataType {
 }
 const InfoName = styled(Typography)`
   padding-right: 12px;
+  max-width: 142px;
   height: 30px;
   font-family: "DM Sans";
   font-style: normal;
@@ -769,6 +770,9 @@ const InfoName = styled(Typography)`
   font-size: 20px;
   line-height: 30px;
   color: #1b1d21;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 const InfoNameIcon = styled("img")`
   height: 16px;
@@ -906,7 +910,6 @@ function InfoBox({
   return (
     <Box
       sx={{
-        height: 196,
         padding: "24px",
         backgroundColor: "#fff",
         border: "1px solid #A3A3A3",
@@ -1018,6 +1021,51 @@ function Initiatives() {
       item2: "4",
       item3: "0",
     },
+    {
+      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
+      name: "DAO Test",
+      group: "@STP",
+      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
+      item1: "1.5k",
+      item2: "4",
+      item3: "0",
+    },
+    {
+      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
+      name: "DAO Test",
+      group: "@STP",
+      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
+      item1: "1.5k",
+      item2: "4",
+      item3: "0",
+    },
+    {
+      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
+      name: "DAO Test",
+      group: "@STP",
+      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
+      item1: "1.5k",
+      item2: "4",
+      item3: "0",
+    },
+    {
+      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
+      name: "DAO Test DAO Test DAO Test",
+      group: "@STP",
+      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
+      item1: "1.5k",
+      item2: "4",
+      item3: "0",
+    },
+    {
+      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
+      name: "DAO Test",
+      group: "@STP",
+      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
+      item1: "1.5k",
+      item2: "4",
+      item3: "0",
+    },
   ];
   const ContributorsData = [
     {
@@ -1063,11 +1111,11 @@ function Initiatives() {
           <Grid
             container
             mt={isDownSm ? "0" : "24px"}
-            spacing={"28px"}
+            spacing={"18px"}
             zIndex={2}
           >
             {dataList.map((c, idx) => (
-              <Grid item sm={12} md={6}>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
                 <InfoBox
                   avatar={c.avatar}
                   name={c.name}
@@ -1263,6 +1311,7 @@ function Ecosystem() {
       : value === "Integrations"
       ? IntegrationsLogos
       : ListedLogos;
+
   return (
     <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
       <EcoH1>Ecosystem</EcoH1>
@@ -1271,14 +1320,15 @@ function Ecosystem() {
         onChange={(e, value) => setValue(value)}
         sx={{
           color: "#777E90",
-          ".css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected": {
-            color: "#777E90",
-          },
-          ".css-1aquho2-MuiTabs-indicator": {
+          ".MuiTabs-indicator": {
             background: "#A7F46A",
             height: isDownSm ? "3px" : "5px",
             borderRadius: isDownSm ? "1.5px" : "2.5px",
           },
+          ".MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected":
+            {
+              color: "#777E90",
+            },
         }}
       >
         <EcoTab value={"Partners"} label="Partners" />
@@ -1300,7 +1350,6 @@ function Ecosystem() {
           maxWidth: "1441px",
           padding: "60px",
         }}
-        grid={{ rows: 1 }}
       >
         {currentLogos.map((logo, idx) => (
           // init width 0px
@@ -1410,7 +1459,6 @@ function Learn() {
     </Box>
   );
 }
-
 const BuildBox = styled(Box)`
   width: 100vw;
   height: 506px;
