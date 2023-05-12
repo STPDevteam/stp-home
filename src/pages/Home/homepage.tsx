@@ -1532,7 +1532,7 @@ function Learn() {
 
   return (
     <Box pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
-      <InitH1>Learn</InitH1>
+      <InitH1 style={{ textAlign: "center" }}>Learn</InitH1>
       <Box mt={"48px"} sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid container spacing={"24px"}>
