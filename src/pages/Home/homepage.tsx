@@ -498,6 +498,7 @@ function Infrastructure() {
           spacing={isDownSm ? "24px" : "42px"}
           direction={isDownSm ? "column" : "row"}
           position={"relative"}
+          mb={"48px"}
         >
           {!isDownSm && <BottomStar src={SmallStar} />}
           <Grid item sm={12} md={6}>
