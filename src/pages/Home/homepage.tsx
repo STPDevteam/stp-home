@@ -779,6 +779,7 @@ const InfoNameIcon = styled("img")`
   width: 16px;
 `;
 const InfoTitle = styled(Typography)`
+  max-width: 142px;
   height: 24px;
   font-family: "DM Sans";
   font-style: normal;
@@ -786,6 +787,9 @@ const InfoTitle = styled(Typography)`
   font-size: 16px;
   line-height: 24px;
   color: #1b1d21;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 const InfoConetne = styled(Typography)`
   margin-top: 16px;
@@ -995,7 +999,7 @@ function Initiatives() {
     {
       avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
       name: "Bubble",
-      group: "@STP",
+      group: "@bubble",
       comment:
         "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
       item1: "12.7K",
@@ -1003,13 +1007,44 @@ function Initiatives() {
       item3: "0",
     },
     {
+      avatar: "https://preapiv2.myclique.io/static/1665737932735871572.png",
+      name: "STP",
+      group: "@stp",
+      comment:
+        "Verse Network by STP brings a full suite of native tools and infrastructures facilitating efficient decentralized decision-making for users, communities and organizations.",
+      item1: "21k",
+      item2: "52",
+      item3: "0",
+    },
+    {
       avatar: "https://apiv2.myclique.io/static/1665737754979172019.png",
       name: "Sonet",
-      group: "@STP",
+      group: "@sonet",
       comment:
         "Sonet is an open-source platform providing AWS-like services across Web2 and Web3 applications",
       item1: "10.4k",
       item2: "36",
+      item3: "0",
+    },
+
+    {
+      avatar: "https://preapiv2.myclique.io/static/1665738772191379494.png",
+      name: "Deesse",
+      group: "@deesse",
+      comment: "Enjoy to earn! Participate in Deesse governance with STPT",
+      item1: "10.7k",
+      item2: "32",
+      item3: "0",
+    },
+
+    {
+      avatar: "https://preapiv2.myclique.io/static/1666071756924457182.png",
+      name: "Sign",
+      group: "@sign",
+      comment:
+        "Web3.0 platform for Metaverse Games and Gamers. Participate in Sign governance with STPT",
+      item1: "11.9k",
+      item2: "20",
       item3: "0",
     },
     {
@@ -1022,48 +1057,23 @@ function Initiatives() {
       item3: "0",
     },
     {
-      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
-      name: "DAO Test",
-      group: "@STP",
-      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
-      item1: "1.5k",
-      item2: "4",
-      item3: "0",
+      avatar: "https://apiv2.myclique.io/static/1669696639866919495.jpg",
+      name: "SpeakingEnglishDAO",
+      group: "@speakingenglishdao",
+      comment:
+        "A group of non-English speakers to learn English and discuss freely",
+      item1: "540",
+      item2: "38",
+      item3: "3",
     },
     {
-      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
-      name: "DAO Test",
-      group: "@STP",
-      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
-      item1: "1.5k",
-      item2: "4",
-      item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
-      name: "DAO Test",
-      group: "@STP",
-      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
-      item1: "1.5k",
-      item2: "4",
-      item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
-      name: "DAO Test DAO Test DAO Test",
-      group: "@STP",
-      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
-      item1: "1.5k",
-      item2: "4",
-      item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
-      name: "DAO Test",
-      group: "@STP",
-      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
-      item1: "1.5k",
-      item2: "4",
+      avatar: "https://apiv2.myclique.io/static/1676425557741808633.png",
+      name: "Turkey Disaster Relief DAO",
+      group: "@turkeydisasterreliefdao",
+      comment:
+        "This DAO aims to help the Turkish people affected by the earthquake return to normal life and rebuild their lives as soon as possible.",
+      item1: "861",
+      item2: "1",
       item3: "0",
     },
   ];
