@@ -1603,6 +1603,7 @@ const LearnBox = styled(Box)`
 `;
 const LearnItemBox = styled(Box)`
   padding: 16px;
+  cursor: pointer;
   border: 1px solid #a3a3a3;
   border-radius: 20px;
   background-color: #ffffff;
