@@ -1514,7 +1514,7 @@ function Learn() {
       imgUrl:
         "https://mirror-media.imgix.net/publication-images/H9ECGhjeNNObB57GPZJmp.jpeg?height=1024&width=2048&h=1024&w=2048&auto=compress",
       title: "The Fusion of Fully On-Chain Games and DAOs",
-      link: "",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/cgI4U8yZY6LVuSWiHsL7C2Ii9Q2H1UlZdyqis-WOlLs",
       content:
         "According to Market Research Report, the global gaming market in 2022 reached $207 billion and will continue to grow to an estimated $343 billion in 2028. This indicates that the gaming market has yet to be exploited and has great potential for investors and developers. Along with the growth of blockchain technology, many GameFi projects will emerge but regardless of traditional or GameFi, both have limitations. However, a fully on-chain game (FOCG) complemented with DAO may be able to compensate for the limitations. This research aims to explore the possibility that FOCG and DAO may create.",
     },
@@ -1522,20 +1522,20 @@ function Learn() {
       imgUrl:
         "https://mirror-media.imgix.net/publication-images/KVdaSrkjtnh-NcgtVRWc-.jpeg?height=256&width=512&h=256&w=512&auto=compress",
       title: "Clique V3 Announcement",
-      link: "",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/14EyzZxhUTfD04xTImYPN10S4DlVD7W1th4Ww3neeeo",
       content:
         "As revealed in our 2023 roadmap article, STP is focused on its mission to build an ecosystem optimized for DAOs. We are progressing on our early initiative to build a platform of tools & infrastructure that empower DAO creation & management while improving daily workflows and efficiency in Web3. ",
     },
     {
       imgUrl: Learn4,
       title: "How to Create a DAO with Clique",
-      link: "",
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-list-your-project-on-clique",
       content:
         "Step 1: Go to Clique and connect your Metamask wallet to Polygon network. Then click the 'Add DAO' button on the left ...",
     },
     {
       imgUrl: Learn6,
-      title: "How ro create a DAO token on Clique",
+      title: "How to create a DAO token on Clique",
       link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3jVwJxEc_dce0mSg2pS8dAPguQYq4O0OFu3OYkdtHa4",
       content:
         "Create an ERC-20 token using Clique Go to Creator section and click 'Create Token'. Your wallet...",
