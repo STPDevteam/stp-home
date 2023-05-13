@@ -1499,14 +1499,14 @@ function Learn() {
     {
       imgUrl: Learn2,
       title: "How to Create a DAO with Clique",
-      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-list-your-project-on-clique",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/kXM7Kom5_bdWsZZHjTCY6gstqj_YEjbWDV2Fsvp_nS8",
       content:
         "DAO (Decentralized Autonomous Organization) is a form of organization that leverages blockchain technology to achieve autonomous governance, distribution, and collaboration in a decentralized manner.",
     },
     {
       imgUrl: Learn1,
       title: "How AI will transform DAOs",
-      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-token",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3jVwJxEc_dce0mSg2pS8dAPguQYq4O0OFu3OYkdtHa4",
       content:
         "ChatGPT took the world by storm by proliferating the application of  artificial intelligence (AI) and reinforcement learning (RL). By design, DAOs gravitate towards AI and RL through smart contract technology and activity data that can be trained and reinforced. Intertwining the DAO concept with AI technology creates a paradigm shift in efficiency and capability for governance, while promising transparency and decentralization. The efficacy of this combination of theory and technology is unprecedented.",
     },
@@ -1536,21 +1536,21 @@ function Learn() {
     {
       imgUrl: Learn6,
       title: "How to create a DAO token on Clique",
-      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3jVwJxEc_dce0mSg2pS8dAPguQYq4O0OFu3OYkdtHa4",
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-token",
       content:
         "Create an ERC-20 token using Clique Go to Creator section and click 'Create Token'. Your wallet...",
     },
     {
       imgUrl: Learn3,
       title: "How does on-chain governance work on Clique",
-      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/cgI4U8yZY6LVuSWiHsL7C2Ii9Q2H1UlZdyqis-WOlLs",
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-proposal",
       content:
         "Enter in a DAO and click ‘Create a Proposal’ to start a community proposal. Community proposals, or regular proposals, are a ...",
     },
     {
       imgUrl: Learn5,
       title: "How to create a community event with Clique",
-      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/14EyzZxhUTfD04xTImYPN10S4DlVD7W1th4Ww3neeeo",
+      link: "https://stp-dao.gitbook.io/verse-network/clique/dao-rewards",
       content:
         "As a part of Clique’s V2 upgrade, DAO Rewards is a new feature to reward community members and foster engagement ... ",
     },
