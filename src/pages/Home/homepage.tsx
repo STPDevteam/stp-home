@@ -938,7 +938,7 @@ function InfoBox({
 }) {
   return (
     <Box
-      onClick={()=>window.open(link)}
+      onClick={()=> link && window.open(link)}
       sx={{
         cursor: 'pointer',
         padding: "24px",
