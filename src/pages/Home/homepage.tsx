@@ -1498,7 +1498,7 @@ function Learn() {
   const data = [
     {
       imgUrl: Learn2,
-      title: "How to Create a DAO with Clique",
+      title: "DAO with ZeroKnowledge Proof",
       link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/kXM7Kom5_bdWsZZHjTCY6gstqj_YEjbWDV2Fsvp_nS8",
       content:
         "DAO (Decentralized Autonomous Organization) is a form of organization that leverages blockchain technology to achieve autonomous governance, distribution, and collaboration in a decentralized manner.",
