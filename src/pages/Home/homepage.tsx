@@ -1723,6 +1723,8 @@ function BuildWithUs() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            position: 'relative',
+            zIndex: 1
           }}
         >
           Contact <ArrowOutwardIcon style={{ marginLeft: "8px" }} />
