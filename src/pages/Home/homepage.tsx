@@ -1565,7 +1565,7 @@ function Learn() {
         sx={{ display: "flex", justifyContent: "center" }}
       >
         <LearnBox>
-          <Grid container spacing={"24px"}>
+          <Grid container spacing={"24px"} className={"LearnBoxOutterItem"}>
             {data.map((item) => {
               return (
                 <Grid item xs={12} sm={6} md={4} lg={3} onClick={() => window.open(item.link, '_blank')}>
@@ -1588,6 +1588,17 @@ const LearnBox = styled(Box)`
   max-width: 1441px;
   @media (max-width: 767px) {
     padding: 0px 24px 0;
+    width: 100%;
+    overflow-x: auto;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  & .LearnBoxOutterItem {
+    @media (max-width: 767px) {
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
   }
 `;
 const LearnItemBox = styled(Box)`
@@ -1599,6 +1610,9 @@ const LearnItemBox = styled(Box)`
     border: 1px solid #1b1aff;
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
+  }
+  @media (max-width: 767px) {
+    width: calc(100vw - 48px);
   }
 `;
 const LearnImg = styled("img")`
