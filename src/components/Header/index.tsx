@@ -325,7 +325,7 @@ const Header: React.FC = () => {
   return (
     <LayoutHeader
       style={{
-        zIndex: 3,
+        zIndex: 999,
         width: "100vw",
         height: "auto !important",
         background: "transparent",

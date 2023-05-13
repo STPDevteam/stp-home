@@ -88,6 +88,10 @@ import Zeta from "../../assets/images/ecosystem/zeta.png";
 import ZkEVM from "../../assets/images/ecosystem/zkEvm.png";
 import Learn1 from "../../assets/images/home/Learn1.png";
 import Learn2 from "../../assets/images/home/Learn2.png";
+import Learn3 from "../../assets/images/home/Learn3.png";
+import Learn4 from "../../assets/images/home/Learn4.png";
+import Learn5 from "../../assets/images/home/Learn5.png";
+import Learn6 from "../../assets/images/home/Learn6.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper as SwiperClass } from "swiper/types";
@@ -125,7 +129,7 @@ export const HeadBox = styled(Box)`
   padding-left: 252px;
   @media (max-width: 767px) {
     padding-left: 20px;
-    height: auto;
+    height: calc(100vh - 48px);
     padding-bottom: 79px;
   }
 `;
@@ -618,9 +622,9 @@ const InitH2 = styled(Typography)`
   text-align: center;
   color: #777e90;
   @media (max-width: 767px) {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 24px;
-    line-height: 56px;
+    line-height: 24px;
     text-align: left;
   }
 `;
@@ -819,8 +823,23 @@ const InfoConetne = styled(Typography)`
 const IfonBoxs = styled(Box)`
   padding: 0 120px;
   max-width: 1441px;
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
   @media (max-width: 767px) {
-    padding: 80px 24px 0px;
+    & .wrapper {
+      flex-wrap: nowrap;
+      ::-webkit-scrollbar {
+        display: none !important;
+      }
+    }
+    & .wrapper ::-webkit-scrollbar {
+        display: none !important;
+    }
+    display: flex;
+    padding: 32px 24px 0px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
 `;
 const InfoBottomText = styled(Typography)`
@@ -1123,6 +1142,7 @@ function Initiatives() {
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
+            className={'wrapper'}
             container
             mt={isDownSm ? "0" : "24px"}
             spacing={"18px"}
@@ -1478,13 +1498,15 @@ function Learn() {
   const data = [
     {
       imgUrl: Learn2,
-      title: "How to Greate a DAO with Clique",
+      title: "How to Create a DAO with Clique",
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-list-your-project-on-clique",
       content:
         "DAO (Decentralized Autonomous Organization) is a form of organization that leverages blockchain technology to achieve autonomous governance, distribution, and collaboration in a decentralized manner.",
     },
     {
       imgUrl: Learn1,
-      title: "How Al will transform DAOs",
+      title: "How AI will transform DAOs",
+      link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-token",
       content:
         "ChatGPT took the world by storm by proliferating the application of  artificial intelligence (AI) and reinforcement learning (RL). By design, DAOs gravitate towards AI and RL through smart contract technology and activity data that can be trained and reinforced. Intertwining the DAO concept with AI technology creates a paradigm shift in efficiency and capability for governance, while promising transparency and decentralization. The efficacy of this combination of theory and technology is unprecedented.",
     },
@@ -1492,6 +1514,7 @@ function Learn() {
       imgUrl:
         "https://mirror-media.imgix.net/publication-images/H9ECGhjeNNObB57GPZJmp.jpeg?height=1024&width=2048&h=1024&w=2048&auto=compress",
       title: "The Fusion of Fully On-Chain Games and DAOs",
+      link: "",
       content:
         "According to Market Research Report, the global gaming market in 2022 reached $207 billion and will continue to grow to an estimated $343 billion in 2028. This indicates that the gaming market has yet to be exploited and has great potential for investors and developers. Along with the growth of blockchain technology, many GameFi projects will emerge but regardless of traditional or GameFi, both have limitations. However, a fully on-chain game (FOCG) complemented with DAO may be able to compensate for the limitations. This research aims to explore the possibility that FOCG and DAO may create.",
     },
@@ -1499,34 +1522,37 @@ function Learn() {
       imgUrl:
         "https://mirror-media.imgix.net/publication-images/KVdaSrkjtnh-NcgtVRWc-.jpeg?height=256&width=512&h=256&w=512&auto=compress",
       title: "Clique V3 Announcement",
+      link: "",
       content:
         "As revealed in our 2023 roadmap article, STP is focused on its mission to build an ecosystem optimized for DAOs. We are progressing on our early initiative to build a platform of tools & infrastructure that empower DAO creation & management while improving daily workflows and efficiency in Web3. ",
     },
     {
-      imgUrl: Learn2,
-      title: "How to Greate a DAO with Clique",
+      imgUrl: Learn4,
+      title: "How to Create a DAO with Clique",
+      link: "",
       content:
-        "DAO (Decentralized Autonomous Organization) is a form of organization that leverages blockchain technology to achieve autonomous governance, distribution, and collaboration in a decentralized manner.",
+        "Step 1: Go to Clique and connect your Metamask wallet to Polygon network. Then click the 'Add DAO' button on the left ...",
     },
     {
-      imgUrl: Learn1,
-      title: "How Al will transform DAOs",
+      imgUrl: Learn6,
+      title: "How ro create a DAO token on Clique",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3jVwJxEc_dce0mSg2pS8dAPguQYq4O0OFu3OYkdtHa4",
       content:
-        "ChatGPT took the world by storm by proliferating the application of  artificial intelligence (AI) and reinforcement learning (RL). By design, DAOs gravitate towards AI and RL through smart contract technology and activity data that can be trained and reinforced. Intertwining the DAO concept with AI technology creates a paradigm shift in efficiency and capability for governance, while promising transparency and decentralization. The efficacy of this combination of theory and technology is unprecedented.",
+        "Create an ERC-20 token using Clique Go to Creator section and click 'Create Token'. Your wallet...",
     },
     {
-      imgUrl:
-        "https://mirror-media.imgix.net/publication-images/H9ECGhjeNNObB57GPZJmp.jpeg?height=1024&width=2048&h=1024&w=2048&auto=compress",
-      title: "The Fusion of Fully On-Chain Games and DAOs and DAOs",
+      imgUrl: Learn3,
+      title: "How does on-chain governance work on Clique",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/cgI4U8yZY6LVuSWiHsL7C2Ii9Q2H1UlZdyqis-WOlLs",
       content:
-        "According to Market Research Report, the global gaming market in 2022 reached $207 billion and will continue to grow to an estimated $343 billion in 2028. This indicates that the gaming market has yet to be exploited and has great potential for investors and developers. Along with the growth of blockchain technology, many GameFi projects will emerge but regardless of traditional or GameFi, both have limitations. However, a fully on-chain game (FOCG) complemented with DAO may be able to compensate for the limitations. This research aims to explore the possibility that FOCG and DAO may create.",
+        "Enter in a DAO and click ‘Create a Proposal’ to start a community proposal. Community proposals, or regular proposals, are a ...",
     },
     {
-      imgUrl:
-        "https://mirror-media.imgix.net/publication-images/KVdaSrkjtnh-NcgtVRWc-.jpeg?height=256&width=512&h=256&w=512&auto=compress",
-      title: "Clique V3 Announcement",
+      imgUrl: Learn5,
+      title: "How to create a community event with Clique",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/14EyzZxhUTfD04xTImYPN10S4DlVD7W1th4Ww3neeeo",
       content:
-        "As revealed in our 2023 roadmap article, STP is focused on its mission to build an ecosystem optimized for DAOs. We are progressing on our early initiative to build a platform of tools & infrastructure that empower DAO creation & management while improving daily workflows and efficiency in Web3. ",
+        "As a part of Clique’s V2 upgrade, DAO Rewards is a new feature to reward community members and foster engagement ... ",
     },
   ];
   const isDownSm = useBreakpoint("sm");
@@ -1542,7 +1568,7 @@ function Learn() {
           <Grid container spacing={"24px"}>
             {data.map((item) => {
               return (
-                <Grid item xs={12} sm={6} md={4} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3} onClick={() => window.open(item.link, '_blank')}>
                   <LearnItemBox>
                     <LearnImg src={item.imgUrl} />
                     <LearnTitle>{item.title}</LearnTitle>
@@ -1580,6 +1606,15 @@ const LearnImg = styled("img")`
   max-width: 232px;
   height: 122px;
   margin-bottom: 8px;
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48px;
+    line-height: 58px;
+  }
 `;
 const LearnTitle = styled(Typography)`
   height: 48px;
@@ -1714,64 +1749,4 @@ const SocialMedia = styled.img`
 
 export function Footer() {
   return <></>;
-  const footList = [
-    [
-      "Products",
-      "Web3 Community Workspace",
-      "DAO Tooling Aggregator",
-      "Governance SDK",
-    ],
-    ["DAOs", "Mighty Magic DAO", "Bubble DAO", "DeSci DAO", "AI DAO"],
-    ["Resources", "Whitepaper", "Github", "Wiki"],
-  ];
-  return (
-    <Box
-      sx={{ width: "100%", background: "#101010", padding: "120px 105px 80px" }}
-    >
-      <Box
-        display={"flex"}
-        width={"100%"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-      >
-        <img src={StpLogo} />
-        <BlueButton
-          onClick={() =>
-            window.open("https://www.myclique.io/creator", "_blank")
-          }
-        >
-          Build DAO
-        </BlueButton>
-      </Box>
-      <Divider style={{ background: "#757B8A" }} />
-      <Box display={"flex"} gap={"120px"}>
-        {footList.map((coloum, idx) => {
-          return (
-            <Box>
-              {coloum.map((item, i) => {
-                if (i === 0) {
-                  return <FooterH1>{item}</FooterH1>;
-                } else {
-                  return <FooterText>{item}</FooterText>;
-                }
-              })}
-            </Box>
-          );
-        })}
-        <Box>
-          <FooterH1>Ecosystem</FooterH1>
-          <FooterH1>News</FooterH1>
-          <FooterH1>FAQ</FooterH1>
-        </Box>
-      </Box>
-      <Box display={"flex"} justifyContent={"flex-end"} gap={"40px"}>
-        <SocialMedia src={Tele} />
-        <SocialMedia src={Twitter} />
-        <SocialMedia src={Medium} />
-        <SocialMedia src={Cylinder} />
-        <SocialMedia src={Wechat} />
-        <SocialMedia src={Email} />
-      </Box>
-    </Box>
-  );
 }
