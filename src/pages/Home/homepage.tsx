@@ -1551,7 +1551,7 @@ function Learn() {
       title: "How to create a DAO token on Clique",
       link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-token",
       content:
-        "Create an ERC-20 token using Clique Go to Creator section and click 'Create Token'. Your wallet...",
+        "Create an ERC-20 token using Clique Go to Creator section and click 'Create Token'. Your wallet will pop up to switch you to Ethereum mainnet...",
     },
     {
       imgUrl: Learn3,
@@ -1626,7 +1626,7 @@ const LearnItemBox = styled(Box)`
     border-radius: 20px;
   }
   @media (max-width: 767px) {
-    width: calc(100vw - 48px);
+    width: calc(100vw - 96px);
   }
 `;
 const LearnImg = styled("img")`
