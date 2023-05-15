@@ -1416,97 +1416,6 @@ function Ecosystem() {
   );
 }
 
-const LearnBg = styled(Box)`
-  max-width: 275px;
-  background: #ffffff;
-  padding: 24px 40px;
-  gap: 24px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-const LearnText = styled(Typography)`
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 150%;
-  display: flex;
-  align-items: center;
-  color: #777e91;
-`;
-
-// function LearnBox({
-//   icon,
-//   link,
-//   desc,
-// }: {
-//   icon: string;
-//   link: string;
-//   desc: string;
-// }) {
-//   return (
-//     <LearnBg onClick={() => window.open(link, "_blank")}>
-//       <Box display={"flex"} justifyContent={"space-between"}>
-//         <img src={icon} />
-//         <img src={ArrowUpRight} style={{ height: "fit-content" }} />
-//       </Box>
-//       <LearnText>{desc}</LearnText>
-//     </LearnBg>
-//   );
-// }
-
-// function Learn() {
-//   const isDownSm = useBreakpoint("sm");
-//   const data = [
-//     {
-//       icon: LearnCreateDao,
-//       link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-list-your-project-on-clique",
-//       desc: "How to create a DAO with Clique",
-//     },
-//     {
-//       icon: LearnCreateToken,
-//       link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-token",
-//       desc: "How to create a DAO token on Clique",
-//     },
-//     {
-//       icon: LearnOnChain,
-//       link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-proposal",
-//       desc: "How Does On-chain Governance Work on Clique",
-//     },
-//     {
-//       icon: LearnCommunity,
-//       link: "https://stp-dao.gitbook.io/verse-network/clique/dao-rewards",
-//       desc: "How to Create a Community Event with Clique",
-//     },
-//   ];
-//   return (
-//     <Box sx={{ background: "#F5F8FE", width: "100%", paddingBottom: "120px" }}>
-//       <InitH1>Learn</InitH1>
-//       <Stack
-//         m={"48px auto 0"}
-//         width={"fit-content"}
-//         direction={isDownSm ? "column" : "row"}
-//         spacing={"24px"}
-//       >
-//         {data.map((item, idx) => (
-//           <LearnBox
-//             key={idx}
-//             icon={item.icon}
-//             link={item.link}
-//             desc={item.desc}
-//           />
-//         ))}
-//       </Stack>
-//     </Box>
-//   );
-// }
-
 function Learn() {
   const data = [
     {
@@ -1632,8 +1541,12 @@ const LearnItemBox = styled(Box)`
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
   }
+
   @media (max-width: 767px) {
-    width: calc(100vw - 109px);
+    min-width: 264px;
+  }
+  @media (max-width: 340px) {
+    min-width: calc(100vw - 70px);
   }
 `;
 const LearnImg = styled("img")`
