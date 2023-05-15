@@ -834,7 +834,7 @@ const IfonBoxs = styled(Box)`
       }
     }
     & .wrapper ::-webkit-scrollbar {
-        display: none !important;
+      display: none !important;
     }
     display: flex;
     padding: 32px 24px 0px;
@@ -925,7 +925,7 @@ function InfoBox({
   item1,
   item2,
   item3,
-  link
+  link,
 }: {
   avatar: string;
   name: string;
@@ -934,13 +934,13 @@ function InfoBox({
   item1: string;
   item2: string;
   item3: string;
-  link?: string
+  link?: string;
 }) {
   return (
     <Box
-      onClick={()=> link && window.open(link)}
+      onClick={() => link && window.open(link)}
       sx={{
-        cursor: 'pointer',
+        cursor: "pointer",
         padding: "24px",
         backgroundColor: "#fff",
         border: "1px solid #A3A3A3",
@@ -1027,7 +1027,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
       name: "Bubble",
       group: "@bubble",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9',
+      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
       comment:
         "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
       item1: "12.7K",
@@ -1038,7 +1038,7 @@ function Initiatives() {
       avatar: "https://preapiv2.myclique.io/static/1665737932735871572.png",
       name: "STP",
       group: "@stp",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0x39fa22b4852119c62aabdd4523ac587481943c61',
+      link: "https://www.myclique.io/governance/daoInfo/137/0x39fa22b4852119c62aabdd4523ac587481943c61",
       comment:
         "Verse Network by STP brings a full suite of native tools and infrastructures facilitating efficient decentralized decision-making for users, communities and organizations.",
       item1: "21k",
@@ -1049,7 +1049,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1665737754979172019.png",
       name: "Sonet",
       group: "@sonet",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08',
+      link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
       comment:
         "Sonet is an open-source platform providing AWS-like services across Web2 and Web3 applications",
       item1: "10.4k",
@@ -1061,7 +1061,7 @@ function Initiatives() {
       avatar: "https://preapiv2.myclique.io/static/1665738772191379494.png",
       name: "Deesse",
       group: "@deesse",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0xb3aaa786e49cf3e516447bf79cea3cdd679e053d',
+      link: "https://www.myclique.io/governance/daoInfo/137/0xb3aaa786e49cf3e516447bf79cea3cdd679e053d",
       comment: "Enjoy to earn! Participate in Deesse governance with STPT",
       item1: "10.7k",
       item2: "32",
@@ -1072,7 +1072,7 @@ function Initiatives() {
       avatar: "https://preapiv2.myclique.io/static/1666071756924457182.png",
       name: "Sign",
       group: "@sign",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0x15abda2d7479a62467e3075edc37d1c426bf0a65',
+      link: "https://www.myclique.io/governance/daoInfo/137/0x15abda2d7479a62467e3075edc37d1c426bf0a65",
       comment:
         "Web3.0 platform for Metaverse Games and Gamers. Participate in Sign governance with STPT",
       item1: "11.9k",
@@ -1083,7 +1083,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
       name: "ChatGPT DAO",
       group: "@STP",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7',
+      link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
       comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
       item1: "1.5k",
       item2: "4",
@@ -1093,7 +1093,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1669696639866919495.jpg",
       name: "SpeakingEnglishDAO",
       group: "@speakingenglishdao",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0xc7c74e9301e8e1aca0ae8f27648131abcc34a215',
+      link: "https://www.myclique.io/governance/daoInfo/137/0xc7c74e9301e8e1aca0ae8f27648131abcc34a215",
       comment:
         "A group of non-English speakers to learn English and discuss freely",
       item1: "540",
@@ -1104,7 +1104,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1676425557741808633.png",
       name: "Turkey Disaster Relief DAO",
       group: "@turkeydisasterreliefdao",
-      link: 'https://www.myclique.io/governance/daoInfo/137/0xcdf08a2fc664edf65d853e594e2dff6b283db2e1',
+      link: "https://www.myclique.io/governance/daoInfo/137/0xcdf08a2fc664edf65d853e594e2dff6b283db2e1",
       comment:
         "This DAO aims to help the Turkish people affected by the earthquake return to normal life and rebuild their lives as soon as possible.",
       item1: "861",
@@ -1154,7 +1154,7 @@ function Initiatives() {
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
-            className={'wrapper'}
+            className={"wrapper"}
             container
             mt={isDownSm ? "0" : "24px"}
             spacing={"18px"}
@@ -1581,7 +1581,14 @@ function Learn() {
           <Grid container spacing={"24px"} className={"LearnBoxOutterItem"}>
             {data.map((item) => {
               return (
-                <Grid item xs={12} sm={6} md={4} lg={3} onClick={() => window.open(item.link, '_blank')}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  onClick={() => window.open(item.link, "_blank")}
+                >
                   <LearnItemBox>
                     <LearnImg src={item.imgUrl} />
                     <LearnTitle>{item.title}</LearnTitle>
@@ -1660,7 +1667,7 @@ const LearnTitle = styled(Typography)`
   -webkit-line-clamp: 2;
 `;
 const LearnContent = styled(Typography)`
-  max-height: 84px;
+  height: 84px;
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
@@ -1723,8 +1730,8 @@ function BuildWithUs() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            position: 'relative',
-            zIndex: 1
+            position: "relative",
+            zIndex: 1,
           }}
         >
           Contact <ArrowOutwardIcon style={{ marginLeft: "8px" }} />
