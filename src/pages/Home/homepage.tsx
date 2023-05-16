@@ -1149,7 +1149,7 @@ function Initiatives() {
     <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
       <InitH1>Leading DAO Initiatives</InitH1>
       <InitH2>
-        We are the place for builders to launch their Web3 Projects{" "}
+        We are the place for builders to launch their Web3 Projects.
       </InitH2>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
@@ -1512,6 +1512,7 @@ function Learn() {
     </Box>
   );
 }
+
 const LearnBox = styled(Box)`
   padding: 0 120px;
   max-width: 1441px;

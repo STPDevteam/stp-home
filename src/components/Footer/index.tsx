@@ -57,7 +57,7 @@ const Footer: React.FC = () =>  {
                     <a target="_blank" href="https://t.me/STPofficial"><TelegramLogo/><span>Telegram</span></a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://twitter.com/STP_Networks"><TwitterLogo/><span>Twitter</span></a>
+                    <a target="_blank" href="https://twitter.com/STP_Network"><TwitterLogo/><span>Twitter</span></a>
                 </li>
                 {/* <li>
                     <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>

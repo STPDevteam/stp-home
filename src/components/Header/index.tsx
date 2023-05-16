@@ -352,6 +352,9 @@ const Header: React.FC = () => {
           className="Logo"
           src={currentPath.pathname.includes("dao") ? DarkLogo : Logo}
           alt="logo"
+          onClick={() => {
+            history.push("/");
+          }}
         />
         <CSSTransition
           in={!isSmallScreen || open}
