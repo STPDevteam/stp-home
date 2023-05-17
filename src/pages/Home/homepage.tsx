@@ -292,12 +292,18 @@ const InfraBoxBg = styled(Box)`
 `;
 
 const InfraBoxTitle = styled(Typography)`
+  height: 64px;
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
   color: #23262f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   @media (max-width: 767px) {
     font-size: 20px;
     line-height: 32px;
@@ -305,6 +311,7 @@ const InfraBoxTitle = styled(Typography)`
 `;
 
 const InfraBoxContent = styled(Typography)`
+  max-height: 72px;
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
@@ -312,6 +319,11 @@ const InfraBoxContent = styled(Typography)`
   line-height: 24px;
   margin-top: 11px;
   color: #777e91;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   @media (max-width: 767px) {
     font-size: 14px;
     line-height: 150%;
