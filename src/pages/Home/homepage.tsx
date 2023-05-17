@@ -1544,11 +1544,12 @@ const LearnBox = styled(Box)`
   }
 `;
 const LearnItemBox = styled(Box)`
-  padding: 16px;
+  padding: 24px 21px;
   cursor: pointer;
   border: 1px solid #a3a3a3;
   border-radius: 20px;
   background-color: #ffffff;
+  display: grid;
   &:hover {
     border: 1px solid #1b1aff;
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
@@ -1564,8 +1565,8 @@ const LearnItemBox = styled(Box)`
 `;
 const LearnImg = styled("img")`
   width: 100%;
-  max-width: 232px;
-  height: 122px;
+  height: 111px;
+  object-fit: cover;
   margin-bottom: 8px;
   @media (max-width: 767px) {
     width: 100%;
