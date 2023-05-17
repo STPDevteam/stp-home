@@ -1499,26 +1499,21 @@ function Learn() {
         sx={{ display: "flex", justifyContent: "center" }}
       >
         <LearnBox>
-          <Grid container spacing={"24px"} className={"LearnBoxOutterItem"}>
+          <Box sx={{
+            display: {xs:'flex', sm: 'grid'},
+            gridTemplateColumns: {lg: '1fr 1fr 1fr 1fr', md: '1fr 1fr 1fr', sm: '1fr 1fr'},
+            gap: '24px'
+          }} className={"LearnBoxOutterItem"}>
             {data.map((item) => {
               return (
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  onClick={() => window.open(item.link, "_blank")}
-                >
-                  <LearnItemBox>
-                    <LearnImg src={item.imgUrl} />
-                    <LearnTitle>{item.title}</LearnTitle>
-                    <LearnContent>{item.content}</LearnContent>
-                  </LearnItemBox>
-                </Grid>
+                <LearnItemBox>
+                  <LearnImg src={item.imgUrl} />
+                  <LearnTitle>{item.title}</LearnTitle>
+                  <LearnContent>{item.content}</LearnContent>
+                </LearnItemBox>
               );
             })}
-          </Grid>
+          </Box>
         </LearnBox>
       </Box>
     </Box>
@@ -1526,8 +1521,8 @@ function Learn() {
 }
 
 const LearnBox = styled(Box)`
-  padding: 0 120px;
-  max-width: 1441px;
+  padding: 0 20px;
+  max-width: 1169px;
   @media (max-width: 767px) {
     padding: 0px 24px 0;
     width: 100%;
@@ -1547,6 +1542,8 @@ const LearnItemBox = styled(Box)`
   padding: 24px 21px;
   cursor: pointer;
   border: 1px solid #a3a3a3;
+  width: 264px;
+  height: 310px;
   border-radius: 20px;
   background-color: #ffffff;
   display: grid;
