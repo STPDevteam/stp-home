@@ -291,6 +291,7 @@ export const EcosystemDataList = [
     {
         img: CoingeckoImg,
         website: 'https://coingecko.com/',
+        category: '',
         sector: 'Infrastructure',
         desc: 'CoinGecko',
         name: 'CoinGecko'
@@ -396,7 +397,7 @@ const Ecosystem: React.FC = () => {
                             <img src={item.img} alt="" style={{maxWidth: '70%'}} />
                         </div>
                         <div className='item_type'>
-                            <div className='type_category'>{item.category}</div>
+                            {item.category && <div className='type_category'>{item.category}</div>}
                             { item.sector && <div className='type_sector'>{item.sector}</div> }
                         </div>
                         {/* <div className='item_desc'>{item.desc}</div> */}

@@ -349,7 +349,7 @@ function Platforms({
       >
         {ecosystemDisplay.map((dao, idx) => {
           return (
-            <Grid item xs={12} md={4} width={"100%"}>
+            <Grid item xs={12} key={dao.name} md={4} width={"100%"}>
               <PlatformBox>
                 <Row justifyContent={"space-between"} width={"100%"}>
                   <img
@@ -370,7 +370,7 @@ function Platforms({
                 <Row gap={"4px"} mt={"24px"}>
                   {dao.category && (
                     <TagBox
-                      key={idx}
+                      key={dao.name+idx}
                       sx={{
                         background:
                           TagColors[
