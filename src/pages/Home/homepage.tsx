@@ -1729,7 +1729,7 @@ const SocialMedia = styled.img`
 
 export function Footer() {
   const isDownSm = useBreakpoint("sm");
-
+  const history = useHistory()
   // return <></>;
   const footList = [
     [
@@ -1789,8 +1789,8 @@ export function Footer() {
           })}
           <Box>
             <FooterH1>STP Ecosystem</FooterH1>
-            <FooterH1>DAO Booster Program</FooterH1>
-            <FooterH1>News</FooterH1>
+            <FooterH1 style={{ cursor: 'pointer' }} onClick={() => history.push('/dao')}>DAO Booster Program</FooterH1>
+            <FooterH1 style={{ cursor: 'pointer' }} onClick={() => window.open('https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1', '_blank')}>News</FooterH1>
           </Box>
         </Box>
         </>
