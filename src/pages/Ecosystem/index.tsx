@@ -35,6 +35,7 @@ import PushPro from '../../assets/images/ecosystem/pushPro.png';
 import UpBit from '../../assets/images/ecosystem/upbit.png';
 import Zeta from '../../assets/images/ecosystem/zeta.png';
 import ZkEVM from '../../assets/images/ecosystem/zkEvm.png';
+import CoingeckoImg from '../../assets/images/home/coingecko.svg';
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
@@ -45,7 +46,7 @@ export const EcosystemDataList = [
         category: 'Integration',
         sector: 'Infrastructure',
         desc: 'BNB Chain',
-        name: 'BNB Chain'   
+        name: 'BNB Chain'
     },
     {
         img: Polygon,
@@ -287,6 +288,13 @@ export const EcosystemDataList = [
         desc: 'CoinDCX',
         name: 'CoinDCX'
     },
+    {
+        img: CoingeckoImg,
+        website: 'https://coingecko.com/',
+        sector: 'Infrastructure',
+        desc: 'CoinGecko',
+        name: 'CoinGecko'
+    },
 ]
 export const categoryFilterDataList = [
     'All',
@@ -309,7 +317,7 @@ const Ecosystem: React.FC = () => {
     const [resultNum, setResultNum] = useState(ecosystemDisplay.length)
     const history = useHistory();
     function existOneIncludeTwo(oneStr: string, twoStr: string) {
-        
+
         return oneStr.toUpperCase().includes(twoStr.toUpperCase());
     }
     const onSearch = (value: string) => {
@@ -335,7 +343,7 @@ const Ecosystem: React.FC = () => {
     }, [categorySelect, sectorSelect])
     useEffect(()=>{
         setResultNum(ecosystemDisplay.length)
-        
+
     },[ecosystemDisplay])
 
     return <div className="ecosystem">
@@ -385,7 +393,7 @@ const Ecosystem: React.FC = () => {
                 {ecosystemDisplay.map((item: any) => {
                     return <div className='Ecosystem_item'>
                         <div className='item_img'>
-                            <img src={item.img} alt="" />
+                            <img src={item.img} alt="" style={{maxWidth: '70%'}} />
                         </div>
                         <div className='item_type'>
                             <div className='type_category'>{item.category}</div>

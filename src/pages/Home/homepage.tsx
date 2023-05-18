@@ -1506,7 +1506,7 @@ function Learn() {
           }} className={"LearnBoxOutterItem"}>
             {data.map((item) => {
               return (
-                <LearnItemBox>
+                <LearnItemBox onClick={()=>(window.open(item.link))}>
                   <LearnImg src={item.imgUrl} />
                   <LearnTitle>{item.title}</LearnTitle>
                   <LearnContent>{item.content}</LearnContent>

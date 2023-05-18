@@ -45,6 +45,7 @@ import TheGraph from "../../assets/images/ecosystem/svg/platform/the-graph.svg";
 import UpBit from "../../assets/images/ecosystem/svg/platform/up-bit.svg";
 import VoltSwap from "../../assets/images/ecosystem/svg/platform/volt-swap.svg";
 import Zetachain from "../../assets/images/ecosystem/svg/platform/zetachain.svg";
+import coingecko from "../../assets/images/home/coingecko.png";
 import {
   categoryFilterDataList,
   EcosystemDataList,
@@ -353,7 +354,7 @@ function Platforms({
                 <Row justifyContent={"space-between"} width={"100%"}>
                   <img
                     src={dao.img}
-                    style={{ height: isDownSm ? "48px" : "auto" }}
+                    style={{ height: isDownSm ? "48px" : "auto", maxWidth: '70%' }}
                   />
                   <Box
                     sx={{
