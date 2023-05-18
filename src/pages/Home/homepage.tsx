@@ -96,10 +96,11 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper as SwiperClass } from "swiper/types";
 import Item from "antd/lib/list/Item";
+import WechatQR from '../../assets/images/home/QR.jpeg'
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
-  width: 100vw;
+  width: 100%;
   top: 0;
   display: flex;
   align-items: center;
@@ -477,6 +478,9 @@ function Infrastructure() {
       width={"100%"}
       display={"flex"}
       justifyContent={"center"}
+      sx={{
+        overflowX: 'hidden'
+      }}
     >
       {!isDownSm && <InfraStar src={SmallStar} />}
       <Ellipse src={InfEllipse1} />
@@ -1613,7 +1617,7 @@ const BuildBox = styled(Box)`
   background: #1b1aff;
   @media (max-width: 767px) {
     padding: 120px 80px 118px 20px;
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
   }
 `;
 
@@ -1669,6 +1673,16 @@ function BuildWithUs() {
   );
 }
 
+const FooterBox = styled(Box)`
+  width: 100%;
+  background: #101010;
+  padding: 120px 105px 80px;
+  overflow-x: hidden;
+  @media (max-width: 767px) {
+    padding: 68px 20px 118px 20px;
+  }
+`;
+
 export const BlueButton = styled(Button)`
   display: flex;
   flex-direction: row;
@@ -1681,6 +1695,10 @@ export const BlueButton = styled(Button)`
   border-radius: 8px;
   font-weight: 700;
   border: 0;
+  @media (max-width: 767px) {
+    width: 204px;
+    height: 48px;
+  }
 `;
 
 const FooterH1 = styled(Typography)`
@@ -1700,6 +1718,7 @@ const FooterText = styled(Typography)`
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
+  cursor: pointer;
   color: #d6d6d6;
 `;
 
@@ -1709,28 +1728,40 @@ const SocialMedia = styled.img`
 `;
 
 export function Footer() {
+  const isDownSm = useBreakpoint("sm");
+
   // return <></>;
   const footList = [
     [
       "Products",
-      "Web3 Community Workspace",
-      "DAO Tooling Aggregator",
-      "Governance SDK",
+      "Clique Workspace",
+      "Clique DApp Store",
+      "Clique SDK",
     ],
-    ["DAOs", "Mighty Magic DAO", "Bubble DAO", "DeSci DAO", "AI DAO"],
-    ["Resources", "Whitepaper", "Github", "Wiki"],
+    ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
+    ["Resources", "Developer Portal", "How to guides"],
+  ];
+  const footListLink = [
+    [
+      "Products",
+      "https://www.myclique.io/governance",
+      "https://www.myclique.io/tools",
+      "https://www.npmjs.com/package/@myclique/governance-sdk",
+    ],
+    ["Leading DAOs", "https://www.myclique.io/page/137/0x39fa22b4852119c62aabdd4523ac587481943c61", "https://www.myclique.io/page/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9", "https://www.myclique.io/page/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08", "https://www.myclique.io/page/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7"],
+    ["Resources", "https://github.com/STPDevteam", "https://app.gitbook.com/o/ZWYRirKPO2Zp0EdaX5DP/s/b1qjST5Q4vT2MJ9VdeRC/stp-network/master"],
   ];
   return (
-    <Box
-      sx={{ width: "100%", background: "#101010", padding: "120px 105px 80px" }}
-    >
+    <FooterBox>
       <Box
         display={"flex"}
         width={"100%"}
+        flexDirection={isDownSm ? 'column' : 'row'}
         justifyContent={"space-between"}
         alignItems={"center"}
+        gap={isDownSm ? '48px' : 0}
       >
-        <img src={StpLogo} />
+        <img src={StpLogo} alt="" />
         <BlueButton
           onClick={() =>
             window.open("https://www.myclique.io/creator", "_blank")
@@ -1739,35 +1770,52 @@ export function Footer() {
           Build DAO
         </BlueButton>
       </Box>
-      <Divider style={{ background: "#757B8A" }} />
-      <Box display={"flex"} gap={"120px"}>
-        {footList.map((coloum, idx) => {
-          return (
-            <Box>
-              {coloum.map((item, i) => {
-                if (i === 0) {
-                  return <FooterH1>{item}</FooterH1>;
-                } else {
-                  return <FooterText>{item}</FooterText>;
-                }
-              })}
-            </Box>
-          );
-        })}
-        <Box>
-          <FooterH1>Ecosystem</FooterH1>
-          <FooterH1>News</FooterH1>
-          <FooterH1>FAQ</FooterH1>
+      {!isDownSm ? (
+        <>
+        <Divider style={{ background: "#757B8A" }} />
+        <Box display={"flex"} gap={isDownSm ? '20px' : '120px'}>
+          {footList.map((coloum, idx) => {
+            return (
+              <Box>
+                {coloum.map((item, i) => {
+                  if (i === 0) {
+                    return <FooterH1>{item}</FooterH1>;
+                  } else {
+                    return <FooterText onClick={() => window.open(footListLink[idx][i], '_blank')}>{item}</FooterText>;
+                  }
+                })}
+              </Box>
+            );
+          })}
+          <Box>
+            <FooterH1>STP Ecosystem</FooterH1>
+            <FooterH1>DAO Booster Program</FooterH1>
+            <FooterH1>News</FooterH1>
+          </Box>
         </Box>
+        </>
+      ): ''}
+      <Box display={"flex"} gap={"40px"} sx={{
+        justifyContent: isDownSm ? 'center': 'flex-end',
+        marginTop: isDownSm ? '60px' : 0,
+        '& img': {
+          cursor: 'pointer'
+        }
+      }}>
+        <SocialMedia src={Tele} onClick={() => window.open('https://t.me/STPofficial', '_blank')} />
+        <SocialMedia src={Twitter} onClick={() => window.open('https://twitter.com/STP_Network', '_blank')} />
+        <SocialMedia src={Medium} onClick={() => window.open('https://medium.com/@versenetwork', '_blank')} />
+        <SocialMedia src={Cylinder} onClick={() => window.open('https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1', '_blank')} />
+        <SocialMedia src={Wechat} onClick={() => window.open(WechatQR, '_blank')} />
+        <SocialMedia src={Email} onClick={() => window.open('mailto:contact@stp.network', '_blank')} />
       </Box>
-      <Box display={"flex"} justifyContent={"flex-end"} gap={"40px"}>
-        <SocialMedia src={Tele} />
-        <SocialMedia src={Twitter} />
-        <SocialMedia src={Medium} />
-        <SocialMedia src={Cylinder} />
-        <SocialMedia src={Wechat} />
-        <SocialMedia src={Email} />
-      </Box>
-    </Box>
+      {isDownSm ? <Box display={"flex"} justifyContent={'center'} sx={{
+        marginTop: '60px',
+        color: '#757B8A',
+        fontSize: 14,
+        fontWeight: 500,
+        fontFamily: 'Inter'
+      }}>© STP All Rights Reserved</Box> : ''}
+    </FooterBox>
   );
 }
