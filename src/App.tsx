@@ -4,7 +4,7 @@ import { Layout } from "antd";
 import Product from "./pages/Product";
 import Tech from "./pages/Tech";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import {Footer} from "./pages/Home/homepage";
 import "./App.less";
 import Homepage from "./pages/Home/homepage";
 import EcosystemPage from "./pages/Ecosystem/EcosystemPage";
@@ -33,7 +33,7 @@ function App() {
                 {/* <Route component={Developers} exact path="/developers" /> */}
               </Switch>
             </Content>
-            <Footer />
+            {/* <Footer /> */}
           </HashRouter>
         </Suspense>
       </StrictMode>
