@@ -1709,5 +1709,65 @@ const SocialMedia = styled.img`
 `;
 
 export function Footer() {
-  return <></>;
+  // return <></>;
+  const footList = [
+    [
+      "Products",
+      "Web3 Community Workspace",
+      "DAO Tooling Aggregator",
+      "Governance SDK",
+    ],
+    ["DAOs", "Mighty Magic DAO", "Bubble DAO", "DeSci DAO", "AI DAO"],
+    ["Resources", "Whitepaper", "Github", "Wiki"],
+  ];
+  return (
+    <Box
+      sx={{ width: "100%", background: "#101010", padding: "120px 105px 80px" }}
+    >
+      <Box
+        display={"flex"}
+        width={"100%"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
+        <img src={StpLogo} />
+        <BlueButton
+          onClick={() =>
+            window.open("https://www.myclique.io/creator", "_blank")
+          }
+        >
+          Build DAO
+        </BlueButton>
+      </Box>
+      <Divider style={{ background: "#757B8A" }} />
+      <Box display={"flex"} gap={"120px"}>
+        {footList.map((coloum, idx) => {
+          return (
+            <Box>
+              {coloum.map((item, i) => {
+                if (i === 0) {
+                  return <FooterH1>{item}</FooterH1>;
+                } else {
+                  return <FooterText>{item}</FooterText>;
+                }
+              })}
+            </Box>
+          );
+        })}
+        <Box>
+          <FooterH1>Ecosystem</FooterH1>
+          <FooterH1>News</FooterH1>
+          <FooterH1>FAQ</FooterH1>
+        </Box>
+      </Box>
+      <Box display={"flex"} justifyContent={"flex-end"} gap={"40px"}>
+        <SocialMedia src={Tele} />
+        <SocialMedia src={Twitter} />
+        <SocialMedia src={Medium} />
+        <SocialMedia src={Cylinder} />
+        <SocialMedia src={Wechat} />
+        <SocialMedia src={Email} />
+      </Box>
+    </Box>
+  );
 }
