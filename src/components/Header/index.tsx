@@ -104,7 +104,7 @@ export function ProductMenu({
     },
     {
       icon: IconDapp,
-      title: "Clique DApp Store",
+      title: "Clique Tools",
       link: "",
       text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
     },
@@ -182,6 +182,12 @@ const resourcesMenu = (
     {/* <HeaderLink target="_blank" href="/Verse Network WP.pdf">
       Whitepaper
     </HeaderLink> */}
+    <HeaderLink
+      href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"
+      target="_blank"
+    >
+      News
+    </HeaderLink>
     <HeaderLink href="https://github.com/STPDevteam" target="_blank">
       Github
     </HeaderLink>
@@ -226,6 +232,15 @@ const daoMenu = () => {
     </HeaderMenuBox>
   );
 };
+const DaoLink = () => {
+  return (
+    <HeaderMenuBox>
+      <HeaderLink target="_blank" href="https://www.myclique.io/daos">
+        DAOs
+      </HeaderLink>
+    </HeaderMenuBox>
+  );
+};
 export const MenuList: {
   title: string;
   subtitle?: ReactJSXElement;
@@ -239,22 +254,27 @@ export const MenuList: {
     title: "Products",
     subtitle: <ProductMenu />,
   },
+  // {
+  //   title: "DAOs",
+  //   subtitle: daoMenu(),
+  // },
   {
     title: "DAOs",
-    subtitle: daoMenu(),
+    link: "https://www.myclique.io/daos",
   },
-  {
-    title: "Resources",
-    subtitle: resourcesMenu,
-  },
+
   {
     title: "Ecosystem",
     subtitle: ecosystemMenu,
   },
   {
-    title: "News",
-    link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+    title: "Resources",
+    subtitle: resourcesMenu,
   },
+  // {
+  //   title: "News",
+  //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+  // },
 ];
 
 const Header: React.FC = () => {
@@ -379,12 +399,15 @@ const Header: React.FC = () => {
                 <Arrow />
               </a>
             </Dropdown>
-            <Dropdown overlay={daoMenu} trigger={["click"]}>
+            <a href="https://www.myclique.io/daos" target="_blank">
+              DAOs
+            </a>
+            {/* <Dropdown overlay={daoMenu} trigger={["click"]}>
               <a>
                 DAOs
                 <Arrow />
               </a>
-            </Dropdown>
+            </Dropdown> */}
             {/*<Link*/}
             {/*  to="/tech"*/}
             {/*  className={location.pathname === "/tech" ? "active" : ""}*/}
@@ -392,23 +415,23 @@ const Header: React.FC = () => {
             {/*  Tech*/}
             {/*</Link>*/}
             {/* <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link> */}
-            <Dropdown overlay={resourcesMenu} trigger={["click"]}>
-              <a>
-                Resources <Arrow />
-              </a>
-            </Dropdown>
             <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
               <a>
                 Ecosystem <Arrow />
               </a>
             </Dropdown>
+            <Dropdown overlay={resourcesMenu} trigger={["click"]}>
+              <a>
+                Resources <Arrow />
+              </a>
+            </Dropdown>
             {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
-            <a
+            {/* <a
               href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"
               target="_blank"
             >
               News
-            </a>
+            </a> */}
             <GreenBtn
               onClick={() =>
                 window.open("https://www.myclique.io/creator", "_blank")

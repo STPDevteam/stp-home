@@ -96,7 +96,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper as SwiperClass } from "swiper/types";
 import Item from "antd/lib/list/Item";
-import WechatQR from '../../assets/images/home/QR.jpeg'
+import WechatQR from "../../assets/images/home/QR.jpeg";
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -479,7 +479,7 @@ function Infrastructure() {
       display={"flex"}
       justifyContent={"center"}
       sx={{
-        overflowX: 'hidden'
+        overflowX: "hidden",
       }}
     >
       {!isDownSm && <InfraStar src={SmallStar} />}
@@ -1040,17 +1040,6 @@ function Initiatives() {
   const isDownSm = useBreakpoint("sm");
   const dataList = [
     {
-      avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
-      name: "Bubble",
-      group: "@bubble",
-      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
-      comment:
-        "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
-      item1: "12.7K",
-      item2: "57",
-      item3: "0",
-    },
-    {
       avatar: "https://preapiv2.myclique.io/static/1665737932735871572.png",
       name: "STP",
       group: "@stp",
@@ -1072,49 +1061,61 @@ function Initiatives() {
       item2: "36",
       item3: "0",
     },
+    {
+      avatar: "https://apiv2.myclique.io/static/1666818558133868215.jpg",
+      name: "Mighty Magic DAO",
+      group: "@magicly",
+      link: "https://www.myclique.io/page/137/0x36a6b5ab0905a378d9d68ef1875324ccadc102b1",
+      comment:
+        "Here at Magicly, we teach you how to become professional magicians. Unlocking the truth and learning the secrets of the magician.",
+      item1: "685",
+      item2: "17",
+      item3: "4",
+    },
+    {
+      avatar: "https://apiv2.myclique.io/static/1684303444667989296.jpg",
+      name: "Paladins DAO",
+      group: "@paladinsdao",
+      link: "https://www.myclique.io/page/137/0x9f1ba5f0cd098e8dcd0a733e7118ff5bef500a46",
+      comment:
+        "Paladins DAO is a citizens owned Esports team and community consisting of every contributor type across the gaming ecosystem. Paladins aim to revolutionize ownership and...",
+      item1: "2",
+      item2: "0",
+      item3: "0",
+    },
+    {
+      avatar: "https://preapiv2.myclique.io/static/1666074762290076677.jpeg",
+      name: "Alpha DAO",
+      group: "@alphadao",
+      link: "https://www.myclique.io/page/137/0xf88037bae5e6faceb5d7c723abe2bdf938f687bd",
+      comment:
+        "Alpha DAO is an exclusive community of top Web3 investors, founders, and builders providing access to proprietary insights and deal flow.",
+      item1: "2.7k",
+      item2: "0",
+      item3: "0",
+    },
+    {
+      avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
+      name: "Bubble",
+      group: "@bubble",
+      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
+      comment:
+        "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
+      item1: "12.7K",
+      item2: "57",
+      item3: "0",
+    },
 
     {
       avatar: "https://preapiv2.myclique.io/static/1665738772191379494.png",
-      name: "Deesse",
-      group: "@deesse",
-      link: "https://www.myclique.io/governance/daoInfo/137/0xb3aaa786e49cf3e516447bf79cea3cdd679e053d",
-      comment: "Enjoy to earn! Participate in Deesse governance with STPT",
-      item1: "10.7k",
-      item2: "32",
-      item3: "0",
-    },
-
-    {
-      avatar: "https://preapiv2.myclique.io/static/1666071756924457182.png",
-      name: "Sign",
-      group: "@sign",
-      link: "https://www.myclique.io/governance/daoInfo/137/0x15abda2d7479a62467e3075edc37d1c426bf0a65",
+      name: "GoldenDAO",
+      group: "@goldendao",
+      link: "https://www.myclique.io/page/137/0xaec5aa4a0a769855b776a18b6288a83b26c668ff",
       comment:
-        "Web3.0 platform for Metaverse Games and Gamers. Participate in Sign governance with STPT",
-      item1: "11.9k",
-      item2: "20",
+        "Our mission is to launch a DAO to collectively advance AAPI solidarity and empowerment through real world events + gatherings, and web3 infrastructure + initiatives.",
+      item1: "1.4k",
+      item2: "3",
       item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1675906764202853769.png",
-      name: "ChatGPT DAO",
-      group: "@STP",
-      link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
-      comment: "The Web3.0 space for all ChatGPT & AI enthusiasts",
-      item1: "1.5k",
-      item2: "4",
-      item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1669696639866919495.jpg",
-      name: "SpeakingEnglishDAO",
-      group: "@speakingenglishdao",
-      link: "https://www.myclique.io/governance/daoInfo/137/0xc7c74e9301e8e1aca0ae8f27648131abcc34a215",
-      comment:
-        "A group of non-English speakers to learn English and discuss freely",
-      item1: "540",
-      item2: "38",
-      item3: "3",
     },
     {
       avatar: "https://apiv2.myclique.io/static/1676425557741808633.png",
@@ -1503,14 +1504,21 @@ function Learn() {
         sx={{ display: "flex", justifyContent: "center" }}
       >
         <LearnBox>
-          <Box sx={{
-            display: {xs:'flex', sm: 'grid'},
-            gridTemplateColumns: {lg: '1fr 1fr 1fr 1fr', md: '1fr 1fr 1fr', sm: '1fr 1fr'},
-            gap: '24px'
-          }} className={"LearnBoxOutterItem"}>
+          <Box
+            sx={{
+              display: { xs: "flex", sm: "grid" },
+              gridTemplateColumns: {
+                lg: "1fr 1fr 1fr 1fr",
+                md: "1fr 1fr 1fr",
+                sm: "1fr 1fr",
+              },
+              gap: "24px",
+            }}
+            className={"LearnBoxOutterItem"}
+          >
             {data.map((item) => {
               return (
-                <LearnItemBox onClick={()=>(window.open(item.link))}>
+                <LearnItemBox onClick={() => window.open(item.link)}>
                   <LearnImg src={item.imgUrl} />
                   <LearnTitle>{item.title}</LearnTitle>
                   <LearnContent>{item.content}</LearnContent>
@@ -1729,15 +1737,10 @@ const SocialMedia = styled.img`
 
 export function Footer() {
   const isDownSm = useBreakpoint("sm");
-  const history = useHistory()
+  const history = useHistory();
   // return <></>;
   const footList = [
-    [
-      "Products",
-      "Clique Workspace",
-      "Clique DApp Store",
-      "Clique SDK",
-    ],
+    ["Products", "Clique Workspace", "Clique DApp Store", "Clique SDK"],
     ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
     ["Resources", "Developer Portal", "How to guides"],
   ];
@@ -1748,18 +1751,28 @@ export function Footer() {
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
     ],
-    ["Leading DAOs", "https://www.myclique.io/page/137/0x39fa22b4852119c62aabdd4523ac587481943c61", "https://www.myclique.io/page/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9", "https://www.myclique.io/page/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08", "https://www.myclique.io/page/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7"],
-    ["Resources", "https://github.com/STPDevteam", "https://app.gitbook.com/o/ZWYRirKPO2Zp0EdaX5DP/s/b1qjST5Q4vT2MJ9VdeRC/stp-network/master"],
+    [
+      "Leading DAOs",
+      "https://www.myclique.io/page/137/0x39fa22b4852119c62aabdd4523ac587481943c61",
+      "https://www.myclique.io/page/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
+      "https://www.myclique.io/page/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
+      "https://www.myclique.io/page/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
+    ],
+    [
+      "Resources",
+      "https://github.com/STPDevteam",
+      "https://app.gitbook.com/o/ZWYRirKPO2Zp0EdaX5DP/s/b1qjST5Q4vT2MJ9VdeRC/stp-network/master",
+    ],
   ];
   return (
     <FooterBox>
       <Box
         display={"flex"}
         width={"100%"}
-        flexDirection={isDownSm ? 'column' : 'row'}
+        flexDirection={isDownSm ? "column" : "row"}
         justifyContent={"space-between"}
         alignItems={"center"}
-        gap={isDownSm ? '48px' : 0}
+        gap={isDownSm ? "48px" : 0}
       >
         <img src={StpLogo} alt="" />
         <BlueButton
@@ -1772,50 +1785,116 @@ export function Footer() {
       </Box>
       {!isDownSm ? (
         <>
-        <Divider style={{ background: "#757B8A" }} />
-        <Box display={"flex"} gap={isDownSm ? '20px' : '120px'}>
-          {footList.map((coloum, idx) => {
-            return (
-              <Box>
-                {coloum.map((item, i) => {
-                  if (i === 0) {
-                    return <FooterH1>{item}</FooterH1>;
-                  } else {
-                    return <FooterText onClick={() => window.open(footListLink[idx][i], '_blank')}>{item}</FooterText>;
-                  }
-                })}
-              </Box>
-            );
-          })}
-          <Box>
-            <FooterH1>STP Ecosystem</FooterH1>
-            <FooterH1 style={{ cursor: 'pointer' }} onClick={() => history.push('/dao')}>DAO Booster Program</FooterH1>
-            <FooterH1 style={{ cursor: 'pointer' }} onClick={() => window.open('https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1', '_blank')}>News</FooterH1>
+          <Divider style={{ background: "#757B8A" }} />
+          <Box display={"flex"} gap={isDownSm ? "20px" : "120px"}>
+            {footList.map((coloum, idx) => {
+              return (
+                <Box>
+                  {coloum.map((item, i) => {
+                    if (i === 0) {
+                      return <FooterH1>{item}</FooterH1>;
+                    } else {
+                      return (
+                        <FooterText
+                          onClick={() =>
+                            window.open(footListLink[idx][i], "_blank")
+                          }
+                        >
+                          {item}
+                        </FooterText>
+                      );
+                    }
+                  })}
+                </Box>
+              );
+            })}
+            <Box>
+              <FooterH1>STP Ecosystem</FooterH1>
+              <FooterH1
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/dao")}
+              >
+                DAO Booster Program
+              </FooterH1>
+              <FooterH1
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  window.open(
+                    "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+                    "_blank"
+                  )
+                }
+              >
+                News
+              </FooterH1>
+            </Box>
           </Box>
-        </Box>
         </>
-      ): ''}
-      <Box display={"flex"} gap={"40px"} sx={{
-        justifyContent: isDownSm ? 'center': 'flex-end',
-        marginTop: isDownSm ? '60px' : 0,
-        '& img': {
-          cursor: 'pointer'
-        }
-      }}>
-        <SocialMedia src={Tele} onClick={() => window.open('https://t.me/STPofficial', '_blank')} />
-        <SocialMedia src={Twitter} onClick={() => window.open('https://twitter.com/STP_Network', '_blank')} />
-        <SocialMedia src={Medium} onClick={() => window.open('https://medium.com/@versenetwork', '_blank')} />
-        <SocialMedia src={Cylinder} onClick={() => window.open('https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1', '_blank')} />
-        <SocialMedia src={Wechat} onClick={() => window.open(WechatQR, '_blank')} />
-        <SocialMedia src={Email} onClick={() => window.open('mailto:contact@stp.network', '_blank')} />
+      ) : (
+        ""
+      )}
+      <Box
+        display={"flex"}
+        gap={"40px"}
+        sx={{
+          justifyContent: isDownSm ? "center" : "flex-end",
+          marginTop: isDownSm ? "60px" : 0,
+          "& img": {
+            cursor: "pointer",
+          },
+        }}
+      >
+        <SocialMedia
+          src={Tele}
+          onClick={() => window.open("https://t.me/STPofficial", "_blank")}
+        />
+        <SocialMedia
+          src={Twitter}
+          onClick={() =>
+            window.open("https://twitter.com/STP_Network", "_blank")
+          }
+        />
+        <SocialMedia
+          src={Medium}
+          onClick={() =>
+            window.open("https://medium.com/@versenetwork", "_blank")
+          }
+        />
+        <SocialMedia
+          src={Cylinder}
+          onClick={() =>
+            window.open(
+              "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+              "_blank"
+            )
+          }
+        />
+        <SocialMedia
+          src={Wechat}
+          onClick={() => window.open(WechatQR, "_blank")}
+        />
+        <SocialMedia
+          src={Email}
+          onClick={() => window.open("mailto:contact@stp.network", "_blank")}
+        />
       </Box>
-      {isDownSm ? <Box display={"flex"} justifyContent={'center'} sx={{
-        marginTop: '60px',
-        color: '#757B8A',
-        fontSize: 14,
-        fontWeight: 500,
-        fontFamily: 'Inter'
-      }}>© STP All Rights Reserved</Box> : ''}
+      {isDownSm ? (
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          sx={{
+            marginTop: "60px",
+            color: "#757B8A",
+            fontSize: 14,
+            fontWeight: 500,
+            fontFamily: "Inter",
+          }}
+        >
+          © STP All Rights Reserved
+        </Box>
+      ) : (
+        ""
+      )}
     </FooterBox>
   );
 }
