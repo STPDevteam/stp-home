@@ -1061,17 +1061,17 @@ function Initiatives() {
       item2: "36",
       item3: "0",
     },
-    {
-      avatar: "https://apiv2.myclique.io/static/1666818558133868215.jpg",
-      name: "Mighty Magic DAO",
-      group: "@magicly",
-      link: "https://www.myclique.io/page/137/0x36a6b5ab0905a378d9d68ef1875324ccadc102b1",
-      comment:
-        "Here at Magicly, we teach you how to become professional magicians. Unlocking the truth and learning the secrets of the magician.",
-      item1: "685",
-      item2: "17",
-      item3: "4",
-    },
+    // {
+    //   avatar: "https://apiv2.myclique.io/static/1666818558133868215.jpg",
+    //   name: "Mighty Magic DAO",
+    //   group: "@magicly",
+    //   link: "https://www.myclique.io/page/137/0x36a6b5ab0905a378d9d68ef1875324ccadc102b1",
+    //   comment:
+    //     "Here at Magicly, we teach you how to become professional magicians. Unlocking the truth and learning the secrets of the magician.",
+    //   item1: "685",
+    //   item2: "17",
+    //   item3: "4",
+    // },
     {
       avatar: "https://apiv2.myclique.io/static/1684303444667989296.jpg",
       name: "Paladins DAO",
