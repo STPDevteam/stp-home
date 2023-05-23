@@ -1061,17 +1061,17 @@ function Initiatives() {
       item2: "36",
       item3: "0",
     },
-    // {
-    //   avatar: "https://apiv2.myclique.io/static/1666818558133868215.jpg",
-    //   name: "Mighty Magic DAO",
-    //   group: "@magicly",
-    //   link: "https://www.myclique.io/page/137/0x36a6b5ab0905a378d9d68ef1875324ccadc102b1",
-    //   comment:
-    //     "Here at Magicly, we teach you how to become professional magicians. Unlocking the truth and learning the secrets of the magician.",
-    //   item1: "685",
-    //   item2: "17",
-    //   item3: "4",
-    // },
+    {
+      avatar: "https://apiv2.myclique.io/static/1684733259674140973.jpeg",
+      name: "Mighty Magic DAO",
+      group: "@mightymagicdao",
+      link: "https://www.myclique.io/governance/daoInfo/137/0xfdae28575bacc93b04ad7194a6e13bb0833c7673/proposal",
+      comment:
+        "Mighty Magic DAO is a on chain ecosystem that fully empowers on chain games and brings the magic back to gaming.",
+      item1: "10.1k",
+      item2: "0",
+      item3: "0",
+    },
     {
       avatar: "https://apiv2.myclique.io/static/1684303444667989296.jpg",
       name: "Paladins DAO",

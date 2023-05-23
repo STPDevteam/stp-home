@@ -1,5 +1,5 @@
 import React, { StrictMode, Suspense } from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { Route, Router, Switch } from "react-router-dom";
 import { Layout } from "antd";
 import Product from "./pages/Product";
 import Tech from "./pages/Tech";
@@ -11,6 +11,8 @@ import EcosystemPage from "./pages/Ecosystem/EcosystemPage";
 import DaoPage from "./pages/DAO/daoPage";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
+import { createBrowserHistory } from 'history'
+const browserHistory = createBrowserHistory()
 
 const { Content } = Layout;
 
@@ -21,7 +23,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <StrictMode>
         <Suspense fallback={null}>
-          <HashRouter>
+          <Router history={browserHistory}>
             <Header />
             <Content>
               <Switch>
@@ -34,7 +36,7 @@ function App() {
               </Switch>
             </Content>
             {/* <Footer /> */}
-          </HashRouter>
+          </Router>
         </Suspense>
       </StrictMode>
     </ThemeProvider>
