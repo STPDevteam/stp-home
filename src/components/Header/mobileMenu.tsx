@@ -9,7 +9,7 @@ const navLinkSx = {
   cursor: "pointer",
   textDecoration: "none",
   fontSize: 16,
-  color: "#B4B4B4",
+  color: "#ECECEC",
   padding: "8px 0px",
   width: "100%",
   textAlign: "left",
