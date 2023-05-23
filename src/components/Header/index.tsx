@@ -202,8 +202,8 @@ const resourcesMenu = (
 
 const ecosystemMenu = (
   <HeaderMenuBox>
-    <HeaderLink href="/#/ecosystem">Ecosystem</HeaderLink>
-    <HeaderLink href="/#/dao">Dao Booster Program</HeaderLink>
+    <HeaderLink href="/ecosystem">Ecosystem</HeaderLink>
+    <HeaderLink href="/dao">Dao Booster Program</HeaderLink>
   </HeaderMenuBox>
 );
 
