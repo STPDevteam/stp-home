@@ -1761,7 +1761,7 @@ export function Footer() {
     [
       "Resources",
       "https://github.com/STPDevteam",
-      "https://app.gitbook.com/o/ZWYRirKPO2Zp0EdaX5DP/s/b1qjST5Q4vT2MJ9VdeRC/stp-network/master",
+      "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
     ],
   ];
   return (
