@@ -78,7 +78,8 @@ export default function MobileMenu({
         <GreenBtn
           style={{ width: "191px" }}
           onClick={() =>
-            window.open("https://www.myclique.io/creator", "_blank")
+            // window.open("https://www.myclique.io/creator", "_blank")
+            window.open("https://www.myclique.io/daos", "_blank")
           }
         >
           Build DAO

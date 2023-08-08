@@ -40,9 +40,9 @@ function Head() {
   const isDownSm = useBreakpoint("sm");
   return (
     <HeadBox style={{ background: "white" }}>
-      <HeadH1 style={{ color: "#111029" }}>DAO Booster Program</HeadH1>
+      <HeadH1 style={{ color: "#111029" }}>Clique Launchpad</HeadH1>
       <HeadText style={{ color: "#777E90" }}>
-        Empowering DAOs on Clique
+        Empowering Shared World Creation
       </HeadText>
       <Row
         mt={"48px"}
@@ -50,7 +50,7 @@ function Head() {
         flexDirection={isDownSm ? "column" : "row"}
         width={"178px"}
       >
-        <GreenBtn
+        {/* <GreenBtn
           style={{ height: "56px" }}
           onClick={() => {
             window.open(
@@ -60,8 +60,8 @@ function Head() {
           }}
         >
           Learn More
-        </GreenBtn>
-        <BlueButton
+        </GreenBtn> */}
+        {/* <BlueButton
           style={{ height: "56px" }}
           onClick={() => {
             window.open(
@@ -71,7 +71,7 @@ function Head() {
           }}
         >
           Apply for Grant
-        </BlueButton>
+        </BlueButton> */}
       </Row>
       <img
         src={Ellipse1}
@@ -123,9 +123,8 @@ function Mission() {
         sx={{ color: "#B4B4B4" }}
         textAlign={isDownSm ? "left" : "center"}
       >
-        The DAO Booster Program seeks to bridge this gap by providing funding
-        and resources to eligible DAOs
-        <br /> to help them jumpstart their DAO and achieve their goals.
+        STP seeks to bridge the on-chain gap by providing funding and resources to eligible Worlds
+        <br /> to help them form and achieve their goals.
       </Typography>
     </Box>
   );
@@ -310,7 +309,7 @@ function Criteria() {
         ))}
       </Box>
       <Row mt={"40px"} gap={"24px"} flexDirection={isDownSm ? "column" : "row"}>
-        <GreenBtn
+        {/* <GreenBtn
           style={{ height: "56px" }}
           onClick={() =>
             window.open(
@@ -320,8 +319,8 @@ function Criteria() {
           }
         >
           Learn More
-        </GreenBtn>
-        <GreenBtn
+        </GreenBtn> */}
+        {/* <GreenBtn
           style={{ height: "56px" }}
           onClick={() =>
             window.open(
@@ -331,7 +330,7 @@ function Criteria() {
           }
         >
           Apply for Grant
-        </GreenBtn>
+        </GreenBtn> */}
       </Row>
       <img
         src={CriteriaElips}

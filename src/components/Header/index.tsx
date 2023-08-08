@@ -34,7 +34,7 @@ const HeaderContent = styled.div`
 `;
 
 const MenuBg = styled(Box)`
-  padding: 80px 42.5px 68px;
+  padding: 40px 42.5px 68px;
   background: white;
   border-radius: 8px;
   gap: 12px;
@@ -78,6 +78,7 @@ const MenuBox = styled(Box)`
   align-items: center;
   padding: 27px 24px;
   gap: 16px;
+  cursor: pointer;
 
   &:hover {
     background: #a7f46a;
@@ -97,23 +98,24 @@ export function ProductMenu({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuList = [
     {
+      icon: IconSDK,
+      title: "Clique AW Solutions",
+      link: "https://www.npmjs.com/package/@myclique/governance-sdk",
+      text: "Tooling platform for executing on-chain world-building unique to any AW project.",
+    },
+    {
       icon: IconWorkSpace,
       title: "Clique Workspace",
       link: "https://www.myclique.io/governance",
-      text: " Web3 community workspace for all builders with no code and gas required",
+      text: "Collaborative governance tool for planning and building worlds with no code and gas.",
     },
-    {
-      icon: IconDapp,
-      title: "Clique Tools",
-      link: "",
-      text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
-    },
-    {
-      icon: IconSDK,
-      title: "Clique SDK",
-      link: "https://www.npmjs.com/package/@myclique/governance-sdk",
-      text: "Create a customized workspace platform for free with Clique SDK",
-    },
+    // {
+    //   icon: IconDapp,
+    //   title: "Clique Tools",
+    //   link: "",
+    //   text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
+    // },
+    
   ];
 
   return (
@@ -203,7 +205,7 @@ const resourcesMenu = (
 const ecosystemMenu = (
   <HeaderMenuBox>
     <HeaderLink href="/ecosystem">Ecosystem</HeaderLink>
-    <HeaderLink href="/dao">Dao Booster Program</HeaderLink>
+    <HeaderLink href="/dao">Clique Launchpad</HeaderLink>
   </HeaderMenuBox>
 );
 
@@ -434,7 +436,7 @@ const Header: React.FC = () => {
             </a> */}
             <GreenBtn
               onClick={() =>
-                window.open("https://www.myclique.io/creator", "_blank")
+                window.open("https://www.myclique.io/daos", "_blank")
               }
             >
               Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />

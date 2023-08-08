@@ -124,14 +124,13 @@ function Head({
     <HeadBox>
       <HeadH1>Ecosystem</HeadH1>
       <HeadText>
-        Our ecosystem is supported by the existing 15,000 on-chain token holder
-        community.
+      Our ecosystem consists of 15,000 progressive on-chain world contributors and partners.
       </HeadText>
       <GreenBtn
         style={{ marginTop: "24px" }}
         onClick={() => history.push("/dao")}
       >
-        DAO Booster Program <ArrowOutwardIcon />
+        Clique Launchpad <ArrowOutwardIcon />
       </GreenBtn>
       <Stack spacing={"24px"} mt={"80px"}>
         <Row gap={"16px"} alignItems={"flex-start"}>

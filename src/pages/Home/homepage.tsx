@@ -1164,9 +1164,11 @@ function Initiatives() {
 
   return (
     <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
-      <InitH1>Leading DAO Initiatives</InitH1>
+      <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
-        We are the place for builders to launch their Web3 Projects.
+      We evolve DAOs to emerge into Autonomous Worlds. <br/>
+Traverse our on-chain universe and help build the future!
+
       </InitH2>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
@@ -1777,7 +1779,7 @@ export function Footer() {
         <img src={StpLogo} alt="" />
         <BlueButton
           onClick={() =>
-            window.open("https://www.myclique.io/creator", "_blank")
+            window.open("https://www.myclique.io/daos", "_blank")
           }
         >
           Build DAO
@@ -1814,7 +1816,7 @@ export function Footer() {
                 style={{ cursor: "pointer" }}
                 onClick={() => history.push("/dao")}
               >
-                DAO Booster Program
+               Clique Launchpad
               </FooterH1>
               <FooterH1
                 style={{ cursor: "pointer" }}
