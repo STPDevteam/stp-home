@@ -8,10 +8,13 @@ import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
 import CliqueSdkPic from "../../assets/images/home/svg/clique-sdk.svg";
 import DataBg from "../../assets/images/home/svg/data-bg.svg";
 import Label1 from "../../assets/images/home/svg/label1.svg";
+import { ReactComponent as IconStart } from "../../assets/images/home/svg/label1.svg";
 import { ReactComponent as UserIcon } from "../../assets/images/home/svg/usericon.svg";
+import { ReactComponent as FileIcon } from "../../assets/images/home/svg/file-icon.svg";
+import { ReactComponent as AlarmIcon } from "../../assets/images/home/svg/alarmicon.svg";
 import UserActive from "../../assets/images/home/svg/user-active.svg";
-import AlarmIcon from "../../assets/images/home/svg/alarmicon.svg";
-import FileIcon from "../../assets/images/home/svg/file-icon.svg";
+// import AlarmIcon from "../../assets/images/home/svg/alarmicon.svg";
+// import FileIcon from "../../assets/images/home/svg/file-icon.svg";
 
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
 import StpLogo from "../../assets/images/home/svg/stp-logo.svg";
@@ -97,6 +100,17 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper as SwiperClass } from "swiper/types";
 import Item from "antd/lib/list/Item";
 import WechatQR from "../../assets/images/home/QR.jpeg";
+import infrastructure from "../../assets/images/home/svg/infrastructure.svg";
+import qrcode from "../../assets/images/home/svg/qrcode.svg";
+import dataForm from "../../assets/images/home/svg/dataForm.svg";
+import more from "../../assets/images/home/svg/more.svg";
+import identity from "../../assets/images/home/identity.png"
+import decorationStar from "../../assets/images/home/svg/decorationStar.svg"
+import workspaceImg from "../../assets/images/home/doc_type.png"
+import workspaceImg1 from "../../assets/images/home/workspace1.png"
+import workspaceImg2 from "../../assets/images/home/workspace2.png"
+import workspaceImg3 from "../../assets/images/home/workspace3.png"
+import workspaceImg4 from "../../assets/images/home/workspace4.png"
 
 export const ContentWrapper = styled(Box)`
   position: absolute;
@@ -107,13 +121,22 @@ export const ContentWrapper = styled(Box)`
   flex-direction: column;
   overflow-x: hidden;
 `;
+const Content1 = styled.div`
+  width: 100%;
+  background: linear-gradient(180deg, #1B1AFF 0%, #0100C2 100%);
+`
 export default function Homepage() {
   return (
     <ContentWrapper>
-      <Head />
-      <Initiatives />
-      <Infrastructure />
-      <Data />
+      <Content1>
+        <Head />
+        <Identity />
+        <Identity2 />
+        <Initiatives />
+        <Data />
+      </Content1>
+      <CliqueContent />
+      {/* <Infrastructure /> */}
       <Ecosystem />
       <Learn />
       <BuildWithUs />
@@ -123,9 +146,9 @@ export default function Homepage() {
 }
 
 export const HeadBox = styled(Box)`
-  background: #1b1aff;
+  /* background: #1b1aff; */
   position: relative;
-  height: 900px;
+  /* height: 900px; */
   width: 100%;
   padding-left: 252px;
   @media (max-width: 767px) {
@@ -138,8 +161,8 @@ export const HeadH1 = styled(Typography)`
   font-family: "Urbanist";
   font-style: normal;
   font-weight: 600;
-  font-size: 64px;
-  line-height: 90px;
+  font-size: 90px;
+  line-height: 110px;
   padding-top: 179px;
   color: #ffffff;
 
@@ -153,8 +176,8 @@ export const HeadText = styled(Typography)`
   font-style: normal;
   font-weight: 500;
   margin-top: 48px;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 28px;
+  line-height: 40px;
   color: #ececec;
   @media (max-width: 767px) {
     font-size: 16px;
@@ -202,28 +225,155 @@ const TopCircleImg = styled("img")`
     width: 50%;
   }
 `;
+
 function Head() {
   const history = useHistory();
   return (
     <HeadBox>
       <HeadH1>
-        The Ecosystem <br />
-        Optimized for DAOs
+        The Portal to   <br />
+        Autonomous Worlds
       </HeadH1>
       <HeadText>
-        STP optimizes Web3 for builders, communities and projects.
+        Our mission is to build and scale an identity <br /> framework for Autonomous Worlds.
       </HeadText>
       <GreenBtn
         style={{ marginTop: "40px" }}
-        onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
+        // onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
       >
-        Build DAO
-        <ArrowOutwardIcon />
+        Comming Soon
+        {/* <ArrowOutwardIcon /> */}
       </GreenBtn>
-      <BottomCircleImg src={BottomCircle} />
+      {/* <BottomCircleImg src={BottomCircle} /> */}
       <TopCircleImg src={TopCircle} />
+
     </HeadBox>
   );
+}
+const IdentityBox = styled.div`
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* background: #1b1aff; */
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  
+`
+const IdentityImage = styled.img`
+  margin-left: -200px;
+  margin-right:40px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
+const IdentityContent = styled.div`
+  max-width: 550px;
+  font-family: Urbanist;
+  color: #fff;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 20px;
+  }
+`
+const IdentityTitle = styled.div`
+font-family: Urbanist;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 62px;
+  letter-spacing: 2px;
+  @media (max-width: 767px) {
+      font-size: 32px;
+      line-height: 1.2;
+  }
+`
+const IdentityText = styled.div`
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+   @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 1.2;
+  }
+`
+const IdentityIcons = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 520px;
+  margin-left: 20px;
+  color: #fff;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`
+const IconsBox = styled.div`
+  width: 240px;
+  height: 240px;
+  margin: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%);
+  @media (max-width: 767px) {
+    width: 160px;
+    height: 160px;
+  }
+`
+const Icon = styled.img`
+  width: 70px;
+  @media (max-width: 767px) {
+    width: 36px;
+  }
+`
+const IconName = styled.div`
+  
+`
+function Identity() {
+  return (
+    <IdentityBox>
+      <IdentityImage src={identity} width={700}></IdentityImage>
+      <IdentityContent>
+        <IdentityTitle>Identity requires provenance,
+          interoperability,and depth to unlock meaning and value from everything on-chain. </IdentityTitle>
+        <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing cosmos of AW. </IdentityText>
+      </IdentityContent>
+    </IdentityBox>
+  )
+}
+function Identity2() {
+  return (
+    <IdentityBox>
+      <IdentityContent>
+        <IdentityTitle>STP will power the identity layer for on-chain worlds by offering </IdentityTitle>
+        <IdentityText>We believe in unlocking individualism by contributing to elevated forms of on-chain identity. </IdentityText>
+      </IdentityContent>
+      <IdentityIcons>
+        <IconsBox>
+          <Icon src={infrastructure}></Icon>
+          <IconName>infrastructure</IconName>
+        </IconsBox>
+        <IconsBox>
+          <Icon src={qrcode}></Icon>
+          <IconName>Tooling Platforms</IconName>
+        </IconsBox>
+        <IconsBox>
+          <Icon src={dataForm}></Icon>
+          <IconName>Data Indexing</IconName>
+        </IconsBox>
+        <IconsBox>
+          <Icon src={more}></Icon>
+          <IconName>More</IconName>
+        </IconsBox>
+      </IdentityIcons>
+    </IdentityBox>
+  )
 }
 
 const InfraH1 = styled(Typography)`
@@ -437,8 +587,9 @@ const InfrastructureBox = styled(Box)`
 
 const InfraStar = styled("img")`
   position: absolute;
-  top: 268px;
-  left: 67px;
+  top: 0px;
+  /* left: 67px; */
+  right: 0px;
 `;
 
 const Ellipse = styled("img")`
@@ -545,9 +696,354 @@ function Infrastructure() {
     </Box>
   );
 }
+const CliqueContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 100px;
+`
+const Box1 = styled.div`
+  position: relative;
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 767px) {
+    width: 100vw;
+    padding: 20px;
+    flex-direction: column;
+  }
+`
+const Box1Star = styled.img`
+  position: absolute;
+  top: -60px;
+  right: 80px;
+  transform: rotate(164.072deg);
+`
+const ContentLeft = styled.div`
+  max-width: 400px;
+  color: #23262F;
+  margin-right: 40px;
+`
+const CliqueContentTitle = styled.div`
+  font-family: Urbanist;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  @media (max-width: 767px) {
+    font-size: 40px;
+  }
+`
+const CliqueContentSubTitle = styled.div`
+  margin-top: 40px;
+  font-family: Urbanist;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4;
+  @media (max-width: 767px) {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+`
+const CliqueContentText = styled.div`
+  margin-top: 60px;
+  font-family: Urbanist;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  @media (max-width: 767px) {
+      margin-top: 20px;
+  }
+`
+const ContentRight = styled.div`
+  display: flex;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+`
+const Cards = styled.div`
+  margin-right: 26px;
+  @media (max-width: 767px) {
+    margin-right: 0px;
+  }
+`
+const Card = styled.div`
+  padding: 32px 40px;
+  border-radius: 20px;
+  border: 1px solid #C6DCF0;
+  background: #F8FCFF;
+  @media (max-width: 767px) {
+    padding: 22px;
+  }
+`
+const Card1 = styled(Card)`
+  width: 376px;
+  height: 180px;
+  margin-bottom: 32px;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
+`
+const Card2 = styled(Card)`
+  width: 376px;
+  height: 232px;
+  margin-bottom: 32px;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
+
+`
+const Card3 = styled(Card)`
+  width: 376px;
+  height: 232px;
+  margin-bottom: 32px;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
+
+`
+const Card4 = styled(Card)`
+  width: 376px;
+  height: 180px;
+  margin-bottom: 32px;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
+
+`
+const CardTitle = styled.div`
+  font-family: Urbanist;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+`
+const CardText = styled.div`
+  color: var(--word-color, #3F5170);
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; 
+`
+const Box2 = styled.div`
+  margin-top: 140px;
+  display: flex;
+  @media (max-width: 767px) {
+    width: 100vw;
+    margin-top: 20px;
+    padding: 20px;
+    flex-direction: column;
+  }
+`
+const Box2Img = styled.img`
+  width: 823px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`
+const ContentLeft2 = styled.div`
+  margin-right: 40px;
+  @media (max-width: 767px) {
+    margin-right: 0px;
+  }
+`
+const ContentRight2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+`
+const BlueCard = styled.div`
+  margin-bottom: 20px;
+  padding: 36px;
+  border-radius: 20px;
+  border: 1px solid #C6DCF0;
+  background: #F8FCFF;
+`
+const Box3 = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto 0;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    padding: 20px;
+  }
+`
+const Box3Card = styled.div`
+  width: 580px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  padding: 38px;
+  border-radius: 20px;
+  border: 1px solid #C6DCF0;
+  background: #F8FCFF;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`
+const Box3CardBlue = styled(Box3Card)`
+  padding: 38px;
+  border-radius: 20px;
+  border: 1px solid #C6DCF0;
+  background: #F8FCFF;
+`
+const Box3CardPink = styled(Box3Card)`
+  padding: 38px 36px 28px;
+  border-radius: 20px;
+  border: 1px solid #D9C6F0;
+  background: #FDF8FF;
+`
+const Box3CardImg = styled.img`
+  width:100%;
+`
+const Box3CardTitle = styled.div`
+  color: var(--main, #23262F);
+  font-family: Urbanist;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+`
+const Box3CardTxt = styled.div`
+  padding: 20px;
+  color: var(--word-color, #3F5170);
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+`
+const Box3CardUl = styled.ul`
+  margin-top: 20px;
+`
+const Box3CardLi = styled.li`
+  color: #3F5170;
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+`
+function CliqueContent() {
+  const cliqueAwSolutions = {
+    title: 'Clique AW Solutions',
+    subTitle: 'Optimally build on-chain worlds unique to any AW project with a full suite of solutions to jumpstart user community.',
+    text: 'Seamlessly unwind and power world-building through these solutions'
+  }
+  const cardList = [
+    {
+      title: 'Identity: Worldspace',
+      content: 'Onboard users across worlds in seconds with gasless transactions'
+    },
+    {
+      title: 'Smart Account Generator',
+      content: 'Simplify complex on-chain activity to one-click transactions using innovative account abstraction'
+    },
+    {
+      title: 'Data APIs',
+      content: 'Query and build on-chain data across any chain using AI assistance'
+    },
+    {
+      title: 'Asset Portal',
+      content: 'Buy, sell & hold any on-chain asset through modular marketplaces'
+    },
+  ]
+  const cliqueWorkspace = {
+    title: 'Clique Workspace',
+    subTitle: 'Evolve DAOs to evolve into on-chain Worlds',
+    text: 'A collaborative planning and governance tool for organizing and expressing shared reality with no code and gas required.'
+  }
+  return (
+    <CliqueContentBox>
+      <Box1>
+        {<Box1Star src={decorationStar} />}
+        <Ellipse src={InfEllipse1} />
+        <Ellipse src={InfEllipse2} />
+        <ContentLeft>
+          <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
+          <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
+          <CliqueContentText>{cliqueAwSolutions.text}</CliqueContentText>
+        </ContentLeft>
+        <ContentRight>
+          <Cards>
+            <Card1>
+              <CardTitle>{cardList[0].title}</CardTitle>
+              <CardText>{cardList[0].content}</CardText>
+            </Card1>
+            <Card2>
+              <CardTitle>{cardList[1].title}</CardTitle>
+              <CardText>{cardList[1].content}</CardText>
+            </Card2>
+          </Cards>
+          <Cards>
+            <Card3>
+              <CardTitle>{cardList[2].title}</CardTitle>
+              <CardText>{cardList[3].content}</CardText>
+            </Card3>
+            <Card4>
+              <CardTitle>{cardList[3].title}</CardTitle>
+              <CardText>{cardList[3].content}</CardText>
+            </Card4>
+          </Cards>
+        </ContentRight>
+      </Box1>
+      <Box2>
+        <ContentLeft2>
+          <Box2Img src={workspaceImg} />
+        </ContentLeft2>
+        <ContentRight2>
+          <CliqueContentTitle>{cliqueWorkspace.title}</CliqueContentTitle>
+          <CliqueContentSubTitle>{cliqueWorkspace.subTitle}</CliqueContentSubTitle>
+          <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
+        </ContentRight2>
+      </Box2>
+      <Box3>
+        <Box3CardBlue>
+          <Box3CardImg src={workspaceImg1}></Box3CardImg>
+          <Box3CardTxt>Rewards feature for discovering and interacting with our universe of worlds</Box3CardTxt>
+        </Box3CardBlue>
+        <Box3CardPink>
+          <Box3CardImg src={workspaceImg2}></Box3CardImg>
+          <Box3CardTxt>Governance feature for the expression and execution of the world state.</Box3CardTxt>
+        </Box3CardPink>
+        <Box3CardPink>
+          <Box3CardTitle>Identity Engine</Box3CardTitle>
+          <Box3CardUl>
+            <Box3CardLi>Turn user’s NFT or on-chain gaming asset into a smart wallet that has ownership provenance, transaction history, and versatile utility based on the innovation of account abstraction.</Box3CardLi>
+            <Box3CardLi>Manage NFT Smart Wallet customizable in-app.</Box3CardLi>
+            <Box3CardLi>Seamlessly traverse into multi-chain worlds using interworld passport identity.</Box3CardLi>
+          </Box3CardUl>
+          <Box3CardImg src={workspaceImg3}></Box3CardImg>
+        </Box3CardPink>
+        <Box3CardBlue>
+          <Box3CardTitle>Asset Portal</Box3CardTitle>
+          <Box3CardUl>
+            <Box3CardLi>NFT and all asset marketplace for world building</Box3CardLi>
+            <Box3CardLi>New asset class using account abstraction</Box3CardLi>
+            <Box3CardLi>Utility analytics based on transactions and other on-chain evidence of usage</Box3CardLi>
+          </Box3CardUl>
+          <Box3CardImg src={workspaceImg4}></Box3CardImg>
+        </Box3CardBlue>
+      </Box3>
+
+    </CliqueContentBox>
+  )
+}
 
 const DataBgBox = styled(Box)`
-  background-image: url("${DataBg}");
+  /* background-image: url("${DataBg}"); */
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -559,6 +1055,12 @@ const DataBgBox = styled(Box)`
     gap: 48px;
   }
 `;
+const DataStar = styled.img`
+  position: absolute;
+  width: 40px;
+  left: 200px;
+  bottom: 60px;
+`
 
 const DataNumber = styled(Typography)`
   font-family: "Urbanist";
@@ -600,6 +1102,7 @@ function Data() {
   }, [total?.totalAccount, total?.totalDao, total?.totalProposal]);
   return (
     <DataBgBox>
+      <DataStar src={decorationStar}></DataStar>
       {dataList.map((d, idx) => {
         return (
           <Box>
@@ -620,7 +1123,7 @@ const InitH1 = styled(Typography)`
   font-size: 64px;
   line-height: 90px;
   text-align: center;
-  color: #23262f;
+  color: #fff;
   @media (max-width: 767px) {
     font-size: 48px;
     margin-top: 80px;
@@ -636,7 +1139,7 @@ const InitH2 = styled(Typography)`
   font-size: 20px;
   font-weight: 500;
   text-align: center;
-  color: #777e90;
+  color: #fff;
   @media (max-width: 767px) {
     font-size: 18px;
     margin-left: 24px;
@@ -793,12 +1296,11 @@ const InfoName = styled(Typography)`
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
-  color: #1b1d21;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
-const InfoNameIcon = styled("img")`
+const InfoNameIcon = styled("svg")`
   height: 16px;
   width: 16px;
 `;
@@ -810,7 +1312,6 @@ const InfoTitle = styled(Typography)`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #1b1d21;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -824,7 +1325,6 @@ const InfoConetne = styled(Typography)`
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: #808191;
   flex: none;
   order: 1;
   flex-grow: 0;
@@ -837,7 +1337,7 @@ const InfoConetne = styled(Typography)`
   -webkit-box-orient: vertical;
 `;
 const IfonBoxs = styled(Box)`
-  padding: 0 120px;
+  padding: 0 60px;
   max-width: 1441px;
   ::-webkit-scrollbar {
     display: none !important;
@@ -867,23 +1367,31 @@ const InfoBottomText = styled(Typography)`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #1b1d21;
   flex: none;
   order: 1;
   flex-grow: 0;
 `;
 const InfoUserIcon = styled(UserIcon)`
+  path {
+    fill: #fff;
+  }
   :hover path {
     fill: #a7f46a;
   }
 `;
-const InfoFileIcon = styled("img")`
+const InfoFileIcon = styled(FileIcon)`
   height: 16.6px;
   width: 20px;
+  path {
+    fill: #fff;
+  }
 `;
-const InfoAlarmIcon = styled("img")`
+const InfoAlarmIcon = styled(AlarmIcon)`
   height: 17.5px;
   width: 17.5px;
+  path {
+    fill: #fff;
+  }
 `;
 
 const AllInfo = styled(Box)`
@@ -896,8 +1404,10 @@ const AllInfo = styled(Box)`
   gap: 10px;
   width: 191px;
   height: 48px;
-  border: 1px solid #a3a3a3;
+  border: 1px solid #fff;
   border-radius: 80px;
+  color: #fff;
+  font-size: 18px;
 `;
 
 const ContributorsImg = styled("img")`
@@ -958,11 +1468,12 @@ function InfoBox({
       sx={{
         cursor: "pointer",
         padding: "24px",
-        backgroundColor: "#fff",
-        border: "1px solid #A3A3A3",
+        backgroundColor: "#3145FF",
+        border: "1px solid rgba(116, 139, 184, 0.70)",
         borderRadius: "24px",
+        color: '#fff',
         "&:hover": {
-          border: "1px solid #1B1AFF",
+          border: "1px solid #A7F46A",
           boxShadow: "0 0 10px 2px rgba(0,0,0,0.25)",
         },
       }}
@@ -976,7 +1487,8 @@ function InfoBox({
         <Box sx={{ pl: "14px" }}>
           <Row sx={{ alignItems: "center" }}>
             <InfoName> {name} </InfoName>
-            <InfoNameIcon src={Label1}></InfoNameIcon>
+            <IconStart fill={'#fff'}></IconStart>
+            {/* <InfoNameIcon src={Label1}></InfoNameIcon> */}
           </Row>
           <InfoTitle> {group} </InfoTitle>
         </Box>
@@ -990,12 +1502,12 @@ function InfoBox({
         </Row>
 
         <Row sx={{ alignItems: "center", ml: "40px" }}>
-          <InfoFileIcon src={FileIcon}></InfoFileIcon>
+          <InfoFileIcon></InfoFileIcon>
           <InfoBottomText> {item2}</InfoBottomText>
         </Row>
 
         <Row sx={{ alignItems: "center", ml: "40px" }}>
-          <InfoAlarmIcon src={AlarmIcon}></InfoAlarmIcon>
+          <InfoAlarmIcon></InfoAlarmIcon>
           <InfoBottomText> {item3}</InfoBottomText>
         </Row>
       </Row>
@@ -1035,7 +1547,22 @@ function ContributorsBox({
     </Box>
   );
 }
-
+const InitiativesBox = styled.div`
+  position: relative;
+  width: 1300px;
+  margin: 20px auto;
+  padding-bottom: 70px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%);
+  @media (max-width: 767px) {
+    width: 100vw;
+  }
+`
+const InitiativesStar = styled.img`
+  position: absolute;
+  bottom: -70px;
+  right: 10px;
+`
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
   const dataList = [
@@ -1163,13 +1690,45 @@ function Initiatives() {
   ];
 
   return (
-    <Box sx={{ background: "#F8FBFF" }} width={"100vw"}>
+    <InitiativesBox>
       <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
-      We evolve DAOs to emerge into Autonomous Worlds. <br/>
-Traverse our on-chain universe and help build the future!
-
+        We evolve DAOs to emerge into Autonomous Worlds. <br />
+        Traverse our on-chain universe and help build the future!
       </InitH2>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <AllInfo
+          sx={{
+            "&:hover": {
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "10px",
+              gap: "10px",
+              position: "relative",
+              width: "191px",
+              height: "48px",
+              background: "#A7F46A",
+              border: "1px solid #ECECEC",
+              borderRadius: "80px",
+              cursor: "pointer",
+              color: '#000',
+            },
+          }}
+          onClick={() => {
+            window.open("https://www.myclique.io/governance", "_blank");
+          }}
+        >
+          View All
+        </AllInfo>
+      </Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
@@ -1196,40 +1755,8 @@ Traverse our on-chain universe and help build the future!
           </Grid>
         </IfonBoxs>
       </Box>
+      <InitiativesStar src={decorationStar}></InitiativesStar>
 
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          paddingBottom: "120px",
-        }}
-      >
-        <AllInfo
-          sx={{
-            "&:hover": {
-              boxSizing: "border-box",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "10px",
-              gap: "10px",
-              position: "relative",
-              width: "191px",
-              height: "48px",
-              background: "#A7F46A",
-              border: "1px solid #ECECEC",
-              borderRadius: "80px",
-              cursor: "pointer",
-            },
-          }}
-          onClick={() => {
-            window.open("https://www.myclique.io/governance", "_blank");
-          }}
-        >
-          View All
-        </AllInfo>
-      </Box>
       {/* <InitH1>Top Contributors</InitH1>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
@@ -1279,7 +1806,7 @@ Traverse our on-chain universe and help build the future!
           View All
         </AllInfo>
       </Box> */}
-    </Box>
+    </InitiativesBox>
   );
 }
 
@@ -1375,8 +1902,8 @@ function Ecosystem() {
     value === "Partners"
       ? PartnersLogos
       : value === "Integrations"
-      ? IntegrationsLogos
-      : ListedLogos;
+        ? IntegrationsLogos
+        : ListedLogos;
 
   return (
     <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
@@ -1392,9 +1919,9 @@ function Ecosystem() {
             borderRadius: isDownSm ? "1.5px" : "2.5px",
           },
           ".MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected":
-            {
-              color: "#777E90",
-            },
+          {
+            color: "#777E90",
+          },
         }}
       >
         <EcoTab value={"Partners"} label="Partners" />
@@ -1420,7 +1947,7 @@ function Ecosystem() {
         {currentLogos.map((logo, idx) => (
           // init width 0px
           <SwiperSlide key={idx} style={{ width: "264.2px" }}>
-            <img key={idx} style={{maxHeight: 50, maxWidth: 200}} src={logo} />
+            <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -1500,7 +2027,7 @@ function Learn() {
 
   return (
     <Box pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
-      <InitH1 style={{ textAlign: "center" }}>Learn</InitH1>
+      <InitH1 style={{ textAlign: "center",color:"#000" }}>Learn</InitH1>
       <Box
         mt={isDownSm ? "40px" : "48px"}
         sx={{ display: "flex", justifyContent: "center" }}
@@ -1816,7 +2343,7 @@ export function Footer() {
                 style={{ cursor: "pointer" }}
                 onClick={() => history.push("/dao")}
               >
-               Clique Launchpad
+                Clique Launchpad
               </FooterH1>
               <FooterH1
                 style={{ cursor: "pointer" }}
