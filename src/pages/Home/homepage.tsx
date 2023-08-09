@@ -2345,7 +2345,7 @@ export function Footer() {
                 style={{ cursor: "pointer" }}
                 onClick={() => history.push("/dao")}
               >
-                Clique Launchpad
+                Clique World Launchpad
               </FooterH1>
               <FooterH1
                 style={{ cursor: "pointer" }}
