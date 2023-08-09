@@ -2284,10 +2284,10 @@ export function Footer() {
     ],
     [
       "Leading DAOs",
-      "https://www.myclique.io/page/137/0x39fa22b4852119c62aabdd4523ac587481943c61",
-      "https://www.myclique.io/page/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
-      "https://www.myclique.io/page/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
-      "https://www.myclique.io/page/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
+      "https://www.myclique.io/governance/daoInfo/3/proposal",
+      "https://www.myclique.io/governance/daoInfo/4/proposal",
+      "https://www.myclique.io/governance/daoInfo/2/proposal",
+      "https://www.myclique.io/governance/daoInfo/203/proposal",
     ],
     [
       "Resources",
