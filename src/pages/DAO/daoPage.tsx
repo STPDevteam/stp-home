@@ -40,7 +40,7 @@ function Head() {
   const isDownSm = useBreakpoint("sm");
   return (
     <HeadBox style={{ background: "white" }}>
-      <HeadH1 style={{ color: "#111029" }}>Clique Launchpad</HeadH1>
+      <HeadH1 style={{ color: "#111029" }}>Clique World Launchpad</HeadH1>
       <HeadText style={{ color: "#777E90" }}>
         Empowering Shared World Creation
       </HeadText>

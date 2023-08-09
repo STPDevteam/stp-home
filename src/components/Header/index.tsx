@@ -205,7 +205,7 @@ const resourcesMenu = (
 const ecosystemMenu = (
   <HeaderMenuBox>
     <HeaderLink href="/ecosystem">Ecosystem</HeaderLink>
-    <HeaderLink href="/dao">Clique Launchpad</HeaderLink>
+    <HeaderLink href="/dao">Clique World Launchpad</HeaderLink>
   </HeaderMenuBox>
 );
 

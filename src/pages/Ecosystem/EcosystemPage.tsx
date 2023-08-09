@@ -130,7 +130,7 @@ function Head({
         style={{ marginTop: "24px" }}
         onClick={() => history.push("/dao")}
       >
-        Clique Launchpad <ArrowOutwardIcon />
+        Clique World Launchpad <ArrowOutwardIcon />
       </GreenBtn>
       <Stack spacing={"24px"} mt={"80px"}>
         <Row gap={"16px"} alignItems={"flex-start"}>
