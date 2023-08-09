@@ -871,11 +871,13 @@ const BlueCard = styled.div`
   background: #F8FCFF;
 `
 const Box3 = styled.div`
+  width: 1440px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 50px auto 0;
   @media (max-width: 767px) {
+    width: 100%;
     flex-direction: column;
     padding: 20px;
   }
@@ -938,12 +940,12 @@ const Box3CardLi = styled.li`
 function CliqueContent() {
   const cliqueAwSolutions = {
     title: 'Clique AW Solutions',
-    subTitle: 'Optimally build on-chain worlds unique to any AW project with a full suite of solutions to jumpstart user community.',
-    text: 'Seamlessly unwind and power world-building through these solutions'
+    subTitle: 'Build on-chain worlds unique to any AW project with a full suite of solutions.',
+    // text: 'Seamlessly unwind and power world-building through these solutions'
   }
   const cardList = [
     {
-      title: 'Identity: Worldspace',
+      title: 'Identity Engine',
       content: 'Onboard users across worlds in seconds with gasless transactions'
     },
     {
@@ -961,8 +963,8 @@ function CliqueContent() {
   ]
   const cliqueWorkspace = {
     title: 'Clique Workspace',
-    subTitle: 'Evolve DAOs to evolve into on-chain Worlds',
-    text: 'A collaborative planning and governance tool for organizing and expressing shared reality with no code and gas required.'
+    subTitle: 'Evolve DAOs for Autonomous Worlds',
+    text: 'Collaborative governance tool for planning and building on-chain worlds with no code and gas.'
   }
   return (
     <CliqueContentBox>
@@ -973,7 +975,7 @@ function CliqueContent() {
         <ContentLeft>
           <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
           <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
-          <CliqueContentText>{cliqueAwSolutions.text}</CliqueContentText>
+          {/* <CliqueContentText>{cliqueAwSolutions.text}</CliqueContentText> */}
         </ContentLeft>
         <ContentRight>
           <Cards>
@@ -1011,7 +1013,7 @@ function CliqueContent() {
       <Box3>
         <Box3CardBlue>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
-          <Box3CardTxt>Rewards feature for discovering and interacting with our universe of worlds</Box3CardTxt>
+          <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW</Box3CardTxt>
         </Box3CardBlue>
         <Box3CardPink>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
@@ -1029,9 +1031,9 @@ function CliqueContent() {
         <Box3CardBlue>
           <Box3CardTitle>Asset Portal</Box3CardTitle>
           <Box3CardUl>
-            <Box3CardLi>NFT and all asset marketplace for world building</Box3CardLi>
-            <Box3CardLi>New asset class using account abstraction</Box3CardLi>
-            <Box3CardLi>Utility analytics based on transactions and other on-chain evidence of usage</Box3CardLi>
+            <Box3CardLi>NFT and all asset marketplace for world building.</Box3CardLi>
+            <Box3CardLi>New asset class using account abstraction.</Box3CardLi>
+            <Box3CardLi>Utility analytics based on transactions and other on-chain evidence of usage.</Box3CardLi>
           </Box3CardUl>
           <Box3CardImg src={workspaceImg4}></Box3CardImg>
         </Box3CardBlue>
@@ -2282,10 +2284,10 @@ export function Footer() {
     ],
     [
       "Leading DAOs",
-      "https://www.myclique.io/page/137/0x39fa22b4852119c62aabdd4523ac587481943c61",
-      "https://www.myclique.io/page/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
-      "https://www.myclique.io/page/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
-      "https://www.myclique.io/page/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
+      "https://www.myclique.io/governance/daoInfo/3/proposal",
+      "https://www.myclique.io/governance/daoInfo/4/proposal",
+      "https://www.myclique.io/governance/daoInfo/2/proposal",
+      "https://www.myclique.io/governance/daoInfo/203/proposal",
     ],
     [
       "Resources",

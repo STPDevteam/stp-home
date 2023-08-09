@@ -121,10 +121,10 @@ function Head({
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
   return (
-    <HeadBox>
+    <HeadBox style={{height: '900px',background:"#1b1aff"}}>
       <HeadH1>Ecosystem</HeadH1>
       <HeadText>
-      Our ecosystem consists of 15,000 progressive on-chain world contributors and partners.
+      Our ecosystem consists of 15,000 progressive on-chain token holders and world contributors.
       </HeadText>
       <GreenBtn
         style={{ marginTop: "24px" }}

@@ -100,8 +100,8 @@ export function ProductMenu({
     {
       icon: IconSDK,
       title: "Clique AW Solutions",
-      link: "https://www.npmjs.com/package/@myclique/governance-sdk",
-      text: "Tooling platform for executing on-chain world-building unique to any AW project.",
+      // link: "",
+      text: "Solutions platform for building on-chain worlds unique to any AW project.",
     },
     {
       icon: IconWorkSpace,
