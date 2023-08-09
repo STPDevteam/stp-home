@@ -991,7 +991,7 @@ function CliqueContent() {
           <Cards>
             <Card3>
               <CardTitle>{cardList[2].title}</CardTitle>
-              <CardText>{cardList[3].content}</CardText>
+              <CardText>{cardList[2].content}</CardText>
             </Card3>
             <Card4>
               <CardTitle>{cardList[3].title}</CardTitle>
@@ -1013,7 +1013,7 @@ function CliqueContent() {
       <Box3>
         <Box3CardBlue>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
-          <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW</Box3CardTxt>
+          <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW.</Box3CardTxt>
         </Box3CardBlue>
         <Box3CardPink>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
