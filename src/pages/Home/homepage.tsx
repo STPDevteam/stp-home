@@ -123,7 +123,7 @@ export const ContentWrapper = styled(Box)`
 `;
 const Content1 = styled.div`
   width: 100%;
-  background: linear-gradient(180deg, #1B1AFF 0%, #0100C2 100%);
+  background: linear-gradient(180deg, #0504C8 0%, #060686 100%);
 `
 export default function Homepage() {
   return (
@@ -241,7 +241,7 @@ function Head() {
         style={{ marginTop: "40px" }}
         // onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
       >
-        Comming Soon
+        Coming Soon
         {/* <ArrowOutwardIcon /> */}
       </GreenBtn>
       {/* <BottomCircleImg src={BottomCircle} /> */}
@@ -1555,7 +1555,8 @@ const InitiativesBox = styled.div`
   margin: 20px auto;
   padding-bottom: 70px;
   border-radius: 40px;
-  background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%);
+  background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 37.14%);
+  /* background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%); */
   @media (max-width: 767px) {
     width: 100vw;
   }
@@ -2385,12 +2386,12 @@ export function Footer() {
             window.open("https://twitter.com/STP_Network", "_blank")
           }
         />
-        <SocialMedia
+        {/* <SocialMedia
           src={Medium}
           onClick={() =>
             window.open("https://medium.com/@versenetwork", "_blank")
           }
-        />
+        /> */}
         <SocialMedia
           src={Cylinder}
           onClick={() =>
