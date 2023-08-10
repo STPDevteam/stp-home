@@ -38,6 +38,7 @@ const MenuBg = styled(Box)`
   background: white;
   border-radius: 8px;
   gap: 12px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
   @media (max-width: 767px) {
     padding: 0;
     border-radius: 8px;
@@ -162,6 +163,7 @@ const HeaderMenuBox = styled(Box)`
   border-radius: 10px;
   position: relative;
   flex-direction: column;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);;
   @media (max-width: 767px) {
     background: transparent;
     left: 30px;
@@ -173,7 +175,7 @@ const HeaderLink = styled("a")`
   font-size: 16px;
   line-height: 48px;
   padding: 0 16px;
-  color: #999fae;
+  color: #000;
   &:hover {
     color: #1b1aff;
   }
@@ -367,7 +369,10 @@ const Header: React.FC = () => {
         style={{
           background: currentPath.pathname.includes("dao")
             ? "white"
-            : "#1B1AFF",
+            : "#0504c4",
+          color: currentPath.pathname.includes("dao")
+            ? "#000"
+            : "#fff",
         }}
       >
         <img
@@ -385,7 +390,11 @@ const Header: React.FC = () => {
           unmountOnExit
         >
           <nav className="Nav">
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+            <Link style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }} to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
             </Link>
             <Dropdown
@@ -396,12 +405,20 @@ const Header: React.FC = () => {
                 setVisible(flag);
               }}
             >
-              <a>
+              <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }}>
                 Products
                 <Arrow />
               </a>
             </Dropdown>
-            <a href="https://www.myclique.io/daos" target="_blank">
+            <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }} href="https://www.myclique.io/daos" target="_blank">
               DAOs
             </a>
             {/* <Dropdown overlay={daoMenu} trigger={["click"]}>
@@ -418,12 +435,20 @@ const Header: React.FC = () => {
             {/*</Link>*/}
             {/* <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link> */}
             <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
-              <a>
+              <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }}>
                 Ecosystem <Arrow />
               </a>
             </Dropdown>
             <Dropdown overlay={resourcesMenu} trigger={["click"]}>
-              <a>
+              <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }}>
                 Resources <Arrow />
               </a>
             </Dropdown>
