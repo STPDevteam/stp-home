@@ -123,7 +123,7 @@ export const ContentWrapper = styled(Box)`
 `;
 const Content1 = styled.div`
   width: 100%;
-  background: linear-gradient(180deg, #0504C8 0%, #060686 100%);
+  background: linear-gradient(180deg, #2524E0 0%, #1414A9 100%);
 `
 export default function Homepage() {
   return (
@@ -320,7 +320,7 @@ const IconsBox = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%);
+  background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 54.17%);
   @media (max-width: 767px) {
     width: 160px;
     height: 160px;
@@ -594,7 +594,7 @@ const InfraStar = styled("img")`
 
 const Ellipse = styled("img")`
   position: absolute;
-  top: 0;
+  top: -100px;
   left: 0;
 `;
 const BottomStar = styled("img")`
@@ -2154,7 +2154,7 @@ const BuildBox = styled(Box)`
   height: 506px;
   position: relative;
   padding: 120px;
-  background: #1b1aff;
+  background: #2524de;
   @media (max-width: 767px) {
     padding: 120px 80px 118px 20px;
     // margin-bottom: 48px;

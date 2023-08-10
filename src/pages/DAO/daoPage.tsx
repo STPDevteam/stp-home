@@ -99,7 +99,7 @@ function Mission() {
     <Box
       sx={{
         width: "100%",
-        background: "#1B1AFF",
+        background: "#2524de",
         height: "410px",
         display: "flex",
         justifyContent: "center",
@@ -229,7 +229,7 @@ function Types() {
 
 const CriteriaBox = styled(Box)`
   width: 100%;
-  background: #1b1aff;
+  background: #2524de;
   display: flex;
   flex-direction: column;
   justify-content: center;

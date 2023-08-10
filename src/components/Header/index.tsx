@@ -369,7 +369,7 @@ const Header: React.FC = () => {
         style={{
           background: currentPath.pathname.includes("dao")
             ? "white"
-            : "#0504c4",
+            : "#2524de",
           color: currentPath.pathname.includes("dao")
             ? "#000"
             : "#fff",
