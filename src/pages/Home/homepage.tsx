@@ -981,17 +981,18 @@ const ComingSoonBtnPink = styled(ComingSoonBtn)`
 const ComingSoonBtnH5 = styled.div`
   border-radius: 12px;
   padding: 8px 15px;
-`
-const ComingSoonBtnBlueH5 = styled(ComingSoonBtnH5)`
-  border: 1px solid #C8D9D6;
-  background: #EDF9FB;
-  color: #93BFB7;
   display: none;
   @media (max-width: 767px) {
     display: block;
     margin-top: 10px;
     text-align: center;
   }
+`
+const ComingSoonBtnBlueH5 = styled(ComingSoonBtnH5)`
+  border: 1px solid #C8D9D6;
+  background: #EDF9FB;
+  color: #93BFB7;
+  
 `
 const ComingSoonBtnPinkH5 = styled(ComingSoonBtnH5)`
   border: 1px solid #9E9EE8;
