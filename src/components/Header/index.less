@@ -68,16 +68,19 @@
 
 .header {
   width: 100%;
-  display: grid;
-  grid-template-areas: "logo nav";
+  display: flex;
+  // grid-template-areas: "logo nav buildDao";
+  justify-content: space-between;
+  align-items: center;
 
   .Nav {
-    display: grid;
+    display: flex;
     grid-area: nav;
     grid-template-columns: repeat(8, auto);
     align-items: center;
-    justify-items: center;
-    margin-right: -18px;
+    justify-content: space-around;
+    // margin-right: -18px;
+    width: 50%;
     @media (max-width: 767px) {
       margin-right: 0;
     }
@@ -149,6 +152,13 @@
       color: #A7F46A;
     }
   }
+  .BuildDao {
+    margin-right: 20px;
+    grid-area: buildDao;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
 
   .Burger {
     display: none;
@@ -214,6 +224,7 @@
 
 @media (max-width: 767px) {
   .header {
+    display: grid;
     width: 100vw;
     grid-template-areas: "logo burger" "nav nav";
   }
