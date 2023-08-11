@@ -25,7 +25,7 @@ const navLinkSx = {
 
 const MenuBox = styled(Stack)`
   padding: 0 20px 30px;
-  background: #1b1aff;
+  background: #2524dc;
 `;
 
 export default function MobileMenu({

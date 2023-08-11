@@ -116,7 +116,7 @@ export function ProductMenu({
     //   link: "",
     //   text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
     // },
-    
+
   ];
 
   return (
@@ -250,36 +250,37 @@ export const MenuList: {
   subtitle?: ReactJSXElement;
   link?: string;
 }[] = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "Products",
-    subtitle: <ProductMenu />,
-  },
-  // {
-  //   title: "DAOs",
-  //   subtitle: daoMenu(),
-  // },
-  {
-    title: "DAOs",
-    link: "https://www.myclique.io/daos",
-  },
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Products",
+      subtitle: <ProductMenu />,
+    },
+    // {
+    //   title: "DAOs",
+    //   subtitle: daoMenu(),
+    // },
+    {
+      title: "DAOs",
+      link: "https://www.myclique.io/daos",
+    },
 
-  {
-    title: "Ecosystem",
-    subtitle: ecosystemMenu,
-  },
-  {
-    title: "Resources",
-    subtitle: resourcesMenu,
-  },
-  // {
-  //   title: "News",
-  //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
-  // },
-];
+    {
+      title: "Ecosystem",
+      link: "/ecosystem",
+      // subtitle: ecosystemMenu,
+    },
+    {
+      title: "Resources",
+      subtitle: resourcesMenu,
+    },
+    // {
+    //   title: "News",
+    //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+    // },
+  ];
 
 const Header: React.FC = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -391,10 +392,10 @@ const Header: React.FC = () => {
         >
           <nav className="Nav">
             <Link style={{
-                color: currentPath.pathname.includes("dao")
-                  ? "#000"
-                  : "#fff",
-              }} to="/" className={location.pathname === "/" ? "active" : ""}>
+              color: currentPath.pathname.includes("dao")
+                ? "#000"
+                : "#fff",
+            }} to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
             </Link>
             <Dropdown
@@ -415,10 +416,10 @@ const Header: React.FC = () => {
               </a>
             </Dropdown>
             <a style={{
-                color: currentPath.pathname.includes("dao")
-                  ? "#000"
-                  : "#fff",
-              }} href="https://www.myclique.io/daos" target="_blank">
+              color: currentPath.pathname.includes("dao")
+                ? "#000"
+                : "#fff",
+            }} href="https://www.myclique.io/daos" target="_blank">
               DAOs
             </a>
             {/* <Dropdown overlay={daoMenu} trigger={["click"]}>
@@ -445,10 +446,10 @@ const Header: React.FC = () => {
               </a>
             </Dropdown> */}
             <Link style={{
-                color: currentPath.pathname.includes("dao")
-                  ? "#000"
-                  : "#fff",
-              }} to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+              color: currentPath.pathname.includes("dao")
+                ? "#000"
+                : "#fff",
+            }} to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
               Ecosystem
             </Link>
             <Dropdown overlay={resourcesMenu} trigger={["click"]}>
@@ -467,21 +468,20 @@ const Header: React.FC = () => {
             >
               News
             </a> */}
-            
+
           </nav>
           {/* <nav> */}
-            
+
           {/* </nav> */}
         </CSSTransition>
         <GreenBtn
-        className="BuildDao"
-
-                onClick={() =>
-                  window.open("https://www.myclique.io/daos", "_blank")
-                }
-              >
-                Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />
-              </GreenBtn>
+          className="BuildDao"
+          onClick={() =>
+            window.open("https://www.myclique.io/daos", "_blank")
+          }
+        >
+          Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />
+        </GreenBtn>
         <button
           onClick={() => {
             setMobileMenuOpen((prevState) => !prevState);

@@ -259,7 +259,7 @@ const IdentityBox = styled.div`
   /* background: #1b1aff; */
   @media (max-width: 767px) {
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 0px;
   }
   
 `
@@ -267,7 +267,9 @@ const IdentityImage = styled.img`
   margin-left: -200px;
   margin-right:40px;
   @media (max-width: 767px) {
-    display: none;
+    display: block;
+    margin: 0;
+    width: 100%;
   }
 `
 const IdentityContent = styled.div`
@@ -903,6 +905,9 @@ const ContentRight2 = styled.div`
   display: flex;
   flex-direction: column;
   width: 380px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 `
 const BlueCard = styled.div`
   margin-bottom: 20px;
@@ -948,6 +953,9 @@ const Box3CardPink = styled(Box3Card)`
   border-radius: 20px;
   border: 1px solid #D9C6F0;
   background: #FDF8FF;
+  @media (max-width: 767px) {
+    position: static;
+  }
 `
 const ComingSoonBtn = styled.div`
   position: absolute;
@@ -955,13 +963,37 @@ const ComingSoonBtn = styled.div`
   right: 20px;
   border-radius: 12px;
   padding: 8px 15px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `
 const ComingSoonBtnBlue = styled(ComingSoonBtn)`
   border: 1px solid #C8D9D6;
   background: #EDF9FB;
   color: #93BFB7;
+  
 `
 const ComingSoonBtnPink = styled(ComingSoonBtn)`
+  border: 1px solid #9E9EE8;
+  background: #EFEFFF;
+  color: #9E9EE8;
+`
+const ComingSoonBtnH5 = styled.div`
+  border-radius: 12px;
+  padding: 8px 15px;
+`
+const ComingSoonBtnBlueH5 = styled(ComingSoonBtnH5)`
+  border: 1px solid #C8D9D6;
+  background: #EDF9FB;
+  color: #93BFB7;
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+`
+const ComingSoonBtnPinkH5 = styled(ComingSoonBtnH5)`
   border: 1px solid #9E9EE8;
   background: #EFEFFF;
   color: #9E9EE8;
@@ -1071,6 +1103,7 @@ function CliqueContent() {
             <Box3CardLi>Traverse in multi-chain worlds using interworld passports.</Box3CardLi>
           </Box3CardUl>
           <Box3CardImg src={workspaceImg3}></Box3CardImg>
+          <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5>
         </Box3CardPink>
         <Box3CardBlue>
           <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue>
@@ -1081,6 +1114,7 @@ function CliqueContent() {
             <Box3CardLi>Utility analytics based on on-chain activity.</Box3CardLi>
           </Box3CardUl>
           <Box3CardImg src={workspaceImg4}></Box3CardImg>
+          <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5>
         </Box3CardBlue>
       </Box3>
       <Box2>
