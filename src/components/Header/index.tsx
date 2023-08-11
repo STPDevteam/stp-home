@@ -434,16 +434,23 @@ const Header: React.FC = () => {
             {/*  Tech*/}
             {/*</Link>*/}
             {/* <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link> */}
-            {/* <Dropdown overlay={ecosystemMenu} trigger={["click"]}> */}
+            {/* <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
               <a style={{
                 color: currentPath.pathname.includes("dao")
                   ? "#000"
                   : "#fff",
-              }}>
+              }} href="" target="_blank">
                 Ecosystem 
-                {/* <Arrow /> */}
+                <Arrow />
               </a>
-            {/* </Dropdown> */}
+            </Dropdown> */}
+            <Link style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }} to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+              Ecosystem
+            </Link>
             <Dropdown overlay={resourcesMenu} trigger={["click"]}>
               <a style={{
                 color: currentPath.pathname.includes("dao")
