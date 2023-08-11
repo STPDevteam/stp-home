@@ -346,12 +346,11 @@ const IconName = styled.div`
 `
 const Identity2Box = styled.div`
   max-width: 1440px;
-  margin-top: 160px;
+  margin: 160px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   /* background: #1b1aff; */
   @media (max-width: 767px) {
     flex-direction: column;
@@ -388,7 +387,7 @@ function Identity() {
       <IdentityImage src={identity} width={700}></IdentityImage>
       <IdentityContent>
         <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
-        <IdentityText>We believe in unlocking individualism by contributing to elevated forms ofon-chain identity.</IdentityText>
+        <IdentityText>We believe in unlocking individualism by contributing to elevated forms of on-chain identity.</IdentityText>
       </IdentityContent>
     </IdentityBox>
   )
@@ -403,7 +402,7 @@ function Identity2() {
       <IdentityIcons>
         <IconsBox>
           <Icon src={infrastructure}></Icon>
-          <IconName>infrastructure</IconName>
+          <IconName>Infrastructure</IconName>
         </IconsBox>
         <IconsBox>
           <Icon src={qrcode}></Icon>
