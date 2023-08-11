@@ -386,7 +386,7 @@ function Identity() {
       <IdentityImage src={identity} width={700}></IdentityImage>
       <IdentityContent>
         <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
-        <IdentityText>We believe in unlocking individualismby contributing to elevated forms ofon-chain identity.</IdentityText>
+        <IdentityText>We believe in unlocking individualism by contributing to elevated forms ofon-chain identity.</IdentityText>
       </IdentityContent>
     </IdentityBox>
   )
@@ -1640,7 +1640,7 @@ function Initiatives() {
       avatar: "https://preapiv2.myclique.io/static/1665737932735871572.png",
       name: "STP",
       group: "@stp",
-      link: "https://www.myclique.io/governance/daoInfo/137/0x39fa22b4852119c62aabdd4523ac587481943c61",
+      link: "https://www.myclique.io/governance/daoInfo/3/proposal",
       comment:
         "Verse Network by STP brings a full suite of native tools and infrastructures facilitating efficient decentralized decision-making for users, communities and organizations.",
       item1: "21k",
@@ -1662,7 +1662,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1684733259674140973.jpeg",
       name: "Mighty Magic DAO",
       group: "@mightymagicdao",
-      link: "https://www.myclique.io/governance/daoInfo/137/0xfdae28575bacc93b04ad7194a6e13bb0833c7673/proposal",
+      link: "https://www.myclique.io/governance/daoInfo/224/proposal",
       comment:
         "Mighty Magic DAO is a on chain ecosystem that fully empowers on chain games and brings the magic back to gaming.",
       item1: "10.1k",
@@ -1673,7 +1673,7 @@ function Initiatives() {
       avatar: "https://apiv2.myclique.io/static/1684303444667989296.jpg",
       name: "Paladins DAO",
       group: "@paladinsdao",
-      link: "https://www.myclique.io/page/137/0x9f1ba5f0cd098e8dcd0a733e7118ff5bef500a46",
+      link: "https://www.myclique.io/governance/daoInfo/216/proposal",
       comment:
         "Paladins DAO is a citizens owned Esports team and community consisting of every contributor type across the gaming ecosystem. Paladins aim to revolutionize ownership and...",
       item1: "2",
