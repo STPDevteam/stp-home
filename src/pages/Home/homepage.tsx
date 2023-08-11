@@ -949,6 +949,23 @@ const Box3CardPink = styled(Box3Card)`
   border: 1px solid #D9C6F0;
   background: #FDF8FF;
 `
+const ComingSoonBtn = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 12px;
+  padding: 8px 15px;
+`
+const ComingSoonBtnBlue = styled(ComingSoonBtn)`
+  border: 1px solid #C8D9D6;
+  background: #EDF9FB;
+  color: #93BFB7;
+`
+const ComingSoonBtnPink = styled(ComingSoonBtn)`
+  border: 1px solid #9E9EE8;
+  background: #EFEFFF;
+  color: #9E9EE8;
+`
 const Box3CardImg = styled.img`
   width:100%;
 `
@@ -1001,7 +1018,7 @@ function CliqueContent() {
     },
     {
       title: 'Asset Portal',
-      content: 'Buy, sell & hold any on-chain asset through modular marketplaces'
+      content: 'Buy, sell & hold any on-chain asset through custom marketplaces'
     },
   ]
   const cliqueWorkspace = {
@@ -1046,9 +1063,7 @@ function CliqueContent() {
       </Box1>
       <Box3>
         <Box3CardPink>
-          <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
-            <GreenBtn>Coming Soon</GreenBtn>
-          </div>
+          <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
           <Box3CardTitle>Identity Engine</Box3CardTitle>
           <Box3CardUl>
             <Box3CardLi>Generate smart wallet based on NFT using innovative account.</Box3CardLi>
@@ -1058,9 +1073,7 @@ function CliqueContent() {
           <Box3CardImg src={workspaceImg3}></Box3CardImg>
         </Box3CardPink>
         <Box3CardBlue>
-          <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
-            <GreenBtn>Coming Soon</GreenBtn>
-          </div>
+          <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue>
           <Box3CardTitle>Asset Portal</Box3CardTitle>
           <Box3CardUl>
             <Box3CardLi>NFT and all asset marketplace for world building.</Box3CardLi>
@@ -1082,12 +1095,12 @@ function CliqueContent() {
       </Box2>
       <Box3>
         <Box3CardBlue>
-          <Box3CardTitle>Clique Rewards</Box3CardTitle>
+          <Box3CardTitle style={{marginBottom:'20px',paddingLeft:'10px'}}>Clique Rewards</Box3CardTitle>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
           <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW.</Box3CardTxt>
         </Box3CardBlue>
         <Box3CardPink>
-          <Box3CardTitle>Clique Governance</Box3CardTitle>
+          <Box3CardTitle style={{marginBottom:'20px',paddingLeft:'10px'}}>Clique Governance</Box3CardTitle>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
           <Box3CardTxt>Governance feature for the expression and execution of the world state.</Box3CardTxt>
         </Box3CardPink>
@@ -1635,10 +1648,10 @@ function Initiatives() {
       item3: "0",
     },
     {
-      avatar: "https://apiv2.myclique.io/static/1665737754979172019.png",
+      avatar: "https://apiv2.myclique.io/static/1665735793090759566.png",
       name: "Adventure Gold ",
       group: "@agld",
-      link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
+      link: "https://www.myclique.io/governance/daoInfo/1/proposal",
       comment:
         "Adventure Gold (AGLD) is the incentivization token for the Lootverse. Launched through a fair airdrop",
       item1: "8.9k",
@@ -2342,7 +2355,7 @@ export function Footer() {
       "Leading DAOs",
       "https://www.myclique.io/governance/daoInfo/3/proposal",
       "https://www.myclique.io/governance/daoInfo/224/proposal",
-      "https://www.myclique.io/governance/daoInfo/224/proposal",
+      "https://www.myclique.io/governance/daoInfo/1/proposal",
       "https://www.myclique.io/governance/daoInfo/216/proposal",
     ],
     [
@@ -2397,12 +2410,12 @@ export function Footer() {
             })}
             <Box>
               <FooterH1>STP Ecosystem</FooterH1>
-              <FooterH1
+              {/* <FooterH1
                 style={{ cursor: "pointer" }}
                 onClick={() => history.push("/dao")}
               >
                 Clique World Launchpad
-              </FooterH1>
+              </FooterH1> */}
               <FooterH1
                 style={{ cursor: "pointer" }}
                 onClick={() =>
