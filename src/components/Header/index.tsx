@@ -207,7 +207,7 @@ const resourcesMenu = (
 const ecosystemMenu = (
   <HeaderMenuBox>
     <HeaderLink href="/ecosystem">Ecosystem</HeaderLink>
-    <HeaderLink href="/dao">Clique World Launchpad</HeaderLink>
+    {/* <HeaderLink href="/dao">Clique World Launchpad</HeaderLink> */}
   </HeaderMenuBox>
 );
 
@@ -459,15 +459,21 @@ const Header: React.FC = () => {
             >
               News
             </a> */}
-            <GreenBtn
-              onClick={() =>
-                window.open("https://www.myclique.io/daos", "_blank")
-              }
-            >
-              Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />
-            </GreenBtn>
+            
           </nav>
+          {/* <nav> */}
+            
+          {/* </nav> */}
         </CSSTransition>
+        <GreenBtn
+        className="BuildDao"
+
+                onClick={() =>
+                  window.open("https://www.myclique.io/daos", "_blank")
+                }
+              >
+                Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />
+              </GreenBtn>
         <button
           onClick={() => {
             setMobileMenuOpen((prevState) => !prevState);

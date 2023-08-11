@@ -231,19 +231,19 @@ function Head() {
   return (
     <HeadBox>
       <HeadH1>
-        The Portal to   <br />
-        Autonomous Worlds
+        Opening The Portal <br />
+        to Autonomous Worlds
       </HeadH1>
       <HeadText>
-        Our mission is to build and scale an identity <br /> framework for Autonomous Worlds.
+        Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
       </HeadText>
-      <GreenBtn
+      {/* <GreenBtn
         style={{ marginTop: "40px" }}
-        // onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
+        onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
       >
         Coming Soon
-        {/* <ArrowOutwardIcon /> */}
-      </GreenBtn>
+        <ArrowOutwardIcon />
+      </GreenBtn> */}
       {/* <BottomCircleImg src={BottomCircle} /> */}
       <TopCircleImg src={TopCircle} />
 
@@ -271,7 +271,7 @@ const IdentityImage = styled.img`
   }
 `
 const IdentityContent = styled.div`
-  max-width: 550px;
+  max-width: 480px;
   font-family: Urbanist;
   color: #fff;
   @media (max-width: 767px) {
@@ -280,14 +280,16 @@ const IdentityContent = styled.div`
   }
 `
 const IdentityTitle = styled.div`
-font-family: Urbanist;
-  font-size: 46px;
+  font-family: Urbanist;
+  font-size: 56px;
   font-weight: 700;
   line-height: 62px;
   letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
   @media (max-width: 767px) {
-      font-size: 32px;
-      line-height: 1.2;
+    font-size: 32px;
+    line-height: 1.2;
   }
 `
 const IdentityText = styled.div`
@@ -296,19 +298,23 @@ const IdentityText = styled.div`
   font-weight: 500;
   line-height: 40px;
   letter-spacing: 2px;
-   @media (max-width: 767px) {
+  align-items: center;
+  @media (max-width: 767px) {
       font-size: 20px;
       line-height: 1.2;
   }
 `
 const IdentityIcons = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  width: 520px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
   margin-left: 20px;
   color: #fff;
   @media (max-width: 767px) {
     width: 100%;
+    flex-direction: column;
+    margin-left: 0px;
   }
 `
 const IconsBox = styled.div`
@@ -322,8 +328,9 @@ const IconsBox = styled.div`
   border-radius: 40px;
   background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 54.17%);
   @media (max-width: 767px) {
-    width: 160px;
-    height: 160px;
+    width: 240px;
+    height: 240px;
+    margin: 6px auto;
   }
 `
 const Icon = styled.img`
@@ -333,27 +340,64 @@ const Icon = styled.img`
   }
 `
 const IconName = styled.div`
+  margin-top: 30px;
+`
+const Identity2Box = styled.div`
+  max-width: 1440px;
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* background: #1b1aff; */
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-top: 60px;
+  }
   
+`
+const Identity2Content = styled.div`
+  align-items: center;
+  font-family: Urbanist;
+  color: #fff;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 20px;
+  }
+`
+const Identity2Text = styled.div`
+  margin-top: 10px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 2px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 1.2;
+  }
 `
 function Identity() {
   return (
     <IdentityBox>
       <IdentityImage src={identity} width={700}></IdentityImage>
       <IdentityContent>
-        <IdentityTitle>Identity requires provenance,
-          interoperability,and depth to unlock meaning and value from everything on-chain. </IdentityTitle>
-        <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing cosmos of AW. </IdentityText>
+        <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
+        <IdentityText>We believe in unlocking individualismby contributing to elevated forms ofon-chain identity.</IdentityText>
       </IdentityContent>
     </IdentityBox>
   )
 }
 function Identity2() {
   return (
-    <IdentityBox>
-      <IdentityContent>
-        <IdentityTitle>STP will power the identity layer for on-chain worlds by offering </IdentityTitle>
-        <IdentityText>We believe in unlocking individualism by contributing to elevated forms of on-chain identity. </IdentityText>
-      </IdentityContent>
+    <Identity2Box>
+      <Identity2Content>
+        <IdentityTitle>STP will empower AW builders </IdentityTitle>
+        <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction, AI</Identity2Text>
+      </Identity2Content>
       <IdentityIcons>
         <IconsBox>
           <Icon src={infrastructure}></Icon>
@@ -361,18 +405,14 @@ function Identity2() {
         </IconsBox>
         <IconsBox>
           <Icon src={qrcode}></Icon>
-          <IconName>Tooling Platforms</IconName>
+          <IconName>Toolkit</IconName>
         </IconsBox>
         <IconsBox>
           <Icon src={dataForm}></Icon>
-          <IconName>Data Indexing</IconName>
-        </IconsBox>
-        <IconsBox>
-          <Icon src={more}></Icon>
-          <IconName>More</IconName>
+          <IconName>Data APIs</IconName>
         </IconsBox>
       </IdentityIcons>
-    </IdentityBox>
+    </Identity2Box>
   )
 }
 
@@ -784,7 +824,7 @@ const Card = styled.div`
 `
 const Card1 = styled(Card)`
   width: 376px;
-  height: 180px;
+  height: 230px;
   margin-bottom: 32px;
   @media (max-width: 767px) {
     width: 100%;
@@ -829,6 +869,7 @@ const CardTitle = styled.div`
   line-height: 38px;
 `
 const CardText = styled.div`
+  margin-top: 18px;
   color: var(--word-color, #3F5170);
   font-family: Urbanist;
   font-size: 18px;
@@ -895,12 +936,14 @@ const Box3Card = styled.div`
   }
 `
 const Box3CardBlue = styled(Box3Card)`
+  position: relative;
   padding: 38px;
   border-radius: 20px;
   border: 1px solid #C6DCF0;
   background: #F8FCFF;
 `
 const Box3CardPink = styled(Box3Card)`
+  position: relative;
   padding: 38px 36px 28px;
   border-radius: 20px;
   border: 1px solid #D9C6F0;
@@ -949,8 +992,8 @@ function CliqueContent() {
       content: 'Onboard users across worlds in seconds with gasless transactions'
     },
     {
-      title: 'Smart Account Generator',
-      content: 'Simplify complex on-chain activity to one-click transactions using innovative account abstraction'
+      title: 'Account Generator',
+      content: 'One-click on-chain activity using account abstraction'
     },
     {
       title: 'Data APIs',
@@ -976,6 +1019,7 @@ function CliqueContent() {
           <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
           <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
           {/* <CliqueContentText>{cliqueAwSolutions.text}</CliqueContentText> */}
+          <GreenBtn style={{ marginTop: '40px' }}>Coming Soon</GreenBtn>
         </ContentLeft>
         <ContentRight>
           <Cards>
@@ -983,23 +1027,49 @@ function CliqueContent() {
               <CardTitle>{cardList[0].title}</CardTitle>
               <CardText>{cardList[0].content}</CardText>
             </Card1>
-            <Card2>
+            <Card1>
               <CardTitle>{cardList[1].title}</CardTitle>
               <CardText>{cardList[1].content}</CardText>
-            </Card2>
+            </Card1>
           </Cards>
           <Cards>
-            <Card3>
+            <Card1>
               <CardTitle>{cardList[2].title}</CardTitle>
               <CardText>{cardList[2].content}</CardText>
-            </Card3>
-            <Card4>
+            </Card1>
+            <Card1>
               <CardTitle>{cardList[3].title}</CardTitle>
               <CardText>{cardList[3].content}</CardText>
-            </Card4>
+            </Card1>
           </Cards>
         </ContentRight>
       </Box1>
+      <Box3>
+        <Box3CardPink>
+          <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+            <GreenBtn>Coming Soon</GreenBtn>
+          </div>
+          <Box3CardTitle>Identity Engine</Box3CardTitle>
+          <Box3CardUl>
+            <Box3CardLi>Generate smart wallet based on NFT using innovative account.</Box3CardLi>
+            <Box3CardLi>Manage NFT Smart Wallet customizable in-app.</Box3CardLi>
+            <Box3CardLi>Traverse in multi-chain worlds using interworld passports.</Box3CardLi>
+          </Box3CardUl>
+          <Box3CardImg src={workspaceImg3}></Box3CardImg>
+        </Box3CardPink>
+        <Box3CardBlue>
+          <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
+            <GreenBtn>Coming Soon</GreenBtn>
+          </div>
+          <Box3CardTitle>Asset Portal</Box3CardTitle>
+          <Box3CardUl>
+            <Box3CardLi>NFT and all asset marketplace for world building.</Box3CardLi>
+            <Box3CardLi>New tradeable class of packaged assets.</Box3CardLi>
+            <Box3CardLi>Utility analytics based on on-chain activity.</Box3CardLi>
+          </Box3CardUl>
+          <Box3CardImg src={workspaceImg4}></Box3CardImg>
+        </Box3CardBlue>
+      </Box3>
       <Box2>
         <ContentLeft2>
           <Box2Img src={workspaceImg} />
@@ -1012,31 +1082,15 @@ function CliqueContent() {
       </Box2>
       <Box3>
         <Box3CardBlue>
+          <Box3CardTitle>Clique Rewards</Box3CardTitle>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
           <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW.</Box3CardTxt>
         </Box3CardBlue>
         <Box3CardPink>
+          <Box3CardTitle>Clique Governance</Box3CardTitle>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
           <Box3CardTxt>Governance feature for the expression and execution of the world state.</Box3CardTxt>
         </Box3CardPink>
-        <Box3CardPink>
-          <Box3CardTitle>Identity Engine</Box3CardTitle>
-          <Box3CardUl>
-            <Box3CardLi>Turn user’s NFT or on-chain gaming asset into a smart wallet that has ownership provenance, transaction history, and versatile utility based on the innovation of account abstraction.</Box3CardLi>
-            <Box3CardLi>Manage NFT Smart Wallet customizable in-app.</Box3CardLi>
-            <Box3CardLi>Seamlessly traverse into multi-chain worlds using interworld passport identity.</Box3CardLi>
-          </Box3CardUl>
-          <Box3CardImg src={workspaceImg3}></Box3CardImg>
-        </Box3CardPink>
-        <Box3CardBlue>
-          <Box3CardTitle>Asset Portal</Box3CardTitle>
-          <Box3CardUl>
-            <Box3CardLi>NFT and all asset marketplace for world building.</Box3CardLi>
-            <Box3CardLi>New asset class using account abstraction.</Box3CardLi>
-            <Box3CardLi>Utility analytics based on transactions and other on-chain evidence of usage.</Box3CardLi>
-          </Box3CardUl>
-          <Box3CardImg src={workspaceImg4}></Box3CardImg>
-        </Box3CardBlue>
       </Box3>
 
     </CliqueContentBox>
@@ -1582,13 +1636,13 @@ function Initiatives() {
     },
     {
       avatar: "https://apiv2.myclique.io/static/1665737754979172019.png",
-      name: "Sonet",
-      group: "@sonet",
+      name: "Adventure Gold ",
+      group: "@agld",
       link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
       comment:
-        "Sonet is an open-source platform providing AWS-like services across Web2 and Web3 applications",
-      item1: "10.4k",
-      item2: "36",
+        "Adventure Gold (AGLD) is the incentivization token for the Lootverse. Launched through a fair airdrop",
+      item1: "8.9k",
+      item2: "0",
       item3: "0",
     },
     {
@@ -1613,51 +1667,51 @@ function Initiatives() {
       item2: "0",
       item3: "0",
     },
-    {
-      avatar: "https://preapiv2.myclique.io/static/1666074762290076677.jpeg",
-      name: "Alpha DAO",
-      group: "@alphadao",
-      link: "https://www.myclique.io/page/137/0xf88037bae5e6faceb5d7c723abe2bdf938f687bd",
-      comment:
-        "Alpha DAO is an exclusive community of top Web3 investors, founders, and builders providing access to proprietary insights and deal flow.",
-      item1: "2.7k",
-      item2: "0",
-      item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
-      name: "Bubble",
-      group: "@bubble",
-      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
-      comment:
-        "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
-      item1: "12.7K",
-      item2: "57",
-      item3: "0",
-    },
+    // {
+    //   avatar: "https://preapiv2.myclique.io/static/1666074762290076677.jpeg",
+    //   name: "Alpha DAO",
+    //   group: "@alphadao",
+    //   link: "https://www.myclique.io/page/137/0xf88037bae5e6faceb5d7c723abe2bdf938f687bd",
+    //   comment:
+    //     "Alpha DAO is an exclusive community of top Web3 investors, founders, and builders providing access to proprietary insights and deal flow.",
+    //   item1: "2.7k",
+    //   item2: "0",
+    //   item3: "0",
+    // },
+    // {
+    //   avatar: "https://apiv2.myclique.io/static/1665738518318964203.png",
+    //   name: "Bubble",
+    //   group: "@bubble",
+    //   link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
+    //   comment:
+    //     "Support an inclusive and diverse community by building meaningful relationships in Web3. Members form close-knit bonds in a safe environment free from judgment, surrounded by like-minded individuals.",
+    //   item1: "12.7K",
+    //   item2: "57",
+    //   item3: "0",
+    // },
 
-    {
-      avatar: "https://preapiv2.myclique.io/static/1665738772191379494.png",
-      name: "GoldenDAO",
-      group: "@goldendao",
-      link: "https://www.myclique.io/page/137/0xaec5aa4a0a769855b776a18b6288a83b26c668ff",
-      comment:
-        "Our mission is to launch a DAO to collectively advance AAPI solidarity and empowerment through real world events + gatherings, and web3 infrastructure + initiatives.",
-      item1: "1.4k",
-      item2: "3",
-      item3: "0",
-    },
-    {
-      avatar: "https://apiv2.myclique.io/static/1676425557741808633.png",
-      name: "Turkey Disaster Relief DAO",
-      group: "@turkeydisasterreliefdao",
-      link: "https://www.myclique.io/governance/daoInfo/137/0xcdf08a2fc664edf65d853e594e2dff6b283db2e1",
-      comment:
-        "This DAO aims to help the Turkish people affected by the earthquake return to normal life and rebuild their lives as soon as possible.",
-      item1: "861",
-      item2: "1",
-      item3: "0",
-    },
+    // {
+    //   avatar: "https://preapiv2.myclique.io/static/1665738772191379494.png",
+    //   name: "GoldenDAO",
+    //   group: "@goldendao",
+    //   link: "https://www.myclique.io/page/137/0xaec5aa4a0a769855b776a18b6288a83b26c668ff",
+    //   comment:
+    //     "Our mission is to launch a DAO to collectively advance AAPI solidarity and empowerment through real world events + gatherings, and web3 infrastructure + initiatives.",
+    //   item1: "1.4k",
+    //   item2: "3",
+    //   item3: "0",
+    // },
+    // {
+    //   avatar: "https://apiv2.myclique.io/static/1676425557741808633.png",
+    //   name: "Turkey Disaster Relief DAO",
+    //   group: "@turkeydisasterreliefdao",
+    //   link: "https://www.myclique.io/governance/daoInfo/137/0xcdf08a2fc664edf65d853e594e2dff6b283db2e1",
+    //   comment:
+    //     "This DAO aims to help the Turkish people affected by the earthquake return to normal life and rebuild their lives as soon as possible.",
+    //   item1: "861",
+    //   item2: "1",
+    //   item3: "0",
+    // },
   ];
   const ContributorsData = [
     {
@@ -1696,7 +1750,7 @@ function Initiatives() {
     <InitiativesBox>
       <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
-        We evolve DAOs to emerge into Autonomous Worlds. <br />
+        We evolve DAOs for Autonomous Worlds.  <br />
         Traverse our on-chain universe and help build the future!
       </InitH2>
       <Box
@@ -2030,7 +2084,7 @@ function Learn() {
 
   return (
     <Box pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
-      <InitH1 style={{ textAlign: "center",color:"#000" }}>Learn</InitH1>
+      <InitH1 style={{ textAlign: "center", color: "#000" }}>Learn</InitH1>
       <Box
         mt={isDownSm ? "40px" : "48px"}
         sx={{ display: "flex", justifyContent: "center" }}
@@ -2273,7 +2327,8 @@ export function Footer() {
   // return <></>;
   const footList = [
     ["Products", "Clique Workspace", "Clique DApp Store", "Clique SDK"],
-    ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
+    // ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
+    ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     ["Resources", "Developer Portal", "How to guides"],
   ];
   const footListLink = [
@@ -2286,9 +2341,9 @@ export function Footer() {
     [
       "Leading DAOs",
       "https://www.myclique.io/governance/daoInfo/3/proposal",
-      "https://www.myclique.io/governance/daoInfo/4/proposal",
-      "https://www.myclique.io/governance/daoInfo/2/proposal",
-      "https://www.myclique.io/governance/daoInfo/203/proposal",
+      "https://www.myclique.io/governance/daoInfo/224/proposal",
+      "https://www.myclique.io/governance/daoInfo/224/proposal",
+      "https://www.myclique.io/governance/daoInfo/216/proposal",
     ],
     [
       "Resources",
@@ -2307,13 +2362,13 @@ export function Footer() {
         gap={isDownSm ? "48px" : 0}
       >
         <img src={StpLogo} alt="" />
-        <BlueButton
+        {/* <BlueButton
           onClick={() =>
             window.open("https://www.myclique.io/daos", "_blank")
           }
         >
           Build DAO
-        </BlueButton>
+        </BlueButton> */}
       </Box>
       {!isDownSm ? (
         <>
