@@ -231,7 +231,7 @@ function Head() {
   return (
     <HeadBox>
       <HeadH1>
-      STP-Opening The Portal<br />
+      Opening The Portal<br />
       to Autonomous Worlds
       </HeadH1>
       <HeadText>
