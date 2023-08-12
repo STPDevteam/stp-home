@@ -231,8 +231,8 @@ function Head() {
   return (
     <HeadBox>
       <HeadH1>
-        Opening The Portal <br />
-        to Autonomous Worlds
+      Opening The Portal<br />
+      to Autonomous Worlds
       </HeadH1>
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
@@ -397,7 +397,7 @@ function Identity2() {
     <Identity2Box>
       <Identity2Content>
         <IdentityTitle>STP will empower AW builders </IdentityTitle>
-        <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction, AI</Identity2Text>
+        <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction and AI</Identity2Text>
       </Identity2Content>
       <IdentityIcons>
         <IconsBox>
