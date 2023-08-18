@@ -54,6 +54,7 @@ import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { Autoplay } from "swiper";
 import { Navigation } from "swiper";
 
+import Base from "../../assets/images/home/base.svg";
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
 import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
 import Thegraph from "../../assets/images/ecosystem/Thegraph.png";
@@ -1969,6 +1970,7 @@ function Ecosystem() {
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
   const PartnersLogos = [
+    Base,
     Chainlink,
     Thegraph,
     PolygonDAO,
@@ -1991,7 +1993,7 @@ function Ecosystem() {
     Voltswap,
     PushPro,
   ];
-  const IntegrationsLogos = [Binance, Polygon, Klaytn, ZkEVM];
+  const IntegrationsLogos = [Base,Binance, Polygon, Klaytn, ZkEVM];
   const ListedLogos = [
     BinanceListf,
     UpBit,
@@ -2046,11 +2048,12 @@ function Ecosystem() {
         style={{
           maxWidth: "1441px",
           padding: "60px",
+          alignItems: 'center'
         }}
       >
         {currentLogos.map((logo, idx) => (
           // init width 0px
-          <SwiperSlide key={idx} style={{ width: "264.2px" }}>
+          <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px' }}>
             <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
           </SwiperSlide>
         ))}
