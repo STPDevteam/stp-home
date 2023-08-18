@@ -59,7 +59,7 @@ import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
 import Thegraph from "../../assets/images/ecosystem/Thegraph.png";
 import Polygon from "../../assets/images/ecosystem/Polygon.png";
 import Klaytn from "../../assets/images/ecosystem/Klaytn.png";
-import Rai from "../../assets/images/ecosystem/RAI.png";
+import Rai from "../../assets/images/ecosystem/raiFinance.png";
 import Vee from "../../assets/images/ecosystem/Vee.png";
 import Cere from "../../assets/images/ecosystem/Cere.png";
 import Define from "../../assets/images/ecosystem/Define.png";
