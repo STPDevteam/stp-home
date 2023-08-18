@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router";
-import Chainlink from '../../assets/images/ecosystem/chainlink.png';
+import Chainlink from '../../assets/images/ecosystem/Chainlink.png';
 import GnosisSafe from '../../assets/images/ecosystem/GnosisSafe.png';
 import Thegraph from '../../assets/images/ecosystem/Thegraph.png';
-import Polygon from '../../assets/images/ecosystem/polygon.png';
+import Polygon from '../../assets/images/ecosystem/Polygon.png';
 import Klaytn from '../../assets/images/ecosystem/Klaytn.png';
 import Rai from '../../assets/images/ecosystem/raiFinance.png';
 import Vee from '../../assets/images/ecosystem/Vee.png';
