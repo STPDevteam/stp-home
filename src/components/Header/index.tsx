@@ -100,7 +100,7 @@ export function ProductMenu({
   const menuList = [
     {
       icon: IconSDK,
-      title: "Clique AW Solutions",
+      title: "Clique AW",
       // link: "",
       text: "Solutions platform for building on-chain worlds unique to any AW project.",
     },
@@ -370,7 +370,7 @@ const Header: React.FC = () => {
         style={{
           background: currentPath.pathname.includes("dao")
             ? "white"
-            : "#2524de",
+            : "#16127a",
           color: currentPath.pathname.includes("dao")
             ? "#000"
             : "#fff",
