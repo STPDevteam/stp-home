@@ -1,5 +1,5 @@
 import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
@@ -13,8 +13,6 @@ import { ReactComponent as UserIcon } from "../../assets/images/home/svg/userico
 import { ReactComponent as FileIcon } from "../../assets/images/home/svg/file-icon.svg";
 import { ReactComponent as AlarmIcon } from "../../assets/images/home/svg/alarmicon.svg";
 import UserActive from "../../assets/images/home/svg/user-active.svg";
-// import AlarmIcon from "../../assets/images/home/svg/alarmicon.svg";
-// import FileIcon from "../../assets/images/home/svg/file-icon.svg";
 
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
 import StpLogo from "../../assets/images/home/svg/stp-logo.svg";
@@ -112,7 +110,42 @@ import workspaceImg1 from "../../assets/images/home/workspace1.png"
 import workspaceImg2 from "../../assets/images/home/workspace2.png"
 import workspaceImg3 from "../../assets/images/home/workspace3.png"
 import workspaceImg4 from "../../assets/images/home/workspace4.png"
+import homeImg1 from "../../assets/images/home/home1.png"
+import homeImg2 from "../../assets/images/home/home2.png"
+import homeImg3 from "../../assets/images/home/home3.png"
+import homeImg4 from "../../assets/images/home/home4.png"
+import homeImg5 from "../../assets/images/home/home5.png"
+import homeImg61 from "../../assets/images/home/home6-1.png"
+import homeImg62 from "../../assets/images/home/home6-2.png"
+import homeImg63 from "../../assets/images/home/home6-3.png"
+import homeImg7 from "../../assets/images/home/home7.png"
+import starWhite from "../../assets/images/home/StarWhite.svg"
+import starCircle from "../../assets/images/home/starCircle.svg"
 
+const blinkAnimation = keyframes`
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 70%;
+  }
+`
+const rotateAnimation = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+const floatAnimation = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+`;
 export const ContentWrapper = styled(Box)`
   position: absolute;
   width: 100%;
@@ -124,42 +157,61 @@ export const ContentWrapper = styled(Box)`
 `;
 const Content1 = styled.div`
   width: 100%;
-  background: linear-gradient(180deg, #2524E0 0%, #1414A9 100%);
+  background: #211FCF;
+`
+const Head1 = styled.div`
+  width: 100%;
+  background: url(${homeImg1}) no-repeat;
+  background-size: cover;
+  background-position: 40%;
+`
+const FooterModal = styled.div`
+  width: 100vw;
+  padding-bottom: 120px;
+  background: url(${homeImg7}) no-repeat;
+  background-size: cover;
+  @media (max-width: 767px) {
+    padding: 24px;
+  }
+
 `
 export default function Homepage() {
   return (
     <ContentWrapper>
       <Content1>
-        <Head />
-        <Identity />
+        <Head1>
+          <Head />
+          <Identity />
+        </Head1>
         <Identity2 />
         <Initiatives />
-        <Data />
       </Content1>
       <CliqueContent />
       {/* <Infrastructure /> */}
       <Ecosystem />
       <Learn />
-      <BuildWithUs />
-      <Footer />
+      <FooterModal>
+        <BuildWithUs />
+        <Footer2 />
+      </FooterModal>
     </ContentWrapper>
   );
 }
 
 export const HeadBox = styled(Box)`
-  /* background: #1b1aff; */
   position: relative;
-  /* height: 900px; */
   width: 100%;
+  height: 1000px;
   padding-left: 252px;
   @media (max-width: 767px) {
+    height: auto;
     padding-left: 20px;
     height: calc(100vh - 48px);
     padding-bottom: 79px;
   }
 `;
 export const HeadH1 = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Righteous";
   font-style: normal;
   font-weight: 600;
   font-size: 90px;
@@ -168,6 +220,7 @@ export const HeadH1 = styled(Typography)`
   color: #ffffff;
 
   @media (max-width: 767px) {
+    padding-top: 100px;
     font-size: 48px;
     line-height: 56px;
   }
@@ -232,8 +285,8 @@ function Head() {
   return (
     <HeadBox>
       <HeadH1>
-      Opening The Portal<br />
-      to Autonomous Worlds
+        Opening The Portal<br />
+        to Autonomous Worlds
       </HeadH1>
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
@@ -246,7 +299,7 @@ function Head() {
         <ArrowOutwardIcon />
       </GreenBtn> */}
       {/* <BottomCircleImg src={BottomCircle} /> */}
-      <TopCircleImg src={TopCircle} />
+      {/* <TopCircleImg src={TopCircle} /> */}
 
     </HeadBox>
   );
@@ -254,36 +307,66 @@ function Head() {
 const IdentityBox = styled.div`
   margin-top: 160px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: self-start;
+  padding-top: 60px;
   width: 100%;
-  /* background: #1b1aff; */
+  height: 500px;
   @media (max-width: 767px) {
+    height: auto;
     flex-direction: column;
     margin-top: 0px;
+    padding-top: 0px;
   }
   
 `
+const IdentityHomeImg2 = styled.img`
+  position: relative;
+  mix-blend-mode: screen;
+  max-width: 800px;
+  @media (max-width: 767px) {
+    width: 100vw;
+    order: 2;
+    margin-top: 40px;
+  }
+`
 const IdentityImage = styled.img`
-  margin-left: -200px;
-  margin-right:40px;
+  position: absolute;
+  top: 0;
+  left: -140px;
+  width: 88px;
+  animation: ${blinkAnimation} 1.5s ease-in-out infinite;
   @media (max-width: 767px) {
     display: block;
-    margin: 0;
-    width: 100%;
+    top: -30px;
+    left: 0;
+  }
+`
+const IdentityImage2 = styled.img`
+  position: absolute;
+  top: 50px;
+  left: -70px;
+  width: 38px;
+  animation: ${blinkAnimation} 2s ease-in-out infinite;
+  @media (max-width: 767px) {
+    display: block;
+    top: 20px;
+    left: 50px;
   }
 `
 const IdentityContent = styled.div`
-  max-width: 480px;
-  font-family: Urbanist;
+  /* margin-left: 500px; */
+  position: relative;
+  max-width: 620px;
+  font-family: Poppins;
   color: #fff;
   @media (max-width: 767px) {
     width: 100%;
-    padding: 20px;
+    padding: 24px;
+    order: 1;
   }
 `
 const IdentityTitle = styled.div`
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 56px;
   font-weight: 700;
   line-height: 62px;
@@ -297,7 +380,7 @@ const IdentityTitle = styled.div`
 `
 const IdentityText = styled.div`
   margin-top: 40px;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 40px;
   letter-spacing: 2px;
@@ -329,7 +412,7 @@ const IconsBox = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 54.17%);
+  background: linear-gradient(180deg, rgba(49, 48, 241, 0.00) 0%, #3837F1 62.50%);
   @media (max-width: 767px) {
     width: 240px;
     height: 240px;
@@ -360,8 +443,9 @@ const Identity2Box = styled.div`
   
 `
 const Identity2Content = styled.div`
+  position: relative;
   align-items: center;
-  font-family: Urbanist;
+  font-family: Poppins;
   color: #fff;
   @media (max-width: 767px) {
     width: 100%;
@@ -382,14 +466,36 @@ const Identity2Text = styled.div`
       line-height: 1.2;
   }
 `
+const Identity2Star = styled.img`
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  animation: ${blinkAnimation} 1.5s ease-in-out infinite;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
+const HomeImg3 = styled.img`
+  position: absolute;
+  top: -140px;
+  right: -80px;
+  mix-blend-mode: screen;
+  animation: ${blinkAnimation} 5s ease-in-out infinite;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
+
 function Identity() {
   return (
     <IdentityBox>
-      <IdentityImage src={identity} width={700}></IdentityImage>
-      <IdentityContent>
-        <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
-        <IdentityText>We believe in unlocking individualism by contributing to elevated forms of on-chain identity.</IdentityText>
-      </IdentityContent>
+      <IdentityHomeImg2 src={homeImg2}></IdentityHomeImg2>
+        <IdentityContent>
+          <IdentityImage src={starWhite}></IdentityImage>
+          <IdentityImage2 src={starWhite}></IdentityImage2>
+          <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
+          <IdentityText>We believe in unlocking individualism by contributing to elevated forms of on-chain identity.</IdentityText>
+        </IdentityContent>
     </IdentityBox>
   )
 }
@@ -397,8 +503,10 @@ function Identity2() {
   return (
     <Identity2Box>
       <Identity2Content>
+        <Identity2Star src={starWhite}></Identity2Star>
         <IdentityTitle>STP will empower AW builders </IdentityTitle>
         <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction and AI</Identity2Text>
+        <HomeImg3 src={homeImg3}></HomeImg3>
       </Identity2Content>
       <IdentityIcons>
         <IconsBox>
@@ -419,7 +527,7 @@ function Identity2() {
 }
 
 const InfraH1 = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 64px;
@@ -432,7 +540,7 @@ const InfraH1 = styled(Typography)`
 `;
 
 const InfraSubH1 = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -445,7 +553,7 @@ const InfraSubH1 = styled(Typography)`
 `;
 
 const InfraH2 = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -745,6 +853,8 @@ const CliqueContentBox = styled.div`
   align-items: center;
   width: 100%;
   padding-top: 100px;
+  background: url(${homeImg4}) no-repeat;
+  background-position: 0% -5%;
 `
 const Box1 = styled.div`
   position: relative;
@@ -754,7 +864,7 @@ const Box1 = styled.div`
   justify-content: center;
   @media (max-width: 767px) {
     width: 100vw;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     flex-direction: column;
   }
 `
@@ -770,18 +880,19 @@ const ContentLeft = styled.div`
   margin-right: 40px;
 `
 const CliqueContentTitle = styled.div`
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 56px;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1.3;
   @media (max-width: 767px) {
+    margin-top: 40px;
     font-size: 40px;
   }
 `
 const CliqueContentSubTitle = styled.div`
   margin-top: 40px;
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -794,7 +905,7 @@ const CliqueContentSubTitle = styled.div`
 `
 const CliqueContentText = styled.div`
   margin-top: 60px;
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 22px;
   font-style: normal;
   font-weight: 500;
@@ -831,6 +942,7 @@ const Card1 = styled(Card)`
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
+    margin-bottom: 22px;
   }
 `
 const Card2 = styled(Card)`
@@ -864,7 +976,7 @@ const Card4 = styled(Card)`
 
 `
 const CardTitle = styled.div`
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -873,21 +985,33 @@ const CardTitle = styled.div`
 const CardText = styled.div`
   margin-top: 18px;
   color: var(--word-color, #3F5170);
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 26px; 
 `
 const Box2 = styled.div`
+  position: relative;
+  width: 100%;
   margin-top: 140px;
   display: flex;
+  justify-content: center;
+  /* background: url(${homeImg5}) no-repeat; */
+  /* background-position: 100% 120%; */
   @media (max-width: 767px) {
     width: 100vw;
     margin-top: 20px;
     padding: 20px;
     flex-direction: column;
   }
+`
+const HomeImg5 = styled.img`
+  position: absolute;
+  bottom: -100px;
+  right: 0;
+  z-index: 1;
+  animation: ${blinkAnimation} 2s ease-in-out infinite;
 `
 const Box2Img = styled.img`
   width: 823px;
@@ -905,6 +1029,7 @@ const ContentRight2 = styled.div`
   display: flex;
   flex-direction: column;
   width: 380px;
+  z-index: 2;
   @media (max-width: 767px) {
     width: 100%;
   }
@@ -916,7 +1041,7 @@ const BlueCard = styled.div`
   border: 1px solid #C6DCF0;
   background: #F8FCFF;
 `
-const Box3 = styled.div`
+const Box3 = styled.div<{isMargin: boolean}>`
   width: 1440px;
   display: flex;
   flex-wrap: wrap;
@@ -926,6 +1051,7 @@ const Box3 = styled.div`
     width: 100%;
     flex-direction: column;
     padding: 20px;
+    margin-top: ${props => props.isMargin?'30px':'0'};
   }
 `
 const Box3Card = styled.div`
@@ -944,15 +1070,21 @@ const Box3CardBlue = styled(Box3Card)`
   position: relative;
   padding: 38px;
   border-radius: 20px;
-  border: 1px solid #C6DCF0;
-  background: #F8FCFF;
+  border: 1px solid #C8D9D6;
+  background: #F8FEFF;
+  &:hover {
+    box-shadow: 0px 6px 10px 0px rgba(173, 218, 183, 0.25);
+  }
 `
 const Box3CardPink = styled(Box3Card)`
   position: relative;
   padding: 38px 36px 28px;
   border-radius: 20px;
-  border: 1px solid #D9C6F0;
-  background: #FDF8FF;
+  border: 1px solid #9E9EE8;
+  background: #F8F8FF;
+  &:hover {
+    box-shadow: 0px 6px 10px 0px rgba(180, 158, 193, 0.25);
+  }
   @media (max-width: 767px) {
     position: static;
   }
@@ -1004,7 +1136,7 @@ const Box3CardImg = styled.img`
 `
 const Box3CardTitle = styled.div`
   color: var(--main, #23262F);
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -1013,7 +1145,7 @@ const Box3CardTitle = styled.div`
 const Box3CardTxt = styled.div`
   padding: 20px;
   color: var(--word-color, #3F5170);
-  font-family: Urbanist;
+  font-family: Poppins;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -1032,7 +1164,7 @@ const Box3CardLi = styled.li`
 `
 function CliqueContent() {
   const cliqueAwSolutions = {
-    title: 'Clique AW Solutions',
+    title: 'Clique AW',
     subTitle: 'Build on-chain worlds unique to any AW project with a full suite of solutions.',
     // text: 'Seamlessly unwind and power world-building through these solutions'
   }
@@ -1063,8 +1195,7 @@ function CliqueContent() {
     <CliqueContentBox>
       <Box1>
         {<Box1Star src={decorationStar} />}
-        <Ellipse src={InfEllipse1} />
-        <Ellipse src={InfEllipse2} />
+        {/* <Ellipse src={homeImg4} /> */}
         <ContentLeft>
           <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
           <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
@@ -1094,7 +1225,7 @@ function CliqueContent() {
           </Cards>
         </ContentRight>
       </Box1>
-      <Box3>
+      <Box3 isMargin={false}>
         <Box3CardPink>
           <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
           <Box3CardTitle>Identity Engine</Box3CardTitle>
@@ -1127,15 +1258,16 @@ function CliqueContent() {
           <CliqueContentSubTitle>{cliqueWorkspace.subTitle}</CliqueContentSubTitle>
           <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
         </ContentRight2>
+        <HomeImg5 src={homeImg5}></HomeImg5>
       </Box2>
-      <Box3>
+      <Box3 isMargin={true}>
         <Box3CardBlue>
-          <Box3CardTitle style={{marginBottom:'20px',paddingLeft:'10px'}}>Clique Rewards</Box3CardTitle>
+          <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Rewards</Box3CardTitle>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
           <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW.</Box3CardTxt>
         </Box3CardBlue>
         <Box3CardPink>
-          <Box3CardTitle style={{marginBottom:'20px',paddingLeft:'10px'}}>Clique Governance</Box3CardTitle>
+          <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Governance</Box3CardTitle>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
           <Box3CardTxt>Governance feature for the expression and execution of the world state.</Box3CardTxt>
         </Box3CardPink>
@@ -1167,7 +1299,7 @@ const DataStar = styled.img`
 `
 
 const DataNumber = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 800;
   font-size: 48px;
@@ -1206,7 +1338,7 @@ function Data() {
   }, [total?.totalAccount, total?.totalDao, total?.totalProposal]);
   return (
     <DataBgBox>
-      <DataStar src={decorationStar}></DataStar>
+      {/* <DataStar src={decorationStar}></DataStar> */}
       {dataList.map((d, idx) => {
         return (
           <Box>
@@ -1220,11 +1352,11 @@ function Data() {
 }
 
 const InitH1 = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   margin-top: 120px;
-  font-size: 64px;
+  font-size: 56px;
   line-height: 90px;
   text-align: center;
   color: #fff;
@@ -1238,7 +1370,7 @@ const InitH1 = styled(Typography)`
 `;
 const InitH2 = styled(Typography)`
   margin-top: 16px;
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-size: 20px;
   font-weight: 500;
@@ -1271,7 +1403,7 @@ const InitBox = styled(Box)`
 
 const InitListH1 = styled(Typography)`
   margin-left: 8px;
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -1512,6 +1644,7 @@ const AllInfo = styled(Box)`
   border-radius: 80px;
   color: #fff;
   font-size: 18px;
+  
 `;
 
 const ContributorsImg = styled("img")`
@@ -1654,19 +1787,35 @@ function ContributorsBox({
 const InitiativesBox = styled.div`
   position: relative;
   width: 1300px;
-  margin: 20px auto;
-  padding-bottom: 70px;
+  margin: 20px auto 60px auto;
+  padding-bottom: 0px;
   border-radius: 40px;
-  background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 37.14%);
+  background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1714B5 39.06%);
+  /* background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 37.14%); */
   /* background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%); */
   @media (max-width: 767px) {
     width: 100vw;
   }
 `
+const InitiativesStarWhite = styled.img`
+  position: absolute;
+  top: -60px;
+  right: 30px;
+  width: 32px;
+  animation: ${blinkAnimation} 1.5s ease-in-out infinite;
+`
 const InitiativesStar = styled.img`
   position: absolute;
   bottom: -70px;
   right: 10px;
+`
+const ViewAllBox = styled.div`
+  display: flex;
+  justify-content: center;
+  @media (max-width: 767px) {
+    justify-content: flex-start;
+    padding-left: 24px;
+  }
 `
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
@@ -1796,17 +1945,13 @@ function Initiatives() {
 
   return (
     <InitiativesBox>
+      <InitiativesStarWhite src={starWhite}></InitiativesStarWhite>
       <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
         We evolve DAOs for Autonomous Worlds.  <br />
         Traverse our on-chain universe and help build the future!
       </InitH2>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <ViewAllBox>
         <AllInfo
           sx={{
             "&:hover": {
@@ -1833,7 +1978,7 @@ function Initiatives() {
         >
           View All
         </AllInfo>
-      </Box>
+      </ViewAllBox>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
@@ -1860,7 +2005,7 @@ function Initiatives() {
           </Grid>
         </IfonBoxs>
       </Box>
-      <InitiativesStar src={decorationStar}></InitiativesStar>
+      {/* <InitiativesStar src={decorationStar}></InitiativesStar> */}
 
       {/* <InitH1>Top Contributors</InitH1>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -1911,13 +2056,14 @@ function Initiatives() {
           View All
         </AllInfo>
       </Box> */}
+      <Data />
     </InitiativesBox>
   );
 }
 
 const EcoH1 = styled(Typography)`
   margin: 120px 0 48px;
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 64px;
@@ -1933,7 +2079,32 @@ const EcoH1 = styled(Typography)`
     margin: 80px 0 40px;
   }
 `;
+const HomeImg61 = styled.img`
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  animation: ${blinkAnimation} 3s ease-in-out infinite;
+`
+const HomeImg62 = styled.img`
+  position: absolute;
+  bottom: -600px;
+  left: calc(50% - 500px);
+  z-index: 1;
+  animation: ${rotateAnimation} 200s linear infinite;
 
+`
+const HomeImg63 = styled.img`
+  position: absolute;
+  bottom: -500px;
+  left: 0px;
+  z-index: 2;
+`
+const EcoContent = styled.div`
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 const EcoButton = styled(Button)`
   display: flex;
   flex-direction: row;
@@ -1993,7 +2164,7 @@ function Ecosystem() {
     Voltswap,
     PushPro,
   ];
-  const IntegrationsLogos = [Base,Binance, Polygon, Klaytn, ZkEVM];
+  const IntegrationsLogos = [Base, Binance, Polygon, Klaytn, ZkEVM];
   const ListedLogos = [
     BinanceListf,
     UpBit,
@@ -2012,59 +2183,64 @@ function Ecosystem() {
         : ListedLogos;
 
   return (
-    <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
-      <EcoH1>Ecosystem</EcoH1>
-      <Tabs
-        value={value}
-        onChange={(e, value) => setValue(value)}
-        sx={{
-          color: "#777E90",
-          ".MuiTabs-indicator": {
-            background: "#A7F46A",
-            height: isDownSm ? "3px" : "5px",
-            borderRadius: isDownSm ? "1.5px" : "2.5px",
-          },
-          ".MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected":
-          {
+    <Box position={"relative"} display={"flex"} alignItems={"center"} flexDirection={"column"} overflow={"hidden"}>
+      <HomeImg61 src={homeImg61}></HomeImg61>
+      <EcoContent>
+        <EcoH1>Ecosystem</EcoH1>
+        <Tabs
+          value={value}
+          onChange={(e, value) => setValue(value)}
+          sx={{
             color: "#777E90",
-          },
-        }}
-      >
-        <EcoTab value={"Partners"} label="Partners" />
-        <EcoTab value={"Integrations"} label="Integrations" />
-        <EcoTab value={"Listed Exchanges"} label="Listed Exchanges" />
-      </Tabs>
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        loop
-        autoplay={{
-          delay: 1000,
-        }}
-        slidesPerView={5}
-        style={{
-          maxWidth: "1441px",
-          padding: "60px",
-          alignItems: 'center'
-        }}
-      >
-        {currentLogos.map((logo, idx) => (
-          // init width 0px
-          <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px' }}>
-            <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            ".MuiTabs-indicator": {
+              background: "#A7F46A",
+              height: isDownSm ? "3px" : "5px",
+              borderRadius: isDownSm ? "1.5px" : "2.5px",
+            },
+            ".MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected":
+            {
+              color: "#777E90",
+            },
+          }}
+        >
+          <EcoTab value={"Partners"} label="Partners" />
+          <EcoTab value={"Integrations"} label="Integrations" />
+          <EcoTab value={"Listed Exchanges"} label="Listed Exchanges" />
+        </Tabs>
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          loop
+          autoplay={{
+            delay: 1000,
+          }}
+          slidesPerView={5}
+          style={{
+            maxWidth: "1441px",
+            padding: "60px",
+            alignItems: 'center'
+          }}
+        >
+          {currentLogos.map((logo, idx) => (
+            // init width 0px
+            <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px' }}>
+              <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <EcoButton
-        style={{ marginTop: "50px", marginBottom: "120px" }}
-        onClick={() => history.push("/ecosystem")}
-      >
-        Learn More
-      </EcoButton>
+        <EcoButton
+          style={{ marginTop: "50px", marginBottom: "120px" }}
+          onClick={() => history.push("/ecosystem")}
+        >
+          Learn More
+        </EcoButton>
+      </EcoContent>
+      <HomeImg62 src={homeImg62}></HomeImg62>
+      <HomeImg63 src={homeImg63}></HomeImg63>
     </Box>
   );
 }
@@ -2133,7 +2309,8 @@ function Learn() {
   const isDownSm = useBreakpoint("sm");
 
   return (
-    <Box pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
+    <Box position={"relative"} pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
+      <LearnEllipse src={starCircle}></LearnEllipse>
       <InitH1 style={{ textAlign: "center", color: "#000" }}>Learn</InitH1>
       <Box
         mt={isDownSm ? "40px" : "48px"}
@@ -2168,7 +2345,16 @@ function Learn() {
   );
 }
 
+
+const LearnEllipse = styled.img`
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 1;
+`
+
 const LearnBox = styled(Box)`
+  z-index: 2;
   padding: 0 20px;
   max-width: 1169px;
   @media (max-width: 767px) {
@@ -2254,19 +2440,20 @@ const LearnContent = styled(Typography)`
 `;
 
 const BuildBox = styled(Box)`
-  width: 100vw;
-  height: 506px;
+  width: 1330px;
+  /* height: 506px; */
   position: relative;
-  padding: 120px;
-  background: #2524de;
+  margin: auto;
+  padding: 120px 60px;
   @media (max-width: 767px) {
-    padding: 120px 80px 118px 20px;
+    width: 100%;
+    padding: 120px 24px;
     // margin-bottom: 48px;
   }
 `;
 
 const BuildH1 = styled(Typography)`
-  font-family: "Urbanist";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 64px;
@@ -2283,9 +2470,14 @@ const BuildContent = styled(Typography)`
   font-style: normal;
   margin-top: 24px;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  color: #ececec;
+  font-size: 36px;
+  line-height: 1.3;
+  color: #A7F46A;
+  width: 600px;
+  @media (max-width: 767px) {
+    width: 100%;
+    font-size: 26px;
+  }
 `;
 
 function BuildWithUs() {
@@ -2309,10 +2501,10 @@ function BuildWithUs() {
           Contact <ArrowOutwardIcon style={{ marginLeft: "8px" }} />
         </a>
       </GreenBtn>
-      <img
+      {/* <img
         style={{ position: "absolute", right: 0, bottom: 0 }}
         src={BuildCircle}
-      />
+      /> */}
     </BuildBox>
   );
 }
@@ -2533,5 +2725,184 @@ export function Footer() {
         ""
       )}
     </FooterBox>
+  );
+}
+
+const FooterBox2 = styled(Box)`
+  width: 1330px;
+  margin: auto;
+  padding: 80px;
+  border-radius: 60px;
+  background: linear-gradient(180deg, #0B1251 0%, rgba(16, 16, 16, 0.47) 100%);
+  backdrop-filter: blur(32px);
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 24px;
+    margin: auto;
+    padding: 48px 20px 88px 20px;
+  }
+`
+export function Footer2() {
+  const isDownSm = useBreakpoint("sm");
+  const history = useHistory();
+  // return <></>;
+  const footList = [
+    ["Products", "Clique Workspace", "Clique DApp Store", "Clique SDK"],
+    // ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
+    ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
+    ["Resources", "Developer Portal", "How to guides"],
+  ];
+  const footListLink = [
+    [
+      "Products",
+      "https://www.myclique.io/governance",
+      "https://www.myclique.io/tools",
+      "https://www.npmjs.com/package/@myclique/governance-sdk",
+    ],
+    [
+      "Leading DAOs",
+      "https://www.myclique.io/governance/daoInfo/3/proposal",
+      "https://www.myclique.io/governance/daoInfo/224/proposal",
+      "https://www.myclique.io/governance/daoInfo/1/proposal",
+      "https://www.myclique.io/governance/daoInfo/216/proposal",
+    ],
+    [
+      "Resources",
+      "https://github.com/STPDevteam",
+      "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
+    ],
+  ];
+  return (
+    <FooterBox2>
+      <Box
+        display={"flex"}
+        width={"100%"}
+        flexDirection={isDownSm ? "column" : "row"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        gap={isDownSm ? "48px" : 0}
+      >
+        <img src={StpLogo} alt="" />
+        {/* <BlueButton
+          onClick={() =>
+            window.open("https://www.myclique.io/daos", "_blank")
+          }
+        >
+          Build DAO
+        </BlueButton> */}
+      </Box>
+      {!isDownSm ? (
+        <>
+          <Divider style={{ background: "#757B8A", marginTop: '40px', marginBottom: '70px' }} />
+          <Box display={"flex"} gap={isDownSm ? "20px" : "120px"}>
+            {footList.map((coloum, idx) => {
+              return (
+                <Box>
+                  {coloum.map((item, i) => {
+                    if (i === 0) {
+                      return <FooterH1>{item}</FooterH1>;
+                    } else {
+                      return (
+                        <FooterText
+                          onClick={() =>
+                            window.open(footListLink[idx][i], "_blank")
+                          }
+                        >
+                          {item}
+                        </FooterText>
+                      );
+                    }
+                  })}
+                </Box>
+              );
+            })}
+            <Box>
+              <FooterH1>STP Ecosystem</FooterH1>
+              {/* <FooterH1
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/dao")}
+              >
+                Clique World Launchpad
+              </FooterH1> */}
+              <FooterH1
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  window.open(
+                    "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+                    "_blank"
+                  )
+                }
+              >
+                News
+              </FooterH1>
+            </Box>
+          </Box>
+        </>
+      ) : (
+        ""
+      )}
+      <Box
+        display={"flex"}
+        gap={"40px"}
+        sx={{
+          justifyContent: isDownSm ? "center" : "flex-end",
+          marginTop: isDownSm ? "60px" : 0,
+          "& img": {
+            cursor: "pointer",
+          },
+        }}
+      >
+        <SocialMedia
+          src={Tele}
+          onClick={() => window.open("https://t.me/STPofficial", "_blank")}
+        />
+        <SocialMedia
+          src={Twitter}
+          onClick={() =>
+            window.open("https://twitter.com/STP_Network", "_blank")
+          }
+        />
+        {/* <SocialMedia
+          src={Medium}
+          onClick={() =>
+            window.open("https://medium.com/@versenetwork", "_blank")
+          }
+        /> */}
+        <SocialMedia
+          src={Cylinder}
+          onClick={() =>
+            window.open(
+              "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+              "_blank"
+            )
+          }
+        />
+        <SocialMedia
+          src={Wechat}
+          onClick={() => window.open(WechatQR, "_blank")}
+        />
+        <SocialMedia
+          src={Email}
+          onClick={() => window.open("mailto:contact@stp.network", "_blank")}
+        />
+      </Box>
+      {isDownSm ? (
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          sx={{
+            marginTop: "60px",
+            color: "#757B8A",
+            fontSize: 14,
+            fontWeight: 500,
+            fontFamily: "Inter",
+          }}
+        >
+          © STP All Rights Reserved
+        </Box>
+      ) : (
+        ""
+      )}
+    </FooterBox2>
   );
 }
