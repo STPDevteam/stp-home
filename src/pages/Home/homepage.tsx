@@ -1175,7 +1175,7 @@ function CliqueContent() {
     },
     {
       title: 'Account Generator',
-      content: 'One-click on-chain activity using account abstraction'
+      content: 'One-click on-chain transaction using account abstraction'
     },
     {
       title: 'Data APIs',
