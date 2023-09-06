@@ -216,7 +216,7 @@ export const HeadH1 = styled(Typography)`
   font-weight: 600;
   font-size: 90px;
   line-height: 110px;
-  padding-top: 179px;
+  padding-top: 280px;
   color: #ffffff;
 
   @media (max-width: 767px) {
@@ -359,6 +359,11 @@ const IdentityContent = styled.div`
   max-width: 620px;
   font-family: Poppins;
   color: #fff;
+  padding: 0 30px 0 30px;
+  @media screen and (min-width: 1440px) {
+    max-width: 680px;
+    padding: 0 20px 0 80px;
+  }
   @media (max-width: 767px) {
     width: 100%;
     padding: 24px;
@@ -430,7 +435,7 @@ const IconName = styled.div`
 `
 const Identity2Box = styled.div`
   max-width: 1440px;
-  margin: 160px auto 0;
+  margin: 300px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -852,9 +857,12 @@ const CliqueContentBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 150px;
   background: url(${homeImg4}) no-repeat;
   background-position: 0% -5%;
+  @media (max-width: 767px) {
+    padding-top: 60px;
+  }
 `
 const Box1 = styled.div`
   position: relative;
@@ -1194,7 +1202,7 @@ function CliqueContent() {
   return (
     <CliqueContentBox>
       <Box1>
-        {<Box1Star src={decorationStar} />}
+        {/* {<Box1Star src={decorationStar} />} */}
         {/* <Ellipse src={homeImg4} /> */}
         <ContentLeft>
           <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
@@ -1355,7 +1363,7 @@ const InitH1 = styled(Typography)`
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  margin-top: 120px;
+  margin-top: 160px;
   font-size: 56px;
   line-height: 90px;
   text-align: center;
@@ -1787,13 +1795,14 @@ function ContributorsBox({
 const InitiativesBox = styled.div`
   position: relative;
   width: 1300px;
-  margin: 20px auto 60px auto;
+  margin: 20px auto 160px auto;
   padding-bottom: 0px;
   border-radius: 40px;
   background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1714B5 39.06%);
   /* background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 37.14%); */
   /* background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%); */
   @media (max-width: 767px) {
+    margin: 20px auto 60px auto;
     width: 100vw;
   }
 `
@@ -2062,7 +2071,7 @@ function Initiatives() {
 }
 
 const EcoH1 = styled(Typography)`
-  margin: 120px 0 48px;
+  margin: 150px 0 48px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
@@ -2090,6 +2099,7 @@ const HomeImg62 = styled.img`
   bottom: -600px;
   left: calc(50% - 500px);
   z-index: 1;
+  opacity: .3;
   animation: ${rotateAnimation} 200s linear infinite;
 
 `
