@@ -861,7 +861,7 @@ const CliqueContentBox = styled.div`
   background: url(${homeImg4}) no-repeat;
   background-position: 0% -5%;
   @media (max-width: 767px) {
-    padding-top: 100px;
+    padding-top: 60px;
   }
 `
 const Box1 = styled.div`
