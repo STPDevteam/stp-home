@@ -336,6 +336,7 @@ const AwnsContent = styled.div`
   color: #fff;
   p {
     margin-bottom: 0;
+    font-size: 16px;
   }
   @media (max-width: 767px) {
     order: 1;
@@ -352,6 +353,7 @@ const GreenTxt = styled.div`
 const AwnsBtn = styled(GreenBtn)`
   width: 210px;
   text-align: center;
+  z-index: 9;
   @media screen and (max-width: 1440px) {
     max-width: 160px;
   }
@@ -380,7 +382,7 @@ function Head() {
           <p>Granted exclusive updates, early access, and whitelist opportunities.</p>
           <p>Claim your unique name and avatar before others do, join the waitlist now</p>
         </AwnsContent>
-        <AwnsBtn>
+        <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
           SIGN UP!
         </AwnsBtn>
       </AwnsBox>
