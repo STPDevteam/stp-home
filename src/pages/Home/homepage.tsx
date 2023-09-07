@@ -121,6 +121,7 @@ import homeImg63 from "../../assets/images/home/home6-3.png"
 import homeImg7 from "../../assets/images/home/home7.png"
 import starWhite from "../../assets/images/home/StarWhite.svg"
 import starCircle from "../../assets/images/home/starCircle.svg"
+import awnsImg from "../../assets/images/home/awns.svg"
 
 const blinkAnimation = keyframes`
   0%, 100% {
@@ -202,21 +203,22 @@ export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
   height: 1000px;
-  padding-left: 252px;
+  padding-left: 160px;
+  /* margin: auto; */
   @media (max-width: 767px) {
     height: auto;
     padding-left: 20px;
-    height: calc(100vh - 48px);
+    height: auto;
     padding-bottom: 79px;
   }
 `;
 export const HeadH1 = styled(Typography)`
   font-family: "Righteous";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 90px;
   line-height: 110px;
-  padding-top: 280px;
+  padding-top: 180px;
   color: #ffffff;
 
   @media (max-width: 767px) {
@@ -279,6 +281,85 @@ const TopCircleImg = styled("img")`
     width: 50%;
   }
 `;
+const AwnsBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-top: 70px;
+  margin-right: 70px;
+  padding: 0 50px 0 10px;
+  --border-width: 2px;
+  --border-radius: 30px;
+  --border-color: linear-gradient(-35deg, #4f7ff4,#25f2ff);
+  border-radius: var(--border-radius);
+  background: linear-gradient(160deg, #131B68 13.3%, #1919E1 103.48%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    padding: 20px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background: var(--border-color);
+    --mask-bg: linear-gradient(red, red);
+    --mask-clip: content-box, padding-box;
+    -webkit-mask-image: var(--mask-bg), var(--mask-bg);
+    mask-image: var(--mask-bg), var(--mask-bg);
+    -webkit-mask-clip: var(--mask-clip);
+    mask-clip: var(--mask-clip);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+  }
+`;
+const AwnsImg = styled('img')`
+  display: flex;
+  mix-blend-mode: lighten;
+  @media (max-width: 767px) {
+    order: 3;
+  }
+`;
+const AwnsContent = styled.div`
+  padding: 10px 0 10px 5px;
+  flex: 1;
+  color: #fff;
+  p {
+    margin-bottom: 0;
+  }
+  @media (max-width: 767px) {
+    order: 1;
+  }
+`;
+const GreenTxt = styled.div`
+  margin: 10px 0;
+  font-family: Urbanist;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #A7F46A;
+`
+const AwnsBtn = styled(GreenBtn)`
+  width: 210px;
+  text-align: center;
+  @media screen and (max-width: 1440px) {
+    max-width: 160px;
+  }
+  @media (max-width: 767px) {
+    margin: 10px 0;
+    order: 2;
+  }
+`;
 
 function Head() {
   const history = useHistory();
@@ -291,6 +372,18 @@ function Head() {
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
       </HeadText>
+      <AwnsBox>
+        <AwnsImg src={awnsImg}></AwnsImg>
+        <AwnsContent>
+          <p>Traverse across Autonomous Worlds (AW) expressing your individuality.</p>
+          <GreenTxt>Start your journey with STP's AWNS avatar identity!</GreenTxt>
+          <p>Granted exclusive updates, early access, and whitelist opportunities.</p>
+          <p>Claim your unique name and avatar before others do, join the waitlist now</p>
+        </AwnsContent>
+        <AwnsBtn>
+          SIGN UP!
+        </AwnsBtn>
+      </AwnsBox>
       {/* <GreenBtn
         style={{ marginTop: "40px" }}
         onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
