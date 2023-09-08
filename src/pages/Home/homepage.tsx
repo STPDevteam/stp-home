@@ -206,7 +206,6 @@ export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
   height: 1000px;
-  padding-left: 160px;
   /* margin: auto; */
   @media (max-width: 767px) {
     height: auto;
@@ -223,9 +222,10 @@ export const HeadH1 = styled(Typography)`
   line-height: 110px;
   padding-top: 180px;
   color: #ffffff;
-
+  padding-left: 160px;
   @media (max-width: 767px) {
     padding-top: 100px;
+    padding-left: 0px;
     font-size: 48px;
     line-height: 56px;
   }
@@ -238,10 +238,12 @@ export const HeadText = styled(Typography)`
   font-size: 28px;
   line-height: 40px;
   color: #ececec;
+  padding-left: 160px;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 24px;
     margin-top: 40px;
+    padding-left: 0px;
   }
 `;
 export const GreenBtn = styled(Button)`
@@ -290,8 +292,7 @@ const AwnsBox = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin-top: 70px;
-  margin-right: 70px;
+  margin: 70px auto;
   padding: 10px 10px 20px;
   --border-width: 2px;
   --border-radius: 30px;
@@ -378,13 +379,18 @@ const AwnsBtn = styled(GreenBtn)`
     order: 2;
   }
 `;
+const HeadBr = styled.br`
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
 
 function Head() {
   const history = useHistory();
   return (
     <HeadBox>
       <HeadH1>
-        Opening The Portal<br />
+        Opening The Portal <HeadBr />
         to Autonomous Worlds
       </HeadH1>
       <HeadText>
