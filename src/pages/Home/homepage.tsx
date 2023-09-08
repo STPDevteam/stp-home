@@ -94,6 +94,8 @@ import Learn3 from "../../assets/images/home/Learn3.png";
 import Learn4 from "../../assets/images/home/Learn4.png";
 import Learn5 from "../../assets/images/home/Learn5.png";
 import Learn6 from "../../assets/images/home/Learn6.png";
+import Learn7 from "../../assets/images/home/Learn7.jpeg";
+import Learn8 from "../../assets/images/home/Learn8.jpeg";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper as SwiperClass } from "swiper/types";
@@ -344,20 +346,27 @@ const AwnsContent = styled.div`
 `;
 const GreenTxt = styled.div`
   margin: 10px 0;
+  padding-right: 50px;
   font-family: Urbanist;
   font-size: 26px;
   font-weight: 700;
   line-height: 1.3;
   color: #A7F46A;
+  letter-spacing: 1px;
+  @media (max-width: 767px) {
+    padding-right: 0;
+  }
 `
 const AwnsBtn = styled(GreenBtn)`
-  width: 210px;
+  width: 240px;
   text-align: center;
   z-index: 9;
+  font-size: 20px;
   @media screen and (max-width: 1440px) {
-    max-width: 160px;
+    max-width: 180px;
   }
   @media (max-width: 767px) {
+    max-width: 280px;
     margin: 10px 0;
     order: 2;
   }
@@ -377,13 +386,14 @@ function Head() {
       <AwnsBox>
         <AwnsImg src={awnsImg}></AwnsImg>
         <AwnsContent>
-          <p>Traverse across Autonomous Worlds (AW) expressing your individuality.</p>
-          <GreenTxt>Start your journey with STP's AWNS avatar identity!</GreenTxt>
-          <p>Granted exclusive updates, early access, and whitelist opportunities.</p>
-          <p>Claim your unique name and avatar before others do, join the waitlist now</p>
+          {/* <p>Traverse across Autonomous Worlds (AW) expressing your individuality.</p> */}
+          <GreenTxt>Start your journey with STP's AWNS avatar identity. Secure your AWNS and avatar by joining the waitlist now! 
+</GreenTxt>
+          {/* <p>Granted exclusive updates, early access, and whitelist opportunities.</p> */}
+          {/* <p>Claim your unique name and avatar before others do, join the waitlist now</p> */}
         </AwnsContent>
         <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
-          SIGN UP!
+        JOIN WAITLIST!
         </AwnsBtn>
       </AwnsBox>
       {/* <GreenBtn
@@ -2353,19 +2363,33 @@ function Ecosystem() {
 function Learn() {
   const data = [
     {
+      imgUrl: Learn7,
+      title: "Building an Identity Layer in Autonomous Worlds (Phase 1)",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/Wmh0cBnNl5fFeLBlnkeELrai1jGRi0Onk5-pbhsuiRs",
+      content:
+        "Underwhelming State of On-chain Identity Still to this day, users interact and transact on apps using EOAs (externally owned accounts) that can be attached with a username from a naming service (such as ENS for .eth). Deserving praise, the ecosystem has effectively adopted this username identity through most applications. However, this naming convention lacks personality and creativity as a sole identity. Beyond that, consensus says the current wallet solutions are restrictive and hinder individualism on-chain.",
+    },
+    {
+      imgUrl: Learn8,
+      title: "Building an Identity Layer in Autonomous Worlds (Phase 2)",
+      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/AxggTBVjbZWEg6UqwAH-r9WHm4MI57C3vDIbknRhsDE",
+      content:
+        "Framing and Building AW Identity AW requires a dynamic and versatile identity infrastructure that transports users seamlessly across worlds. So far, innovative wallets with traction such as Argent and Exodus focus on interoperability and security, but don’t focus on adding depth to identity. Today in AW, on-chain maxis still need to use different wallet providers (often blockchain specific) and hack in order to onboard across different worlds. Beyond that, wallet connections are only surface-level public keys and usernames, which hinders the expansion of on-chain realities.",
+    },
+    {
       imgUrl: Learn2,
       title: "DAO with Zero Knowledge Proof",
       link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/kXM7Kom5_bdWsZZHjTCY6gstqj_YEjbWDV2Fsvp_nS8",
       content:
         "DAO (Decentralized Autonomous Organization) is a form of organization that leverages blockchain technology to achieve autonomous governance, distribution, and collaboration in a decentralized manner.",
     },
-    {
-      imgUrl: Learn1,
-      title: "How AI will transform DAOs",
-      link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3jVwJxEc_dce0mSg2pS8dAPguQYq4O0OFu3OYkdtHa4",
-      content:
-        "ChatGPT took the world by storm by proliferating the application of  artificial intelligence (AI) and reinforcement learning (RL). By design, DAOs gravitate towards AI and RL through smart contract technology and activity data that can be trained and reinforced. Intertwining the DAO concept with AI technology creates a paradigm shift in efficiency and capability for governance, while promising transparency and decentralization. The efficacy of this combination of theory and technology is unprecedented.",
-    },
+    // {
+    //   imgUrl: Learn1,
+    //   title: "How AI will transform DAOs",
+    //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3jVwJxEc_dce0mSg2pS8dAPguQYq4O0OFu3OYkdtHa4",
+    //   content:
+    //     "ChatGPT took the world by storm by proliferating the application of  artificial intelligence (AI) and reinforcement learning (RL). By design, DAOs gravitate towards AI and RL through smart contract technology and activity data that can be trained and reinforced. Intertwining the DAO concept with AI technology creates a paradigm shift in efficiency and capability for governance, while promising transparency and decentralization. The efficacy of this combination of theory and technology is unprecedented.",
+    // },
     {
       imgUrl:
         "https://mirror-media.imgix.net/publication-images/H9ECGhjeNNObB57GPZJmp.jpeg?height=1024&width=2048&h=1024&w=2048&auto=compress",
@@ -2403,13 +2427,13 @@ function Learn() {
       content:
         "Enter in a DAO and click ‘Create a Proposal’ to start a community proposal. Community proposals, or regular proposals, are a ...",
     },
-    {
-      imgUrl: Learn5,
-      title: "How to create a community event with Clique",
-      link: "https://stp-dao.gitbook.io/verse-network/clique/dao-rewards",
-      content:
-        "As a part of Clique’s V2 upgrade, DAO Rewards is a new feature to reward community members and foster engagement ... ",
-    },
+    // {
+    //   imgUrl: Learn5,
+    //   title: "How to create a community event with Clique",
+    //   link: "https://stp-dao.gitbook.io/verse-network/clique/dao-rewards",
+    //   content:
+    //     "As a part of Clique’s V2 upgrade, DAO Rewards is a new feature to reward community members and foster engagement ... ",
+    // },
   ];
   const isDownSm = useBreakpoint("sm");
 
