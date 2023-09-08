@@ -52,6 +52,7 @@ import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { Autoplay } from "swiper";
 import { Navigation } from "swiper";
 
+import AGLD from "../../assets/images/ecosystem/AgldBlack.svg"
 import Base from "../../assets/images/home/base.svg";
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
 import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
@@ -285,12 +286,13 @@ const TopCircleImg = styled("img")`
 `;
 const AwnsBox = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin-top: 70px;
   margin-right: 70px;
-  padding: 0 50px 0 10px;
+  padding: 10px 10px 20px;
   --border-width: 2px;
   --border-radius: 30px;
   --border-color: linear-gradient(-35deg, #4f7ff4,#25f2ff);
@@ -333,7 +335,9 @@ const AwnsImg = styled('img')`
   }
 `;
 const AwnsContent = styled.div`
-  padding: 10px 0 10px 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px 50px 10px 20px;
   flex: 1;
   color: #fff;
   p {
@@ -341,12 +345,14 @@ const AwnsContent = styled.div`
     font-size: 16px;
   }
   @media (max-width: 767px) {
+    flex-direction: column;
     order: 1;
+    padding: 10px;
   }
 `;
 const GreenTxt = styled.div`
   margin: 10px 0;
-  padding-right: 50px;
+  padding-left: 50px;
   font-family: Urbanist;
   font-size: 26px;
   font-weight: 700;
@@ -355,6 +361,7 @@ const GreenTxt = styled.div`
   letter-spacing: 1px;
   @media (max-width: 767px) {
     padding-right: 0;
+    padding-left: 0;
   }
 `
 const AwnsBtn = styled(GreenBtn)`
@@ -384,13 +391,9 @@ function Head() {
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
       </HeadText>
       <AwnsBox>
-        <AwnsImg src={awnsImg}></AwnsImg>
         <AwnsContent>
-          {/* <p>Traverse across Autonomous Worlds (AW) expressing your individuality.</p> */}
-          <GreenTxt>Start your journey with STP's AWNS avatar identity. Secure your AWNS and avatar by joining the waitlist now! 
-</GreenTxt>
-          {/* <p>Granted exclusive updates, early access, and whitelist opportunities.</p> */}
-          {/* <p>Claim your unique name and avatar before others do, join the waitlist now</p> */}
+          <AwnsImg src={awnsImg}></AwnsImg>
+          <GreenTxt>Start your journey with STP's AWNS avatar identity. Secure your AWNS and avatar by joining the waitlist now! </GreenTxt>
         </AwnsContent>
         <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
         JOIN WAITLIST!
@@ -2256,6 +2259,7 @@ function Ecosystem() {
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
   const PartnersLogos = [
+    AGLD,
     Base,
     Chainlink,
     Thegraph,
