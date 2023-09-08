@@ -368,8 +368,8 @@ const Header: React.FC = () => {
         className="header"
         ref={headerRef}
         style={{
-          background: currentPath.pathname.includes("dao")
-            ? "white"
+          background: currentPath.pathname.includes("ecosystem")
+            ? "#2524de"
             : "#16127a",
           color: currentPath.pathname.includes("dao")
             ? "#000"

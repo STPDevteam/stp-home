@@ -37,10 +37,19 @@ import Zeta from '../../assets/images/ecosystem/zeta.png';
 import ZkEVM from '../../assets/images/ecosystem/Polygon_zkEVM.png';
 import CoingeckoImg from '../../assets/images/home/coingecko.svg';
 import Base from '../../assets/images/home/base.svg';
+import AGLD from '../../assets/images/ecosystem/AgldBlack.svg'
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
 export const EcosystemDataList = [
+  {
+    img: AGLD,
+    website: 'https://lootchain.com/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'AGLD',
+    name: 'AGLD'
+  },
   {
     img: Base,
     website: 'https://base.org',
