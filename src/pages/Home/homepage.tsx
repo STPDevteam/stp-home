@@ -205,7 +205,7 @@ export default function Homepage() {
 export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 800px;
   /* margin: auto; */
   @media (max-width: 767px) {
     height: auto;
@@ -218,9 +218,9 @@ export const HeadH1 = styled(Typography)`
   font-family: "Righteous";
   font-style: normal;
   font-weight: 500;
-  font-size: 90px;
-  line-height: 110px;
-  padding-top: 180px;
+  font-size: 74px;
+  line-height: 90px;
+  padding-top: 200px;
   color: #ffffff;
   padding-left: 160px;
   @media (max-width: 767px) {
@@ -234,8 +234,8 @@ export const HeadText = styled(Typography)`
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
-  margin-top: 48px;
-  font-size: 28px;
+  margin-top: 24px;
+  font-size: 24px;
   line-height: 40px;
   color: #ececec;
   padding-left: 160px;
@@ -254,8 +254,8 @@ export const GreenBtn = styled(Button)`
   align-items: center;
   padding: 16px 24px;
   font-weight: 700;
-  font-size: 16px;
-  height: 56px;
+  font-size: 18px;
+  height: 48px;
   line-height: 24px;
   gap: 8px;
   background: #a7f46a;
@@ -291,7 +291,7 @@ const AwnsBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 70px auto;
   padding: 10px 10px 20px;
   --border-width: 2px;
@@ -331,8 +331,11 @@ const AwnsBox = styled.div`
 const AwnsImg = styled('img')`
   display: flex;
   mix-blend-mode: lighten;
+  width: 60px;
+  height: 60px;
   @media (max-width: 767px) {
     order: 3;
+    display: none;
   }
 `;
 const AwnsContent = styled.div`
@@ -369,7 +372,7 @@ const AwnsBtn = styled(GreenBtn)`
   width: 240px;
   text-align: center;
   z-index: 9;
-  font-size: 20px;
+  font-size: 18px;
   @media screen and (max-width: 1440px) {
     max-width: 180px;
   }
@@ -399,7 +402,7 @@ function Head() {
       <AwnsBox>
         <AwnsContent>
           <AwnsImg src={awnsImg}></AwnsImg>
-          <GreenTxt>Start your journey with STP's AWNS avatar identity. Secure your AWNS and avatar by joining the waitlist now! </GreenTxt>
+          <GreenTxt>Secure your AWNS (6551) by joining the waitlist now!</GreenTxt>
         </AwnsContent>
         <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
         JOIN WAITLIST!
@@ -486,7 +489,7 @@ const IdentityContent = styled.div`
 `
 const IdentityTitle = styled.div`
   font-family: Poppins;
-  font-size: 56px;
+  font-size: 54px;
   font-weight: 700;
   line-height: 62px;
   letter-spacing: 2px;
@@ -499,13 +502,13 @@ const IdentityTitle = styled.div`
 `
 const IdentityText = styled.div`
   margin-top: 40px;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
   line-height: 40px;
   letter-spacing: 2px;
   align-items: center;
   @media (max-width: 767px) {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.2;
   }
 `
@@ -546,6 +549,7 @@ const Icon = styled.img`
 `
 const IconName = styled.div`
   margin-top: 30px;
+  font-size: 20px;
 `
 const Identity2Box = styled.div`
   max-width: 1440px;
@@ -573,7 +577,7 @@ const Identity2Content = styled.div`
 `
 const Identity2Text = styled.div`
   margin-top: 10px;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 40px;
   letter-spacing: 2px;
@@ -597,7 +601,7 @@ const Identity2Star = styled.img`
 const HomeImg3 = styled.img`
   position: absolute;
   top: -140px;
-  right: -80px;
+  right: -120px;
   mix-blend-mode: screen;
   animation: ${blinkAnimation} 5s ease-in-out infinite;
   @media (max-width: 767px) {
@@ -1003,24 +1007,24 @@ const ContentLeft = styled.div`
 `
 const CliqueContentTitle = styled.div`
   font-family: Poppins;
-  font-size: 56px;
+  font-size: 54px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.3;
   @media (max-width: 767px) {
     margin-top: 40px;
-    font-size: 40px;
+    font-size: 32px;
   }
 `
 const CliqueContentSubTitle = styled.div`
   margin-top: 40px;
   font-family: Poppins;
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.4;
   @media (max-width: 767px) {
-    font-size: 24px;
+    font-size: 18px;
     margin-top: 20px;
   }
 
@@ -1028,7 +1032,7 @@ const CliqueContentSubTitle = styled.div`
 const CliqueContentText = styled.div`
   margin-top: 60px;
   font-family: Poppins;
-  font-size: 22px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   @media (max-width: 767px) {
@@ -1099,7 +1103,7 @@ const Card4 = styled(Card)`
 `
 const CardTitle = styled.div`
   font-family: Poppins;
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 38px;
@@ -1108,7 +1112,7 @@ const CardText = styled.div`
   margin-top: 18px;
   color: var(--word-color, #3F5170);
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 26px; 
@@ -1217,6 +1221,7 @@ const ComingSoonBtn = styled.div`
   right: 20px;
   border-radius: 12px;
   padding: 8px 15px;
+  font-weight: 600;
   @media (max-width: 767px) {
     display: none;
   }
@@ -1259,16 +1264,25 @@ const Box3CardImg = styled.img`
 const Box3CardTitle = styled.div`
   color: var(--main, #23262F);
   font-family: Poppins;
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
+  line-height: 1.1;
+`
+const Box3CardSubTitle = styled.div`
+  margin-top: 20px;
+  color: var(--main, #23262F);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
   line-height: 1.1;
 `
 const Box3CardTxt = styled.div`
   padding: 20px;
   color: var(--word-color, #3F5170);
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
@@ -1279,7 +1293,7 @@ const Box3CardUl = styled.ul`
 const Box3CardLi = styled.li`
   color: #3F5170;
   font-family: DM Sans;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
@@ -1292,12 +1306,12 @@ function CliqueContent() {
   }
   const cardList = [
     {
-      title: 'Identity Engine',
-      content: 'Onboard users across worlds in seconds with gasless transactions'
+      title: 'AWNS',
+      content: 'Onboard & interact across worlds seamlessly with a universal name'
     },
     {
-      title: 'Account Generator',
-      content: 'One-click on-chain transaction using account abstraction'
+      title: '6551 Account Generator',
+      content: 'Elevate any NFT into a powerful wallet that can seamlessly own and connect'
     },
     {
       title: 'Data APIs',
@@ -1331,18 +1345,18 @@ function CliqueContent() {
               <CardText>{cardList[0].content}</CardText>
             </Card1>
             <Card1>
-              <CardTitle>{cardList[1].title}</CardTitle>
-              <CardText>{cardList[1].content}</CardText>
+              <CardTitle>{cardList[3].title}</CardTitle>
+              <CardText>{cardList[3].content}</CardText>
             </Card1>
           </Cards>
           <Cards>
             <Card1>
-              <CardTitle>{cardList[2].title}</CardTitle>
-              <CardText>{cardList[2].content}</CardText>
+              <CardTitle>{cardList[1].title}</CardTitle>
+              <CardText>{cardList[1].content}</CardText>
             </Card1>
             <Card1>
-              <CardTitle>{cardList[3].title}</CardTitle>
-              <CardText>{cardList[3].content}</CardText>
+              <CardTitle>{cardList[2].title}</CardTitle>
+              <CardText>{cardList[2].content}</CardText>
             </Card1>
           </Cards>
         </ContentRight>
@@ -1350,22 +1364,24 @@ function CliqueContent() {
       <Box3 isMargin={false}>
         <Box3CardPink>
           <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
-          <Box3CardTitle>Identity Engine</Box3CardTitle>
+          <Box3CardTitle>AWNS</Box3CardTitle>
+          <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle>
           <Box3CardUl>
-            <Box3CardLi>Generate smart wallet based on NFT using innovative account.</Box3CardLi>
-            <Box3CardLi>Manage NFT Smart Wallet customizable in-app.</Box3CardLi>
-            <Box3CardLi>Traverse in multi-chain worlds using interworld passports.</Box3CardLi>
+            <Box3CardLi>Register and manage your dynamic. AW domain wrapped with a 6551 wallet</Box3CardLi>
+            <Box3CardLi>Easily connect and interact with AW dApps</Box3CardLi>
+            <Box3CardLi>Single name for all tokens and decentralized worlds</Box3CardLi>
           </Box3CardUl>
           <Box3CardImg src={workspaceImg3}></Box3CardImg>
           <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5>
         </Box3CardPink>
         <Box3CardBlue>
           <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue>
-          <Box3CardTitle>Asset Portal</Box3CardTitle>
+          <Box3CardTitle>6551 Account Generator</Box3CardTitle>
+          <Box3CardSubTitle>Turn any NFT into a wallet</Box3CardSubTitle>
           <Box3CardUl>
-            <Box3CardLi>NFT and all asset marketplace for world building.</Box3CardLi>
-            <Box3CardLi>New tradeable class of packaged assets.</Box3CardLi>
-            <Box3CardLi>Utility analytics based on on-chain activity.</Box3CardLi>
+            <Box3CardLi>Generate smart wallet based on NFT using innovative account abstraction</Box3CardLi>
+            <Box3CardLi>Manage NFT Smart Wallet customizable in-app</Box3CardLi>
+            <Box3CardLi>Traverse in multi-chain worlds using interworld passports</Box3CardLi>
           </Box3CardUl>
           <Box3CardImg src={workspaceImg4}></Box3CardImg>
           <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5>
@@ -1437,10 +1453,10 @@ const DataContent = styled(Typography)`
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 30px;
   text-align: center;
-  color: #ececec;
+  color: #97B7EF;
   @media (max-width: 767px) {
     font-size: 16px;
   }
@@ -1478,15 +1494,15 @@ const InitH1 = styled(Typography)`
   font-style: normal;
   font-weight: 600;
   margin-top: 160px;
-  font-size: 56px;
+  font-size: 54px;
   line-height: 90px;
   text-align: center;
   color: #fff;
   @media (max-width: 767px) {
-    font-size: 48px;
+    font-size: 32px;
     margin-top: 80px;
     margin-left: 24px;
-    line-height: 56px;
+    line-height: 1.3;
     text-align: left;
   }
 `;
@@ -1494,7 +1510,7 @@ const InitH2 = styled(Typography)`
   margin-top: 16px;
   font-family: "Poppins";
   font-style: normal;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   text-align: center;
   color: #fff;
@@ -2586,7 +2602,7 @@ const BuildBox = styled(Box)`
   padding: 120px 60px;
   @media (max-width: 767px) {
     width: 100%;
-    padding: 120px 24px;
+    padding: 80px 4px;
     // margin-bottom: 48px;
   }
 `;
@@ -2595,11 +2611,11 @@ const BuildH1 = styled(Typography)`
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  font-size: 64px;
+  font-size: 60px;
   line-height: 90px;
   color: #ffffff;
   @media (max-width: 767px) {
-    font-size: 48px;
+    font-size: 42px;
     line-height: 58px;
   }
 `;
@@ -2609,7 +2625,7 @@ const BuildContent = styled(Typography)`
   font-style: normal;
   margin-top: 24px;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.3;
   color: #A7F46A;
   width: 600px;
