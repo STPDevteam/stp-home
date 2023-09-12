@@ -205,7 +205,7 @@ export default function Homepage() {
 export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 700px;
   /* margin: auto; */
   @media (max-width: 767px) {
     height: auto;
@@ -370,6 +370,7 @@ const GreenTxt = styled.div`
 `
 const AwnsBtn = styled(GreenBtn)`
   width: 240px;
+  margin-top: 50px;
   text-align: center;
   z-index: 9;
   font-size: 18px;
@@ -378,7 +379,7 @@ const AwnsBtn = styled(GreenBtn)`
   }
   @media (max-width: 767px) {
     max-width: 280px;
-    margin: 10px 0;
+    margin: 30px 0;
     order: 2;
   }
 `;
@@ -398,16 +399,16 @@ function Head() {
       </HeadH1>
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
+        <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
+          JOIN WAITLIST
+        </AwnsBtn>
       </HeadText>
-      <AwnsBox>
+      {/* <AwnsBox>
         <AwnsContent>
           <AwnsImg src={awnsImg}></AwnsImg>
           <GreenTxt>Secure your AWNS (6551) by joining the waitlist now!</GreenTxt>
         </AwnsContent>
-        <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
-        JOIN WAITLIST!
-        </AwnsBtn>
-      </AwnsBox>
+      </AwnsBox> */}
       {/* <GreenBtn
         style={{ marginTop: "40px" }}
         onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
