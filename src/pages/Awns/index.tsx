@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 
 import styled from "styled-components";
 import Logo from "../../assets/images/home/svg/stp-logo.svg";
-import bg from "../../assets/images/awns/bg.png"
+import bg from "../../assets/images/awns/bg.jpg"
 import wallet from "../../assets/images/awns/wallet.png"
 
 const Font = styled.div`

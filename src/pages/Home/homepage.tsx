@@ -399,7 +399,7 @@ function Head() {
       </HeadH1>
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
-        <AwnsBtn onClick={()=>{history.push('/awns')}}>
+        <AwnsBtn onClick={()=>{window.open('/awns','_blank')}}>
           JOIN WAITLIST
         </AwnsBtn>
       </HeadText>
@@ -988,6 +988,8 @@ const Box1 = styled.div`
   width: 1440px;
   margin: auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   @media (max-width: 767px) {
     width: 100vw;
@@ -1044,11 +1046,11 @@ const ContentRight = styled.div`
   display: flex;
   @media (max-width: 767px) {
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 `
 const Cards = styled.div`
-  margin-right: 26px;
+  margin-right: 40px;
   @media (max-width: 767px) {
     margin-right: 0px;
   }
@@ -1063,9 +1065,9 @@ const Card = styled.div`
   }
 `
 const Card1 = styled(Card)`
-  width: 376px;
-  height: 230px;
-  margin-bottom: 32px;
+  width: 580px;
+  height: 180px;
+  margin-bottom: 0px;
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
@@ -1074,7 +1076,7 @@ const Card1 = styled(Card)`
 `
 const Card2 = styled(Card)`
   width: 376px;
-  height: 232px;
+  height: 202px;
   margin-bottom: 32px;
   @media (max-width: 767px) {
     width: 100%;
@@ -1121,7 +1123,7 @@ const CardText = styled.div`
 const Box2 = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 140px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   /* background: url(${homeImg5}) no-repeat; */
@@ -1177,7 +1179,7 @@ const Box3 = styled.div<{isMargin: boolean}>`
   @media (max-width: 767px) {
     width: 100%;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     margin-top: ${props => props.isMargin?'30px':'0'};
   }
 `
@@ -1331,38 +1333,11 @@ function CliqueContent() {
   return (
     <CliqueContentBox>
       <Box1>
-        {/* {<Box1Star src={decorationStar} />} */}
-        {/* <Ellipse src={homeImg4} /> */}
-        <ContentLeft>
+        {/* <ContentLeft> */}
           <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
           <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
-          {/* <CliqueContentText>{cliqueAwSolutions.text}</CliqueContentText> */}
-          <GreenBtn style={{ marginTop: '40px' }}>Coming Soon</GreenBtn>
-        </ContentLeft>
-        <ContentRight>
-          <Cards>
-            <Card1>
-              <CardTitle>{cardList[0].title}</CardTitle>
-              <CardText>{cardList[0].content}</CardText>
-            </Card1>
-            <Card1>
-              <CardTitle>{cardList[3].title}</CardTitle>
-              <CardText>{cardList[3].content}</CardText>
-            </Card1>
-          </Cards>
-          <Cards>
-            <Card1>
-              <CardTitle>{cardList[1].title}</CardTitle>
-              <CardText>{cardList[1].content}</CardText>
-            </Card1>
-            <Card1>
-              <CardTitle>{cardList[2].title}</CardTitle>
-              <CardText>{cardList[2].content}</CardText>
-            </Card1>
-          </Cards>
-        </ContentRight>
-      </Box1>
-      <Box3 isMargin={false}>
+        {/* </ContentLeft> */}
+        <Box3 isMargin={false}>
         <Box3CardPink>
           <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
           <Box3CardTitle>AWNS</Box3CardTitle>
@@ -1388,6 +1363,30 @@ function CliqueContent() {
           <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5>
         </Box3CardBlue>
       </Box3>
+        <ContentRight>
+          <Cards>
+            {/* <Card1>
+              <CardTitle>{cardList[0].title}</CardTitle>
+              <CardText>{cardList[0].content}</CardText>
+            </Card1> */}
+            <Card1>
+              <CardTitle>{cardList[3].title}</CardTitle>
+              <CardText>{cardList[3].content}</CardText>
+            </Card1>
+          </Cards>
+          <Cards>
+            {/* <Card1>
+              <CardTitle>{cardList[1].title}</CardTitle>
+              <CardText>{cardList[1].content}</CardText>
+            </Card1> */}
+            <Card1>
+              <CardTitle>{cardList[2].title}</CardTitle>
+              <CardText>{cardList[2].content}</CardText>
+            </Card1>
+          </Cards>
+        </ContentRight>
+      </Box1>
+      
       <Box2>
         <ContentLeft2>
           <Box2Img src={workspaceImg} />
