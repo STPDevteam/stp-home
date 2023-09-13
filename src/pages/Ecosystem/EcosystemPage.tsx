@@ -106,6 +106,12 @@ const FilterTitle = styled(Typography)`
     line-height: 150%;
   }
 `;
+export const EcosystemHeadBox = styled(Box)`
+  padding-left: 160px;
+  @media (max-width: 767px) {
+    padding-left: 20px;
+  }
+`;
 
 function Head({
   categorySelect,
@@ -126,66 +132,69 @@ function Head({
       <HeadText>
       Our ecosystem consists of 15,000 progressive on-chain token holders and world contributors.
       </HeadText>
-      <GreenBtn
-        style={{ marginTop: "24px" }}
-        onClick={() => history.push("/dao")}
-      >
-        Clique World Launchpad <ArrowOutwardIcon />
-      </GreenBtn>
-      <Stack spacing={"24px"} mt={"80px"}>
-        <Row gap={"16px"} alignItems={"flex-start"}>
-          <FilterTitle>Category</FilterTitle>
-          <Row
-            gap={"4px"}
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            {categoryFilterDataList.map((tag, tagIdx) => (
-              <Tag
-                key={tagIdx}
-                onClick={() => {
-                  setCategorySelect(tag);
-                }}
-                className={categorySelect === tag ? "active" : ""}
-              >
-                {tag}
-              </Tag>
-            ))}
+      <EcosystemHeadBox>
+
+        <GreenBtn
+          style={{ marginTop: "24px" }}
+          onClick={() => history.push("/dao")}
+        >
+          Clique World Launchpad <ArrowOutwardIcon />
+        </GreenBtn>
+        <Stack spacing={"24px"} mt={"80px"}>
+          <Row gap={"16px"} alignItems={"flex-start"}>
+            <FilterTitle>Category</FilterTitle>
+            <Row
+              gap={"4px"}
+              sx={{
+                flexWrap: "wrap",
+              }}
+            >
+              {categoryFilterDataList.map((tag, tagIdx) => (
+                <Tag
+                  key={tagIdx}
+                  onClick={() => {
+                    setCategorySelect(tag);
+                  }}
+                  className={categorySelect === tag ? "active" : ""}
+                >
+                  {tag}
+                </Tag>
+              ))}
+            </Row>
           </Row>
-        </Row>
-        <Row gap={"16px"} alignItems={"flex-start"}>
-          <FilterTitle>Sector</FilterTitle>
-          <Row
-            gap={"4px"}
-            sx={{
-              flexWrap: "wrap",
-            }}
-          >
-            {sectorFilterDataList.map((tag, tagIdx) => (
-              <Tag
-                key={tagIdx}
-                onClick={() => {
-                  setSectorSelect(tag);
-                }}
-                className={sectorSelect === tag ? "active" : ""}
-              >
-                {tag}
-              </Tag>
-            ))}
+          <Row gap={"16px"} alignItems={"flex-start"}>
+            <FilterTitle>Sector</FilterTitle>
+            <Row
+              gap={"4px"}
+              sx={{
+                flexWrap: "wrap",
+              }}
+            >
+              {sectorFilterDataList.map((tag, tagIdx) => (
+                <Tag
+                  key={tagIdx}
+                  onClick={() => {
+                    setSectorSelect(tag);
+                  }}
+                  className={sectorSelect === tag ? "active" : ""}
+                >
+                  {tag}
+                </Tag>
+              ))}
+            </Row>
           </Row>
-        </Row>
-      </Stack>
-      <img
-        src={Star}
-        style={{
-          position: "absolute",
-          right: "0",
-          bottom: isDownSm ? "inherit" : "106px",
-          width: isDownSm ? "85px" : "auto",
-          top: isDownSm ? "157px" : "inherit",
-        }}
-      />
+        </Stack>
+        <img
+          src={Star}
+          style={{
+            position: "absolute",
+            right: "0",
+            bottom: isDownSm ? "inherit" : "106px",
+            width: isDownSm ? "85px" : "auto",
+            top: isDownSm ? "90px" : "inherit",
+          }}
+        />
+      </EcosystemHeadBox>
     </HeadBox>
   );
 }
