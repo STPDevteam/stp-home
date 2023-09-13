@@ -399,7 +399,7 @@ function Head() {
       </HeadH1>
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
-        <AwnsBtn onClick={()=>window.open("https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform","_blank")}>
+        <AwnsBtn onClick={()=>{history.push('/awns')}}>
           JOIN WAITLIST
         </AwnsBtn>
       </HeadText>
