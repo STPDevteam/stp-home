@@ -355,6 +355,7 @@ const Header: React.FC = () => {
         height: "auto !important",
         background: "transparent",
         overflowX: "hidden",
+        display: currentPath.pathname.includes("awns")?'none':'block'
       }}
     >
       {/*<HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">*/}
