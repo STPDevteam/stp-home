@@ -3,40 +3,47 @@ import { useHistory } from "react-router";
 
 import styled from "styled-components";
 import Logo from "../../assets/images/home/svg/stp-logo.svg";
-import bg from "../../assets/images/awns/bg.jpg"
-import wallet from "../../assets/images/awns/wallet.png"
+import bg from "../../assets/images/awns/bg1.jpg"
+import walletImg from "../../assets/images/awns/bg2.png"
+import wallet from "../../assets/images/awns/bg3.png"
 
 const Font = styled.div`
   font-family: Inter;
   color: #fff;
 `
-
+const AwnsPage = styled.div`
+  padding-bottom: 120px;
+  background: #211d8c;
+  @media (max-width: 767px) {
+    padding-bottom: 60px;
+  }
+`
 const AwnsBox = styled.div`
   margin-top: -140px;
   background: url(${bg}) no-repeat;
-  background-size: cover;
+  background-size: 100%;
 `
 const AwnsHead = styled.div`
-  width: 100%;
+  width: 1000px;
   height: auto;
+  margin: auto;
   padding: 40px 0;
-  background: rgba(0, 0, 0, 0.46);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(40px);
   text-align: center;
   @media (max-width: 767px) {
+    width: 100%;
     padding: 40px 24px;
   }
 `
 const HeadLogo = styled.img`
   width: 76px;
+  margin: 20px auto;
   cursor: pointer;
   @media (max-width: 767px) {
     margin: 40px auto 20px auto;
   }
 `
 const HeadTitle = styled(Font)`
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   @media (max-width: 767px) {
     font-size: 32px;
@@ -74,9 +81,9 @@ const Title2 = styled(Font)`
 `
 const ContentBox1 = styled.div`
   width: 1200px;
-  height: 460px;
+  height: auto;
   margin: 80px auto;
-  padding: 48px 60px;
+  padding: 22px 30px;
   flex-shrink: 0;
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.37);
@@ -89,7 +96,17 @@ const ContentBox1 = styled.div`
     padding: 24px 24px;
   }
   ul {
-    padding-inline-start: 20px;
+    padding-inline-start: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li {
+      ::marker {
+        color: #A7F46A;
+        transform: rotate(45deg);
+      }
+    }
   }
 `
 const Title3 = styled(Font)`
@@ -105,6 +122,9 @@ const Title3 = styled(Font)`
 const IframeBox = styled.div`
   margin-top: 40px;
   text-align: center;
+  @media (max-width: 767px) {
+    margin-top: 0px;
+  }
 `
 const Iframe = styled.iframe`
   width: 807px;
@@ -120,14 +140,36 @@ const Iframe = styled.iframe`
   }
 `
 const Li = styled.li`
-  margin-top: 12px;
+  position: relative;
+  width: 560px;
+  height: 146px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 14px 40px 14px 50px;
   font-family: Inter;
   font-size: 20px;
   color: #fff;
   text-align: left;
+  border-radius: 10px;
+  background: #3130BA;
   @media (max-width: 767px) {
+    padding: 14px 20px 14px 36px;
+    margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.3;
+  }
+`
+const Square = styled.span`
+  position: absolute;
+  top: 26px;
+  left: 24px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #A7F46A;
+  transform: rotate(45deg);
+  @media (max-width: 767px) {
+      left: 14px;
   }
 `
 const ContentBox2 = styled.div`
@@ -139,52 +181,126 @@ const ContentBox2 = styled.div`
     width: 100%;
     margin: 40px auto;
     padding: 0px 10px;
-
   }
 `
 const GreenTxt = styled.span`
   color: #A7F46A;
 `
-const ContentBox2Img = styled.img`
-  width: 900px;
+const WalletImg = styled.img`
+  width: 520px;
   height: auto;
-  margin: -200px auto 0 auto;
   @media (max-width: 767px) {
     width: 100%;
-    margin: -50px auto 0 auto;
+    margin: 0px auto 0 auto;
   }
+`
+const ContentBox3 = styled.div`
+  width: 100%;
+  height: 670px;
+  margin: 50px auto;
+  padding: 8px 10px;
+  text-align: center;
+  background: url(${wallet}) no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 320px;
+    margin: 0px auto;
+    padding: 0px 0px;
+    background-size: 250%;
+  }
+`
+const TextBox = styled.div`
+  width: 944px;
+  height: 670px;
+  margin: auto;
+  position: relative;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 320px;
+    margin: 0px auto;
+    padding: 0px 10px;
+  }
+`
+const Box3Text = styled.div`
+  font-family: Inter;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.48;
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+`
+const Text1 = styled(Box3Text)`
+  position: absolute;
+  width: 300px;
+  top: 18%;
+  left: calc( 50% - 150px );
+  @media (max-width: 767px) {
+  }
+`
+const Text2 = styled(Box3Text)`
+  position: absolute;
+  width: 340px;
+  bottom: 20px;
+  left: 0%;
+  @media (max-width: 767px) {
+    width: 170px;
+    left: 2px;
+    bottom: 10px;
+  }
+`
+const Text3 = styled(Box3Text)`
+  position: absolute;
+  width: 326px;
+  bottom: 20px;
+  right: 0px;
+  @media (max-width: 767px) {
+    width: 170px;
+    bottom: 10px;
+  }
+  
 `
 
 export default function Awns() {
   const history = useHistory();
   return (
-    <AwnsBox>
-      <AwnsHead>
-        <HeadLogo onClick={()=>{history.push('/')}} src={Logo}></HeadLogo>
-        <HeadTitle>Framing the base layer of AW identity</HeadTitle>
-        <HeadTxt>STP unveils the first novel AW naming service (AWNS), domain ending in “.aw” initially on Ethereum.</HeadTxt>
-      </AwnsHead>
-      <AwnsContent1>
-        <Title2>Autonomous World Identity begins with your
-        AWNS (Name Service)</Title2>
-        <HeadTxt>Forge the All-Traversal AW Username</HeadTxt>
-        <IframeBox>
-          <Iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform?embedded=true" frameBorder={0}>Loading…</Iframe>
-        </IframeBox>
-        <ContentBox1>
-          <Title3>Akin to AWNS is STP’s 6551 Account Generator that’s used to power every AWNS to be a 6551 NFT Wallet, unlocking:</Title3>
-          <ul>
-            <Li> You can seamlessly connect AWNS to any AW app and game in our ecosystem. </Li>
-            <Li> You can earn experiences & badges in-game that are natively attached to the AWNS in provenance and history. </Li>
-            <Li> Your decisions are recorded to create new paths, abilities are acquired to unlock new assets, and more boundless game use-cases are enabled. </Li>
-            <Li> In-app and game data usage will cultivate your identity and social profile visible for open interaction and collaboration. </Li>
-          </ul>
-        </ContentBox1>
-        <ContentBox2>
-          <Title3>STP’s identity engine uses <GreenTxt>AWNS</GreenTxt> as the foundation to personify a user, a catalog of on-chain participation can exemplify a user’s values, and the experiences, decisions, and abilities acquired can illustrate a user’s desires</Title3>
-          <ContentBox2Img src={wallet}></ContentBox2Img>
-        </ContentBox2>
-      </AwnsContent1>
-    </AwnsBox>
+    <AwnsPage>
+      <AwnsBox>
+        <AwnsHead>
+          <HeadLogo onClick={()=>{history.push('/')}} src={Logo}></HeadLogo>
+          <HeadTitle>Autonomous World Identity Begins with Your AWNS</HeadTitle>
+          <HeadTxt>STP presents the AW naming service (AWNS) for domains ending in “.AW” on Ethereum. <br/>  Use your AWNS name to store all of your NFTs, Avatars and On-chain gaming characters which can each receive any cryptocurrency, token, or other NFTs.</HeadTxt>
+        </AwnsHead>
+        <AwnsContent1>
+          <IframeBox>
+            <Iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform?embedded=true"  frameBorder={0}>Loading…</Iframe>
+          </IframeBox>
+          <ContentBox2>
+            <Title3>AWNS is your Smart Wallet Identity</Title3>
+            <HeadTxt>It’s not just an ENS. It’s a wallet</HeadTxt>
+            <WalletImg src={walletImg}></WalletImg>
+          </ContentBox2>
+          <ContentBox1>
+            <Title3>AWNS Leverages ERC-6551 to Enable:</Title3>
+            <ul>
+              <Li> <Square></Square>  You can seamlessly connect AWNS to any AW app and game in our ecosystem. </Li>
+              <Li> <Square></Square>  You can earn experiences & badges in-game that are natively attached to the AWNS in provenance and history. </Li>
+              <Li> <Square></Square>  Your decisions are recorded to create new paths, abilities are acquired to unlock new assets, and more boundless game use-cases are enabled. </Li>
+              <Li> <Square></Square>  In-app and game data usage will cultivate your identity and social profile visible for open interaction and collaboration. </Li>
+            </ul>
+          </ContentBox1>
+        </AwnsContent1>
+          <ContentBox3>
+            <TextBox>
+              <Text1>STP’s identity engine uses AWNS to personify a user</Text1>
+              <Text2>Catalog of on-chain participation exemplifies a user’s value</Text2>
+              <Text3>User experiences, decisions and abilities illustrate desires</Text3>
+            </TextBox>
+          </ContentBox3>
+      </AwnsBox>
+    </AwnsPage>
   )
 }
