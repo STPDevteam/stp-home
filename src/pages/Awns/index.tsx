@@ -280,7 +280,7 @@ export default function Awns() {
           </IframeBox>
           <ContentBox2>
             <Title3>AWNS is your Smart Wallet Identity</Title3>
-            <HeadTxt>It’s not just an ENS. It’s a wallet</HeadTxt>
+            <HeadTxt>It’s not just an ENS, It’s a wallet</HeadTxt>
             <WalletImg src={walletImg}></WalletImg>
           </ContentBox2>
           <ContentBox1>
