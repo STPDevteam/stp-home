@@ -277,7 +277,7 @@ export default function Awns() {
         </AwnsHead>
         <AwnsContent1>
           <IframeBox>
-            <Iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyKjwUUm704kEXDSDeUtkgIB3LSqsz5wYbdR7any0asoCc4w/viewform?embedded=true"  frameBorder={0}>Loading…</Iframe>
+            <Iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5BzLS-_Vma8YkwFiqpEnQ8ihBxlGSBn74F6MWgMwU4tuE8g/viewform?embedded=true"  frameBorder={0}>Loading…</Iframe>
           </IframeBox>
           <ContentBox2>
             <Title3>AWNS is your Smart Wallet Identity</Title3>
