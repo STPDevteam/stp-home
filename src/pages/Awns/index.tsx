@@ -189,9 +189,10 @@ const GreenTxt = styled.span`
 const WalletImg = styled.img`
   width: 520px;
   height: auto;
+  margin-top: 10px;
   @media (max-width: 767px) {
     width: 100%;
-    margin: 0px auto 0 auto;
+    margin: 10px auto 0 auto;
   }
 `
 const ContentBox3 = styled.div`
@@ -280,7 +281,7 @@ export default function Awns() {
           </IframeBox>
           <ContentBox2>
             <Title3>AWNS is your Smart Wallet Identity</Title3>
-            <HeadTxt>It’s not just an ENS, It’s a wallet</HeadTxt>
+            {/* <HeadTxt>It’s not just an ENS, It’s a wallet</HeadTxt> */}
             <WalletImg src={walletImg}></WalletImg>
           </ContentBox2>
           <ContentBox1>
