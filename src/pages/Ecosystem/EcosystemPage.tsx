@@ -222,6 +222,7 @@ const SearchBox = styled(Input)`
   order: 1;
   align-self: stretch;
   flex-grow: 1;
+  width: 300px;
 `;
 
 function Search({ onSearch }: { onSearch: (input: string) => void }) {
@@ -229,7 +230,7 @@ function Search({ onSearch }: { onSearch: (input: string) => void }) {
   return (
     <SearchBg>
       <SearchBox
-        placeholder={"Search DAO Name"}
+        placeholder={"Search Name"}
         value={input}
         disableUnderline={true}
         onChange={(e) => setInput(e.target.value)}
@@ -242,6 +243,7 @@ function Search({ onSearch }: { onSearch: (input: string) => void }) {
           bottom: "50%",
           right: "8px",
           transform: "translateY(-50%)",
+          zIndex: 99,
         }}
         onClick={() => {
           onSearch(input);
@@ -314,12 +316,13 @@ function Platforms({
     console.log(value);
     const result = [];
     for (let i in EcosystemDataList) {
-      let arr = Object.values(EcosystemDataList[i]);
-
+      
+      let item = EcosystemDataList[i].name;
+      // let arr = Object.values(EcosystemDataList[i].name);
       if (
-        arr.some((item) => {
-          return existOneIncludeTwo(item, value);
-        })
+        // arr.some((item) => {
+           existOneIncludeTwo(item, value)
+        // })
       ) {
         result.push(EcosystemDataList[i]);
       }
