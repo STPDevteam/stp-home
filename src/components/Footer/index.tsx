@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ReactComponent as TwitterLogo} from '../../assets/images/home/svg/Twitter.svg'
-import {ReactComponent as MediumLogo} from '../../assets/images/home/svg/Medium.svg'
 import {ReactComponent as TelegramLogo} from '../../assets/images/home/svg/Telegram.svg'
 import {ReactComponent as Email} from '../../assets/images/home/svg/Email.svg'
 import {ReactComponent as Wechat} from '../../assets/images/home/svg/WeChat.svg'
@@ -15,6 +14,7 @@ const FooterContent = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 3;
     &>div{
         max-width: 1200px;
         margin: 0 auto;
@@ -57,7 +57,7 @@ const Footer: React.FC = () =>  {
                     <a target="_blank" href="https://t.me/STPofficial"><TelegramLogo/><span>Telegram</span></a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://twitter.com/STP_Networks"><TwitterLogo/><span>Twitter</span></a>
+                    <a target="_blank" href="https://twitter.com/STP_Network"><TwitterLogo/><span>Twitter</span></a>
                 </li>
                 {/* <li>
                     <a target="_blank" href="https://medium.com/@versenetwork"><MediumLogo/><span>Medium</span></a>

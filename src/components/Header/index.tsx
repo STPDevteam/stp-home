@@ -1,261 +1,513 @@
-import React, {useEffect, useState, useRef} from 'react'
-import { Anchor, Layout, Row, Col, Button, Menu, Dropdown, Carousel, Modal } from 'antd';
-import styled from 'styled-components'
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { Layout, Button, Menu, Dropdown, Modal } from "antd";
+import styled from "styled-components";
 import { CSSTransition } from "react-transition-group";
 import { Link, useLocation } from "react-router-dom";
-import { MenuOutlined, DownOutlined } from '@ant-design/icons';
-import { useOnClickOutside } from '../../hooks/useOnClickOutside';
-import { useToggle } from '../../hooks/useToggle';
-import Logo from '../../assets/images/logo.png'
-import Cube from '../../assets/images/home/cube.png'
-import {ReactComponent as Arrow} from '../../assets/images/home/svg/arrow.svg'
-import './index.less';
+import { MenuOutlined } from "@ant-design/icons";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
+import { useToggle } from "../../hooks/useToggle";
+import Logo from "../../assets/images/home/svg/stp-logo.svg";
+import DarkLogo from "../../assets/images/logo.png";
+import Cube from "../../assets/images/home/cube.png";
+import { ReactComponent as Arrow } from "../../assets/images/home/svg/arrow.svg";
+import "./index.less";
+import IconDapp from "../../assets/images/header/clique-dapp.svg";
+import IconWorkSpace from "../../assets/images/header/clique-workspace.svg";
+import IconSDK from "../../assets/images/header/clique-sdk.svg";
+import { Box, Typography } from "@mui/material";
+import { GreenBtn } from "../../pages/Home/homepage";
+import { useHistory } from "react-router";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import MobileMenu from "./mobileMenu";
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 
-const { Header: LayoutHeader, Sider, Content } = Layout;
+const { Header: LayoutHeader } = Layout;
 const HeaderContent = styled.div`
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
-    @media (max-width: 767px) {
-        padding: 0 20px;
-    }
-`
-const HeaderLink = styled.a`
-    background: #0B1CB5;
-    display: block;
-    height: 40px;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
+  margin: 0 auto;
+  width: 100vw;
+  z-index: 3;
+  padding: 0 50px;
+  height: auto !important;
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
+`;
+
+const MenuBg = styled(Box)`
+  padding: 40px 42.5px 68px;
+  background: white;
+  border-radius: 8px;
+  gap: 12px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
+  @media (max-width: 767px) {
+    padding: 0;
+    border-radius: 8px;
+    gap: 0;
+  }
+`;
+
+const MenuTitle = styled(Typography)`
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #23262f;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+`;
+const MenuText = styled(Typography)`
+  width: 100%;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #777e91;
+  @media (max-width: 767px) {
     font-size: 12px;
-    text-decoration: underline;
-`
+    line-height: 150%;
+  }
+`;
 
+const MenuBox = styled(Box)`
+  width: 522px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 27px 24px;
+  gap: 16px;
+  cursor: pointer;
 
-const Header: React.FC = () =>  {
+  &:hover {
+    background: #a7f46a;
+  }
 
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-    const [infrastructureActive, setInfrastructureActive] = useState(false);
-    const [elementHeight, setElementHeight] = useState(568);
-    const carouselRef = useRef<any>()
-    const location = useLocation();
-    const [open, toggle] = useToggle(false)
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`;
 
-    const headerRef = useRef(null);
-    const homeRef = useRef(null);
-    const verseRef = useRef(null);
-    const productsRef = useRef(null);
-    const partnershipsRef = useRef(null);
-    const resourcesRef = useRef(null);
-    const learnRef = useRef(null);
-    useOnClickOutside(headerRef, open ? toggle : undefined)
+export function ProductMenu({
+  setDropdownVisible,
+}: {
+  setDropdownVisible?: (visible: boolean) => void;
+}) {
+  // export function ProductMenu() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const menuList = [
+    {
+      icon: IconSDK,
+      title: "Clique AW",
+      // link: "",
+      text: "Solutions platform for building on-chain worlds unique to any AW project.",
+    },
+    {
+      icon: IconWorkSpace,
+      title: "Clique Workspace",
+      link: "https://www.myclique.io/governance",
+      text: "Collaborative governance tool for planning and building worlds with no code and gas.",
+    },
+    // {
+    //   icon: IconDapp,
+    //   title: "Clique Tools",
+    //   link: "",
+    //   text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
+    // },
 
+  ];
 
-    const [isModalVisible, setIsModalVisible] = useState(false);
-
-    const showModal = () => {
-      setIsModalVisible(true);
-    };
-
-    const handleOk = () => {
-      setIsModalVisible(false);
-    };
-
-    const handleCancel = () => {
-      setIsModalVisible(false);
-    };
-
-
-    const sectionRefs = [
-      { section: "Home", ref: homeRef },
-      { section: "Verse", ref: verseRef },
-      { section: "Products", ref: productsRef },
-      { section: "Partnerships", ref: partnershipsRef },
-      { section: "Resources", ref: resourcesRef },
-      { section: "Learn", ref: learnRef },
-    ];
-    const getDimensions = (ele: any) => {
-        if(!ele){
-            return {}
-        }
-        const { height } = ele.getBoundingClientRect();
-        const offsetTop = ele.offsetTop;
-        const offsetBottom = offsetTop + height;
-
-        return {
-          height,
-          offsetTop,
-          offsetBottom,
-        };
-      };
-
-    const scrollTo = (ele: any) => {
-        if(!ele){
-            return
-        }
-        ele.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    };
-
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia("(max-width: 767px)");
-        mediaQuery.addListener(handleMediaQueryChange);
-        handleMediaQueryChange(mediaQuery);
-        window.addEventListener("scroll", reveal);
-        const revealElement = document.getElementById("infrastructure-list");
-        if(revealElement){
-            setElementHeight(revealElement.getBoundingClientRect().height)
-        }
-        return () => {
-            mediaQuery.removeListener(handleMediaQueryChange);
-            window.removeEventListener("scroll", reveal);
-        };
-    }, []);
-
-    useEffect(() => {
-        if(open){
-            toggle(false)
-        }
-    },[location.pathname])
-
-    const handleMediaQueryChange = (mediaQuery: any) => {
-      if (mediaQuery.matches) {
-        setIsSmallScreen(true);
-      } else {
-        setIsSmallScreen(false);
-      }
-    };
-
-
-    const reveal = () => {
-        const revealElement = document.getElementById("infrastructure-list");
-        if(revealElement){
-            const windowHeight = window.innerHeight;
-            const elementTop = revealElement.getBoundingClientRect().top;
-
-            if (elementTop < windowHeight - (elementHeight + 50)) {
-                setInfrastructureActive(true)
+  return (
+    <MenuBg>
+      {menuList.map((menu, idx) => (
+        <MenuBox
+          key={idx}
+          onClick={() => {
+            if (menu.link) {
+              window.open(menu.link, "_blank");
             } else {
-                setInfrastructureActive(false)
+              if (setDropdownVisible) {
+                setDropdownVisible(false);
+              }
+              setIsModalOpen(true);
             }
-        }
-    }
-
-    const stpMenu = (
-        <Menu>
-            <Menu.Item>
-                <a href="#About">About</a>
-            </Menu.Item>
-            <Menu.Item>
-            <a href="#Features">
-                Features
-            </a>
-            </Menu.Item>
-      </Menu>
-    )
-
-    const productsMenu = (
-        <Menu>
-            <Menu.Item>
-                <a href="#STPChain">
-                    STP Chain
-                </a>
-            </Menu.Item>
-            <Menu.Item>
-                <a href="#Tools">
-                    Tools
-                </a>
-            </Menu.Item>
-        </Menu>
-    )
-    const ecosystemMenu = (
-        <Menu>
-            {/* <Menu.Item>
-                <a href="#Ecosystem">
-                    Ecosystem Projects
-                </a>
-            </Menu.Item> */}
-            <Menu.Item>
-                <a href="#Strategic">
-                    Strategic Partners
-                </a>
-            </Menu.Item>
-        </Menu>
-    )
-    const resourcesMenu = (
-        <Menu>
-            <Menu.Item>
-                <a target="_blank" href="/Verse Network WP.pdf">
-                Whitepaper
-                </a>
-            </Menu.Item>
-            <Menu.Item>
-                <a href="https://github.com/STPDevteam" target="_blank">
-                    Github
-                </a>
-            </Menu.Item>
-            <Menu.Item>
-                <a href="https://stp-dao.gitbook.io/verse-network/verse-network/master" target="_blank">
-                    Documentation
-                </a>
-            </Menu.Item>
-        </Menu>
-    )
-    const learnMenu = (
-        <Menu>
-            <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1">
-                    STP News
-                </a>
-            </Menu.Item>
-            <Menu.Item>
-                <a target="_blank" rel="noopener noreferrer" href="https://stp-network.gitbook.io">
-                    Wiki
-                </a>
-            </Menu.Item>
-        </Menu>
-    )
-
-    return (
-        <LayoutHeader>
-            <HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">Sign up for STP DAO Booster Program!</HeaderLink>
-            <HeaderContent className="header" ref={headerRef}>
-                <img className="Logo" src={Logo} alt="logo" />
-                <CSSTransition
-                    in={!isSmallScreen || open}
-                    timeout={350}
-                    classNames="NavAnimation"
-                    unmountOnExit
-                >
-                    <nav className="Nav">
-                        <Link to="/" className={location.pathname === '/' ? 'active': ''}>Home</Link>
-                        <Link to="/tech" className={location.pathname === '/tech' ? 'active': ''}>Tech</Link>
-                        <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link>
-                        <Link to="/product" className={location.pathname === '/product' ? 'active': ''}>Product</Link>
-                        {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
-                        <Dropdown overlay={resourcesMenu} trigger={['click']}>
-                            <a>
-                            Resources <Arrow />
-                            </a>
-                        </Dropdown>
-                        <a href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1" target="_blank">News</a>
-                        <Button type="primary"><Link to="/product">APP</Link></Button>
-                    </nav>
-                </CSSTransition>
-                <button onClick={toggle} className="Burger">
-                    <MenuOutlined />
-                </button>
-            </HeaderContent>
-            <Modal className="comingModal" visible={isModalVisible} footer={null} closable={false} width={320} centered>
-                <img src={Cube} alt="" />
-                <p>Coming Soon...</p>
-            <Button type="primary" onClick={handleCancel}>Close</Button>
-            </Modal>
-        </LayoutHeader>
-    )
+          }}
+        >
+          <img src={menu.icon} />
+          <Box gap={"4px"}>
+            <MenuTitle>{menu.title}</MenuTitle>
+            <MenuText>{menu.text}</MenuText>
+          </Box>
+        </MenuBox>
+      ))}
+      <Modal
+        visible={isModalOpen}
+        title="Coming Soon"
+        onOk={() => setIsModalOpen(false)}
+        onCancel={() => setIsModalOpen(false)}
+      >
+        <p>This section is still implementing.</p>
+        <p>Please come back later</p>
+      </Modal>
+    </MenuBg>
+  );
 }
+
+const HeaderMenuBox = styled(Box)`
+  background: white;
+  padding: 12px;
+  display: flex;
+  left: -12px;
+  border-radius: 10px;
+  position: relative;
+  flex-direction: column;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);;
+  @media (max-width: 767px) {
+    background: transparent;
+    left: 30px;
+  }
+`;
+
+const HeaderLink = styled("a")`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 48px;
+  padding: 0 16px;
+  color: #000;
+  &:hover {
+    color: #1b1aff;
+  }
+`;
+
+const resourcesMenu = (
+  <HeaderMenuBox>
+    {/* <HeaderLink target="_blank" href="/Verse Network WP.pdf">
+      Whitepaper
+    </HeaderLink> */}
+    <HeaderLink
+      href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"
+      target="_blank"
+    >
+      News
+    </HeaderLink>
+    <HeaderLink href="https://github.com/STPDevteam" target="_blank">
+      Github
+    </HeaderLink>
+    <HeaderLink
+      href="https://stp-dao.gitbook.io/verse-network/verse-network/master"
+      target="_blank"
+    >
+      Documentation
+    </HeaderLink>
+  </HeaderMenuBox>
+);
+
+const ecosystemMenu = (
+  <HeaderMenuBox>
+    <HeaderLink href="/ecosystem">Ecosystem</HeaderLink>
+    {/* <HeaderLink href="/dao">Clique World Launchpad</HeaderLink> */}
+  </HeaderMenuBox>
+);
+
+const daoMenu = () => {
+  const menuList = [
+    {
+      title: "Chatgpt Dao",
+      link: "https://www.myclique.io/governance/daoInfo/137/0x04f40b00d50e90adf63d5ef3eb206c27eb21bcc7",
+    },
+    {
+      title: "Bubble",
+      link: "https://www.myclique.io/governance/daoInfo/137/0x1d78b7713caf654a6ce17349557017beeb39e8b9",
+    },
+    {
+      title: "Sonet",
+      link: "https://www.myclique.io/governance/daoInfo/137/0xf515548f7c6b7ec624517dca51eeed16f4e20b08",
+    },
+  ];
+  return (
+    <HeaderMenuBox>
+      {menuList.map((menu, idx) => (
+        <HeaderLink target="_blank" href={menu.link}>
+          {menu.title}
+        </HeaderLink>
+      ))}
+    </HeaderMenuBox>
+  );
+};
+const DaoLink = () => {
+  return (
+    <HeaderMenuBox>
+      <HeaderLink target="_blank" href="https://www.myclique.io/daos">
+        DAOs
+      </HeaderLink>
+    </HeaderMenuBox>
+  );
+};
+export const MenuList: {
+  title: string;
+  subtitle?: ReactJSXElement;
+  link?: string;
+}[] = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Products",
+      subtitle: <ProductMenu />,
+    },
+    // {
+    //   title: "DAOs",
+    //   subtitle: daoMenu(),
+    // },
+    {
+      title: "DAOs",
+      link: "https://www.myclique.io/daos",
+    },
+
+    {
+      title: "Ecosystem",
+      link: "/ecosystem",
+      // subtitle: ecosystemMenu,
+    },
+    {
+      title: "Resources",
+      subtitle: resourcesMenu,
+    },
+    // {
+    //   title: "News",
+    //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+    // },
+  ];
+
+const Header: React.FC = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [, setInfrastructureActive] = useState(false);
+  const [elementHeight, setElementHeight] = useState(568);
+  useRef<any>();
+  const location = useLocation();
+  const [open, toggle] = useToggle(false);
+
+  const headerRef = useRef(null);
+  useOnClickOutside(headerRef, open ? toggle : undefined);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const currentPath = useLocation();
+  const history = useHistory();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownVisible, setVisible] = useState(false);
+
+  const handleMobileMenueDismiss = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    mediaQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange(mediaQuery);
+    window.addEventListener("scroll", reveal);
+    const revealElement = document.getElementById("infrastructure-list");
+    if (revealElement) {
+      setElementHeight(revealElement.getBoundingClientRect().height);
+    }
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+      window.removeEventListener("scroll", reveal);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (open) {
+      toggle(false);
+    }
+  }, [location.pathname]);
+
+  const handleMediaQueryChange = (mediaQuery: any) => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true);
+    } else {
+      setIsSmallScreen(false);
+    }
+  };
+
+  const reveal = () => {
+    const revealElement = document.getElementById("infrastructure-list");
+    if (revealElement) {
+      const windowHeight = window.innerHeight;
+      const elementTop = revealElement.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - (elementHeight + 50)) {
+        setInfrastructureActive(true);
+      } else {
+        setInfrastructureActive(false);
+      }
+    }
+  };
+
+  return (
+    <LayoutHeader
+      style={{
+        zIndex: 999,
+        width: "100vw",
+        height: "auto !important",
+        background: "transparent",
+        overflowX: "hidden",
+        display: currentPath.pathname.includes("awns")?'none':'block'
+      }}
+    >
+      {/*<HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">*/}
+      {/*  Sign up for STP DAO Booster Program!*/}
+      {/*</HeaderLink>*/}
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        onDismiss={handleMobileMenueDismiss}
+      />
+      <HeaderContent
+        className="header"
+        ref={headerRef}
+        style={{
+          background: currentPath.pathname.includes("ecosystem")
+            ? "#2524de"
+            : "#16127a",
+          color: currentPath.pathname.includes("dao")
+            ? "#000"
+            : "#fff",
+        }}
+      >
+        <img
+          className="Logo"
+          src={currentPath.pathname.includes("dao") ? DarkLogo : Logo}
+          alt="logo"
+          onClick={() => {
+            history.push("/");
+          }}
+        />
+        <CSSTransition
+          in={!isSmallScreen || open}
+          timeout={350}
+          classNames="NavAnimation"
+          unmountOnExit
+        >
+          <nav className="Nav">
+            <Link style={{
+              color: currentPath.pathname.includes("dao")
+                ? "#000"
+                : "#fff",
+            }} to="/" className={location.pathname === "/" ? "active" : ""}>
+              Home
+            </Link>
+            <Dropdown
+              overlay={<ProductMenu setDropdownVisible={setVisible} />}
+              visible={dropdownVisible}
+              trigger={["click"]}
+              onVisibleChange={(flag) => {
+                setVisible(flag);
+              }}
+            >
+              <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }}>
+                Products
+                <Arrow />
+              </a>
+            </Dropdown>
+            <a style={{
+              color: currentPath.pathname.includes("dao")
+                ? "#000"
+                : "#fff",
+            }} href="https://www.myclique.io/daos" target="_blank">
+              DAOs
+            </a>
+            {/* <Dropdown overlay={daoMenu} trigger={["click"]}>
+              <a>
+                DAOs
+                <Arrow />
+              </a>
+            </Dropdown> */}
+            {/*<Link*/}
+            {/*  to="/tech"*/}
+            {/*  className={location.pathname === "/tech" ? "active" : ""}*/}
+            {/*>*/}
+            {/*  Tech*/}
+            {/*</Link>*/}
+            {/* <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link> */}
+            {/* <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
+              <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }} href="" target="_blank">
+                Ecosystem 
+                <Arrow />
+              </a>
+            </Dropdown> */}
+            <Link style={{
+              color: currentPath.pathname.includes("dao")
+                ? "#000"
+                : "#fff",
+            }} to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+              Ecosystem
+            </Link>
+            <Dropdown overlay={resourcesMenu} trigger={["click"]}>
+              <a style={{
+                color: currentPath.pathname.includes("dao")
+                  ? "#000"
+                  : "#fff",
+              }}>
+                Resources <Arrow />
+              </a>
+            </Dropdown>
+            {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
+            {/* <a
+              href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"
+              target="_blank"
+            >
+              News
+            </a> */}
+
+          </nav>
+          {/* <nav> */}
+
+          {/* </nav> */}
+        </CSSTransition>
+        <GreenBtn
+          className="BuildDao"
+          onClick={() =>
+            window.open("https://www.myclique.io/daos", "_blank")
+          }
+        >
+          Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />
+        </GreenBtn>
+        <button
+          onClick={() => {
+            setMobileMenuOpen((prevState) => !prevState);
+          }}
+          className="Burger"
+        >
+          <MenuOutlined />
+        </button>
+      </HeaderContent>
+      <Modal
+        className="comingModal"
+        visible={isModalVisible}
+        footer={null}
+        closable={false}
+        width={320}
+        centered
+      >
+        <img src={Cube} alt="" />
+        <p>Coming Soon...</p>
+        <Button type="primary" onClick={handleCancel}>
+          Close
+        </Button>
+      </Modal>
+    </LayoutHeader>
+  );
+};
 
 export default Header;
