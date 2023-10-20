@@ -52,6 +52,11 @@ import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { Autoplay } from "swiper";
 import { Navigation } from "swiper";
 
+import Composable from "../../assets/images/ecosystem/composable.jpeg"
+import Zkspace from "../../assets/images/ecosystem/zkspace.png"
+import Web3com from "../../assets/images/ecosystem/web3com.svg"
+import Altlayer from "../../assets/images/ecosystem/AltLayer.svg"
+import Paimas from "../../assets/images/ecosystem/Paimas.svg"
 import AGLD from "../../assets/images/ecosystem/AgldBlack.svg"
 import Base from "../../assets/images/home/base.svg";
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
@@ -2281,6 +2286,11 @@ function Ecosystem() {
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
   const PartnersLogos = [
+    Composable,
+    Paimas,
+    Zkspace,
+    Web3com,
+    Altlayer,
     AGLD,
     Base,
     Chainlink,

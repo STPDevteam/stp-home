@@ -38,10 +38,55 @@ import ZkEVM from '../../assets/images/ecosystem/Polygon_zkEVM.png';
 import CoingeckoImg from '../../assets/images/home/coingecko.svg';
 import Base from '../../assets/images/home/base.svg';
 import AGLD from '../../assets/images/ecosystem/AgldBlack.svg'
+import PAIMA from '../../assets/images/ecosystem/Paimas.svg'
+import Web3com from '../../assets/images/ecosystem/web3com.svg'
+import zkspace from '../../assets/images/ecosystem/zkspace.png'
+import composable from '../../assets/images/ecosystem/composable.jpeg'
+import AltLayer from '../../assets/images/ecosystem/AltLayer.svg'
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
 export const EcosystemDataList = [
+  {
+    img: composable,
+    website: 'https://app.composablelabs.io/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'Composable Labs',
+    name: 'Composable Labs'
+  },
+  {
+    img: PAIMA,
+    website: 'https://www.paimastudios.com/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'Paima Studios',
+    name: 'Paima Studios'
+  },
+  {
+    img: zkspace,
+    website: 'https://zks.org/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'ZKSpace',
+    name: 'ZKSpace'
+  },
+  {
+    img: Web3com,
+    website: 'https://web3.com/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'Web3.com',
+    name: 'Web3.com'
+  },
+  {
+    img: AltLayer,
+    website: 'https://altlayer.io/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'AltLayer',
+    name: 'AltLayer'
+  },
   {
     img: AGLD,
     website: 'https://lootchain.com/',
