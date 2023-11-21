@@ -101,7 +101,7 @@ export function ProductMenu({
     {
       icon: IconSDK,
       title: "Clique AW",
-      // link: "",
+      link: "https://awns.stp.network/",
       text: "Solutions platform for building on-chain worlds unique to any AW project.",
     },
     {
