@@ -405,7 +405,7 @@ function Head() {
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
         <AwnsBtn onClick={()=>{window.open('https://awns.stp.network/','_blank')}}>
-          Now Register
+          Register for an AWNS
         </AwnsBtn>
       </HeadText>
       {/* <AwnsBox>
