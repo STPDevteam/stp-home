@@ -2403,7 +2403,7 @@ function Ecosystem() {
         >
           {currentLogos.map((logo, idx) => (
             // init width 0px
-            <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px' }}>
+            <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px',textAlign:'center' }}>
               <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
             </SwiperSlide>
           ))}
