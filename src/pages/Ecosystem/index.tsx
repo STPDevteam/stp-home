@@ -43,10 +43,127 @@ import Web3com from '../../assets/images/ecosystem/web3com.svg'
 import zkspace from '../../assets/images/ecosystem/zkspace.png'
 import composable from '../../assets/images/ecosystem/composable.jpeg'
 import AltLayer from '../../assets/images/ecosystem/AltLayer.svg'
+import hypr from '../../assets/images/ecosystem/hypr.png'
+import space3 from '../../assets/images/ecosystem/space.png'
+import atticlab from '../../assets/images/ecosystem/atticlab.png'
+import paladins from '../../assets/images/ecosystem/pbs.jpeg'
+import a3sprotocol from '../../assets/images/ecosystem/a3sprotocol.png'
+import blade from '../../assets/images/ecosystem/blade.png'
+import kiosk from '../../assets/images/ecosystem/kiosk.svg'
+import gabby from '../../assets/images/ecosystem/gabby.png'
+import ggQuest from '../../assets/images/ecosystem/gguest.jpeg'
+import Openfort from '../../assets/images/ecosystem/openfort.png'
+import biconomy from '../../assets/images/ecosystem/biconomy.png'
+import aw from '../../assets/images/ecosystem/aw.jpeg'
+import daren from '../../assets/images/ecosystem/daren.svg'
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
 export const EcosystemDataList = [
+  {
+    img: hypr,
+    website: 'https://www.hypr.network/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'Hypr Network',
+    name: 'Hypr Network'
+  },
+  {
+    img: space3,
+    website: 'https://space3.gg/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'SPACE3',
+    name: 'SPACE3'
+  },
+  {
+    img: atticlab,
+    website: 'https://atticlab.net/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'ATTIC Lab',
+    name: 'ATTIC Lab'
+  },
+  {
+    img: paladins,
+    website: 'https://www.paladins.wtf/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'Paladins DAO',
+    name: 'Paladins DAO'
+  },
+  {
+    img: a3sprotocol,
+    website: 'https://www.a3sprotocol.xyz/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'A3S Protocol',
+    name: 'A3S Protocol'
+  },
+  {
+    img: blade,
+    website: 'https://www.bladedao.games/',
+    category: 'Partnership',
+    sector: 'Game',
+    desc: 'BLADE',
+    name: 'BLADE'
+  },
+  {
+    img: kiosk,
+    website: 'https://kiosk.com/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'Kiosk Information Systems',
+    name: 'Kiosk Information Systems'
+  },
+  {
+    img: gabby,
+    website: 'https://www.gabby.world/',
+    category: 'Partnership',
+    sector: 'Game',
+    desc: 'Gabby World',
+    name: 'Gabby World'
+  },
+  {
+    img: ggQuest,
+    website: 'https://twitter.com/gg_quest_gg',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'ggQuest',
+    name: 'ggQuest'
+  },
+  {
+    img: Openfort,
+    website: 'https://www.openfort.xyz/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'Openfort',
+    name: 'Openfort'
+  },
+  {
+    img: biconomy,
+    website: 'https://www.biconomy.io/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'Biconomy',
+    name: 'Biconomy'
+  },
+  {
+    img: aw,
+    website: 'https://twitter.com/AW_Research',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'AW Research',
+    name: 'AW Research'
+  },
+  {
+    img: daren,
+    website: 'https://app.daren.market/',
+    category: 'Partnership',
+    // sector: 'Infrastructure',
+    desc: 'DAREN',
+    name: 'DAREN'
+  },
   {
     img: composable,
     website: 'https://app.composablelabs.io/',
@@ -374,6 +491,7 @@ export const sectorFilterDataList = [
   'Social',
   'NFT',
   'Infrastructure',
+  'Game'
 ]
 const Ecosystem: React.FC = () => {
   const [categorySelect, setCategorySelect] = useState('All')

@@ -365,7 +365,7 @@ function Platforms({
                 <Row justifyContent={"space-between"} width={"100%"}>
                   <img
                     src={dao.img}
-                    style={{ height: isDownSm ? "48px" : "auto", maxWidth: '70%' }}
+                    style={{ height: isDownSm ? "48px" : "auto", maxWidth: '70%',maxHeight:'80px' }}
                   />
                   <Box
                     sx={{
