@@ -132,16 +132,16 @@ import starCircle from "../../assets/images/home/starCircle.svg"
 import awnsImg from "../../assets/images/home/awns.svg"
 import hypr from '../../assets/images/ecosystem/hypr.png'
 import space3 from '../../assets/images/ecosystem/space.png'
-import atticlab from '../../assets/images/ecosystem/atticlab.png'
+import atticlab from '../../assets/images/ecosystem/ATTIC.png'
 import paladins from '../../assets/images/ecosystem/pbs.jpeg'
 import a3sprotocol from '../../assets/images/ecosystem/a3sprotocol.png'
 import blade from '../../assets/images/ecosystem/blade.png'
 import kiosk from '../../assets/images/ecosystem/kiosk.svg'
 import gabby from '../../assets/images/ecosystem/gabby.png'
-import ggQuest from '../../assets/images/ecosystem/gguest.jpeg'
+import ggQuest from '../../assets/images/ecosystem/GGUEST.png'
 import Openfort from '../../assets/images/ecosystem/openfort.png'
 import biconomy from '../../assets/images/ecosystem/biconomy.png'
-import aw from '../../assets/images/ecosystem/aw.jpeg'
+import aw from '../../assets/images/ecosystem/AW.png'
 import daren from '../../assets/images/ecosystem/daren.svg'
 
 const blinkAnimation = keyframes`
