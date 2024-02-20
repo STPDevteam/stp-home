@@ -1357,7 +1357,7 @@ function CliqueContent() {
         {/* </ContentLeft> */}
         <Box3 isMargin={false}>
         <Box3CardPink>
-          <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
+          {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
           <Box3CardTitle>AWNS</Box3CardTitle>
           <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle>
           <Box3CardUl>
