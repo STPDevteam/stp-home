@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   ContentWrapper,
   HeadBox,
@@ -15,7 +15,10 @@ import {
   Footer
 } from "../Home/homepage";
 import styled from 'styled-components';
-import { Button, Typography } from '@mui/material'
+import { Button, Typography, Box } from '@mui/material'
+import Modal from '@mui/material/Modal';
+// import { Modal } from "antd";
+
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import s1 from "../../assets/images/soda/s1.png"
@@ -25,9 +28,25 @@ import f3 from "../../assets/images/soda/f3.png"
 import f4 from "../../assets/images/soda/f4.png"
 import star from "../../assets/images/soda/star.png"
 import greenStar from "../../assets/images/soda/greenStar.svg"
+import comingsoon from "../../assets/images/soda/comingsoon.png"
+import closeIcon from "../../assets/images/soda/Close.svg"
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 520,
+  bgcolor: '#fff',
+  border: 'none',
+  borderRadius: 4,
+  boxShadow: 24,
+  pt: 1,
+  px: 1,
+  pb: 4,
+};
 
-const HeadBox2 =styled(HeadBox)`
+const HeadBox2 = styled(HeadBox)`
   @media (max-width: 767px) {
     padding-left: 0;
     padding-bottom: 0;
@@ -182,56 +201,99 @@ const BigStar = styled.img`
   }
 
 `
-const Box3CardPink2 =styled(Box3CardPink)`
+const Box3CardPink2 = styled(Box3CardPink)`
   z-index: 3;
   opacity: .95;
 `
-export default function index() {
+const ComingSoonBox = styled.div`
+  width: 380px;
+  height: 210px;
+  margin: auto;
+  background-color: #f8fbff;
+  border: 1px solid rgba(151, 183, 239, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
+const CloseBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+`
+const Close = styled.img`
+  width: 24px;
+  cursor: pointer;
+`
+const ComingSoonTxt = styled.p`
+  margin-top: 10px;
+  color: rgba(0, 73, 198, 1);
+  font-weight: 600;
+  font-size: 20px;
+`
+export default function Soda() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
   return (
-    <ContentWrapper>
-      <HeadBox2 style={{ height: 'auto', background: "#2524de" }}>
-        <HeadTitle>Clique Social</HeadTitle>
-        <HeadText>
-          Power DAOs and NFTs with social tooling integrated on Twitter and Facebook
-        </HeadText>
-        <CenterBox>
-          <CenterBtn>
-            <GreenBtn onClick={() => {window.open('https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi')}}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
-          </CenterBtn>
-          <SocailImg src={s1}></SocailImg>
-        </CenterBox>
-      </HeadBox2>
-      <Features>
+    <>
+      <Modal open={isModalOpen} title="Coming Soon" onClose={() => setIsModalOpen(false)} >
+        <Box sx={{ ...style }}>
+          <CloseBox>
+            <Close src={closeIcon} onClick={() => setIsModalOpen(false)}></Close>
+          </CloseBox>
+          <ComingSoonBox>
+            <img src={comingsoon}></img>
+            <ComingSoonTxt>Coming Soon...</ComingSoonTxt>
+          </ComingSoonBox>
+        </Box>
+      </Modal>
+      <ContentWrapper>
+        <HeadBox2 style={{ height: 'auto', background: "#2524de" }}>
+          <HeadTitle>Clique Social</HeadTitle>
+          <HeadText>
+            Power DAOs and NFTs with social tooling integrated on Twitter and Facebook
+          </HeadText>
+          <CenterBox>
+            <CenterBtn>
+              <GreenBtn onClick={() => setIsModalOpen(true)}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+            </CenterBtn>
+            <SocailImg src={s1}></SocailImg>
+          </CenterBox>
+        </HeadBox2>
+        <Features>
           <StarImg src={star}></StarImg>
-        <Box1>
-          <GreenStarImg src={greenStar}></GreenStarImg>
-          <CliqueContentTitle>Features</CliqueContentTitle>
-        </Box1>
-        <Box3 isMargin={false}>
-          <Box3CardPink>
-            <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Mint</Box3CardTitle>
-            <Box3CardImg src={f1}></Box3CardImg>
-            <Box3CardTxt>Mint your own NFTs with just a few clicks! Upload an image from your local drive, or mint an existing post on Facebook or Twitter.</Box3CardTxt>
-          </Box3CardPink>
-          <Box3CardBlue>
-            <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Share</Box3CardTitle>
-            <Box3CardImg src={f2}></Box3CardImg>
-            <Box3CardTxt>Easily upload your NFTs from your Clique Social wallet to social media for the whole world to see!</Box3CardTxt>
-          </Box3CardBlue>
-          <Box3CardBlue>
-            <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Creation</Box3CardTitle>
-            <Box3CardImg src={f3}></Box3CardImg>
-            <Box3CardTxt>Create a DAO in minutes using an individual NFT or an NFT series. Simply choose the NFT(s), enter some basic information, and that's it!</Box3CardTxt>
-          </Box3CardBlue>
-          <Box3CardPink2>
-            <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Governance</Box3CardTitle>
-            <Box3CardImg src={f4}></Box3CardImg>
-            <Box3CardTxt>Create DAO proposals within minutes and NFT-gate its participation. Users with verified NFTs can vote within seconds!</Box3CardTxt>
-          </Box3CardPink2>
-        </Box3>
-        <BigStar src={homeImg62}></BigStar>
-      </Features>
-      <Footer />
-    </ContentWrapper>
+          <Box1>
+            <GreenStarImg src={greenStar}></GreenStarImg>
+            <CliqueContentTitle>Features</CliqueContentTitle>
+          </Box1>
+          <Box3 isMargin={false}>
+            <Box3CardPink>
+              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Mint</Box3CardTitle>
+              <Box3CardImg src={f1}></Box3CardImg>
+              <Box3CardTxt>Mint your own NFTs with just a few clicks! Upload an image from your local drive, or mint an existing post on Facebook or Twitter.</Box3CardTxt>
+            </Box3CardPink>
+            <Box3CardBlue>
+              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Share</Box3CardTitle>
+              <Box3CardImg src={f2}></Box3CardImg>
+              <Box3CardTxt>Easily upload your NFTs from your Clique Social wallet to social media for the whole world to see!</Box3CardTxt>
+            </Box3CardBlue>
+            <Box3CardBlue>
+              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Creation</Box3CardTitle>
+              <Box3CardImg src={f3}></Box3CardImg>
+              <Box3CardTxt>Create a DAO in minutes using an individual NFT or an NFT series. Simply choose the NFT(s), enter some basic information, and that's it!</Box3CardTxt>
+            </Box3CardBlue>
+            <Box3CardPink2>
+              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Governance</Box3CardTitle>
+              <Box3CardImg src={f4}></Box3CardImg>
+              <Box3CardTxt>Create DAO proposals within minutes and NFT-gate its participation. Users with verified NFTs can vote within seconds!</Box3CardTxt>
+            </Box3CardPink2>
+          </Box3>
+          <BigStar src={homeImg62}></BigStar>
+        </Features>
+        <Footer />
+      </ContentWrapper>
+    </>
   )
 }

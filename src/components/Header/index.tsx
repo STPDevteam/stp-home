@@ -116,7 +116,7 @@ export function ProductMenu({
       title: "Clique Social",
       link: "",
       route:'/cliqueSocial',
-      text: "Power DAOs and NFTs with social tooling integrated on Twitter and Facebook",
+      text: "Power DAOs and NFTs with social tooling integrated on Twitter and Facebook.",
     },
     // {
     //   icon: IconDapp,
