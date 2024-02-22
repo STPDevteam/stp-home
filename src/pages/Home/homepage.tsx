@@ -144,7 +144,7 @@ import biconomy from '../../assets/images/ecosystem/biconomy.png'
 import aw from '../../assets/images/ecosystem/AW.png'
 import daren from '../../assets/images/ecosystem/daren.svg'
 
-const blinkAnimation = keyframes`
+export const blinkAnimation = keyframes`
   0%, 100% {
     opacity: 1;
   }
@@ -1001,7 +1001,7 @@ const CliqueContentBox = styled.div`
     padding-top: 60px;
   }
 `
-const Box1 = styled.div`
+export const Box1 = styled.div`
   position: relative;
   width: 1440px;
   margin: auto;
@@ -1026,7 +1026,7 @@ const ContentLeft = styled.div`
   color: #23262F;
   margin-right: 40px;
 `
-const CliqueContentTitle = styled.div`
+export const CliqueContentTitle = styled.div`
   font-family: Poppins;
   font-size: 54px;
   font-style: normal;
@@ -1188,7 +1188,7 @@ const BlueCard = styled.div`
   border: 1px solid #C6DCF0;
   background: #F8FCFF;
 `
-const Box3 = styled.div<{isMargin: boolean}>`
+export const Box3 = styled.div<{isMargin: boolean}>`
   width: 1440px;
   display: flex;
   flex-wrap: wrap;
@@ -1201,7 +1201,7 @@ const Box3 = styled.div<{isMargin: boolean}>`
     margin-top: ${props => props.isMargin?'30px':'0'};
   }
 `
-const Box3Card = styled.div`
+export const Box3Card = styled.div`
   width: 580px;
   margin-right: 40px;
   margin-bottom: 20px;
@@ -1213,7 +1213,7 @@ const Box3Card = styled.div`
     width: 100%;
   }
 `
-const Box3CardBlue = styled(Box3Card)`
+export const Box3CardBlue = styled(Box3Card)`
   position: relative;
   padding: 38px;
   border-radius: 20px;
@@ -1223,7 +1223,7 @@ const Box3CardBlue = styled(Box3Card)`
     box-shadow: 0px 6px 10px 0px rgba(173, 218, 183, 0.25);
   }
 `
-const Box3CardPink = styled(Box3Card)`
+export const Box3CardPink = styled(Box3Card)`
   position: relative;
   padding: 38px 36px 28px;
   border-radius: 20px;
@@ -1279,10 +1279,10 @@ const ComingSoonBtnPinkH5 = styled(ComingSoonBtnH5)`
   background: #EFEFFF;
   color: #9E9EE8;
 `
-const Box3CardImg = styled.img`
+export const Box3CardImg = styled.img`
   width:100%;
 `
-const Box3CardTitle = styled.div`
+export const Box3CardTitle = styled.div`
   color: var(--main, #23262F);
   font-family: Poppins;
   font-size: 28px;
@@ -1290,7 +1290,7 @@ const Box3CardTitle = styled.div`
   font-weight: 700;
   line-height: 1.1;
 `
-const Box3CardSubTitle = styled.div`
+export const Box3CardSubTitle = styled.div`
   margin-top: 20px;
   color: var(--main, #23262F);
   font-family: Poppins;
@@ -1299,7 +1299,7 @@ const Box3CardSubTitle = styled.div`
   font-weight: 600;
   line-height: 1.1;
 `
-const Box3CardTxt = styled.div`
+export const Box3CardTxt = styled.div`
   padding: 20px;
   color: var(--word-color, #3F5170);
   font-family: Poppins;
