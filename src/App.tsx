@@ -10,6 +10,7 @@ import Homepage from "./pages/Home/homepage";
 import EcosystemPage from "./pages/Ecosystem/EcosystemPage";
 import DaoPage from "./pages/DAO/daoPage";
 import Awns from "./pages/Awns/index";
+import Soda from "./pages/Soda/index";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import { createBrowserHistory } from 'history'
@@ -34,6 +35,7 @@ function App() {
                 <Route component={Tech} exact path="/tech" />
                 <Route component={DaoPage} exact path="/dao" />
                 <Route component={Awns} exact path="/awns" />
+                <Route component={Soda} exact path="/soda" />
               </Switch>
             </Content>
           </Router>

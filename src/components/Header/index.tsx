@@ -96,6 +96,7 @@ export function ProductMenu({
   setDropdownVisible?: (visible: boolean) => void;
 }) {
   // export function ProductMenu() {
+  const history = useHistory()
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuList = [
     {
@@ -109,6 +110,13 @@ export function ProductMenu({
       title: "Clique Workspace",
       link: "https://www.myclique.io/governance",
       text: "Collaborative governance tool for planning and building worlds with no code and gas.",
+    },
+    {
+      icon: IconDapp,
+      title: "Clique Social",
+      link: "",
+      route:'/soda',
+      text: "Power DAOs and NFTs with social tooling integrated on Twitter and Facebook",
     },
     // {
     //   icon: IconDapp,
@@ -127,6 +135,11 @@ export function ProductMenu({
           onClick={() => {
             if (menu.link) {
               window.open(menu.link, "_blank");
+            }else if(menu.route) {
+              if (setDropdownVisible) {
+                setDropdownVisible(false);
+              }
+              history.push(menu.route)
             } else {
               if (setDropdownVisible) {
                 setDropdownVisible(false);
@@ -369,7 +382,7 @@ const Header: React.FC = () => {
         className="header"
         ref={headerRef}
         style={{
-          background: currentPath.pathname.includes("ecosystem")
+          background: currentPath.pathname.includes("ecosystem") || currentPath.pathname.includes("soda")
             ? "#2524de"
             : "#16127a",
           color: currentPath.pathname.includes("dao")
