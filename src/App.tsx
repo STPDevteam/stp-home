@@ -35,7 +35,7 @@ function App() {
                 <Route component={Tech} exact path="/tech" />
                 <Route component={DaoPage} exact path="/dao" />
                 <Route component={Awns} exact path="/awns" />
-                <Route component={Soda} exact path="/soda" />
+                <Route component={Soda} exact path="/cliqueSocial" />
               </Switch>
             </Content>
           </Router>

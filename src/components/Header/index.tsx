@@ -115,7 +115,7 @@ export function ProductMenu({
       icon: IconDapp,
       title: "Clique Social",
       link: "",
-      route:'/soda',
+      route:'/cliqueSocial',
       text: "Power DAOs and NFTs with social tooling integrated on Twitter and Facebook",
     },
     // {
@@ -382,7 +382,7 @@ const Header: React.FC = () => {
         className="header"
         ref={headerRef}
         style={{
-          background: currentPath.pathname.includes("ecosystem") || currentPath.pathname.includes("soda")
+          background: currentPath.pathname.includes("ecosystem") || currentPath.pathname.includes("cliqueSocial")
             ? "#2524de"
             : "#16127a",
           color: currentPath.pathname.includes("dao")
