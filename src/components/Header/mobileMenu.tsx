@@ -79,10 +79,10 @@ export default function MobileMenu({
           style={{ width: "191px" }}
           onClick={() =>
             // window.open("https://www.myclique.io/creator", "_blank")
-            window.open("https://www.myclique.io/daos", "_blank")
+            window.open("https://awns.stp.network/", "_blank")
           }
         >
-          Build DAO
+          Go AWNS
           <ArrowOutwardIcon />
         </GreenBtn>
       </MenuBox>

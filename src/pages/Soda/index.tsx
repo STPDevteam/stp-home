@@ -22,10 +22,11 @@ import Modal from '@mui/material/Modal';
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import s1 from "../../assets/images/soda/s1.png"
-import f1 from "../../assets/images/soda/f1.png"
-import f2 from "../../assets/images/soda/f2.png"
-import f3 from "../../assets/images/soda/f3.png"
-import f4 from "../../assets/images/soda/f4.png"
+import s2 from "../../assets/images/soda/s2.png"
+import f1 from "../../assets/images/soda/f1.svg"
+import f2 from "../../assets/images/soda/f2.svg"
+import f3 from "../../assets/images/soda/f3.svg"
+import f4 from "../../assets/images/soda/f4.svg"
 import star from "../../assets/images/soda/star.png"
 import greenStar from "../../assets/images/soda/greenStar.svg"
 import comingsoon from "../../assets/images/soda/comingsoon.png"
@@ -69,36 +70,61 @@ const HeadTitle = styled.div`
     line-height: 56px;
   }
 `
-const HeadText = styled(Typography)`
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 500;
-  margin-top: 24px;
-  font-size: 24px;
-  line-height: 40px;
-  color: #ececec;
-  text-align: center;
 
-  @media (max-width: 767px) {
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 40px;
-    padding-left: 0px;
-  }
-`
 const CenterBox = styled.div`
   position: relative;
-  height: 600px;
+  height: 620px;
   width: 100%;
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  padding-top: 16px;
+  padding-top: 6px;
   text-align: center;
   background-image: url(${homeImg62});
   background-repeat: no-repeat;
   background-position: center top;
   @media (max-width: 767px) {
-    height: 310px;
+    flex-direction: column;
+    height: 760px;
   }
+`
+const SocialBox = styled.div`
+  width: 540px;
+  height: 500px;
+  margin: 0 10px;
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid rgba(54, 114, 231, 1);
+  background: rgba(31, 50, 220, 0.5);
+   &:hover {
+    border-color: rgba(167, 244, 106, 1);
+    box-shadow: 0px 4px 60px 0px rgba(14, 14, 172, 1);
+   }
+   @media (max-width: 767px) {
+    width: 88%;
+    height: auto;
+    margin: 10px auto;
+  }
+`
+const SocialTitle = styled.div`
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+`
+const SocialCover = styled.img`
+  width: 80%;
+`
+const SocialCover2 = styled.img`
+  width: 60%;
+`
+const SocialTxt = styled.div`
+  font-family: Urbanist;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
 `
 const CenterBtn = styled.div`
   position: absolute;
@@ -115,7 +141,7 @@ const GreenBtn = styled(Button)`
   justify-content: center;
   align-items: center;
   padding: 16px 24px;
-  margin: auto;
+  margin: 4px auto;
   font-weight: 700;
   font-size: 18px;
   height: 48px;
@@ -136,27 +162,14 @@ const GreenBtn = styled(Button)`
     line-height: 150%;
   }
 `;
-const SocailImg = styled.img`
-  position: absolute;
-  top: -30px;
-  left: calc(50% - 400px);
-  width: 800px;
-  height: 670px;
-  z-index: 1;
-  @media (max-width: 767px) {
-    width: 100%;
-    height: auto;
-    top: 30px;
-    left: calc(50% - 185px);
-  }
-`
+
 const Features = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 150px;
+  padding-top: 130px;
   background-position: 0% -5%;
   position: relative;
   z-index: 1;
@@ -179,8 +192,8 @@ const StarImg = styled.img`
 `
 const GreenStarImg = styled.img`
   position: absolute;
-  top: -80px;
-  right: 50px;
+  bottom: -120px;
+  right: 0px;
   z-index: 1;
   /* animation: ${blinkAnimation} 2s ease-in-out infinite; */
   @media (max-width: 767px) {
@@ -199,7 +212,28 @@ const BigStar = styled.img`
   @media (max-width: 767px) {
     width: 100%;
   }
-
+`
+const FeaturesCardTitle = styled.div`
+  font-family: Urbanist;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 0px;
+  text-align: center;
+`
+const FeaturesMain = styled.div`
+  display: flex;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+`
+const FeaturesMainImg = styled.img`
+  width: 100%;
+  @media (max-width: 767px) {
+    width: 100px;
+    height: auto;
+    margin: auto;
+  }
 `
 const Box3CardPink2 = styled(Box3CardPink)`
   z-index: 3;
@@ -234,11 +268,11 @@ const ComingSoonTxt = styled.p`
   font-size: 20px;
 `
 export default function Soda() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      <Modal open={isModalOpen} title="Coming Soon" onClose={() => setIsModalOpen(false)} >
+      {/* <Modal open={isModalOpen} title="Coming Soon" onClose={() => setIsModalOpen(false)} >
         <Box sx={{ ...style }}>
           <CloseBox>
             <Close src={closeIcon} onClick={() => setIsModalOpen(false)}></Close>
@@ -248,18 +282,26 @@ export default function Soda() {
             <ComingSoonTxt>Coming Soon...</ComingSoonTxt>
           </ComingSoonBox>
         </Box>
-      </Modal>
+      </Modal> */}
       <ContentWrapper>
         <HeadBox2 style={{ height: 'auto', background: "#2524de" }}>
           <HeadTitle>Clique Social</HeadTitle>
-          <HeadText>
+          {/* <HeadText>
             Power DAOs and NFTs with social tooling integrated on Twitter and Facebook
-          </HeadText>
+          </HeadText> */}
           <CenterBox>
-            <CenterBtn>
-              <GreenBtn onClick={() => setIsModalOpen(true)}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
-            </CenterBtn>
-            <SocailImg src={s1}></SocailImg>
+            <SocialBox>
+              <SocialTitle>SocialNet</SocialTitle>
+              <SocialCover src={s1}></SocialCover>
+              <SocialTxt>Chrome extension</SocialTxt>
+              <GreenBtn onClick={() => window.open('https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi')}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+            </SocialBox>
+            <SocialBox>
+              <SocialTitle>SocialTon</SocialTitle>
+              <SocialCover2 src={s2}></SocialCover2>
+              <SocialTxt>Telegram bot</SocialTxt>
+              <GreenBtn onClick={() => window.open('https://t.me/Web3SotonBot')}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+            </SocialBox>
           </CenterBox>
         </HeadBox2>
         <Features>
@@ -270,24 +312,32 @@ export default function Soda() {
           </Box1>
           <Box3 isMargin={false}>
             <Box3CardPink>
-              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Mint</Box3CardTitle>
-              <Box3CardImg src={f1}></Box3CardImg>
-              <Box3CardTxt>Mint your own NFTs with just a few clicks! Upload an image from your local drive, or mint an existing post on Facebook or Twitter.</Box3CardTxt>
+              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Mint</FeaturesCardTitle>
+              <FeaturesMain>
+                <FeaturesMainImg src={f1}></FeaturesMainImg>
+                <Box3CardTxt>Instantly create NFTs from any image or social media post with just a few clicks. Our platform simplifies your minting process.</Box3CardTxt>
+              </FeaturesMain>
             </Box3CardPink>
             <Box3CardBlue>
-              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Share</Box3CardTitle>
-              <Box3CardImg src={f2}></Box3CardImg>
-              <Box3CardTxt>Easily upload your NFTs from your Clique Social wallet to social media for the whole world to see!</Box3CardTxt>
+              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Share</FeaturesCardTitle>
+              <FeaturesMain>
+                <FeaturesMainImg src={f2}></FeaturesMainImg>
+                <Box3CardTxt>Seamlessly share your NFTs on social media from your Soda wallet. Connect and impress audiences worldwide with ease.</Box3CardTxt>
+              </FeaturesMain>
             </Box3CardBlue>
             <Box3CardBlue>
-              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Creation</Box3CardTitle>
-              <Box3CardImg src={f3}></Box3CardImg>
-              <Box3CardTxt>Create a DAO in minutes using an individual NFT or an NFT series. Simply choose the NFT(s), enter some basic information, and that's it!</Box3CardTxt>
+              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Management</FeaturesCardTitle>
+              <FeaturesMain>
+                <FeaturesMainImg src={f3}></FeaturesMainImg>
+                <Box3CardTxt>Quickly set up DAO proposals and enable NFT-based voting. Streamline community engagement and decision-making.</Box3CardTxt>
+              </FeaturesMain>
             </Box3CardBlue>
             <Box3CardPink2>
-              <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Governance</Box3CardTitle>
-              <Box3CardImg src={f4}></Box3CardImg>
-              <Box3CardTxt>Create DAO proposals within minutes and NFT-gate its participation. Users with verified NFTs can vote within seconds!</Box3CardTxt>
+              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>IDO</FeaturesCardTitle>
+              <FeaturesMain>
+                <FeaturesMainImg src={f4}></FeaturesMainImg>
+                <Box3CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards.</Box3CardTxt>
+              </FeaturesMain>
             </Box3CardPink2>
           </Box3>
           <BigStar src={homeImg62}></BigStar>

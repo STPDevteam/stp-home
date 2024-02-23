@@ -116,7 +116,7 @@ export function ProductMenu({
       title: "Clique Social",
       link: "",
       route:'/cliqueSocial',
-      text: "Power DAOs and NFTs with social tooling integrated on Twitter and Facebook.",
+      text: "Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and Telegram.",
     },
     // {
     //   icon: IconDapp,
@@ -491,10 +491,10 @@ const Header: React.FC = () => {
         <GreenBtn
           className="BuildDao"
           onClick={() =>
-            window.open("https://www.myclique.io/daos", "_blank")
+            window.open("https://awns.stp.network/", "_blank")
           }
         >
-          Build DAO <ArrowOutwardIcon style={{ color: "#23262F" }} />
+         Go AWNS <ArrowOutwardIcon style={{ color: "#23262F" }} />
         </GreenBtn>
         <button
           onClick={() => {
