@@ -2761,8 +2761,8 @@ export function Footer() {
   const footList = [
     ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
     ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
-    ["Resources", "News", "Github", "Documentation"],
     ["STP Ecosystem", "Ecosystem"],
+    ["Resources", "News", "Github", "Documentation"],
   ];
   const footListLink = [
     [
@@ -2785,14 +2785,14 @@ export function Footer() {
     //   "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
     // ],
     [
+      "STP Ecosystem",
+      "https://www.stp.network/ecosystem"
+    ],
+    [
       "Resources",
       "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
       "https://github.com/STPDevteam",
       "https://stpdao.gitbook.io/whitepaper/stp-network/master"
-    ],
-    [
-      "STP Ecosystem",
-      "https://www.stp.network/ecosystem"
     ],
   ];
   return (
@@ -2950,8 +2950,8 @@ export function Footer2() {
   const footList = [
     ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
     ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
-    ["Resources", "News", "Github", "Documentation"],
     ["STP Ecosystem", "Ecosystem"],
+    ["Resources", "News", "Github", "Documentation"],
   ];
   const footListLink = [
     [
@@ -2969,14 +2969,14 @@ export function Footer2() {
       "https://www.myclique.io/governance/daoInfo/216/proposal",
     ],
     [
+      "STP Ecosystem",
+      "https://www.stp.network/ecosystem"
+    ],
+    [
       "Resources",
       "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
       "https://github.com/STPDevteam",
       "https://stpdao.gitbook.io/whitepaper/stp-network/master"
-    ],
-    [
-      "STP Ecosystem",
-      "https://www.stp.network/ecosystem"
     ],
   ];
   return (
