@@ -110,6 +110,7 @@ const SocialTitle = styled.div`
   font-size: 32px;
   font-weight: 600;
   color: #fff;
+  letter-spacing: 2px;
 `
 const SocialCover = styled.img`
   width: 80%;
@@ -140,8 +141,8 @@ const GreenBtn = styled(Button)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 16px 24px;
-  margin: 4px auto;
+  padding: 10px 24px;
+  margin: 10px auto 0 auto;
   font-weight: 700;
   font-size: 18px;
   height: 48px;
@@ -300,7 +301,7 @@ export default function Soda() {
               <SocialTitle>SocialTon</SocialTitle>
               <SocialCover2 src={s2}></SocialCover2>
               <SocialTxt>Telegram bot</SocialTxt>
-              <GreenBtn onClick={() => window.open('https://t.me/Web3SotonBot')}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+              <GreenBtn onClick={() => window.open('https://t.me/Web3SotonBot')}>Install <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
             </SocialBox>
           </CenterBox>
         </HeadBox2>
