@@ -116,7 +116,13 @@ const SocialCover = styled.img`
   width: 80%;
 `
 const SocialCover2 = styled.img`
-  width: 60%;
+  width: auto;
+  height: 292px;
+  @media (max-width: 767px) {
+    width: 62%;
+    height: auto;
+    
+  }
 `
 const SocialTxt = styled.div`
   font-family: Urbanist;
@@ -177,7 +183,7 @@ const Features = styled.div`
   padding-bottom: 100px;
   overflow: hidden;
   @media (max-width: 767px) {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 40px;
   }
 `
@@ -198,7 +204,7 @@ const GreenStarImg = styled.img`
   z-index: 1;
   /* animation: ${blinkAnimation} 2s ease-in-out infinite; */
   @media (max-width: 767px) {
-    top: -30px;
+    top: 30px;
     right: 10px;
     width: 68px;
   }
@@ -327,17 +333,17 @@ export default function Soda() {
               </FeaturesMain>
             </Box3CardBlue>
             <Box3CardBlue>
-              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>DAO Management</FeaturesCardTitle>
+              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Governance</FeaturesCardTitle>
               <FeaturesMain>
                 <FeaturesMainImg src={f3}></FeaturesMainImg>
-                <Box3CardTxt>Quickly set up DAO proposals and enable NFT-based voting. Streamline community engagement and decision-making.</Box3CardTxt>
+                <Box3CardTxt>Quickly set up DAO proposals and enable NFT-based voting directly on socials such as Telegram.Streamline community engagement and decision-making.</Box3CardTxt>
               </FeaturesMain>
             </Box3CardBlue>
             <Box3CardPink2>
-              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>IDO</FeaturesCardTitle>
+              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Launchpad</FeaturesCardTitle>
               <FeaturesMain>
                 <FeaturesMainImg src={f4}></FeaturesMainImg>
-                <Box3CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards.</Box3CardTxt>
+                <Box3CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards directly on socials.</Box3CardTxt>
               </FeaturesMain>
             </Box3CardPink2>
           </Box3>

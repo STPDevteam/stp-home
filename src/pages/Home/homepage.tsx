@@ -2759,15 +2759,16 @@ export function Footer() {
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Clique Workspace", "Clique DApp Store", "Clique SDK"],
-    // ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
+    ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
     ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
-    ["Resources", "Developer Portal", "How to guides"],
+    ["Resources", "News", "Github", "Documentation"],
+    ["STP Ecosystem", "Ecosystem"],
   ];
   const footListLink = [
     [
       "Products",
       "https://www.myclique.io/governance",
+      "/cliqueSocial",
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
     ],
@@ -2778,10 +2779,20 @@ export function Footer() {
       "https://www.myclique.io/governance/daoInfo/1/proposal",
       "https://www.myclique.io/governance/daoInfo/216/proposal",
     ],
+    // [
+    //   "Resources",
+    //   "https://github.com/STPDevteam",
+    //   "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
+    // ],
     [
       "Resources",
+      "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
       "https://github.com/STPDevteam",
-      "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
+      "https://stpdao.gitbook.io/whitepaper/stp-network/master"
+    ],
+    [
+      "STP Ecosystem",
+      "https://www.stp.network/ecosystem"
     ],
   ];
   return (
@@ -2816,8 +2827,13 @@ export function Footer() {
                     } else {
                       return (
                         <FooterText
-                          onClick={() =>
-                            window.open(footListLink[idx][i], "_blank")
+                          onClick={() =>{
+                            if(footListLink[idx][i].includes('http')){
+                              window.open(footListLink[idx][i], "_blank")
+                            }else {
+                              history.push(footListLink[idx][i])
+                            }
+                          }
                           }
                         >
                           {item}
@@ -2828,26 +2844,20 @@ export function Footer() {
                 </Box>
               );
             })}
-            <Box>
+            {/* <Box>
               <FooterH1>STP Ecosystem</FooterH1>
-              {/* <FooterH1
-                style={{ cursor: "pointer" }}
-                onClick={() => history.push("/dao")}
-              >
-                Clique World Launchpad
-              </FooterH1> */}
-              <FooterH1
+               <FooterH1
                 style={{ cursor: "pointer" }}
                 onClick={() =>
                   window.open(
-                    "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+                    "https://www.stp.network/ecosystem",
                     "_blank"
                   )
                 }
               >
-                News
+                Ecosystem
               </FooterH1>
-            </Box>
+            </Box> */}
           </Box>
         </>
       ) : (
@@ -2938,15 +2948,16 @@ export function Footer2() {
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Clique Workspace", "Clique DApp Store", "Clique SDK"],
-    // ["Leading DAOs", "STP DAO", "Bubble DAO", "Sonet DAO", "Chatgpt DAO"],
+    ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
     ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
-    ["Resources", "Developer Portal", "How to guides"],
+    ["Resources", "News", "Github", "Documentation"],
+    ["STP Ecosystem", "Ecosystem"],
   ];
   const footListLink = [
     [
       "Products",
       "https://www.myclique.io/governance",
+      "/cliqueSocial",
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
     ],
@@ -2959,8 +2970,13 @@ export function Footer2() {
     ],
     [
       "Resources",
+      "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
       "https://github.com/STPDevteam",
-      "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
+      "https://stpdao.gitbook.io/whitepaper/stp-network/master"
+    ],
+    [
+      "STP Ecosystem",
+      "https://www.stp.network/ecosystem"
     ],
   ];
   return (
@@ -2996,7 +3012,13 @@ export function Footer2() {
                       return (
                         <FooterText
                           onClick={() =>
-                            window.open(footListLink[idx][i], "_blank")
+                            {
+                              if(footListLink[idx][i].includes('http')){
+                                window.open(footListLink[idx][i], "_blank")
+                              }else {
+                                history.push(footListLink[idx][i])
+                              }
+                            }
                           }
                         >
                           {item}
@@ -3007,14 +3029,8 @@ export function Footer2() {
                 </Box>
               );
             })}
-            <Box>
+            {/* <Box>
               <FooterH1>STP Ecosystem</FooterH1>
-              {/* <FooterH1
-                style={{ cursor: "pointer" }}
-                onClick={() => history.push("/dao")}
-              >
-                Clique World Launchpad
-              </FooterH1> */}
               <FooterH1
                 style={{ cursor: "pointer" }}
                 onClick={() =>
@@ -3026,7 +3042,7 @@ export function Footer2() {
               >
                 News
               </FooterH1>
-            </Box>
+            </Box> */}
           </Box>
         </>
       ) : (
