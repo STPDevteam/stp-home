@@ -2831,6 +2831,7 @@ export function Footer() {
                             if(footListLink[idx][i].includes('http')){
                               window.open(footListLink[idx][i], "_blank")
                             }else {
+                              window.scrollTo(0, 0);
                               history.push(footListLink[idx][i])
                             }
                           }
@@ -3016,6 +3017,7 @@ export function Footer2() {
                               if(footListLink[idx][i].includes('http')){
                                 window.open(footListLink[idx][i], "_blank")
                               }else {
+                                window.scrollTo(0, 0);
                                 history.push(footListLink[idx][i])
                               }
                             }
