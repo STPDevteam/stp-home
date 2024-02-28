@@ -298,13 +298,13 @@ export default function Soda() {
           </HeadText> */}
           <CenterBox>
             <SocialBox>
-              <SocialTitle>SocialNet</SocialTitle>
+              <SocialTitle>Soda</SocialTitle>
               <SocialCover src={s1}></SocialCover>
               <SocialTxt>Chrome extension</SocialTxt>
-              <GreenBtn onClick={() => window.open('https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi')}>Install Extension <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+              <GreenBtn onClick={() => window.open('https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi')}>Install <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
             </SocialBox>
             <SocialBox>
-              <SocialTitle>SocialTon</SocialTitle>
+              <SocialTitle>Soton</SocialTitle>
               <SocialCover2 src={s2}></SocialCover2>
               <SocialTxt>Telegram bot</SocialTxt>
               <GreenBtn onClick={() => window.open('https://t.me/Web3SotonBot')}>Install <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
