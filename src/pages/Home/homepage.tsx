@@ -12,6 +12,7 @@ import { ReactComponent as IconStart } from "../../assets/images/home/svg/label1
 import { ReactComponent as UserIcon } from "../../assets/images/home/svg/usericon.svg";
 import { ReactComponent as FileIcon } from "../../assets/images/home/svg/file-icon.svg";
 import { ReactComponent as AlarmIcon } from "../../assets/images/home/svg/alarmicon.svg";
+import { ReactComponent as DownloadIcon } from "../../assets/images/home/svg/download.svg";
 import UserActive from "../../assets/images/home/svg/user-active.svg";
 
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
@@ -110,6 +111,10 @@ import WechatQR from "../../assets/images/home/QR.jpeg";
 import infrastructure from "../../assets/images/home/svg/infrastructure.svg";
 import qrcode from "../../assets/images/home/svg/qrcode.svg";
 import dataForm from "../../assets/images/home/svg/dataForm.svg";
+import identityIcon1 from "../../assets/images/home/svg/identityIcon1.svg";
+import identityIcon2 from "../../assets/images/home/svg/identityIcon2.svg";
+import identityIcon3 from "../../assets/images/home/svg/identityIcon3.svg";
+import greenStar from "../../assets/images/home/svg/greenStar.svg"
 import more from "../../assets/images/home/svg/more.svg";
 import identity from "../../assets/images/home/identity.png"
 import decorationStar from "../../assets/images/home/svg/decorationStar.svg"
@@ -118,11 +123,15 @@ import workspaceImg1 from "../../assets/images/home/workspace1.png"
 import workspaceImg2 from "../../assets/images/home/workspace2.png"
 import workspaceImg3 from "../../assets/images/home/workspace3.png"
 import workspaceImg4 from "../../assets/images/home/workspace4.png"
+import cliqueImg3 from "../../assets/images/home/clique3.png"
+import cliqueImg4 from "../../assets/images/home/clique4.png"
+import cliqueSocial from "../../assets/images/home/cliqueSocial.png"
 import homeImg1 from "../../assets/images/home/home1.png"
 import homeImg2 from "../../assets/images/home/home2.png"
 import homeImg3 from "../../assets/images/home/home3.png"
 import homeImg4 from "../../assets/images/home/home4.png"
 import homeImg5 from "../../assets/images/home/home5.png"
+import homeImg5V2 from "../../assets/images/home/home5V2.png"
 import homeImg61 from "../../assets/images/home/home6-1.png"
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import homeImg63 from "../../assets/images/home/home6-3.png"
@@ -206,10 +215,11 @@ export default function Homepage() {
           <Identity />
         </Head1>
         <Identity2 />
-        <Initiatives />
+        {/* <Initiatives /> */}
       </Content1>
       <CliqueContent />
       {/* <Infrastructure /> */}
+      <Initiatives />
       <Ecosystem />
       <Learn />
       <FooterModal>
@@ -418,7 +428,7 @@ function Head() {
       <HeadText>
         Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
         <AwnsBtn onClick={()=>{window.open('https://awns.stp.network/','_blank')}}>
-          Register for an AWNS
+        Create an AWNS
         </AwnsBtn>
       </HeadText>
       {/* <AwnsBox>
@@ -545,6 +555,7 @@ const IdentityIcons = styled.div`
   }
 `
 const IconsBox = styled.div`
+  position: relative;
   width: 240px;
   height: 240px;
   margin: 15px 10px;
@@ -566,13 +577,24 @@ const Icon = styled.img`
     width: 36px;
   }
 `
+const GreenStar = styled.img`
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 60px;
+`
+const GreenStar2 = styled.img`
+  position: absolute;
+  right: 54px;
+  width: 60px;
+`
 const IconName = styled.div`
   margin-top: 30px;
   font-size: 20px;
 `
 const Identity2Box = styled.div`
   max-width: 1440px;
-  margin: 300px auto 0;
+  margin: 300px auto 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -647,21 +669,23 @@ function Identity2() {
       <Identity2Content>
         <Identity2Star src={starWhite}></Identity2Star>
         <IdentityTitle>STP will empower AW builders </IdentityTitle>
-        <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction and AI</Identity2Text>
+        <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction, AI Agents</Identity2Text>
         <HomeImg3 src={homeImg3}></HomeImg3>
       </Identity2Content>
       <IdentityIcons>
         <IconsBox>
-          <Icon src={infrastructure}></Icon>
-          <IconName>Infrastructure</IconName>
+          <Icon src={identityIcon1}></Icon>
+          <GreenStar src={greenStar}></GreenStar>
+          <IconName>Autonomous Worlds</IconName>
         </IconsBox>
         <IconsBox>
-          <Icon src={qrcode}></Icon>
-          <IconName>Toolkit</IconName>
+          <Icon src={identityIcon2}></Icon>
+          <IconName>Account Abstraction</IconName>
         </IconsBox>
         <IconsBox>
-          <Icon src={dataForm}></Icon>
-          <IconName>Data APIs</IconName>
+          <Icon src={identityIcon3}></Icon>
+          <GreenStar2 src={greenStar}></GreenStar2>
+          <IconName>AI Agents</IconName>
         </IconsBox>
       </IdentityIcons>
     </Identity2Box>
@@ -1027,30 +1051,42 @@ const ContentLeft = styled.div`
   margin-right: 40px;
 `
 export const CliqueContentTitle = styled.div`
-  font-family: Poppins;
-  font-size: 54px;
+  font-family: Urbanist;
+  font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.3;
+  color: #0049C6;
   @media (max-width: 767px) {
     margin-top: 40px;
     font-size: 32px;
   }
 `
+
 const CliqueContentSubTitle = styled.div`
-  margin-top: 40px;
-  font-family: Poppins;
-  font-size: 22px;
+  margin-top: 0px;
+  font-family: Urbanist;
+  font-size: 56px;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.3;
+  max-width: 856px;
+  text-align: center;
   @media (max-width: 767px) {
     font-size: 18px;
     margin-top: 20px;
   }
-
+`
+const CliqueContentSubTitle2 = styled(CliqueContentSubTitle)`
+  margin-top: 10px;
+  text-align: left;
+  @media (max-width: 767px) {
+    font-size: 18px;
+    margin-top: 20px;
+  }
 `
 const CliqueContentText = styled.div`
+  max-width: 517px;
   margin-top: 60px;
   font-family: Poppins;
   font-size: 18px;
@@ -1140,25 +1176,29 @@ const CardText = styled.div`
 `
 const Box2 = styled.div`
   position: relative;
-  width: 100%;
-  margin-top: 80px;
+  width: 1200px;
+  margin: 200px auto 0;
   display: flex;
   justify-content: center;
   /* background: url(${homeImg5}) no-repeat; */
   /* background-position: 100% 120%; */
   @media (max-width: 767px) {
     width: 100vw;
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 200px;
+    padding: 0 24px;
     flex-direction: column;
   }
 `
 const HomeImg5 = styled.img`
   position: absolute;
-  bottom: -100px;
-  right: 0;
+  top: -200px;
+  left: 0px;
+  width: 600px;
   z-index: 1;
   animation: ${blinkAnimation} 2s ease-in-out infinite;
+  @media (max-width: 767px) {
+    width: 100vw;
+  }
 `
 const Box2Img = styled.img`
   width: 823px;
@@ -1167,20 +1207,24 @@ const Box2Img = styled.img`
   }
 `
 const ContentLeft2 = styled.div`
-  margin-right: 40px;
+  flex: 1;
   @media (max-width: 767px) {
     margin-right: 0px;
   }
 `
 const ContentRight2 = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 380px;
   z-index: 2;
   @media (max-width: 767px) {
     width: 100%;
+    padding: 0 24px ;
   }
 `
+
 const BlueCard = styled.div`
   margin-bottom: 20px;
   padding: 36px;
@@ -1190,9 +1234,9 @@ const BlueCard = styled.div`
 `
 export const Box3 = styled.div<{isMargin: boolean}>`
   width: 1440px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
   margin: 50px auto 0;
   @media (max-width: 767px) {
     width: 100%;
@@ -1202,9 +1246,7 @@ export const Box3 = styled.div<{isMargin: boolean}>`
   }
 `
 export const Box3Card = styled.div`
-  width: 580px;
-  margin-right: 40px;
-  margin-bottom: 20px;
+  margin: 20px auto;
   padding: 38px;
   border-radius: 20px;
   border: 1px solid #C6DCF0;
@@ -1214,6 +1256,10 @@ export const Box3Card = styled.div`
   }
 `
 export const Box3CardBlue = styled(Box3Card)`
+  width: 1200px;
+  height: 320px;  
+  display: flex;
+  gap: 20px;
   position: relative;
   padding: 38px;
   border-radius: 20px;
@@ -1222,18 +1268,52 @@ export const Box3CardBlue = styled(Box3Card)`
   &:hover {
     box-shadow: 0px 6px 10px 0px rgba(173, 218, 183, 0.25);
   }
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;  
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+`
+const Box3CardBlue2 = styled(Box3CardBlue)`
+  width: 580px;
+  height: 540px;
+  display: block;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
 `
 export const Box3CardPink = styled(Box3Card)`
+  width: 1200px;
+  height: 320px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   position: relative;
   padding: 38px 36px 28px;
   border-radius: 20px;
-  border: 1px solid #9E9EE8;
-  background: #F8F8FF;
+  border: 1px solid #D9C6F0;
+  background: #fdf8ff;
   &:hover {
     box-shadow: 0px 6px 10px 0px rgba(180, 158, 193, 0.25);
   }
   @media (max-width: 767px) {
     position: static;
+    width: 100%;
+    height: auto;  
+    flex-direction: column;
+    padding: 16px;
+  }
+`
+const Box3CardPink2 = styled(Box3CardPink)`
+  width: 580px;
+  height: 540px;
+  display: block;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
   }
 `
 const ComingSoonBtn = styled.div`
@@ -1279,10 +1359,15 @@ const ComingSoonBtnPinkH5 = styled(ComingSoonBtnH5)`
   background: #EFEFFF;
   color: #9E9EE8;
 `
+const Box3CardCover = styled.div`
+  flex: 1;
+`
 export const Box3CardImg = styled.img`
-  width:100%;
+  max-width:100%;
+  max-height: 100%;
 `
 export const Box3CardTitle = styled.div`
+  margin-bottom: 10px;
   color: var(--main, #23262F);
   font-family: Poppins;
   font-size: 28px;
@@ -1300,7 +1385,7 @@ export const Box3CardSubTitle = styled.div`
   line-height: 1.1;
 `
 export const Box3CardTxt = styled.div`
-  padding: 20px;
+  padding: 0px 20px 30px 20px;
   color: var(--word-color, #3F5170);
   font-family: Poppins;
   font-size: 18px;
@@ -1310,6 +1395,7 @@ export const Box3CardTxt = styled.div`
 `
 const Box3CardUl = styled.ul`
   margin-top: 20px;
+  flex: 1;
 `
 const Box3CardLi = styled.li`
   color: #3F5170;
@@ -1319,10 +1405,20 @@ const Box3CardLi = styled.li`
   font-weight: 500;
   line-height: 1.5;
 `
+const Box4 = styled.div`
+  display: flex;
+  width: 1200px;
+  @media (max-width: 767px) {
+      width: 100%;
+      padding: 0 24px;
+      flex-direction: column;
+  }
+
+`
 function CliqueContent() {
   const cliqueAwSolutions = {
     title: 'Clique AW',
-    subTitle: 'Build on-chain worlds unique to any AW project with a full suite of solutions.',
+    subTitle: 'Evolve Community for Autonomous Worlds',
     // text: 'Seamlessly unwind and power world-building through these solutions'
   }
   const cardList = [
@@ -1344,8 +1440,8 @@ function CliqueContent() {
     },
   ]
   const cliqueWorkspace = {
-    title: 'Clique Workspace',
-    subTitle: 'Evolve DAOs for Autonomous Worlds',
+    title: 'Clique Network',
+    subTitle: 'Evolve Community for Autonomous Worlds',
     text: 'Collaborative governance tool for planning and building on-chain worlds with no code and gas.'
   }
   return (
@@ -1356,78 +1452,104 @@ function CliqueContent() {
           <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
         {/* </ContentLeft> */}
         <Box3 isMargin={false}>
-        <Box3CardPink>
-          {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
-          <Box3CardTitle>AWNS</Box3CardTitle>
-          <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle>
-          <Box3CardUl>
-            <Box3CardLi>Register and manage your dynamic. AW domain wrapped with a 6551 wallet</Box3CardLi>
-            <Box3CardLi>Easily connect and interact with AW dApps</Box3CardLi>
-            <Box3CardLi>Single name for all tokens and decentralized worlds</Box3CardLi>
-          </Box3CardUl>
-          <Box3CardImg src={workspaceImg3}></Box3CardImg>
-          <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5>
-        </Box3CardPink>
-        <Box3CardBlue>
-          <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue>
-          <Box3CardTitle>6551 Account Generator</Box3CardTitle>
-          <Box3CardSubTitle>Turn any NFT into a wallet</Box3CardSubTitle>
-          <Box3CardUl>
-            <Box3CardLi>Generate smart wallet based on NFT using innovative account abstraction</Box3CardLi>
-            <Box3CardLi>Manage NFT Smart Wallet customizable in-app</Box3CardLi>
-            <Box3CardLi>Traverse in multi-chain worlds using interworld passports</Box3CardLi>
-          </Box3CardUl>
-          <Box3CardImg src={workspaceImg4}></Box3CardImg>
-          <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5>
-        </Box3CardBlue>
-      </Box3>
-        <ContentRight>
+          <Box3CardBlue>
+            {/* <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue> */}
+            <Box3CardUl>
+              <Box3CardTitle style={{marginLeft:'-20px'}}>AWNS</Box3CardTitle>
+              <Box3CardLi>Serves as your autonomous on-chain agent with a 6551 Wallet.</Box3CardLi>
+              <Box3CardLi>Easily connect and interact with dApps.</Box3CardLi>
+              <Box3CardLi>Single name for all tokens and decentralized worlds.</Box3CardLi>
+            </Box3CardUl>
+            <Box3CardCover>
+              <Box3CardImg src={workspaceImg4}></Box3CardImg>
+            </Box3CardCover>
+            {/* <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5> */}
+          </Box3CardBlue>
+          <Box3CardPink>
+            {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
+            <Box3CardUl>
+              <Box3CardTitle style={{marginLeft:'-20px'}}>Dynamic 6551 Account</Box3CardTitle>
+              <Box3CardLi>Generate and manage NFT-based smart wallets.</Box3CardLi>
+              <Box3CardLi>Multi-chain navigation with interworld passports.</Box3CardLi>
+              <Box3CardLi>Customize avatars and trade digital assets.</Box3CardLi>
+            </Box3CardUl>
+            <Box3CardCover>
+              <Box3CardImg src={workspaceImg3}></Box3CardImg> 
+            </Box3CardCover>
+            {/* <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5> */}
+          </Box3CardPink>
+          <Box3CardBlue>
+            <Box3CardUl>
+              <Box3CardTitle style={{marginLeft:'-20px'}}>On-Chain Gaming</Box3CardTitle>
+              <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
+              <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
+              <Box3CardLi>Query and build on-chain data across any chain 
+      using AI assistance.</Box3CardLi>
+              <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
+            </Box3CardUl>
+            <Box3CardCover>
+              <Box3CardImg src={cliqueImg3}></Box3CardImg>
+            </Box3CardCover>
+            {/* <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5> */}
+          </Box3CardBlue>
+          <Box3CardPink>
+            <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
+            {/* <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle> */}
+            <Box3CardUl>
+              <Box3CardTitle style={{marginLeft:'-20px'}}>Autonomous AI Agent</Box3CardTitle>
+              <Box3CardLi>Integrate AI for on-chain gaming and DeFi actions.</Box3CardLi>
+              <Box3CardLi>Train AI for game interaction and item collection.</Box3CardLi>
+              <Box3CardLi>AI-powered data querying and on-chain activities.</Box3CardLi>
+            </Box3CardUl>
+            <Box3CardCover>
+              <Box3CardImg src={cliqueImg4}></Box3CardImg>
+            </Box3CardCover>
+            <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5>
+          </Box3CardPink>
+        </Box3>
+        {/* <ContentRight>
           <Cards>
-            {/* <Card1>
-              <CardTitle>{cardList[0].title}</CardTitle>
-              <CardText>{cardList[0].content}</CardText>
-            </Card1> */}
             <Card1>
               <CardTitle>{cardList[3].title}</CardTitle>
               <CardText>{cardList[3].content}</CardText>
             </Card1>
           </Cards>
           <Cards>
-            {/* <Card1>
-              <CardTitle>{cardList[1].title}</CardTitle>
-              <CardText>{cardList[1].content}</CardText>
-            </Card1> */}
             <Card1>
               <CardTitle>{cardList[2].title}</CardTitle>
               <CardText>{cardList[2].content}</CardText>
             </Card1>
           </Cards>
-        </ContentRight>
+        </ContentRight> */}
       </Box1>
       
       <Box2>
-        <ContentLeft2>
-          <Box2Img src={workspaceImg} />
-        </ContentLeft2>
         <ContentRight2>
           <CliqueContentTitle>{cliqueWorkspace.title}</CliqueContentTitle>
-          <CliqueContentSubTitle>{cliqueWorkspace.subTitle}</CliqueContentSubTitle>
+          <CliqueContentSubTitle2>{cliqueWorkspace.subTitle}</CliqueContentSubTitle2>
           <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
         </ContentRight2>
-        <HomeImg5 src={homeImg5}></HomeImg5>
+        <ContentLeft2>
+          <Box3CardBlue2>
+            <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Social</Box3CardTitle>
+            <Box3CardTxt>Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and Telegram.</Box3CardTxt>
+            <Box3CardImg src={cliqueSocial}></Box3CardImg>
+          </Box3CardBlue2>
+        </ContentLeft2>
+        <HomeImg5 src={homeImg5V2}></HomeImg5>
       </Box2>
-      <Box3 isMargin={true}>
-        <Box3CardBlue>
+      <Box4>
+        <Box3CardBlue2>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Rewards</Box3CardTitle>
+          <Box3CardTxt>Solutions platform for building on-chain worlds unique to any AW project.</Box3CardTxt>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
-          <Box3CardTxt>Rewards feature for discovering and interacting with the universe of AW.</Box3CardTxt>
-        </Box3CardBlue>
-        <Box3CardPink>
+        </Box3CardBlue2>
+        <Box3CardPink2>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Governance</Box3CardTitle>
+          <Box3CardTxt>Collaborative governance tool for planning and building worlds with no code and gas.</Box3CardTxt>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
-          <Box3CardTxt>Governance feature for the expression and execution of the world state.</Box3CardTxt>
-        </Box3CardPink>
-      </Box3>
+        </Box3CardPink2>
+      </Box4>
 
     </CliqueContentBox>
   )
@@ -1439,8 +1561,8 @@ const DataBgBox = styled(Box)`
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 200px;
-  padding: 74px 0;
+  /* gap: 200px; */
+  padding: 40px 0;
   background-size: cover;
   @media (max-width: 767px) {
     flex-direction: column;
@@ -1453,15 +1575,21 @@ const DataStar = styled.img`
   left: 200px;
   bottom: 60px;
 `
-
+const DataBox = styled(Box)`
+  padding: 0 100px;
+  border-right: 1px solid #D6DEE8;
+  &:last-of-type {
+    border-right: none
+  }
+`
 const DataNumber = styled(Typography)`
-  font-family: "Poppins";
+  font-family: "Urbanist";
   font-style: normal;
   font-weight: 800;
   font-size: 48px;
   line-height: 60px;
   text-align: center;
-  color: #ffffff;
+  color: #0049C6;
   @media (max-width: 767px) {
     font-size: 32px;
   }
@@ -1471,10 +1599,10 @@ const DataContent = styled(Typography)`
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 30px;
   text-align: center;
-  color: #97B7EF;
+  color: #23262F;
   @media (max-width: 767px) {
     font-size: 16px;
   }
@@ -1484,10 +1612,10 @@ function Data() {
   const { total } = useTotal();
   const dataList = useMemo(() => {
     return [
-      { number: total?.totalDao.toLocaleString(), desc: "DAOs Created" },
+      { number: total?.totalDao.toLocaleString(), desc: "DAOs" },
       {
         number: total?.totalAccount.toLocaleString(),
-        desc: "Community Members",
+        desc: "Users",
       },
       { number: total?.totalProposal.toLocaleString(), desc: "Proposals" },
     ];
@@ -1497,10 +1625,10 @@ function Data() {
       {/* <DataStar src={decorationStar}></DataStar> */}
       {dataList.map((d, idx) => {
         return (
-          <Box>
+          <DataBox>
             <DataNumber>{d.number}</DataNumber>
             <DataContent>{d.desc}</DataContent>
-          </Box>
+          </DataBox>
         );
       })}
     </DataBgBox>
@@ -1508,14 +1636,12 @@ function Data() {
 }
 
 const InitH1 = styled(Typography)`
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  margin-top: 160px;
-  font-size: 54px;
+  font-family: Urbanist;
+  font-size: 56px;
+  font-weight: 700;
   line-height: 90px;
+  letter-spacing: 0px;
   text-align: center;
-  color: #fff;
   @media (max-width: 767px) {
     font-size: 32px;
     margin-top: 80px;
@@ -1526,12 +1652,12 @@ const InitH1 = styled(Typography)`
 `;
 const InitH2 = styled(Typography)`
   margin-top: 16px;
-  font-family: "Poppins";
+  font-family: Urbanist;
   font-style: normal;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
-  color: #fff;
+  /* color: #fff; */
   @media (max-width: 767px) {
     font-size: 18px;
     margin-left: 24px;
@@ -1727,6 +1853,7 @@ const InfoConetne = styled(Typography)`
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+  color: #80829F;
 `;
 const IfonBoxs = styled(Box)`
   padding: 0 60px;
@@ -1765,7 +1892,7 @@ const InfoBottomText = styled(Typography)`
 `;
 const InfoUserIcon = styled(UserIcon)`
   path {
-    fill: #fff;
+    fill: #0149c6;
   }
   :hover path {
     fill: #a7f46a;
@@ -1775,19 +1902,19 @@ const InfoFileIcon = styled(FileIcon)`
   height: 16.6px;
   width: 20px;
   path {
-    fill: #fff;
+    fill: #0149c6;
   }
 `;
 const InfoAlarmIcon = styled(AlarmIcon)`
   height: 17.5px;
   width: 17.5px;
   path {
-    fill: #fff;
+    fill: #0149c6;
   }
 `;
 
 const AllInfo = styled(Box)`
-  margin-top: 31px;
+  margin-top: 50px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -1796,9 +1923,9 @@ const AllInfo = styled(Box)`
   gap: 10px;
   width: 191px;
   height: 48px;
-  border: 1px solid #fff;
+  border: 1px solid #0149c6;
   border-radius: 80px;
-  color: #fff;
+  color: #0149c6;
   font-size: 18px;
   
 `;
@@ -1861,13 +1988,13 @@ function InfoBox({
       sx={{
         cursor: "pointer",
         padding: "24px",
-        backgroundColor: "#3145FF",
-        border: "1px solid rgba(116, 139, 184, 0.70)",
+        backgroundColor: "#fff",
+        border: "1px solid #C4D9F6",
         borderRadius: "24px",
-        color: '#fff',
+        // color: '#fff',
         "&:hover": {
-          border: "1px solid #A7F46A",
-          boxShadow: "0 0 10px 2px rgba(0,0,0,0.25)",
+          border: "1px solid #1f5fcc",
+          boxShadow: "0 0 10px 2px rgba(31,95,204,0.25)",
         },
       }}
     >
@@ -1880,7 +2007,7 @@ function InfoBox({
         <Box sx={{ pl: "14px" }}>
           <Row sx={{ alignItems: "center" }}>
             <InfoName> {name} </InfoName>
-            <IconStart fill={'#fff'}></IconStart>
+            <IconStart fill={'#0149c6'}></IconStart>
             {/* <InfoNameIcon src={Label1}></InfoNameIcon> */}
           </Row>
           <InfoTitle> {group} </InfoTitle>
@@ -1890,17 +2017,17 @@ function InfoBox({
       <InfoConetne> {comment} </InfoConetne>
       <Row sx={{ pt: "16px", alignItems: "center" }}>
         <Row sx={{ alignItems: "center" }}>
-          <InfoUserIcon />
+          <InfoUserIcon  />
           <InfoBottomText> {item1}</InfoBottomText>
         </Row>
 
         <Row sx={{ alignItems: "center", ml: "40px" }}>
-          <InfoFileIcon></InfoFileIcon>
+          <InfoFileIcon ></InfoFileIcon>
           <InfoBottomText> {item2}</InfoBottomText>
         </Row>
 
         <Row sx={{ alignItems: "center", ml: "40px" }}>
-          <InfoAlarmIcon></InfoAlarmIcon>
+          <InfoAlarmIcon ></InfoAlarmIcon>
           <InfoBottomText> {item3}</InfoBottomText>
         </Row>
       </Row>
@@ -1943,10 +2070,10 @@ function ContributorsBox({
 const InitiativesBox = styled.div`
   position: relative;
   width: 1300px;
-  margin: 20px auto 160px auto;
+  margin: 20px auto 0px auto;
   padding-bottom: 0px;
-  border-radius: 40px;
-  background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1714B5 39.06%);
+  /* border-radius: 40px; */
+  /* background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1714B5 39.06%); */
   /* background: linear-gradient(180deg, rgba(32, 31, 218, 0.00) 0%, #1A19D8 37.14%); */
   /* background: linear-gradient(180deg, rgba(27, 26, 255, 0.00) 0%, #1B1AFF 37.14%); */
   @media (max-width: 767px) {
@@ -1970,8 +2097,8 @@ const ViewAllBox = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: 767px) {
-    justify-content: flex-start;
-    padding-left: 24px;
+    justify-content: center;
+    /* padding-left: 24px; */
   }
 `
 function Initiatives() {
@@ -2108,34 +2235,7 @@ function Initiatives() {
         We evolve DAOs for Autonomous Worlds.  <br />
         Traverse our on-chain universe and help build the future!
       </InitH2>
-      <ViewAllBox>
-        <AllInfo
-          sx={{
-            "&:hover": {
-              boxSizing: "border-box",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "10px",
-              gap: "10px",
-              position: "relative",
-              width: "191px",
-              height: "48px",
-              background: "#A7F46A",
-              border: "1px solid #ECECEC",
-              borderRadius: "80px",
-              cursor: "pointer",
-              color: '#000',
-            },
-          }}
-          onClick={() => {
-            window.open("https://www.myclique.io/governance", "_blank");
-          }}
-        >
-          View All
-        </AllInfo>
-      </ViewAllBox>
+      <Data />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
@@ -2162,6 +2262,35 @@ function Initiatives() {
           </Grid>
         </IfonBoxs>
       </Box>
+      <ViewAllBox>
+        <AllInfo
+          sx={{
+            "&:hover": {
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "10px",
+              gap: "10px",
+              position: "relative",
+              width: "191px",
+              height: "48px",
+              background: "#fff",
+              border: "1px solid #0149c6",
+              borderRadius: "80px",
+              cursor: "pointer",
+              color: '#0149c6',
+              boxShadow: '0 0 10px 2px rgba(31,95,204,0.25)'
+            },
+          }}
+          onClick={() => {
+            window.open("https://www.myclique.io/governance", "_blank");
+          }}
+        >
+          View All
+        </AllInfo>
+      </ViewAllBox>
       {/* <InitiativesStar src={decorationStar}></InitiativesStar> */}
 
       {/* <InitH1>Top Contributors</InitH1>
@@ -2213,7 +2342,6 @@ function Initiatives() {
           View All
         </AllInfo>
       </Box> */}
-      <Data />
     </InitiativesBox>
   );
 }
@@ -2715,6 +2843,7 @@ export const BlueButton = styled(Button)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 50px;
   padding: 16px 42px;
   gap: 8px;
   background: #0049c6;
@@ -2748,6 +2877,12 @@ const FooterText = styled(Typography)`
   cursor: pointer;
   color: #d6d6d6;
 `;
+const DownloadA = styled.a`
+  color: #d6d6d6;
+  &:hover {
+    color: #d6d6d6;
+  }
+`
 
 const SocialMedia = styled.img`
   width: 20px;
@@ -2759,40 +2894,57 @@ export function Footer() {
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
-    ["STP Ecosystem", "Ecosystem"],
-    ["Resources", "News", "Github", "Documentation"],
+    // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
+    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "AI Agent","Dynamic NFT",'Soda','Soton','Ancient Forest'],
+    // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
+    // ["Resources", "News", "Github", "Documentation"],
+    ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
+    // ["STP Ecosystem", "Ecosystem"],
+    ["Ecosystem", "News","FAQ"],
   ];
   const footListLink = [
+    // [
+    //   "Products",
+    //   "https://www.myclique.io/governance",
+    //   "/cliqueSocial",
+    //   "https://www.myclique.io/tools",
+    //   "https://www.npmjs.com/package/@myclique/governance-sdk",
+    // ],
     [
       "Products",
-      "https://www.myclique.io/governance",
-      "/cliqueSocial",
+      "https://www.myclique.io/daos",
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
+      "https://awns.stp.network/my/names",
+      "https://awnsbase.stp.network/my/names",
+      "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
+      "https://t.me/Web3SotonBot",
+      "https://ancientforest.xyz/"
     ],
-    [
-      "Leading DAOs",
-      "https://www.myclique.io/governance/daoInfo/3/proposal",
-      "https://www.myclique.io/governance/daoInfo/224/proposal",
-      "https://www.myclique.io/governance/daoInfo/1/proposal",
-      "https://www.myclique.io/governance/daoInfo/216/proposal",
-    ],
+    // [
+    //   "Leading DAOs",
+    //   "https://www.myclique.io/governance/daoInfo/3/proposal",
+    //   "https://www.myclique.io/governance/daoInfo/224/proposal",
+    //   "https://www.myclique.io/governance/daoInfo/1/proposal",
+    //   "https://www.myclique.io/governance/daoInfo/216/proposal",
+    // ],
     // [
     //   "Resources",
     //   "https://github.com/STPDevteam",
     //   "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
     // ],
     [
-      "STP Ecosystem",
-      "https://www.stp.network/ecosystem"
+      "Resources",
+      "/Verse Network WP.pdf",
+      "https://github.com/STPDevteam",
+      "https://stpdao.gitbook.io/whitepaper/stp-network/master",
+      "/stp.zip",
     ],
     [
-      "Resources",
+      "Ecosystem",
       "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
-      "https://github.com/STPDevteam",
-      "https://stpdao.gitbook.io/whitepaper/stp-network/master"
+      "https://stpdao.gitbook.io/whitepaper",
+      // "https://www.stp.network/ecosystem",
     ],
   ];
   return (
@@ -2828,16 +2980,27 @@ export function Footer() {
                       return (
                         <FooterText
                           onClick={() =>{
-                            if(footListLink[idx][i].includes('http')){
-                              window.open(footListLink[idx][i], "_blank")
+                            if(footListLink[idx][i].includes('.zip')){
+
                             }else {
-                              window.scrollTo(0, 0);
-                              history.push(footListLink[idx][i])
+                              window.open(footListLink[idx][i], "_blank")
                             }
-                          }
-                          }
+                            // if(footListLink[idx][i].includes('http')){
+                            //   window.open(footListLink[idx][i], "_blank")
+                            // }else {
+                            //   window.scrollTo(0, 0);
+                            //   history.push(footListLink[idx][i])
+                            // }
+                          }}
                         >
-                          {item}
+                          { item === 'Media Kit' ?
+                            <DownloadA href='/stp.zip'>
+                              {item} <DownloadIcon style={{marginLeft:'10px'}}></DownloadIcon>
+                            </DownloadA> :
+                            <>
+                             {item}
+                            </>
+                          }
                         </FooterText>
                       );
                     }
@@ -2949,36 +3112,45 @@ export function Footer2() {
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
-    ["STP Ecosystem", "Ecosystem"],
-    ["Resources", "News", "Github", "Documentation"],
+    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "AI Agent","Dynamic NFT",'Soda','Soton','Ancient Forest'],
+    // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
+    // ["STP Ecosystem", "Ecosystem"],
+    ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
+    // ["Resources", "News", "Github", "Documentation"],
+    // ["Ecosystem", "News","FAQ"],
+
   ];
   const footListLink = [
     [
       "Products",
-      "https://www.myclique.io/governance",
-      "/cliqueSocial",
+      "https://www.myclique.io/daos",
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
+      "https://awns.stp.network/my/names",
+      "https://awnsbase.stp.network/my/names",
+      "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
+      "https://t.me/Web3SotonBot",
+      "https://ancientforest.xyz/"
     ],
-    [
-      "Leading DAOs",
-      "https://www.myclique.io/governance/daoInfo/3/proposal",
-      "https://www.myclique.io/governance/daoInfo/224/proposal",
-      "https://www.myclique.io/governance/daoInfo/1/proposal",
-      "https://www.myclique.io/governance/daoInfo/216/proposal",
-    ],
-    [
-      "STP Ecosystem",
-      "https://www.stp.network/ecosystem"
-    ],
+    // [
+    //   "Leading DAOs",
+    //   "https://www.myclique.io/governance/daoInfo/3/proposal",
+    //   "https://www.myclique.io/governance/daoInfo/224/proposal",
+    //   "https://www.myclique.io/governance/daoInfo/1/proposal",
+    //   "https://www.myclique.io/governance/daoInfo/216/proposal",
+    // ],
     [
       "Resources",
-      "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+      "/Verse Network WP.pdf",
       "https://github.com/STPDevteam",
-      "https://stpdao.gitbook.io/whitepaper/stp-network/master"
+      "https://stpdao.gitbook.io/whitepaper/stp-network/master",
+      "/stp.zip",
     ],
+    // [
+    //   "Ecosystem",
+    //   "https://www.stp.network/ecosystem",
+    //   "https://www.stp.network/ecosystem"
+    // ],
   ];
   return (
     <FooterBox2>
@@ -2991,13 +3163,13 @@ export function Footer2() {
         gap={isDownSm ? "48px" : 0}
       >
         <img src={StpLogo} alt="" />
-        {/* <BlueButton
+        <BlueButton
           onClick={() =>
-            window.open("https://www.myclique.io/daos", "_blank")
+            window.open("https://awns.stp.network/", "_blank")
           }
         >
-          Build DAO
-        </BlueButton> */}
+          Go AWNS
+        </BlueButton>
       </Box>
       {!isDownSm ? (
         <>
@@ -3014,16 +3186,30 @@ export function Footer2() {
                         <FooterText
                           onClick={() =>
                             {
-                              if(footListLink[idx][i].includes('http')){
-                                window.open(footListLink[idx][i], "_blank")
+                              if(footListLink[idx][i].includes('.zip')){
+
                               }else {
-                                window.scrollTo(0, 0);
-                                history.push(footListLink[idx][i])
+                                window.open(footListLink[idx][i], "_blank")
                               }
+                              // if(footListLink[idx][i].includes('http')){
+                              //   window.open(footListLink[idx][i], "_blank")
+                              // }else {
+                              //   window.scrollTo(0, 0);
+                              //   history.push(footListLink[idx][i])
+                              // }
                             }
                           }
                         >
-                          {item}
+                          
+                          { item === 'Media Kit' ?
+                            <DownloadA href='/stp.zip'>
+                              {item} <DownloadIcon style={{marginLeft:'10px'}}></DownloadIcon>
+                            </DownloadA> :
+                            <>
+                             {item}
+                            </>
+                          }
+
                         </FooterText>
                       );
                     }
@@ -3031,8 +3217,8 @@ export function Footer2() {
                 </Box>
               );
             })}
-            {/* <Box>
-              <FooterH1>STP Ecosystem</FooterH1>
+            <Box>
+              <FooterH1>Ecosystem</FooterH1>
               <FooterH1
                 style={{ cursor: "pointer" }}
                 onClick={() =>
@@ -3044,7 +3230,18 @@ export function Footer2() {
               >
                 News
               </FooterH1>
-            </Box> */}
+              <FooterH1
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  window.open(
+                    "https://stpdao.gitbook.io/whitepaper",
+                    "_blank"
+                  )
+                }
+              >
+                FAQ
+              </FooterH1>
+            </Box>
           </Box>
         </>
       ) : (

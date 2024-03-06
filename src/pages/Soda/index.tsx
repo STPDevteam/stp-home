@@ -5,12 +5,10 @@ import {
   HeadH1,
   Box1,
   CliqueContentTitle,
-  Box3,
-  Box3CardBlue,
-  Box3CardPink,
-  Box3CardTitle,
-  Box3CardImg,
-  Box3CardTxt,
+  // Box3,
+  // Box3CardBlue,
+  // Box3CardPink,
+  // Box3CardTxt,
   blinkAnimation,
   Footer
 } from "../Home/homepage";
@@ -241,6 +239,63 @@ const FeaturesMainImg = styled.img`
     height: auto;
     margin: auto;
   }
+`
+export const Box3 = styled.div<{isMargin: boolean}>`
+  width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto 0;
+  @media (max-width: 767px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 20px 20px 10px 20px;
+    margin-top: ${props => props.isMargin?'30px':'0'};
+  }
+`
+export const Box3Card = styled.div`
+  width: 580px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  padding: 38px;
+  border-radius: 20px;
+  border: 1px solid #C6DCF0;
+  background: #F8FCFF;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`
+export const Box3CardBlue = styled(Box3Card)`
+  position: relative;
+  padding: 38px;
+  border-radius: 20px;
+  border: 1px solid #C8D9D6;
+  background: #F8FEFF;
+  &:hover {
+    box-shadow: 0px 6px 10px 0px rgba(173, 218, 183, 0.25);
+  }
+`
+export const Box3CardPink = styled(Box3Card)`
+  position: relative;
+  padding: 38px 36px 28px;
+  border-radius: 20px;
+  border: 1px solid #9E9EE8;
+  background: #F8F8FF;
+  &:hover {
+    box-shadow: 0px 6px 10px 0px rgba(180, 158, 193, 0.25);
+  }
+  @media (max-width: 767px) {
+    position: static;
+  }
+`
+export const Box3CardTxt = styled.div`
+  padding: 20px;
+  color: var(--word-color, #3F5170);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
 `
 const Box3CardPink2 = styled(Box3CardPink)`
   z-index: 3;
