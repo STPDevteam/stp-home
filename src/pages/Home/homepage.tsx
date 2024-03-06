@@ -2894,7 +2894,7 @@ export function Footer() {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "AI Agent","Dynamic NFT",'Soda','Soton','Ancient Forest'],
+    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "Dynamic NFT",'Soda','Soton','Ancient Forest'],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -2914,7 +2914,7 @@ export function Footer() {
       "https://www.myclique.io/daos",
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
-      "https://awns.stp.network/my/names",
+      // "https://awns.stp.network/my/names",
       "https://awnsbase.stp.network/my/names",
       "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
       "https://t.me/Web3SotonBot",
@@ -3111,7 +3111,7 @@ export function Footer2() {
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "AI Agent","Dynamic NFT",'Soda','Soton','Ancient Forest'],
+    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "Dynamic NFT",'Soda','Soton','Ancient Forest'],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["STP Ecosystem", "Ecosystem"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3125,7 +3125,7 @@ export function Footer2() {
       "https://www.myclique.io/daos",
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
-      "https://awns.stp.network/my/names",
+      // "https://awns.stp.network/my/names",
       "https://awnsbase.stp.network/my/names",
       "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
       "https://t.me/Web3SotonBot",
