@@ -572,7 +572,8 @@ const IconsBox = styled.div`
   }
 `
 const Icon = styled.img`
-  width: 70px;
+  max-width: 70px;
+  max-height: 70px;
   @media (max-width: 767px) {
     width: 36px;
   }
@@ -585,7 +586,7 @@ const GreenStar = styled.img`
 `
 const GreenStar2 = styled.img`
   position: absolute;
-  right: 54px;
+  left: 54px;
   width: 60px;
 `
 const IconName = styled.div`
@@ -1483,8 +1484,6 @@ function CliqueContent() {
               <Box3CardTitle style={{marginLeft:'-20px'}}>On-Chain Gaming</Box3CardTitle>
               <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
               <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
-              <Box3CardLi>Query and build on-chain data across any chain 
-      using AI assistance.</Box3CardLi>
               <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
