@@ -1266,6 +1266,7 @@ export const Box3CardBlue = styled(Box3Card)`
   border-radius: 20px;
   border: 1px solid #C8D9D6;
   background: #F8FEFF;
+  cursor: pointer;
   &:hover {
     box-shadow: 0px 6px 10px 0px rgba(173, 218, 183, 0.25);
   }
@@ -1281,6 +1282,7 @@ const Box3CardBlue2 = styled(Box3CardBlue)`
   width: 580px;
   height: 540px;
   display: block;
+  cursor: pointer;
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
@@ -1297,6 +1299,7 @@ export const Box3CardPink = styled(Box3Card)`
   border-radius: 20px;
   border: 1px solid #D9C6F0;
   background: #fdf8ff;
+  cursor: pointer;
   &:hover {
     box-shadow: 0px 6px 10px 0px rgba(180, 158, 193, 0.25);
   }
@@ -1312,6 +1315,7 @@ const Box3CardPink2 = styled(Box3CardPink)`
   width: 580px;
   height: 540px;
   display: block;
+  cursor: pointer;
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
@@ -1445,6 +1449,9 @@ function CliqueContent() {
     subTitle: 'Evolve Community for Autonomous Worlds',
     text: 'Collaborative governance tool for planning and building on-chain worlds with no code and gas.'
   }
+  const openLink = (href: any) => {
+      window.open(href)
+  }
   return (
     <CliqueContentBox>
       <Box1>
@@ -1453,7 +1460,7 @@ function CliqueContent() {
           <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
         {/* </ContentLeft> */}
         <Box3 isMargin={false}>
-          <Box3CardBlue>
+          <Box3CardBlue onClick={()=>{openLink('https://awns.stp.network/')}}>
             {/* <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue> */}
             <Box3CardUl>
               <Box3CardTitle style={{marginLeft:'-20px'}}>AWNS</Box3CardTitle>
@@ -1466,7 +1473,7 @@ function CliqueContent() {
             </Box3CardCover>
             {/* <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5> */}
           </Box3CardBlue>
-          <Box3CardPink>
+          <Box3CardPink onClick={()=>{openLink('https://awnsbase.stp.network/my/names?tab=game')}}>
             {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
             <Box3CardUl>
               <Box3CardTitle style={{marginLeft:'-20px'}}>Dynamic 6551 Account</Box3CardTitle>
@@ -1479,7 +1486,7 @@ function CliqueContent() {
             </Box3CardCover>
             {/* <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5> */}
           </Box3CardPink>
-          <Box3CardBlue>
+          <Box3CardBlue onClick={()=>{openLink('https://ancientforest.xyz/')}}>
             <Box3CardUl>
               <Box3CardTitle style={{marginLeft:'-20px'}}>Onchain Gaming</Box3CardTitle>
               <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
@@ -1529,7 +1536,7 @@ function CliqueContent() {
           <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
         </ContentRight2>
         <ContentLeft2>
-          <Box3CardBlue2>
+          <Box3CardBlue2 onClick={()=>{openLink('https://www.stp.network/cliqueSocial')}}>
             <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Social</Box3CardTitle>
             <Box3CardTxt>Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and Telegram.</Box3CardTxt>
             <Box3CardImg src={cliqueSocial}></Box3CardImg>
@@ -1538,12 +1545,12 @@ function CliqueContent() {
         <HomeImg5 src={homeImg5V2}></HomeImg5>
       </Box2>
       <Box4>
-        <Box3CardBlue2>
+        <Box3CardBlue2 onClick={()=>{openLink('https://www.myclique.io/activity')}}>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Rewards</Box3CardTitle>
           <Box3CardTxt>Solutions platform for building on-chain worlds unique to any AW project.</Box3CardTxt>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
         </Box3CardBlue2>
-        <Box3CardPink2>
+        <Box3CardPink2 onClick={()=>{openLink('https://www.myclique.io/daos')}}>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Governance</Box3CardTitle>
           <Box3CardTxt>Collaborative governance tool for planning and building worlds with no code and gas.</Box3CardTxt>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
