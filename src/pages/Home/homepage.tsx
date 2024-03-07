@@ -1481,7 +1481,7 @@ function CliqueContent() {
           </Box3CardPink>
           <Box3CardBlue>
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft:'-20px'}}>OnChain Gaming</Box3CardTitle>
+              <Box3CardTitle style={{marginLeft:'-20px'}}>Onchain Gaming</Box3CardTitle>
               <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
               <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
               <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
