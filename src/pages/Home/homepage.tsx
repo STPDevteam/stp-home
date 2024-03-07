@@ -1090,7 +1090,7 @@ const CliqueContentText = styled.div`
   max-width: 517px;
   margin-top: 60px;
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 500;
   @media (max-width: 767px) {
@@ -1481,7 +1481,7 @@ function CliqueContent() {
           </Box3CardPink>
           <Box3CardBlue>
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft:'-20px'}}>On-Chain Gaming</Box3CardTitle>
+              <Box3CardTitle style={{marginLeft:'-20px'}}>OnChain Gaming</Box3CardTitle>
               <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
               <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
               <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
@@ -2915,7 +2915,7 @@ export function Footer() {
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
       // "https://awns.stp.network/my/names",
-      "https://awnsbase.stp.network/my/names",
+      "https://awnsbase.stp.network/my/names?tab=game",
       "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
       "https://t.me/Web3SotonBot",
       "https://ancientforest.xyz/"
@@ -3126,7 +3126,7 @@ export function Footer2() {
       "https://www.myclique.io/tools",
       "https://www.npmjs.com/package/@myclique/governance-sdk",
       // "https://awns.stp.network/my/names",
-      "https://awnsbase.stp.network/my/names",
+      "https://awnsbase.stp.network/my/names?tab=game",
       "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
       "https://t.me/Web3SotonBot",
       "https://ancientforest.xyz/"
