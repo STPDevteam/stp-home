@@ -107,7 +107,7 @@ export function ProductMenu({
     },
     {
       icon: IconWorkSpace,
-      title: "Clique Workspace",
+      title: "Clique Network",
       link: "https://www.myclique.io/governance",
       text: "Collaborative governance tool for planning and building worlds with no code and gas.",
     },
