@@ -659,7 +659,7 @@ function Identity() {
           <IdentityImage src={starWhite}></IdentityImage>
           <IdentityImage2 src={starWhite}></IdentityImage2>
           <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
-          <IdentityText>We believe in unlocking individualism by contributing to elevated forms of on-chain identity.</IdentityText>
+          <IdentityText>We believe in unlocking individualism by contributing to elevated forms of onchain identity.</IdentityText>
         </IdentityContent>
     </IdentityBox>
   )
@@ -1447,7 +1447,7 @@ function CliqueContent() {
   const cliqueWorkspace = {
     title: 'Clique Network',
     subTitle: 'Evolve Community for Autonomous Worlds',
-    text: 'Collaborative governance tool for planning and building on-chain worlds with no code and gas.'
+    text: 'Collaborative governance tool for planning and building onchain worlds with no code and gas.'
   }
   const openLink = (href: any) => {
       window.open(href)
@@ -1464,7 +1464,7 @@ function CliqueContent() {
             {/* <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue> */}
             <Box3CardUl>
               <Box3CardTitle style={{marginLeft:'-20px'}}>AWNS</Box3CardTitle>
-              <Box3CardLi>Serves as your autonomous on-chain agent with a 6551 Wallet.</Box3CardLi>
+              <Box3CardLi>Serves as your autonomous onchain agent with a 6551 Wallet.</Box3CardLi>
               <Box3CardLi>Easily connect and interact with dApps.</Box3CardLi>
               <Box3CardLi>Single name for all tokens and decentralized worlds.</Box3CardLi>
             </Box3CardUl>
@@ -1503,9 +1503,9 @@ function CliqueContent() {
             {/* <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle> */}
             <Box3CardUl>
               <Box3CardTitle style={{marginLeft:'-20px'}}>Autonomous AI Agent</Box3CardTitle>
-              <Box3CardLi>Integrate AI for on-chain gaming and DeFi actions.</Box3CardLi>
+              <Box3CardLi>Integrate AI for onchain gaming and DeFi actions.</Box3CardLi>
               <Box3CardLi>Train AI for game interaction and item collection.</Box3CardLi>
-              <Box3CardLi>AI-powered data querying and on-chain activities.</Box3CardLi>
+              <Box3CardLi>AI-powered data querying and onchain activities.</Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
               <Box3CardImg src={cliqueImg4}></Box3CardImg>
@@ -1547,7 +1547,7 @@ function CliqueContent() {
       <Box4>
         <Box3CardBlue2 onClick={()=>{openLink('https://www.myclique.io/activity')}}>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Rewards</Box3CardTitle>
-          <Box3CardTxt>Solutions platform for building on-chain worlds unique to any AW project.</Box3CardTxt>
+          <Box3CardTxt>Solutions platform for building onchain worlds unique to any AW project.</Box3CardTxt>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
         </Box3CardBlue2>
         <Box3CardPink2 onClick={()=>{openLink('https://www.myclique.io/daos')}}>
@@ -2239,7 +2239,7 @@ function Initiatives() {
       <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
         We evolve DAOs for Autonomous Worlds.  <br />
-        Traverse our on-chain universe and help build the future!
+        Traverse our onchain universe and help build the future!
       </InitH2>
       <Data />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -2563,14 +2563,14 @@ function Learn() {
       title: "Building an Identity Layer in Autonomous Worlds (Phase 1)",
       link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/Wmh0cBnNl5fFeLBlnkeELrai1jGRi0Onk5-pbhsuiRs",
       content:
-        "Underwhelming State of On-chain Identity Still to this day, users interact and transact on apps using EOAs (externally owned accounts) that can be attached with a username from a naming service (such as ENS for .eth). Deserving praise, the ecosystem has effectively adopted this username identity through most applications. However, this naming convention lacks personality and creativity as a sole identity. Beyond that, consensus says the current wallet solutions are restrictive and hinder individualism on-chain.",
+        "Underwhelming State of On-chain Identity Still to this day, users interact and transact on apps using EOAs (externally owned accounts) that can be attached with a username from a naming service (such as ENS for .eth). Deserving praise, the ecosystem has effectively adopted this username identity through most applications. However, this naming convention lacks personality and creativity as a sole identity. Beyond that, consensus says the current wallet solutions are restrictive and hinder individualism onchain.",
     },
     {
       imgUrl: Learn8,
       title: "Building an Identity Layer in Autonomous Worlds (Phase 2)",
       link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/AxggTBVjbZWEg6UqwAH-r9WHm4MI57C3vDIbknRhsDE",
       content:
-        "Framing and Building AW Identity AW requires a dynamic and versatile identity infrastructure that transports users seamlessly across worlds. So far, innovative wallets with traction such as Argent and Exodus focus on interoperability and security, but don’t focus on adding depth to identity. Today in AW, on-chain maxis still need to use different wallet providers (often blockchain specific) and hack in order to onboard across different worlds. Beyond that, wallet connections are only surface-level public keys and usernames, which hinders the expansion of on-chain realities.",
+        "Framing and Building AW Identity AW requires a dynamic and versatile identity infrastructure that transports users seamlessly across worlds. So far, innovative wallets with traction such as Argent and Exodus focus on interoperability and security, but don’t focus on adding depth to identity. Today in AW, onchain maxis still need to use different wallet providers (often blockchain specific) and hack in order to onboard across different worlds. Beyond that, wallet connections are only surface-level public keys and usernames, which hinders the expansion of onchain realities.",
     },
     {
       imgUrl: Learn2,
@@ -2592,7 +2592,7 @@ function Learn() {
       title: "The Fusion of Fully On-Chain Games and DAOs",
       link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/cgI4U8yZY6LVuSWiHsL7C2Ii9Q2H1UlZdyqis-WOlLs",
       content:
-        "According to Market Research Report, the global gaming market in 2022 reached $207 billion and will continue to grow to an estimated $343 billion in 2028. This indicates that the gaming market has yet to be exploited and has great potential for investors and developers. Along with the growth of blockchain technology, many GameFi projects will emerge but regardless of traditional or GameFi, both have limitations. However, a fully on-chain game (FOCG) complemented with DAO may be able to compensate for the limitations. This research aims to explore the possibility that FOCG and DAO may create.",
+        "According to Market Research Report, the global gaming market in 2022 reached $207 billion and will continue to grow to an estimated $343 billion in 2028. This indicates that the gaming market has yet to be exploited and has great potential for investors and developers. Along with the growth of blockchain technology, many GameFi projects will emerge but regardless of traditional or GameFi, both have limitations. However, a fully onchain game (FOCG) complemented with DAO may be able to compensate for the limitations. This research aims to explore the possibility that FOCG and DAO may create.",
     },
     {
       imgUrl:
@@ -2618,7 +2618,7 @@ function Learn() {
     },
     {
       imgUrl: Learn3,
-      title: "How does on-chain governance work on Clique",
+      title: "How does onchain governance work on Clique",
       link: "https://stp-dao.gitbook.io/verse-network/clique/how-to-create-a-proposal",
       content:
         "Enter in a DAO and click ‘Create a Proposal’ to start a community proposal. Community proposals, or regular proposals, are a ...",
