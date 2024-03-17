@@ -2760,6 +2760,7 @@ const GameImgBigMask = styled.div`
   border-bottom-right-radius: 50px;
   background: #0000004D;
    @media screen and (max-width: 767px) {
+    height: 96px;
     padding: 10px 16px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
