@@ -77,11 +77,12 @@ html,body{
 
 .blur-container {
   position: absolute;
-  top: 300px;
+  top: 240px;
   --blur: 40px;
   filter: blur( var(--blur) );
-  height:500px;
-  width:100%;
+  height:600px;
+  width:600px;
+  left: calc(50% - 300px);
   
   display: grid;
   > * {
@@ -104,6 +105,99 @@ html,body{
 //   z-index: -1;
 //   pointer-events: none;
 // }
+
+.g-wrap {
+  position: absolute;
+  top: 300px;
+  left: 40%;
+  width: 300px;
+  height: 300px;
+  // border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  filter: contrast(8);
+}
+// @random: `unit(Math.floor(Math.random(2000)/1000),s)`;
+.g-bubble {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #001a87;
+  background: #000;
+  filter: blur(5px);
+  // animation: move 3s infinite 1s linear;
+  // animation-duration: 2;
+  // animation-delay: 1;
+}
+.g-bubble1  {
+   position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #3904ce;
+    filter: blur(30px);
+    animation: move 4s linear infinite, scale 2s alternate infinite;
+    
+}
+.g-bubble2  {
+   position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #af06f4;
+   filter: blur(30px);
+    animation: moveT 4s linear infinite, scale 2s alternate infinite;
+    
+}
+.g-bubble3  {
+  position: absolute;
+   width: 50px;
+   height: 50px;
+   background: #001a87;
+   filter: blur(30px);
+   animation: moveX 4s linear infinite, scale 2s alternate infinite;
+   
+}
+.g-bubble4  {
+  position: absolute;
+   width: 100px;
+   height: 100px;
+   background: #001a87;
+   filter: blur(30px);
+   animation: moveP 4s linear infinite, scale 2s alternate infinite;
+   
+}
+@keyframes moveP {
+  0%, 100% { transform: translateX(-50%); }
+  50% { transform: translate(calc(100% - 20px), -100%); }
+}
+@keyframes moveX {
+  0%, 100% { top: 0; left: 0; }
+  50% { top: calc(100% - 50px); left: calc(100% - 50px); }
+}
+@keyframes moveT {
+  0%, 100% { bottom: 0; }
+  50% { bottom: calc(100% - 50px); }
+}
+@keyframes move {
+  0%, 100% { left: 0; }
+  50% { left: calc(100% - 50px); }
+}
+
+@keyframes scale {
+  0% { transform: scale(1); }
+  100% { transform: scale(2); }
+}
+
+// @keyframes move {
+//   0% {
+//       transform: translate(0, 0);
+//   }
+//   100% {
+//       transform: translate(0, -100px);
+//   }
+// }
+
 
  
 

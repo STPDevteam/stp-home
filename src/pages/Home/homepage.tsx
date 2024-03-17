@@ -128,7 +128,8 @@ import cliqueImg4 from "../../assets/images/home/clique4.png"
 import cliqueSocial from "../../assets/images/home/cliqueSocial.png"
 import homeImg1 from "../../assets/images/home/home1.png"
 import section1 from "../../assets/images/home/Section1.svg"
-import section1A from "../../assets/images/home/Homepage1.png"
+import section1A from "../../assets/images/home/Homepage.png"
+import blueL from "../../assets/images/home/blueLight.svg"
 import homeImg2 from "../../assets/images/home/home2.png"
 import section2 from "../../assets/images/home/Homepage2.png"
 import section3Icon1 from "../../assets/images/home/sectionIcon1.svg"
@@ -182,14 +183,29 @@ import biconomy from '../../assets/images/ecosystem/biconomy.png'
 import aw from '../../assets/images/ecosystem/AW.png'
 import daren from '../../assets/images/ecosystem/daren.svg'
 
+
 export const blinkAnimation = keyframes`
   0%, 100% {
     opacity: 1;
+    /* mix-blend-mode: color-dodge; */
   }
   50% {
-    opacity: 70%;
+    opacity: 80%;
   }
 `
+// const scale = keyframes `
+//   0% { transform: scale(1); }
+//   100% { transform: scale(2); }
+// `
+const scale = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+`;
+
 const rotateAnimation = keyframes`
   from {
     transform: rotate(0deg);
@@ -203,7 +219,7 @@ const floatAnimation = keyframes`
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-40px);
+    transform: translateY(40px);
   }
 `;
 export const ContentWrapper = styled(Box)`
@@ -242,6 +258,14 @@ const FooterModal = styled.div`
   }
 
 `
+const BlueLight = styled.img`
+  position: absolute;
+  top: calc(60% - 300px);
+  left: calc(50% - 300px);
+  width: 600px;
+  animation: ${blinkAnimation} 5s ease-in-out infinite, ${floatAnimation} 5s infinite alternate ease-in-out,${scale} 2s alternate infinite;
+  /* animation:  ${floatAnimation} 3s infinite alternate; */
+`
 export default function Homepage() {
   const shapeStyle: React.CSSProperties = {
     clipPath: 'polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)'
@@ -250,18 +274,33 @@ export default function Homepage() {
     clipPath: `polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)`,
        'offset':'180deg',
       //  'speed': '6000ms',
-       'background': `linear-gradient( cyan, blue, green, purple, cyan)`
+       'background': `linear-gradient(#0e5ee9, #1330db, #0d33d7, #083dad, #152ee8)`
   };
- 
+  //@ts-ignore
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  //@ts-ignore
+  function map(n, start1, end1, start2, end2) {
+    return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
+  }
+  // const simplex = new SimplexNoise();
+  
   return (
     <ContentWrapper>
       <Content1>
         <Head1>
-          <div className="blur-container">
+           <div className="blur-container">
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
-          </div>
-          {/* <canvas className="orb-canvas"></canvas> */}
+          </div> 
+          {/* <div className="g-wrap">
+            <div className="g-bubble g-bubble1"></div>
+            <div className="g-bubble g-bubble2"></div>
+            <div className="g-bubble g-bubble3"></div>
+            <div className="g-bubble g-bubble4"></div>
+          </div> */}
+          
           <Head />
         </Head1>
 
