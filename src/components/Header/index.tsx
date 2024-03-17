@@ -384,7 +384,7 @@ const Header: React.FC = () => {
         style={{
           background: currentPath.pathname.includes("ecosystem") || currentPath.pathname.includes("cliqueSocial")
             ? "#2524de"
-            : "#16127a",
+            : "transparent",
           color: currentPath.pathname.includes("dao")
             ? "#000"
             : "#fff",
@@ -405,11 +405,7 @@ const Header: React.FC = () => {
           unmountOnExit
         >
           <nav className="Nav">
-            <Link style={{
-              color: currentPath.pathname.includes("dao")
-                ? "#000"
-                : "#fff",
-            }} to="/" className={location.pathname === "/" ? "active" : ""}>
+            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
             </Link>
             <Dropdown
@@ -491,10 +487,11 @@ const Header: React.FC = () => {
         <GreenBtn
           className="BuildDao"
           onClick={() =>
-            window.open("https://awns.stp.network/", "_blank")
+            window.open("https://www.myclique.io/daos", "_blank")
           }
         >
-         Go AWNS <ArrowOutwardIcon style={{ color: "#23262F" }} />
+         Build on Clique 
+         {/* <ArrowOutwardIcon style={{ color: "#23262F" }} /> */}
         </GreenBtn>
         <button
           onClick={() => {

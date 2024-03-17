@@ -78,9 +78,13 @@
     grid-area: nav;
     grid-template-columns: repeat(8, auto);
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     // margin-right: -18px;
     width: 50%;
+    height: 54px;
+    border:  1px solid #FFFFFF14;
+    border-radius: 32px;
+    background: #141639;
     @media (max-width: 767px) {
       margin-right: 0;
     }
@@ -136,11 +140,13 @@
   }
 
   .Nav a {
+    height: 52px;
+    padding: 0 16px;
     font-size: 16px;
     font-weight: 500;
     transition: 0.5s;
     text-decoration: none;
-    line-height: 40px;
+    line-height: 52px;
     color: #ECECEC;
 
     svg {
@@ -149,7 +155,9 @@
     }
 
     &.active {
-      color: #A7F46A;
+      border-radius: 32px;
+      color: #FFFFFF;
+      background: #171719;
     }
   }
   .BuildDao {

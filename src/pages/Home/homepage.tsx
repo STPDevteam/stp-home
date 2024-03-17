@@ -36,7 +36,7 @@ import LearnCreateDao from "../../assets/images/home/svg/learn-create-dao.svg";
 import LearnCreateToken from "../../assets/images/home/svg/learn-create-token.svg";
 import LearnOnChain from "../../assets/images/home/svg/learn-on-chian.svg";
 import ArrowUpRight from "../../assets/images/home/svg/arrow-up-right.svg";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState,useRef } from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
 import { useTotal } from "../../hooks/useHomepage";
@@ -48,8 +48,8 @@ import "swiper/modules/autoplay/autoplay.js";
 import "swiper/modules/navigation/navigation.min.css";
 import "swiper/modules/navigation/navigation.js";
 import "swiper/modules/navigation/navigation.less";
-import { Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
+import { Pagination,Thumbs, FreeMode  } from "swiper";
+import { Swiper, SwiperSlide, useSwiper,SwiperRef } from "swiper/react";
 import { Autoplay } from "swiper";
 import { Navigation } from "swiper";
 
@@ -127,7 +127,36 @@ import cliqueImg3 from "../../assets/images/home/clique3.png"
 import cliqueImg4 from "../../assets/images/home/clique4.png"
 import cliqueSocial from "../../assets/images/home/cliqueSocial.png"
 import homeImg1 from "../../assets/images/home/home1.png"
+import section1 from "../../assets/images/home/Section1.svg"
+import section1A from "../../assets/images/home/Homepage1.png"
 import homeImg2 from "../../assets/images/home/home2.png"
+import section2 from "../../assets/images/home/Homepage2.png"
+import section3Icon1 from "../../assets/images/home/sectionIcon1.svg"
+import section3Icon2 from "../../assets/images/home/sectionIcon2.svg"
+import section3Icon3 from "../../assets/images/home/sectionIcon3.svg"
+import section3 from "../../assets/images/home/Homepage3.png"
+import section4 from "../../assets/images/home/Homepage4.png"
+import section4Title from "../../assets/images/home/cliqueLogo.svg"
+import s4Icon1 from "../../assets/images/home/s4Icon1.svg"
+import s4Icon2 from "../../assets/images/home/s4Icon2.svg"
+import s4Icon3 from "../../assets/images/home/s4Icon3.svg"
+import s4Icon4 from "../../assets/images/home/s4Icon4.svg"
+import s4Icon5A from "../../assets/images/home/s4Icon5A.svg"
+import s4Icon5B from "../../assets/images/home/s4Icon5B.svg"
+import s4Icon6A from "../../assets/images/home/s4Icon6A.svg"
+import s4Icon6B from "../../assets/images/home/s4Icon6B.svg"
+import s4Icon7 from "../../assets/images/home/s4Icon7.svg"
+import s4Icon8 from "../../assets/images/home/s4Icon8.svg"
+import s4Icon9 from "../../assets/images/home/s4Icon9.svg"
+import section5 from "../../assets/images/home/Homepage5.png"
+import s5Game1 from "../../assets/images/home/game1.svg"
+import s5Game2 from "../../assets/images/home/game2.svg"
+import s5Game3 from "../../assets/images/home/game3.svg"
+import s5GameLogo1 from "../../assets/images/home/gameLogo1.svg"
+import s5GameLogo2 from "../../assets/images/home/gameLogo2.svg"
+import s5GameLogo3 from "../../assets/images/home/gameLogo3.svg"
+import section6 from "../../assets/images/home/Homepage6.png"
+
 import homeImg3 from "../../assets/images/home/home3.png"
 import homeImg4 from "../../assets/images/home/home4.png"
 import homeImg5 from "../../assets/images/home/home5.png"
@@ -185,46 +214,68 @@ export const ContentWrapper = styled(Box)`
   align-items: center;
   flex-direction: column;
   overflow-x: hidden;
+  background: #000228;
+
 `;
 const Content1 = styled.div`
   width: 100%;
-  background: #211FCF;
+  /* background: #000228; */
 `
 const Head1 = styled.div`
+  position: relative;
   width: 100%;
-  background: url(${homeImg1}) no-repeat;
-  background-size: cover;
-  background-position: 40%;
+  background: url(${section1A}) no-repeat;
+  background-size: contain;
+  background-position: center;
+  @media (max-width: 767px) {
+    padding: 24px;
+  }
 `
 const FooterModal = styled.div`
   width: 100vw;
-  padding-bottom: 120px;
-  background: url(${homeImg7}) no-repeat;
-  background-size: cover;
+  /* padding-bottom: 120px; */
+  /* background: url(${section6}) no-repeat; */
+  /* background-size: cover; */
+  text-align: center;
   @media (max-width: 767px) {
-    padding: 24px;
+    /* padding: 24px; */
   }
 
 `
 export default function Homepage() {
+  const shapeStyle: React.CSSProperties = {
+    clipPath: 'polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)'
+  };
+  const shapeStyle2: React.CSSProperties = {
+    clipPath: `polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)`,
+       'offset':'180deg',
+      //  'speed': '6000ms',
+       'background': `linear-gradient( cyan, blue, green, purple, cyan)`
+  };
+ 
   return (
     <ContentWrapper>
       <Content1>
         <Head1>
+          {/* <div className="blur-container">
+            <div className="shape" style={shapeStyle2}></div>
+            <div className="shape" style={shapeStyle2}></div>
+          </div> */}
           <Head />
-          <Identity />
         </Head1>
+
+        <Identity />
         <Identity2 />
         {/* <Initiatives /> */}
       </Content1>
-      <CliqueContent />
+      <CliqueContent2 />
       {/* <Infrastructure /> */}
-      <Initiatives />
+      {/* <Initiatives /> */}
       <Ecosystem />
-      <Learn />
+      {/* <Learn /> */}
       <FooterModal>
         <BuildWithUs />
-        <Footer2 />
+        <Footer />
       </FooterModal>
     </ContentWrapper>
   );
@@ -233,8 +284,15 @@ export default function Homepage() {
 export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 840px;
   /* margin: auto; */
+  /* background: url(${section1A}) no-repeat;
+  background-size: contain;
+  background-position: center; */
+  /* opacity: 0.8; */
+  @media (min-width: 1440px) {
+    height: 1000px;
+  }
   @media (max-width: 767px) {
     height: auto;
     padding-left: 20px;
@@ -242,15 +300,24 @@ export const HeadBox = styled(Box)`
     padding-bottom: 79px;
   }
 `;
+const HeadStart = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+`
 export const HeadH1 = styled(Typography)`
-  font-family: "Righteous";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 74px;
-  line-height: 90px;
-  padding-top: 200px;
+  font-family: Inter;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -0.04px;
+  /* font-family: "Righteous"; */
+  padding-top: 280px;
   color: #ffffff;
-  padding-left: 160px;
+  text-align: center;
   @media (max-width: 767px) {
     padding-top: 100px;
     padding-left: 0px;
@@ -259,14 +326,15 @@ export const HeadH1 = styled(Typography)`
   }
 `;
 export const HeadText = styled(Typography)`
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 500;
-  margin-top: 24px;
+  font-family: Inter;
   font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  text-align: center;
+  /* font-family: "DM Sans"; */
+  margin-top: 24px;
   line-height: 40px;
-  color: #ececec;
-  padding-left: 160px;
+  color: #B2B2B2;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 24px;
@@ -282,135 +350,43 @@ export const GreenBtn = styled(Button)`
   align-items: center;
   padding: 16px 24px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   height: 48px;
   line-height: 24px;
   gap: 8px;
-  background: #a7f46a;
-  border-radius: 8px;
+  background: #0049C6;
+  color: #fff;
+  border-radius: 32px;
   @media (max-width: 767px) {
     height: 40px;
     font-size: 14px;
     line-height: 150%;
   }
-`;
-const BottomCircleImg = styled("img")`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  bottom: 0;
-`;
+`
 
-const TopCircleImg = styled("img")`
-  position: absolute;
-  right: -10px;
-  top: 0;
-  z-index: 4; // header nav is 3
-  @media (max-width: 767px) {
-    position: absolute;
-    right: -56px;
-    top: 20px;
-    transform: rotate(15deg);
-    width: 50%;
-  }
-`;
-const AwnsBox = styled.div`
+const HeadBtns = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 1000px;
-  margin: 70px auto;
-  padding: 10px 10px 20px;
-  --border-width: 2px;
-  --border-radius: 30px;
-  --border-color: linear-gradient(-35deg, #4f7ff4,#25f2ff);
-  border-radius: var(--border-radius);
-  background: linear-gradient(160deg, #131B68 13.3%, #1919E1 103.48%);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  @media (max-width: 767px) {
-    flex-direction: column;
-    align-items: center;
-    margin-right: 20px;
-    padding: 20px;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: var(--border-width);
-    border-radius: var(--border-radius);
-    background: var(--border-color);
-    --mask-bg: linear-gradient(red, red);
-    --mask-clip: content-box, padding-box;
-    -webkit-mask-image: var(--mask-bg), var(--mask-bg);
-    mask-image: var(--mask-bg), var(--mask-bg);
-    -webkit-mask-clip: var(--mask-clip);
-    mask-clip: var(--mask-clip);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
-  }
-`;
-const AwnsImg = styled('img')`
-  display: flex;
-  mix-blend-mode: lighten;
-  width: 60px;
-  height: 60px;
-  @media (max-width: 767px) {
-    order: 3;
-    display: none;
-  }
-`;
-const AwnsContent = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px 50px 10px 20px;
-  flex: 1;
-  color: #fff;
-  p {
-    margin-bottom: 0;
-    font-size: 16px;
-  }
-  @media (max-width: 767px) {
-    flex-direction: column;
-    order: 1;
-    padding: 10px;
-  }
-`;
-const GreenTxt = styled.div`
-  margin: 10px 0;
-  padding-left: 50px;
-  font-family: Urbanist;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #A7F46A;
-  letter-spacing: 1px;
-  @media (max-width: 767px) {
-    padding-right: 0;
-    padding-left: 0;
-  }
+  gap: 24px;
+  margin-top: 20px;
 `
 const AwnsBtn = styled(GreenBtn)`
-  width: 240px;
-  margin-top: 50px;
   text-align: center;
   z-index: 9;
-  font-size: 18px;
-  @media screen and (max-width: 1440px) {
-    max-width: 180px;
-  }
+  font-size: 14px;
+  background: #A7F46A;
+  color: #020035;
+  
   @media (max-width: 767px) {
     max-width: 280px;
-    margin: 30px 0;
+    /* margin: 30px 0; */
     order: 2;
   }
 `;
+const AwnsBtn2 = styled(AwnsBtn)`
+  background: #A7F46A;
+`
 const HeadBr = styled.br`
   @media (max-width: 767px) {
     display: none;
@@ -421,37 +397,23 @@ function Head() {
   const history = useHistory();
   return (
     <HeadBox>
+      {/* <HeadStart src={section1}></HeadStart> */}
       <HeadH1>
         Opening The Portal <HeadBr />
         to Autonomous Worlds
       </HeadH1>
       <HeadText>
-        Our mission is to build and scale an identity layer for<br /> Autonomous Worlds.
-        <AwnsBtn onClick={()=>{window.open('https://awns.stp.network/','_blank')}}>
-        Create an AWNS
-        </AwnsBtn>
+        Our mission is to pioneer the advancement of AI in gaming
       </HeadText>
-      {/* <AwnsBox>
-        <AwnsContent>
-          <AwnsImg src={awnsImg}></AwnsImg>
-          <GreenTxt>Secure your AWNS (6551) by joining the waitlist now!</GreenTxt>
-        </AwnsContent>
-      </AwnsBox> */}
-      {/* <GreenBtn
-        style={{ marginTop: "40px" }}
-        onClick={() => window.open("https://www.myclique.io/creator", "_blank")}
-      >
-        Coming Soon
-        <ArrowOutwardIcon />
-      </GreenBtn> */}
-      {/* <BottomCircleImg src={BottomCircle} /> */}
-      {/* <TopCircleImg src={TopCircle} /> */}
-
+      <HeadBtns>
+        <GreenBtn onClick={() => { window.open('https://www.myclique.io/daos', '_blank') }}> Build on Clique </GreenBtn>
+        <AwnsBtn2 onClick={() => { window.open('https://awns.stp.network/', '_blank') }}> Create AWNS </AwnsBtn2>
+      </HeadBtns>
     </HeadBox>
   );
 }
 const IdentityBox = styled.div`
-  margin-top: 160px;
+  /* margin-top: 160px; */
   display: flex;
   align-items: self-start;
   padding-top: 60px;
@@ -475,100 +437,126 @@ const IdentityHomeImg2 = styled.img`
     margin-top: 40px;
   }
 `
-const IdentityImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: -140px;
-  width: 88px;
-  animation: ${blinkAnimation} 1.5s ease-in-out infinite;
-  @media (max-width: 767px) {
-    display: block;
-    top: -30px;
-    left: 0;
-  }
-`
-const IdentityImage2 = styled.img`
-  position: absolute;
-  top: 50px;
-  left: -70px;
-  width: 38px;
-  animation: ${blinkAnimation} 2s ease-in-out infinite;
-  @media (max-width: 767px) {
-    display: block;
-    top: 20px;
-    left: 50px;
-  }
-`
 const IdentityContent = styled.div`
-  /* margin-left: 500px; */
   position: relative;
-  max-width: 620px;
-  font-family: Poppins;
+  width: 1440px;
+  height: 438px;
+  margin: auto;
+  font-family: Inter;
+  padding-top: 250px;
   color: #fff;
-  padding: 0 30px 0 30px;
-  @media screen and (min-width: 1440px) {
-    max-width: 680px;
-    padding: 0 20px 0 80px;
-  }
+  text-align: center;
+  background: url(${section2}) no-repeat;
+  background-size: contain;
+  background-position: center;
+  /* filter: hue-rotate(318deg); */
   @media (max-width: 767px) {
     width: 100%;
-    padding: 24px;
+    padding: 200px 24px 24px 24px;
     order: 1;
+    background-size: 200%;
+    background-position: center 40%;
+  }
+`
+const Section2Title = styled.div`
+  width: 148px;
+  height: 32px;
+  margin: auto;
+  border-radius: 100px; 
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+  background: #FFFFFF1A;
+  text-align: center;
+`
+const Section2Main = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 740px;
+  margin: auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    /* flex-direction: column; */
   }
 `
 const IdentityTitle = styled.div`
-  font-family: Poppins;
-  font-size: 54px;
-  font-weight: 700;
-  line-height: 62px;
-  letter-spacing: 2px;
+  max-width: 950px;
+  margin: auto;
+  font-family: Inter;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: 0.3px;
   display: flex;
   justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
     font-size: 32px;
     line-height: 1.2;
   }
 `
 const IdentityText = styled.div`
+  font-size: Inter;
   margin-top: 40px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 40px;
+  line-height: 30px;
   letter-spacing: 2px;
   align-items: center;
+  color: #B2B2B2;
   @media (max-width: 767px) {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.2;
   }
+`
+const Identity2Img = styled.img`
+  width: 100%;
+  margin: auto;
 `
 const IdentityIcons = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 120px;
   margin-left: 20px;
   color: #fff;
   @media (max-width: 767px) {
     width: 100%;
     flex-direction: column;
+    margin-top: 60px;
     margin-left: 0px;
   }
 `
 const IconsBox = styled.div`
   position: relative;
-  width: 240px;
-  height: 240px;
-  margin: 15px 10px;
+  width: 300px;
+  height: 170px;
+  margin: 15px 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  border-radius: 40px;
-  background: linear-gradient(180deg, rgba(49, 48, 241, 0.00) 0%, #3837F1 62.50%);
+  /* border-radius: 40px; */
+  /* background: linear-gradient(180deg, rgba(49, 48, 241, 0.00) 0%, #3837F1 62.50%); */
+  border-right: 1px solid #363636;
+  &:last-of-type {
+    border-right: none;
+  }
   @media (max-width: 767px) {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: auto;
     margin: 6px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-right: none;
+    border-bottom: 1px solid #363636;
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 `
 const Icon = styled.img`
@@ -578,34 +566,31 @@ const Icon = styled.img`
     width: 36px;
   }
 `
-const GreenStar = styled.img`
-  position: absolute;
-  top: 30px;
-  right: 50px;
-  width: 60px;
-`
-const GreenStar2 = styled.img`
-  position: absolute;
-  left: 54px;
-  width: 60px;
-`
 const IconName = styled.div`
   margin-top: 30px;
   font-size: 20px;
+  @media (max-width: 767px) {
+    margin-top: 10px;
+  }
 `
 const Identity2Box = styled.div`
-  max-width: 1440px;
-  margin: 300px auto 30px;
+  /* max-width: 1440px; */
+  margin: 200px auto 100px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* background: #1b1aff; */
+  background: url(${section3}) no-repeat;
+  background-size: contain;
+  background-position: center;
   @media (max-width: 767px) {
     flex-direction: column;
     margin-top: 60px;
+    background-size: 200%;
+    background-position: center 35%;
   }
-  
 `
 const Identity2Content = styled.div`
   position: relative;
@@ -619,13 +604,14 @@ const Identity2Content = styled.div`
 `
 const Identity2Text = styled.div`
   margin-top: 10px;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 40px;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   align-items: center;
   display: flex;
   justify-content: center;
+  color: #B2B2B2;
   @media (max-width: 767px) {
       font-size: 20px;
       line-height: 1.2;
@@ -654,13 +640,13 @@ const HomeImg3 = styled.img`
 function Identity() {
   return (
     <IdentityBox>
-      <IdentityHomeImg2 src={homeImg2}></IdentityHomeImg2>
-        <IdentityContent>
-          <IdentityImage src={starWhite}></IdentityImage>
-          <IdentityImage2 src={starWhite}></IdentityImage2>
-          <IdentityText>We envision a multi-layer identity for every user traversing in the ever-growing universe of Autonomous Worlds. </IdentityText>
-          <IdentityText>We believe in unlocking individualism by contributing to elevated forms of onchain identity.</IdentityText>
-        </IdentityContent>
+      <IdentityContent>
+        <Section2Title>AI Unites Gaming </Section2Title>
+        <Section2Main>
+          <IdentityText>We envision AI enhancing the utility and value of onchain gaming.</IdentityText>
+          <IdentityText>Redefining games with  onchain agents and AI elevated gameplay.</IdentityText>
+        </Section2Main>
+      </IdentityContent>
     </IdentityBox>
   )
 }
@@ -668,24 +654,23 @@ function Identity2() {
   return (
     <Identity2Box>
       <Identity2Content>
-        <Identity2Star src={starWhite}></Identity2Star>
-        <IdentityTitle>STP will empower AW builders </IdentityTitle>
-        <Identity2Text>Leverage frontier technology in Autonomous Worlds, Account Abstraction, AI Agents</Identity2Text>
-        <HomeImg3 src={homeImg3}></HomeImg3>
+        {/* <Identity2Star src={starWhite}></Identity2Star> */}
+        <IdentityTitle>STP empowers all game studios, developers, and users </IdentityTitle>
+        <Identity2Text>Leverage frontier technology in Blockchain, Autonomous Worlds, AI Agents</Identity2Text>
+        {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>
+      {/* <Identity2Img src={section3}></Identity2Img> */}
       <IdentityIcons>
         <IconsBox>
-          <Icon src={identityIcon1}></Icon>
-          <GreenStar src={greenStar}></GreenStar>
+          <Icon src={section3Icon1}></Icon>
+          <IconName>Blockchain</IconName>
+        </IconsBox>
+        <IconsBox>
+          <Icon src={section3Icon2}></Icon>
           <IconName>Autonomous Worlds</IconName>
         </IconsBox>
         <IconsBox>
-          <Icon src={identityIcon2}></Icon>
-          <IconName>Account Abstraction</IconName>
-        </IconsBox>
-        <IconsBox>
-          <Icon src={identityIcon3}></Icon>
-          <GreenStar2 src={greenStar}></GreenStar2>
+          <Icon src={section3Icon3}></Icon>
           <IconName>AI Agents</IconName>
         </IconsBox>
       </IdentityIcons>
@@ -1020,7 +1005,7 @@ const CliqueContentBox = styled.div`
   align-items: center;
   width: 100%;
   padding-top: 150px;
-  background: url(${homeImg4}) no-repeat;
+  /* background: url(${homeImg4}) no-repeat; */
   background-position: 0% -5%;
   @media (max-width: 767px) {
     padding-top: 60px;
@@ -1233,7 +1218,7 @@ const BlueCard = styled.div`
   border: 1px solid #C6DCF0;
   background: #F8FCFF;
 `
-export const Box3 = styled.div<{isMargin: boolean}>`
+export const Box3 = styled.div<{ isMargin: boolean }>`
   width: 1440px;
   /* display: flex; */
   /* flex-wrap: wrap; */
@@ -1243,7 +1228,7 @@ export const Box3 = styled.div<{isMargin: boolean}>`
     width: 100%;
     flex-direction: column;
     padding: 20px 20px 10px 20px;
-    margin-top: ${props => props.isMargin?'30px':'0'};
+    margin-top: ${props => props.isMargin ? '30px' : '0'};
   }
 `
 export const Box3Card = styled.div`
@@ -1450,20 +1435,20 @@ function CliqueContent() {
     text: 'Collaborative governance tool for planning and building onchain worlds with no code and gas.'
   }
   const openLink = (href: any) => {
-      window.open(href)
+    window.open(href)
   }
   return (
     <CliqueContentBox>
       <Box1>
         {/* <ContentLeft> */}
-          <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
-          <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
+        <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
+        <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
         {/* </ContentLeft> */}
         <Box3 isMargin={false}>
-          <Box3CardBlue onClick={()=>{openLink('https://awns.stp.network/')}}>
+          <Box3CardBlue onClick={() => { openLink('https://awns.stp.network/') }}>
             {/* <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue> */}
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft:'-20px'}}>AWNS</Box3CardTitle>
+              <Box3CardTitle style={{ marginLeft: '-20px' }}>AWNS</Box3CardTitle>
               <Box3CardLi>Serves as your autonomous onchain agent with a 6551 Wallet.</Box3CardLi>
               <Box3CardLi>Easily connect and interact with dApps.</Box3CardLi>
               <Box3CardLi>Single name for all tokens and decentralized worlds.</Box3CardLi>
@@ -1473,22 +1458,22 @@ function CliqueContent() {
             </Box3CardCover>
             {/* <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5> */}
           </Box3CardBlue>
-          <Box3CardPink onClick={()=>{openLink('https://awnsbase.stp.network/my/names?tab=game')}}>
+          <Box3CardPink onClick={() => { openLink('https://awnsbase.stp.network/my/names?tab=game') }}>
             {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft:'-20px'}}>Dynamic 6551 Account</Box3CardTitle>
+              <Box3CardTitle style={{ marginLeft: '-20px' }}>Dynamic 6551 Account</Box3CardTitle>
               <Box3CardLi>Generate and manage NFT-based smart wallets.</Box3CardLi>
               <Box3CardLi>Multi-chain navigation with interworld passports.</Box3CardLi>
               <Box3CardLi>Customize avatars and trade digital assets.</Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
-              <Box3CardImg src={workspaceImg3}></Box3CardImg> 
+              <Box3CardImg src={workspaceImg3}></Box3CardImg>
             </Box3CardCover>
             {/* <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5> */}
           </Box3CardPink>
-          <Box3CardBlue onClick={()=>{openLink('https://ancientforest.xyz/')}}>
+          <Box3CardBlue onClick={() => { openLink('https://ancientforest.xyz/') }}>
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft:'-20px'}}>Onchain Gaming</Box3CardTitle>
+              <Box3CardTitle style={{ marginLeft: '-20px' }}>Onchain Gaming</Box3CardTitle>
               <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
               <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
               <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
@@ -1502,7 +1487,7 @@ function CliqueContent() {
             <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
             {/* <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle> */}
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft:'-20px'}}>Autonomous AI Agent</Box3CardTitle>
+              <Box3CardTitle style={{ marginLeft: '-20px' }}>Autonomous AI Agent</Box3CardTitle>
               <Box3CardLi>Integrate AI for onchain gaming and DeFi actions.</Box3CardLi>
               <Box3CardLi>Train AI for game interaction and item collection.</Box3CardLi>
               <Box3CardLi>AI-powered data querying and onchain activities.</Box3CardLi>
@@ -1528,7 +1513,7 @@ function CliqueContent() {
           </Cards>
         </ContentRight> */}
       </Box1>
-      
+
       <Box2>
         <ContentRight2>
           <CliqueContentTitle>{cliqueWorkspace.title}</CliqueContentTitle>
@@ -1536,7 +1521,7 @@ function CliqueContent() {
           <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
         </ContentRight2>
         <ContentLeft2>
-          <Box3CardBlue2 onClick={()=>{openLink('https://www.stp.network/cliqueSocial')}}>
+          <Box3CardBlue2 onClick={() => { openLink('https://www.stp.network/cliqueSocial') }}>
             <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Social</Box3CardTitle>
             <Box3CardTxt>Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and Telegram.</Box3CardTxt>
             <Box3CardImg src={cliqueSocial}></Box3CardImg>
@@ -1545,18 +1530,289 @@ function CliqueContent() {
         <HomeImg5 src={homeImg5V2}></HomeImg5>
       </Box2>
       <Box4>
-        <Box3CardBlue2 onClick={()=>{openLink('https://www.myclique.io/activity')}}>
+        <Box3CardBlue2 onClick={() => { openLink('https://www.myclique.io/activity') }}>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Rewards</Box3CardTitle>
           <Box3CardTxt>Solutions platform for building onchain worlds unique to any AW project.</Box3CardTxt>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
         </Box3CardBlue2>
-        <Box3CardPink2 onClick={()=>{openLink('https://www.myclique.io/daos')}}>
+        <Box3CardPink2 onClick={() => { openLink('https://www.myclique.io/daos') }}>
           <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Governance</Box3CardTitle>
           <Box3CardTxt>Collaborative governance tool for planning and building worlds with no code and gas.</Box3CardTxt>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
         </Box3CardPink2>
       </Box4>
 
+    </CliqueContentBox>
+  )
+}
+const CliqueBox2 = styled.div`
+  width: 100%;
+  height: 884px;
+  background: url(${section4}) no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  @media (max-width: 767px) {
+    background-size: 200%;
+    background-position: center 0%;
+  }
+`
+const CliqueBox2Logo = styled.img`
+   @media (max-width: 767px) {
+    width: 60%;
+  }
+`
+const CliqueBox2Title = styled.div`
+  margin-top: 380px;
+  margin-bottom: 20px;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+  @media (max-width: 767px) {
+    margin-top: 180px;
+    font-size: 32px;
+    padding: 0 24px;
+  }
+`
+const CliqueBox2Txt = styled.div`
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #B2B2B2;
+  @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 1.3;
+      padding: 0 24px;
+      /* display: none; */
+  }
+`
+const CliqueBox2TxtH5 = styled.div`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    font-size: 16px;
+    padding: 0 24px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #B2B2B2;
+  }
+`
+const CliqueInfrastructure = styled.div`
+  width: 1200px;
+  margin: -140px auto 40px auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0 24px;
+  }
+`
+const CliqueInfrastructureTitle = styled.div`
+  margin-bottom: 16px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+  color: #B2B2B2;
+`
+const CliqueInfrastructureMain = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+`
+const InfrastructureMainBox1 = styled.div`
+  /* width: 282px; */
+  position: relative;
+  flex: 1;
+  height: auto;
+  min-height: 400px;
+  padding: 20px 20px 0 20px;
+  border-radius: 24px;   
+  border: 1px solid #FFFFFF14;
+  background: #1D1C20;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+`
+const InfrastructureMainBox1H = styled.div`
+  margin-bottom: 8px;
+  padding: 10px 10px 0 10px;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39px;
+  letter-spacing: 0em;
+  color: #fff;
+`
+const InfrastructureMainBox1T = styled.div`
+  /* margin-bottom: 20px; */
+  padding: 10px 10px 0 10px;
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  color: #A9A9A9;
+`
+const InfrastructureMainBox1Icons = styled.div`
+  display: flex;
+  & > img {
+    flex:1;
+  }
+`
+const InfrastructureMainBox1Icon = styled.img`
+  mix-blend-mode: color-dodge;
+  @media (max-width: 767px) {
+    width: 90%;
+  }
+
+`
+const InfrastructureMainBox1Icon6 = styled(InfrastructureMainBox1Icon)`
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+`
+const InfrastructureMainBox1Icon2 = styled(InfrastructureMainBox1Icon)`
+  margin-top: 7px;
+`
+const InfrastructureMainBox1Icon7 = styled(InfrastructureMainBox1Icon)`
+ @media (max-width: 767px) {
+    margin-left: 48px;
+  }
+`
+const InfrastructureMainBox1Icon9 = styled(InfrastructureMainBox1Icon)`
+  
+`
+const InfrastructureMainBox2 = styled.div`
+  /* width: 588px; */
+  position: relative;
+  flex: 2;
+  height: auto;
+  min-height: 400px;
+  padding: 20px 20px 0 20px;
+  border-radius: 24px;   
+  border: 1px solid #FFFFFF14;
+  background: #1D1C20;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+const CliqueApplications = styled.div`
+  width: 1200px;
+  margin: 10px auto 40px auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 0 24px;
+  }
+`
+function CliqueContent2() {
+
+  const openLink = (href: any) => {
+    window.open(href)
+  }
+  return (
+    <CliqueContentBox>
+      <CliqueBox2>
+        <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
+        <CliqueBox2Title>Ushering in a new form of play & create</CliqueBox2Title>
+        <CliqueBox2Txt>Clique is a blockchain for AI enhanced gaming.</CliqueBox2Txt>
+        <CliqueBox2Txt> Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2Txt>
+        {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
+      </CliqueBox2>
+      <CliqueInfrastructure>
+        <CliqueInfrastructureTitle>Infrastructure</CliqueInfrastructureTitle>
+        <CliqueInfrastructureMain>
+          <InfrastructureMainBox1>
+            <InfrastructureMainBox1H>Celestia</InfrastructureMainBox1H>
+            <InfrastructureMainBox1T>{`Modular DA with  >100x reduced cost for intense load of onchain gaming`}</InfrastructureMainBox1T>
+            <InfrastructureMainBox1Icon src={s4Icon1}></InfrastructureMainBox1Icon>
+          </InfrastructureMainBox1>
+          <InfrastructureMainBox2>
+            <InfrastructureMainBox1H>OP Stack on Base</InfrastructureMainBox1H>
+            <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
+            <InfrastructureMainBox1Icon src={s4Icon2}></InfrastructureMainBox1Icon>
+          </InfrastructureMainBox2>
+          <InfrastructureMainBox1>
+            <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
+            <InfrastructureMainBox1T>{`Composable app chain data from Base, Farcaster, Lens with AI APIs`}</InfrastructureMainBox1T>
+            <InfrastructureMainBox1Icon src={s4Icon3}></InfrastructureMainBox1Icon>
+          </InfrastructureMainBox1>
+        </CliqueInfrastructureMain>
+      </CliqueInfrastructure>
+      <CliqueApplications>
+        <CliqueInfrastructureTitle>Applications</CliqueInfrastructureTitle>
+        <CliqueInfrastructureMain>
+          <InfrastructureMainBox1>
+            <div>
+              <InfrastructureMainBox1H>AWNS</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Autonomous onchain agent with a 6551-powered wallet to establish your onchain identity and interact with games and AI`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1Icon src={s4Icon4}></InfrastructureMainBox1Icon>
+          </InfrastructureMainBox1>
+          <InfrastructureMainBox2>
+            <div>
+            <InfrastructureMainBox1H>Gaming Portal</InfrastructureMainBox1H>
+            <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps.`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1Icons>
+              <InfrastructureMainBox1Icon6 src={s4Icon5A}></InfrastructureMainBox1Icon6>  
+              <InfrastructureMainBox1Icon6 src={s4Icon5B}></InfrastructureMainBox1Icon6>  
+            </InfrastructureMainBox1Icons>
+          </InfrastructureMainBox2>
+        </CliqueInfrastructureMain>
+        <CliqueInfrastructureMain>
+          <InfrastructureMainBox2>
+            <div>
+              <InfrastructureMainBox1H>Community</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Discover, mingle and contribute to fandom and governance across game and social communities among AI and gaming enthusiasts`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1Icons>
+              <InfrastructureMainBox1Icon6 src={s4Icon6A}></InfrastructureMainBox1Icon6>  
+              <InfrastructureMainBox1Icon6 src={s4Icon6B}></InfrastructureMainBox1Icon6>  
+            </InfrastructureMainBox1Icons>
+          </InfrastructureMainBox2>
+          <InfrastructureMainBox1>
+            <div>
+              <InfrastructureMainBox1H>Marketplace</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Trade and extract financial value from your onchain assets seamlessly impacting the respective games`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1Icon7 src={s4Icon7}></InfrastructureMainBox1Icon7>
+          </InfrastructureMainBox1>
+        </CliqueInfrastructureMain>
+      </CliqueApplications>
+      <CliqueApplications>
+        <CliqueInfrastructureTitle>Developer Resources</CliqueInfrastructureTitle>
+        <CliqueInfrastructureMain>
+          <InfrastructureMainBox1>
+            <div>
+              <InfrastructureMainBox1H>Developer Engine</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`All-in-one SDK to enhance games with AI along with social tooling for NFTs and DAOs on platforms like X, Telegram, Chrome, Farcaster`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1Icon src={s4Icon8}></InfrastructureMainBox1Icon>
+          </InfrastructureMainBox1>
+          <InfrastructureMainBox1>
+            <div>
+              <InfrastructureMainBox1H>Ecosystem Support </InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Collaborate in the builder community and apply for frequent project grants and developer support`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1Icon src={s4Icon9}></InfrastructureMainBox1Icon>  
+          </InfrastructureMainBox1>
+        </CliqueInfrastructureMain>
+      </CliqueApplications>
     </CliqueContentBox>
   )
 }
@@ -2023,7 +2279,7 @@ function InfoBox({
       <InfoConetne> {comment} </InfoConetne>
       <Row sx={{ pt: "16px", alignItems: "center" }}>
         <Row sx={{ alignItems: "center" }}>
-          <InfoUserIcon  />
+          <InfoUserIcon />
           <InfoBottomText> {item1}</InfoBottomText>
         </Row>
 
@@ -2353,29 +2609,21 @@ function Initiatives() {
 }
 
 const EcoH1 = styled(Typography)`
-  margin: 150px 0 48px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
+  margin: 200px 0 48px;
+  color: #fff;
+  font-family: Inter;
   font-size: 64px;
-  line-height: 90px;
-  /* identical to box height, or 141% */
-
+  font-weight: 600;
+  line-height: 77px;
+  letter-spacing: -0.02em;
   text-align: center;
 
-  color: #1b1aff;
   @media (max-width: 767px) {
     font-size: 48px;
     line-height: 56px;
     margin: 80px 0 40px;
   }
 `;
-const HomeImg61 = styled.img`
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  animation: ${blinkAnimation} 3s ease-in-out infinite;
-`
 const HomeImg62 = styled.img`
   position: absolute;
   bottom: -600px;
@@ -2396,6 +2644,11 @@ const EcoContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(${section5}) no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 1440px;
+  margin: 100px auto;
 `
 const EcoButton = styled(Button)`
   display: flex;
@@ -2414,24 +2667,175 @@ const EcoButton = styled(Button)`
     border: 1px solid #ececec;
   }
 `;
+const GameLearnMore = styled(GreenBtn)`
+  position: absolute;
+  right: 40px;
+  top: 24px;
+  z-index: 9;
+  margin: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  @media (max-width: 767px) {
+    top: 10px;
+    right: 24px;
+    padding: 0 16px;
+  }
+`
 
 const EcoTab = styled(Tab)`
   text-transform: none;
   font-weight: 500;
   margin: 0 32px;
   font-size: 20px;
+  border-radius: 32px;
+  border: 2px solid #363636;
+  background: #17171933;
+  color: #fff;
   @media (max-width: 767px) {
-    font-size: 14px;
-    margin: 0;
+    font-size: 12px;
+    margin: 0 4px;
     line-height: 150%;
     padding: 8px;
+    min-width: 70px;
   }
 `;
+const EcoGame = styled.div`
+  padding-top: 40px;
+  padding-bottom: 50px;
+  display: flex;
+  gap: 24px;
+`
+const StyledThumbs = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 240px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+`
+const StyledSwiperSlide = styled(SwiperSlide)`
+  /* display: flex ;
+  align-items: center; */
+  width: 240px;
+  height: 135px;
+
+`
+const SwiperGameBig = styled(Swiper)`
+  width: 800px;
+  height: 450px;
+  @media screen and (max-width: 767px) {
+      width: 375px;
+      padding: 0 24px;
+      height: auto;
+      margin-bottom: 40px;
+  }
+`
+const SwiperSlideBig = styled(SwiperSlide)`
+  position: relative;
+`
+const GameImgBig = styled.img`
+  width: 800px;
+  height: 450px;
+   @media screen and (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
+`
+const GameImgBigMask = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* height: 124px; */
+  padding: 24px 40px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #0000004D;
+   @media screen and (max-width: 767px) {
+    padding: 10px 16px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+  }
+`
+const MaskName = styled.div`
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+  color: #fff;
+   @media screen and (max-width: 767px) {
+      font-size: 16px;
+  }
+`
+const MaskLogo = styled.img`
+  @media screen and (max-width: 767px) {
+    width: 24px;
+  }
+`
+const MaskDes = styled.div`
+  margin-top: 10px;
+  padding-left: 40px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #B2B2B2;
+   @media screen and (max-width: 767px) {
+    font-size: 14px;
+    padding-left: 30px;
+  }
+`
+const GameImgSmallBox = styled.div<{active:boolean}>`
+  position: relative;
+  & > div {
+    display: ${props =>props.active?'none': 'block' };
+  }
+`
+const GameImgSmallMask = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  border-radius: 16px;
+`
+const GameImgSmall = styled.img`
+  width: 240px;
+  height: 135px;
+`
 
 function Ecosystem() {
-  const [value, setValue] = useState("Partners");
+  const [value, setValue] = useState("Games");
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const swiperRef = useRef<SwiperRef>(null);
+  const [activeIndex,setActiveIndex] = useState(0)
+  const Games = [
+    {
+      src: s5Game1,
+      logo: s5GameLogo1,
+      name: 'Eternal Legacy',
+      des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+    },
+    {
+      src: s5Game2,
+      logo: s5GameLogo2,
+      name: 'Ancient Forest',
+      des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+    },
+    {
+      src: s5Game3,
+      logo: s5GameLogo3,
+      name: 'Dice Game',
+      des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+    }
+  ]
   const PartnersLogos = [
     hypr,
     space3,
@@ -2492,66 +2896,115 @@ function Ecosystem() {
       : value === "Integrations"
         ? IntegrationsLogos
         : ListedLogos;
-
+const changeSlide = (index:any) => {
+  console.log(swiperRef);
+  setActiveIndex(index)
+  if (swiperRef && swiperRef.current && swiperRef.current.swiper) {
+    swiperRef.current.swiper.slideTo(index,0,false);
+  }
+}
+const handleSwiper = (swiper:any) => {
+  console.log(swiper);
+  setActiveIndex(swiper.activeIndex)
+}
   return (
     <Box position={"relative"} display={"flex"} alignItems={"center"} flexDirection={"column"} overflow={"hidden"}>
-      <HomeImg61 src={homeImg61}></HomeImg61>
+      {/* <HomeImg61 src={homeImg61}></HomeImg61> */}
       <EcoContent>
         <EcoH1>Ecosystem</EcoH1>
         <Tabs
           value={value}
           onChange={(e, value) => setValue(value)}
           sx={{
-            color: "#777E90",
+            color: "#fff",
             ".MuiTabs-indicator": {
-              background: "#A7F46A",
-              height: isDownSm ? "3px" : "5px",
+              background: "transparent",
+              height: isDownSm ? "0px" : "px",
               borderRadius: isDownSm ? "1.5px" : "2.5px",
             },
             ".MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected":
             {
-              color: "#777E90",
+              color: "#fff",
+              borderColor: "#007918",
+              background: "#00791833"
             },
           }}
         >
+          <EcoTab value={"Games"} label="Games" />
           <EcoTab value={"Partners"} label="Partners" />
           <EcoTab value={"Integrations"} label="Integrations" />
           <EcoTab value={"Listed Exchanges"} label="Listed Exchanges" />
         </Tabs>
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          pagination={{
-            clickable: true,
-            dynamicBullets: true,
-          }}
-          loop
-          autoplay={{
-            delay: 1000,
-          }}
-          slidesPerView={5}
-          style={{
-            maxWidth: "1441px",
-            padding: "60px",
-            alignItems: 'center'
-          }}
-        >
-          {currentLogos.map((logo, idx) => (
-            // init width 0px
-            <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px',textAlign:'center' }}>
-              <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <EcoButton
-          style={{ marginTop: "50px", marginBottom: "120px" }}
-          onClick={() => history.push("/ecosystem")}
-        >
-          Learn More
-        </EcoButton>
+        {
+          value==='Games'?
+          <EcoGame>
+            <StyledThumbs >
+            {
+              Games.map((item,index) => (
+                <GameImgSmallBox active={activeIndex===index} onClick={()=>{changeSlide(index)}}>
+                  <GameImgSmall  src={item.src} ></GameImgSmall>
+                  <GameImgSmallMask>
+                  </GameImgSmallMask>
+                </GameImgSmallBox>
+              ))
+              }
+            </StyledThumbs>
+            <SwiperGameBig ref={swiperRef} modules={[Autoplay]} spaceBetween={10} onSlideChange={(swiper)=>{handleSwiper(swiper)}}>
+              {
+                Games.map(item => (
+                  <SwiperSlideBig>
+                    <GameImgBig src={item.src}></GameImgBig>
+                    <GameImgBigMask>
+                      <MaskName><MaskLogo src={item.logo}></MaskLogo> {item.name}</MaskName>
+                      <MaskDes>{item.des}</MaskDes>
+                      <GameLearnMore
+                        onClick={() => history.push("/ecosystem")}
+                      >
+                        Learn More
+                      </GameLearnMore>
+                    </GameImgBigMask>
+                  </SwiperSlideBig>
+                ))
+              }
+            </SwiperGameBig>
+          </EcoGame>:
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            loop
+            autoplay={{
+              delay: 1000,
+            }}
+            slidesPerView={5}
+            style={{
+              maxWidth: "1441px",
+              padding: "60px",
+              alignItems: 'center'
+            }}
+          >
+            {currentLogos.map((logo, idx) => (
+              // init width 0px
+              <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px', textAlign: 'center' }}>
+                <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        }
+        {
+          value!=='Games' &&
+          <EcoButton
+            style={{ marginTop: "50px", marginBottom: "120px" }}
+            onClick={() => history.push("/ecosystem")}
+          >
+            Learn More
+          </EcoButton>
+        }
       </EcoContent>
-      <HomeImg62 src={homeImg62}></HomeImg62>
-      <HomeImg63 src={homeImg63}></HomeImg63>
+      {/* <HomeImg62 src={homeImg62}></HomeImg62> */}
+      {/* <HomeImg63 src={homeImg63}></HomeImg63> */}
     </Box>
   );
 }
@@ -2765,14 +3218,22 @@ const LearnContent = styled(Typography)`
 `;
 
 const BuildBox = styled(Box)`
-  width: 1330px;
+  width: 100%;
   /* height: 506px; */
   position: relative;
   margin: auto;
-  padding: 120px 60px;
+  padding: 100px 60px;
+  background: url(${section6}) no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media (max-width: 767px) {
     width: 100%;
     padding: 80px 4px;
+    background-size: 200%;
+    background-position: center;
     // margin-bottom: 48px;
   }
 `;
@@ -2791,14 +3252,15 @@ const BuildH1 = styled(Typography)`
 `;
 
 const BuildContent = styled(Typography)`
-  font-family: "DM Sans";
-  font-style: normal;
   margin-top: 24px;
+  color: #B2B2B2;
+  font-family: Inter;
+  font-size: 24px;
   font-weight: 500;
-  font-size: 32px;
-  line-height: 1.3;
-  color: #A7F46A;
-  width: 600px;
+  line-height: 29px;
+  letter-spacing: 0px;
+
+  /* width: 600px; */
   @media (max-width: 767px) {
     width: 100%;
     font-size: 26px;
@@ -2810,9 +3272,9 @@ function BuildWithUs() {
     <BuildBox>
       <BuildH1>Build with Us</BuildH1>
       <BuildContent>
-        Explore partnership and integration possibilities for your project.
+      Explore partnership and integration possibilities for your project.
       </BuildContent>
-      <GreenBtn style={{ marginTop: "66px" }}>
+      <GreenBtn style={{ marginTop: "24px",marginBottom: "24px"  }}>
         <a
           href="mailto:contact@stp.network"
           style={{
@@ -2820,6 +3282,7 @@ function BuildWithUs() {
             justifyContent: "center",
             alignItems: "center",
             position: "relative",
+            fontSize: '14px',
             zIndex: 1,
           }}
         >
@@ -2836,7 +3299,7 @@ function BuildWithUs() {
 
 const FooterBox = styled(Box)`
   width: 100%;
-  background: #101010;
+  background: #000228;
   padding: 120px 105px 80px;
   overflow-x: hidden;
   @media (max-width: 767px) {
@@ -2852,9 +3315,9 @@ export const BlueButton = styled(Button)`
   height: 50px;
   padding: 16px 42px;
   gap: 8px;
-  background: #0049c6;
-  color: white;
-  border-radius: 8px;
+  background: #A7F46A;
+  color: #020035;
+  border-radius: 25px;
   font-weight: 700;
   border: 0;
   @media (max-width: 767px) {
@@ -2871,6 +3334,7 @@ const FooterH1 = styled(Typography)`
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
+  text-align: left;
 `;
 
 const FooterText = styled(Typography)`
@@ -2882,6 +3346,7 @@ const FooterText = styled(Typography)`
   line-height: 150%;
   cursor: pointer;
   color: #d6d6d6;
+  text-align: left;
 `;
 const DownloadA = styled.a`
   color: #d6d6d6;
@@ -2901,44 +3366,21 @@ export function Footer() {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "Dynamic NFT",'Soda','Soton','Ancient Forest'],
+    ["Clique", "L3 on Base (Coming Soon)", "Gaming Portal", "Developer Engine (Coming Soon)","Community"],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
     // ["STP Ecosystem", "Ecosystem"],
-    ["Ecosystem", "News","FAQ"],
+    ["Ecosystem", "News", "FAQ"],
   ];
   const footListLink = [
-    // [
-    //   "Products",
-    //   "https://www.myclique.io/governance",
-    //   "/cliqueSocial",
-    //   "https://www.myclique.io/tools",
-    //   "https://www.npmjs.com/package/@myclique/governance-sdk",
-    // ],
     [
-      "Products",
-      "https://www.myclique.io/daos",
-      "https://www.myclique.io/tools",
-      "https://www.npmjs.com/package/@myclique/governance-sdk",
-      // "https://awns.stp.network/my/names",
+      "Clique",
+      "",
       "https://awnsbase.stp.network/my/names?tab=game",
-      "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
-      "https://t.me/Web3SotonBot",
-      "https://ancientforest.xyz/"
+      "",
+      "https://www.stp.network/cliqueSocial"
     ],
-    // [
-    //   "Leading DAOs",
-    //   "https://www.myclique.io/governance/daoInfo/3/proposal",
-    //   "https://www.myclique.io/governance/daoInfo/224/proposal",
-    //   "https://www.myclique.io/governance/daoInfo/1/proposal",
-    //   "https://www.myclique.io/governance/daoInfo/216/proposal",
-    // ],
-    // [
-    //   "Resources",
-    //   "https://github.com/STPDevteam",
-    //   "https://stp-dao.gitbook.io/verse-network/clique/overview-of-clique",
-    // ],
     [
       "Resources",
       "/Verse Network WP.pdf",
@@ -2964,13 +3406,13 @@ export function Footer() {
         gap={isDownSm ? "48px" : 0}
       >
         <img src={StpLogo} alt="" />
-        {/* <BlueButton
+        <BlueButton
           onClick={() =>
-            window.open("https://www.myclique.io/daos", "_blank")
+            window.open("https://awnsbase.stp.network/", "_blank")
           }
         >
-          Build DAO
-        </BlueButton> */}
+          Build on Base
+        </BlueButton>
       </Box>
       {!isDownSm ? (
         <>
@@ -2985,10 +3427,10 @@ export function Footer() {
                     } else {
                       return (
                         <FooterText
-                          onClick={() =>{
-                            if(footListLink[idx][i].includes('.zip')){
+                          onClick={() => {
+                            if (footListLink[idx][i].includes('.zip')) {
 
-                            }else {
+                            } else if(footListLink[idx][i]){
                               window.open(footListLink[idx][i], "_blank")
                             }
                             // if(footListLink[idx][i].includes('http')){
@@ -2999,12 +3441,12 @@ export function Footer() {
                             // }
                           }}
                         >
-                          { item === 'Media Kit' ?
+                          {item === 'Media Kit' ?
                             <DownloadA href='/stp.zip'>
-                              {item} <DownloadIcon style={{marginLeft:'10px'}}></DownloadIcon>
+                              {item} <DownloadIcon style={{ marginLeft: '10px' }}></DownloadIcon>
                             </DownloadA> :
                             <>
-                             {item}
+                              {item}
                             </>
                           }
                         </FooterText>
@@ -3118,7 +3560,7 @@ export function Footer2() {
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Web3 Community Workspace","DAO Tooling Aggregator", "Governance SDK", "Dynamic NFT",'Soda','Soton','Ancient Forest'],
+    ["Products", "Web3 Community Workspace", "DAO Tooling Aggregator", "Governance SDK", "Dynamic NFT", 'Soda', 'Soton', 'Ancient Forest'],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["STP Ecosystem", "Ecosystem"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3190,29 +3632,28 @@ export function Footer2() {
                     } else {
                       return (
                         <FooterText
-                          onClick={() =>
-                            {
-                              if(footListLink[idx][i].includes('.zip')){
+                          onClick={() => {
+                            if (footListLink[idx][i].includes('.zip')) {
 
-                              }else {
-                                window.open(footListLink[idx][i], "_blank")
-                              }
-                              // if(footListLink[idx][i].includes('http')){
-                              //   window.open(footListLink[idx][i], "_blank")
-                              // }else {
-                              //   window.scrollTo(0, 0);
-                              //   history.push(footListLink[idx][i])
-                              // }
+                            } else {
+                              window.open(footListLink[idx][i], "_blank")
                             }
+                            // if(footListLink[idx][i].includes('http')){
+                            //   window.open(footListLink[idx][i], "_blank")
+                            // }else {
+                            //   window.scrollTo(0, 0);
+                            //   history.push(footListLink[idx][i])
+                            // }
+                          }
                           }
                         >
-                          
-                          { item === 'Media Kit' ?
+
+                          {item === 'Media Kit' ?
                             <DownloadA href='/stp.zip'>
-                              {item} <DownloadIcon style={{marginLeft:'10px'}}></DownloadIcon>
+                              {item} <DownloadIcon style={{ marginLeft: '10px' }}></DownloadIcon>
                             </DownloadA> :
                             <>
-                             {item}
+                              {item}
                             </>
                           }
 
