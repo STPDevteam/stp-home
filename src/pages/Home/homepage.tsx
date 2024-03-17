@@ -257,10 +257,11 @@ export default function Homepage() {
     <ContentWrapper>
       <Content1>
         <Head1>
-          {/* <div className="blur-container">
+          <div className="blur-container">
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
-          </div> */}
+          </div>
+          {/* <canvas className="orb-canvas"></canvas> */}
           <Head />
         </Head1>
 
@@ -656,15 +657,11 @@ function Identity2() {
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
         <IdentityTitle>STP empowers all game studios, developers, and users </IdentityTitle>
-        <Identity2Text>Leverage frontier technology in Blockchain, Autonomous Worlds, AI Agents</Identity2Text>
+        <Identity2Text>Leverage frontier technology in Autonomous Worlds, AI Agents, Account Abstraction</Identity2Text>
         {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>
       {/* <Identity2Img src={section3}></Identity2Img> */}
       <IdentityIcons>
-        <IconsBox>
-          <Icon src={section3Icon1}></Icon>
-          <IconName>Blockchain</IconName>
-        </IconsBox>
         <IconsBox>
           <Icon src={section3Icon2}></Icon>
           <IconName>Autonomous Worlds</IconName>
@@ -672,6 +669,10 @@ function Identity2() {
         <IconsBox>
           <Icon src={section3Icon3}></Icon>
           <IconName>AI Agents</IconName>
+        </IconsBox>
+        <IconsBox>
+          <Icon src={section3Icon1}></Icon>
+          <IconName>Account Abstraction</IconName>
         </IconsBox>
       </IdentityIcons>
     </Identity2Box>
@@ -1686,6 +1687,11 @@ const InfrastructureMainBox1Icon6 = styled(InfrastructureMainBox1Icon)`
     width: 50%;
   }
 `
+const InfrastructureMainBox1Icon6A = styled.img`
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+`
 const InfrastructureMainBox1Icon2 = styled(InfrastructureMainBox1Icon)`
   margin-top: 7px;
 `
@@ -1766,11 +1772,11 @@ function CliqueContent2() {
           <InfrastructureMainBox2>
             <div>
             <InfrastructureMainBox1H>Gaming Portal</InfrastructureMainBox1H>
-            <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps.`}</InfrastructureMainBox1T>
+            <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1Icons>
               <InfrastructureMainBox1Icon6 src={s4Icon5A}></InfrastructureMainBox1Icon6>  
-              <InfrastructureMainBox1Icon6 src={s4Icon5B}></InfrastructureMainBox1Icon6>  
+              <InfrastructureMainBox1Icon6A src={s4Icon5B}></InfrastructureMainBox1Icon6A>  
             </InfrastructureMainBox1Icons>
           </InfrastructureMainBox2>
         </CliqueInfrastructureMain>
@@ -2748,8 +2754,8 @@ const GameImgBigMask = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  /* height: 124px; */
-  padding: 24px 40px;
+  height: 124px;
+  padding: 20px 40px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   background: #0000004D;
@@ -2776,7 +2782,7 @@ const MaskLogo = styled.img`
   }
 `
 const MaskDes = styled.div`
-  margin-top: 10px;
+  margin-top: 2px;
   padding-left: 40px;
   font-family: Inter;
   font-size: 16px;
@@ -2821,19 +2827,22 @@ function Ecosystem() {
       src: s5Game1,
       logo: s5GameLogo1,
       name: 'Eternal Legacy',
-      des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+      des: 'A New Era of AI Enhanced Gaming',
+      link: ''
     },
     {
       src: s5Game2,
       logo: s5GameLogo2,
       name: 'Ancient Forest',
-      des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+      des: '',
+      link: 'https://ancientforest.xyz/'
     },
     {
       src: s5Game3,
       logo: s5GameLogo3,
       name: 'Dice Game',
       des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+      link: 'https://lootdice.xyz/'
     }
   ]
   const PartnersLogos = [
@@ -2958,9 +2967,12 @@ const handleSwiper = (swiper:any) => {
                       <MaskName><MaskLogo src={item.logo}></MaskLogo> {item.name}</MaskName>
                       <MaskDes>{item.des}</MaskDes>
                       <GameLearnMore
-                        onClick={() => history.push("/ecosystem")}
+                        onClick={() => {item.link && window.open(item.link,'_blank')}}
                       >
-                        Learn More
+                        {
+                          item.link?'Learn More':'Coming Soon'
+                        }
+                        
                       </GameLearnMore>
                     </GameImgBigMask>
                   </SwiperSlideBig>
@@ -3277,6 +3289,7 @@ function BuildWithUs() {
       <GreenBtn style={{ marginTop: "24px",marginBottom: "24px"  }}>
         <a
           href="mailto:contact@stp.network"
+          target="_blank"
           style={{
             display: "flex",
             justifyContent: "center",
