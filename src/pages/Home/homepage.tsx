@@ -458,7 +458,7 @@ const Head1 = styled.div`
   background-position: center;
   @media (max-width: 767px) {
     padding: 24px;
-    background-size: 300%;
+    background-size: 350%;
     height: 100vh;
   }
 `
@@ -509,9 +509,7 @@ export default function Homepage() {
     <ContentWrapper>
       <Content1>
         <Head1>
-          <div>
             <canvas id="orb-canvas" class="orb-canvas"></canvas>
-          </div>
            {/* <div className="blur-container">
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
@@ -545,13 +543,13 @@ export const HeadBox = styled(Box)`
   background-size: contain;
   background-position: center; */
   /* opacity: 0.8; */
+  z-index: 9;
   @media (min-width: 1440px) {
     height: 1000px;
   }
   @media (max-width: 767px) {
-    height: auto;
     padding-left: 0px;
-    height: auto;
+    height: 100vh;
     padding-bottom: 79px;
   }
 `;
@@ -574,7 +572,7 @@ export const HeadH1 = styled(Typography)`
   color: #ffffff;
   text-align: center;
   @media (max-width: 767px) {
-    padding-top: 100px;
+    padding-top: 150px;
     padding-left: 0px;
     font-size: 32px;
     line-height: 38px;
@@ -624,7 +622,7 @@ const HeadBtns = styled.div`
   justify-content: center;
   align-items: center;
   gap: 24px;
-  margin-top: 20px;
+  margin-top: 30px;
 `
 const AwnsBtn = styled(GreenBtn)`
   text-align: center;
