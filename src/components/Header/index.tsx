@@ -11,9 +11,12 @@ import DarkLogo from "../../assets/images/logo.png";
 import Cube from "../../assets/images/home/cube.png";
 import { ReactComponent as Arrow } from "../../assets/images/home/svg/arrow.svg";
 import "./index.less";
-import IconDapp from "../../assets/images/header/clique-dapp.svg";
-import IconWorkSpace from "../../assets/images/header/clique-workspace.svg";
-import IconSDK from "../../assets/images/header/clique-sdk.svg";
+import Icon1 from "../../assets/images/header/icon1.svg";
+import Icon1A from "../../assets/images/header/icon1A.svg";
+import Icon2 from "../../assets/images/header/icon2.svg";
+import Icon2A from "../../assets/images/header/icon2A.svg";
+import Icon3 from "../../assets/images/header/icon3.svg";
+import Icon3A from "../../assets/images/header/icon3A.svg";
 import { Box, Typography } from "@mui/material";
 import { GreenBtn } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
@@ -35,7 +38,7 @@ const HeaderContent = styled.div`
 
 const MenuBg = styled(Box)`
   padding: 40px 42.5px 68px;
-  background: white;
+  background: #141639;
   border-radius: 8px;
   gap: 12px;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
@@ -52,7 +55,7 @@ const MenuTitle = styled(Typography)`
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
-  color: #23262f;
+  color: #FFF;
   @media (max-width: 767px) {
     font-size: 14px;
     line-height: 24px;
@@ -65,7 +68,7 @@ const MenuText = styled(Typography)`
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: #777e91;
+  color: #B2B2B2;
   @media (max-width: 767px) {
     font-size: 12px;
     line-height: 150%;
@@ -80,15 +83,32 @@ const MenuBox = styled(Box)`
   padding: 27px 24px;
   gap: 16px;
   cursor: pointer;
-
+  img {
+    display: none;
+  }
+  &>:first-child  {
+    display: block;
+  }
   &:hover {
-    background: #a7f46a;
+    background: #0049C6;
+    &>:first-child  {
+      display: none;
+    }
+    &>img:last-of-type  {
+      display: block;
+    }
   }
 
   @media (max-width: 767px) {
     width: 100%;
   }
 `;
+const ImgActive = styled.img`
+  
+`
+const ImgNormal = styled.img`
+  
+`
 
 export function ProductMenu({
   setDropdownVisible,
@@ -100,19 +120,22 @@ export function ProductMenu({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuList = [
     {
-      icon: IconSDK,
+      icon: Icon1,
+      iconA: Icon1A,
       title: "Clique AW",
       link: "https://awns.stp.network/",
       text: "Solutions platform for building on-chain worlds unique to any AW project.",
     },
     {
-      icon: IconWorkSpace,
+      icon: Icon2,
+      iconA: Icon2A,
       title: "Clique Network",
       link: "https://www.myclique.io/governance",
       text: "Collaborative governance tool for planning and building worlds with no code and gas.",
     },
     {
-      icon: IconDapp,
+      icon: Icon3,
+      iconA: Icon3A,
       title: "Clique Social",
       link: "",
       route:'/cliqueSocial',
@@ -148,7 +171,8 @@ export function ProductMenu({
             }
           }}
         >
-          <img src={menu.icon} />
+          <ImgNormal src={menu.icon} />
+          <ImgActive src={menu.iconA} />
           <Box gap={"4px"}>
             <MenuTitle>{menu.title}</MenuTitle>
             <MenuText>{menu.text}</MenuText>
@@ -416,20 +440,12 @@ const Header: React.FC = () => {
                 setVisible(flag);
               }}
             >
-              <a style={{
-                color: currentPath.pathname.includes("dao")
-                  ? "#000"
-                  : "#fff",
-              }}>
+              <a>
                 Products
                 <Arrow />
               </a>
             </Dropdown>
-            <a style={{
-              color: currentPath.pathname.includes("dao")
-                ? "#000"
-                : "#fff",
-            }} href="https://www.myclique.io/daos" target="_blank">
+            <a href="https://www.myclique.io/daos" target="_blank">
               DAOs
             </a>
             {/* <Dropdown overlay={daoMenu} trigger={["click"]}>
@@ -455,19 +471,11 @@ const Header: React.FC = () => {
                 <Arrow />
               </a>
             </Dropdown> */}
-            <Link style={{
-              color: currentPath.pathname.includes("dao")
-                ? "#000"
-                : "#fff",
-            }} to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+            <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
               Ecosystem
             </Link>
             <Dropdown overlay={resourcesMenu} trigger={["click"]}>
-              <a style={{
-                color: currentPath.pathname.includes("dao")
-                  ? "#000"
-                  : "#fff",
-              }}>
+              <a >
                 Resources <Arrow />
               </a>
             </Dropdown>

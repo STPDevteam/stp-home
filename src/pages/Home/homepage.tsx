@@ -140,14 +140,18 @@ import section3 from "../../assets/images/home/Homepage3.png"
 import section4 from "../../assets/images/home/Homepage4.png"
 import section4Title from "../../assets/images/home/cliqueLogo.svg"
 import s4Icon1 from "../../assets/images/home/s4Icon1.svg"
-import s4Icon2 from "../../assets/images/home/s4Icon2.svg"
+// import s4Icon2 from "../../assets/images/home/s4Icon2.svg"
+import s4Icon2 from "../../assets/images/home/s4Icon2.jpg"
 import s4Icon3 from "../../assets/images/home/s4Icon3.svg"
-import s4Icon4 from "../../assets/images/home/s4Icon4.svg"
-import s4Icon5A from "../../assets/images/home/s4Icon5A.svg"
-import s4Icon5B from "../../assets/images/home/s4Icon5B.svg"
+import s4Icon4 from "../../assets/images/home/s4Icon4.png"
+import s4Icon5 from "../../assets/images/home/s4Icon5.png"
+// import s4Icon5A from "../../assets/images/home/s4Icon5A.svg"
+// import s4Icon5B from "../../assets/images/home/s4Icon5B.svg"
+import s4Icon6 from "../../assets/images/home/s4Icon6.jpg"
 import s4Icon6A from "../../assets/images/home/s4Icon6A.svg"
 import s4Icon6B from "../../assets/images/home/s4Icon6B.svg"
-import s4Icon7 from "../../assets/images/home/s4Icon7.svg"
+// import s4Icon7 from "../../assets/images/home/s4Icon7.svg"
+import s4Icon7 from "../../assets/images/home/s4Icon7.jpg"
 import s4Icon8 from "../../assets/images/home/s4Icon8.svg"
 import s4Icon9 from "../../assets/images/home/s4Icon9.svg"
 import section5 from "../../assets/images/home/Homepage5.png"
@@ -914,7 +918,7 @@ function Identity2() {
     <Identity2Box>
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
-        <IdentityTitle>STP empowers all game studios, developers, and users </IdentityTitle>
+        <IdentityTitle>Empowers all Gaming Studios, Developers and Users </IdentityTitle>
         <Identity2Text>Leverage frontier technology in Autonomous Worlds, AI Agents, Account Abstraction</Identity2Text>
         {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>
@@ -1877,8 +1881,9 @@ const CliqueInfrastructure = styled.div`
 `
 const CliqueInfrastructureTitle = styled.div`
   margin-bottom: 16px;
+  padding-left: 30px;
   font-family: Inter;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 29px;
   letter-spacing: -0.02em;
@@ -1898,7 +1903,7 @@ const InfrastructureMainBox1 = styled.div`
   flex: 1;
   height: auto;
   min-height: 400px;
-  padding: 20px 20px 0 20px;
+  padding: 20px 0px 0 0px;
   border-radius: 24px;   
   border: 1px solid #FFFFFF14;
   background: #1D1C20;
@@ -1909,7 +1914,7 @@ const InfrastructureMainBox1 = styled.div`
 `
 const InfrastructureMainBox1H = styled.div`
   margin-bottom: 8px;
-  padding: 10px 10px 0 10px;
+  padding: 10px 30px 0 30px;
   font-family: Inter;
   font-size: 32px;
   font-weight: 500;
@@ -1919,7 +1924,7 @@ const InfrastructureMainBox1H = styled.div`
 `
 const InfrastructureMainBox1T = styled.div`
   /* margin-bottom: 20px; */
-  padding: 10px 10px 0 10px;
+  padding: 10px 30px 0 30px;
   font-family: Inter;
   font-size: 22px;
   font-weight: 500;
@@ -1939,6 +1944,11 @@ const InfrastructureMainBox1Icon = styled.img`
     width: 90%;
   }
 
+`
+const InfrastructureMainBox1IconN =  styled.img`
+  width: 100%;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
 `
 const InfrastructureMainBox1Icon6 = styled(InfrastructureMainBox1Icon)`
   @media (max-width: 767px) {
@@ -1967,7 +1977,7 @@ const InfrastructureMainBox2 = styled.div`
   flex: 2;
   height: auto;
   min-height: 400px;
-  padding: 20px 20px 0 20px;
+  padding: 20px 0px 0 0px;
   border-radius: 24px;   
   border: 1px solid #FFFFFF14;
   background: #1D1C20;
@@ -1992,7 +2002,7 @@ function CliqueContent2() {
     <CliqueContentBox>
       <CliqueBox2>
         <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
-        <CliqueBox2Title>Ushering in a new form of play & create</CliqueBox2Title>
+        <CliqueBox2Title>in a New Form of Play & Create</CliqueBox2Title>
         <CliqueBox2Txt>Clique is a blockchain for AI enhanced gaming.</CliqueBox2Txt>
         <CliqueBox2Txt> Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
@@ -2008,7 +2018,7 @@ function CliqueContent2() {
           <InfrastructureMainBox2>
             <InfrastructureMainBox1H>OP Stack on Base</InfrastructureMainBox1H>
             <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
-            <InfrastructureMainBox1Icon src={s4Icon2}></InfrastructureMainBox1Icon>
+            <InfrastructureMainBox1IconN src={s4Icon2}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
             <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
@@ -2025,17 +2035,19 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>AWNS</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Autonomous onchain agent with a 6551-powered wallet to establish your onchain identity and interact with games and AI`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1Icon src={s4Icon4}></InfrastructureMainBox1Icon>
+            <InfrastructureMainBox1IconN src={s4Icon4}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
             <InfrastructureMainBox1H>Gaming Portal</InfrastructureMainBox1H>
             <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1Icons>
+            <InfrastructureMainBox1IconN src={s4Icon5}></InfrastructureMainBox1IconN>
+
+            {/* <InfrastructureMainBox1Icons>
               <InfrastructureMainBox1Icon6 src={s4Icon5A}></InfrastructureMainBox1Icon6>  
               <InfrastructureMainBox1Icon6A src={s4Icon5B}></InfrastructureMainBox1Icon6A>  
-            </InfrastructureMainBox1Icons>
+            </InfrastructureMainBox1Icons> */}
           </InfrastructureMainBox2>
         </CliqueInfrastructureMain>
         <CliqueInfrastructureMain>
@@ -2044,17 +2056,19 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>Community</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Discover, mingle and contribute to fandom and governance across game and social communities among AI and gaming enthusiasts`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1Icons>
+            <InfrastructureMainBox1IconN src={s4Icon6}></InfrastructureMainBox1IconN>
+
+            {/* <InfrastructureMainBox1Icons>
               <InfrastructureMainBox1Icon6 src={s4Icon6A}></InfrastructureMainBox1Icon6>  
               <InfrastructureMainBox1Icon6 src={s4Icon6B}></InfrastructureMainBox1Icon6>  
-            </InfrastructureMainBox1Icons>
+            </InfrastructureMainBox1Icons> */}
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Marketplace</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Trade and extract financial value from your onchain assets seamlessly impacting the respective games`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1Icon7 src={s4Icon7}></InfrastructureMainBox1Icon7>
+            <InfrastructureMainBox1IconN src={s4Icon7}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueApplications>
@@ -3217,7 +3231,9 @@ const handleSwiper = (swiper:any) => {
               ))
               }
             </StyledThumbs>
-            <SwiperGameBig ref={swiperRef} modules={[Autoplay]} spaceBetween={10} onSlideChange={(swiper)=>{handleSwiper(swiper)}}>
+            <SwiperGameBig ref={swiperRef} modules={[Autoplay]} autoplay={{
+              delay: 4000,
+            }} spaceBetween={10} onSlideChange={(swiper)=>{handleSwiper(swiper)}}>
               {
                 Games.map(item => (
                   <SwiperSlideBig>
