@@ -202,8 +202,8 @@ const HeaderMenuBox = styled(Box)`
   flex-direction: column;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
   @media (max-width: 767px) {
-    background: transparent;
-    left: 30px;
+    /* background: transparent; */
+    left: 0px;
   }
 `;
 

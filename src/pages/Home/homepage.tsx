@@ -658,7 +658,7 @@ function Head() {
       </HeadText>
       <HeadBtns>
         <GreenBtn onClick={() => { window.open('https://www.myclique.io/daos', '_blank') }}> Build on Clique </GreenBtn>
-        <AwnsBtn2 onClick={() => { window.open('https://awns.stp.network/', '_blank') }}> Create AWNS </AwnsBtn2>
+        <AwnsBtn2 onClick={() => { window.open('https://awns.stp.network/', '_blank') }}> Create an AWNS </AwnsBtn2>
       </HeadBtns>
     </HeadBox>
   );
