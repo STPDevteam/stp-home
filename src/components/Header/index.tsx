@@ -193,14 +193,14 @@ export function ProductMenu({
 }
 
 const HeaderMenuBox = styled(Box)`
-  background: white;
+  background: #141639;
   padding: 12px;
   display: flex;
   left: -12px;
   border-radius: 10px;
   position: relative;
   flex-direction: column;
-  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
   @media (max-width: 767px) {
     background: transparent;
     left: 30px;
@@ -212,9 +212,9 @@ const HeaderLink = styled("a")`
   font-size: 16px;
   line-height: 48px;
   padding: 0 16px;
-  color: #000;
+  color: #fff;
   &:hover {
-    color: #1b1aff;
+    color: #0049c6;
   }
 `;
 

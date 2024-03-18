@@ -139,21 +139,15 @@ import section3Icon3 from "../../assets/images/home/sectionIcon3.svg"
 import section3 from "../../assets/images/home/Homepage3.png"
 import section4 from "../../assets/images/home/Homepage4.png"
 import section4Title from "../../assets/images/home/cliqueLogo.svg"
-import s4Icon1 from "../../assets/images/home/s4Icon1.svg"
-// import s4Icon2 from "../../assets/images/home/s4Icon2.svg"
+import s4Icon1 from "../../assets/images/home/s4Icon1.jpg"
 import s4Icon2 from "../../assets/images/home/s4Icon2.jpg"
-import s4Icon3 from "../../assets/images/home/s4Icon3.svg"
+import s4Icon3 from "../../assets/images/home/s4Icon3.jpg"
 import s4Icon4 from "../../assets/images/home/s4Icon4.png"
 import s4Icon5 from "../../assets/images/home/s4Icon5.png"
-// import s4Icon5A from "../../assets/images/home/s4Icon5A.svg"
-// import s4Icon5B from "../../assets/images/home/s4Icon5B.svg"
 import s4Icon6 from "../../assets/images/home/s4Icon6.jpg"
-import s4Icon6A from "../../assets/images/home/s4Icon6A.svg"
-import s4Icon6B from "../../assets/images/home/s4Icon6B.svg"
-// import s4Icon7 from "../../assets/images/home/s4Icon7.svg"
 import s4Icon7 from "../../assets/images/home/s4Icon7.jpg"
-import s4Icon8 from "../../assets/images/home/s4Icon8.svg"
-import s4Icon9 from "../../assets/images/home/s4Icon9.svg"
+import s4Icon8 from "../../assets/images/home/s4Icon8.jpg"
+import s4Icon9 from "../../assets/images/home/s4Icon9.jpg"
 import section5 from "../../assets/images/home/Homepage5.png"
 import s5Game1 from "../../assets/images/home/game1.svg"
 import s5Game2 from "../../assets/images/home/game2.svg"
@@ -463,6 +457,7 @@ const Head1 = styled.div`
   background-position: center;
   @media (max-width: 767px) {
     padding: 24px;
+    background-size: 300%;
   }
 `
 const FooterModal = styled.div`
@@ -517,13 +512,6 @@ export default function Homepage() {
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
           </div>  */}
-          {/* <div className="g-wrap">
-            <div className="g-bubble g-bubble1"></div>
-            <div className="g-bubble g-bubble2"></div>
-            <div className="g-bubble g-bubble3"></div>
-            <div className="g-bubble g-bubble4"></div>
-          </div> */}
-          
           <Head />
         </Head1>
 
@@ -558,7 +546,7 @@ export const HeadBox = styled(Box)`
   }
   @media (max-width: 767px) {
     height: auto;
-    padding-left: 20px;
+    padding-left: 0px;
     height: auto;
     padding-bottom: 79px;
   }
@@ -576,7 +564,7 @@ export const HeadH1 = styled(Typography)`
   font-size: 64px;
   font-weight: 600;
   line-height: 77px;
-  letter-spacing: -0.04px;
+  letter-spacing: -0.04em;
   /* font-family: "Righteous"; */
   padding-top: 280px;
   color: #ffffff;
@@ -584,8 +572,8 @@ export const HeadH1 = styled(Typography)`
   @media (max-width: 767px) {
     padding-top: 100px;
     padding-left: 0px;
-    font-size: 48px;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 38px;
   }
 `;
 export const HeadText = styled(Typography)`
@@ -601,8 +589,8 @@ export const HeadText = styled(Typography)`
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 24px;
-    margin-top: 40px;
-    padding-left: 0px;
+    margin-top: 24px;
+    padding: 0px 20px;
   }
 `;
 export const GreenBtn = styled(Button)`
@@ -652,7 +640,7 @@ const AwnsBtn2 = styled(AwnsBtn)`
 `
 const HeadBr = styled.br`
   @media (max-width: 767px) {
-    display: none;
+    /* display: none; */
   }
 `
 
@@ -750,7 +738,7 @@ const IdentityTitle = styled.div`
   font-size: 64px;
   font-weight: 600;
   line-height: 72px;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.2px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -759,7 +747,7 @@ const IdentityTitle = styled.div`
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
     font-size: 32px;
-    line-height: 1.2;
+    line-height: 38px;
   }
 `
 const IdentityText = styled.div`
@@ -789,9 +777,10 @@ const IdentityIcons = styled.div`
   color: #fff;
   @media (max-width: 767px) {
     width: 100%;
-    flex-direction: column;
-    margin-top: 60px;
+    /* flex-direction: column; */
+    margin-top: 80px;
     margin-left: 0px;
+    padding: 0 20px;
   }
 `
 const IconsBox = styled.div`
@@ -813,13 +802,8 @@ const IconsBox = styled.div`
     width: 220px;
     height: auto;
     margin: 6px auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-right: none;
-    border-bottom: 1px solid #363636;
-    &:last-of-type {
-      border-bottom: none;
-    }
+    padding: 20px 10px;
+    justify-content: flex-start;
   }
 `
 const Icon = styled.img`
@@ -834,6 +818,8 @@ const IconName = styled.div`
   font-size: 20px;
   @media (max-width: 767px) {
     margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
   }
 `
 const Identity2Box = styled.div`
@@ -852,7 +838,7 @@ const Identity2Box = styled.div`
     flex-direction: column;
     margin-top: 60px;
     background-size: 200%;
-    background-position: center 35%;
+    background-position: center 60%;
   }
 `
 const Identity2Content = styled.div`
@@ -862,7 +848,7 @@ const Identity2Content = styled.div`
   color: #fff;
   @media (max-width: 767px) {
     width: 100%;
-    padding: 20px;
+    padding: 22px;
   }
 `
 const Identity2Text = styled.div`
@@ -876,8 +862,10 @@ const Identity2Text = styled.div`
   justify-content: center;
   color: #B2B2B2;
   @media (max-width: 767px) {
-      font-size: 20px;
+    margin-top: 24px;
+      font-size: 16px;
       line-height: 1.2;
+      text-align: center;
   }
 `
 const Identity2Star = styled.img`
@@ -1271,7 +1259,7 @@ const CliqueContentBox = styled.div`
   /* background: url(${homeImg4}) no-repeat; */
   background-position: 0% -5%;
   @media (max-width: 767px) {
-    padding-top: 60px;
+    padding-top: 30px;
   }
 `
 export const Box1 = styled.div`
@@ -1816,6 +1804,7 @@ const CliqueBox2 = styled.div`
   background-position: center;
   text-align: center;
   @media (max-width: 767px) {
+    height: auto;
     background-size: 200%;
     background-position: center 0%;
   }
@@ -1837,7 +1826,8 @@ const CliqueBox2Title = styled.div`
   color: #fff;
   @media (max-width: 767px) {
     margin-top: 180px;
-    font-size: 32px;
+    font-size: 24px;
+    line-height: 32px;
     padding: 0 24px;
   }
 `
@@ -1850,9 +1840,9 @@ const CliqueBox2Txt = styled.div`
   text-align: center;
   color: #B2B2B2;
   @media (max-width: 767px) {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.3;
-      padding: 0 24px;
+      padding: 0 52px;
       /* display: none; */
   }
 `
@@ -1876,6 +1866,7 @@ const CliqueInfrastructure = styled.div`
   margin: -140px auto 40px auto;
   @media (max-width: 767px) {
     width: 100%;
+    margin: 40px auto 40px auto;
     padding: 0 24px;
   }
 `
@@ -1888,6 +1879,9 @@ const CliqueInfrastructureTitle = styled.div`
   line-height: 29px;
   letter-spacing: -0.02em;
   color: #B2B2B2;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `
 const CliqueInfrastructureMain = styled.div`
   display: flex;
@@ -1911,6 +1905,9 @@ const InfrastructureMainBox1 = styled.div`
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  @media (max-width: 767px) {
+     min-height: 300px;
+  }
 `
 const InfrastructureMainBox1H = styled.div`
   margin-bottom: 8px;
@@ -1921,6 +1918,10 @@ const InfrastructureMainBox1H = styled.div`
   line-height: 39px;
   letter-spacing: 0em;
   color: #fff;
+   @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 1.3;
+  }
 `
 const InfrastructureMainBox1T = styled.div`
   /* margin-bottom: 20px; */
@@ -1931,46 +1932,17 @@ const InfrastructureMainBox1T = styled.div`
   line-height: 27px;
   letter-spacing: 0em;
   color: #A9A9A9;
-`
-const InfrastructureMainBox1Icons = styled.div`
-  display: flex;
-  & > img {
-    flex:1;
-  }
-`
-const InfrastructureMainBox1Icon = styled.img`
-  mix-blend-mode: color-dodge;
   @media (max-width: 767px) {
-    width: 90%;
+    font-size: 16px;
+    line-height: 1.3;
   }
-
 `
 const InfrastructureMainBox1IconN =  styled.img`
   width: 100%;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
 `
-const InfrastructureMainBox1Icon6 = styled(InfrastructureMainBox1Icon)`
-  @media (max-width: 767px) {
-    width: 50%;
-  }
-`
-const InfrastructureMainBox1Icon6A = styled.img`
-  @media (max-width: 767px) {
-    width: 50%;
-  }
-`
-const InfrastructureMainBox1Icon2 = styled(InfrastructureMainBox1Icon)`
-  margin-top: 7px;
-`
-const InfrastructureMainBox1Icon7 = styled(InfrastructureMainBox1Icon)`
- @media (max-width: 767px) {
-    margin-left: 48px;
-  }
-`
-const InfrastructureMainBox1Icon9 = styled(InfrastructureMainBox1Icon)`
-  
-`
+
 const InfrastructureMainBox2 = styled.div`
   /* width: 588px; */
   position: relative;
@@ -1984,6 +1956,9 @@ const InfrastructureMainBox2 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 767px) {
+     min-height: 300px;
+  }
 `
 const CliqueApplications = styled.div`
   width: 1200px;
@@ -2002,7 +1977,7 @@ function CliqueContent2() {
     <CliqueContentBox>
       <CliqueBox2>
         <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
-        <CliqueBox2Title>in a New Form of Play & Create</CliqueBox2Title>
+        <CliqueBox2Title>In a New Form of Play & Create</CliqueBox2Title>
         <CliqueBox2Txt>Clique is a blockchain for AI enhanced gaming.</CliqueBox2Txt>
         <CliqueBox2Txt> Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
@@ -2011,19 +1986,25 @@ function CliqueContent2() {
         <CliqueInfrastructureTitle>Infrastructure</CliqueInfrastructureTitle>
         <CliqueInfrastructureMain>
           <InfrastructureMainBox1>
-            <InfrastructureMainBox1H>Celestia</InfrastructureMainBox1H>
-            <InfrastructureMainBox1T>{`Modular DA with  >100x reduced cost for intense load of onchain gaming`}</InfrastructureMainBox1T>
-            <InfrastructureMainBox1Icon src={s4Icon1}></InfrastructureMainBox1Icon>
+            <div>
+              <InfrastructureMainBox1H>Celestia</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Modular DA with  >100x reduced cost for intense load of onchain gaming`}</InfrastructureMainBox1T>
+            </div>
+              <InfrastructureMainBox1IconN src={s4Icon1}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
-            <InfrastructureMainBox1H>OP Stack on Base</InfrastructureMainBox1H>
-            <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
-            <InfrastructureMainBox1IconN src={s4Icon2}></InfrastructureMainBox1IconN>
+            <div>
+              <InfrastructureMainBox1H>OP Stack on Base</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
+            </div>
+              <InfrastructureMainBox1IconN src={s4Icon2}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
-            <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
-            <InfrastructureMainBox1T>{`Composable app chain data from Base, Farcaster, Lens with AI APIs`}</InfrastructureMainBox1T>
-            <InfrastructureMainBox1Icon src={s4Icon3}></InfrastructureMainBox1Icon>
+            <div>
+              <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Composable app chain data from Base, Farcaster, Lens with AI APIs`}</InfrastructureMainBox1T>
+            </div>
+              <InfrastructureMainBox1IconN src={s4Icon3}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueInfrastructure>
@@ -2043,11 +2024,6 @@ function CliqueContent2() {
             <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN src={s4Icon5}></InfrastructureMainBox1IconN>
-
-            {/* <InfrastructureMainBox1Icons>
-              <InfrastructureMainBox1Icon6 src={s4Icon5A}></InfrastructureMainBox1Icon6>  
-              <InfrastructureMainBox1Icon6A src={s4Icon5B}></InfrastructureMainBox1Icon6A>  
-            </InfrastructureMainBox1Icons> */}
           </InfrastructureMainBox2>
         </CliqueInfrastructureMain>
         <CliqueInfrastructureMain>
@@ -2057,11 +2033,6 @@ function CliqueContent2() {
               <InfrastructureMainBox1T>{`Discover, mingle and contribute to fandom and governance across game and social communities among AI and gaming enthusiasts`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN src={s4Icon6}></InfrastructureMainBox1IconN>
-
-            {/* <InfrastructureMainBox1Icons>
-              <InfrastructureMainBox1Icon6 src={s4Icon6A}></InfrastructureMainBox1Icon6>  
-              <InfrastructureMainBox1Icon6 src={s4Icon6B}></InfrastructureMainBox1Icon6>  
-            </InfrastructureMainBox1Icons> */}
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
             <div>
@@ -2080,14 +2051,14 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>Developer Engine</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`All-in-one SDK to enhance games with AI along with social tooling for NFTs and DAOs on platforms like X, Telegram, Chrome, Farcaster`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1Icon src={s4Icon8}></InfrastructureMainBox1Icon>
+            <InfrastructureMainBox1IconN src={s4Icon8}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Ecosystem Support </InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Collaborate in the builder community and apply for frequent project grants and developer support`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1Icon src={s4Icon9}></InfrastructureMainBox1Icon>  
+            <InfrastructureMainBox1IconN src={s4Icon9}></InfrastructureMainBox1IconN>  
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueApplications>
@@ -3533,8 +3504,8 @@ const BuildH1 = styled(Typography)`
   line-height: 90px;
   color: #ffffff;
   @media (max-width: 767px) {
-    font-size: 42px;
-    line-height: 58px;
+    font-size: 40px;
+    line-height: 40px;
   }
 `;
 
@@ -3550,7 +3521,9 @@ const BuildContent = styled(Typography)`
   /* width: 600px; */
   @media (max-width: 767px) {
     width: 100%;
-    font-size: 26px;
+    padding: 0 40px;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 
@@ -3561,7 +3534,7 @@ function BuildWithUs() {
       <BuildContent>
       Explore partnership and integration possibilities for your project.
       </BuildContent>
-      <GreenBtn style={{ marginTop: "24px",marginBottom: "24px"  }}>
+      <GreenBtn style={{ marginTop: "24px",marginBottom: "64px"  }}>
         <a
           href="mailto:contact@stp.network"
           target="_blank"

@@ -180,6 +180,7 @@ const Features = styled.div`
   z-index: 1;
   padding-bottom: 100px;
   overflow: hidden;
+  background: #fff;
   @media (max-width: 767px) {
     padding-top: 30px;
     padding-bottom: 40px;

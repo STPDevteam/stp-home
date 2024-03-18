@@ -344,74 +344,81 @@ function Platforms({
   }, [categorySelect, sectorSelect]);
 
   return (
-    <Box
-      sx={{
-        maxWidth: "1441px",
-        width: "100%",
-        padding: isDownSm ? "80px 21px" : "80px 0 120px",
-      }}
-    >
-      <Search onSearch={onSearch} />
-      <Grid
-        container
-        spacing={"30px"}
-        mt={isDownSm ? "21px" : "39px"}
-        direction={isDownSm ? "column" : "row"}
+    <Box sx={{
+      width: "100%",
+      background: '#fff',
+    }}>
+      <Box
+        sx={{
+          maxWidth: "1441px",
+          width: "100%",
+          margin: 'auto',
+          background: '#fff',
+          padding: isDownSm ? "80px 21px" : "80px 0 120px",
+        }}
       >
-        {ecosystemDisplay.map((dao, idx) => {
-          return (
-            <Grid item xs={12} key={dao.name} md={4} width={"100%"}>
-              <PlatformBox>
-                <Row justifyContent={"space-between"} width={"100%"}>
-                  <img
-                    src={dao.img}
-                    style={{ height: isDownSm ? "48px" : "auto", maxWidth: '70%',maxHeight:'80px' }}
-                  />
-                  <Box
-                    sx={{
-                      ":hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                    onClick={() => window.open(dao.website, "_blank")}
-                  >
-                    <ArrowOutwardIcon sx={{ color: "#1B1AFF" }} />
-                  </Box>
-                </Row>
-                <Row gap={"4px"} mt={"24px"}>
-                  {dao.category && (
-                    <TagBox
-                      key={dao.name+idx}
+        <Search onSearch={onSearch} />
+        <Grid
+          container
+          spacing={"30px"}
+          mt={isDownSm ? "21px" : "39px"}
+          direction={isDownSm ? "column" : "row"}
+        >
+          {ecosystemDisplay.map((dao, idx) => {
+            return (
+              <Grid item xs={12} key={dao.name} md={4} width={"100%"}>
+                <PlatformBox>
+                  <Row justifyContent={"space-between"} width={"100%"}>
+                    <img
+                      src={dao.img}
+                      style={{ height: isDownSm ? "48px" : "auto", maxWidth: '70%',maxHeight:'80px' }}
+                    />
+                    <Box
                       sx={{
-                        background:
-                          TagColors[
-                            Math.floor(Math.random() * TagColors.length)
-                          ],
+                        ":hover": {
+                          cursor: "pointer",
+                        },
                       }}
+                      onClick={() => window.open(dao.website, "_blank")}
                     >
-                      {dao.category}
-                    </TagBox>
-                  )}
-                  {dao.sector && (
-                    <TagBox
-                      key={idx}
-                      sx={{
-                        background:
-                          TagColors[
-                            Math.floor(Math.random() * TagColors.length)
-                          ],
-                      }}
-                    >
-                      {dao.sector}
-                    </TagBox>
-                  )}
-                </Row>
-                <PlatformDesc>{dao.desc}</PlatformDesc>
-              </PlatformBox>
-            </Grid>
-          );
-        })}
-      </Grid>
+                      <ArrowOutwardIcon sx={{ color: "#1B1AFF" }} />
+                    </Box>
+                  </Row>
+                  <Row gap={"4px"} mt={"24px"}>
+                    {dao.category && (
+                      <TagBox
+                        key={dao.name+idx}
+                        sx={{
+                          background:
+                            TagColors[
+                              Math.floor(Math.random() * TagColors.length)
+                            ],
+                        }}
+                      >
+                        {dao.category}
+                      </TagBox>
+                    )}
+                    {dao.sector && (
+                      <TagBox
+                        key={idx}
+                        sx={{
+                          background:
+                            TagColors[
+                              Math.floor(Math.random() * TagColors.length)
+                            ],
+                        }}
+                      >
+                        {dao.sector}
+                      </TagBox>
+                    )}
+                  </Row>
+                  <PlatformDesc>{dao.desc}</PlatformDesc>
+                </PlatformBox>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Box>
     </Box>
   );
 }
