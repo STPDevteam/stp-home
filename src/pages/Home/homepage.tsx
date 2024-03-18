@@ -268,7 +268,8 @@ class Orb {
     this.fill = fill;
 
     // the original radius of the orb, set relative to window height
-    this.radius = random(window.innerHeight / 3, window.innerHeight / 3);
+    let r = window.innerWidth < 400 ? 5 : 3.5
+    this.radius = random(window.innerHeight / r, window.innerHeight / r);
 
     // starting points in "time" for the noise/self similar random values
     this.xOff = random(0, 1000);
@@ -297,7 +298,7 @@ class Orb {
           const originX = window.innerWidth / 2;
           const originY =
             window.innerWidth < 400 ?
-            window.innerHeight :
+            window.innerHeight/2 :
             window.innerHeight / 2;
 
           return {
@@ -458,6 +459,7 @@ const Head1 = styled.div`
   @media (max-width: 767px) {
     padding: 24px;
     background-size: 300%;
+    height: 100vh;
   }
 `
 const FooterModal = styled.div`
@@ -507,7 +509,9 @@ export default function Homepage() {
     <ContentWrapper>
       <Content1>
         <Head1>
-          <canvas id="orb-canvas" class="orb-canvas"></canvas>
+          <div>
+            <canvas id="orb-canvas" class="orb-canvas"></canvas>
+          </div>
            {/* <div className="blur-container">
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
