@@ -646,6 +646,11 @@ const HeadBr = styled.br`
     /* display: none; */
   }
 `
+const BrH5 = styled.br`
+  @media (max-width: 767px) {
+    display: none;
+  }
+`
 
 function Head() {
   const history = useHistory();
@@ -909,7 +914,7 @@ function Identity2() {
     <Identity2Box>
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
-        <IdentityTitle>Empowering all gaming studios,developers and users </IdentityTitle>
+        <IdentityTitle>Empowering all gaming studios, <BrH5></BrH5>developers and users </IdentityTitle>
         <Identity2Text>Leverage frontier technology in Autonomous Worlds, AI Agents, Account Abstraction</Identity2Text>
         {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>

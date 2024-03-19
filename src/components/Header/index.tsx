@@ -171,10 +171,10 @@ export function ProductMenu({
               history.push(menu.route)
               
             } else {
-              if (setDropdownVisible) {
-                setDropdownVisible(false);
-              }
-              setIsModalOpen(true);
+              // if (setDropdownVisible) {
+              //   setDropdownVisible(false);
+              // }
+              // setIsModalOpen(true);
             }
           }}
         >
