@@ -15,7 +15,7 @@ import Modal from '@mui/material/Modal';
 
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import homeImg62 from "../../assets/images/home/home6-2.png"
-import s1 from "../../assets/images/soda/s1.png"
+import s1 from "../../assets/images/soda/s1.svg"
 import s2 from "../../assets/images/soda/s2.png"
 import f1 from "../../assets/images/soda/f1.svg"
 import f2 from "../../assets/images/soda/f2.svg"
@@ -26,7 +26,7 @@ import greenStar from "../../assets/images/soda/greenStar.svg"
 import comingsoon from "../../assets/images/soda/comingsoon.png"
 import closeIcon from "../../assets/images/soda/Close.svg"
 import section1 from '../../assets/images/soda/section1.png'
-import section2 from '../../assets/images/soda/section2.png'
+import section2 from '../../assets/images/soda/section2.svg'
 import section4 from '../../assets/images/home/Homepage6.png'
 
 const style = {
@@ -388,6 +388,10 @@ const Section1Title = styled.div`
 `
 const Section2 = styled.div`
   margin-top: -140px;
+  padding-bottom: 100px;
+  @media (max-width: 767px) {
+   padding-bottom: 20px;
+  }
 `
 const Section2Title = styled.div`
   width: 450px;
@@ -402,7 +406,9 @@ const Section2Title = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
-    padding-top: 90px;
+    width: 300px;
+    margin-bottom: 10px;
+    padding-top: 20px;
     font-size: 32px;
   }
 `
@@ -450,7 +456,7 @@ const Section4 = styled.div`
 `
 const Section4Title = styled.div`
   width: 450px;
-  margin: auto;
+  margin: 120px auto 0 auto;
   font-family: Inter;
   font-size: 32px;
   font-weight: 600;

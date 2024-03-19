@@ -11,7 +11,7 @@ import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
 import styled from 'styled-components';
 import section1 from '../../assets/images/home/Homepage3.png'
-import section2 from '../../assets/images/gamePortal/section2.svg'
+import section2 from '../../assets/images/gamePortal/section2.jpg'
 import section3 from '../../assets/images/home/Homepage6.png'
 import s5Game1 from "../../assets/images/home/game1.svg"
 import s5Game2 from "../../assets/images/home/game2.svg"

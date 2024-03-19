@@ -55,23 +55,23 @@ import { Autoplay } from "swiper";
 import { Navigation } from "swiper";
 
 import Composable from "../../assets/images/ecosystem/composable.jpeg"
-import Zkspace from "../../assets/images/ecosystem/zkspace.png"
+import Zkspace from "../../assets/images/ecoLogo/zks.png"
 import Web3com from "../../assets/images/ecoLogo/web3com.png"
 import Altlayer from "../../assets/images/ecosystem/AltLayer.svg"
 import Paimas from "../../assets/images/ecoLogo/paima-logo.png"
-import AGLD from "../../assets/images/ecosystem/AgldBlack.svg"
+import AGLD from "../../assets/images/ecoLogo/AgldBlack.png"
 import Base from "../../assets/images/home/base.svg";
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
 import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
 import Thegraph from "../../assets/images/ecoLogo/theGraph.png";
 import Polygon from "../../assets/images/ecoLogo/polygon-logo-inverted.png";
-import Klaytn from "../../assets/images/ecosystem/Klaytn.png";
+import Klaytn from "../../assets/images/ecoLogo/Klaytn.png";
 import Rai from "../../assets/images/ecoLogo/raiFinance.png";
 import Vee from "../../assets/images/ecosystem/Vee.png";
 import Cere from "../../assets/images/ecoLogo/cere.png";
-import Define from "../../assets/images/ecosystem/Define.png";
+import Define from "../../assets/images/ecoLogo/defineT.png";
 import Deesse from "../../assets/images/ecosystem/Deesse.png";
-import Layer3 from "../../assets/images/ecosystem/Layer3.png";
+import Layer3 from "../../assets/images/ecoLogo/layer3.png";
 import Meter from "../../assets/images/ecosystem/Meter.png";
 import Voltswap from "../../assets/images/ecosystem/Voltswap.png";
 import Cobak from "../../assets/images/ecosystem/cobak.png";
@@ -80,18 +80,18 @@ import Search from "../../assets/images/ecosystem/Search.png";
 import Binance from "../../assets/images/ecosystem/binance.png";
 import BinanceListf from "../../assets/images/ecosystem/binanceList.png";
 import Bithumb from "../../assets/images/ecosystem/bithumb.png";
-import CoinDCX from "../../assets/images/ecosystem/coinDCX.png";
-import CoinOne from "../../assets/images/ecosystem/coinOne.png";
+import CoinDCX from "../../assets/images/ecoLogo/coinDcxT.png";
+import CoinOne from "../../assets/images/ecoLogo/coinone.png";
 import DeepDAO from "../../assets/images/ecosystem/deepDAO.png";
-import Gate from "../../assets/images/ecosystem/gate.png";
+import Gate from "../../assets/images/ecoLogo/gate.png";
 import Her from "../../assets/images/ecosystem/her.png";
-import HuoBi from "../../assets/images/ecosystem/huobi.png";
-import Immunefi from "../../assets/images/ecosystem/immunefi.png";
+import HuoBi from "../../assets/images/ecoLogo/huobi.png";
+import Immunefi from "../../assets/images/ecoLogo/immunefi.png";
 import Jenny from "../../assets/images/ecoLogo/JMD.png";
 import Knn from "../../assets/images/ecosystem/knn.png";
 import MapPro from "../../assets/images/ecosystem/mapPro.png";
-import Poloniex from "../../assets/images/ecosystem/poloniex.png";
-import PolygonDAO from "../../assets/images/ecosystem/polygonDAO.png";
+import Poloniex from "../../assets/images/ecoLogo/poloniex.png";
+import PolygonDAO from "../../assets/images/ecoLogo/polygonDao.png";
 import PushPro from "../../assets/images/ecosystem/pushPro.png";
 import UpBit from "../../assets/images/ecosystem/upbit.png";
 import Zeta from "../../assets/images/ecosystem/zeta.png";
@@ -170,17 +170,17 @@ import starCircle from "../../assets/images/home/starCircle.svg"
 import awnsImg from "../../assets/images/home/awns.svg"
 import hypr from '../../assets/images/ecosystem/hypr.png'
 import space3 from '../../assets/images/ecosystem/space.png'
-import atticlab from '../../assets/images/ecosystem/ATTIC.png'
+import atticlab from '../../assets/images/ecoLogo/atticLab.png'
 import paladins from '../../assets/images/ecosystem/pbs.jpeg'
 import a3sprotocol from '../../assets/images/ecosystem/a3sprotocol.png'
 import blade from '../../assets/images/ecosystem/blade.png'
 import kiosk from '../../assets/images/ecosystem/kiosk.svg'
 import gabby from '../../assets/images/ecosystem/gabby.png'
 import ggQuest from '../../assets/images/ecoLogo/gguest.png'
-import Openfort from '../../assets/images/ecosystem/openfort.png'
+import Openfort from '../../assets/images/ecoLogo/openfort.png'
 import biconomy from '../../assets/images/ecosystem/biconomy.png'
 import aw from '../../assets/images/ecoLogo/aw.png'
-import daren from '../../assets/images/ecosystem/daren.svg'
+import daren from '../../assets/images/ecoLogo/darenT.png'
 
 import * as PIXI from 'pixi.js';
 import { KawaseBlurFilter } from "@pixi/filter-kawase-blur";
