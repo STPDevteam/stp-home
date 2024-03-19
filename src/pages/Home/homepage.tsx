@@ -88,7 +88,7 @@ import Her from "../../assets/images/ecosystem/her.png";
 import HuoBi from "../../assets/images/ecoLogo/huobi.png";
 import Immunefi from "../../assets/images/ecoLogo/immunefi.png";
 import Jenny from "../../assets/images/ecoLogo/JMD.png";
-import Knn from "../../assets/images/ecosystem/knn.png";
+import Knn from "../../assets/images/ecoLogo/knn3.png";
 import MapPro from "../../assets/images/ecosystem/mapPro.png";
 import Poloniex from "../../assets/images/ecoLogo/poloniex.png";
 import PolygonDAO from "../../assets/images/ecoLogo/polygonDao.png";
