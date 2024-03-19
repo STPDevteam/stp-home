@@ -56,19 +56,19 @@ import { Navigation } from "swiper";
 
 import Composable from "../../assets/images/ecosystem/composable.jpeg"
 import Zkspace from "../../assets/images/ecosystem/zkspace.png"
-import Web3com from "../../assets/images/ecosystem/web3com.svg"
+import Web3com from "../../assets/images/ecoLogo/web3com.png"
 import Altlayer from "../../assets/images/ecosystem/AltLayer.svg"
-import Paimas from "../../assets/images/ecosystem/Paimas.svg"
+import Paimas from "../../assets/images/ecoLogo/paima-logo.png"
 import AGLD from "../../assets/images/ecosystem/AgldBlack.svg"
 import Base from "../../assets/images/home/base.svg";
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
 import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
-import Thegraph from "../../assets/images/ecosystem/Thegraph.png";
-import Polygon from "../../assets/images/ecosystem/Polygon.png";
+import Thegraph from "../../assets/images/ecoLogo/theGraph.png";
+import Polygon from "../../assets/images/ecoLogo/polygon-logo-inverted.png";
 import Klaytn from "../../assets/images/ecosystem/Klaytn.png";
-import Rai from "../../assets/images/ecosystem/raiFinance.png";
+import Rai from "../../assets/images/ecoLogo/raiFinance.png";
 import Vee from "../../assets/images/ecosystem/Vee.png";
-import Cere from "../../assets/images/ecosystem/Cere.png";
+import Cere from "../../assets/images/ecoLogo/cere.png";
 import Define from "../../assets/images/ecosystem/Define.png";
 import Deesse from "../../assets/images/ecosystem/Deesse.png";
 import Layer3 from "../../assets/images/ecosystem/Layer3.png";
@@ -87,7 +87,7 @@ import Gate from "../../assets/images/ecosystem/gate.png";
 import Her from "../../assets/images/ecosystem/her.png";
 import HuoBi from "../../assets/images/ecosystem/huobi.png";
 import Immunefi from "../../assets/images/ecosystem/immunefi.png";
-import Jenny from "../../assets/images/ecosystem/Jenny.png";
+import Jenny from "../../assets/images/ecoLogo/JMD.png";
 import Knn from "../../assets/images/ecosystem/knn.png";
 import MapPro from "../../assets/images/ecosystem/mapPro.png";
 import Poloniex from "../../assets/images/ecosystem/poloniex.png";
@@ -176,10 +176,10 @@ import a3sprotocol from '../../assets/images/ecosystem/a3sprotocol.png'
 import blade from '../../assets/images/ecosystem/blade.png'
 import kiosk from '../../assets/images/ecosystem/kiosk.svg'
 import gabby from '../../assets/images/ecosystem/gabby.png'
-import ggQuest from '../../assets/images/ecosystem/GGUEST.png'
+import ggQuest from '../../assets/images/ecoLogo/gguest.png'
 import Openfort from '../../assets/images/ecosystem/openfort.png'
 import biconomy from '../../assets/images/ecosystem/biconomy.png'
-import aw from '../../assets/images/ecosystem/AW.png'
+import aw from '../../assets/images/ecoLogo/aw.png'
 import daren from '../../assets/images/ecosystem/daren.svg'
 
 import * as PIXI from 'pixi.js';
@@ -460,6 +460,7 @@ const Head1 = styled.div`
     padding: 24px;
     background-size: 350%;
     height: 100vh;
+    /* max-height: 667px; */
   }
 `
 const FooterModal = styled.div`
@@ -908,7 +909,7 @@ function Identity2() {
     <Identity2Box>
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
-        <IdentityTitle>Empowers all Gaming Studios, Developers and Users </IdentityTitle>
+        <IdentityTitle>Empowering all gaming studios,developers and users </IdentityTitle>
         <Identity2Text>Leverage frontier technology in Autonomous Worlds, AI Agents, Account Abstraction</Identity2Text>
         {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>
@@ -1827,10 +1828,14 @@ const CliqueBox2Title = styled.div`
   text-align: center;
   color: #fff;
   @media (max-width: 767px) {
-    margin-top: 180px;
+    margin-top: 200px;
     font-size: 24px;
     line-height: 32px;
     padding: 0 24px;
+  }
+   @media screen and (min-width: 376px) and (max-width: 767px) {
+    margin-top: 240px;
+
   }
 `
 const CliqueBox2Txt = styled.div`
@@ -1979,7 +1984,7 @@ function CliqueContent2() {
     <CliqueContentBox>
       <CliqueBox2>
         <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
-        <CliqueBox2Title>In a New Form of Play & Create</CliqueBox2Title>
+        <CliqueBox2Title>New Form of Play & Create</CliqueBox2Title>
         <CliqueBox2Txt>Clique is a blockchain for AI enhanced gaming.</CliqueBox2Txt>
         <CliqueBox2Txt> Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
@@ -2022,7 +2027,7 @@ function CliqueContent2() {
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
-            <InfrastructureMainBox1H>Gaming Portal</InfrastructureMainBox1H>
+            <InfrastructureMainBox1H>Game Portal</InfrastructureMainBox1H>
             <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN src={s4Icon5}></InfrastructureMainBox1IconN>
@@ -2956,6 +2961,9 @@ const EcoGame = styled.div`
   padding-bottom: 50px;
   display: flex;
   gap: 24px;
+  @media screen and (max-width: 767px) {
+   width: 100%;
+  }
 `
 const StyledThumbs = styled.div`
   display: flex;
@@ -2977,10 +2985,14 @@ const SwiperGameBig = styled(Swiper)`
   width: 800px;
   height: 450px;
   @media screen and (max-width: 767px) {
-      width: 375px;
+      width: 100%;
+      max-width: 375px;
       padding: 0 24px;
       height: auto;
       margin-bottom: 40px;
+  }
+  @media screen and (min-width: 376px) and (max-width: 767px) {
+      max-width: 430px;
   }
 `
 const SwiperSlideBig = styled(SwiperSlide)`
@@ -3671,10 +3683,10 @@ export function Footer() {
         <img src={StpLogo} alt="" />
         <BlueButton
           onClick={() =>
-            window.open("https://awnsbase.stp.network/", "_blank")
+            window.open("https://www.myclique.io/daos", "_blank")
           }
         >
-          Build on Base
+          Build on Clique
         </BlueButton>
       </Box>
       {!isDownSm ? (
