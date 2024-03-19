@@ -170,7 +170,7 @@ import starCircle from "../../assets/images/home/starCircle.svg"
 import awnsImg from "../../assets/images/home/awns.svg"
 import hypr from '../../assets/images/ecosystem/hypr.png'
 import space3 from '../../assets/images/ecosystem/space.png'
-import atticlab from '../../assets/images/ecoLogo/atticLab.png'
+import atticlab from '../../assets/images/ecoLogo/attilLabBlack.jpg'
 import paladins from '../../assets/images/ecosystem/pbs.jpeg'
 import a3sprotocol from '../../assets/images/ecosystem/a3sprotocol.png'
 import blade from '../../assets/images/ecosystem/blade.png'
