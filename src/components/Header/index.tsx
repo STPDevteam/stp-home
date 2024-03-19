@@ -167,7 +167,9 @@ export function ProductMenu({
               if (setDropdownVisible) {
                 setDropdownVisible(false);
               }
+              window.scrollTo(0, 0);
               history.push(menu.route)
+              
             } else {
               if (setDropdownVisible) {
                 setDropdownVisible(false);
@@ -304,19 +306,19 @@ export const MenuList: {
     //   title: "DAOs",
     //   subtitle: daoMenu(),
     // },
-    {
-      title: "DAOs",
-      link: "https://www.myclique.io/daos",
-    },
+    // {
+    //   title: "DAOs",
+    //   link: "https://www.myclique.io/daos",
+    // },
 
+    {
+      title: "Resources",
+      subtitle: resourcesMenu,
+    },
     {
       title: "Ecosystem",
       link: "/ecosystem",
       // subtitle: ecosystemMenu,
-    },
-    {
-      title: "Resources",
-      subtitle: resourcesMenu,
     },
     // {
     //   title: "News",
@@ -450,52 +452,25 @@ const Header: React.FC = () => {
                 <Arrow />
               </a>
             </Dropdown>
-            <a href="https://www.myclique.io/daos" target="_blank">
+            {/* <a href="https://www.myclique.io/daos" target="_blank">
               DAOs
-            </a>
-            {/* <Dropdown overlay={daoMenu} trigger={["click"]}>
-              <a>
-                DAOs
-                <Arrow />
-              </a>
-            </Dropdown> */}
-            {/*<Link*/}
-            {/*  to="/tech"*/}
-            {/*  className={location.pathname === "/tech" ? "active" : ""}*/}
-            {/*>*/}
-            {/*  Tech*/}
-            {/*</Link>*/}
-            {/* <Link to="/ecosystem" className={location.pathname === '/ecosystem' ? 'active': ''}>Ecosystem</Link> */}
-            {/* <Dropdown overlay={ecosystemMenu} trigger={["click"]}>
-              <a style={{
-                color: currentPath.pathname.includes("dao")
-                  ? "#000"
-                  : "#fff",
-              }} href="" target="_blank">
-                Ecosystem 
-                <Arrow />
-              </a>
-            </Dropdown> */}
-            <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
-              Ecosystem
-            </Link>
-            <Dropdown overlay={resourcesMenu} trigger={["click"]}>
+            </a> */}
+           <Dropdown overlay={resourcesMenu} trigger={["click"]}>
               <a >
                 Resources <Arrow />
               </a>
             </Dropdown>
-            {/* <Link to="/developers" className={location.pathname === '/developers' ? 'active': ''}>Developers</Link> */}
-            {/* <a
-              href="https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1"
-              target="_blank"
-            >
-              News
-            </a> */}
+            <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+              Ecosystem
+            </Link>
+            {/* <Dropdown overlay={resourcesMenu} trigger={["click"]}>
+              <a >
+                Resources <Arrow />
+              </a>
+            </Dropdown> */}
 
           </nav>
-          {/* <nav> */}
-
-          {/* </nav> */}
+         
         </CSSTransition>
         <GreenBtn
           className="BuildDao"

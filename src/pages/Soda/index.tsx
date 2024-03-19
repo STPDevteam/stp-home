@@ -376,7 +376,8 @@ const Section1Title = styled.div`
   font-weight: 600;
   letter-spacing: 0em;
   text-align: center;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  /* background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%); */
+  background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
@@ -410,6 +411,10 @@ const Section2Img = styled.img`
   @media (max-width: 767px) {
     width: 100%;
   }
+`
+const JoinBtn = styled(GreenBtn)`
+  background: #0049C6;
+  color: #fff;
 `
 const Section3 = styled.div`
   
@@ -521,6 +526,7 @@ export default function Soda() {
         <Section2>
           <Section2Title>Community Activity</Section2Title>
           <Section2Img src={section2}></Section2Img>
+          <JoinBtn onClick={()=>window.open('https://www.myclique.io/daos')}>Join Community</JoinBtn>
         </Section2>
         <Section3>
           <Section3Title>Social Tooling</Section3Title>

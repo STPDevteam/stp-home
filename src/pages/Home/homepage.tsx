@@ -3652,7 +3652,7 @@ export function Footer() {
     [
       "Clique",
       "",
-      "https://awnsbase.stp.network/my/names?tab=game",
+      "https://test-stp-home.netlify.app/gamePortal",
       "",
       "https://www.stp.network/cliqueSocial"
     ],
