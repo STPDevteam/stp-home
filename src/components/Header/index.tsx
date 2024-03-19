@@ -17,6 +17,8 @@ import Icon2 from "../../assets/images/header/icon2.svg";
 import Icon2A from "../../assets/images/header/icon2A.svg";
 import Icon3 from "../../assets/images/header/icon3.svg";
 import Icon3A from "../../assets/images/header/icon3A.svg";
+import Icon4 from "../../assets/images/header/icon4.svg";
+import Icon4A from "../../assets/images/header/icon4A.svg";
 import { Box, Typography } from "@mui/material";
 import { GreenBtn } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
@@ -37,9 +39,11 @@ const HeaderContent = styled.div`
 `;
 
 const MenuBg = styled(Box)`
-  padding: 40px 42.5px 68px;
+  padding: 40px 24px;
   background: #141639;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
   @media (max-width: 767px) {
@@ -76,11 +80,11 @@ const MenuText = styled(Typography)`
 `;
 
 const MenuBox = styled(Box)`
-  width: 522px;
+  width: 408px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  padding: 27px 24px;
+  padding: 8px 0 8px 24px;
   gap: 16px;
   cursor: pointer;
   img {
@@ -122,32 +126,33 @@ export function ProductMenu({
     {
       icon: Icon1,
       iconA: Icon1A,
-      title: "Clique AW",
-      link: "https://awns.stp.network/",
-      text: "Solutions platform for building on-chain worlds unique to any AW project.",
+      title: "L3 on Base (Coming Soon)",
+      link: "",
+      text: "",
     },
     {
       icon: Icon2,
       iconA: Icon2A,
-      title: "Clique Network",
-      link: "https://www.myclique.io/governance",
-      text: "Collaborative governance tool for planning and building worlds with no code and gas.",
+      title: "Game Portal",
+      link: "",
+      route:'/gamePortal',
+      text: "",
     },
     {
       icon: Icon3,
       iconA: Icon3A,
-      title: "Clique Social",
+      title: "Developer Engine (Coming Soon)",
+      link: "",
+      text: "",
+    },
+    {
+      icon: Icon4,
+      iconA: Icon4A,
+      title: "Community",
       link: "",
       route:'/cliqueSocial',
-      text: "Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and Telegram.",
+      text: "",
     },
-    // {
-    //   icon: IconDapp,
-    //   title: "Clique Tools",
-    //   link: "",
-    //   text: "Scale your DAO with the various tools and infrastructure on our platform. Become part of our ecosystem by integrating your DApp with Clique",
-    // },
-
   ];
 
   return (
@@ -406,9 +411,9 @@ const Header: React.FC = () => {
         className="header"
         ref={headerRef}
         style={{
-          background: currentPath.pathname.includes("ecosystem") || currentPath.pathname.includes("cliqueSocial")
+          background: currentPath.pathname.includes("ecosystem")
             ? "#2524de"
-            : "transparent",
+            : "#000228",
           color: currentPath.pathname.includes("dao")
             ? "#000"
             : "#fff",

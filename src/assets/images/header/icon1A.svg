@@ -1,14 +1,14 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="47.963" height="48" rx="23.9815" fill="url(#paint0_linear_382_3499)"/>
-<path d="M14 18C14 16.8954 14.8954 16 16 16H32C33.1046 16 34 16.8954 34 18V20H14V18Z" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M34 20H14V32C14 33.1046 14.8954 34 16 34H32C33.1046 34 34 33.1046 34 32V20Z" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M24 14V17" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M29 14V17" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M19 14V17" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M17 24L19 26L22 23" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M26 24L28 26L31 23" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M26 29L28 31L31 28" stroke="#0049C6" stroke-linejoin="round"/>
-<path d="M17 30H22" stroke="#0049C6" stroke-linejoin="round"/>
+<circle cx="24" cy="24" r="3" stroke="#0049C6" stroke-linejoin="round"/>
+<circle cx="15.5" cy="15.5" r="1.5" stroke="#0049C6" stroke-linejoin="round"/>
+<path d="M33.4142 22.5858C34.1953 23.3668 34.1953 24.6332 33.4142 25.4142C32.6332 26.1953 31.3668 26.1953 30.5858 25.4142C29.8047 24.6332 29.8047 23.3668 30.5858 22.5858C31.3668 21.8047 32.6332 21.8047 33.4142 22.5858Z" stroke="#0049C6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="16" cy="32" r="2" stroke="#0049C6" stroke-linejoin="round"/>
+<path d="M26.0686 16.5181C25.7828 15.4512 26.4159 14.3545 27.4829 14.0686C28.5498 13.7828 29.6465 14.4159 29.9323 15.4829C30.2182 16.5498 29.5851 17.6465 28.5181 17.9323C27.4512 18.2182 26.3545 17.5851 26.0686 16.5181Z" stroke="#0049C6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29.8284 24L27 24" stroke="#0049C6" stroke-linejoin="round"/>
+<path d="M16.7031 16.7031L21.7031 21.7031" stroke="#0049C6" stroke-linejoin="round"/>
+<path d="M22 26.1875L17.5 30.5" stroke="#0049C6" stroke-linejoin="round"/>
+<path d="M25 21L26.9999 18" stroke="#0049C6" stroke-linejoin="round"/>
 <defs>
 <linearGradient id="paint0_linear_382_3499" x1="23.9815" y1="0" x2="23.9815" y2="48" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>

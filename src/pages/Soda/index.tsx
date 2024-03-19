@@ -5,10 +5,6 @@ import {
   HeadH1,
   Box1,
   CliqueContentTitle,
-  // Box3,
-  // Box3CardBlue,
-  // Box3CardPink,
-  // Box3CardTxt,
   blinkAnimation,
   Footer
 } from "../Home/homepage";
@@ -29,6 +25,9 @@ import star from "../../assets/images/soda/star.png"
 import greenStar from "../../assets/images/soda/greenStar.svg"
 import comingsoon from "../../assets/images/soda/comingsoon.png"
 import closeIcon from "../../assets/images/soda/Close.svg"
+import section1 from '../../assets/images/soda/section1.png'
+import section2 from '../../assets/images/soda/section2.png'
+import section4 from '../../assets/images/home/Homepage6.png'
 
 const style = {
   position: 'absolute',
@@ -71,51 +70,77 @@ const HeadTitle = styled.div`
 
 const CenterBox = styled.div`
   position: relative;
-  height: 620px;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 20px;
   padding-top: 6px;
   text-align: center;
-  background-image: url(${homeImg62});
+  /* background-image: url(${homeImg62}); */
   background-repeat: no-repeat;
   background-position: center top;
   @media (max-width: 767px) {
     flex-direction: column;
-    height: 760px;
+    height: auto;
+    margin-top: 0;
   }
 `
 const SocialBox = styled.div`
-  width: 540px;
+  width: 468px;
   height: 500px;
   margin: 0 10px;
   padding: 24px;
-  border-radius: 10px;
-  border: 1px solid rgba(54, 114, 231, 1);
-  background: rgba(31, 50, 220, 0.5);
-   &:hover {
-    border-color: rgba(167, 244, 106, 1);
-    box-shadow: 0px 4px 60px 0px rgba(14, 14, 172, 1);
+  border-right: 1px solid #363636;
+  &:last-of-type {
+    border-right: none;
+  }
+  position: relative;
+   &:hover::before {
+     content: "";
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background-color: rgba(35, 74, 152, 1);
+      border-radius: 50%;
+      z-index: 1;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      filter: blur(40px);
+      box-shadow: 20px -20px 20px 20px #002675;
    }
    @media (max-width: 767px) {
     width: 88%;
     height: auto;
     margin: 10px auto;
+    border-right: none;
   }
 `
+const SocialContent = styled.div`
+   position: relative;
+    z-index: 2;
+`
 const SocialTitle = styled.div`
+  margin-bottom: 10px;
   font-size: 32px;
   font-weight: 600;
   color: #fff;
   letter-spacing: 2px;
+  @media (max-width: 767px) {
+    font-size: 28px;
+  }
 `
 const SocialCover = styled.img`
-  width: 80%;
+  height: 292px;
+  margin: 10px 0 20px 0;
 `
 const SocialCover2 = styled.img`
   width: auto;
   height: 292px;
+  margin: 10px 0 20px 0;
   @media (max-width: 767px) {
     width: 62%;
     height: auto;
@@ -127,9 +152,9 @@ const SocialTxt = styled.div`
   font-size: 24px;
   font-weight: 400;
   line-height: 40px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-align: center;
-  color: #fff;
+  color: #B2B2B2;
 `
 const CenterBtn = styled.div`
   position: absolute;
@@ -153,7 +178,7 @@ const GreenBtn = styled(Button)`
   line-height: 24px;
   gap: 8px;
   background: #a7f46a;
-  border-radius: 8px;
+  border-radius: 24px;
   text-transform: none;
   color: rgba(35, 38, 47, 1);
   cursor: pointer;
@@ -235,13 +260,14 @@ const FeaturesMain = styled.div`
 `
 const FeaturesMainImg = styled.img`
   width: 100%;
+  width: 48px;
   @media (max-width: 767px) {
-    width: 100px;
+    width: 48px;
     height: auto;
     margin: auto;
   }
 `
-export const Box3 = styled.div<{isMargin: boolean}>`
+export const Box3 = styled.div<{ isMargin: boolean }>`
   width: 1440px;
   display: flex;
   flex-wrap: wrap;
@@ -251,7 +277,7 @@ export const Box3 = styled.div<{isMargin: boolean}>`
     width: 100%;
     flex-direction: column;
     padding: 20px 20px 10px 20px;
-    margin-top: ${props => props.isMargin?'30px':'0'};
+    margin-top: ${props => props.isMargin ? '30px' : '0'};
   }
 `
 export const Box3Card = styled.div`
@@ -330,54 +356,233 @@ const ComingSoonTxt = styled.p`
   font-weight: 600;
   font-size: 20px;
 `
+const Section1 = styled.div`
+  width: 100%;
+  background: url(${section1}) no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-height: 520px;
+  @media (max-width: 767px) {
+    background-size: 200%;
+    min-height: 320px;
+  }
+`
+const Section1Title = styled.div`
+  width: 377px;
+  margin: auto;
+  padding-top: 130px;
+  font-family: Inter;
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media (max-width: 767px) {
+    padding-top: 90px;
+    font-size: 36px;
+    width: 100%;
+  }
+`
+const Section2 = styled.div`
+  margin-top: -140px;
+`
+const Section2Title = styled.div`
+  width: 450px;
+  margin: auto;
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -0.2px;
+  text-align: center;
+  background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media (max-width: 767px) {
+    padding-top: 90px;
+    font-size: 32px;
+  }
+`
+const Section2Img = styled.img`
+  margin-top: -40px;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+`
+const Section3 = styled.div`
+  
+`
+const Section3Title = styled.div`
+  width: 450px;
+  margin: auto;
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -0.2px;
+  text-align: center;
+  background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @media (max-width: 767px) {
+    padding-top: 90px;
+    font-size: 32px;
+    width: 212px;
+  }
+`
+const Section4 = styled.div`
+  width: 100%;
+  height: 886px;
+  background: url(${section4}) no-repeat;
+  background-size: contain;
+  background-position: center 100%;
+  @media (max-width: 767px) {
+    background-size: 200%;
+    height: auto;
+  }
+`
+const Section4Title = styled.div`
+  width: 450px;
+  margin: auto;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -0.2px;
+  text-align: center;
+  background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+const Section4Main = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 900px;
+  margin: 24px auto;
+  gap: 48px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 24px;
+  }
+`
+const Section4Card = styled.div`
+  /* width: 50%; */
+  min-width: 415px;
+  flex: 1;
+  margin-bottom: 16px;
+  padding: 0 0 24px 0;
+  border-left: 1px solid #363636;
+  &:hover {
+    background: linear-gradient(180deg, rgba(3, 0, 20, 0) 5.9%, #0049C6 124.43%, #0049C6 155.23%);
+    &>:first-child {
+      border-left: 1px solid #fff;
+    }
+  }
+  @media (max-width: 767px) {
+    min-width: 90%;
+    max-width: 100%;
+  }
+`
+const CardImgBox = styled.div`
+  padding-top: 20px;
+  padding-left: 24px;
+  padding-bottom: 20px;
+`
+const CardTitle = styled.div`
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+  padding-left: 24px;
+  margin: 16px 0;
+  color: #fff;
+`
+const CardTxt = styled.div`
+  padding: 0 24px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #B2B2B2;
+`
 export default function Soda() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      {/* <Modal open={isModalOpen} title="Coming Soon" onClose={() => setIsModalOpen(false)} >
-        <Box sx={{ ...style }}>
-          <CloseBox>
-            <Close src={closeIcon} onClick={() => setIsModalOpen(false)}></Close>
-          </CloseBox>
-          <ComingSoonBox>
-            <img src={comingsoon}></img>
-            <ComingSoonTxt>Coming Soon...</ComingSoonTxt>
-          </ComingSoonBox>
-        </Box>
-      </Modal> */}
       <ContentWrapper>
-        <HeadBox2 style={{ height: 'auto', background: "#2524de" }}>
-          <HeadTitle>Clique Social</HeadTitle>
-          {/* <HeadText>
-            Power DAOs and NFTs with social tooling integrated on Twitter and Facebook
-          </HeadText> */}
+        <Section1>
+          <Section1Title>Community</Section1Title>
+        </Section1>
+        <Section2>
+          <Section2Title>Community Activity</Section2Title>
+          <Section2Img src={section2}></Section2Img>
+        </Section2>
+        <Section3>
+          <Section3Title>Social Tooling</Section3Title>
           <CenterBox>
             <SocialBox>
-              <SocialTitle>Soda</SocialTitle>
-              <SocialCover src={s1}></SocialCover>
-              <SocialTxt>Chrome extension</SocialTxt>
-              <GreenBtn onClick={() => window.open('https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi')}>Install <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+              <SocialContent>
+                <SocialTitle>Soda</SocialTitle>
+                <SocialCover src={s1}></SocialCover>
+                <SocialTxt>Chrome extension</SocialTxt>
+                <GreenBtn onClick={() => window.open('https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi')}>Install </GreenBtn>
+              </SocialContent>
             </SocialBox>
             <SocialBox>
-              <SocialTitle>Soton</SocialTitle>
-              <SocialCover2 src={s2}></SocialCover2>
-              <SocialTxt>Telegram bot</SocialTxt>
-              <GreenBtn onClick={() => window.open('https://t.me/Web3SotonBot')}>Install <ArrowOutwardIcon style={{ color: "#23262F" }} /></GreenBtn>
+              <SocialContent>
+                <SocialTitle>Soton</SocialTitle>
+                <SocialCover src={s2}></SocialCover>
+                <SocialTxt>Telegram bot</SocialTxt>
+                <GreenBtn onClick={() => window.open('https://t.me/Web3SotonBot')}>Install </GreenBtn>
+              </SocialContent>
             </SocialBox>
           </CenterBox>
-        </HeadBox2>
-        <Features>
-          <StarImg src={star}></StarImg>
-          <Box1>
-            <GreenStarImg src={greenStar}></GreenStarImg>
-            <CliqueContentTitle>Features</CliqueContentTitle>
-          </Box1>
+        </Section3>
+        <Section4>
+          <Section4Title>Features</Section4Title>
+          <Section4Main>
+            <Section4Card>
+              <CardImgBox>
+                <FeaturesMainImg src={f1}></FeaturesMainImg>
+              </CardImgBox>
+              <CardTitle>Mint</CardTitle>
+              <CardTxt>Instantly create NFTs from any image or social media post with just a few clicks. Our platform simplifies your minting process.</CardTxt>
+            </Section4Card>
+            <Section4Card>
+              <CardImgBox>
+                <FeaturesMainImg src={f2}></FeaturesMainImg>
+              </CardImgBox>
+              <CardTitle>Share</CardTitle>
+              <CardTxt>Seamlessly share your NFTs on social media from your Soda wallet. Connect and impress audiences worldwide with ease.</CardTxt>
+            </Section4Card>
+            <Section4Card>
+              <CardImgBox>
+                <FeaturesMainImg src={f3}></FeaturesMainImg>
+              </CardImgBox>
+              <CardTitle>Governance</CardTitle>
+              <CardTxt>Quickly set up DAO proposals and enable NFT-based voting directly on socials such as Telegram.Streamline community engagement and decision-making.</CardTxt>
+            </Section4Card>
+            <Section4Card>
+              <CardImgBox>
+                <FeaturesMainImg src={f4}></FeaturesMainImg>
+              </CardImgBox>
+              <CardTitle>Launchpad</CardTitle>
+              <CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards directly on socials.</CardTxt>
+            </Section4Card>
+          </Section4Main>
+        </Section4>
+        {/* <Features>
+          <CliqueContentTitle>Features</CliqueContentTitle>
           <Box3 isMargin={false}>
             <Box3CardPink>
+              <FeaturesMainImg src={f1}></FeaturesMainImg>
               <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Mint</FeaturesCardTitle>
               <FeaturesMain>
-                <FeaturesMainImg src={f1}></FeaturesMainImg>
                 <Box3CardTxt>Instantly create NFTs from any image or social media post with just a few clicks. Our platform simplifies your minting process.</Box3CardTxt>
               </FeaturesMain>
             </Box3CardPink>
@@ -404,7 +609,7 @@ export default function Soda() {
             </Box3CardPink2>
           </Box3>
           <BigStar src={homeImg62}></BigStar>
-        </Features>
+        </Features> */}
         <Footer />
       </ContentWrapper>
     </>
