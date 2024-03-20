@@ -117,6 +117,10 @@ const SocialBox = styled.div`
     height: auto;
     margin: 10px auto;
     border-right: none;
+    border-bottom: 1px solid #363636;
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 `
 const SocialContent = styled.div`
@@ -376,10 +380,10 @@ const Section1Title = styled.div`
   font-weight: 600;
   letter-spacing: 0em;
   text-align: center;
-  /* background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%); */
-  background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
+  color: #B2B2B2;
+  /* background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   @media (max-width: 767px) {
     padding-top: 90px;
     font-size: 36px;
@@ -419,6 +423,7 @@ const Section2Img = styled.img`
   }
 `
 const JoinBtn = styled(GreenBtn)`
+  margin-top: -60px;
   background: #0049C6;
   color: #fff;
 `
@@ -530,7 +535,7 @@ export default function Soda() {
           <Section1Title>Community</Section1Title>
         </Section1>
         <Section2>
-          <Section2Title>Community Activity</Section2Title>
+          <Section2Title>Social and DAOs</Section2Title>
           <Section2Img src={section2}></Section2Img>
           <JoinBtn onClick={()=>window.open('https://www.myclique.io/daos')}>Join Community</JoinBtn>
         </Section2>
@@ -576,14 +581,14 @@ export default function Soda() {
               <CardImgBox>
                 <FeaturesMainImg src={f3}></FeaturesMainImg>
               </CardImgBox>
-              <CardTitle>Governance</CardTitle>
+              <CardTitle>DAO Management</CardTitle>
               <CardTxt>Quickly set up DAO proposals and enable NFT-based voting directly on socials such as Telegram.Streamline community engagement and decision-making.</CardTxt>
             </Section4Card>
             <Section4Card>
               <CardImgBox>
                 <FeaturesMainImg src={f4}></FeaturesMainImg>
               </CardImgBox>
-              <CardTitle>Launchpad</CardTitle>
+              <CardTitle>IDO</CardTitle>
               <CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards directly on socials.</CardTxt>
             </Section4Card>
           </Section4Main>

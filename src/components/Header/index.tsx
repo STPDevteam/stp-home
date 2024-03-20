@@ -134,8 +134,8 @@ export function ProductMenu({
       icon: Icon2,
       iconA: Icon2A,
       title: "Game Portal",
-      link: "",
-      route:'/gamePortal',
+      link: "https://awns.stp.network/",
+      route:'',
       text: "",
     },
     {
@@ -299,7 +299,7 @@ export const MenuList: {
       link: "/",
     },
     {
-      title: "Products",
+      title: "Clique",
       subtitle: <ProductMenu />,
     },
     // {
@@ -448,7 +448,7 @@ const Header: React.FC = () => {
               }}
             >
               <a>
-                Products
+                Clique
                 <Arrow />
               </a>
             </Dropdown>

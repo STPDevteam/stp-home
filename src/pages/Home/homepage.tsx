@@ -149,9 +149,9 @@ import s4Icon7 from "../../assets/images/home/s4Icon7.jpg"
 import s4Icon8 from "../../assets/images/home/s4Icon8.jpg"
 import s4Icon9 from "../../assets/images/home/s4Icon9.jpg"
 import section5 from "../../assets/images/home/Homepage5.png"
-import s5Game1 from "../../assets/images/home/game1.svg"
-import s5Game2 from "../../assets/images/home/game2.svg"
-import s5Game3 from "../../assets/images/home/game3.svg"
+import s5Game1 from "../../assets/images/home/gameCover1.png"
+import s5Game2 from "../../assets/images/home/gameCover2.png"
+import s5Game3 from "../../assets/images/home/gameCover3.png"
 import s5GameLogo1 from "../../assets/images/home/gameLogo1.svg"
 import s5GameLogo2 from "../../assets/images/home/gameLogo2.svg"
 import s5GameLogo3 from "../../assets/images/home/gameLogo3.svg"
@@ -563,6 +563,8 @@ const HeadStart = styled.img`
   opacity: 0.6;
 `
 export const HeadH1 = styled(Typography)`
+  width: 660px;
+  margin: auto;
   font-family: Inter;
   font-size: 64px;
   font-weight: 600;
@@ -572,7 +574,11 @@ export const HeadH1 = styled(Typography)`
   padding-top: 280px;
   color: #ffffff;
   text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
+    width: 100%;
     padding-top: 150px;
     padding-left: 0px;
     font-size: 32px;
@@ -780,7 +786,7 @@ const IdentityIcons = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 120px;
+  margin-top: 200px;
   margin-left: 20px;
   color: #fff;
   @media (max-width: 767px) {
@@ -840,7 +846,7 @@ const Identity2Box = styled.div`
   align-items: center;
   /* background: #1b1aff; */
   background: url(${section3}) no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   @media (max-width: 767px) {
     flex-direction: column;
@@ -1874,7 +1880,7 @@ const CliqueBox2TxtH5 = styled.div`
   }
 `
 const CliqueInfrastructure = styled.div`
-  width: 1200px;
+  width: 1000px;
   margin: -140px auto 40px auto;
   @media (max-width: 767px) {
     width: 100%;
@@ -1908,7 +1914,7 @@ const InfrastructureMainBox1 = styled.div`
   position: relative;
   flex: 1;
   height: auto;
-  min-height: 400px;
+  min-height: 330px;
   padding: 20px 0px 0 0px;
   border-radius: 24px;   
   border: 1px solid #FFFFFF14;
@@ -1923,7 +1929,7 @@ const InfrastructureMainBox1 = styled.div`
 `
 const InfrastructureMainBox1H = styled.div`
   margin-bottom: 8px;
-  padding: 10px 30px 0 30px;
+  padding: 0px 30px 0 30px;
   font-family: Inter;
   font-size: 32px;
   font-weight: 500;
@@ -1939,9 +1945,9 @@ const InfrastructureMainBox1T = styled.div`
   /* margin-bottom: 20px; */
   padding: 10px 30px 0 30px;
   font-family: Inter;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 27px;
+  line-height: 22px;
   letter-spacing: 0em;
   color: #A9A9A9;
   @media (max-width: 767px) {
@@ -1960,7 +1966,7 @@ const InfrastructureMainBox2 = styled.div`
   position: relative;
   flex: 2;
   height: auto;
-  min-height: 400px;
+  /* min-height: 400px; */
   padding: 20px 0px 0 0px;
   border-radius: 24px;   
   border: 1px solid #FFFFFF14;
@@ -1973,7 +1979,7 @@ const InfrastructureMainBox2 = styled.div`
   }
 `
 const CliqueApplications = styled.div`
-  width: 1200px;
+  width: 1000px;
   margin: 10px auto 40px auto;
   @media (max-width: 767px) {
     width: 100%;
@@ -2931,7 +2937,7 @@ const EcoButton = styled(Button)`
 const GameLearnMore = styled(GreenBtn)`
   position: absolute;
   right: 40px;
-  top: 24px;
+  top: 20px;
   z-index: 9;
   margin: 0;
   height: 30px;
@@ -3002,13 +3008,25 @@ const SwiperGameBig = styled(Swiper)`
 `
 const SwiperSlideBig = styled(SwiperSlide)`
   position: relative;
-`
-const GameImgBig = styled.img`
+  border: 16px solid #363636;
+  border-radius: 54px;
   width: 800px;
   height: 450px;
+  overflow: hidden;
+  @media screen and (max-width: 767px) {
+    border: 8px solid #363636;
+    border-radius: 24px;
+    width: 100%;
+    height: 186px;
+  }
+`
+const GameImgBig = styled.img`
+  /* width: 800px;
+  height: 450px; */
+  width: 100%;
    @media screen and (max-width: 767px) {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 `
 const GameImgBigMask = styled.div`
@@ -3040,12 +3058,13 @@ const MaskName = styled.div`
   }
 `
 const MaskLogo = styled.img`
+  width: 32px;
   @media screen and (max-width: 767px) {
     width: 24px;
   }
 `
 const MaskDes = styled.div`
-  margin-top: 2px;
+  margin-top: 8px;
   padding-left: 40px;
   font-family: Inter;
   font-size: 16px;
@@ -3056,10 +3075,16 @@ const MaskDes = styled.div`
    @media screen and (max-width: 767px) {
     font-size: 14px;
     padding-left: 30px;
+    margin-top: 2px;
   }
 `
 const GameImgSmallBox = styled.div<{active:boolean}>`
   position: relative;
+  border: 8px solid #363636;
+  border-radius: 24px;
+  width: 240px;
+  height: 135px;
+  overflow: hidden;
   & > div {
     display: ${props =>props.active?'none': 'block' };
   }
@@ -3074,8 +3099,7 @@ const GameImgSmallMask = styled.div`
   border-radius: 16px;
 `
 const GameImgSmall = styled.img`
-  width: 240px;
-  height: 135px;
+  width: 100%;
 `
 
 function Ecosystem() {
@@ -3088,25 +3112,26 @@ function Ecosystem() {
   const Games = [
     {
       src: s5Game1,
-      logo: s5GameLogo1,
-      name: 'Eternal Legacy',
-      des: 'A New Era of AI Enhanced Gaming',
-      link: ''
-    },
-    {
-      src: s5Game2,
       logo: s5GameLogo2,
       name: 'Ancient Forest',
-      des: '',
+      des: 'Survive a story-based onchain game revolving around resource gathering and base building!',
       link: 'https://ancientforest.xyz/'
     },
     {
-      src: s5Game3,
+      src: s5Game2,
       logo: s5GameLogo3,
       name: 'Dice Game',
       des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
       link: 'https://lootdice.xyz/'
-    }
+    },
+    {
+      src: s5Game3,
+      logo: s5GameLogo1,
+      name: 'Eternal Legacy',
+      des: 'Overcome blistering obstacles to create and build your deck, it’s now or never!',
+      link: ''
+    },
+   
   ]
   const PartnersLogos = [
     hypr,
@@ -3551,11 +3576,11 @@ function BuildWithUs() {
     <BuildBox>
       <BuildH1>Build with Us</BuildH1>
       <BuildContent>
-      Explore partnership and integration possibilities for your project.
+      Join us on the journey towards truly immersive, AI-driven worlds in the next era of gaming.
       </BuildContent>
       <GreenBtn style={{ marginTop: "24px",marginBottom: "64px"  }}>
         <a
-          href="mailto:contact@stp.network"
+          href="mailto:jeff@stp.network"
           target="_blank"
           style={{
             display: "flex",
@@ -3635,7 +3660,7 @@ const DownloadA = styled.a`
   }
 `
 
-const SocialMedia = styled.img`
+export const SocialMedia = styled.img`
   width: 20px;
   height: 20px;
 `;
@@ -3657,7 +3682,7 @@ export function Footer() {
     [
       "Clique",
       "",
-      "https://test-stp-home.netlify.app/gamePortal",
+      "https://awns.stp.network/",
       "",
       "https://www.stp.network/cliqueSocial"
     ],
