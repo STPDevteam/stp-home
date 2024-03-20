@@ -3594,7 +3594,8 @@ function BuildWithUs() {
             zIndex: 1,
           }}
         >
-          Contact <ArrowOutwardIcon style={{ marginLeft: "8px" }} />
+          Contact
+           {/* <ArrowOutwardIcon style={{ marginLeft: "8px" }} /> */}
         </a>
       </GreenBtn>
       {/* <img
