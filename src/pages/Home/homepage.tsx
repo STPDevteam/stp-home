@@ -318,13 +318,14 @@ class Orb {
     const xNoise = simplex.noise2D(this.xOff, this.xOff);
     const yNoise = simplex.noise2D(this.yOff, this.yOff);
     const scaleNoise = simplex.noise2D(this.xOff, this.yOff);
-
+    // console.log(scaleNoise);
+    
     // map the xNoise/yNoise values (between -1 and 1) to a point within the orb's bounds
     this.x = map(xNoise, -1, 1, this.bounds["x"].min, this.bounds["x"].max);
     this.y = map(yNoise, -1, 1, this.bounds["y"].min, this.bounds["y"].max);
     // map scaleNoise (between -1 and 1) to a scale value somewhere between half of the orb's original size, and 100% of it's original size
     this.scale = map(scaleNoise, -1, 1, 0.5, 1);
-
+    // console.log(this.scale);
     // step through "time"
     this.xOff += this.inc;
     this.yOff += this.inc;
@@ -347,10 +348,10 @@ class Orb {
     this.graphics.endFill();
   }
 }
-
 let itl = setInterval(() => {
   let box = document.getElementById('orb-canvas')
   if (box) {
+    
     clearInterval(itl);
     // Create PixiJS app
     const app = new PIXI.Application({
@@ -393,8 +394,7 @@ let itl = setInterval(() => {
       });
     }
   }
-}, 200)
-
+}, 2000)
 
 
 export const blinkAnimation = keyframes`
@@ -838,7 +838,7 @@ const IconName = styled.div`
 `
 const Identity2Box = styled.div`
   /* max-width: 1440px; */
-  margin: 200px auto 100px;
+  margin: 200px auto 0px;
   padding-bottom: 30px;
   display: flex;
   flex-direction: column;
@@ -1824,6 +1824,8 @@ const CliqueBox2 = styled.div`
   }
 `
 const CliqueBox2Logo = styled.img`
+  margin-top: 40px;
+  width: 365px;
    @media (max-width: 767px) {
     width: 60%;
   }
@@ -1840,6 +1842,7 @@ const CliqueBox2Title = styled.div`
   color: #fff;
   @media (max-width: 767px) {
     margin-top: 200px;
+    margin-bottom: 16px;
     font-size: 24px;
     line-height: 32px;
     padding: 0 24px;
@@ -3035,7 +3038,7 @@ const GameImgBigMask = styled.div`
   left: 0;
   width: 100%;
   height: 124px;
-  padding: 20px 40px;
+  padding: 20px 24px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   background: #0000004D;
@@ -3065,7 +3068,7 @@ const MaskLogo = styled.img`
 `
 const MaskDes = styled.div`
   margin-top: 8px;
-  padding-left: 40px;
+  padding-left: 38px;
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -3121,7 +3124,7 @@ function Ecosystem() {
       src: s5Game2,
       logo: s5GameLogo3,
       name: 'Dice Game',
-      des: 'Simple Fun dice rolling game, complete 6 moves to get a bonus, good luck!',
+      des: 'Simple yet extremely fun dice-rolling game, complete 6 rolls to get a bonus or reward!',
       link: 'https://lootdice.xyz/'
     },
     {
@@ -3684,7 +3687,8 @@ export function Footer() {
       "",
       "https://awns.stp.network/",
       "",
-      "https://www.stp.network/cliqueSocial"
+      // "https://www.stp.network/cliqueSocial"
+      "https://test-stp-home.netlify.app/cliqueSocial"
     ],
     [
       "Resources",

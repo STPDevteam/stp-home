@@ -149,8 +149,8 @@ export function ProductMenu({
       icon: Icon4,
       iconA: Icon4A,
       title: "Community",
-      link: "",
-      route:'/cliqueSocial',
+      link: "https://test-stp-home.netlify.app/cliqueSocial",
+      // route:'/cliqueSocial',
       text: "",
     },
   ];

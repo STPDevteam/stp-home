@@ -26,7 +26,7 @@ import greenStar from "../../assets/images/soda/greenStar.svg"
 import comingsoon from "../../assets/images/soda/comingsoon.png"
 import closeIcon from "../../assets/images/soda/Close.svg"
 import section1 from '../../assets/images/soda/section1.png'
-import section2 from '../../assets/images/soda/section2.svg'
+import section2 from '../../assets/images/soda/section2.png'
 import section4 from '../../assets/images/home/Homepage6.png'
 
 const style = {
@@ -418,6 +418,7 @@ const Section2Title = styled.div`
 `
 const Section2Img = styled.img`
   margin-top: -40px;
+  width: 1000px;
   @media (max-width: 767px) {
     width: 100%;
   }
