@@ -72,7 +72,7 @@ const Footer: React.FC = () =>  {
                     <a target="_blank" href={WechatQR}><Wechat/><span>Wechat</span></a>
                 </li>
                 <li>
-                    <a href="mailto:contact@stp.network"><Email/><span>Email</span></a>
+                    <a href="mailto:jeff@stp.network"><Email/><span>Email</span></a>
                 </li>
             </ul>
         </div>

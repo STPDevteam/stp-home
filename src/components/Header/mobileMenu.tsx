@@ -127,7 +127,7 @@ export default function MobileMenu({
         />
         <SocialMedia
           src={Email}
-          onClick={() => window.open("mailto:contact@stp.network", "_blank")}
+          onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
         />
       </Box>
       </MenuBox>

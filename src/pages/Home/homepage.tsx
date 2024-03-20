@@ -3826,7 +3826,7 @@ export function Footer() {
         />
         <SocialMedia
           src={Email}
-          onClick={() => window.open("mailto:contact@stp.network", "_blank")}
+          onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
         />
       </Box>
       {isDownSm ? (
@@ -4045,7 +4045,7 @@ export function Footer2() {
         />
         <SocialMedia
           src={Email}
-          onClick={() => window.open("mailto:contact@stp.network", "_blank")}
+          onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
         />
       </Box>
       {isDownSm ? (

@@ -849,7 +849,7 @@ const Home: React.FC = () =>  {
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a href="mailto:contact@stp.network">
+                <a href="mailto:jeff@stp.network">
                     Build with STP
                 </a>
             </Menu.Item>
@@ -1246,7 +1246,7 @@ const Home: React.FC = () =>  {
                             <p>
                             Explore partnership and integration possibilities for your project with Verse.
                             </p>
-                            <Button type="primary"><a href="mailto:contact@stp.network">Contact</a></Button>
+                            <Button type="primary"><a href="mailto:jeff@stp.network">Contact</a></Button>
                         </div>
                     </div>
                 </NinthContent>  
