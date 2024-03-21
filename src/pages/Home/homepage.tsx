@@ -3750,8 +3750,8 @@ export function Footer() {
       "https://explorer.myclique.io/",
       "https://awns.stp.network/",
       "",
-      // "https://www.stp.network/cliqueSocial"
-      "https://test-stp-home.netlify.app/cliqueSocial"
+      "https://www.stp.network/cliqueSocial"
+      // "https://test-stp-home.netlify.app/cliqueSocial"
     ],
     [
       "Resources",
