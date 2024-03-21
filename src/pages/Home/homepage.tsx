@@ -3891,7 +3891,7 @@ export function Footer() {
           onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
         />
       </Box>
-      {isDownSm ? (
+      {/* {isDownSm ? (
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -3907,7 +3907,7 @@ export function Footer() {
         </Box>
       ) : (
         ""
-      )}
+      )} */}
     </FooterBox>
   );
 }
