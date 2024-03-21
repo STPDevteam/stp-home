@@ -728,7 +728,7 @@ function Head() {
         Our mission is to pioneer the advancement of AI in gaming
       </HeadText>
       <HeadBtns>
-        {/* <GreenBtn onClick={() => { window.open('https://www.myclique.io/daos', '_blank') }}> Build on Clique </GreenBtn> */}
+        <GreenBtn onClick={() => { window.open('https://explorer.myclique.io/', '_blank') }}> Build on Clique </GreenBtn>
         <AwnsBtn2 onClick={() => { window.open('https://awns.stp.network/', '_blank') }}> Create an AWNS </AwnsBtn2>
       </HeadBtns>
     </HeadBox>
@@ -3779,7 +3779,7 @@ export function Footer() {
         <img src={StpLogo} alt="" />
         <BlueButton
           onClick={() =>
-            window.open("https://www.myclique.io/daos", "_blank")
+            window.open("https://explorer.myclique.io/", "_blank")
           }
         >
           Build on Clique

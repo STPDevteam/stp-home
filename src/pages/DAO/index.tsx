@@ -1089,7 +1089,7 @@ const Home: React.FC = () =>  {
                 </a>
             </Menu.Item>
             <Menu.Item>
-                <a href="mailto:contact@stp.network">
+                <a href="mailto:jeff@stp.network">
                     Build with STP
                 </a>
             </Menu.Item>

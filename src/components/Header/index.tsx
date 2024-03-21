@@ -126,8 +126,8 @@ export function ProductMenu({
     {
       icon: Icon1,
       iconA: Icon1A,
-      title: "L3 on Base (Coming Soon)",
-      link: "",
+      title: "L3 on Base",
+      link: "https://explorer.myclique.io/",
       text: "",
     },
     {
@@ -472,15 +472,15 @@ const Header: React.FC = () => {
           </nav>
          
         </CSSTransition>
-        {/* <GreenBtn
+        <GreenBtn
           className="BuildDao"
           onClick={() =>
-            window.open("https://www.myclique.io/daos", "_blank")
+            window.open("https://explorer.myclique.io/", "_blank")
           }
         >
          Build on Clique 
-         <ArrowOutwardIcon style={{ color: "#23262F" }} />
-        </GreenBtn> */}
+         {/* <ArrowOutwardIcon style={{ color: "#23262F" }} /> */}
+        </GreenBtn>
         <button
           onClick={() => {
             setMobileMenuOpen((prevState) => !prevState);
