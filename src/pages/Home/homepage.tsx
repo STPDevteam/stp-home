@@ -545,6 +545,7 @@ const BoxFixed = styled(Box)`
 `
 const SocialMediaFixed = styled.img`
   width: 28px;
+  height: 28px;
   cursor: pointer;
 `
 export function OpenIconSpeedDial() {
