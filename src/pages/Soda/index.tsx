@@ -6,7 +6,8 @@ import {
   Box1,
   CliqueContentTitle,
   blinkAnimation,
-  Footer
+  Footer,
+  OpenIconSpeedDial
 } from "../Home/homepage";
 import styled from 'styled-components';
 import { Button, Typography, Box } from '@mui/material'
@@ -391,7 +392,7 @@ const Section1Title = styled.div`
   }
 `
 const Section2 = styled.div`
-  margin-top: -140px;
+  margin-top: -160px;
   padding-bottom: 100px;
   @media (max-width: 767px) {
    padding-bottom: 20px;
@@ -427,6 +428,9 @@ const JoinBtn = styled(GreenBtn)`
   margin-top: -60px;
   background: #0049C6;
   color: #fff;
+  @media (max-width: 767px) {
+      margin-top: -20px;
+  }
 `
 const Section3 = styled.div`
   
@@ -446,7 +450,7 @@ const Section3Title = styled.div`
   @media (max-width: 767px) {
     padding-top: 90px;
     font-size: 32px;
-    width: 212px;
+    width: 280px;
   }
 `
 const Section4 = styled.div`
@@ -629,6 +633,7 @@ export default function Soda() {
           <BigStar src={homeImg62}></BigStar>
         </Features> */}
         <Footer />
+        <OpenIconSpeedDial></OpenIconSpeedDial>
       </ContentWrapper>
     </>
   )

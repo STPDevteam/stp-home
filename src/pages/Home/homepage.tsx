@@ -537,7 +537,7 @@ export default function Homepage() {
 const BoxFixed = styled(Box)`
     position: fixed;
     right: 44px;
-    bottom: 120px;
+    top: 220px;
     z-index: 1999;
     @media (max-width: 767px) {
       display: none;
