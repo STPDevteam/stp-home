@@ -3,6 +3,8 @@ import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
 import styled, { keyframes } from "styled-components";
 import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
 import TopCircle from "../../assets/images/home/svg/header-top-circle.svg";
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
@@ -138,11 +140,12 @@ import section3Icon2 from "../../assets/images/home/sectionIcon2.svg"
 import section3Icon3 from "../../assets/images/home/sectionIcon3.svg"
 import section3 from "../../assets/images/home/Homepage3.png"
 import section4 from "../../assets/images/home/Homepage4.png"
+import section4H5 from "../../assets/images/home/section4H5.jpg"
 import section4Title from "../../assets/images/home/cliqueLogo.svg"
 import s4Icon1 from "../../assets/images/home/s4Icon1.jpg"
 import s4Icon2 from "../../assets/images/home/s4Icon2.jpg"
 import s4Icon3 from "../../assets/images/home/s4Icon3.jpg"
-import s4Icon4 from "../../assets/images/home/s4Icon4.png"
+import s4Icon4 from "../../assets/images/home/s4Icon4.jpg"
 import s4Icon5 from "../../assets/images/home/s4Icon5.png"
 import s4Icon6 from "../../assets/images/home/s4Icon6.jpg"
 import s4Icon7 from "../../assets/images/home/s4Icon7.jpg"
@@ -456,11 +459,15 @@ const Head1 = styled.div`
   background: url(${section1A}) no-repeat;
   background-size: contain;
   background-position: center;
-  @media (max-width: 767px) {
+  @media (max-width: 375px) {
     padding: 24px;
     background-size: 350%;
     height: 100vh;
-    /* max-height: 667px; */
+  }
+   @media (min-width: 376px) and (max-width: 767px) {
+    height: 80vh;
+    background-size: 350%;
+
   }
 `
 const FooterModal = styled.div`
@@ -482,25 +489,17 @@ const BlueLight = styled.img`
   animation: ${blinkAnimation} 5s ease-in-out infinite, ${floatAnimation} 5s infinite alternate ease-in-out,${scale} 2s alternate infinite;
   /* animation:  ${floatAnimation} 3s infinite alternate; */
 `
+
 export default function Homepage() {
-  const shapeStyle: React.CSSProperties = {
-    clipPath: 'polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)'
-  };
-  const shapeStyle2: React.CSSProperties = {
-    clipPath: `polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)`,
-       'offset':'180deg',
-      //  'speed': '6000ms',
-       'background': `linear-gradient(#0e5ee9, #1330db, #0d33d7, #083dad, #152ee8)`
-  };
-  //@ts-ignore
-  function random(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-  //@ts-ignore
-  function map(n, start1, end1, start2, end2) {
-    return ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
-  }
-  // const simplex = new SimplexNoise();
+  // const shapeStyle: React.CSSProperties = {
+  //   clipPath: 'polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)'
+  // };
+  // const shapeStyle2: React.CSSProperties = {
+  //   clipPath: `polygon(50.9% 37.2%, 43.5% 34.7%, 33.6% 26.1%, 39.2% 10.8%, 26.2% 0.0%, 4.8% 6.4%, 0.0% 30.4%, 20.7% 37.2%, 33.4% 26.3%, 43.2% 34.9%, 45.0% 35.6%, 43.6% 46.4%, 37.8% 59.5%, 21.8% 63.2%, 11.7% 76.1%, 22.9% 91.3%, 47.4% 91.3%, 54.0% 79.0%, 38.0% 59.6%, 43.9% 46.4%, 45.2% 35.5%, 50.9% 37.6%, 56.1% 36.8%, 59.8% 47.6%, 70.3% 61.9%, 87.7% 56.0%, 96.4% 37.4%, 88.6% 15.1%, 63.7% 16.7%, 55.2% 33.6%, 55.9% 36.6%, 50.9% 37.2%)`,
+  //      'offset':'180deg',
+  //     //  'speed': '6000ms',
+  //      'background': `linear-gradient(#0e5ee9, #1330db, #0d33d7, #083dad, #152ee8)`
+  // };
 
   useEffect(() => {
 
@@ -531,7 +530,56 @@ export default function Homepage() {
         <BuildWithUs />
         <Footer />
       </FooterModal>
+      <OpenIconSpeedDial></OpenIconSpeedDial>
     </ContentWrapper>
+  );
+}
+const BoxFixed = styled(Box)`
+    position: fixed;
+    right: 44px;
+    bottom: 120px;
+    z-index: 1999;
+    @media (max-width: 767px) {
+      display: none;
+    }
+`
+const SocialMediaFixed = styled.img`
+  width: 28px;
+  cursor: pointer;
+`
+export function OpenIconSpeedDial() {
+  return (
+    <BoxFixed>
+        <Box  sx={{display:'flex',flexDirection:'column', gap:'20px'}}>
+        <SocialMediaFixed
+          src={Tele}
+          onClick={() => window.open("https://t.me/STPofficial", "_blank")}
+        />
+        <SocialMediaFixed
+          src={Twitter}
+          onClick={() =>
+            window.open("https://twitter.com/STP_Network", "_blank")
+          }
+        />
+        <SocialMediaFixed
+          src={Cylinder}
+          onClick={() =>
+            window.open(
+              "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+              "_blank"
+            )
+          }
+        />
+        <SocialMediaFixed
+          src={Wechat}
+          onClick={() => window.open(WechatQR, "_blank")}
+        />
+        <SocialMediaFixed
+          src={Email}
+          onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
+        />
+        </Box>
+    </BoxFixed>
   );
 }
 
@@ -539,19 +587,27 @@ export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
   height: 840px;
-  /* margin: auto; */
-  /* background: url(${section1A}) no-repeat;
-  background-size: contain;
-  background-position: center; */
-  /* opacity: 0.8; */
   z-index: 9;
   @media (min-width: 1440px) {
     height: 1000px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-left: 0px;
     height: 100vh;
-    padding-bottom: 79px;
+    padding-bottom: 0px;
+  }
+  @media (min-width: 376px) and (max-width: 767px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+    height: 80vh;
+    padding-bottom: 0px;
   }
 `;
 const HeadStart = styled.img`
@@ -579,7 +635,8 @@ export const HeadH1 = styled(Typography)`
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
     width: 100%;
-    padding-top: 150px;
+    margin: 0;
+    padding-top: 0px;
     padding-left: 0px;
     font-size: 32px;
     line-height: 38px;
@@ -671,7 +728,7 @@ function Head() {
         Our mission is to pioneer the advancement of AI in gaming
       </HeadText>
       <HeadBtns>
-        <GreenBtn onClick={() => { window.open('https://www.myclique.io/daos', '_blank') }}> Build on Clique </GreenBtn>
+        {/* <GreenBtn onClick={() => { window.open('https://www.myclique.io/daos', '_blank') }}> Build on Clique </GreenBtn> */}
         <AwnsBtn2 onClick={() => { window.open('https://awns.stp.network/', '_blank') }}> Create an AWNS </AwnsBtn2>
       </HeadBtns>
     </HeadBox>
@@ -1819,7 +1876,8 @@ const CliqueBox2 = styled.div`
   text-align: center;
   @media (max-width: 767px) {
     height: auto;
-    background-size: 200%;
+    background: url(${section4H5}) no-repeat;
+    background-size: cover;
     background-position: center 0%;
   }
 `
@@ -1827,7 +1885,8 @@ const CliqueBox2Logo = styled.img`
   margin-top: 40px;
   width: 365px;
    @media (max-width: 767px) {
-    width: 60%;
+    width: 200px;
+    margin-top: 0px;
   }
 `
 const CliqueBox2Title = styled.div`
@@ -1841,14 +1900,14 @@ const CliqueBox2Title = styled.div`
   text-align: center;
   color: #fff;
   @media (max-width: 767px) {
-    margin-top: 200px;
+    margin-top: 160px;
     margin-bottom: 16px;
     font-size: 24px;
     line-height: 32px;
     padding: 0 24px;
   }
    @media screen and (min-width: 376px) and (max-width: 767px) {
-    margin-top: 240px;
+    margin-top: 200px;
 
   }
 `
@@ -1861,10 +1920,11 @@ const CliqueBox2Txt = styled.div`
   text-align: center;
   color: #B2B2B2;
   @media (max-width: 767px) {
-      font-size: 16px;
-      line-height: 1.3;
-      padding: 0 52px;
-      /* display: none; */
+    font-size: 16px;
+    line-height: 1.3;
+    padding: 0 0px;
+    width: 268px;
+    margin: auto;
   }
 `
 const CliqueBox2TxtH5 = styled.div`
@@ -3114,6 +3174,13 @@ function Ecosystem() {
   const [activeIndex,setActiveIndex] = useState(0)
   const Games = [
     {
+      src: s5Game3,
+      logo: s5GameLogo1,
+      name: 'Eternal Legacy',
+      des: 'Overcome blistering obstacles to create and build your deck, it’s now or never!',
+      link: ''
+    },
+    {
       src: s5Game1,
       logo: s5GameLogo2,
       name: 'Ancient Forest',
@@ -3127,13 +3194,7 @@ function Ecosystem() {
       des: 'Simple yet extremely fun dice-rolling game, complete 6 rolls to get a bonus or reward!',
       link: 'https://lootdice.xyz/'
     },
-    {
-      src: s5Game3,
-      logo: s5GameLogo1,
-      name: 'Eternal Legacy',
-      des: 'Overcome blistering obstacles to create and build your deck, it’s now or never!',
-      link: ''
-    },
+    
    
   ]
   const PartnersLogos = [
@@ -3675,7 +3736,7 @@ export function Footer() {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Clique", "L3 on Base (Coming Soon)", "Gaming Portal", "Developer Engine (Coming Soon)","Community"],
+    ["Clique", "L3 on Base", "Gaming Portal", "Developer Engine (Coming Soon)","Community"],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3685,7 +3746,7 @@ export function Footer() {
   const footListLink = [
     [
       "Clique",
-      "",
+      "https://explorer.myclique.io/",
       "https://awns.stp.network/",
       "",
       // "https://www.stp.network/cliqueSocial"

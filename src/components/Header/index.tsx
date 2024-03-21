@@ -472,15 +472,15 @@ const Header: React.FC = () => {
           </nav>
          
         </CSSTransition>
-        <GreenBtn
+        {/* <GreenBtn
           className="BuildDao"
           onClick={() =>
             window.open("https://www.myclique.io/daos", "_blank")
           }
         >
          Build on Clique 
-         {/* <ArrowOutwardIcon style={{ color: "#23262F" }} /> */}
-        </GreenBtn>
+         <ArrowOutwardIcon style={{ color: "#23262F" }} />
+        </GreenBtn> */}
         <button
           onClick={() => {
             setMobileMenuOpen((prevState) => !prevState);
