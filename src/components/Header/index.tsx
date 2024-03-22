@@ -149,8 +149,8 @@ export function ProductMenu({
       icon: Icon4,
       iconA: Icon4A,
       title: "Community",
-      // link: "https://www.stp.network/cliqueSocial",
-      route:'/cliqueSocial',
+      link: "https://www.stp.network/cliqueSocial",
+      // route:'/cliqueSocial',
       text: "",
     },
   ];
