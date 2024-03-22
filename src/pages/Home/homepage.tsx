@@ -146,7 +146,7 @@ import s4Icon1 from "../../assets/images/home/s4Icon1.jpg"
 import s4Icon2 from "../../assets/images/home/s4Icon2.jpg"
 import s4Icon3 from "../../assets/images/home/s4Icon3.jpg"
 import s4Icon4 from "../../assets/images/home/s4Icon4.jpg"
-import s4Icon5 from "../../assets/images/home/s4Icon5.png"
+import s4Icon5 from "../../assets/images/home/s4Icon5.jpg"
 import s4Icon6 from "../../assets/images/home/s4Icon6.jpg"
 import s4Icon7 from "../../assets/images/home/s4Icon7.jpg"
 import s4Icon8 from "../../assets/images/home/s4Icon8.jpg"
@@ -1982,7 +1982,7 @@ const CliqueInfrastructureTitle = styled.div`
 `
 const CliqueInfrastructureMain = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 24px;
   margin-top: 16px;
   @media (max-width: 767px) {
     flex-direction: column;
@@ -2007,12 +2007,13 @@ const InfrastructureMainBox1 = styled.div`
   }
 `
 const InfrastructureMainBox1H = styled.div`
+
   margin-bottom: 8px;
-  padding: 0px 30px 0 30px;
+  padding: 0px 24px;
   font-family: Inter;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
-  line-height: 39px;
+  line-height: 38px;
   letter-spacing: 0em;
   color: #fff;
    @media (max-width: 767px) {
@@ -2022,7 +2023,7 @@ const InfrastructureMainBox1H = styled.div`
 `
 const InfrastructureMainBox1T = styled.div`
   /* margin-bottom: 20px; */
-  padding: 10px 30px 0 30px;
+  padding: 0px 24px;
   font-family: Inter;
   font-size: 18px;
   font-weight: 500;
