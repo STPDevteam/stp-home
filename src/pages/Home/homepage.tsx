@@ -303,15 +303,30 @@ class Orb {
             window.innerWidth < 400 ?
             window.innerHeight/2 :
             window.innerHeight / 2;
-
+          console.log('maxDist',maxDist);
+          console.log('x',originX);
+          console.log('y',originY);
+          console.log('yy',{
+            min: originY - maxDist,
+            max: originY + maxDist
+          });
+          console.log('xx', {
+              min: originX - maxDist,
+              max: originX + maxDist
+            });
+          
           return {
             x: {
               min: originX - maxDist,
               max: originX + maxDist
             },
+            // y: {
+            //   min: originY - maxDist,
+            //   max: originY + maxDist
+            // }
             y: {
               min: originY - maxDist,
-              max: originY + maxDist
+              max: window.innerWidth < 767 ? 600: 800
             }
           };
         }
@@ -587,11 +602,11 @@ export function OpenIconSpeedDial() {
 export const HeadBox = styled(Box)`
   position: relative;
   width: 100%;
-  height: 840px;
+  height: 100vh;
   z-index: 9;
-  @media (min-width: 1440px) {
+  /* @media (min-width: 1440px) {
     height: 1000px;
-  }
+  } */
   @media (max-width: 375px) {
     display: flex;
     flex-direction: column;
@@ -739,9 +754,9 @@ const IdentityBox = styled.div`
   /* margin-top: 160px; */
   display: flex;
   align-items: self-start;
-  padding-top: 60px;
+  padding-top: 0px;
   width: 100%;
-  height: 500px;
+  height: 438px;
   @media (max-width: 767px) {
     height: auto;
     flex-direction: column;
@@ -775,10 +790,10 @@ const IdentityContent = styled.div`
   /* filter: hue-rotate(318deg); */
   @media (max-width: 767px) {
     width: 100%;
-    padding: 200px 24px 24px 24px;
+    padding: 180px 24px 24px 24px;
     order: 1;
     background-size: 200%;
-    background-position: center 40%;
+    background-position: center 30%;
   }
 `
 const Section2Title = styled.div`
@@ -807,9 +822,9 @@ const IdentityTitle = styled.div`
   max-width: 950px;
   margin: auto;
   font-family: Inter;
-  font-size: 64px;
+  font-size: 40px;
   font-weight: 600;
-  line-height: 72px;
+  line-height: 1.3;
   letter-spacing: -0.2px;
   display: flex;
   justify-content: center;
@@ -879,8 +894,8 @@ const IconsBox = styled.div`
   }
 `
 const Icon = styled.img`
-  max-width: 70px;
-  max-height: 70px;
+  max-width: 64px;
+  max-height: 64px;
   @media (max-width: 767px) {
     width: 36px;
   }
@@ -1891,7 +1906,7 @@ const CliqueBox2Logo = styled.img`
   }
 `
 const CliqueBox2Title = styled.div`
-  margin-top: 380px;
+  margin-top: 360px;
   margin-bottom: 20px;
   font-family: Inter;
   font-size: 40px;
@@ -1901,14 +1916,14 @@ const CliqueBox2Title = styled.div`
   text-align: center;
   color: #fff;
   @media (max-width: 767px) {
-    margin-top: 160px;
+    margin-top: 150px;
     margin-bottom: 16px;
     font-size: 24px;
     line-height: 32px;
     padding: 0 24px;
   }
    @media screen and (min-width: 376px) and (max-width: 767px) {
-    margin-top: 200px;
+    margin-top: 180px;
 
   }
 `
@@ -1945,7 +1960,7 @@ const CliqueBox2TxtH5 = styled.div`
 `
 const CliqueInfrastructure = styled.div`
   width: 1000px;
-  margin: -140px auto 40px auto;
+  margin: -150px auto 40px auto;
   @media (max-width: 767px) {
     width: 100%;
     margin: 40px auto 40px auto;
@@ -3044,7 +3059,7 @@ const StyledThumbs = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 240px;
+  width: 232px;
   @media screen and (max-width: 767px) {
     display: none;
   }
@@ -3052,8 +3067,8 @@ const StyledThumbs = styled.div`
 const StyledSwiperSlide = styled(SwiperSlide)`
   /* display: flex ;
   align-items: center; */
-  width: 240px;
-  height: 135px;
+  width: 232px;
+  height: 130px;
 
 `
 const SwiperGameBig = styled(Swiper)`
@@ -3074,8 +3089,8 @@ const SwiperSlideBig = styled(SwiperSlide)`
   position: relative;
   border: 16px solid #363636;
   border-radius: 54px;
-  width: 800px;
-  height: 450px;
+  width: 738px;
+  height: 414px;
   overflow: hidden;
   @media screen and (max-width: 767px) {
     border: 8px solid #363636;

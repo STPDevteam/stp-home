@@ -265,11 +265,11 @@ const FeaturesMain = styled.div`
 `
 const FeaturesMainImg = styled.img`
   width: 100%;
-  width: 48px;
+  width: 168px;
   @media (max-width: 767px) {
-    width: 48px;
+    width: 88px;
     height: auto;
-    margin: auto;
+    /* margin: 4px; */
   }
 `
 export const Box3 = styled.div<{ isMargin: boolean }>`
@@ -455,7 +455,7 @@ const Section3Title = styled.div`
 `
 const Section4 = styled.div`
   width: 100%;
-  height: 886px;
+  padding-bottom: 90px;
   background: url(${section4}) no-repeat;
   background-size: contain;
   background-position: center 100%;
@@ -465,7 +465,7 @@ const Section4 = styled.div`
   }
 `
 const Section4Title = styled.div`
-  width: 450px;
+  width: 160px;
   margin: 120px auto 0 auto;
   font-family: Inter;
   font-size: 32px;
@@ -476,41 +476,50 @@ const Section4Title = styled.div`
   background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media (max-width: 767px) {
+    /* width: 300px; */
+  }
 `
 const Section4Main = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  width: 900px;
+  flex-direction: column;
+  align-items: center;
+  /* width: 900px; */
+  height: 999px;
   margin: 24px auto;
-  gap: 48px;
+  gap: 24px;
   @media (max-width: 767px) {
     flex-direction: column;
     width: 100%;
+    height: auto;
     padding: 0 24px;
+    gap: 20px;
   }
 `
 const Section4Card = styled.div`
   /* width: 50%; */
-  min-width: 415px;
-  flex: 1;
+  display: flex;
+  max-width: 607px;
+  height: 216px;
   margin-bottom: 16px;
-  padding: 0 0 24px 0;
+  padding: 24px;
   border-left: 1px solid #363636;
   &:hover {
     background: linear-gradient(180deg, rgba(3, 0, 20, 0) 5.9%, #0049C6 124.43%, #0049C6 155.23%);
-    &>:first-child {
-      border-left: 1px solid #fff;
-    }
+    
   }
   @media (max-width: 767px) {
-    min-width: 90%;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    /* flex-direction: column; */
   }
 `
 const CardImgBox = styled.div`
-  padding-top: 20px;
+  /* padding-top: 20px;
   padding-left: 24px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; */
+  padding: 4px;
 `
 const CardTitle = styled.div`
   font-family: Inter;
@@ -520,6 +529,10 @@ const CardTitle = styled.div`
   padding-left: 24px;
   margin: 16px 0;
   color: #fff;
+  @media (max-width: 767px) {
+    padding-left: 10px;
+    /* flex-direction: column; */
+  }
 `
 const CardTxt = styled.div`
   padding: 0 24px;
@@ -529,6 +542,13 @@ const CardTxt = styled.div`
   line-height: 24px;
   text-align: left;
   color: #B2B2B2;
+  letter-spacing: -0.2px;
+  @media (max-width: 767px) {
+    padding: 0 0 0 10px;
+    line-height: 20px;
+    font-size: 14px;
+    /* flex-direction: column; */
+  }
 `
 export default function Soda() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -569,69 +589,43 @@ export default function Soda() {
           <Section4Title>Features</Section4Title>
           <Section4Main>
             <Section4Card>
-              <CardImgBox>
-                <FeaturesMainImg src={f1}></FeaturesMainImg>
-              </CardImgBox>
-              <CardTitle>Mint</CardTitle>
-              <CardTxt>Instantly create NFTs from any image or social media post with just a few clicks. Our platform simplifies your minting process.</CardTxt>
+              {/* <CardImgBox> */}
+                <FeaturesMainImg style={{marginRight: '4px'}} src={f1}></FeaturesMainImg>
+              {/* </CardImgBox> */}
+              <div>
+                <CardTitle>Mint</CardTitle>
+                <CardTxt>Instantly create NFTs from any image or social media post with just a few clicks. Our platform simplifies your minting process.</CardTxt>
+              </div>
             </Section4Card>
             <Section4Card>
-              <CardImgBox>
-                <FeaturesMainImg src={f2}></FeaturesMainImg>
-              </CardImgBox>
-              <CardTitle>Share</CardTitle>
-              <CardTxt>Seamlessly share your NFTs on social media from your Soda wallet. Connect and impress audiences worldwide with ease.</CardTxt>
+              <div>
+                <CardTitle>Share</CardTitle>
+                <CardTxt>Seamlessly share your NFTs on social media from your Soda wallet. Connect and impress audiences worldwide with ease.</CardTxt>
+              </div>
+              {/* <CardImgBox> */}
+                <FeaturesMainImg style={{marginLeft: '4px'}} src={f2}></FeaturesMainImg>
+              {/* </CardImgBox> */}
             </Section4Card>
             <Section4Card>
-              <CardImgBox>
-                <FeaturesMainImg src={f3}></FeaturesMainImg>
-              </CardImgBox>
-              <CardTitle>DAO Management</CardTitle>
-              <CardTxt>Quickly set up DAO proposals and enable NFT-based voting directly on socials such as Telegram.Streamline community engagement and decision-making.</CardTxt>
+              {/* <CardImgBox> */}
+                <FeaturesMainImg style={{marginRight: '4px'}} src={f3}></FeaturesMainImg>
+              {/* </CardImgBox> */}
+              <div>
+                <CardTitle>DAO Management</CardTitle>
+                <CardTxt>Quickly set up DAO proposals and enable NFT-based voting directly on socials such as Telegram.Streamline community engagement and decision-making.</CardTxt>
+              </div>
             </Section4Card>
             <Section4Card>
-              <CardImgBox>
-                <FeaturesMainImg src={f4}></FeaturesMainImg>
-              </CardImgBox>
-              <CardTitle>IDO</CardTitle>
-              <CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards directly on socials.</CardTxt>
+              <div>
+                <CardTitle>IDO</CardTitle>
+                <CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards directly on socials.</CardTxt>
+              </div>
+              {/* <CardImgBox> */}
+                <FeaturesMainImg style={{marginLeft: '4px'}} src={f4}></FeaturesMainImg>
+              {/* </CardImgBox> */}
             </Section4Card>
           </Section4Main>
         </Section4>
-        {/* <Features>
-          <CliqueContentTitle>Features</CliqueContentTitle>
-          <Box3 isMargin={false}>
-            <Box3CardPink>
-              <FeaturesMainImg src={f1}></FeaturesMainImg>
-              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Mint</FeaturesCardTitle>
-              <FeaturesMain>
-                <Box3CardTxt>Instantly create NFTs from any image or social media post with just a few clicks. Our platform simplifies your minting process.</Box3CardTxt>
-              </FeaturesMain>
-            </Box3CardPink>
-            <Box3CardBlue>
-              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Share</FeaturesCardTitle>
-              <FeaturesMain>
-                <FeaturesMainImg src={f2}></FeaturesMainImg>
-                <Box3CardTxt>Seamlessly share your NFTs on social media from your Soda wallet. Connect and impress audiences worldwide with ease.</Box3CardTxt>
-              </FeaturesMain>
-            </Box3CardBlue>
-            <Box3CardBlue>
-              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Governance</FeaturesCardTitle>
-              <FeaturesMain>
-                <FeaturesMainImg src={f3}></FeaturesMainImg>
-                <Box3CardTxt>Quickly set up DAO proposals and enable NFT-based voting directly on socials such as Telegram.Streamline community engagement and decision-making.</Box3CardTxt>
-              </FeaturesMain>
-            </Box3CardBlue>
-            <Box3CardPink2>
-              <FeaturesCardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Launchpad</FeaturesCardTitle>
-              <FeaturesMain>
-                <FeaturesMainImg src={f4}></FeaturesMainImg>
-                <Box3CardTxt>Launch tokens on the TON blockchain effortlessly. Our platform enhances community building with staking, voting, and rewards directly on socials.</Box3CardTxt>
-              </FeaturesMain>
-            </Box3CardPink2>
-          </Box3>
-          <BigStar src={homeImg62}></BigStar>
-        </Features> */}
         <Footer />
         <OpenIconSpeedDial></OpenIconSpeedDial>
       </ContentWrapper>
