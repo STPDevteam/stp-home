@@ -436,9 +436,12 @@ const Header: React.FC = () => {
           unmountOnExit
         >
           <nav className="Nav">
-            <Link to="/" className={location.pathname === "/" ? "active" : ""}>
+            {/* <Link to="/" className={location.pathname === "/" ? "active" : ""}>
               Home
-            </Link>
+            </Link> */}
+             <a  href="https://www.stp.network/" target="_blank">
+              Home
+            </a>
             <Dropdown
               overlay={<ProductMenu setDropdownVisible={setVisible} />}
               visible={dropdownVisible}
@@ -460,9 +463,12 @@ const Header: React.FC = () => {
                 Resources <Arrow />
               </a>
             </Dropdown>
-            <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+            {/* <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
               Ecosystem
-            </Link>
+            </Link> */}
+            <a  href="https://www.stp.network/ecosystem" target="_blank">
+            Ecosystem
+            </a>
             {/* <Dropdown overlay={resourcesMenu} trigger={["click"]}>
               <a >
                 Resources <Arrow />

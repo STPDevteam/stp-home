@@ -31,14 +31,14 @@ function App() {
             <Header />
             <Content>
               <Switch>
-                <Route component={Homepage} exact path="/" />
-                <Route component={EcosystemPage} exact path="/ecosystem" />
+                <Route component={Clique} exact path="/" />
+                {/* <Route component={EcosystemPage} exact path="/ecosystem" />
                 <Route component={Product} exact path="/product" />
                 <Route component={Tech} exact path="/tech" />
                 <Route component={DaoPage} exact path="/dao" />
                 <Route component={Awns} exact path="/awns" />
                 <Route component={Soda} exact path="/cliqueSocial" />
-                <Route component={GamePortal} exact path="/gamePortal" />
+                <Route component={GamePortal} exact path="/gamePortal" /> */}
                 <Route component={Clique} exact path="/cliqueL3" />
               </Switch>
             </Content>

@@ -110,7 +110,7 @@ const Section2Box = styled.div`
   }
 `
 const Section2Head = styled.div`
-  width: 604px;
+  width: 404px;
   height: 54px;
   margin: auto;
   display: flex;
@@ -343,7 +343,7 @@ export default function Clique() {
         <Section2Box>
           <Section2Head>
             <Section2Tab active={true}>L3 Rollup</Section2Tab>
-            <Section2Tab active={false}>L2 Rollup</Section2Tab>
+            {/* <Section2Tab active={false}>L2 Rollup</Section2Tab> */}
             <Section2Tab active={false}>Bridge (Coming soon)</Section2Tab>
           </Section2Head>
           <Section2Content>
@@ -373,9 +373,9 @@ export default function Clique() {
             <LogoItem><Logo src={logoWalletconnect}></Logo></LogoItem>
           </Section2Logos>
           <SectionsBtns>
-            <BtnsItem>Add L2 Main Network to Your Wallet</BtnsItem>
-            <BtnsItem>Add L2 Testnet to Your Wallet</BtnsItem>
-            <BtnsItem>Add L2 Testnet to Your Wallet</BtnsItem>
+            <BtnsItem>Add L3 Main Network to Your Wallet</BtnsItem>
+            <BtnsItem>Add L3 Testnet to Your Wallet</BtnsItem>
+            {/* <BtnsItem>Add L2 Testnet to Your Wallet</BtnsItem> */}
           </SectionsBtns>
         </Section2Box>
       </Section2>
