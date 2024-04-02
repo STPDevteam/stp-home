@@ -12,6 +12,7 @@ import DaoPage from "./pages/DAO/daoPage";
 import Awns from "./pages/Awns/index";
 import Soda from "./pages/Soda/index";
 import GamePortal from './pages/GamePortal/index'
+import Clique from './pages/Clique'
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import { createBrowserHistory } from 'history'
@@ -38,6 +39,7 @@ function App() {
                 <Route component={Awns} exact path="/awns" />
                 <Route component={Soda} exact path="/cliqueSocial" />
                 <Route component={GamePortal} exact path="/gamePortal" />
+                <Route component={Clique} exact path="/cliqueL3" />
               </Switch>
             </Content>
           </Router>
