@@ -1,5 +1,9 @@
 import React from 'react'
-import { Button } from "antd";
+// import { Button } from "antd";
+import { Button, Divider } from "antd";
+import { createWalletClient, custom ,http} from 'viem'
+// import { mainnet } from 'viem/chains'
+// import { avalanche } from 'viem/chains'
 
 import { ContentWrapper,Footer, } from '../Home/homepage'
 import styled from 'styled-components'
@@ -61,6 +65,7 @@ const SectionBtns = styled.div`
   gap: 24px;
   margin-top: 40px;
 `
+//@ts-ignore
 export const BlueBtn = styled(Button)`
   display: flex;
   border: 0;
@@ -208,6 +213,7 @@ const Logo = styled.img`
 `
 const SectionsBtns = styled.div`
   display: flex;
+  justify-content: center;
   gap: 16px;
   @media (max-width: 767px) {
     width: 100%;
@@ -225,6 +231,7 @@ const BtnsItem = styled.div`
   text-align: center;
   color: #fff;
   border: 1px solid #35343A;
+  cursor: pointer;
   @media (max-width: 767px) {
     width: 100%;
     margin-top: 10px;
@@ -326,7 +333,116 @@ const Section4Title = styled.div`
     font-size: 32px;
   }
 `
+const loot = {
+  id: 5151706,
+  name: 'Loot Mainnet',
+  network: 'loot',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'AGLD',
+    symbol: 'AGLD',
+  },
+  rpcUrls: {
+    public: { http: ['https://rpc.lootchain.com/http'] },
+    default: { http: ['https://rpc.lootchain.com/http'] },
+  },
+  blockExplorers: {
+    etherscan: { name: 'LootScan', url: 'https://explorer.lootchain.com/' },
+    default: { name: 'LootScan', url: 'https://explorer.lootchain.com/' },
+  },
+}
+// export const walletClient = createWalletClient({
+//   chain: loot,
+//   //@ts-ignore
+//   transport: window.ethereum ? custom(window.ethereum) : http(),
+// })
 export default function Clique() {
+
+  const addToMetaMask = async () => {
+    //@ts-ignore
+    if (window.ethereum) {
+      try {
+        //@ts-ignore
+        await (window.ethereum as any).request({
+          method: 'wallet_switchEthereumChain',
+          params: [{
+            chainId: "0x2295" // 
+          }]
+        })
+        console.log('wallet_switchEthereumChain');
+      } catch (e) {
+        console.log('(e as any).code', (e as any).code);
+        if ((e as any).code === 4902) {
+          try {
+            console.log('wallet_addEthereumChain');
+            //@ts-ignore
+            await (window.ethereum as any).request({
+                method: 'wallet_addEthereumChain',
+                params: [
+                  {
+                    chainId: "0x2295", // 
+                    chainName: 'Clique',
+                    nativeCurrency: {
+                      name: 'ETH',
+                      symbol: 'ETH',
+                      decimals: 18
+                    },
+                    rpcUrls: ['https://rpc-clique-mainnet-0.t.conduit.xyz'], // 节点
+                    blockExplorerUrls: ['https://explorerl2new-clique-mainnet-0.t.conduit.xyz']
+                  
+                  }
+                ]
+              })
+          } catch (ee) {
+            //
+          }
+        } else if ((e as any).code === 4001) return
+      }
+    }
+    
+  }
+  const addToMetaMaskTest = async () => {
+    //@ts-ignore
+    if (window.ethereum) {
+      try {
+        //@ts-ignore
+        await (window.ethereum as any).request({
+          method: 'wallet_switchEthereumChain',
+          params: [{
+            chainId: "0x20bf" // 目标链ID
+          }]
+        })
+        console.log('wallet_switchEthereumChain');
+      } catch (e) {
+        console.log('(e as any).code', (e as any).code);
+        if ((e as any).code === 4902) {
+          try {
+            console.log('wallet_addEthereumChain');
+            //@ts-ignore
+            await (window.ethereum as any).request({
+                method: 'wallet_addEthereumChain',
+                params: [
+                  {
+                    chainId: "0x20bf", // 目标链ID
+                    chainName: 'CliqueTest',
+                    nativeCurrency: {
+                      name: 'ETH',
+                      symbol: 'ETH',
+                      decimals: 18
+                    },
+                    rpcUrls: ['https://rpc-clique-test-8sprt15usx.t.conduit.xyz'], // 
+                    blockExplorerUrls: ['https://explorerl2new-clique-test-8sprt15usx.t.conduit.xyz']
+                  }
+                ]
+              })
+          } catch (ee) {
+            //
+          }
+        } else if ((e as any).code === 4001) return
+      }
+    }
+    
+  }
   return (
     <ContentWrapper>
       <Section1>
@@ -335,7 +451,7 @@ export default function Clique() {
         Leverage frontier technology in Autonomous Worlds, AI Agents, Account Abstraction
         </Section1Content>
         <SectionBtns>
-          <BlueBtn>Bridge</BlueBtn>
+          <BlueBtn onClick={()=>{window.open('https://bridge.myclique.io/')}}>Bridge</BlueBtn>
           <GreenBtn onClick={()=>{window.open('https://explorer.myclique.io/')}}>Explorer</GreenBtn>
         </SectionBtns>
       </Section1>
@@ -344,26 +460,25 @@ export default function Clique() {
           <Section2Head>
             <Section2Tab active={true}>L3 Rollup</Section2Tab>
             {/* <Section2Tab active={false}>L2 Rollup</Section2Tab> */}
-            <Section2Tab active={false}>Bridge (Coming soon)</Section2Tab>
+            <Section2Tab active={false} onClick={()=>{window.open('https://bridge.myclique.io/')}}>Bridge</Section2Tab>
           </Section2Head>
           <Section2Content>
             <ContentBox>
               <CodeItem><SpanGary>1</SpanGary> <SpanWhite>{`{`}</SpanWhite></CodeItem>
-              <CodeItem><SpanGary>2</SpanGary> <SpanGreen className='pl10'>{`"L2 Main Network" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
+              <CodeItem><SpanGary>2</SpanGary> <SpanGreen className='pl10'>{`"L3 Main Network" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>3</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>4</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>5</SpanGary> <SpanGreen className='pl10'>{`"Ecplorer" : "https://explorer12new-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>6</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow>{`8853`}</SpanYellow></CodeItem>
+              <CodeItem><SpanGary>6</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8853`}</SpanYellow></CodeItem>
               <CodeItem><SpanGary>7</SpanGary> <SpanWhite className='pl10'>{`},`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>8</SpanGary> <SpanWhite className='pl10'>{`{`}</SpanWhite></CodeItem>
-              <CodeItem><SpanGary>9</SpanGary> <SpanGreen className='pl10'>{`"L2 Testnet" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
-              <CodeItem><SpanGary>10</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>11</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>12</SpanGary> <SpanGreen className='pl10'>{`"Ecplorer" : "https://explorer12new-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>13</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow>{`8853`}</SpanYellow></CodeItem>
+              <CodeItem><SpanGary>9</SpanGary> <SpanGreen className='pl10'>{`"L3 Testnet" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
+              <CodeItem><SpanGary>10</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>11</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>12</SpanGary> <SpanGreen className='pl10'>{`"Ecplorer" : "https://explorerl2new-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>13</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8383`}</SpanYellow></CodeItem>
               <CodeItem><SpanGary>14</SpanGary> <SpanWhite className='pl10'>{`}`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>15</SpanGary> <SpanWhite>{`}`}</SpanWhite></CodeItem>
-
             </ContentBox>
           </Section2Content>
           <Section2Logos>
@@ -373,8 +488,8 @@ export default function Clique() {
             <LogoItem><Logo src={logoWalletconnect}></Logo></LogoItem>
           </Section2Logos>
           <SectionsBtns>
-            <BtnsItem>Add L3 Main Network to Your Wallet</BtnsItem>
-            <BtnsItem>Add L3 Testnet to Your Wallet</BtnsItem>
+            <BtnsItem onClick={addToMetaMask}>Add L3 Main Network to Your Wallet</BtnsItem>
+            <BtnsItem onClick={addToMetaMaskTest}>Add L3 Testnet to Your Wallet</BtnsItem>
             {/* <BtnsItem>Add L2 Testnet to Your Wallet</BtnsItem> */}
           </SectionsBtns>
         </Section2Box>
@@ -411,7 +526,7 @@ export default function Clique() {
           Build on Clique
         </GreenBtn>
       </Section4>
-      <Footer></Footer>
+      <Footer btnShow={false}></Footer>
     </ContentWrapper>
   )
 }

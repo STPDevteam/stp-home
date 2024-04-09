@@ -3747,7 +3747,7 @@ export const SocialMedia = styled.img`
   height: 20px;
 `;
 
-export function Footer() {
+export function Footer({btnShow}) {
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
   // return <></>;
@@ -3794,13 +3794,16 @@ export function Footer() {
         gap={isDownSm ? "48px" : 0}
       >
         <img src={StpLogo} alt="" />
-        <BlueButton
-          onClick={() =>
-            window.open("https://explorer.myclique.io/", "_blank")
-          }
-        >
-          Build on Clique
-        </BlueButton>
+        {
+          btnShow &&
+          <BlueButton
+            onClick={() =>
+              window.open("https://explorer.myclique.io/", "_blank")
+            }
+          >
+            Build on Clique
+          </BlueButton>
+        }
       </Box>
       {!isDownSm ? (
         <>
