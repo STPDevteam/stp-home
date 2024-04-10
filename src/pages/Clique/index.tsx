@@ -387,7 +387,7 @@ export default function Clique() {
                       symbol: 'ETH',
                       decimals: 18
                     },
-                    rpcUrls: ['https://rpc-clique-mainnet-0.t.conduit.xyz'], // 
+                    rpcUrls: ['https://rpc.myclique.io'], // 
                     blockExplorerUrls: ['https://explorer.myclique.io/']
                   
                   }
@@ -466,19 +466,19 @@ export default function Clique() {
             <ContentBox>
               <CodeItem><SpanGary>1</SpanGary> <SpanWhite>{`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>2</SpanGary> <SpanGreen className='pl10'>{`"L3 Main Network" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
-              <CodeItem><SpanGary>3</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>4</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>3</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc.myclique.io",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>4</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss:https://rpc.myclique.io",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>5</SpanGary> <SpanGreen className='pl10'>{`"Explorer" : "https://explorer.myclique.io/",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>6</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8853`}</SpanYellow></CodeItem>
               <CodeItem><SpanGary>7</SpanGary> <SpanWhite className='pl10'>{`},`}</SpanWhite></CodeItem>
-              <CodeItem><SpanGary>8</SpanGary> <SpanWhite className='pl10'>{`{`}</SpanWhite></CodeItem>
+              {/* <CodeItem><SpanGary>8</SpanGary> <SpanWhite className='pl10'>{`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>9</SpanGary> <SpanGreen className='pl10'>{`"L3 Testnet" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>10</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>11</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>12</SpanGary> <SpanGreen className='pl10'>{`"Explorer" : "https://explorerl2new-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>13</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8383`}</SpanYellow></CodeItem>
-              <CodeItem><SpanGary>14</SpanGary> <SpanWhite className='pl10'>{`}`}</SpanWhite></CodeItem>
-              <CodeItem><SpanGary>15</SpanGary> <SpanWhite>{`}`}</SpanWhite></CodeItem>
+              <CodeItem><SpanGary>14</SpanGary> <SpanWhite className='pl10'>{`}`}</SpanWhite></CodeItem> */}
+              <CodeItem><SpanGary>8</SpanGary> <SpanWhite>{`}`}</SpanWhite></CodeItem>
             </ContentBox>
           </Section2Content>
           <Section2Logos>
@@ -489,7 +489,7 @@ export default function Clique() {
           </Section2Logos>
           <SectionsBtns>
             <BtnsItem onClick={addToMetaMask}>Add L3 Main Network to Your Wallet</BtnsItem>
-            <BtnsItem onClick={addToMetaMaskTest}>Add L3 Testnet to Your Wallet</BtnsItem>
+            {/* <BtnsItem onClick={addToMetaMaskTest}>Add L3 Testnet to Your Wallet</BtnsItem> */}
             {/* <BtnsItem>Add L2 Testnet to Your Wallet</BtnsItem> */}
           </SectionsBtns>
         </Section2Box>
