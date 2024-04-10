@@ -174,6 +174,9 @@ const CodeItem = styled.div`
 const SpanGary = styled.span`
   color: #666;
   padding-right: 30px;
+  @media (max-width: 767px) {
+    padding-right: 16px;
+  }
 `
 const SpanWhite = styled.span`
   color: #fff;
