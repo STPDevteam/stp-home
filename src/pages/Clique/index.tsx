@@ -387,8 +387,8 @@ export default function Clique() {
                       symbol: 'ETH',
                       decimals: 18
                     },
-                    rpcUrls: ['https://rpc-clique-mainnet-0.t.conduit.xyz'], // 节点
-                    blockExplorerUrls: ['https://explorerl2new-clique-mainnet-0.t.conduit.xyz']
+                    rpcUrls: ['https://rpc-clique-mainnet-0.t.conduit.xyz'], // 
+                    blockExplorerUrls: ['https://explorer.myclique.io/']
                   
                   }
                 ]
@@ -468,14 +468,14 @@ export default function Clique() {
               <CodeItem><SpanGary>2</SpanGary> <SpanGreen className='pl10'>{`"L3 Main Network" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>3</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>4</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>5</SpanGary> <SpanGreen className='pl10'>{`"Ecplorer" : "https://explorer12new-clique-mainnet-0.t.conduit.xyz",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>5</SpanGary> <SpanGreen className='pl10'>{`"Explorer" : "https://explorer.myclique.io/",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>6</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8853`}</SpanYellow></CodeItem>
               <CodeItem><SpanGary>7</SpanGary> <SpanWhite className='pl10'>{`},`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>8</SpanGary> <SpanWhite className='pl10'>{`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>9</SpanGary> <SpanGreen className='pl10'>{`"L3 Testnet" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>10</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>11</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>12</SpanGary> <SpanGreen className='pl10'>{`"Ecplorer" : "https://explorerl2new-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>12</SpanGary> <SpanGreen className='pl10'>{`"Explorer" : "https://explorerl2new-clique-test-8sprt15usx.t.conduit.xyz",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>13</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8383`}</SpanYellow></CodeItem>
               <CodeItem><SpanGary>14</SpanGary> <SpanWhite className='pl10'>{`}`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>15</SpanGary> <SpanWhite>{`}`}</SpanWhite></CodeItem>
