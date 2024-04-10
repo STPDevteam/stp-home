@@ -151,7 +151,7 @@ const Section2Content = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     height: auto;
-    min-height: 440px;
+    min-height: 240px;
     background: none;
   }
 `
