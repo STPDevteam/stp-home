@@ -3763,7 +3763,7 @@ export function Footer() {
   const footListLink = [
     [
       "Clique",
-      "https://explorer.myclique.io/",
+      "https://info.myclique.io/",
       "https://awns.stp.network/",
       "",
       "https://www.stp.network/cliqueSocial"

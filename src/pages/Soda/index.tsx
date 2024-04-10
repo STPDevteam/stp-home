@@ -373,7 +373,7 @@ const Section1 = styled.div`
   }
 `
 const Section1Title = styled.div`
-  width: 377px;
+  width: 538px;
   margin: auto;
   padding-top: 130px;
   font-family: Inter;
@@ -381,10 +381,10 @@ const Section1Title = styled.div`
   font-weight: 600;
   letter-spacing: 0em;
   text-align: center;
-  color: #B2B2B2;
-  /* background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
+  /* color: #B2B2B2; */
+  background: linear-gradient(107.41deg, #FFFFFF 65%, rgba(255, 255, 255, 0.43) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
     padding-top: 90px;
     font-size: 36px;
@@ -395,6 +395,7 @@ const Section2 = styled.div`
   margin-top: -160px;
   padding-bottom: 100px;
   @media (max-width: 767px) {
+    margin-top: -120px;
    padding-bottom: 20px;
   }
 `
@@ -412,7 +413,7 @@ const Section2Title = styled.div`
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
     width: 300px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     padding-top: 20px;
     font-size: 32px;
   }
@@ -422,6 +423,7 @@ const Section2Img = styled.img`
   width: 1000px;
   @media (max-width: 767px) {
     width: 100%;
+    margin-top: -10px;
   }
 `
 const JoinBtn = styled(GreenBtn)`
@@ -550,6 +552,19 @@ const CardTxt = styled.div`
     /* flex-direction: column; */
   }
 `
+const SubTitle = styled.div`
+  padding-top: 20px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  color: #949CB9;
+  @media (max-width: 767px) {
+    padding: 0 24px;
+    font-size: 16px;
+  }
+`
 export default function Soda() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -557,15 +572,18 @@ export default function Soda() {
     <>
       <ContentWrapper>
         <Section1>
-          <Section1Title>Community</Section1Title>
+          <Section1Title>Community Tools</Section1Title>
+          <SubTitle>Discover, mingle and contribute to fandom and governance</SubTitle>
         </Section1>
         <Section2>
           <Section2Title>Social and DAOs</Section2Title>
+          <SubTitle>Participate in game and social communities among AI and gaming enthusiasts</SubTitle>
           <Section2Img src={section2}></Section2Img>
           <JoinBtn onClick={()=>window.open('https://www.myclique.io/daos')}>Join Community</JoinBtn>
         </Section2>
         <Section3>
           <Section3Title>Social Tooling</Section3Title>
+          <SubTitle>Jumpstart and build your community of players, contributors and partners</SubTitle>
           <CenterBox>
             <SocialBox>
               <SocialContent>

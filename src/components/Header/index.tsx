@@ -127,7 +127,7 @@ export function ProductMenu({
       icon: Icon1,
       iconA: Icon1A,
       title: "L3 on Base",
-      link: "https://explorer.myclique.io/",
+      link: "https://info.myclique.io/",
       text: "",
     },
     {
