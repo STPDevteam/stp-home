@@ -467,7 +467,7 @@ export default function Clique() {
               <CodeItem><SpanGary>1</SpanGary> <SpanWhite>{`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>2</SpanGary> <SpanGreen className='pl10'>{`"L3 Main Network" :`}</SpanGreen><SpanWhite> {`{`}</SpanWhite></CodeItem>
               <CodeItem><SpanGary>3</SpanGary> <SpanGreen className='pl10'>{`"RPC URL" : "https://rpc.myclique.io",`}</SpanGreen></CodeItem>
-              <CodeItem><SpanGary>4</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss:https://rpc.myclique.io",`}</SpanGreen></CodeItem>
+              <CodeItem><SpanGary>4</SpanGary> <SpanGreen className='pl10'>{`"Websocket" : "wss://rpc.myclique.io",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>5</SpanGary> <SpanGreen className='pl10'>{`"Explorer" : "https://explorer.myclique.io/",`}</SpanGreen></CodeItem>
               <CodeItem><SpanGary>6</SpanGary> <SpanGreen className='pl10'>{`"Chain Id" :`}</SpanGreen><SpanYellow> {`8853`}</SpanYellow></CodeItem>
               <CodeItem><SpanGary>7</SpanGary> <SpanWhite className='pl10'>{`},`}</SpanWhite></CodeItem>
