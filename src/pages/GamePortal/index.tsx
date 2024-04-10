@@ -356,7 +356,7 @@ export default function GamePortal() {
           </SwiperGameBig>
         </EcoGame>
       </Section3>
-      <Footer />
+      <Footer btnShow={false} />
     </ContentWrapper>
   )
 }

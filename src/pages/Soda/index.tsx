@@ -626,7 +626,7 @@ export default function Soda() {
             </Section4Card>
           </Section4Main>
         </Section4>
-        <Footer />
+        <Footer btnShow={false} />
         <OpenIconSpeedDial></OpenIconSpeedDial>
       </ContentWrapper>
     </>

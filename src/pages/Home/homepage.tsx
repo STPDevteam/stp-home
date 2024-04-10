@@ -543,7 +543,7 @@ export default function Homepage() {
       {/* <Learn /> */}
       <FooterModal>
         <BuildWithUs />
-        <Footer />
+        <Footer btnShow={false} />
       </FooterModal>
       <OpenIconSpeedDial></OpenIconSpeedDial>
     </ContentWrapper>

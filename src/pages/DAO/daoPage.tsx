@@ -31,7 +31,7 @@ export default function () {
       <Mission />
       <Types />
       <Criteria />
-      <Footer />
+      <Footer btnShow={false} />
     </ContentWrapper>
   );
 }

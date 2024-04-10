@@ -1,9 +1,6 @@
 import React from 'react'
 // import { Button } from "antd";
 import { Button, Divider } from "antd";
-import { createWalletClient, custom ,http} from 'viem'
-// import { mainnet } from 'viem/chains'
-// import { avalanche } from 'viem/chains'
 
 import { ContentWrapper,Footer, } from '../Home/homepage'
 import styled from 'styled-components'
