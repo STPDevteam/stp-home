@@ -66,7 +66,7 @@ export default function () {
         setSectorSelect={setSectorSelect}
       />
       <Platforms categorySelect={categorySelect} sectorSelect={sectorSelect} />
-      <Footer />
+      <Footer btnShow={false} />
     </ContentWrapper>
   );
 }
