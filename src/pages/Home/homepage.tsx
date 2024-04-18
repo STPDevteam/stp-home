@@ -3753,7 +3753,7 @@ export function Footer() {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Clique", "L3 on Base", "Gaming Portal", "Developer Engine (Coming Soon)","Community"],
+    ["Clique", "L3 on Base", "Game Portal", "Developer Engine (Coming Soon)","Community"],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3763,8 +3763,8 @@ export function Footer() {
   const footListLink = [
     [
       "Clique",
-      "https://info.myclique.io/",
-      "https://awns.stp.network/",
+      "https://clique.stp.network/",
+      "https://games.stp.network/",
       "",
       "https://www.stp.network/cliqueSocial"
       // "https://test-stp-home.netlify.app/cliqueSocial"
