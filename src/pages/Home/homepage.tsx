@@ -3,6 +3,8 @@ import {Box, Grid, Stack, Tab, Tabs, Typography} from "@mui/material";
 import styled, {keyframes} from "styled-components";
 import {Button, Divider} from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Eternal from '../../assets/images/ecosystem/eternal-legacy.jpg';
+import Airstack from '../../assets/images/ecosystem/airstack.jpg';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
@@ -17,7 +19,6 @@ import {ReactComponent as FileIcon} from "../../assets/images/home/svg/file-icon
 import {ReactComponent as AlarmIcon} from "../../assets/images/home/svg/alarmicon.svg";
 import {ReactComponent as DownloadIcon} from "../../assets/images/home/svg/download.svg";
 import UserActive from "../../assets/images/home/svg/user-active.svg";
-import Eternal from '../../assets/images/ecosystem/eternal-legacy.jpg';
 
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
 import StpLogo from "../../assets/images/home/svg/stp-logo.svg";
@@ -3305,6 +3306,8 @@ function Ecosystem() {
     Knn,
     Voltswap,
     PushPro,
+    Airstack,
+    Eternal
   ];
   const IntegrationsLogos = [Base, Binance, Polygon, Klaytn, ZkEVM];
   const ListedLogos = [
