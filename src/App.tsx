@@ -4,18 +4,19 @@ import { Layout } from "antd";
 import Product from "./pages/Product";
 import Tech from "./pages/Tech";
 import Header from "./components/Header";
-import {Footer} from "./pages/Home/homepage";
 import "./App.less";
 import Homepage from "./pages/Home/homepage";
 import EcosystemPage from "./pages/Ecosystem/EcosystemPage";
 import DaoPage from "./pages/DAO/daoPage";
 import Awns from "./pages/Awns/index";
 import Soda from "./pages/Soda/index";
-import GamePortal from './pages/GamePortal/index'
+import GamePortal from "./pages/GamePortal/index";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
-import { createBrowserHistory } from 'history'
-const browserHistory = createBrowserHistory()
+import { createBrowserHistory } from "history";
+import Notice from "./components/Footer/notice";
+import useBreakpoint from "./hooks/useBreakpoint";
+const browserHistory = createBrowserHistory();
 
 const { Content } = Layout;
 
@@ -40,6 +41,7 @@ function App() {
                 <Route component={GamePortal} exact path="/gamePortal" />
               </Switch>
             </Content>
+            <Notice />
           </Router>
         </Suspense>
       </StrictMode>
