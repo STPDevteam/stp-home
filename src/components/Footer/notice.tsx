@@ -18,6 +18,9 @@ const NoticeBgLine = styled(Box)`
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border-radius: 0 0 40px 40px;
+  @media (max-width: 767px) {
+    border-radius: 0;
+  }
 `;
 const NoticeBg = styled(Box)`
   position: relative;
@@ -34,6 +37,7 @@ const NoticeBg = styled(Box)`
   height: 80px;
   display: flex;
   @media (max-width: 767px) {
+    border-radius: 0;
     flex-direction: column;
     height: auto;
     position: fixed;
@@ -85,8 +89,8 @@ const PlayBtn = styled(YellowBtn)`
 `;
 export default function Notice() {
   const isSmallScreen = useBreakpoint();
-
-  return (
+  const isShow = false;
+  return isShow ? (
     <NoticeBgLine>
       <NoticeBg>
         <NoticeContent>
@@ -106,5 +110,7 @@ export default function Notice() {
         </PlayBtn>
       </NoticeBg>
     </NoticeBgLine>
+  ) : (
+    <></>
   );
 }
