@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: hide menu when click on mobile">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/arrow-up-right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/learn-community.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/learn-create-dao.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/learn-create-token.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/home/svg/learn-on-chian.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/airstack.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/ecosystem/eternal-legacy.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/home/svg/clique-sdk.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/home/svg/clique-sdk.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Ecosystem/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -40,8 +42,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="homepage" />
-                    <option name="lastUsedInstant" value="1681804532" />
+                    <option name="branchName" value="staging" />
+                    <option name="lastUsedInstant" value="1716520783" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -69,10 +71,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/home/svg",
+    "last_opened_file_path": "/Users/huangmei/Dapp/stp-home/src/assets/images/ecosystem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,11 +89,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/images/ecosystem" />
       <recent name="$PROJECT_DIR$/src/assets/images/home/svg" />
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/hooks" />
-      <recent name="$PROJECT_DIR$/src/pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/images/home" />
@@ -119,6 +122,7 @@
       <workItem from="1682481264806" duration="28536000" />
       <workItem from="1682594321435" duration="934000" />
       <workItem from="1683104594357" duration="3394000" />
+      <workItem from="1716520765964" duration="2091000" />
     </task>
     <task id="LOCAL-00001" summary="Add: new homepage">
       <created>1681998620246</created>

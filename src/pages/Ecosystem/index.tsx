@@ -8,6 +8,8 @@ import Klaytn from '../../assets/images/ecosystem/Klaytn.png';
 import Rai from '../../assets/images/ecosystem/raiFinance.png';
 import Vee from '../../assets/images/ecosystem/Vee.png';
 import Cere from '../../assets/images/ecosystem/Cere.png';
+import Eternal from '../../assets/images/ecosystem/eternal-legacy.jpg';
+import Airstack from '../../assets/images/ecosystem/airstack.jpg';
 import Define from '../../assets/images/ecosystem/Define.png';
 import Deesse from '../../assets/images/ecosystem/Deesse.png';
 import Layer3 from '../../assets/images/ecosystem/Layer3.png';
@@ -476,7 +478,22 @@ export const EcosystemDataList = [
     desc: 'CoinGecko',
     name: 'CoinGecko'
   },
-
+  {
+    img: Airstack,
+    website: 'https://www.airstack.xyz/',
+    category: 'Partnership',
+    sector: 'Infrastructure',
+    desc: 'Airstack',
+    name: 'Airstack'
+  },
+  {
+    img: Eternal,
+    website: 'https://eternallegacy.xyz/',
+    category: 'Partnership',
+    sector: 'Game',
+    desc: 'Eternal Legacy',
+    name: 'Eternal Legacy'
+  }
 ]
 export const categoryFilterDataList = [
   'All',

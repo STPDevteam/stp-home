@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
-import styled, { keyframes } from "styled-components";
-import { Button, Divider } from "antd";
+import {Box, Grid, Stack, Tab, Tabs, Typography} from "@mui/material";
+import styled, {keyframes} from "styled-components";
+import {Button, Divider} from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -11,12 +11,13 @@ import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
 import CliqueSdkPic from "../../assets/images/home/svg/clique-sdk.svg";
 import DataBg from "../../assets/images/home/svg/data-bg.svg";
 import Label1 from "../../assets/images/home/svg/label1.svg";
-import { ReactComponent as IconStart } from "../../assets/images/home/svg/label1.svg";
-import { ReactComponent as UserIcon } from "../../assets/images/home/svg/usericon.svg";
-import { ReactComponent as FileIcon } from "../../assets/images/home/svg/file-icon.svg";
-import { ReactComponent as AlarmIcon } from "../../assets/images/home/svg/alarmicon.svg";
-import { ReactComponent as DownloadIcon } from "../../assets/images/home/svg/download.svg";
+import {ReactComponent as IconStart} from "../../assets/images/home/svg/label1.svg";
+import {ReactComponent as UserIcon} from "../../assets/images/home/svg/usericon.svg";
+import {ReactComponent as FileIcon} from "../../assets/images/home/svg/file-icon.svg";
+import {ReactComponent as AlarmIcon} from "../../assets/images/home/svg/alarmicon.svg";
+import {ReactComponent as DownloadIcon} from "../../assets/images/home/svg/download.svg";
 import UserActive from "../../assets/images/home/svg/user-active.svg";
+import Eternal from '../../assets/images/ecosystem/eternal-legacy.jpg';
 
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
 import StpLogo from "../../assets/images/home/svg/stp-logo.svg";
@@ -39,10 +40,10 @@ import LearnCreateDao from "../../assets/images/home/svg/learn-create-dao.svg";
 import LearnCreateToken from "../../assets/images/home/svg/learn-create-token.svg";
 import LearnOnChain from "../../assets/images/home/svg/learn-on-chian.svg";
 import ArrowUpRight from "../../assets/images/home/svg/arrow-up-right.svg";
-import React, { useMemo, useState,useRef, useEffect } from "react";
-import { useHistory } from "react-router";
+import React, {useMemo, useState, useRef, useEffect} from "react";
+import {useHistory} from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
-import { useTotal } from "../../hooks/useHomepage";
+import {useTotal} from "../../hooks/useHomepage";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
 import "swiper/modules/autoplay/autoplay.min.css";
@@ -51,10 +52,10 @@ import "swiper/modules/autoplay/autoplay.js";
 import "swiper/modules/navigation/navigation.min.css";
 import "swiper/modules/navigation/navigation.js";
 import "swiper/modules/navigation/navigation.less";
-import { Pagination,Thumbs, FreeMode  } from "swiper";
-import { Swiper, SwiperSlide, useSwiper,SwiperRef } from "swiper/react";
-import { Autoplay } from "swiper";
-import { Navigation } from "swiper";
+import {Pagination, Thumbs, FreeMode} from "swiper";
+import {Swiper, SwiperSlide, useSwiper, SwiperRef} from "swiper/react";
+import {Autoplay} from "swiper";
+import {Navigation} from "swiper";
 
 import Composable from "../../assets/images/ecosystem/composable.jpeg"
 import Zkspace from "../../assets/images/ecoLogo/zks.png"
@@ -108,7 +109,7 @@ import Learn7 from "../../assets/images/home/Learn7.jpeg";
 import Learn8 from "../../assets/images/home/Learn8.jpeg";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Swiper as SwiperClass } from "swiper/types";
+import {Swiper as SwiperClass} from "swiper/types";
 import Item from "antd/lib/list/Item";
 import WechatQR from "../../assets/images/home/QR.jpeg";
 import infrastructure from "../../assets/images/home/svg/infrastructure.svg";
@@ -186,7 +187,7 @@ import aw from '../../assets/images/ecoLogo/aw.png'
 import daren from '../../assets/images/ecoLogo/darenT.png'
 
 import * as PIXI from 'pixi.js';
-import { KawaseBlurFilter } from "@pixi/filter-kawase-blur";
+import {KawaseBlurFilter} from "@pixi/filter-kawase-blur";
 import SimplexNoise from "simplex-noise";
 import hsl from "hsl-to-hex";
 import debounce from "debounce";
@@ -212,37 +213,37 @@ class ColorPalette {
     this.setColors();
   }
 
-   setColors() {
-          //~~random(180, 240);
-          this.hue = 180
-          this.complimentaryHue1 = this.hue + 30;
-          this.complimentaryHue2 = this.hue + 90;
-          // define a fixed saturation and lightness
-          this.saturation = 195;
-          this.lightness = 50;
+  setColors() {
+    //~~random(180, 240);
+    this.hue = 180
+    this.complimentaryHue1 = this.hue + 30;
+    this.complimentaryHue2 = this.hue + 90;
+    // define a fixed saturation and lightness
+    this.saturation = 195;
+    this.lightness = 50;
 
-          // define a base color
-          this.baseColor = hsl(this.hue, this.saturation, this.lightness);
-          // define a complimentary color, 30 degress away from the base
-          this.complimentaryColor1 = hsl(
-            this.complimentaryHue1,
-            this.saturation,
-            this.lightness
-          );
-          // define a second complimentary color, 60 degrees away from the base
-          this.complimentaryColor2 = hsl(
-            this.complimentaryHue2,
-            this.saturation,
-            this.lightness
-          );
+    // define a base color
+    this.baseColor = hsl(this.hue, this.saturation, this.lightness);
+    // define a complimentary color, 30 degress away from the base
+    this.complimentaryColor1 = hsl(
+      this.complimentaryHue1,
+      this.saturation,
+      this.lightness
+    );
+    // define a second complimentary color, 60 degrees away from the base
+    this.complimentaryColor2 = hsl(
+      this.complimentaryHue2,
+      this.saturation,
+      this.lightness
+    );
 
-          // store the color choices in an array so that a random one can be picked later
-          this.colorChoices = [
-            this.baseColor,
-            this.complimentaryColor1,
-            this.complimentaryColor2
-          ];
-        }
+    // store the color choices in an array so that a random one can be picked later
+    this.colorChoices = [
+      this.baseColor,
+      this.complimentaryColor1,
+      this.complimentaryColor2
+    ];
+  }
 
   randomColor() {
     // pick a random color
@@ -294,42 +295,42 @@ class Orb {
   }
 
   setBounds() {
-          // how far from the { x, y } origin can each orb move
-          const maxDist =
-            window.innerWidth < 10 ? window.innerWidth / 2 : window.innerWidth / 2.5;
-          // the { x, y } origin for each orb (the bottom right of the screen)
-          const originX = window.innerWidth / 2;
-          const originY =
-            window.innerWidth < 400 ?
-            window.innerHeight/2 :
-            window.innerHeight / 2;
-          console.log('maxDist',maxDist);
-          console.log('x',originX);
-          console.log('y',originY);
-          console.log('yy',{
-            min: originY - maxDist,
-            max: originY + maxDist
-          });
-          console.log('xx', {
-              min: originX - maxDist,
-              max: originX + maxDist
-            });
-          
-          return {
-            x: {
-              min: originX - maxDist,
-              max: originX + maxDist
-            },
-            // y: {
-            //   min: originY - maxDist,
-            //   max: originY + maxDist
-            // }
-            y: {
-              min: originY - maxDist,
-              max: window.innerWidth < 767 ? 600: 800
-            }
-          };
-        }
+    // how far from the { x, y } origin can each orb move
+    const maxDist =
+      window.innerWidth < 10 ? window.innerWidth / 2 : window.innerWidth / 2.5;
+    // the { x, y } origin for each orb (the bottom right of the screen)
+    const originX = window.innerWidth / 2;
+    const originY =
+      window.innerWidth < 400 ?
+        window.innerHeight / 2 :
+        window.innerHeight / 2;
+    console.log('maxDist', maxDist);
+    console.log('x', originX);
+    console.log('y', originY);
+    console.log('yy', {
+      min: originY - maxDist,
+      max: originY + maxDist
+    });
+    console.log('xx', {
+      min: originX - maxDist,
+      max: originX + maxDist
+    });
+
+    return {
+      x: {
+        min: originX - maxDist,
+        max: originX + maxDist
+      },
+      // y: {
+      //   min: originY - maxDist,
+      //   max: originY + maxDist
+      // }
+      y: {
+        min: originY - maxDist,
+        max: window.innerWidth < 767 ? 600 : 800
+      }
+    };
+  }
 
   update() {
     // self similar "psuedo-random" or noise values at a given point in "time"
@@ -337,7 +338,7 @@ class Orb {
     const yNoise = simplex.noise2D(this.yOff, this.yOff);
     const scaleNoise = simplex.noise2D(this.xOff, this.yOff);
     // console.log(scaleNoise);
-    
+
     // map the xNoise/yNoise values (between -1 and 1) to a point within the orb's bounds
     this.x = map(xNoise, -1, 1, this.bounds["x"].min, this.bounds["x"].max);
     this.y = map(yNoise, -1, 1, this.bounds["y"].min, this.bounds["y"].max);
@@ -366,10 +367,11 @@ class Orb {
     this.graphics.endFill();
   }
 }
+
 let itl = setInterval(() => {
   let box = document.getElementById('orb-canvas')
   if (box) {
-    
+
     clearInterval(itl);
     // Create PixiJS app
     const app = new PIXI.Application({
@@ -479,7 +481,7 @@ const Head1 = styled.div`
     background-size: 350%;
     height: 100vh;
   }
-   @media (min-width: 376px) and (max-width: 767px) {
+  @media (min-width: 376px) and (max-width: 767px) {
     height: 80vh;
     background-size: 350%;
 
@@ -488,7 +490,7 @@ const Head1 = styled.div`
 const FooterModal = styled.div`
   width: 100vw;
   /* padding-bottom: 120px; */
-  /* background: url(${section6}) no-repeat; */
+    /* background: url(${section6}) no-repeat; */
   /* background-size: cover; */
   text-align: center;
   @media (max-width: 767px) {
@@ -501,8 +503,8 @@ const BlueLight = styled.img`
   top: calc(60% - 300px);
   left: calc(50% - 300px);
   width: 600px;
-  animation: ${blinkAnimation} 5s ease-in-out infinite, ${floatAnimation} 5s infinite alternate ease-in-out,${scale} 2s alternate infinite;
-  /* animation:  ${floatAnimation} 3s infinite alternate; */
+  animation: ${blinkAnimation} 5s ease-in-out infinite, ${floatAnimation} 5s infinite alternate ease-in-out, ${scale} 2s alternate infinite;
+    /* animation:  ${floatAnimation} 3s infinite alternate; */
 `
 
 export default function Homepage() {
@@ -518,55 +520,56 @@ export default function Homepage() {
 
   useEffect(() => {
 
-  },[])
-  
+  }, [])
+
   return (
     <ContentWrapper>
       <Content1>
         <Head1>
-            <canvas id="orb-canvas" class="orb-canvas"></canvas>
-           {/* <div className="blur-container">
+          <canvas id="orb-canvas" class="orb-canvas"></canvas>
+          {/* <div className="blur-container">
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
           </div>  */}
-          <Head />
+          <Head/>
         </Head1>
 
-        <Identity />
-        <Identity2 />
+        <Identity/>
+        <Identity2/>
         {/* <Initiatives /> */}
       </Content1>
-      <CliqueContent2 />
+      <CliqueContent2/>
       {/* <Infrastructure /> */}
       {/* <Initiatives /> */}
-      <Ecosystem />
+      <Ecosystem/>
       {/* <Learn /> */}
       <FooterModal>
-        <BuildWithUs />
-        <Footer />
+        <BuildWithUs/>
+        <Footer/>
       </FooterModal>
       <OpenIconSpeedDial></OpenIconSpeedDial>
     </ContentWrapper>
   );
 }
 const BoxFixed = styled(Box)`
-    position: fixed;
-    right: 44px;
-    top: 220px;
-    z-index: 1999;
-    @media (max-width: 767px) {
-      display: none;
-    }
+  position: fixed;
+  right: 44px;
+  top: 220px;
+  z-index: 1999;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `
 const SocialMediaFixed = styled.img`
   width: 28px;
   height: 28px;
   cursor: pointer;
 `
+
 export function OpenIconSpeedDial() {
   return (
     <BoxFixed>
-        <Box  sx={{display:'flex',flexDirection:'column', gap:'20px'}}>
+      <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
         <SocialMediaFixed
           src={Tele}
           onClick={() => window.open("https://t.me/STPofficial", "_blank")}
@@ -594,7 +597,7 @@ export function OpenIconSpeedDial() {
           src={Email}
           onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
         />
-        </Box>
+      </Box>
     </BoxFixed>
   );
 }
@@ -616,7 +619,7 @@ export const HeadBox = styled(Box)`
     height: 100vh;
     padding-bottom: 0px;
   }
-  @media (min-width: 376px) and (max-width: 767px){
+  @media (min-width: 376px) and (max-width: 767px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -710,7 +713,7 @@ const AwnsBtn = styled(GreenBtn)`
   font-size: 14px;
   background: #A7F46A;
   color: #020035;
-  
+
   @media (max-width: 767px) {
     max-width: 280px;
     /* margin: 30px 0; */
@@ -737,19 +740,24 @@ function Head() {
     <HeadBox>
       {/* <HeadStart src={section1}></HeadStart> */}
       <HeadH1>
-        Opening The Portal <HeadBr />
+        Opening The Portal <HeadBr/>
         to Autonomous Worlds
       </HeadH1>
       <HeadText>
         Our mission is to pioneer the advancement of AI in gaming
       </HeadText>
       <HeadBtns>
-        <GreenBtn onClick={() => { window.open('https://explorer.myclique.io/', '_blank') }}> Build on Clique </GreenBtn>
-        <AwnsBtn2 onClick={() => { window.open('https://awns.stp.network/', '_blank') }}> Create an AWNS </AwnsBtn2>
+        <GreenBtn onClick={() => {
+          window.open('https://explorer.myclique.io/', '_blank')
+        }}> Build on Clique </GreenBtn>
+        <AwnsBtn2 onClick={() => {
+          window.open('https://awns.stp.network/', '_blank')
+        }}> Create an AWNS </AwnsBtn2>
       </HeadBtns>
     </HeadBox>
   );
 }
+
 const IdentityBox = styled.div`
   /* margin-top: 160px; */
   display: flex;
@@ -763,7 +771,7 @@ const IdentityBox = styled.div`
     margin-top: 0px;
     padding-top: 0px;
   }
-  
+
 `
 const IdentityHomeImg2 = styled.img`
   position: relative;
@@ -800,7 +808,7 @@ const Section2Title = styled.div`
   width: 148px;
   height: 32px;
   margin: auto;
-  border-radius: 100px; 
+  border-radius: 100px;
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;
@@ -847,8 +855,8 @@ const IdentityText = styled.div`
   align-items: center;
   color: #B2B2B2;
   @media (max-width: 767px) {
-      font-size: 16px;
-      line-height: 1.2;
+    font-size: 16px;
+    line-height: 1.2;
   }
 `
 const Identity2Img = styled.img`
@@ -882,9 +890,11 @@ const IconsBox = styled.div`
   /* border-radius: 40px; */
   /* background: linear-gradient(180deg, rgba(49, 48, 241, 0.00) 0%, #3837F1 62.50%); */
   border-right: 1px solid #363636;
+
   &:last-of-type {
     border-right: none;
   }
+
   @media (max-width: 767px) {
     width: 220px;
     height: auto;
@@ -950,9 +960,9 @@ const Identity2Text = styled.div`
   color: #B2B2B2;
   @media (max-width: 767px) {
     margin-top: 24px;
-      font-size: 16px;
-      line-height: 1.2;
-      text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
   }
 `
 const Identity2Star = styled.img`
@@ -982,12 +992,13 @@ function Identity() {
         <Section2Title>AI Unites Gaming </Section2Title>
         <Section2Main>
           <IdentityText>We envision AI enhancing the utility and value of onchain gaming.</IdentityText>
-          <IdentityText>Redefining games with  onchain agents and AI elevated gameplay.</IdentityText>
+          <IdentityText>Redefining games with onchain agents and AI elevated gameplay.</IdentityText>
         </Section2Main>
       </IdentityContent>
     </IdentityBox>
   )
 }
+
 function Identity2() {
   return (
     <Identity2Box>
@@ -1121,7 +1132,7 @@ const InfraBoxContent = styled(Typography)`
   }
 `;
 
-function InfraBox({ title, content }: { title: string; content: string }) {
+function InfraBox({title, content}: { title: string; content: string }) {
   return (
     <InfraBoxBg>
       <InfraBoxTitle>{title}</InfraBoxTitle>
@@ -1181,19 +1192,19 @@ function DappStore() {
         Scale your DAO with unlimited ecosystem tools and infrastructures.
         Become part of our ecosystem by integrating your dApp with Clique.
       </CliqueText>
-      <CliqueImg src={DappStorePic} />
+      <CliqueImg src={DappStorePic}/>
     </CliqueBox>
   );
 }
 
 function CliqueSdk() {
   return (
-    <CliqueBox style={{ background: "rgba(237, 252, 255, 0.4)" }}>
+    <CliqueBox style={{background: "rgba(237, 252, 255, 0.4)"}}>
       <CliqueTitle>SDK</CliqueTitle>
       <CliqueText>
         Create a customized workspace platform for free with Clique SDK.
       </CliqueText>
-      <CliqueImg src={CliqueSdkPic} />
+      <CliqueImg src={CliqueSdkPic}/>
     </CliqueBox>
   );
 }
@@ -1273,9 +1284,9 @@ function Infrastructure() {
         overflowX: "hidden",
       }}
     >
-      {!isDownSm && <InfraStar src={SmallStar} />}
-      <Ellipse src={InfEllipse1} />
-      <Ellipse src={InfEllipse2} />
+      {!isDownSm && <InfraStar src={SmallStar}/>}
+      <Ellipse src={InfEllipse1}/>
+      <Ellipse src={InfEllipse2}/>
       <InfrastructureBox>
         <Box
           display={"flex"}
@@ -1299,12 +1310,12 @@ function Infrastructure() {
         >
           {CliqueBox.map((c, idx) => (
             <Grid item sm={12} md={4}>
-              <InfraBox title={c.title} content={c.content} />
+              <InfraBox title={c.title} content={c.content}/>
             </Grid>
           ))}
         </Grid>
         <img
-          style={{ marginTop: "40px", width: "100%" }}
+          style={{marginTop: "40px", width: "100%"}}
           src={isDownSm ? InfrastructureSmPic : InfrastructurePic}
         />
         <Grid
@@ -1314,12 +1325,12 @@ function Infrastructure() {
           position={"relative"}
           mb={"48px"}
         >
-          {!isDownSm && <BottomStar src={SmallStar} />}
+          {!isDownSm && <BottomStar src={SmallStar}/>}
           <Grid item sm={12} md={6}>
-            <DappStore />
+            <DappStore/>
           </Grid>
           <Grid item sm={12} md={6}>
-            <CliqueSdk />
+            <CliqueSdk/>
           </Grid>
         </Grid>
         {false && (
@@ -1336,6 +1347,7 @@ function Infrastructure() {
     </Box>
   );
 }
+
 const CliqueContentBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -1343,7 +1355,7 @@ const CliqueContentBox = styled.div`
   align-items: center;
   width: 100%;
   padding-top: 150px;
-  /* background: url(${homeImg4}) no-repeat; */
+    /* background: url(${homeImg4}) no-repeat; */
   background-position: 0% -5%;
   @media (max-width: 767px) {
     padding-top: 30px;
@@ -1417,7 +1429,7 @@ const CliqueContentText = styled.div`
   font-style: normal;
   font-weight: 500;
   @media (max-width: 767px) {
-      margin-top: 20px;
+    margin-top: 20px;
   }
 `
 const ContentRight = styled.div`
@@ -1496,7 +1508,7 @@ const CardText = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 26px; 
+  line-height: 26px;
 `
 const Box2 = styled.div`
   position: relative;
@@ -1504,7 +1516,7 @@ const Box2 = styled.div`
   margin: 200px auto 0;
   display: flex;
   justify-content: center;
-  /* background: url(${homeImg5}) no-repeat; */
+    /* background: url(${homeImg5}) no-repeat; */
   /* background-position: 100% 120%; */
   @media (max-width: 767px) {
     width: 100vw;
@@ -1581,7 +1593,7 @@ export const Box3Card = styled.div`
 `
 export const Box3CardBlue = styled(Box3Card)`
   width: 1200px;
-  height: 320px;  
+  height: 320px;
   display: flex;
   gap: 20px;
   position: relative;
@@ -1590,16 +1602,18 @@ export const Box3CardBlue = styled(Box3Card)`
   border: 1px solid #C8D9D6;
   background: #F8FEFF;
   cursor: pointer;
+
   &:hover {
     box-shadow: 0px 6px 10px 0px rgba(173, 218, 183, 0.25);
   }
+
   @media (max-width: 767px) {
     width: 100%;
-    height: auto;  
+    height: auto;
     flex-direction: column;
     padding: 16px;
   }
-  
+
 `
 const Box3CardBlue2 = styled(Box3CardBlue)`
   width: 580px;
@@ -1623,13 +1637,15 @@ export const Box3CardPink = styled(Box3Card)`
   border: 1px solid #D9C6F0;
   background: #fdf8ff;
   cursor: pointer;
+
   &:hover {
     box-shadow: 0px 6px 10px 0px rgba(180, 158, 193, 0.25);
   }
+
   @media (max-width: 767px) {
     position: static;
     width: 100%;
-    height: auto;  
+    height: auto;
     flex-direction: column;
     padding: 16px;
   }
@@ -1659,7 +1675,7 @@ const ComingSoonBtnBlue = styled(ComingSoonBtn)`
   border: 1px solid #C8D9D6;
   background: #EDF9FB;
   color: #93BFB7;
-  
+
 `
 const ComingSoonBtnPink = styled(ComingSoonBtn)`
   border: 1px solid #9E9EE8;
@@ -1680,7 +1696,7 @@ const ComingSoonBtnBlueH5 = styled(ComingSoonBtnH5)`
   border: 1px solid #C8D9D6;
   background: #EDF9FB;
   color: #93BFB7;
-  
+
 `
 const ComingSoonBtnPinkH5 = styled(ComingSoonBtnH5)`
   border: 1px solid #9E9EE8;
@@ -1691,7 +1707,7 @@ const Box3CardCover = styled.div`
   flex: 1;
 `
 export const Box3CardImg = styled.img`
-  max-width:100%;
+  max-width: 100%;
   max-height: 100%;
 `
 export const Box3CardTitle = styled.div`
@@ -1737,12 +1753,13 @@ const Box4 = styled.div`
   display: flex;
   width: 1200px;
   @media (max-width: 767px) {
-      width: 100%;
-      padding: 0 24px;
-      flex-direction: column;
+    width: 100%;
+    padding: 0 24px;
+    flex-direction: column;
   }
 
 `
+
 function CliqueContent() {
   const cliqueAwSolutions = {
     title: 'Clique AW',
@@ -1783,10 +1800,12 @@ function CliqueContent() {
         <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
         {/* </ContentLeft> */}
         <Box3 isMargin={false}>
-          <Box3CardBlue onClick={() => { openLink('https://awns.stp.network/') }}>
+          <Box3CardBlue onClick={() => {
+            openLink('https://awns.stp.network/')
+          }}>
             {/* <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue> */}
             <Box3CardUl>
-              <Box3CardTitle style={{ marginLeft: '-20px' }}>AWNS</Box3CardTitle>
+              <Box3CardTitle style={{marginLeft: '-20px'}}>AWNS</Box3CardTitle>
               <Box3CardLi>Serves as your autonomous onchain agent with a 6551 Wallet.</Box3CardLi>
               <Box3CardLi>Easily connect and interact with dApps.</Box3CardLi>
               <Box3CardLi>Single name for all tokens and decentralized worlds.</Box3CardLi>
@@ -1796,10 +1815,12 @@ function CliqueContent() {
             </Box3CardCover>
             {/* <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5> */}
           </Box3CardBlue>
-          <Box3CardPink onClick={() => { openLink('https://awnsbase.stp.network/my/names?tab=game') }}>
+          <Box3CardPink onClick={() => {
+            openLink('https://awnsbase.stp.network/my/names?tab=game')
+          }}>
             {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
             <Box3CardUl>
-              <Box3CardTitle style={{ marginLeft: '-20px' }}>Dynamic 6551 Account</Box3CardTitle>
+              <Box3CardTitle style={{marginLeft: '-20px'}}>Dynamic 6551 Account</Box3CardTitle>
               <Box3CardLi>Generate and manage NFT-based smart wallets.</Box3CardLi>
               <Box3CardLi>Multi-chain navigation with interworld passports.</Box3CardLi>
               <Box3CardLi>Customize avatars and trade digital assets.</Box3CardLi>
@@ -1809,9 +1830,11 @@ function CliqueContent() {
             </Box3CardCover>
             {/* <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5> */}
           </Box3CardPink>
-          <Box3CardBlue onClick={() => { openLink('https://ancientforest.xyz/') }}>
+          <Box3CardBlue onClick={() => {
+            openLink('https://ancientforest.xyz/')
+          }}>
             <Box3CardUl>
-              <Box3CardTitle style={{ marginLeft: '-20px' }}>Onchain Gaming</Box3CardTitle>
+              <Box3CardTitle style={{marginLeft: '-20px'}}>Onchain Gaming</Box3CardTitle>
               <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
               <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
               <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
@@ -1825,7 +1848,7 @@ function CliqueContent() {
             <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
             {/* <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle> */}
             <Box3CardUl>
-              <Box3CardTitle style={{ marginLeft: '-20px' }}>Autonomous AI Agent</Box3CardTitle>
+              <Box3CardTitle style={{marginLeft: '-20px'}}>Autonomous AI Agent</Box3CardTitle>
               <Box3CardLi>Integrate AI for onchain gaming and DeFi actions.</Box3CardLi>
               <Box3CardLi>Train AI for game interaction and item collection.</Box3CardLi>
               <Box3CardLi>AI-powered data querying and onchain activities.</Box3CardLi>
@@ -1859,23 +1882,31 @@ function CliqueContent() {
           <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
         </ContentRight2>
         <ContentLeft2>
-          <Box3CardBlue2 onClick={() => { openLink('https://www.stp.network/cliqueSocial') }}>
-            <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Social</Box3CardTitle>
-            <Box3CardTxt>Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and Telegram.</Box3CardTxt>
+          <Box3CardBlue2 onClick={() => {
+            openLink('https://www.stp.network/cliqueSocial')
+          }}>
+            <Box3CardTitle style={{marginBottom: '20px', paddingLeft: '10px'}}>Clique Social</Box3CardTitle>
+            <Box3CardTxt>Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and
+              Telegram.</Box3CardTxt>
             <Box3CardImg src={cliqueSocial}></Box3CardImg>
           </Box3CardBlue2>
         </ContentLeft2>
         <HomeImg5 src={homeImg5V2}></HomeImg5>
       </Box2>
       <Box4>
-        <Box3CardBlue2 onClick={() => { openLink('https://www.myclique.io/activity') }}>
-          <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Rewards</Box3CardTitle>
+        <Box3CardBlue2 onClick={() => {
+          openLink('https://www.myclique.io/activity')
+        }}>
+          <Box3CardTitle style={{marginBottom: '20px', paddingLeft: '10px'}}>Clique Rewards</Box3CardTitle>
           <Box3CardTxt>Solutions platform for building onchain worlds unique to any AW project.</Box3CardTxt>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
         </Box3CardBlue2>
-        <Box3CardPink2 onClick={() => { openLink('https://www.myclique.io/daos') }}>
-          <Box3CardTitle style={{ marginBottom: '20px', paddingLeft: '10px' }}>Clique Governance</Box3CardTitle>
-          <Box3CardTxt>Collaborative governance tool for planning and building worlds with no code and gas.</Box3CardTxt>
+        <Box3CardPink2 onClick={() => {
+          openLink('https://www.myclique.io/daos')
+        }}>
+          <Box3CardTitle style={{marginBottom: '20px', paddingLeft: '10px'}}>Clique Governance</Box3CardTitle>
+          <Box3CardTxt>Collaborative governance tool for planning and building worlds with no code and
+            gas.</Box3CardTxt>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
         </Box3CardPink2>
       </Box4>
@@ -1883,6 +1914,7 @@ function CliqueContent() {
     </CliqueContentBox>
   )
 }
+
 const CliqueBox2 = styled.div`
   width: 100%;
   height: 884px;
@@ -1900,7 +1932,7 @@ const CliqueBox2 = styled.div`
 const CliqueBox2Logo = styled.img`
   margin-top: 40px;
   width: 365px;
-   @media (max-width: 767px) {
+  @media (max-width: 767px) {
     width: 200px;
     margin-top: 0px;
   }
@@ -1922,7 +1954,7 @@ const CliqueBox2Title = styled.div`
     line-height: 32px;
     padding: 0 24px;
   }
-   @media screen and (min-width: 376px) and (max-width: 767px) {
+  @media screen and (min-width: 376px) and (max-width: 767px) {
     margin-top: 180px;
 
   }
@@ -1995,7 +2027,7 @@ const InfrastructureMainBox1 = styled.div`
   height: auto;
   min-height: 330px;
   padding: 20px 0px 0 0px;
-  border-radius: 24px;   
+  border-radius: 24px;
   border: 1px solid #FFFFFF14;
   background: #1D1C20;
   display: flex;
@@ -2003,7 +2035,7 @@ const InfrastructureMainBox1 = styled.div`
   justify-content: space-between;
   overflow: hidden;
   @media (max-width: 767px) {
-     min-height: 300px;
+    min-height: 300px;
   }
 `
 const InfrastructureMainBox1H = styled.div`
@@ -2016,7 +2048,7 @@ const InfrastructureMainBox1H = styled.div`
   line-height: 38px;
   letter-spacing: 0em;
   color: #fff;
-   @media (max-width: 767px) {
+  @media (max-width: 767px) {
     font-size: 20px;
     line-height: 1.3;
   }
@@ -2035,7 +2067,7 @@ const InfrastructureMainBox1T = styled.div`
     line-height: 1.3;
   }
 `
-const InfrastructureMainBox1IconN =  styled.img`
+const InfrastructureMainBox1IconN = styled.img`
   width: 100%;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
@@ -2048,14 +2080,14 @@ const InfrastructureMainBox2 = styled.div`
   height: auto;
   /* min-height: 400px; */
   padding: 20px 0px 0 0px;
-  border-radius: 24px;   
+  border-radius: 24px;
   border: 1px solid #FFFFFF14;
   background: #1D1C20;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 767px) {
-     min-height: 300px;
+    min-height: 300px;
   }
 `
 const CliqueApplications = styled.div`
@@ -2066,6 +2098,7 @@ const CliqueApplications = styled.div`
     padding: 0 24px;
   }
 `
+
 function CliqueContent2() {
 
   const openLink = (href: any) => {
@@ -2077,7 +2110,7 @@ function CliqueContent2() {
         <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
         <CliqueBox2Title>New Form of Play & Create</CliqueBox2Title>
         <CliqueBox2Txt>Clique is a blockchain for AI enhanced gaming.</CliqueBox2Txt>
-        <CliqueBox2Txt> Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2Txt>
+        <CliqueBox2Txt> Our ecosystem empowers everyone to reinvent gaming experiences with AI.</CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
       </CliqueBox2>
       <CliqueInfrastructure>
@@ -2088,21 +2121,21 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>Celestia</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Modular DA with  >100x reduced cost for intense load of onchain gaming`}</InfrastructureMainBox1T>
             </div>
-              <InfrastructureMainBox1IconN src={s4Icon1}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN src={s4Icon1}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
               <InfrastructureMainBox1H>OP Stack on Base</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
             </div>
-              <InfrastructureMainBox1IconN src={s4Icon2}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN src={s4Icon2}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Composable app chain data from Base, Farcaster, Lens with AI APIs`}</InfrastructureMainBox1T>
             </div>
-              <InfrastructureMainBox1IconN src={s4Icon3}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN src={s4Icon3}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueInfrastructure>
@@ -2118,8 +2151,8 @@ function CliqueContent2() {
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
-            <InfrastructureMainBox1H>Game Portal</InfrastructureMainBox1H>
-            <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>Game Portal</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN src={s4Icon5}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
@@ -2156,7 +2189,7 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>Ecosystem Support </InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Collaborate in the builder community and apply for frequent project grants and developer support`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon9}></InfrastructureMainBox1IconN>  
+            <InfrastructureMainBox1IconN src={s4Icon9}></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueApplications>
@@ -2165,7 +2198,7 @@ function CliqueContent2() {
 }
 
 const DataBgBox = styled(Box)`
-  /* background-image: url("${DataBg}"); */
+    /* background-image: url("${DataBg}"); */
   position: relative;
   width: 100%;
   display: flex;
@@ -2187,6 +2220,7 @@ const DataStar = styled.img`
 const DataBox = styled(Box)`
   padding: 0 100px;
   border-right: 1px solid #D6DEE8;
+
   &:last-of-type {
     border-right: none
   }
@@ -2218,15 +2252,15 @@ const DataContent = styled(Typography)`
 `;
 
 function Data() {
-  const { total } = useTotal();
+  const {total} = useTotal();
   const dataList = useMemo(() => {
     return [
-      { number: total?.totalDao.toLocaleString(), desc: "DAOs" },
+      {number: total?.totalDao.toLocaleString(), desc: "DAOs"},
       {
         number: total?.totalAccount.toLocaleString(),
         desc: "Users",
       },
-      { number: total?.totalProposal.toLocaleString(), desc: "Proposals" },
+      {number: total?.totalProposal.toLocaleString(), desc: "Proposals"},
     ];
   }, [total?.totalAccount, total?.totalDao, total?.totalProposal]);
   return (
@@ -2346,11 +2380,11 @@ const InitRow = styled(Row)`
   align-items: center;
 `;
 
-function InitList({ data }: { data: InitiativesData }) {
+function InitList({data}: { data: InitiativesData }) {
   const isDownSm = useBreakpoint("sm");
   return (
     <InitBox>
-      <img src={data.pic} width={"600px"} />
+      <img src={data.pic} width={"600px"}/>
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -2358,12 +2392,12 @@ function InitList({ data }: { data: InitiativesData }) {
       >
         <Box>
           <InitRow>
-            <img src={data.avatar} width={isDownSm ? "40px" : "60px"} />
+            <img src={data.avatar} width={isDownSm ? "40px" : "60px"}/>
             <InitListH1>{data.title}</InitListH1>
           </InitRow>
           <Row gap={"16px"} mt={"16px"}>
             {data.tag.map((tag, idx) => (
-              <InitTag key={idx} sx={{ background: data.tagColor[idx] }}>
+              <InitTag key={idx} sx={{background: data.tagColor[idx]}}>
                 {tag}
               </InitTag>
             ))}
@@ -2377,7 +2411,7 @@ function InitList({ data }: { data: InitiativesData }) {
           onClick={() => window.open(data.link, "_blank")}
         >
           Learn more
-          <ArrowOutwardIcon />
+          <ArrowOutwardIcon/>
         </GreenBtn>
       </Box>
     </InitBox>
@@ -2414,6 +2448,7 @@ interface InfoDataType {
   item2: string;
   item3: string;
 }
+
 const InfoName = styled(Typography)`
   padding-right: 12px;
   max-width: 142px;
@@ -2467,19 +2502,24 @@ const InfoConetne = styled(Typography)`
 const IfonBoxs = styled(Box)`
   padding: 0 60px;
   max-width: 1441px;
+
   ::-webkit-scrollbar {
     display: none !important;
   }
+
   @media (max-width: 767px) {
     & .wrapper {
       flex-wrap: nowrap;
+
       ::-webkit-scrollbar {
         display: none !important;
       }
     }
+
     & .wrapper ::-webkit-scrollbar {
       display: none !important;
     }
+
     display: flex;
     padding: 32px 24px 0px;
     overflow-x: auto;
@@ -2503,6 +2543,7 @@ const InfoUserIcon = styled(UserIcon)`
   path {
     fill: #0149c6;
   }
+
   :hover path {
     fill: #a7f46a;
   }
@@ -2510,6 +2551,7 @@ const InfoUserIcon = styled(UserIcon)`
 const InfoFileIcon = styled(FileIcon)`
   height: 16.6px;
   width: 20px;
+
   path {
     fill: #0149c6;
   }
@@ -2517,6 +2559,7 @@ const InfoFileIcon = styled(FileIcon)`
 const InfoAlarmIcon = styled(AlarmIcon)`
   height: 17.5px;
   width: 17.5px;
+
   path {
     fill: #0149c6;
   }
@@ -2536,7 +2579,7 @@ const AllInfo = styled(Box)`
   border-radius: 80px;
   color: #0149c6;
   font-size: 18px;
-  
+
 `;
 
 const ContributorsImg = styled("img")`
@@ -2573,15 +2616,15 @@ const ContributorsTitle = styled(Box)`
 `;
 
 function InfoBox({
-  avatar,
-  name,
-  group,
-  comment,
-  item1,
-  item2,
-  item3,
-  link,
-}: {
+                   avatar,
+                   name,
+                   group,
+                   comment,
+                   item1,
+                   item2,
+                   item3,
+                   link,
+                 }: {
   avatar: string;
   name: string;
   group: string;
@@ -2611,10 +2654,10 @@ function InfoBox({
         <img
           alt=""
           src={avatar}
-          style={{ width: "48px", height: "48px", borderRadius: "50%" }}
+          style={{width: "48px", height: "48px", borderRadius: "50%"}}
         />
-        <Box sx={{ pl: "14px" }}>
-          <Row sx={{ alignItems: "center" }}>
+        <Box sx={{pl: "14px"}}>
+          <Row sx={{alignItems: "center"}}>
             <InfoName> {name} </InfoName>
             <IconStart fill={'#0149c6'}></IconStart>
             {/* <InfoNameIcon src={Label1}></InfoNameIcon> */}
@@ -2624,19 +2667,19 @@ function InfoBox({
       </Row>
 
       <InfoConetne> {comment} </InfoConetne>
-      <Row sx={{ pt: "16px", alignItems: "center" }}>
-        <Row sx={{ alignItems: "center" }}>
-          <InfoUserIcon />
+      <Row sx={{pt: "16px", alignItems: "center"}}>
+        <Row sx={{alignItems: "center"}}>
+          <InfoUserIcon/>
           <InfoBottomText> {item1}</InfoBottomText>
         </Row>
 
-        <Row sx={{ alignItems: "center", ml: "40px" }}>
-          <InfoFileIcon ></InfoFileIcon>
+        <Row sx={{alignItems: "center", ml: "40px"}}>
+          <InfoFileIcon></InfoFileIcon>
           <InfoBottomText> {item2}</InfoBottomText>
         </Row>
 
-        <Row sx={{ alignItems: "center", ml: "40px" }}>
-          <InfoAlarmIcon ></InfoAlarmIcon>
+        <Row sx={{alignItems: "center", ml: "40px"}}>
+          <InfoAlarmIcon></InfoAlarmIcon>
           <InfoBottomText> {item3}</InfoBottomText>
         </Row>
       </Row>
@@ -2645,10 +2688,10 @@ function InfoBox({
 }
 
 function ContributorsBox({
-  img,
-  name,
-  group,
-}: {
+                           img,
+                           name,
+                           group,
+                         }: {
   img: string;
   name: string;
   group: string;
@@ -2676,6 +2719,7 @@ function ContributorsBox({
     </Box>
   );
 }
+
 const InitiativesBox = styled.div`
   position: relative;
   width: 1300px;
@@ -2710,6 +2754,7 @@ const ViewAllBox = styled.div`
     /* padding-left: 24px; */
   }
 `
+
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
   const dataList = [
@@ -2841,11 +2886,11 @@ function Initiatives() {
       <InitiativesStarWhite src={starWhite}></InitiativesStarWhite>
       <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
-        We evolve DAOs for Autonomous Worlds.  <br />
+        We evolve DAOs for Autonomous Worlds. <br/>
         Traverse our onchain universe and help build the future!
       </InitH2>
-      <Data />
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Data/>
+      <Box sx={{display: "flex", justifyContent: "center"}}>
         <IfonBoxs>
           <Grid
             className={"wrapper"}
@@ -3053,7 +3098,7 @@ const EcoGame = styled.div`
   display: flex;
   gap: 24px;
   @media screen and (max-width: 767px) {
-   width: 100%;
+    width: 100%;
   }
 `
 const StyledThumbs = styled.div`
@@ -3076,14 +3121,14 @@ const SwiperGameBig = styled(Swiper)`
   width: 800px;
   height: 450px;
   @media screen and (max-width: 767px) {
-      width: 100%;
-      max-width: 375px;
-      padding: 0 24px;
-      height: auto;
-      margin-bottom: 40px;
+    width: 100%;
+    max-width: 375px;
+    padding: 0 24px;
+    height: auto;
+    margin-bottom: 40px;
   }
   @media screen and (min-width: 376px) and (max-width: 767px) {
-      max-width: 430px;
+    max-width: 430px;
   }
 `
 const SwiperSlideBig = styled(SwiperSlide)`
@@ -3104,7 +3149,7 @@ const GameImgBig = styled.img`
   /* width: 800px;
   height: 450px; */
   width: 100%;
-   @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
     height: 100%;
   }
@@ -3119,7 +3164,7 @@ const GameImgBigMask = styled.div`
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   background: #0000004D;
-   @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     height: 96px;
     padding: 10px 16px;
     border-bottom-left-radius: 22px;
@@ -3133,12 +3178,14 @@ const MaskName = styled.div`
   line-height: 29px;
   letter-spacing: -0.02em;
   color: #fff;
-   @media screen and (max-width: 767px) {
-      font-size: 16px;
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
   }
 `
 const MaskLogo = styled.img`
   width: 32px;
+  border-radius: 50%;
+
   @media screen and (max-width: 767px) {
     width: 24px;
   }
@@ -3152,21 +3199,22 @@ const MaskDes = styled.div`
   line-height: 19px;
   letter-spacing: -0.02em;
   color: #B2B2B2;
-   @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     font-size: 14px;
     padding-left: 30px;
     margin-top: 2px;
   }
 `
-const GameImgSmallBox = styled.div<{active:boolean}>`
+const GameImgSmallBox = styled.div<{ active: boolean }>`
   position: relative;
   border: 8px solid #363636;
   border-radius: 24px;
   width: 240px;
   height: 135px;
   overflow: hidden;
+
   & > div {
-    display: ${props =>props.active?'none': 'block' };
+    display: ${props => props.active ? 'none' : 'block'};
   }
 `
 const GameImgSmallMask = styled.div`
@@ -3188,14 +3236,15 @@ function Ecosystem() {
   const history = useHistory();
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const swiperRef = useRef<SwiperRef>(null);
-  const [activeIndex,setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
   const Games = [
     {
       src: s5Game3,
-      logo: s5GameLogo1,
+      logo: Eternal,
       name: 'Eternal Legacy',
-      des: 'Overcome blistering obstacles to create and build your deck, it’s now or never!',
-      link: ''
+      des: 'Riveting AI-powered card game where you uniquely build a deck generated by your own NFTs to battle friends and foes in the ultimate onchain strategy game. ',
+      link: 'https://eternallegacy.xyz',
+      buttonStr: 'Play Beta'
     },
     {
       src: s5Game1,
@@ -3211,8 +3260,8 @@ function Ecosystem() {
       des: 'Simple yet extremely fun dice-rolling game, complete 6 rolls to get a bonus or reward!',
       link: 'https://lootdice.xyz/'
     },
-    
-   
+
+
   ]
   const PartnersLogos = [
     hypr,
@@ -3274,17 +3323,17 @@ function Ecosystem() {
       : value === "Integrations"
         ? IntegrationsLogos
         : ListedLogos;
-const changeSlide = (index:any) => {
-  console.log(swiperRef);
-  setActiveIndex(index)
-  if (swiperRef && swiperRef.current && swiperRef.current.swiper) {
-    swiperRef.current.swiper.slideTo(index,0,false);
+  const changeSlide = (index: any) => {
+    console.log(swiperRef);
+    setActiveIndex(index)
+    if (swiperRef && swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideTo(index, 0, false);
+    }
   }
-}
-const handleSwiper = (swiper:any) => {
-  console.log(swiper);
-  setActiveIndex(swiper.activeIndex)
-}
+  const handleSwiper = (swiper: any) => {
+    console.log(swiper);
+    setActiveIndex(swiper.activeIndex)
+  }
   return (
     <Box position={"relative"} display={"flex"} alignItems={"center"} flexDirection={"column"} overflow={"hidden"}>
       {/* <HomeImg61 src={homeImg61}></HomeImg61> */}
@@ -3301,89 +3350,94 @@ const handleSwiper = (swiper:any) => {
               borderRadius: isDownSm ? "1.5px" : "2.5px",
             },
             ".MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected":
-            {
-              color: "#fff",
-              borderColor: "#007918",
-              background: "#00791833"
-            },
+              {
+                color: "#fff",
+                borderColor: "#007918",
+                background: "#00791833"
+              },
           }}
         >
-          <EcoTab value={"Games"} label="Games" />
-          <EcoTab value={"Partners"} label="Partners" />
-          <EcoTab value={"Integrations"} label="Integrations" />
-          <EcoTab value={"Listed Exchanges"} label="Listed Exchanges" />
+          <EcoTab value={"Games"} label="Games"/>
+          <EcoTab value={"Partners"} label="Partners"/>
+          <EcoTab value={"Integrations"} label="Integrations"/>
+          <EcoTab value={"Listed Exchanges"} label="Listed Exchanges"/>
         </Tabs>
         {
-          value==='Games'?
-          <EcoGame>
-            <StyledThumbs >
-            {
-              Games.map((item,index) => (
-                <GameImgSmallBox active={activeIndex===index} onClick={()=>{changeSlide(index)}}>
-                  <GameImgSmall  src={item.src} ></GameImgSmall>
-                  <GameImgSmallMask>
-                  </GameImgSmallMask>
-                </GameImgSmallBox>
-              ))
-              }
-            </StyledThumbs>
-            <SwiperGameBig ref={swiperRef} modules={[Autoplay]} autoplay={{
-              delay: 4000,
-            }} spaceBetween={10} onSlideChange={(swiper)=>{handleSwiper(swiper)}}>
-              {
-                Games.map(item => (
-                  <SwiperSlideBig>
-                    <GameImgBig src={item.src}></GameImgBig>
-                    <GameImgBigMask>
-                      <MaskName><MaskLogo src={item.logo}></MaskLogo> {item.name}</MaskName>
-                      <MaskDes>{item.des}</MaskDes>
-                      <GameLearnMore
-                        onClick={() => {item.link && window.open(item.link,'_blank')}}
-                      >
-                        {
-                          item.link?'Learn More':'Coming Soon'
-                        }
-                        
-                      </GameLearnMore>
-                    </GameImgBigMask>
-                  </SwiperSlideBig>
-                ))
-              }
-            </SwiperGameBig>
-          </EcoGame>:
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            loop
-            autoplay={{
-              delay: 1000,
-            }}
-            slidesPerView={5}
-            style={{
-              maxWidth: "1441px",
-              padding: "60px",
-              alignItems: 'center'
-            }}
-          >
-            {currentLogos.map((logo, idx) => (
-              // init width 0px
-              <SwiperSlide key={idx} style={{ width: "264.2px", lineHeight: '50px', textAlign: 'center' }}>
-                <img key={idx} style={{ maxHeight: 50, maxWidth: 200 }} src={logo} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          value === 'Games' ?
+            <EcoGame>
+              <StyledThumbs>
+                {
+                  Games.map((item, index) => (
+                    <GameImgSmallBox active={activeIndex === index} onClick={() => {
+                      changeSlide(index)
+                    }}>
+                      <GameImgSmall src={item.src}></GameImgSmall>
+                      <GameImgSmallMask>
+                      </GameImgSmallMask>
+                    </GameImgSmallBox>
+                  ))
+                }
+              </StyledThumbs>
+              <SwiperGameBig ref={swiperRef} modules={[Autoplay]} autoplay={{
+                delay: 4000,
+              }} spaceBetween={10} onSlideChange={(swiper) => {
+                handleSwiper(swiper)
+              }}>
+                {
+                  Games.map(item => (
+                    <SwiperSlideBig>
+                      <GameImgBig src={item.src}></GameImgBig>
+                      <GameImgBigMask>
+                        <MaskName><MaskLogo src={item.logo}></MaskLogo> {item.name}</MaskName>
+                        <MaskDes>{item.des}</MaskDes>
+                        <GameLearnMore
+                          onClick={() => {
+                            item.link && window.open(item.link, '_blank')
+                          }}
+                        >
+                          {
+                            item.buttonStr ? item.buttonStr : item.link ? 'Learn More' : 'Coming Soon'
+                          }
+                        </GameLearnMore>
+                      </GameImgBigMask>
+                    </SwiperSlideBig>
+                  ))
+                }
+              </SwiperGameBig>
+            </EcoGame> :
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              pagination={{
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              loop
+              autoplay={{
+                delay: 1000,
+              }}
+              slidesPerView={5}
+              style={{
+                maxWidth: "1441px",
+                padding: "60px",
+                alignItems: 'center'
+              }}
+            >
+              {currentLogos.map((logo, idx) => (
+                // init width 0px
+                <SwiperSlide key={idx} style={{width: "264.2px", lineHeight: '50px', textAlign: 'center'}}>
+                  <img key={idx} style={{maxHeight: 50, maxWidth: 200}} src={logo}/>
+                </SwiperSlide>
+              ))}
+            </Swiper>
         }
         {
-          value!=='Games' &&
-          <EcoButton
-            style={{ marginTop: "50px", marginBottom: "120px" }}
-            onClick={() => history.push("/ecosystem")}
-          >
-            Learn More
-          </EcoButton>
+          value !== 'Games' &&
+            <EcoButton
+                style={{marginTop: "50px", marginBottom: "120px"}}
+                onClick={() => history.push("/ecosystem")}
+            >
+                Learn More
+            </EcoButton>
         }
       </EcoContent>
       {/* <HomeImg62 src={homeImg62}></HomeImg62> */}
@@ -3470,17 +3524,17 @@ function Learn() {
   const isDownSm = useBreakpoint("sm");
 
   return (
-    <Box position={"relative"} pb={"120px"} sx={{ width: "100%", backgroundColor: "#F5F8FE" }}>
+    <Box position={"relative"} pb={"120px"} sx={{width: "100%", backgroundColor: "#F5F8FE"}}>
       <LearnEllipse src={starCircle}></LearnEllipse>
-      <InitH1 style={{ textAlign: "center", color: "#000" }}>Learn</InitH1>
+      <InitH1 style={{textAlign: "center", color: "#000"}}>Learn</InitH1>
       <Box
         mt={isDownSm ? "40px" : "48px"}
-        sx={{ display: "flex", justifyContent: "center" }}
+        sx={{display: "flex", justifyContent: "center"}}
       >
         <LearnBox>
           <Box
             sx={{
-              display: { xs: "flex", sm: "grid" },
+              display: {xs: "flex", sm: "grid"},
               gridTemplateColumns: {
                 lg: "1fr 1fr 1fr 1fr",
                 md: "1fr 1fr 1fr",
@@ -3493,7 +3547,7 @@ function Learn() {
             {data.map((item) => {
               return (
                 <LearnItemBox onClick={() => window.open(item.link)}>
-                  <LearnImg src={item.imgUrl} />
+                  <LearnImg src={item.imgUrl}/>
                   <LearnTitle>{item.title}</LearnTitle>
                   <LearnContent>{item.content}</LearnContent>
                 </LearnItemBox>
@@ -3526,6 +3580,7 @@ const LearnBox = styled(Box)`
       display: none;
     }
   }
+
   & .LearnBoxOutterItem {
     @media (max-width: 767px) {
       flex-wrap: nowrap;
@@ -3542,6 +3597,7 @@ const LearnItemBox = styled(Box)`
   border-radius: 20px;
   background-color: #ffffff;
   display: grid;
+
   &:hover {
     border: 1px solid #1b1aff;
     box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
@@ -3657,9 +3713,9 @@ function BuildWithUs() {
     <BuildBox>
       <BuildH1>Build with Us</BuildH1>
       <BuildContent>
-      Join us on the journey towards truly immersive, AI-driven worlds in the next era of gaming.
+        Join us on the journey towards truly immersive, AI-driven worlds in the next era of gaming.
       </BuildContent>
-      <GreenBtn style={{ marginTop: "24px",marginBottom: "64px"  }}>
+      <GreenBtn style={{marginTop: "24px", marginBottom: "64px"}}>
         <a
           href="mailto:jeff@stp.network"
           target="_blank"
@@ -3673,7 +3729,7 @@ function BuildWithUs() {
           }}
         >
           Contact
-           {/* <ArrowOutwardIcon style={{ marginLeft: "8px" }} /> */}
+          {/* <ArrowOutwardIcon style={{ marginLeft: "8px" }} /> */}
         </a>
       </GreenBtn>
       {/* <img
@@ -3737,6 +3793,7 @@ const FooterText = styled(Typography)`
 `;
 const DownloadA = styled.a`
   color: #d6d6d6;
+
   &:hover {
     color: #d6d6d6;
   }
@@ -3753,7 +3810,7 @@ export function Footer() {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Clique", "L3 on Base", "Game Portal", "Developer Engine (Coming Soon)","Community"],
+    ["Clique", "L3 on Base", "Game Portal", "Developer Engine (Coming Soon)", "Community"],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3793,7 +3850,7 @@ export function Footer() {
         alignItems={"center"}
         gap={isDownSm ? "48px" : 0}
       >
-        <img src={StpLogo} alt="" />
+        <img src={StpLogo} alt=""/>
         <BlueButton
           onClick={() =>
             window.open("https://explorer.myclique.io/", "_blank")
@@ -3804,7 +3861,7 @@ export function Footer() {
       </Box>
       {!isDownSm ? (
         <>
-          <Divider style={{ background: "#757B8A" }} />
+          <Divider style={{background: "#757B8A"}}/>
           <Box display={"flex"} gap={isDownSm ? "20px" : "120px"}>
             {footList.map((coloum, idx) => {
               return (
@@ -3818,7 +3875,7 @@ export function Footer() {
                           onClick={() => {
                             if (footListLink[idx][i].includes('.zip')) {
 
-                            } else if(footListLink[idx][i]){
+                            } else if (footListLink[idx][i]) {
                               window.open(footListLink[idx][i], "_blank")
                             }
                             // if(footListLink[idx][i].includes('http')){
@@ -3831,7 +3888,7 @@ export function Footer() {
                         >
                           {item === 'Media Kit' ?
                             <DownloadA href='/stp.zip'>
-                              {item} <DownloadIcon style={{ marginLeft: '10px' }}></DownloadIcon>
+                              {item} <DownloadIcon style={{marginLeft: '10px'}}></DownloadIcon>
                             </DownloadA> :
                             <>
                               {item}
@@ -3943,6 +4000,7 @@ const FooterBox2 = styled(Box)`
     padding: 48px 20px 88px 20px;
   }
 `
+
 export function Footer2() {
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
@@ -3998,7 +4056,7 @@ export function Footer2() {
         alignItems={"center"}
         gap={isDownSm ? "48px" : 0}
       >
-        <img src={StpLogo} alt="" />
+        <img src={StpLogo} alt=""/>
         <BlueButton
           onClick={() =>
             window.open("https://awns.stp.network/", "_blank")
@@ -4009,7 +4067,7 @@ export function Footer2() {
       </Box>
       {!isDownSm ? (
         <>
-          <Divider style={{ background: "#757B8A", marginTop: '40px', marginBottom: '70px' }} />
+          <Divider style={{background: "#757B8A", marginTop: '40px', marginBottom: '70px'}}/>
           <Box display={"flex"} gap={isDownSm ? "20px" : "120px"}>
             {footList.map((coloum, idx) => {
               return (
@@ -4038,7 +4096,7 @@ export function Footer2() {
 
                           {item === 'Media Kit' ?
                             <DownloadA href='/stp.zip'>
-                              {item} <DownloadIcon style={{ marginLeft: '10px' }}></DownloadIcon>
+                              {item} <DownloadIcon style={{marginLeft: '10px'}}></DownloadIcon>
                             </DownloadA> :
                             <>
                               {item}
@@ -4055,7 +4113,7 @@ export function Footer2() {
             <Box>
               <FooterH1>Ecosystem</FooterH1>
               <FooterH1
-                style={{ cursor: "pointer" }}
+                style={{cursor: "pointer"}}
                 onClick={() =>
                   window.open(
                     "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
@@ -4066,7 +4124,7 @@ export function Footer2() {
                 News
               </FooterH1>
               <FooterH1
-                style={{ cursor: "pointer" }}
+                style={{cursor: "pointer"}}
                 onClick={() =>
                   window.open(
                     "https://stpdao.gitbook.io/whitepaper",
