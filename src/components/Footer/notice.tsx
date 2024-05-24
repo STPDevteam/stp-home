@@ -1,5 +1,5 @@
 import Stars from "../../assets/images/header/stars.svg";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Box, Typography } from "@mui/material";
 import { YellowBtn } from "../../pages/Home/homepage";
@@ -19,7 +19,14 @@ const NoticeBgLine = styled(Box)`
   background-clip: padding-box, border-box;
   border-radius: 0 0 40px 40px;
   @media (max-width: 767px) {
-    border-radius: 0;
+    border-radius: 40px;
+    margin: 10px;
+    padding: 1px;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    bottom: 0;
+    width: 95%;
   }
 `;
 const NoticeBg = styled(Box)`
@@ -37,14 +44,11 @@ const NoticeBg = styled(Box)`
   display: flex;
   padding: 0 60px;
   @media (max-width: 767px) {
-    border-radius: 0;
+    border-radius: 40px;
     flex-direction: column;
     height: auto;
+    width: -webkit-fill-available;
     padding-bottom: 20px;
-    position: fixed;
-    z-index: 99;
-    left: 0;
-    bottom: 0;
   }
 `;
 const NoticeContent = styled(Box)`
