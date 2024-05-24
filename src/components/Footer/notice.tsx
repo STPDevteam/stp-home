@@ -23,7 +23,6 @@ const NoticeBgLine = styled(Box)`
   }
 `;
 const NoticeBg = styled(Box)`
-  position: relative;
   border-radius: 0 0 40px 40px;
   background-image: linear-gradient(
     90deg,
@@ -32,14 +31,16 @@ const NoticeBg = styled(Box)`
     #150d00 100%
   );
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100vw;
   height: 80px;
   display: flex;
+  padding: 0 60px;
   @media (max-width: 767px) {
     border-radius: 0;
     flex-direction: column;
     height: auto;
+    padding-bottom: 20px;
     position: fixed;
     z-index: 99;
     left: 0;
@@ -47,7 +48,6 @@ const NoticeBg = styled(Box)`
   }
 `;
 const NoticeContent = styled(Box)`
-  width: 100vw;
   height: auto;
   display: flex;
   align-items: center;
@@ -75,21 +75,19 @@ const NoticeText = styled(Typography)`
     line-height: 28px;
   }
 `;
-const PlayBtn = styled(YellowBtn)`
-  position: absolute;
-  top: 50%;
-  right: 60px;
-  transform: translateY(-50%);
-  @media (max-width: 767px) {
-    position: unset;
-    transform: translate(0);
-    right: 0;
-    margin-bottom: 12px;
-  }
+const CloseBtn = styled(YellowBtn)`
+  color: white;
+  background-color: transparent;
+  border-radius: 50px;
+  border: 1px solid #f4d177;
+`;
+const BtnBox = styled(Box)`
+  display: flex;
+  gap: 16px;
 `;
 export default function Notice() {
   const isSmallScreen = useBreakpoint();
-  const isShow = false;
+  const [isShow, setIsShow] = useState(true);
   return isShow ? (
     <NoticeBgLine>
       <NoticeBg>
@@ -101,13 +99,16 @@ export default function Notice() {
           </NoticeText>
           {!isSmallScreen && <img src={Stars} />}
         </NoticeContent>
-        <PlayBtn
-          onClick={() => {
-            window.open("https://eternallegacy.xyz ", "_blank");
-          }}
-        >
-          Battle Now
-        </PlayBtn>
+        <BtnBox>
+          <YellowBtn
+            onClick={() => {
+              window.open("https://eternallegacy.xyz ", "_blank");
+            }}
+          >
+            Battle Now
+          </YellowBtn>
+          <CloseBtn onClick={() => setIsShow(false)}>Close</CloseBtn>
+        </BtnBox>
       </NoticeBg>
     </NoticeBgLine>
   ) : (

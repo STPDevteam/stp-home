@@ -694,6 +694,10 @@ export const GreenBtn = styled(Button)`
     font-size: 14px;
     line-height: 150%;
   }
+
+  &:hover {
+    color: #0049c6;
+  }
 `;
 
 export const YellowBtn = styled(GreenBtn)`
@@ -3881,7 +3885,7 @@ const FooterBox = styled(Box)`
   padding: 120px 105px 80px;
   overflow-x: hidden;
   @media (max-width: 767px) {
-    padding: 68px 20px 118px 20px;
+    padding: 68px 20px 318px 20px;
   }
 `;
 

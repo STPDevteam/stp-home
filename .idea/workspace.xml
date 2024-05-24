@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6ca48e-0538-4ad9-bd37-3561153c9404" name="Default Changelist" comment="Edit: notice &amp; x logo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/notice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/notice.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/mobileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/mobileMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/homepage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +41,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="staging" />
-                    <option name="lastUsedInstant" value="1716520783" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1716550724" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1681804531" />
+                    <option name="branchName" value="staging" />
+                    <option name="lastUsedInstant" value="1716520783" />
                   </RecentBranch>
                 </list>
               </option>

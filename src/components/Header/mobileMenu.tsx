@@ -10,7 +10,8 @@ import Email from "../../assets/images/socialmedia/email.svg";
 import Cylinder from "../../assets/images/socialmedia/cylinder.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import WechatQR from "../../assets/images/home/QR.jpeg";
-import {SocialMedia} from '../../pages/Home/homepage'
+import { SocialMedia } from "../../pages/Home/homepage";
+import { useHistory } from "react-router";
 const navLinkSx = {
   cursor: "pointer",
   textDecoration: "none",
@@ -41,6 +42,7 @@ export default function MobileMenu({
   isOpen: boolean;
   onDismiss: () => void;
 }) {
+  const history = useHistory();
   return (
     <Drawer
       open={isOpen}
@@ -72,7 +74,9 @@ export default function MobileMenu({
           return (
             <Typography
               onClick={() => {
-                window.open(item.link, "_blank");
+                if (item.link) {
+                  history.push(item.link);
+                }
                 onDismiss();
               }}
               sx={navLinkSx}
@@ -88,48 +92,52 @@ export default function MobileMenu({
             window.open("https://explorer.myclique.io/", "_blank")
           }
         >
-          Build on Clique 
+          Build on Clique
           {/* <ArrowOutwardIcon /> */}
         </GreenBtn>
         <Box
-        display={"flex"}
-        gap={"40px"}
-        sx={{justifyContent:'space-between',padding: '10px',marginTop:'10px'}}
-      >
-        <SocialMedia
-          src={Tele}
-          onClick={() => window.open("https://t.me/STPofficial", "_blank")}
-        />
-        <SocialMedia
-          src={Twitter}
-          onClick={() =>
-            window.open("https://twitter.com/STP_Network", "_blank")
-          }
-        />
-        {/* <SocialMedia
+          display={"flex"}
+          gap={"40px"}
+          sx={{
+            justifyContent: "space-between",
+            padding: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <SocialMedia
+            src={Tele}
+            onClick={() => window.open("https://t.me/STPofficial", "_blank")}
+          />
+          <SocialMedia
+            src={Twitter}
+            onClick={() =>
+              window.open("https://twitter.com/STP_Network", "_blank")
+            }
+          />
+          {/* <SocialMedia
           src={Medium}
           onClick={() =>
             window.open("https://medium.com/@versenetwork", "_blank")
           }
         /> */}
-        <SocialMedia
-          src={Cylinder}
-          onClick={() =>
-            window.open(
-              "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
-              "_blank"
-            )
-          }
-        />
-        <SocialMedia
-          src={Wechat}
-          onClick={() => window.open(WechatQR, "_blank")}
-        />
-        <SocialMedia
-          src={Email}
-          onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
-        />
-      </Box>
+          <SocialMedia
+            src={Cylinder}
+            onClick={() =>
+              window.open(
+                "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+                "_blank"
+              )
+            }
+          />
+          <SocialMedia
+            src={Wechat}
+            onClick={() => window.open(WechatQR, "_blank")}
+          />
+          <SocialMedia
+            src={Email}
+            onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
+          />
+        </Box>
       </MenuBox>
     </Drawer>
   );
