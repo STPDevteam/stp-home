@@ -5,14 +5,28 @@ import { Box, Typography } from "@mui/material";
 import { YellowBtn } from "../../pages/Home/homepage";
 import useBreakpoint from "../../hooks/useBreakpoint";
 
-const NoticeBg = styled(Box)`
-  border: 1px solid;
-  position: relative;
+const NoticeBgLine = styled(Box)`
+  border: 1px solid transparent;
+  padding: 0 1px 1px 1px;
+  margin: -1px;
   background-image: linear-gradient(
     90deg,
     #3e2909 0%,
     #ffd688 51%,
     #3e2909 99.5%
+  );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 0 0 40px 40px;
+`;
+const NoticeBg = styled(Box)`
+  position: relative;
+  border-radius: 0 0 40px 40px;
+  background-image: linear-gradient(
+    90deg,
+    #150d00 0%,
+    #835c21 49%,
+    #150d00 100%
   );
   align-items: center;
   justify-content: center;
@@ -44,7 +58,7 @@ const NoticeContent = styled(Box)`
 `;
 const NoticeText = styled(Typography)`
   font-family: Inter;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 29.05px;
   letter-spacing: 0.2px;
@@ -73,22 +87,24 @@ export default function Notice() {
   const isSmallScreen = useBreakpoint();
 
   return (
-    <NoticeBg>
-      <NoticeContent>
-        <img src={Stars} />
-        <NoticeText>
-          Clique’s Flagship Game: Eternal Legacy is Now in Beta with Bounty
-          Rewards
-        </NoticeText>
-        {!isSmallScreen && <img src={Stars} />}
-      </NoticeContent>
-      <PlayBtn
-        onClick={() => {
-          window.open("https://eternallegacy.xyz ", "_blank");
-        }}
-      >
-        Battle Now
-      </PlayBtn>
-    </NoticeBg>
+    <NoticeBgLine>
+      <NoticeBg>
+        <NoticeContent>
+          <img src={Stars} />
+          <NoticeText>
+            Clique’s Flagship Game: Eternal Legacy is Now in Beta with Bounty
+            Rewards
+          </NoticeText>
+          {!isSmallScreen && <img src={Stars} />}
+        </NoticeContent>
+        <PlayBtn
+          onClick={() => {
+            window.open("https://eternallegacy.xyz ", "_blank");
+          }}
+        >
+          Battle Now
+        </PlayBtn>
+      </NoticeBg>
+    </NoticeBgLine>
   );
 }
