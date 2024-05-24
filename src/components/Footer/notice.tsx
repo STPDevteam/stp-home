@@ -82,7 +82,13 @@ export default function Notice() {
         </NoticeText>
         {!isSmallScreen && <img src={Stars} />}
       </NoticeContent>
-      <PlayBtn>Battle Now</PlayBtn>
+      <PlayBtn
+        onClick={() => {
+          window.open("https://eternallegacy.xyz ", "_blank");
+        }}
+      >
+        Battle Now
+      </PlayBtn>
     </NoticeBg>
   );
 }
