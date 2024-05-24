@@ -1,23 +1,23 @@
 // @ts-nocheck
-import {Box, Grid, Stack, Tab, Tabs, Typography} from "@mui/material";
-import styled, {keyframes} from "styled-components";
-import {Button, Divider} from "antd";
+import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
+import styled, { keyframes } from "styled-components";
+import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import Eternal from '../../assets/images/ecosystem/eternal-legacy.jpg';
-import Airstack from '../../assets/images/ecosystem/airstack.jpg';
-import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import Eternal from "../../assets/images/ecosystem/eternal-legacy.jpg";
+import Airstack from "../../assets/images/ecosystem/airstack.jpg";
+import SpeedDial from "@mui/material/SpeedDial";
+import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import BottomCircle from "../../assets/images/home/svg/header-bottom-circle.svg";
 import TopCircle from "../../assets/images/home/svg/header-top-circle.svg";
 import DappStorePic from "../../assets/images/home/svg/dapp-store.svg";
 import CliqueSdkPic from "../../assets/images/home/svg/clique-sdk.svg";
 import DataBg from "../../assets/images/home/svg/data-bg.svg";
 import Label1 from "../../assets/images/home/svg/label1.svg";
-import {ReactComponent as IconStart} from "../../assets/images/home/svg/label1.svg";
-import {ReactComponent as UserIcon} from "../../assets/images/home/svg/usericon.svg";
-import {ReactComponent as FileIcon} from "../../assets/images/home/svg/file-icon.svg";
-import {ReactComponent as AlarmIcon} from "../../assets/images/home/svg/alarmicon.svg";
-import {ReactComponent as DownloadIcon} from "../../assets/images/home/svg/download.svg";
+import { ReactComponent as IconStart } from "../../assets/images/home/svg/label1.svg";
+import { ReactComponent as UserIcon } from "../../assets/images/home/svg/usericon.svg";
+import { ReactComponent as FileIcon } from "../../assets/images/home/svg/file-icon.svg";
+import { ReactComponent as AlarmIcon } from "../../assets/images/home/svg/alarmicon.svg";
+import { ReactComponent as DownloadIcon } from "../../assets/images/home/svg/download.svg";
 import UserActive from "../../assets/images/home/svg/user-active.svg";
 
 import BuildCircle from "../../assets/images/home/svg/elips.svg";
@@ -41,10 +41,10 @@ import LearnCreateDao from "../../assets/images/home/svg/learn-create-dao.svg";
 import LearnCreateToken from "../../assets/images/home/svg/learn-create-token.svg";
 import LearnOnChain from "../../assets/images/home/svg/learn-on-chian.svg";
 import ArrowUpRight from "../../assets/images/home/svg/arrow-up-right.svg";
-import React, {useMemo, useState, useRef, useEffect} from "react";
-import {useHistory} from "react-router";
+import React, { useMemo, useState, useRef, useEffect } from "react";
+import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
-import {useTotal} from "../../hooks/useHomepage";
+import { useTotal } from "../../hooks/useHomepage";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.css";
 import "swiper/modules/autoplay/autoplay.min.css";
@@ -53,17 +53,17 @@ import "swiper/modules/autoplay/autoplay.js";
 import "swiper/modules/navigation/navigation.min.css";
 import "swiper/modules/navigation/navigation.js";
 import "swiper/modules/navigation/navigation.less";
-import {Pagination, Thumbs, FreeMode} from "swiper";
-import {Swiper, SwiperSlide, useSwiper, SwiperRef} from "swiper/react";
-import {Autoplay} from "swiper";
-import {Navigation} from "swiper";
+import { Pagination, Thumbs, FreeMode } from "swiper";
+import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
+import { Autoplay } from "swiper";
+import { Navigation } from "swiper";
 
-import Composable from "../../assets/images/ecosystem/composable.jpeg"
-import Zkspace from "../../assets/images/ecoLogo/zks.png"
-import Web3com from "../../assets/images/ecoLogo/web3com.png"
-import Altlayer from "../../assets/images/ecosystem/AltLayer.svg"
-import Paimas from "../../assets/images/ecoLogo/paima-logo.png"
-import AGLD from "../../assets/images/ecoLogo/AgldBlack.png"
+import Composable from "../../assets/images/ecosystem/composable.jpeg";
+import Zkspace from "../../assets/images/ecoLogo/zks.png";
+import Web3com from "../../assets/images/ecoLogo/web3com.png";
+import Altlayer from "../../assets/images/ecosystem/AltLayer.svg";
+import Paimas from "../../assets/images/ecoLogo/paima-logo.png";
+import AGLD from "../../assets/images/ecoLogo/AgldBlack.png";
 import Base from "../../assets/images/home/base.svg";
 import Chainlink from "../../assets/images/ecosystem/Chainlink.png";
 import GnosisSafe from "../../assets/images/ecosystem/GnosisSafe.png";
@@ -110,7 +110,7 @@ import Learn7 from "../../assets/images/home/Learn7.jpeg";
 import Learn8 from "../../assets/images/home/Learn8.jpeg";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {Swiper as SwiperClass} from "swiper/types";
+import { Swiper as SwiperClass } from "swiper/types";
 import Item from "antd/lib/list/Item";
 import WechatQR from "../../assets/images/home/QR.jpeg";
 import infrastructure from "../../assets/images/home/svg/infrastructure.svg";
@@ -119,80 +119,79 @@ import dataForm from "../../assets/images/home/svg/dataForm.svg";
 import identityIcon1 from "../../assets/images/home/svg/identityIcon1.svg";
 import identityIcon2 from "../../assets/images/home/svg/identityIcon2.svg";
 import identityIcon3 from "../../assets/images/home/svg/identityIcon3.svg";
-import greenStar from "../../assets/images/home/svg/greenStar.svg"
+import greenStar from "../../assets/images/home/svg/greenStar.svg";
 import more from "../../assets/images/home/svg/more.svg";
-import identity from "../../assets/images/home/identity.png"
-import decorationStar from "../../assets/images/home/svg/decorationStar.svg"
-import workspaceImg from "../../assets/images/home/doc_type.png"
-import workspaceImg1 from "../../assets/images/home/workspace1.png"
-import workspaceImg2 from "../../assets/images/home/workspace2.png"
-import workspaceImg3 from "../../assets/images/home/workspace3.png"
-import workspaceImg4 from "../../assets/images/home/workspace4.png"
-import cliqueImg3 from "../../assets/images/home/clique3.png"
-import cliqueImg4 from "../../assets/images/home/clique4.png"
-import cliqueSocial from "../../assets/images/home/cliqueSocial.png"
-import homeImg1 from "../../assets/images/home/home1.png"
-import section1 from "../../assets/images/home/Section1.svg"
-import section1A from "../../assets/images/home/Homepage.png"
-import blueL from "../../assets/images/home/blueLight.svg"
-import homeImg2 from "../../assets/images/home/home2.png"
-import section2 from "../../assets/images/home/Homepage2.png"
-import section3Icon1 from "../../assets/images/home/sectionIcon1.svg"
-import section3Icon2 from "../../assets/images/home/sectionIcon2.svg"
-import section3Icon3 from "../../assets/images/home/sectionIcon3.svg"
-import section3 from "../../assets/images/home/Homepage3.png"
-import section4 from "../../assets/images/home/Homepage4.png"
-import section4H5 from "../../assets/images/home/section4H5.jpg"
-import section4Title from "../../assets/images/home/cliqueLogo.svg"
-import s4Icon1 from "../../assets/images/home/s4Icon1.jpg"
-import s4Icon2 from "../../assets/images/home/s4Icon2.jpg"
-import s4Icon3 from "../../assets/images/home/s4Icon3.jpg"
-import s4Icon4 from "../../assets/images/home/s4Icon4.jpg"
-import s4Icon5 from "../../assets/images/home/s4Icon5.jpg"
-import s4Icon6 from "../../assets/images/home/s4Icon6.jpg"
-import s4Icon7 from "../../assets/images/home/s4Icon7.jpg"
-import s4Icon8 from "../../assets/images/home/s4Icon8.jpg"
-import s4Icon9 from "../../assets/images/home/s4Icon9.jpg"
-import section5 from "../../assets/images/home/Homepage5.png"
-import s5Game1 from "../../assets/images/home/gameCover1.png"
-import s5Game2 from "../../assets/images/home/gameCover2.png"
-import s5Game3 from "../../assets/images/home/gameCover3.png"
-import s5GameLogo1 from "../../assets/images/home/gameLogo1.svg"
-import s5GameLogo2 from "../../assets/images/home/gameLogo2.svg"
-import s5GameLogo3 from "../../assets/images/home/gameLogo3.svg"
-import section6 from "../../assets/images/home/Homepage6.png"
+import identity from "../../assets/images/home/identity.png";
+import decorationStar from "../../assets/images/home/svg/decorationStar.svg";
+import workspaceImg from "../../assets/images/home/doc_type.png";
+import workspaceImg1 from "../../assets/images/home/workspace1.png";
+import workspaceImg2 from "../../assets/images/home/workspace2.png";
+import workspaceImg3 from "../../assets/images/home/workspace3.png";
+import workspaceImg4 from "../../assets/images/home/workspace4.png";
+import cliqueImg3 from "../../assets/images/home/clique3.png";
+import cliqueImg4 from "../../assets/images/home/clique4.png";
+import cliqueSocial from "../../assets/images/home/cliqueSocial.png";
+import homeImg1 from "../../assets/images/home/home1.png";
+import section1 from "../../assets/images/home/Section1.svg";
+import section1A from "../../assets/images/home/Homepage.png";
+import blueL from "../../assets/images/home/blueLight.svg";
+import homeImg2 from "../../assets/images/home/home2.png";
+import section2 from "../../assets/images/home/Homepage2.png";
+import section3Icon1 from "../../assets/images/home/sectionIcon1.svg";
+import section3Icon2 from "../../assets/images/home/sectionIcon2.svg";
+import section3Icon3 from "../../assets/images/home/sectionIcon3.svg";
+import section3 from "../../assets/images/home/Homepage3.png";
+import section4 from "../../assets/images/home/Homepage4.png";
+import section4H5 from "../../assets/images/home/section4H5.jpg";
+import section4Title from "../../assets/images/home/cliqueLogo.svg";
+import s4Icon1 from "../../assets/images/home/s4Icon1.jpg";
+import s4Icon2 from "../../assets/images/home/s4Icon2.jpg";
+import s4Icon3 from "../../assets/images/home/s4Icon3.jpg";
+import s4Icon4 from "../../assets/images/home/s4Icon4.jpg";
+import s4Icon5 from "../../assets/images/home/s4Icon5.jpg";
+import s4Icon6 from "../../assets/images/home/s4Icon6.jpg";
+import s4Icon7 from "../../assets/images/home/s4Icon7.jpg";
+import s4Icon8 from "../../assets/images/home/s4Icon8.jpg";
+import s4Icon9 from "../../assets/images/home/s4Icon9.jpg";
+import section5 from "../../assets/images/home/Homepage5.png";
+import s5Game1 from "../../assets/images/home/gameCover1.png";
+import s5Game2 from "../../assets/images/home/gameCover2.png";
+import s5Game3 from "../../assets/images/home/gameCover3.png";
+import s5GameLogo1 from "../../assets/images/home/gameLogo1.svg";
+import s5GameLogo2 from "../../assets/images/home/gameLogo2.svg";
+import s5GameLogo3 from "../../assets/images/home/gameLogo3.svg";
+import section6 from "../../assets/images/home/Homepage6.png";
 
-import homeImg3 from "../../assets/images/home/home3.png"
-import homeImg4 from "../../assets/images/home/home4.png"
-import homeImg5 from "../../assets/images/home/home5.png"
-import homeImg5V2 from "../../assets/images/home/home5V2.png"
-import homeImg61 from "../../assets/images/home/home6-1.png"
-import homeImg62 from "../../assets/images/home/home6-2.png"
-import homeImg63 from "../../assets/images/home/home6-3.png"
-import homeImg7 from "../../assets/images/home/home7.png"
-import starWhite from "../../assets/images/home/StarWhite.svg"
-import starCircle from "../../assets/images/home/starCircle.svg"
-import awnsImg from "../../assets/images/home/awns.svg"
-import hypr from '../../assets/images/ecosystem/hypr.png'
-import space3 from '../../assets/images/ecosystem/space.png'
-import atticlab from '../../assets/images/ecoLogo/attilLabBlack.jpg'
-import paladins from '../../assets/images/ecosystem/pbs.jpeg'
-import a3sprotocol from '../../assets/images/ecosystem/a3sprotocol.png'
-import blade from '../../assets/images/ecosystem/blade.png'
-import kiosk from '../../assets/images/ecosystem/kiosk.svg'
-import gabby from '../../assets/images/ecosystem/gabby.png'
-import ggQuest from '../../assets/images/ecoLogo/gguest.png'
-import Openfort from '../../assets/images/ecoLogo/openfort.png'
-import biconomy from '../../assets/images/ecosystem/biconomy.png'
-import aw from '../../assets/images/ecoLogo/aw.png'
-import daren from '../../assets/images/ecoLogo/darenT.png'
+import homeImg3 from "../../assets/images/home/home3.png";
+import homeImg4 from "../../assets/images/home/home4.png";
+import homeImg5 from "../../assets/images/home/home5.png";
+import homeImg5V2 from "../../assets/images/home/home5V2.png";
+import homeImg61 from "../../assets/images/home/home6-1.png";
+import homeImg62 from "../../assets/images/home/home6-2.png";
+import homeImg63 from "../../assets/images/home/home6-3.png";
+import homeImg7 from "../../assets/images/home/home7.png";
+import starWhite from "../../assets/images/home/StarWhite.svg";
+import starCircle from "../../assets/images/home/starCircle.svg";
+import awnsImg from "../../assets/images/home/awns.svg";
+import hypr from "../../assets/images/ecosystem/hypr.png";
+import space3 from "../../assets/images/ecosystem/space.png";
+import atticlab from "../../assets/images/ecoLogo/attilLabBlack.jpg";
+import paladins from "../../assets/images/ecosystem/pbs.jpeg";
+import a3sprotocol from "../../assets/images/ecosystem/a3sprotocol.png";
+import blade from "../../assets/images/ecosystem/blade.png";
+import kiosk from "../../assets/images/ecosystem/kiosk.svg";
+import gabby from "../../assets/images/ecosystem/gabby.png";
+import ggQuest from "../../assets/images/ecoLogo/gguest.png";
+import Openfort from "../../assets/images/ecoLogo/openfort.png";
+import biconomy from "../../assets/images/ecosystem/biconomy.png";
+import aw from "../../assets/images/ecoLogo/aw.png";
+import daren from "../../assets/images/ecoLogo/darenT.png";
 
-import * as PIXI from 'pixi.js';
-import {KawaseBlurFilter} from "@pixi/filter-kawase-blur";
+import * as PIXI from "pixi.js";
+import { KawaseBlurFilter } from "@pixi/filter-kawase-blur";
 import SimplexNoise from "simplex-noise";
 import hsl from "hsl-to-hex";
 import debounce from "debounce";
-
 
 // return a random number within a range
 function random(min: number, max: number) {
@@ -216,7 +215,7 @@ class ColorPalette {
 
   setColors() {
     //~~random(180, 240);
-    this.hue = 180
+    this.hue = 180;
     this.complimentaryHue1 = this.hue + 30;
     this.complimentaryHue2 = this.hue + 90;
     // define a fixed saturation and lightness
@@ -242,7 +241,7 @@ class ColorPalette {
     this.colorChoices = [
       this.baseColor,
       this.complimentaryColor1,
-      this.complimentaryColor2
+      this.complimentaryColor2,
     ];
   }
 
@@ -253,13 +252,12 @@ class ColorPalette {
       "0x"
     );
   }
-
 }
 
 // Orb class
 class Orb {
   // Pixi takes hex colors as hexidecimal literals (0x rather than a string with '#')
-  constructor(fill = 0x040C0D) {
+  constructor(fill = 0x040c0d) {
     // bounds = the area an orb is "allowed" to move within
     this.bounds = this.setBounds();
     // initialise the orb's { x, y } values to a random point within it's bounds
@@ -273,7 +271,7 @@ class Orb {
     this.fill = fill;
 
     // the original radius of the orb, set relative to window height
-    let r = window.innerWidth < 400 ? 5 : 3.5
+    let r = window.innerWidth < 400 ? 5 : 3.5;
     this.radius = random(window.innerHeight / r, window.innerHeight / r);
 
     // starting points in "time" for the noise/self similar random values
@@ -302,25 +300,23 @@ class Orb {
     // the { x, y } origin for each orb (the bottom right of the screen)
     const originX = window.innerWidth / 2;
     const originY =
-      window.innerWidth < 400 ?
-        window.innerHeight / 2 :
-        window.innerHeight / 2;
-    console.log('maxDist', maxDist);
-    console.log('x', originX);
-    console.log('y', originY);
-    console.log('yy', {
+      window.innerWidth < 400 ? window.innerHeight / 2 : window.innerHeight / 2;
+    console.log("maxDist", maxDist);
+    console.log("x", originX);
+    console.log("y", originY);
+    console.log("yy", {
       min: originY - maxDist,
-      max: originY + maxDist
+      max: originY + maxDist,
     });
-    console.log('xx', {
+    console.log("xx", {
       min: originX - maxDist,
-      max: originX + maxDist
+      max: originX + maxDist,
     });
 
     return {
       x: {
         min: originX - maxDist,
-        max: originX + maxDist
+        max: originX + maxDist,
       },
       // y: {
       //   min: originY - maxDist,
@@ -328,8 +324,8 @@ class Orb {
       // }
       y: {
         min: originY - maxDist,
-        max: window.innerWidth < 767 ? 600 : 800
-      }
+        max: window.innerWidth < 767 ? 600 : 800,
+      },
     };
   }
 
@@ -370,9 +366,8 @@ class Orb {
 }
 
 let itl = setInterval(() => {
-  let box = document.getElementById('orb-canvas')
+  let box = document.getElementById("orb-canvas");
   if (box) {
-
     clearInterval(itl);
     // Create PixiJS app
     const app = new PIXI.Application({
@@ -381,7 +376,7 @@ let itl = setInterval(() => {
       // auto adjust size to fit the current window
       resizeTo: window,
       // transparent background, we will be creating a gradient background later using CSS
-      transparent: true
+      transparent: true,
     });
 
     app.stage.filters = [new KawaseBlurFilter(30, 10, true)];
@@ -415,8 +410,7 @@ let itl = setInterval(() => {
       });
     }
   }
-}, 2000)
-
+}, 2000);
 
 export const blinkAnimation = keyframes`
   0%, 100% {
@@ -426,7 +420,7 @@ export const blinkAnimation = keyframes`
   50% {
     opacity: 80%;
   }
-`
+`;
 // const scale = keyframes `
 //   0% { transform: scale(1); }
 //   100% { transform: scale(2); }
@@ -465,12 +459,11 @@ export const ContentWrapper = styled(Box)`
   flex-direction: column;
   overflow-x: hidden;
   background: #000228;
-
 `;
 const Content1 = styled.div`
   width: 100%;
   /* background: #000228; */
-`
+`;
 const Head1 = styled.div`
   position: relative;
   width: 100%;
@@ -485,28 +478,28 @@ const Head1 = styled.div`
   @media (min-width: 376px) and (max-width: 767px) {
     height: 80vh;
     background-size: 350%;
-
   }
-`
+`;
 const FooterModal = styled.div`
   width: 100vw;
   /* padding-bottom: 120px; */
-    /* background: url(${section6}) no-repeat; */
+  /* background: url(${section6}) no-repeat; */
   /* background-size: cover; */
   text-align: center;
   @media (max-width: 767px) {
     /* padding: 24px; */
   }
-
-`
+`;
 const BlueLight = styled.img`
   position: absolute;
   top: calc(60% - 300px);
   left: calc(50% - 300px);
   width: 600px;
-  animation: ${blinkAnimation} 5s ease-in-out infinite, ${floatAnimation} 5s infinite alternate ease-in-out, ${scale} 2s alternate infinite;
-    /* animation:  ${floatAnimation} 3s infinite alternate; */
-`
+  animation: ${blinkAnimation} 5s ease-in-out infinite,
+    ${floatAnimation} 5s infinite alternate ease-in-out,
+    ${scale} 2s alternate infinite;
+  /* animation:  ${floatAnimation} 3s infinite alternate; */
+`;
 
 export default function Homepage() {
   // const shapeStyle: React.CSSProperties = {
@@ -519,9 +512,7 @@ export default function Homepage() {
   //      'background': `linear-gradient(#0e5ee9, #1330db, #0d33d7, #083dad, #152ee8)`
   // };
 
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => {}, []);
 
   return (
     <ContentWrapper>
@@ -532,21 +523,21 @@ export default function Homepage() {
             <div className="shape" style={shapeStyle2}></div>
             <div className="shape" style={shapeStyle2}></div>
           </div>  */}
-          <Head/>
+          <Head />
         </Head1>
 
-        <Identity/>
-        <Identity2/>
+        <Identity />
+        <Identity2 />
         {/* <Initiatives /> */}
       </Content1>
-      <CliqueContent2/>
+      <CliqueContent2 />
       {/* <Infrastructure /> */}
       {/* <Initiatives /> */}
-      <Ecosystem/>
+      <Ecosystem />
       {/* <Learn /> */}
       <FooterModal>
-        <BuildWithUs/>
-        <Footer/>
+        <BuildWithUs />
+        <Footer />
       </FooterModal>
       <OpenIconSpeedDial></OpenIconSpeedDial>
     </ContentWrapper>
@@ -560,17 +551,17 @@ const BoxFixed = styled(Box)`
   @media (max-width: 767px) {
     display: none;
   }
-`
+`;
 const SocialMediaFixed = styled.img`
   width: 28px;
   height: 28px;
   cursor: pointer;
-`
+`;
 
 export function OpenIconSpeedDial() {
   return (
     <BoxFixed>
-      <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
         <SocialMediaFixed
           src={Tele}
           onClick={() => window.open("https://t.me/STPofficial", "_blank")}
@@ -637,7 +628,7 @@ const HeadStart = styled.img`
   width: 100%;
   mix-blend-mode: screen;
   opacity: 0.6;
-`
+`;
 export const HeadH1 = styled(Typography)`
   width: 660px;
   margin: auto;
@@ -650,7 +641,11 @@ export const HeadH1 = styled(Typography)`
   padding-top: 280px;
   color: #ffffff;
   text-align: center;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
@@ -671,7 +666,7 @@ export const HeadText = styled(Typography)`
   /* font-family: "DM Sans"; */
   margin-top: 24px;
   line-height: 40px;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 24px;
@@ -691,7 +686,7 @@ export const GreenBtn = styled(Button)`
   height: 48px;
   line-height: 24px;
   gap: 8px;
-  background: #0049C6;
+  background: #0049c6;
   color: #fff;
   border-radius: 32px;
   @media (max-width: 767px) {
@@ -699,7 +694,13 @@ export const GreenBtn = styled(Button)`
     font-size: 14px;
     line-height: 150%;
   }
-`
+`;
+
+export const YellowBtn = styled(GreenBtn)`
+  width: 163px;
+  background: #f4d177;
+  color: #020035;
+`;
 
 const HeadBtns = styled.div`
   display: flex;
@@ -707,12 +708,12 @@ const HeadBtns = styled.div`
   align-items: center;
   gap: 24px;
   margin-top: 30px;
-`
+`;
 const AwnsBtn = styled(GreenBtn)`
   text-align: center;
   z-index: 9;
   font-size: 14px;
-  background: #A7F46A;
+  background: #a7f46a;
   color: #020035;
 
   @media (max-width: 767px) {
@@ -722,18 +723,18 @@ const AwnsBtn = styled(GreenBtn)`
   }
 `;
 const AwnsBtn2 = styled(AwnsBtn)`
-  background: #A7F46A;
-`
+  background: #a7f46a;
+`;
 const HeadBr = styled.br`
   @media (max-width: 767px) {
     /* display: none; */
   }
-`
+`;
 const BrH5 = styled.br`
   @media (max-width: 767px) {
     display: none;
   }
-`
+`;
 
 function Head() {
   const history = useHistory();
@@ -741,19 +742,29 @@ function Head() {
     <HeadBox>
       {/* <HeadStart src={section1}></HeadStart> */}
       <HeadH1>
-        Opening The Portal <HeadBr/>
+        Opening The Portal <HeadBr />
         to Autonomous Worlds
       </HeadH1>
       <HeadText>
         Our mission is to pioneer the advancement of AI in gaming
       </HeadText>
       <HeadBtns>
-        <GreenBtn onClick={() => {
-          window.open('https://explorer.myclique.io/', '_blank')
-        }}> Build on Clique </GreenBtn>
-        <AwnsBtn2 onClick={() => {
-          window.open('https://awns.stp.network/', '_blank')
-        }}> Create an AWNS </AwnsBtn2>
+        <GreenBtn
+          onClick={() => {
+            window.open("https://explorer.myclique.io/", "_blank");
+          }}
+        >
+          {" "}
+          Build on Clique{" "}
+        </GreenBtn>
+        <AwnsBtn2
+          onClick={() => {
+            window.open("https://awns.stp.network/", "_blank");
+          }}
+        >
+          {" "}
+          Create an AWNS{" "}
+        </AwnsBtn2>
       </HeadBtns>
     </HeadBox>
   );
@@ -772,8 +783,7 @@ const IdentityBox = styled.div`
     margin-top: 0px;
     padding-top: 0px;
   }
-
-`
+`;
 const IdentityHomeImg2 = styled.img`
   position: relative;
   mix-blend-mode: screen;
@@ -783,7 +793,7 @@ const IdentityHomeImg2 = styled.img`
     order: 2;
     margin-top: 40px;
   }
-`
+`;
 const IdentityContent = styled.div`
   position: relative;
   width: 1440px;
@@ -804,7 +814,7 @@ const IdentityContent = styled.div`
     background-size: 200%;
     background-position: center 30%;
   }
-`
+`;
 const Section2Title = styled.div`
   width: 148px;
   height: 32px;
@@ -814,9 +824,9 @@ const Section2Title = styled.div`
   font-size: 14px;
   font-weight: 500;
   line-height: 32px;
-  background: #FFFFFF1A;
+  background: #ffffff1a;
   text-align: center;
-`
+`;
 const Section2Main = styled.div`
   display: flex;
   justify-content: space-between;
@@ -826,7 +836,7 @@ const Section2Main = styled.div`
     width: 100%;
     /* flex-direction: column; */
   }
-`
+`;
 const IdentityTitle = styled.div`
   max-width: 950px;
   margin: auto;
@@ -838,14 +848,18 @@ const IdentityTitle = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
     font-size: 32px;
     line-height: 38px;
   }
-`
+`;
 const IdentityText = styled.div`
   font-size: Inter;
   margin-top: 40px;
@@ -854,16 +868,16 @@ const IdentityText = styled.div`
   line-height: 30px;
   letter-spacing: 2px;
   align-items: center;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 1.2;
   }
-`
+`;
 const Identity2Img = styled.img`
   width: 100%;
   margin: auto;
-`
+`;
 const IdentityIcons = styled.div`
   display: flex;
   justify-content: center;
@@ -878,7 +892,7 @@ const IdentityIcons = styled.div`
     margin-left: 0px;
     padding: 0 20px;
   }
-`
+`;
 const IconsBox = styled.div`
   position: relative;
   width: 300px;
@@ -903,14 +917,14 @@ const IconsBox = styled.div`
     padding: 20px 10px;
     justify-content: flex-start;
   }
-`
+`;
 const Icon = styled.img`
   max-width: 64px;
   max-height: 64px;
   @media (max-width: 767px) {
     width: 36px;
   }
-`
+`;
 const IconName = styled.div`
   margin-top: 30px;
   font-size: 20px;
@@ -919,7 +933,7 @@ const IconName = styled.div`
     font-size: 14px;
     text-align: center;
   }
-`
+`;
 const Identity2Box = styled.div`
   /* max-width: 1440px; */
   margin: 200px auto 0px;
@@ -938,7 +952,7 @@ const Identity2Box = styled.div`
     background-size: 200%;
     background-position: center 60%;
   }
-`
+`;
 const Identity2Content = styled.div`
   position: relative;
   align-items: center;
@@ -948,7 +962,7 @@ const Identity2Content = styled.div`
     width: 100%;
     padding: 22px;
   }
-`
+`;
 const Identity2Text = styled.div`
   margin-top: 10px;
   font-size: 24px;
@@ -958,14 +972,14 @@ const Identity2Text = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media (max-width: 767px) {
     margin-top: 24px;
     font-size: 16px;
     line-height: 1.2;
     text-align: center;
   }
-`
+`;
 const Identity2Star = styled.img`
   position: absolute;
   top: -100px;
@@ -974,7 +988,7 @@ const Identity2Star = styled.img`
   @media (max-width: 767px) {
     display: none;
   }
-`
+`;
 const HomeImg3 = styled.img`
   position: absolute;
   top: -140px;
@@ -984,7 +998,7 @@ const HomeImg3 = styled.img`
   @media (max-width: 767px) {
     display: none;
   }
-`
+`;
 
 function Identity() {
   return (
@@ -992,12 +1006,16 @@ function Identity() {
       <IdentityContent>
         <Section2Title>AI Unites Gaming </Section2Title>
         <Section2Main>
-          <IdentityText>We envision AI enhancing the utility and value of onchain gaming.</IdentityText>
-          <IdentityText>Redefining games with onchain agents and AI elevated gameplay.</IdentityText>
+          <IdentityText>
+            We envision AI enhancing the utility and value of onchain gaming.
+          </IdentityText>
+          <IdentityText>
+            Redefining games with onchain agents and AI elevated gameplay.
+          </IdentityText>
         </Section2Main>
       </IdentityContent>
     </IdentityBox>
-  )
+  );
 }
 
 function Identity2() {
@@ -1005,8 +1023,13 @@ function Identity2() {
     <Identity2Box>
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
-        <IdentityTitle>Empowering all gaming studios, <BrH5></BrH5>developers and users </IdentityTitle>
-        <Identity2Text>Leverage frontier technology in Autonomous Worlds, AI Agents, Account Abstraction</Identity2Text>
+        <IdentityTitle>
+          Empowering all gaming studios, <BrH5></BrH5>developers and users{" "}
+        </IdentityTitle>
+        <Identity2Text>
+          Leverage frontier technology in Autonomous Worlds, AI Agents, Account
+          Abstraction
+        </Identity2Text>
         {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>
       {/* <Identity2Img src={section3}></Identity2Img> */}
@@ -1025,7 +1048,7 @@ function Identity2() {
         </IconsBox>
       </IdentityIcons>
     </Identity2Box>
-  )
+  );
 }
 
 const InfraH1 = styled(Typography)`
@@ -1133,7 +1156,7 @@ const InfraBoxContent = styled(Typography)`
   }
 `;
 
-function InfraBox({title, content}: { title: string; content: string }) {
+function InfraBox({ title, content }: { title: string; content: string }) {
   return (
     <InfraBoxBg>
       <InfraBoxTitle>{title}</InfraBoxTitle>
@@ -1193,19 +1216,19 @@ function DappStore() {
         Scale your DAO with unlimited ecosystem tools and infrastructures.
         Become part of our ecosystem by integrating your dApp with Clique.
       </CliqueText>
-      <CliqueImg src={DappStorePic}/>
+      <CliqueImg src={DappStorePic} />
     </CliqueBox>
   );
 }
 
 function CliqueSdk() {
   return (
-    <CliqueBox style={{background: "rgba(237, 252, 255, 0.4)"}}>
+    <CliqueBox style={{ background: "rgba(237, 252, 255, 0.4)" }}>
       <CliqueTitle>SDK</CliqueTitle>
       <CliqueText>
         Create a customized workspace platform for free with Clique SDK.
       </CliqueText>
-      <CliqueImg src={CliqueSdkPic}/>
+      <CliqueImg src={CliqueSdkPic} />
     </CliqueBox>
   );
 }
@@ -1285,9 +1308,9 @@ function Infrastructure() {
         overflowX: "hidden",
       }}
     >
-      {!isDownSm && <InfraStar src={SmallStar}/>}
-      <Ellipse src={InfEllipse1}/>
-      <Ellipse src={InfEllipse2}/>
+      {!isDownSm && <InfraStar src={SmallStar} />}
+      <Ellipse src={InfEllipse1} />
+      <Ellipse src={InfEllipse2} />
       <InfrastructureBox>
         <Box
           display={"flex"}
@@ -1311,12 +1334,12 @@ function Infrastructure() {
         >
           {CliqueBox.map((c, idx) => (
             <Grid item sm={12} md={4}>
-              <InfraBox title={c.title} content={c.content}/>
+              <InfraBox title={c.title} content={c.content} />
             </Grid>
           ))}
         </Grid>
         <img
-          style={{marginTop: "40px", width: "100%"}}
+          style={{ marginTop: "40px", width: "100%" }}
           src={isDownSm ? InfrastructureSmPic : InfrastructurePic}
         />
         <Grid
@@ -1326,12 +1349,12 @@ function Infrastructure() {
           position={"relative"}
           mb={"48px"}
         >
-          {!isDownSm && <BottomStar src={SmallStar}/>}
+          {!isDownSm && <BottomStar src={SmallStar} />}
           <Grid item sm={12} md={6}>
-            <DappStore/>
+            <DappStore />
           </Grid>
           <Grid item sm={12} md={6}>
-            <CliqueSdk/>
+            <CliqueSdk />
           </Grid>
         </Grid>
         {false && (
@@ -1356,12 +1379,12 @@ const CliqueContentBox = styled.div`
   align-items: center;
   width: 100%;
   padding-top: 150px;
-    /* background: url(${homeImg4}) no-repeat; */
+  /* background: url(${homeImg4}) no-repeat; */
   background-position: 0% -5%;
   @media (max-width: 767px) {
     padding-top: 30px;
   }
-`
+`;
 export const Box1 = styled.div`
   position: relative;
   width: 1440px;
@@ -1375,30 +1398,30 @@ export const Box1 = styled.div`
     padding: 20px 20px 0 20px;
     flex-direction: column;
   }
-`
+`;
 const Box1Star = styled.img`
   position: absolute;
   top: -60px;
   right: 80px;
   transform: rotate(164.072deg);
-`
+`;
 const ContentLeft = styled.div`
   max-width: 400px;
-  color: #23262F;
+  color: #23262f;
   margin-right: 40px;
-`
+`;
 export const CliqueContentTitle = styled.div`
   font-family: Urbanist;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.3;
-  color: #0049C6;
+  color: #0049c6;
   @media (max-width: 767px) {
     margin-top: 40px;
     font-size: 32px;
   }
-`
+`;
 
 const CliqueContentSubTitle = styled.div`
   margin-top: 0px;
@@ -1413,7 +1436,7 @@ const CliqueContentSubTitle = styled.div`
     font-size: 18px;
     margin-top: 20px;
   }
-`
+`;
 const CliqueContentSubTitle2 = styled(CliqueContentSubTitle)`
   margin-top: 10px;
   text-align: left;
@@ -1421,7 +1444,7 @@ const CliqueContentSubTitle2 = styled(CliqueContentSubTitle)`
     font-size: 18px;
     margin-top: 20px;
   }
-`
+`;
 const CliqueContentText = styled.div`
   max-width: 517px;
   margin-top: 60px;
@@ -1432,29 +1455,29 @@ const CliqueContentText = styled.div`
   @media (max-width: 767px) {
     margin-top: 20px;
   }
-`
+`;
 const ContentRight = styled.div`
   display: flex;
   @media (max-width: 767px) {
     flex-direction: column;
     margin-top: 0px;
   }
-`
+`;
 const Cards = styled.div`
   margin-right: 40px;
   @media (max-width: 767px) {
     margin-right: 0px;
   }
-`
+`;
 const Card = styled.div`
   padding: 32px 40px;
   border-radius: 20px;
-  border: 1px solid #C6DCF0;
-  background: #F8FCFF;
+  border: 1px solid #c6dcf0;
+  background: #f8fcff;
   @media (max-width: 767px) {
     padding: 22px;
   }
-`
+`;
 const Card1 = styled(Card)`
   width: 580px;
   height: 180px;
@@ -1464,7 +1487,7 @@ const Card1 = styled(Card)`
     height: auto;
     margin-bottom: 22px;
   }
-`
+`;
 const Card2 = styled(Card)`
   width: 376px;
   height: 202px;
@@ -1473,8 +1496,7 @@ const Card2 = styled(Card)`
     width: 100%;
     height: auto;
   }
-
-`
+`;
 const Card3 = styled(Card)`
   width: 376px;
   height: 232px;
@@ -1483,8 +1505,7 @@ const Card3 = styled(Card)`
     width: 100%;
     height: auto;
   }
-
-`
+`;
 const Card4 = styled(Card)`
   width: 376px;
   height: 180px;
@@ -1493,31 +1514,30 @@ const Card4 = styled(Card)`
     width: 100%;
     height: auto;
   }
-
-`
+`;
 const CardTitle = styled.div`
   font-family: Poppins;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 38px;
-`
+`;
 const CardText = styled.div`
   margin-top: 18px;
-  color: var(--word-color, #3F5170);
+  color: var(--word-color, #3f5170);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 26px;
-`
+`;
 const Box2 = styled.div`
   position: relative;
   width: 1200px;
   margin: 200px auto 0;
   display: flex;
   justify-content: center;
-    /* background: url(${homeImg5}) no-repeat; */
+  /* background: url(${homeImg5}) no-repeat; */
   /* background-position: 100% 120%; */
   @media (max-width: 767px) {
     width: 100vw;
@@ -1525,7 +1545,7 @@ const Box2 = styled.div`
     padding: 0 24px;
     flex-direction: column;
   }
-`
+`;
 const HomeImg5 = styled.img`
   position: absolute;
   top: -200px;
@@ -1536,19 +1556,19 @@ const HomeImg5 = styled.img`
   @media (max-width: 767px) {
     width: 100vw;
   }
-`
+`;
 const Box2Img = styled.img`
   width: 823px;
   @media (max-width: 767px) {
     width: 100%;
   }
-`
+`;
 const ContentLeft2 = styled.div`
   flex: 1;
   @media (max-width: 767px) {
     margin-right: 0px;
   }
-`
+`;
 const ContentRight2 = styled.div`
   flex: 1;
   display: flex;
@@ -1558,17 +1578,17 @@ const ContentRight2 = styled.div`
   z-index: 2;
   @media (max-width: 767px) {
     width: 100%;
-    padding: 0 24px ;
+    padding: 0 24px;
   }
-`
+`;
 
 const BlueCard = styled.div`
   margin-bottom: 20px;
   padding: 36px;
   border-radius: 20px;
-  border: 1px solid #C6DCF0;
-  background: #F8FCFF;
-`
+  border: 1px solid #c6dcf0;
+  background: #f8fcff;
+`;
 export const Box3 = styled.div<{ isMargin: boolean }>`
   width: 1440px;
   /* display: flex; */
@@ -1579,19 +1599,19 @@ export const Box3 = styled.div<{ isMargin: boolean }>`
     width: 100%;
     flex-direction: column;
     padding: 20px 20px 10px 20px;
-    margin-top: ${props => props.isMargin ? '30px' : '0'};
+    margin-top: ${(props) => (props.isMargin ? "30px" : "0")};
   }
-`
+`;
 export const Box3Card = styled.div`
   margin: 20px auto;
   padding: 38px;
   border-radius: 20px;
-  border: 1px solid #C6DCF0;
-  background: #F8FCFF;
+  border: 1px solid #c6dcf0;
+  background: #f8fcff;
   @media (max-width: 767px) {
     width: 100%;
   }
-`
+`;
 export const Box3CardBlue = styled(Box3Card)`
   width: 1200px;
   height: 320px;
@@ -1600,8 +1620,8 @@ export const Box3CardBlue = styled(Box3Card)`
   position: relative;
   padding: 38px;
   border-radius: 20px;
-  border: 1px solid #C8D9D6;
-  background: #F8FEFF;
+  border: 1px solid #c8d9d6;
+  background: #f8feff;
   cursor: pointer;
 
   &:hover {
@@ -1614,8 +1634,7 @@ export const Box3CardBlue = styled(Box3Card)`
     flex-direction: column;
     padding: 16px;
   }
-
-`
+`;
 const Box3CardBlue2 = styled(Box3CardBlue)`
   width: 580px;
   height: 540px;
@@ -1625,7 +1644,7 @@ const Box3CardBlue2 = styled(Box3CardBlue)`
     width: 100%;
     height: auto;
   }
-`
+`;
 export const Box3CardPink = styled(Box3Card)`
   width: 1200px;
   height: 320px;
@@ -1635,7 +1654,7 @@ export const Box3CardPink = styled(Box3Card)`
   position: relative;
   padding: 38px 36px 28px;
   border-radius: 20px;
-  border: 1px solid #D9C6F0;
+  border: 1px solid #d9c6f0;
   background: #fdf8ff;
   cursor: pointer;
 
@@ -1650,7 +1669,7 @@ export const Box3CardPink = styled(Box3Card)`
     flex-direction: column;
     padding: 16px;
   }
-`
+`;
 const Box3CardPink2 = styled(Box3CardPink)`
   width: 580px;
   height: 540px;
@@ -1660,7 +1679,7 @@ const Box3CardPink2 = styled(Box3CardPink)`
     width: 100%;
     height: auto;
   }
-`
+`;
 const ComingSoonBtn = styled.div`
   position: absolute;
   top: 20px;
@@ -1671,18 +1690,17 @@ const ComingSoonBtn = styled.div`
   @media (max-width: 767px) {
     display: none;
   }
-`
+`;
 const ComingSoonBtnBlue = styled(ComingSoonBtn)`
-  border: 1px solid #C8D9D6;
-  background: #EDF9FB;
-  color: #93BFB7;
-
-`
+  border: 1px solid #c8d9d6;
+  background: #edf9fb;
+  color: #93bfb7;
+`;
 const ComingSoonBtnPink = styled(ComingSoonBtn)`
-  border: 1px solid #9E9EE8;
-  background: #EFEFFF;
-  color: #9E9EE8;
-`
+  border: 1px solid #9e9ee8;
+  background: #efefff;
+  color: #9e9ee8;
+`;
 const ComingSoonBtnH5 = styled.div`
   border-radius: 12px;
   padding: 8px 15px;
@@ -1692,64 +1710,63 @@ const ComingSoonBtnH5 = styled.div`
     margin-top: 10px;
     text-align: center;
   }
-`
+`;
 const ComingSoonBtnBlueH5 = styled(ComingSoonBtnH5)`
-  border: 1px solid #C8D9D6;
-  background: #EDF9FB;
-  color: #93BFB7;
-
-`
+  border: 1px solid #c8d9d6;
+  background: #edf9fb;
+  color: #93bfb7;
+`;
 const ComingSoonBtnPinkH5 = styled(ComingSoonBtnH5)`
-  border: 1px solid #9E9EE8;
-  background: #EFEFFF;
-  color: #9E9EE8;
-`
+  border: 1px solid #9e9ee8;
+  background: #efefff;
+  color: #9e9ee8;
+`;
 const Box3CardCover = styled.div`
   flex: 1;
-`
+`;
 export const Box3CardImg = styled.img`
   max-width: 100%;
   max-height: 100%;
-`
+`;
 export const Box3CardTitle = styled.div`
   margin-bottom: 10px;
-  color: var(--main, #23262F);
+  color: var(--main, #23262f);
   font-family: Poppins;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: 1.1;
-`
+`;
 export const Box3CardSubTitle = styled.div`
   margin-top: 20px;
-  color: var(--main, #23262F);
+  color: var(--main, #23262f);
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 1.1;
-`
+`;
 export const Box3CardTxt = styled.div`
   padding: 0px 20px 30px 20px;
-  color: var(--word-color, #3F5170);
+  color: var(--word-color, #3f5170);
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
-`
+`;
 const Box3CardUl = styled.ul`
   margin-top: 20px;
   flex: 1;
-`
+`;
 const Box3CardLi = styled.li`
-  color: #3F5170;
+  color: #3f5170;
   font-family: DM Sans;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
-`
+`;
 const Box4 = styled.div`
   display: flex;
   width: 1200px;
@@ -1758,87 +1775,120 @@ const Box4 = styled.div`
     padding: 0 24px;
     flex-direction: column;
   }
-
-`
+`;
 
 function CliqueContent() {
   const cliqueAwSolutions = {
-    title: 'Clique AW',
-    subTitle: 'Evolve Community for Autonomous Worlds',
+    title: "Clique AW",
+    subTitle: "Evolve Community for Autonomous Worlds",
     // text: 'Seamlessly unwind and power world-building through these solutions'
-  }
+  };
   const cardList = [
     {
-      title: 'AWNS',
-      content: 'Onboard & interact across worlds seamlessly with a universal name'
+      title: "AWNS",
+      content:
+        "Onboard & interact across worlds seamlessly with a universal name",
     },
     {
-      title: '6551 Account Generator',
-      content: 'Elevate any NFT into a powerful wallet that can seamlessly own and connect'
+      title: "6551 Account Generator",
+      content:
+        "Elevate any NFT into a powerful wallet that can seamlessly own and connect",
     },
     {
-      title: 'Data APIs',
-      content: 'Query and build on-chain data across any chain using AI assistance'
+      title: "Data APIs",
+      content:
+        "Query and build on-chain data across any chain using AI assistance",
     },
     {
-      title: 'Asset Portal',
-      content: 'Buy, sell & hold any on-chain asset through custom marketplaces'
+      title: "Asset Portal",
+      content:
+        "Buy, sell & hold any on-chain asset through custom marketplaces",
     },
-  ]
+  ];
   const cliqueWorkspace = {
-    title: 'Clique Network',
-    subTitle: 'Evolve Community for Autonomous Worlds',
-    text: 'Collaborative governance tool for planning and building onchain worlds with no code and gas.'
-  }
+    title: "Clique Network",
+    subTitle: "Evolve Community for Autonomous Worlds",
+    text: "Collaborative governance tool for planning and building onchain worlds with no code and gas.",
+  };
   const openLink = (href: any) => {
-    window.open(href)
-  }
+    window.open(href);
+  };
   return (
     <CliqueContentBox>
       <Box1>
         {/* <ContentLeft> */}
         <CliqueContentTitle>{cliqueAwSolutions.title}</CliqueContentTitle>
-        <CliqueContentSubTitle>{cliqueAwSolutions.subTitle}</CliqueContentSubTitle>
+        <CliqueContentSubTitle>
+          {cliqueAwSolutions.subTitle}
+        </CliqueContentSubTitle>
         {/* </ContentLeft> */}
         <Box3 isMargin={false}>
-          <Box3CardBlue onClick={() => {
-            openLink('https://awns.stp.network/')
-          }}>
+          <Box3CardBlue
+            onClick={() => {
+              openLink("https://awns.stp.network/");
+            }}
+          >
             {/* <ComingSoonBtnBlue>Coming Soon</ComingSoonBtnBlue> */}
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft: '-20px'}}>AWNS</Box3CardTitle>
-              <Box3CardLi>Serves as your autonomous onchain agent with a 6551 Wallet.</Box3CardLi>
+              <Box3CardTitle style={{ marginLeft: "-20px" }}>
+                AWNS
+              </Box3CardTitle>
+              <Box3CardLi>
+                Serves as your autonomous onchain agent with a 6551 Wallet.
+              </Box3CardLi>
               <Box3CardLi>Easily connect and interact with dApps.</Box3CardLi>
-              <Box3CardLi>Single name for all tokens and decentralized worlds.</Box3CardLi>
+              <Box3CardLi>
+                Single name for all tokens and decentralized worlds.
+              </Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
               <Box3CardImg src={workspaceImg4}></Box3CardImg>
             </Box3CardCover>
             {/* <ComingSoonBtnBlueH5>Coming Soon</ComingSoonBtnBlueH5> */}
           </Box3CardBlue>
-          <Box3CardPink onClick={() => {
-            openLink('https://awnsbase.stp.network/my/names?tab=game')
-          }}>
+          <Box3CardPink
+            onClick={() => {
+              openLink("https://awnsbase.stp.network/my/names?tab=game");
+            }}
+          >
             {/* <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink> */}
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft: '-20px'}}>Dynamic 6551 Account</Box3CardTitle>
-              <Box3CardLi>Generate and manage NFT-based smart wallets.</Box3CardLi>
-              <Box3CardLi>Multi-chain navigation with interworld passports.</Box3CardLi>
-              <Box3CardLi>Customize avatars and trade digital assets.</Box3CardLi>
+              <Box3CardTitle style={{ marginLeft: "-20px" }}>
+                Dynamic 6551 Account
+              </Box3CardTitle>
+              <Box3CardLi>
+                Generate and manage NFT-based smart wallets.
+              </Box3CardLi>
+              <Box3CardLi>
+                Multi-chain navigation with interworld passports.
+              </Box3CardLi>
+              <Box3CardLi>
+                Customize avatars and trade digital assets.
+              </Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
               <Box3CardImg src={workspaceImg3}></Box3CardImg>
             </Box3CardCover>
             {/* <ComingSoonBtnPinkH5>Coming Soon</ComingSoonBtnPinkH5> */}
           </Box3CardPink>
-          <Box3CardBlue onClick={() => {
-            openLink('https://ancientforest.xyz/')
-          }}>
+          <Box3CardBlue
+            onClick={() => {
+              openLink("https://ancientforest.xyz/");
+            }}
+          >
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft: '-20px'}}>Onchain Gaming</Box3CardTitle>
-              <Box3CardLi>Immersive play with AWNS integration and AI support. </Box3CardLi>
-              <Box3CardLi>Story-rich environment with competitive elements.</Box3CardLi>
-              <Box3CardLi>Unique blend of creativity and blockchain gaming.</Box3CardLi>
+              <Box3CardTitle style={{ marginLeft: "-20px" }}>
+                Onchain Gaming
+              </Box3CardTitle>
+              <Box3CardLi>
+                Immersive play with AWNS integration and AI support.{" "}
+              </Box3CardLi>
+              <Box3CardLi>
+                Story-rich environment with competitive elements.
+              </Box3CardLi>
+              <Box3CardLi>
+                Unique blend of creativity and blockchain gaming.
+              </Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
               <Box3CardImg src={cliqueImg3}></Box3CardImg>
@@ -1849,10 +1899,18 @@ function CliqueContent() {
             <ComingSoonBtnPink>Coming Soon</ComingSoonBtnPink>
             {/* <Box3CardSubTitle>Personalize with Universal Name</Box3CardSubTitle> */}
             <Box3CardUl>
-              <Box3CardTitle style={{marginLeft: '-20px'}}>Autonomous AI Agent</Box3CardTitle>
-              <Box3CardLi>Integrate AI for onchain gaming and DeFi actions.</Box3CardLi>
-              <Box3CardLi>Train AI for game interaction and item collection.</Box3CardLi>
-              <Box3CardLi>AI-powered data querying and onchain activities.</Box3CardLi>
+              <Box3CardTitle style={{ marginLeft: "-20px" }}>
+                Autonomous AI Agent
+              </Box3CardTitle>
+              <Box3CardLi>
+                Integrate AI for onchain gaming and DeFi actions.
+              </Box3CardLi>
+              <Box3CardLi>
+                Train AI for game interaction and item collection.
+              </Box3CardLi>
+              <Box3CardLi>
+                AI-powered data querying and onchain activities.
+              </Box3CardLi>
             </Box3CardUl>
             <Box3CardCover>
               <Box3CardImg src={cliqueImg4}></Box3CardImg>
@@ -1879,41 +1937,63 @@ function CliqueContent() {
       <Box2>
         <ContentRight2>
           <CliqueContentTitle>{cliqueWorkspace.title}</CliqueContentTitle>
-          <CliqueContentSubTitle2>{cliqueWorkspace.subTitle}</CliqueContentSubTitle2>
+          <CliqueContentSubTitle2>
+            {cliqueWorkspace.subTitle}
+          </CliqueContentSubTitle2>
           <CliqueContentText>{cliqueWorkspace.text}</CliqueContentText>
         </ContentRight2>
         <ContentLeft2>
-          <Box3CardBlue2 onClick={() => {
-            openLink('https://www.stp.network/cliqueSocial')
-          }}>
-            <Box3CardTitle style={{marginBottom: '20px', paddingLeft: '10px'}}>Clique Social</Box3CardTitle>
-            <Box3CardTxt>Provides integrated social tooling for DAOs and NFTs on platforms on Chrome and
-              Telegram.</Box3CardTxt>
+          <Box3CardBlue2
+            onClick={() => {
+              openLink("https://www.stp.network/cliqueSocial");
+            }}
+          >
+            <Box3CardTitle
+              style={{ marginBottom: "20px", paddingLeft: "10px" }}
+            >
+              Clique Social
+            </Box3CardTitle>
+            <Box3CardTxt>
+              Provides integrated social tooling for DAOs and NFTs on platforms
+              on Chrome and Telegram.
+            </Box3CardTxt>
             <Box3CardImg src={cliqueSocial}></Box3CardImg>
           </Box3CardBlue2>
         </ContentLeft2>
         <HomeImg5 src={homeImg5V2}></HomeImg5>
       </Box2>
       <Box4>
-        <Box3CardBlue2 onClick={() => {
-          openLink('https://www.myclique.io/activity')
-        }}>
-          <Box3CardTitle style={{marginBottom: '20px', paddingLeft: '10px'}}>Clique Rewards</Box3CardTitle>
-          <Box3CardTxt>Solutions platform for building onchain worlds unique to any AW project.</Box3CardTxt>
+        <Box3CardBlue2
+          onClick={() => {
+            openLink("https://www.myclique.io/activity");
+          }}
+        >
+          <Box3CardTitle style={{ marginBottom: "20px", paddingLeft: "10px" }}>
+            Clique Rewards
+          </Box3CardTitle>
+          <Box3CardTxt>
+            Solutions platform for building onchain worlds unique to any AW
+            project.
+          </Box3CardTxt>
           <Box3CardImg src={workspaceImg1}></Box3CardImg>
         </Box3CardBlue2>
-        <Box3CardPink2 onClick={() => {
-          openLink('https://www.myclique.io/daos')
-        }}>
-          <Box3CardTitle style={{marginBottom: '20px', paddingLeft: '10px'}}>Clique Governance</Box3CardTitle>
-          <Box3CardTxt>Collaborative governance tool for planning and building worlds with no code and
-            gas.</Box3CardTxt>
+        <Box3CardPink2
+          onClick={() => {
+            openLink("https://www.myclique.io/daos");
+          }}
+        >
+          <Box3CardTitle style={{ marginBottom: "20px", paddingLeft: "10px" }}>
+            Clique Governance
+          </Box3CardTitle>
+          <Box3CardTxt>
+            Collaborative governance tool for planning and building worlds with
+            no code and gas.
+          </Box3CardTxt>
           <Box3CardImg src={workspaceImg2}></Box3CardImg>
         </Box3CardPink2>
       </Box4>
-
     </CliqueContentBox>
-  )
+  );
 }
 
 const CliqueBox2 = styled.div`
@@ -1929,7 +2009,7 @@ const CliqueBox2 = styled.div`
     background-size: cover;
     background-position: center 0%;
   }
-`
+`;
 const CliqueBox2Logo = styled.img`
   margin-top: 40px;
   width: 365px;
@@ -1937,7 +2017,7 @@ const CliqueBox2Logo = styled.img`
     width: 200px;
     margin-top: 0px;
   }
-`
+`;
 const CliqueBox2Title = styled.div`
   margin-top: 360px;
   margin-bottom: 20px;
@@ -1957,9 +2037,8 @@ const CliqueBox2Title = styled.div`
   }
   @media screen and (min-width: 376px) and (max-width: 767px) {
     margin-top: 180px;
-
   }
-`
+`;
 const CliqueBox2Txt = styled.div`
   font-family: Inter;
   font-size: 24px;
@@ -1967,7 +2046,7 @@ const CliqueBox2Txt = styled.div`
   line-height: 29px;
   letter-spacing: 0em;
   text-align: center;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 1.3;
@@ -1975,7 +2054,7 @@ const CliqueBox2Txt = styled.div`
     width: 268px;
     margin: auto;
   }
-`
+`;
 const CliqueBox2TxtH5 = styled.div`
   display: none;
   @media (max-width: 767px) {
@@ -1988,9 +2067,9 @@ const CliqueBox2TxtH5 = styled.div`
     line-height: 29px;
     letter-spacing: 0em;
     text-align: center;
-    color: #B2B2B2;
+    color: #b2b2b2;
   }
-`
+`;
 const CliqueInfrastructure = styled.div`
   width: 1000px;
   margin: -150px auto 40px auto;
@@ -1999,7 +2078,7 @@ const CliqueInfrastructure = styled.div`
     margin: 40px auto 40px auto;
     padding: 0 24px;
   }
-`
+`;
 const CliqueInfrastructureTitle = styled.div`
   margin-bottom: 16px;
   padding-left: 30px;
@@ -2008,11 +2087,11 @@ const CliqueInfrastructureTitle = styled.div`
   font-weight: 500;
   line-height: 29px;
   letter-spacing: -0.02em;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media (max-width: 767px) {
     font-size: 16px;
   }
-`
+`;
 const CliqueInfrastructureMain = styled.div`
   display: flex;
   gap: 24px;
@@ -2020,7 +2099,7 @@ const CliqueInfrastructureMain = styled.div`
   @media (max-width: 767px) {
     flex-direction: column;
   }
-`
+`;
 const InfrastructureMainBox1 = styled.div`
   /* width: 282px; */
   position: relative;
@@ -2029,8 +2108,8 @@ const InfrastructureMainBox1 = styled.div`
   min-height: 330px;
   padding: 20px 0px 0 0px;
   border-radius: 24px;
-  border: 1px solid #FFFFFF14;
-  background: #1D1C20;
+  border: 1px solid #ffffff14;
+  background: #1d1c20;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2038,9 +2117,8 @@ const InfrastructureMainBox1 = styled.div`
   @media (max-width: 767px) {
     min-height: 300px;
   }
-`
+`;
 const InfrastructureMainBox1H = styled.div`
-
   margin-bottom: 8px;
   padding: 0px 24px;
   font-family: Inter;
@@ -2053,7 +2131,7 @@ const InfrastructureMainBox1H = styled.div`
     font-size: 20px;
     line-height: 1.3;
   }
-`
+`;
 const InfrastructureMainBox1T = styled.div`
   /* margin-bottom: 20px; */
   padding: 0px 24px;
@@ -2062,17 +2140,17 @@ const InfrastructureMainBox1T = styled.div`
   font-weight: 500;
   line-height: 22px;
   letter-spacing: 0em;
-  color: #A9A9A9;
+  color: #a9a9a9;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 1.3;
   }
-`
+`;
 const InfrastructureMainBox1IconN = styled.img`
   width: 100%;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
-`
+`;
 
 const InfrastructureMainBox2 = styled.div`
   /* width: 588px; */
@@ -2082,15 +2160,15 @@ const InfrastructureMainBox2 = styled.div`
   /* min-height: 400px; */
   padding: 20px 0px 0 0px;
   border-radius: 24px;
-  border: 1px solid #FFFFFF14;
-  background: #1D1C20;
+  border: 1px solid #ffffff14;
+  background: #1d1c20;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 767px) {
     min-height: 300px;
   }
-`
+`;
 const CliqueApplications = styled.div`
   width: 1000px;
   margin: 10px auto 40px auto;
@@ -2098,20 +2176,25 @@ const CliqueApplications = styled.div`
     width: 100%;
     padding: 0 24px;
   }
-`
+`;
 
 function CliqueContent2() {
-
   const openLink = (href: any) => {
-    window.open(href)
-  }
+    window.open(href);
+  };
   return (
     <CliqueContentBox>
       <CliqueBox2>
         <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
         <CliqueBox2Title>New Form of Play & Create</CliqueBox2Title>
-        <CliqueBox2Txt>Clique is a blockchain for AI enhanced gaming.</CliqueBox2Txt>
-        <CliqueBox2Txt> Our ecosystem empowers everyone to reinvent gaming experiences with AI.</CliqueBox2Txt>
+        <CliqueBox2Txt>
+          Clique is a blockchain for AI enhanced gaming.
+        </CliqueBox2Txt>
+        <CliqueBox2Txt>
+          {" "}
+          Our ecosystem empowers everyone to reinvent gaming experiences with
+          AI.
+        </CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
       </CliqueBox2>
       <CliqueInfrastructure>
@@ -2122,21 +2205,29 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>Celestia</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Modular DA with  >100x reduced cost for intense load of onchain gaming`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon1}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon1}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
-              <InfrastructureMainBox1H>OP Stack on Base</InfrastructureMainBox1H>
+              <InfrastructureMainBox1H>
+                OP Stack on Base
+              </InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon2}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon2}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Composable app chain data from Base, Farcaster, Lens with AI APIs`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon3}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon3}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueInfrastructure>
@@ -2148,14 +2239,18 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>AWNS</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Autonomous onchain agent with a 6551-powered wallet to establish your onchain identity and interact with games and AI`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon4}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon4}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
               <InfrastructureMainBox1H>Game Portal</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon5}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon5}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
         </CliqueInfrastructureMain>
         <CliqueInfrastructureMain>
@@ -2164,42 +2259,56 @@ function CliqueContent2() {
               <InfrastructureMainBox1H>Community</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Discover, mingle and contribute to fandom and governance across game and social communities among AI and gaming enthusiasts`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon6}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon6}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox2>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Marketplace</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Trade and extract financial value from your onchain assets seamlessly impacting the respective games`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon7}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon7}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueApplications>
       <CliqueApplications>
-        <CliqueInfrastructureTitle>Developer Resources</CliqueInfrastructureTitle>
+        <CliqueInfrastructureTitle>
+          Developer Resources
+        </CliqueInfrastructureTitle>
         <CliqueInfrastructureMain>
           <InfrastructureMainBox1>
             <div>
-              <InfrastructureMainBox1H>Developer Engine</InfrastructureMainBox1H>
+              <InfrastructureMainBox1H>
+                Developer Engine
+              </InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`All-in-one SDK to enhance games with AI along with social tooling for NFTs and DAOs on platforms like X, Telegram, Chrome, Farcaster`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon8}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon8}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
           <InfrastructureMainBox1>
             <div>
-              <InfrastructureMainBox1H>Ecosystem Support </InfrastructureMainBox1H>
+              <InfrastructureMainBox1H>
+                Ecosystem Support{" "}
+              </InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Collaborate in the builder community and apply for frequent project grants and developer support`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN src={s4Icon9}></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN
+              src={s4Icon9}
+            ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
       </CliqueApplications>
     </CliqueContentBox>
-  )
+  );
 }
 
 const DataBgBox = styled(Box)`
-    /* background-image: url("${DataBg}"); */
+  /* background-image: url("${DataBg}"); */
   position: relative;
   width: 100%;
   display: flex;
@@ -2217,15 +2326,15 @@ const DataStar = styled.img`
   width: 40px;
   left: 200px;
   bottom: 60px;
-`
+`;
 const DataBox = styled(Box)`
   padding: 0 100px;
-  border-right: 1px solid #D6DEE8;
+  border-right: 1px solid #d6dee8;
 
   &:last-of-type {
-    border-right: none
+    border-right: none;
   }
-`
+`;
 const DataNumber = styled(Typography)`
   font-family: "Urbanist";
   font-style: normal;
@@ -2233,7 +2342,7 @@ const DataNumber = styled(Typography)`
   font-size: 48px;
   line-height: 60px;
   text-align: center;
-  color: #0049C6;
+  color: #0049c6;
   @media (max-width: 767px) {
     font-size: 32px;
   }
@@ -2246,22 +2355,22 @@ const DataContent = styled(Typography)`
   font-size: 24px;
   line-height: 30px;
   text-align: center;
-  color: #23262F;
+  color: #23262f;
   @media (max-width: 767px) {
     font-size: 16px;
   }
 `;
 
 function Data() {
-  const {total} = useTotal();
+  const { total } = useTotal();
   const dataList = useMemo(() => {
     return [
-      {number: total?.totalDao.toLocaleString(), desc: "DAOs"},
+      { number: total?.totalDao.toLocaleString(), desc: "DAOs" },
       {
         number: total?.totalAccount.toLocaleString(),
         desc: "Users",
       },
-      {number: total?.totalProposal.toLocaleString(), desc: "Proposals"},
+      { number: total?.totalProposal.toLocaleString(), desc: "Proposals" },
     ];
   }, [total?.totalAccount, total?.totalDao, total?.totalProposal]);
   return (
@@ -2381,11 +2490,11 @@ const InitRow = styled(Row)`
   align-items: center;
 `;
 
-function InitList({data}: { data: InitiativesData }) {
+function InitList({ data }: { data: InitiativesData }) {
   const isDownSm = useBreakpoint("sm");
   return (
     <InitBox>
-      <img src={data.pic} width={"600px"}/>
+      <img src={data.pic} width={"600px"} />
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -2393,12 +2502,12 @@ function InitList({data}: { data: InitiativesData }) {
       >
         <Box>
           <InitRow>
-            <img src={data.avatar} width={isDownSm ? "40px" : "60px"}/>
+            <img src={data.avatar} width={isDownSm ? "40px" : "60px"} />
             <InitListH1>{data.title}</InitListH1>
           </InitRow>
           <Row gap={"16px"} mt={"16px"}>
             {data.tag.map((tag, idx) => (
-              <InitTag key={idx} sx={{background: data.tagColor[idx]}}>
+              <InitTag key={idx} sx={{ background: data.tagColor[idx] }}>
                 {tag}
               </InitTag>
             ))}
@@ -2412,7 +2521,7 @@ function InitList({data}: { data: InitiativesData }) {
           onClick={() => window.open(data.link, "_blank")}
         >
           Learn more
-          <ArrowOutwardIcon/>
+          <ArrowOutwardIcon />
         </GreenBtn>
       </Box>
     </InitBox>
@@ -2498,7 +2607,7 @@ const InfoConetne = styled(Typography)`
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
-  color: #80829F;
+  color: #80829f;
 `;
 const IfonBoxs = styled(Box)`
   padding: 0 60px;
@@ -2580,7 +2689,6 @@ const AllInfo = styled(Box)`
   border-radius: 80px;
   color: #0149c6;
   font-size: 18px;
-
 `;
 
 const ContributorsImg = styled("img")`
@@ -2617,15 +2725,15 @@ const ContributorsTitle = styled(Box)`
 `;
 
 function InfoBox({
-                   avatar,
-                   name,
-                   group,
-                   comment,
-                   item1,
-                   item2,
-                   item3,
-                   link,
-                 }: {
+  avatar,
+  name,
+  group,
+  comment,
+  item1,
+  item2,
+  item3,
+  link,
+}: {
   avatar: string;
   name: string;
   group: string;
@@ -2655,12 +2763,12 @@ function InfoBox({
         <img
           alt=""
           src={avatar}
-          style={{width: "48px", height: "48px", borderRadius: "50%"}}
+          style={{ width: "48px", height: "48px", borderRadius: "50%" }}
         />
-        <Box sx={{pl: "14px"}}>
-          <Row sx={{alignItems: "center"}}>
+        <Box sx={{ pl: "14px" }}>
+          <Row sx={{ alignItems: "center" }}>
             <InfoName> {name} </InfoName>
-            <IconStart fill={'#0149c6'}></IconStart>
+            <IconStart fill={"#0149c6"}></IconStart>
             {/* <InfoNameIcon src={Label1}></InfoNameIcon> */}
           </Row>
           <InfoTitle> {group} </InfoTitle>
@@ -2668,18 +2776,18 @@ function InfoBox({
       </Row>
 
       <InfoConetne> {comment} </InfoConetne>
-      <Row sx={{pt: "16px", alignItems: "center"}}>
-        <Row sx={{alignItems: "center"}}>
-          <InfoUserIcon/>
+      <Row sx={{ pt: "16px", alignItems: "center" }}>
+        <Row sx={{ alignItems: "center" }}>
+          <InfoUserIcon />
           <InfoBottomText> {item1}</InfoBottomText>
         </Row>
 
-        <Row sx={{alignItems: "center", ml: "40px"}}>
+        <Row sx={{ alignItems: "center", ml: "40px" }}>
           <InfoFileIcon></InfoFileIcon>
           <InfoBottomText> {item2}</InfoBottomText>
         </Row>
 
-        <Row sx={{alignItems: "center", ml: "40px"}}>
+        <Row sx={{ alignItems: "center", ml: "40px" }}>
           <InfoAlarmIcon></InfoAlarmIcon>
           <InfoBottomText> {item3}</InfoBottomText>
         </Row>
@@ -2689,10 +2797,10 @@ function InfoBox({
 }
 
 function ContributorsBox({
-                           img,
-                           name,
-                           group,
-                         }: {
+  img,
+  name,
+  group,
+}: {
   img: string;
   name: string;
   group: string;
@@ -2734,19 +2842,19 @@ const InitiativesBox = styled.div`
     margin: 20px auto 60px auto;
     width: 100vw;
   }
-`
+`;
 const InitiativesStarWhite = styled.img`
   position: absolute;
   top: -60px;
   right: 30px;
   width: 32px;
   animation: ${blinkAnimation} 1.5s ease-in-out infinite;
-`
+`;
 const InitiativesStar = styled.img`
   position: absolute;
   bottom: -70px;
   right: 10px;
-`
+`;
 const ViewAllBox = styled.div`
   display: flex;
   justify-content: center;
@@ -2754,7 +2862,7 @@ const ViewAllBox = styled.div`
     justify-content: center;
     /* padding-left: 24px; */
   }
-`
+`;
 
 function Initiatives() {
   const isDownSm = useBreakpoint("sm");
@@ -2887,11 +2995,11 @@ function Initiatives() {
       <InitiativesStarWhite src={starWhite}></InitiativesStarWhite>
       <InitH1>Top DAOs Building Autonomous Worlds</InitH1>
       <InitH2>
-        We evolve DAOs for Autonomous Worlds. <br/>
+        We evolve DAOs for Autonomous Worlds. <br />
         Traverse our onchain universe and help build the future!
       </InitH2>
-      <Data/>
-      <Box sx={{display: "flex", justifyContent: "center"}}>
+      <Data />
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <IfonBoxs>
           <Grid
             className={"wrapper"}
@@ -2935,8 +3043,8 @@ function Initiatives() {
               border: "1px solid #0149c6",
               borderRadius: "80px",
               cursor: "pointer",
-              color: '#0149c6',
-              boxShadow: '0 0 10px 2px rgba(31,95,204,0.25)'
+              color: "#0149c6",
+              boxShadow: "0 0 10px 2px rgba(31,95,204,0.25)",
             },
           }}
           onClick={() => {
@@ -3022,16 +3130,15 @@ const HomeImg62 = styled.img`
   bottom: -600px;
   left: calc(50% - 500px);
   z-index: 1;
-  opacity: .3;
+  opacity: 0.3;
   animation: ${rotateAnimation} 200s linear infinite;
-
-`
+`;
 const HomeImg63 = styled.img`
   position: absolute;
   bottom: -500px;
   left: 0px;
   z-index: 2;
-`
+`;
 const EcoContent = styled.div`
   z-index: 3;
   display: flex;
@@ -3042,7 +3149,7 @@ const EcoContent = styled.div`
   background-position: center;
   width: 1440px;
   margin: 100px auto;
-`
+`;
 const EcoButton = styled(Button)`
   display: flex;
   flex-direction: row;
@@ -3074,7 +3181,7 @@ const GameLearnMore = styled(GreenBtn)`
     right: 24px;
     padding: 0 16px;
   }
-`
+`;
 
 const EcoTab = styled(Tab)`
   text-transform: none;
@@ -3101,7 +3208,7 @@ const EcoGame = styled.div`
   @media screen and (max-width: 767px) {
     width: 100%;
   }
-`
+`;
 const StyledThumbs = styled.div`
   display: flex;
   flex-direction: column;
@@ -3110,14 +3217,13 @@ const StyledThumbs = styled.div`
   @media screen and (max-width: 767px) {
     display: none;
   }
-`
+`;
 const StyledSwiperSlide = styled(SwiperSlide)`
   /* display: flex ;
   align-items: center; */
   width: 232px;
   height: 130px;
-
-`
+`;
 const SwiperGameBig = styled(Swiper)`
   width: 800px;
   height: 450px;
@@ -3131,7 +3237,7 @@ const SwiperGameBig = styled(Swiper)`
   @media screen and (min-width: 376px) and (max-width: 767px) {
     max-width: 430px;
   }
-`
+`;
 const SwiperSlideBig = styled(SwiperSlide)`
   position: relative;
   border: 16px solid #363636;
@@ -3145,7 +3251,7 @@ const SwiperSlideBig = styled(SwiperSlide)`
     width: 100%;
     height: 186px;
   }
-`
+`;
 const GameImgBig = styled.img`
   /* width: 800px;
   height: 450px; */
@@ -3154,7 +3260,7 @@ const GameImgBig = styled.img`
     width: 100%;
     height: 100%;
   }
-`
+`;
 const GameImgBigMask = styled.div`
   position: absolute;
   bottom: 0;
@@ -3164,14 +3270,14 @@ const GameImgBigMask = styled.div`
   padding: 20px 24px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  background: #0000004D;
+  background: #0000004d;
   @media screen and (max-width: 767px) {
     height: 96px;
     padding: 10px 16px;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
   }
-`
+`;
 const MaskName = styled.div`
   font-family: Inter;
   font-size: 24px;
@@ -3182,7 +3288,7 @@ const MaskName = styled.div`
   @media screen and (max-width: 767px) {
     font-size: 16px;
   }
-`
+`;
 const MaskLogo = styled.img`
   width: 32px;
   border-radius: 50%;
@@ -3190,7 +3296,7 @@ const MaskLogo = styled.img`
   @media screen and (max-width: 767px) {
     width: 24px;
   }
-`
+`;
 const MaskDes = styled.div`
   margin-top: 8px;
   padding-left: 38px;
@@ -3199,13 +3305,13 @@ const MaskDes = styled.div`
   font-weight: 500;
   line-height: 19px;
   letter-spacing: -0.02em;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media screen and (max-width: 767px) {
     font-size: 14px;
     padding-left: 30px;
     margin-top: 2px;
   }
-`
+`;
 const GameImgSmallBox = styled.div<{ active: boolean }>`
   position: relative;
   border: 8px solid #363636;
@@ -3215,9 +3321,9 @@ const GameImgSmallBox = styled.div<{ active: boolean }>`
   overflow: hidden;
 
   & > div {
-    display: ${props => props.active ? 'none' : 'block'};
+    display: ${(props) => (props.active ? "none" : "block")};
   }
-`
+`;
 const GameImgSmallMask = styled.div`
   position: absolute;
   top: 0;
@@ -3226,10 +3332,10 @@ const GameImgSmallMask = styled.div`
   height: 100%;
   background: #00000080;
   border-radius: 16px;
-`
+`;
 const GameImgSmall = styled.img`
   width: 100%;
-`
+`;
 
 function Ecosystem() {
   const [value, setValue] = useState("Games");
@@ -3237,33 +3343,31 @@ function Ecosystem() {
   const history = useHistory();
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const swiperRef = useRef<SwiperRef>(null);
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
   const Games = [
     {
       src: s5Game3,
       logo: Eternal,
-      name: 'Eternal Legacy',
-      des: 'Riveting AI-powered card game where you uniquely build a deck generated by your own NFTs to battle friends and foes in the ultimate onchain strategy game. ',
-      link: 'https://eternallegacy.xyz',
-      buttonStr: 'Play Beta'
+      name: "Eternal Legacy",
+      des: "Riveting AI-powered card game where you uniquely build a deck generated by your own NFTs to battle friends and foes in the ultimate onchain strategy game. ",
+      link: "https://eternallegacy.xyz",
+      buttonStr: "Play Beta",
     },
     {
       src: s5Game1,
       logo: s5GameLogo2,
-      name: 'Ancient Forest',
-      des: 'Survive a story-based onchain game revolving around resource gathering and base building!',
-      link: 'https://ancientforest.xyz/'
+      name: "Ancient Forest",
+      des: "Survive a story-based onchain game revolving around resource gathering and base building!",
+      link: "https://ancientforest.xyz/",
     },
     {
       src: s5Game2,
       logo: s5GameLogo3,
-      name: 'Dice Game',
-      des: 'Simple yet extremely fun dice-rolling game, complete 6 rolls to get a bonus or reward!',
-      link: 'https://lootdice.xyz/'
+      name: "Dice Game",
+      des: "Simple yet extremely fun dice-rolling game, complete 6 rolls to get a bonus or reward!",
+      link: "https://lootdice.xyz/",
     },
-
-
-  ]
+  ];
   const PartnersLogos = [
     hypr,
     space3,
@@ -3307,7 +3411,7 @@ function Ecosystem() {
     Voltswap,
     PushPro,
     Airstack,
-    Eternal
+    Eternal,
   ];
   const IntegrationsLogos = [Base, Binance, Polygon, Klaytn, ZkEVM];
   const ListedLogos = [
@@ -3324,21 +3428,27 @@ function Ecosystem() {
     value === "Partners"
       ? PartnersLogos
       : value === "Integrations"
-        ? IntegrationsLogos
-        : ListedLogos;
+      ? IntegrationsLogos
+      : ListedLogos;
   const changeSlide = (index: any) => {
     console.log(swiperRef);
-    setActiveIndex(index)
+    setActiveIndex(index);
     if (swiperRef && swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideTo(index, 0, false);
     }
-  }
+  };
   const handleSwiper = (swiper: any) => {
     console.log(swiper);
-    setActiveIndex(swiper.activeIndex)
-  }
+    setActiveIndex(swiper.activeIndex);
+  };
   return (
-    <Box position={"relative"} display={"flex"} alignItems={"center"} flexDirection={"column"} overflow={"hidden"}>
+    <Box
+      position={"relative"}
+      display={"flex"}
+      alignItems={"center"}
+      flexDirection={"column"}
+      overflow={"hidden"}
+    >
       {/* <HomeImg61 src={homeImg61}></HomeImg61> */}
       <EcoContent>
         <EcoH1>Ecosystem</EcoH1>
@@ -3356,92 +3466,110 @@ function Ecosystem() {
               {
                 color: "#fff",
                 borderColor: "#007918",
-                background: "#00791833"
+                background: "#00791833",
               },
           }}
         >
-          <EcoTab value={"Games"} label="Games"/>
-          <EcoTab value={"Partners"} label="Partners"/>
-          <EcoTab value={"Integrations"} label="Integrations"/>
-          <EcoTab value={"Listed Exchanges"} label="Listed Exchanges"/>
+          <EcoTab value={"Games"} label="Games" />
+          <EcoTab value={"Partners"} label="Partners" />
+          <EcoTab value={"Integrations"} label="Integrations" />
+          <EcoTab value={"Listed Exchanges"} label="Listed Exchanges" />
         </Tabs>
-        {
-          value === 'Games' ?
-            <EcoGame>
-              <StyledThumbs>
-                {
-                  Games.map((item, index) => (
-                    <GameImgSmallBox active={activeIndex === index} onClick={() => {
-                      changeSlide(index)
-                    }}>
-                      <GameImgSmall src={item.src}></GameImgSmall>
-                      <GameImgSmallMask>
-                      </GameImgSmallMask>
-                    </GameImgSmallBox>
-                  ))
-                }
-              </StyledThumbs>
-              <SwiperGameBig ref={swiperRef} modules={[Autoplay]} autoplay={{
-                delay: 4000,
-              }} spaceBetween={10} onSlideChange={(swiper) => {
-                handleSwiper(swiper)
-              }}>
-                {
-                  Games.map(item => (
-                    <SwiperSlideBig>
-                      <GameImgBig src={item.src}></GameImgBig>
-                      <GameImgBigMask>
-                        <MaskName><MaskLogo src={item.logo}></MaskLogo> {item.name}</MaskName>
-                        <MaskDes>{item.des}</MaskDes>
-                        <GameLearnMore
-                          onClick={() => {
-                            item.link && window.open(item.link, '_blank')
-                          }}
-                        >
-                          {
-                            item.buttonStr ? item.buttonStr : item.link ? 'Learn More' : 'Coming Soon'
-                          }
-                        </GameLearnMore>
-                      </GameImgBigMask>
-                    </SwiperSlideBig>
-                  ))
-                }
-              </SwiperGameBig>
-            </EcoGame> :
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true,
-              }}
-              loop
-              autoplay={{
-                delay: 1000,
-              }}
-              slidesPerView={5}
-              style={{
-                maxWidth: "1441px",
-                padding: "60px",
-                alignItems: 'center'
-              }}
-            >
-              {currentLogos.map((logo, idx) => (
-                // init width 0px
-                <SwiperSlide key={idx} style={{width: "264.2px", lineHeight: '50px', textAlign: 'center'}}>
-                  <img key={idx} style={{maxHeight: 50, maxWidth: 200}} src={logo}/>
-                </SwiperSlide>
+        {value === "Games" ? (
+          <EcoGame>
+            <StyledThumbs>
+              {Games.map((item, index) => (
+                <GameImgSmallBox
+                  active={activeIndex === index}
+                  onClick={() => {
+                    changeSlide(index);
+                  }}
+                >
+                  <GameImgSmall src={item.src}></GameImgSmall>
+                  <GameImgSmallMask></GameImgSmallMask>
+                </GameImgSmallBox>
               ))}
-            </Swiper>
-        }
-        {
-          value !== 'Games' &&
-            <EcoButton
-                style={{marginTop: "50px", marginBottom: "120px"}}
-                onClick={() => history.push("/ecosystem")}
+            </StyledThumbs>
+            <SwiperGameBig
+              ref={swiperRef}
+              modules={[Autoplay]}
+              autoplay={{
+                delay: 4000,
+              }}
+              spaceBetween={10}
+              onSlideChange={(swiper) => {
+                handleSwiper(swiper);
+              }}
             >
-                Learn More
-            </EcoButton>
-        }
+              {Games.map((item) => (
+                <SwiperSlideBig>
+                  <GameImgBig src={item.src}></GameImgBig>
+                  <GameImgBigMask>
+                    <MaskName>
+                      <MaskLogo src={item.logo}></MaskLogo> {item.name}
+                    </MaskName>
+                    <MaskDes>{item.des}</MaskDes>
+                    <GameLearnMore
+                      onClick={() => {
+                        item.link && window.open(item.link, "_blank");
+                      }}
+                    >
+                      {item.buttonStr
+                        ? item.buttonStr
+                        : item.link
+                        ? "Learn More"
+                        : "Coming Soon"}
+                    </GameLearnMore>
+                  </GameImgBigMask>
+                </SwiperSlideBig>
+              ))}
+            </SwiperGameBig>
+          </EcoGame>
+        ) : (
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            loop
+            autoplay={{
+              delay: 1000,
+            }}
+            slidesPerView={5}
+            style={{
+              maxWidth: "1441px",
+              padding: "60px",
+              alignItems: "center",
+            }}
+          >
+            {currentLogos.map((logo, idx) => (
+              // init width 0px
+              <SwiperSlide
+                key={idx}
+                style={{
+                  width: "264.2px",
+                  lineHeight: "50px",
+                  textAlign: "center",
+                }}
+              >
+                <img
+                  key={idx}
+                  style={{ maxHeight: 50, maxWidth: 200 }}
+                  src={logo}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+        {value !== "Games" && (
+          <EcoButton
+            style={{ marginTop: "50px", marginBottom: "120px" }}
+            onClick={() => history.push("/ecosystem")}
+          >
+            Learn More
+          </EcoButton>
+        )}
       </EcoContent>
       {/* <HomeImg62 src={homeImg62}></HomeImg62> */}
       {/* <HomeImg63 src={homeImg63}></HomeImg63> */}
@@ -3527,17 +3655,21 @@ function Learn() {
   const isDownSm = useBreakpoint("sm");
 
   return (
-    <Box position={"relative"} pb={"120px"} sx={{width: "100%", backgroundColor: "#F5F8FE"}}>
+    <Box
+      position={"relative"}
+      pb={"120px"}
+      sx={{ width: "100%", backgroundColor: "#F5F8FE" }}
+    >
       <LearnEllipse src={starCircle}></LearnEllipse>
-      <InitH1 style={{textAlign: "center", color: "#000"}}>Learn</InitH1>
+      <InitH1 style={{ textAlign: "center", color: "#000" }}>Learn</InitH1>
       <Box
         mt={isDownSm ? "40px" : "48px"}
-        sx={{display: "flex", justifyContent: "center"}}
+        sx={{ display: "flex", justifyContent: "center" }}
       >
         <LearnBox>
           <Box
             sx={{
-              display: {xs: "flex", sm: "grid"},
+              display: { xs: "flex", sm: "grid" },
               gridTemplateColumns: {
                 lg: "1fr 1fr 1fr 1fr",
                 md: "1fr 1fr 1fr",
@@ -3550,7 +3682,7 @@ function Learn() {
             {data.map((item) => {
               return (
                 <LearnItemBox onClick={() => window.open(item.link)}>
-                  <LearnImg src={item.imgUrl}/>
+                  <LearnImg src={item.imgUrl} />
                   <LearnTitle>{item.title}</LearnTitle>
                   <LearnContent>{item.content}</LearnContent>
                 </LearnItemBox>
@@ -3563,13 +3695,12 @@ function Learn() {
   );
 }
 
-
 const LearnEllipse = styled.img`
   position: absolute;
   top: 0;
   right: 0px;
   z-index: 1;
-`
+`;
 
 const LearnBox = styled(Box)`
   z-index: 2;
@@ -3695,7 +3826,7 @@ const BuildH1 = styled(Typography)`
 
 const BuildContent = styled(Typography)`
   margin-top: 24px;
-  color: #B2B2B2;
+  color: #b2b2b2;
   font-family: Inter;
   font-size: 24px;
   font-weight: 500;
@@ -3716,9 +3847,10 @@ function BuildWithUs() {
     <BuildBox>
       <BuildH1>Build with Us</BuildH1>
       <BuildContent>
-        Join us on the journey towards truly immersive, AI-driven worlds in the next era of gaming.
+        Join us on the journey towards truly immersive, AI-driven worlds in the
+        next era of gaming.
       </BuildContent>
-      <GreenBtn style={{marginTop: "24px", marginBottom: "64px"}}>
+      <GreenBtn style={{ marginTop: "24px", marginBottom: "64px" }}>
         <a
           href="mailto:jeff@stp.network"
           target="_blank"
@@ -3727,7 +3859,7 @@ function BuildWithUs() {
             justifyContent: "center",
             alignItems: "center",
             position: "relative",
-            fontSize: '14px',
+            fontSize: "14px",
             zIndex: 1,
           }}
         >
@@ -3761,7 +3893,7 @@ export const BlueButton = styled(Button)`
   height: 50px;
   padding: 16px 42px;
   gap: 8px;
-  background: #A7F46A;
+  background: #a7f46a;
   color: #020035;
   border-radius: 25px;
   font-weight: 700;
@@ -3800,7 +3932,7 @@ const DownloadA = styled.a`
   &:hover {
     color: #d6d6d6;
   }
-`
+`;
 
 export const SocialMedia = styled.img`
   width: 20px;
@@ -3813,7 +3945,13 @@ export function Footer() {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Clique", "L3 on Base", "Game Portal", "Developer Engine (Coming Soon)", "Community"],
+    [
+      "Clique",
+      "L3 on Base",
+      "Game Portal",
+      "Developer Engine (Coming Soon)",
+      "Community",
+    ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3826,7 +3964,7 @@ export function Footer() {
       "https://clique.stp.network/",
       "https://games.stp.network/",
       "",
-      "https://www.stp.network/cliqueSocial"
+      "https://www.stp.network/cliqueSocial",
       // "https://test-stp-home.netlify.app/cliqueSocial"
     ],
     [
@@ -3853,18 +3991,16 @@ export function Footer() {
         alignItems={"center"}
         gap={isDownSm ? "48px" : 0}
       >
-        <img src={StpLogo} alt=""/>
+        <img src={StpLogo} alt="" />
         <BlueButton
-          onClick={() =>
-            window.open("https://explorer.myclique.io/", "_blank")
-          }
+          onClick={() => window.open("https://explorer.myclique.io/", "_blank")}
         >
           Build on Clique
         </BlueButton>
       </Box>
       {!isDownSm ? (
         <>
-          <Divider style={{background: "#757B8A"}}/>
+          <Divider style={{ background: "#757B8A" }} />
           <Box display={"flex"} gap={isDownSm ? "20px" : "120px"}>
             {footList.map((coloum, idx) => {
               return (
@@ -3876,10 +4012,9 @@ export function Footer() {
                       return (
                         <FooterText
                           onClick={() => {
-                            if (footListLink[idx][i].includes('.zip')) {
-
+                            if (footListLink[idx][i].includes(".zip")) {
                             } else if (footListLink[idx][i]) {
-                              window.open(footListLink[idx][i], "_blank")
+                              window.open(footListLink[idx][i], "_blank");
                             }
                             // if(footListLink[idx][i].includes('http')){
                             //   window.open(footListLink[idx][i], "_blank")
@@ -3889,14 +4024,16 @@ export function Footer() {
                             // }
                           }}
                         >
-                          {item === 'Media Kit' ?
-                            <DownloadA href='/stp.zip'>
-                              {item} <DownloadIcon style={{marginLeft: '10px'}}></DownloadIcon>
-                            </DownloadA> :
-                            <>
-                              {item}
-                            </>
-                          }
+                          {item === "Media Kit" ? (
+                            <DownloadA href="/stp.zip">
+                              {item}{" "}
+                              <DownloadIcon
+                                style={{ marginLeft: "10px" }}
+                              ></DownloadIcon>
+                            </DownloadA>
+                          ) : (
+                            <>{item}</>
+                          )}
                         </FooterText>
                       );
                     }
@@ -3994,7 +4131,7 @@ const FooterBox2 = styled(Box)`
   margin: auto;
   padding: 80px;
   border-radius: 60px;
-  background: linear-gradient(180deg, #0B1251 0%, rgba(16, 16, 16, 0.47) 100%);
+  background: linear-gradient(180deg, #0b1251 0%, rgba(16, 16, 16, 0.47) 100%);
   backdrop-filter: blur(32px);
   @media (max-width: 767px) {
     width: 100%;
@@ -4002,20 +4139,28 @@ const FooterBox2 = styled(Box)`
     margin: auto;
     padding: 48px 20px 88px 20px;
   }
-`
+`;
 
 export function Footer2() {
   const isDownSm = useBreakpoint("sm");
   const history = useHistory();
   // return <></>;
   const footList = [
-    ["Products", "Web3 Community Workspace", "DAO Tooling Aggregator", "Governance SDK", "Dynamic NFT", 'Soda', 'Soton', 'Ancient Forest'],
+    [
+      "Products",
+      "Web3 Community Workspace",
+      "DAO Tooling Aggregator",
+      "Governance SDK",
+      "Dynamic NFT",
+      "Soda",
+      "Soton",
+      "Ancient Forest",
+    ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["STP Ecosystem", "Ecosystem"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
     // ["Resources", "News", "Github", "Documentation"],
     // ["Ecosystem", "News","FAQ"],
-
   ];
   const footListLink = [
     [
@@ -4027,7 +4172,7 @@ export function Footer2() {
       "https://awnsbase.stp.network/my/names?tab=game",
       "https://chromewebstore.google.com/detail/soda/ckeekocbghailhahfmkdgffiieolpagi",
       "https://t.me/Web3SotonBot",
-      "https://ancientforest.xyz/"
+      "https://ancientforest.xyz/",
     ],
     // [
     //   "Leading DAOs",
@@ -4059,18 +4204,22 @@ export function Footer2() {
         alignItems={"center"}
         gap={isDownSm ? "48px" : 0}
       >
-        <img src={StpLogo} alt=""/>
+        <img src={StpLogo} alt="" />
         <BlueButton
-          onClick={() =>
-            window.open("https://awns.stp.network/", "_blank")
-          }
+          onClick={() => window.open("https://awns.stp.network/", "_blank")}
         >
           Go AWNS
         </BlueButton>
       </Box>
       {!isDownSm ? (
         <>
-          <Divider style={{background: "#757B8A", marginTop: '40px', marginBottom: '70px'}}/>
+          <Divider
+            style={{
+              background: "#757B8A",
+              marginTop: "40px",
+              marginBottom: "70px",
+            }}
+          />
           <Box display={"flex"} gap={isDownSm ? "20px" : "120px"}>
             {footList.map((coloum, idx) => {
               return (
@@ -4082,10 +4231,9 @@ export function Footer2() {
                       return (
                         <FooterText
                           onClick={() => {
-                            if (footListLink[idx][i].includes('.zip')) {
-
+                            if (footListLink[idx][i].includes(".zip")) {
                             } else {
-                              window.open(footListLink[idx][i], "_blank")
+                              window.open(footListLink[idx][i], "_blank");
                             }
                             // if(footListLink[idx][i].includes('http')){
                             //   window.open(footListLink[idx][i], "_blank")
@@ -4093,19 +4241,18 @@ export function Footer2() {
                             //   window.scrollTo(0, 0);
                             //   history.push(footListLink[idx][i])
                             // }
-                          }
-                          }
+                          }}
                         >
-
-                          {item === 'Media Kit' ?
-                            <DownloadA href='/stp.zip'>
-                              {item} <DownloadIcon style={{marginLeft: '10px'}}></DownloadIcon>
-                            </DownloadA> :
-                            <>
-                              {item}
-                            </>
-                          }
-
+                          {item === "Media Kit" ? (
+                            <DownloadA href="/stp.zip">
+                              {item}{" "}
+                              <DownloadIcon
+                                style={{ marginLeft: "10px" }}
+                              ></DownloadIcon>
+                            </DownloadA>
+                          ) : (
+                            <>{item}</>
+                          )}
                         </FooterText>
                       );
                     }
@@ -4116,7 +4263,7 @@ export function Footer2() {
             <Box>
               <FooterH1>Ecosystem</FooterH1>
               <FooterH1
-                style={{cursor: "pointer"}}
+                style={{ cursor: "pointer" }}
                 onClick={() =>
                   window.open(
                     "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
@@ -4127,12 +4274,9 @@ export function Footer2() {
                 News
               </FooterH1>
               <FooterH1
-                style={{cursor: "pointer"}}
+                style={{ cursor: "pointer" }}
                 onClick={() =>
-                  window.open(
-                    "https://stpdao.gitbook.io/whitepaper",
-                    "_blank"
-                  )
+                  window.open("https://stpdao.gitbook.io/whitepaper", "_blank")
                 }
               >
                 FAQ

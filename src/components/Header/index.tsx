@@ -8,6 +8,9 @@ import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import { useToggle } from "../../hooks/useToggle";
 import Logo from "../../assets/images/home/svg/stp-logo.svg";
 import DarkLogo from "../../assets/images/logo.png";
+import Stars from "../../assets/images/header/stars.svg";
+import NoticeBgPic from "../../assets/images/header/notice-bg.png";
+import NoticeBgPicSm from "../../assets/images/header/notice-bg-sm.png";
 import Cube from "../../assets/images/home/cube.png";
 import { ReactComponent as Arrow } from "../../assets/images/home/svg/arrow.svg";
 import "./index.less";
@@ -20,7 +23,7 @@ import Icon3A from "../../assets/images/header/icon3A.svg";
 import Icon4 from "../../assets/images/header/icon4.svg";
 import Icon4A from "../../assets/images/header/icon4A.svg";
 import { Box, Typography } from "@mui/material";
-import { GreenBtn } from "../../pages/Home/homepage";
+import { GreenBtn, YellowBtn } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import MobileMenu from "./mobileMenu";
@@ -45,7 +48,7 @@ const MenuBg = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
   @media (max-width: 767px) {
     padding: 0;
     border-radius: 8px;
@@ -59,7 +62,7 @@ const MenuTitle = styled(Typography)`
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
-  color: #FFF;
+  color: #fff;
   @media (max-width: 767px) {
     font-size: 14px;
     line-height: 24px;
@@ -72,7 +75,7 @@ const MenuText = styled(Typography)`
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: #B2B2B2;
+  color: #b2b2b2;
   @media (max-width: 767px) {
     font-size: 12px;
     line-height: 150%;
@@ -87,18 +90,23 @@ const MenuBox = styled(Box)`
   padding: 8px 0 8px 24px;
   gap: 16px;
   cursor: pointer;
+
   img {
     display: none;
   }
-  &>:first-child  {
+
+  & > :first-child {
     display: block;
   }
+
   &:hover {
-    background: #0049C6;
-    &>:first-child  {
+    background: #0049c6;
+
+    & > :first-child {
       display: none;
     }
-    &>img:last-of-type  {
+
+    & > img:last-of-type {
       display: block;
     }
   }
@@ -107,12 +115,8 @@ const MenuBox = styled(Box)`
     width: 100%;
   }
 `;
-const ImgActive = styled.img`
-  
-`
-const ImgNormal = styled.img`
-  
-`
+const ImgActive = styled.img``;
+const ImgNormal = styled.img``;
 
 export function ProductMenu({
   setDropdownVisible,
@@ -120,7 +124,7 @@ export function ProductMenu({
   setDropdownVisible?: (visible: boolean) => void;
 }) {
   // export function ProductMenu() {
-  const history = useHistory()
+  const history = useHistory();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const menuList = [
     {
@@ -135,7 +139,7 @@ export function ProductMenu({
       iconA: Icon2A,
       title: "Game Portal",
       link: "https://games.stp.network/",
-      route:'',
+      route: "",
       text: "",
     },
     {
@@ -163,13 +167,12 @@ export function ProductMenu({
           onClick={() => {
             if (menu.link) {
               window.open(menu.link, "_blank");
-            }else if(menu.route) {
+            } else if (menu.route) {
               if (setDropdownVisible) {
                 setDropdownVisible(false);
               }
               window.scrollTo(0, 0);
-              history.push(menu.route)
-              
+              history.push(menu.route);
             } else {
               // if (setDropdownVisible) {
               //   setDropdownVisible(false);
@@ -207,7 +210,7 @@ const HeaderMenuBox = styled(Box)`
   border-radius: 10px;
   position: relative;
   flex-direction: column;
-  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
   @media (max-width: 767px) {
     /* background: transparent; */
     left: 0px;
@@ -220,6 +223,7 @@ const HeaderLink = styled("a")`
   line-height: 48px;
   padding: 0 16px;
   color: #fff;
+
   &:hover {
     color: #0049c6;
   }
@@ -294,38 +298,98 @@ export const MenuList: {
   subtitle?: ReactJSXElement;
   link?: string;
 }[] = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "Clique",
-      subtitle: <ProductMenu />,
-    },
-    // {
-    //   title: "DAOs",
-    //   subtitle: daoMenu(),
-    // },
-    // {
-    //   title: "DAOs",
-    //   link: "https://www.myclique.io/daos",
-    // },
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Clique",
+    subtitle: <ProductMenu />,
+  },
+  // {
+  //   title: "DAOs",
+  //   subtitle: daoMenu(),
+  // },
+  // {
+  //   title: "DAOs",
+  //   link: "https://www.myclique.io/daos",
+  // },
 
-    {
-      title: "Resources",
-      subtitle: resourcesMenu,
-    },
-    {
-      title: "Ecosystem",
-      link: "/ecosystem",
-      // subtitle: ecosystemMenu,
-    },
-    // {
-    //   title: "News",
-    //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
-    // },
-  ];
+  {
+    title: "Resources",
+    subtitle: resourcesMenu,
+  },
+  {
+    title: "Ecosystem",
+    link: "/ecosystem",
+    // subtitle: ecosystemMenu,
+  },
+  // {
+  //   title: "News",
+  //   link: "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
+  // },
+];
 
+const NoticeBg = styled(Box)`
+  border: 1px solid;
+  position: relative;
+  background-image: linear-gradient(
+    90deg,
+    #3e2909 0%,
+    #ffd688 51%,
+    #3e2909 99.5%
+  );
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: auto;
+  }
+`;
+const NoticeContent = styled(Box)`
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+    padding: 10px;
+  }
+`;
+const NoticeText = styled(Typography)`
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.05px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  text-shadow: 0 3px 4px #00000069;
+  color: white;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    text-align: center;
+    line-height: 28px;
+  }
+`;
+const PlayBtn = styled(YellowBtn)`
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+  @media (max-width: 767px) {
+    position: unset;
+    transform: translate(0);
+    right: 0;
+    margin-bottom: 12px;
+  }
+`;
 const Header: React.FC = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [, setInfrastructureActive] = useState(false);
@@ -399,7 +463,7 @@ const Header: React.FC = () => {
         height: "auto !important",
         background: "transparent",
         overflowX: "hidden",
-        display: currentPath.pathname.includes("awns")?'none':'block'
+        display: currentPath.pathname.includes("awns") ? "none" : "block",
       }}
     >
       {/*<HeaderLink target="_blank" href="https://forms.gle/LoAVQXu7HhHh48rJ8">*/}
@@ -409,6 +473,17 @@ const Header: React.FC = () => {
         isOpen={mobileMenuOpen}
         onDismiss={handleMobileMenueDismiss}
       />
+      <NoticeBg>
+        <NoticeContent>
+          <img src={Stars} />
+          <NoticeText>
+            Clique’s Flagship Game: Eternal Legacy is Now in Beta with Bounty
+            Rewards
+          </NoticeText>
+          {!isSmallScreen && <img src={Stars} />}
+        </NoticeContent>
+        <PlayBtn>Battle Now</PlayBtn>
+      </NoticeBg>
       <HeaderContent
         className="header"
         ref={headerRef}
@@ -416,9 +491,7 @@ const Header: React.FC = () => {
           background: currentPath.pathname.includes("ecosystem")
             ? "#2524de"
             : "#000228",
-          color: currentPath.pathname.includes("dao")
-            ? "#000"
-            : "#fff",
+          color: currentPath.pathname.includes("dao") ? "#000" : "#fff",
         }}
       >
         <img
@@ -455,12 +528,15 @@ const Header: React.FC = () => {
             {/* <a href="https://www.myclique.io/daos" target="_blank">
               DAOs
             </a> */}
-           <Dropdown overlay={resourcesMenu} trigger={["click"]}>
-              <a >
+            <Dropdown overlay={resourcesMenu} trigger={["click"]}>
+              <a>
                 Resources <Arrow />
               </a>
             </Dropdown>
-            <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
+            <Link
+              to="/ecosystem"
+              className={location.pathname === "/ecosystem" ? "active" : ""}
+            >
               Ecosystem
             </Link>
             {/* <Dropdown overlay={resourcesMenu} trigger={["click"]}>
@@ -468,18 +544,14 @@ const Header: React.FC = () => {
                 Resources <Arrow />
               </a>
             </Dropdown> */}
-
           </nav>
-         
         </CSSTransition>
         <GreenBtn
           className="BuildDao"
-          onClick={() =>
-            window.open("https://explorer.myclique.io/", "_blank")
-          }
+          onClick={() => window.open("https://explorer.myclique.io/", "_blank")}
         >
-         Build on Clique 
-         {/* <ArrowOutwardIcon style={{ color: "#23262F" }} /> */}
+          Build on Clique
+          {/* <ArrowOutwardIcon style={{ color: "#23262F" }} /> */}
         </GreenBtn>
         <button
           onClick={() => {
