@@ -702,6 +702,8 @@ export const GreenBtn = styled(Button)`
 
 export const YellowBtn = styled(GreenBtn)`
   width: 163px;
+  font-size: 16px;
+  font-weight: 600;
   background: #f4d177;
   color: #020035;
 `;

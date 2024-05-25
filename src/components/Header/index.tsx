@@ -23,7 +23,7 @@ import Icon3A from "../../assets/images/header/icon3A.svg";
 import Icon4 from "../../assets/images/header/icon4.svg";
 import Icon4A from "../../assets/images/header/icon4A.svg";
 import { Box, Typography } from "@mui/material";
-import { GreenBtn, YellowBtn } from "../../pages/Home/homepage";
+import { GreenBtn } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import MobileMenu from "./mobileMenu";

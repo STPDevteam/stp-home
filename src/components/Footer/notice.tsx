@@ -66,7 +66,7 @@ const NoticeContent = styled(Box)`
 `;
 const NoticeText = styled(Typography)`
   font-family: Inter;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 29.05px;
   letter-spacing: 0.2px;
