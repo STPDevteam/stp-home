@@ -23,6 +23,7 @@ const { Content } = Layout;
 // const Web3ProviderNetwork = createWeb3ReactRoot(NetworkContextName)
 
 function App() {
+  const isSmallScreen = useBreakpoint();
   return (
     <ThemeProvider theme={theme}>
       <StrictMode>
@@ -41,7 +42,9 @@ function App() {
                 <Route component={GamePortal} exact path="/gamePortal" />
               </Switch>
             </Content>
-            <Notice />
+            {
+              isSmallScreen && <Notice />
+            }
           </Router>
         </Suspense>
       </StrictMode>

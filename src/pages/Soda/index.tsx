@@ -362,6 +362,7 @@ const ComingSoonTxt = styled.p`
   font-size: 20px;
 `
 const Section1 = styled.div`
+  margin-top: 30px;
   width: 100%;
   background: url(${section1}) no-repeat;
   background-size: contain;
