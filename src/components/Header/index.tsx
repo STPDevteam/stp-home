@@ -19,6 +19,11 @@ import Icon3 from "../../assets/images/header/icon3.svg";
 import Icon3A from "../../assets/images/header/icon3A.svg";
 import Icon4 from "../../assets/images/header/icon4.svg";
 import Icon4A from "../../assets/images/header/icon4A.svg";
+import Icon5 from "../../assets/images/header/icon5.svg";
+import Icon5A from "../../assets/images/header/icon5A.svg";
+import Icon6 from "../../assets/images/header/icon6.svg";
+import Icon6A from "../../assets/images/header/icon6A.svg";
+import IconNew from "../../assets/images/header/new.svg";
 import { Box, Typography } from "@mui/material";
 import { GreenBtn } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
@@ -98,7 +103,7 @@ const MenuBox = styled(Box)`
     &>:first-child  {
       display: none;
     }
-    &>img:last-of-type  {
+    &>img:nth-of-type(2)  {
       display: block;
     }
   }
@@ -112,6 +117,9 @@ const ImgActive = styled.img`
 `
 const ImgNormal = styled.img`
   
+`
+const ImgNew = styled.img`
+  display: block !important;
 `
 
 export function ProductMenu({
@@ -129,6 +137,8 @@ export function ProductMenu({
       title: "L3 on Base",
       link: "https://clique.stp.network/",
       text: "",
+      iconNew: false
+
     },
     {
       icon: Icon2,
@@ -137,6 +147,8 @@ export function ProductMenu({
       link: "https://games.stp.network/",
       route:'',
       text: "",
+      iconNew: false
+
     },
     {
       icon: Icon3,
@@ -144,6 +156,8 @@ export function ProductMenu({
       title: "Developer Engine (Coming Soon)",
       link: "",
       text: "",
+      iconNew: false
+
     },
     {
       icon: Icon4,
@@ -152,6 +166,26 @@ export function ProductMenu({
       link: "https://www.stp.network/cliqueSocial",
       // route:'/cliqueSocial',
       text: "",
+      iconNew: false
+    },
+    {
+      icon: Icon5,
+      iconA: Icon5A,
+      title: "NFT Free Mint",
+      link: "https://mint.myclique.io/",
+      // route:'/cliqueSocial',
+      text: "",
+      iconNew: IconNew
+
+    },
+    {
+      icon: Icon6,
+      iconA: Icon6A,
+      title: "NFT Market",
+      link: "https://nft.myclique.io/",
+      // route:'/cliqueSocial',
+      text: "",
+      iconNew: IconNew
     },
   ];
 
@@ -184,6 +218,10 @@ export function ProductMenu({
             <MenuTitle>{menu.title}</MenuTitle>
             <MenuText>{menu.text}</MenuText>
           </Box>
+          {
+            menu.iconNew &&
+            <ImgNew src={IconNew}></ImgNew>
+          }
         </MenuBox>
       ))}
       <Modal
