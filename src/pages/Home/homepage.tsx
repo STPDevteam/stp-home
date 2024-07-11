@@ -3958,6 +3958,8 @@ export function Footer() {
       "Game Portal",
       "Developer Engine (Coming Soon)",
       "Community",
+      "NFT Free Mint",
+      "NFT Market",
     ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
@@ -3972,7 +3974,8 @@ export function Footer() {
       "https://games.stp.network/",
       "",
       "https://www.stp.network/cliqueSocial",
-      // "https://test-stp-home.netlify.app/cliqueSocial"
+      "https://mint.myclique.io/",
+      "https://nft.myclique.io/"
     ],
     [
       "Resources",
