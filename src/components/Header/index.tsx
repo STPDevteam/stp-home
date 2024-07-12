@@ -23,6 +23,9 @@ import Icon5 from "../../assets/images/header/icon5.svg";
 import Icon5A from "../../assets/images/header/icon5A.svg";
 import Icon6 from "../../assets/images/header/icon6.svg";
 import Icon6A from "../../assets/images/header/icon6A.svg";
+import Icon7 from "../../assets/images/header/icon7.svg";
+import Icon7A from "../../assets/images/header/icon7A.svg";
+
 import IconNew from "../../assets/images/header/new.svg";
 import { Box, Typography } from "@mui/material";
 import { GreenBtn } from "../../pages/Home/homepage";
@@ -179,8 +182,8 @@ export function ProductMenu({
 
     },
     {
-      icon: Icon6,
-      iconA: Icon6A,
+      icon: Icon7,
+      iconA: Icon7A,
       title: "Bridge",
       link: "https://bridge.myclique.io/",
       // route:'/cliqueSocial',
