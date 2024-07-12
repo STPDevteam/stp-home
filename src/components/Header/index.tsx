@@ -182,9 +182,9 @@ export function ProductMenu({
 
     },
     {
-      icon: Icon7,
-      iconA: Icon7A,
-      title: "Bridge",
+      icon: Icon6,
+      iconA: Icon6A,
+      title: "NFT Market",
       link: "https://bridge.myclique.io/",
       // route:'/cliqueSocial',
       text: "",

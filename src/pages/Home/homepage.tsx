@@ -3753,7 +3753,7 @@ export function Footer({btnShow}) {
   // return <></>;
   const footList = [
     // ["Products", "Clique Workspace","Clique Social", "Clique DApp Store", "Clique SDK"],
-    ["Clique", "L3 on Base", "Game Portal", "Developer Engine (Coming Soon)","Community","NFT Free Mint","Bridge"],
+    ["Clique", "L3 on Base", "Game Portal", "Developer Engine (Coming Soon)","Community","NFT Free Mint","NFT Market"],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
@@ -3768,8 +3768,7 @@ export function Footer({btnShow}) {
       "",
       "https://www.stp.network/cliqueSocial",
       "https://mint.myclique.io/",
-      "https://bridge.myclique.io/",
-      // "https://nft.myclique.io/",
+      "https://nft.myclique.io/",
       // "https://test-stp-home.netlify.app/cliqueSocial"
     ],
     [
