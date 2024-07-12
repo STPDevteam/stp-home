@@ -3959,7 +3959,7 @@ export function Footer() {
       "Developer Engine (Coming Soon)",
       "Community",
       "NFT Free Mint",
-      "NFT Market",
+      "Bridge",
     ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
@@ -3975,7 +3975,8 @@ export function Footer() {
       "",
       "https://www.stp.network/cliqueSocial",
       "https://mint.myclique.io/",
-      "https://nft.myclique.io/"
+      // "https://nft.myclique.io/"
+      "https://bridge.myclique.io/"
     ],
     [
       "Resources",
