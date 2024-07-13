@@ -33,7 +33,7 @@ import Medium from "../../assets/images/socialmedia/medium.svg";
 import Tele from "../../assets/images/socialmedia/telegramsvg.svg";
 import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
-import Dune from "../../assets/images/socialmedia/dune.svg";
+import Dune from "../../assets/images/socialmedia/dune2.svg";
 import SmallStar from "../../assets/images/home/svg/small-star.svg";
 import InfEllipse1 from "../../assets/images/home/svg/infrastruc-ellipse-left-1.svg";
 import InfEllipse2 from "../../assets/images/home/svg/infrastruc-ellipse-left-2.svg";
