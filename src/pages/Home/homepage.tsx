@@ -34,6 +34,7 @@ import Tele from "../../assets/images/socialmedia/telegramsvg.svg";
 import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
 import Dune from "../../assets/images/socialmedia/dune2.svg";
+import github from "../../assets/images/socialmedia/github.svg";
 import SmallStar from "../../assets/images/home/svg/small-star.svg";
 import InfEllipse1 from "../../assets/images/home/svg/infrastruc-ellipse-left-1.svg";
 import InfEllipse2 from "../../assets/images/home/svg/infrastruc-ellipse-left-2.svg";
@@ -589,6 +590,10 @@ export function OpenIconSpeedDial() {
         <SocialMediaFixed
           src={Email}
           onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
+        />
+        <SocialMediaFixed
+          src={github}
+          onClick={() => window.open("https://github.com/STPDevteam/", "_blank")}
         />
       </Box>
     </BoxFixed>
@@ -4113,6 +4118,10 @@ export function Footer() {
         <SocialMedia
           src={Email}
           onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
+        />
+        <SocialMedia
+          src={github}
+          onClick={() => window.open("https://github.com/STPDevteam/", "_blank")}
         />
       </Box>
       {/* {isDownSm ? (

@@ -9,6 +9,8 @@ import Twitter from "../../assets/images/socialmedia/twitter.svg";
 import Email from "../../assets/images/socialmedia/email.svg";
 import Cylinder from "../../assets/images/socialmedia/cylinder.svg";
 import Wechat from "../../assets/images/socialmedia/wechat.svg";
+import dune from "../../assets/images/socialmedia/dune2.svg";
+import github from "../../assets/images/socialmedia/github.svg";
 import WechatQR from "../../assets/images/home/QR.jpeg";
 import { SocialMedia } from "../../pages/Home/homepage";
 import { useHistory } from "react-router";
@@ -130,12 +132,16 @@ export default function MobileMenu({
             }
           />
           <SocialMedia
-            src={Wechat}
-            onClick={() => window.open(WechatQR, "_blank")}
+            src={dune}
+            onClick={() => window.open("https://dune.com/awns_stp", "_blank")}
           />
           <SocialMedia
             src={Email}
             onClick={() => window.open("mailto:jeff@stp.network", "_blank")}
+          />
+          <SocialMedia
+            src={github}
+            onClick={() => window.open("https://github.com/STPDevteam/", "_blank")}
           />
         </Box>
       </MenuBox>
