@@ -11,11 +11,14 @@ import DaoPage from "./pages/DAO/daoPage";
 import Awns from "./pages/Awns/index";
 import Soda from "./pages/Soda/index";
 import GamePortal from "./pages/GamePortal/index";
+import Transprancy from "./pages/Transprancy/index";
+
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import { createBrowserHistory } from "history";
 import Notice from "./components/Footer/notice";
 import useBreakpoint from "./hooks/useBreakpoint";
+
 const browserHistory = createBrowserHistory();
 
 const { Content } = Layout;
@@ -40,6 +43,7 @@ function App() {
                 <Route component={Awns} exact path="/awns" />
                 <Route component={Soda} exact path="/cliqueSocial" />
                 <Route component={GamePortal} exact path="/gamePortal" />
+                <Route component={Transprancy} exact path="/transprancy" />
               </Switch>
             </Content>
             {
