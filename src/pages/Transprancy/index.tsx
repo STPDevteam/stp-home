@@ -11,6 +11,8 @@ import homeImg62 from "../../assets/images/home/home6-2.png"
 import section1 from '../../assets/images/soda/section1.png'
 import m1 from "../../assets/images/transprancy/m1.png"
 import m2 from "../../assets/images/transprancy/m2.png"
+import section3 from '../../assets/images/home/Homepage6.png'
+
 
 const style = {
   position: 'absolute',
@@ -39,7 +41,6 @@ const Section1 = styled.div`
     /* background-size: 980%; */
     background: none;
     min-height: 320px;
-    padding-bottom: 10px;
     margin-bottom: 20px;
   }
 `
@@ -65,7 +66,7 @@ const Section1Title = styled.div`
 `
 const Section1Subtitle = styled.div`
   width: 1080px;
-  margin: 10px auto;
+  margin: 10px auto 40px auto;
   font-family: Inter;
   font-size: 24px;
   line-height: 34px;
@@ -75,15 +76,18 @@ const Section1Subtitle = styled.div`
     font-size: 16px;
     line-height: 1.3;
     width: 100%;
+    margin: 20px auto;
     padding: 0px 24px 0 24px;
   }
 `
 const Section2 = styled.div`
+  position: relative;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 20px auto 0  auto;
+  margin: 0px auto 0  auto;
+  z-index: 9;
   @media (max-width: 767px) {
     margin-top: -20px;
     padding: 24px;
@@ -129,6 +133,24 @@ const CardDes = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
 `
+const Section3 = styled.div`
+  width: 100%;
+  height: 598px;
+  display: flex;
+  align-items: flex-end;
+  margin-top: -200px;
+  padding-bottom: 120px;
+  background: url(${section3}) no-repeat;
+  background-size: contain;
+  background-position: center 80%;
+  @media (max-width: 767px) {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    background-size: 200%;
+    background-position: center 100%;
+    height: auto;
+  }
+`
 
 export default function Soda() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -140,7 +162,6 @@ export default function Soda() {
           <Section1Title>Transprancy</Section1Title>
           <Section1Subtitle>Transparency is a core value of the STP DAO, and we’re committed to keeping our community informed every step of the way.</Section1Subtitle>
           <Section1Subtitle>Here, you’ll find a collection of links and resources detailing our progress over the years and everything we’re working on right now. This includes quarterly updates, governance reports, annual reviews, and other key documents.</Section1Subtitle>
-          <Section1Subtitle>We encourage our community to visit this page frequently to stay up-to-date on the latest developments within the STP ecosystem.</Section1Subtitle>
        </Section1>
         <Section2>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/KWf6Fwvv8Os54tPag1zpKf1hK27AGKSLN7H3RgKA2sA")}}>
@@ -154,6 +175,9 @@ export default function Soda() {
             <CardDes>Throughout the last year STP greatly expanded its ecosystem optimized for DAOs by supporting over 500+ DAOs while enhancing its native DAO tools and infrastructure with Clique V3. Additionally, STP made the leap into Autonomous Worlds by expanding its infrastructure and tooling for on-chain games, communities and worlds starting with identity. This new initiative resulted in the release of AWNS (Autonomous Worlds Name Service) which leverages account abstraction to create an identity and wallet (ERC-6551) that is designed for all on-chain activity but specifically gaming. The initial version of this identity product was released at the end of Q3 and played a major part in STP’s 2023 development</CardDes>
           </Section2Card>
         </Section2>
+        <Section3>
+          <Section1Subtitle>We encourage our community to visit this page frequently to stay up-to-date on the latest developments within the STP ecosystem. </Section1Subtitle>
+        </Section3>
         <Footer />
         <OpenIconSpeedDial></OpenIconSpeedDial>
       </ContentWrapper>

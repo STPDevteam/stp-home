@@ -3890,7 +3890,7 @@ function BuildWithUs() {
 const FooterBox = styled(Box)`
   width: 100%;
   background: #000228;
-  padding: 120px 105px 80px;
+  padding: 80px 105px 80px;
   overflow-x: hidden;
   @media (max-width: 767px) {
     padding: 68px 20px 318px 20px;
