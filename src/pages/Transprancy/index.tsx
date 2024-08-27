@@ -36,8 +36,10 @@ const Section1 = styled.div`
   background-position: center;
   min-height: 520px;
   @media (max-width: 767px) {
-    background-size: 200%;
+    background-size: 880%;
     min-height: 320px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
   }
 `
 const Section1Title = styled.div`
@@ -54,9 +56,25 @@ const Section1Title = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
-    padding-top: 90px;
+    padding-top: 40px;
+    margin-bottom: 10px;
     font-size: 36px;
     width: 100%;
+  }
+`
+const Section1Subtitle = styled.div`
+  width: 1080px;
+  margin: auto;
+  font-family: Inter;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+  color: #949CB9;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 1.3;
+    width: 100%;
+    padding: 0px 24px 0 24px;
   }
 `
 const Section2 = styled.div`
@@ -64,9 +82,9 @@ const Section2 = styled.div`
   gap: 14px;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: -200px auto 0  auto;
+  margin: -40px auto 0  auto;
   @media (max-width: 767px) {
-    margin-top: -120px;
+    margin-top: -20px;
     padding: 24px;
     flex-direction: column;
   }
@@ -119,6 +137,9 @@ export default function Soda() {
       <ContentWrapper>
         <Section1>
           <Section1Title>Transprancy</Section1Title>
+          <Section1Subtitle>Transparency is a core value of the STP DAO, and we’re committed to keeping our community informed every step of the way. Here, you’ll find a collection of links and resources detailing our progress over the years and everything we’re working on right now. This includes quarterly updates, governance reports, annual reviews, and other key documents.
+          </Section1Subtitle>
+          <Section1Subtitle>We encourage our community to visit this page frequently to stay up-to-date on the latest developments within the STP ecosystem.</Section1Subtitle>
         </Section1>
         <Section2>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/KWf6Fwvv8Os54tPag1zpKf1hK27AGKSLN7H3RgKA2sA")}}>

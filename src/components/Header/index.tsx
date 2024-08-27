@@ -368,6 +368,10 @@ export const MenuList: {
     subtitle: resourcesMenu,
   },
   {
+    title: "Transprancy",
+    link: "/transprancy",
+  },
+  {
     title: "Ecosystem",
     link: "/ecosystem",
     // subtitle: ecosystemMenu,
@@ -511,6 +515,12 @@ const Header: React.FC = () => {
                 Resources <Arrow />
               </a>
             </Dropdown>
+            <Link
+              to="/transprancy"
+              className={location.pathname === "/transprancy" ? "active" : ""}
+            >
+              Transprancy
+            </Link>
             <Link
               to="/ecosystem"
               className={location.pathname === "/ecosystem" ? "active" : ""}
