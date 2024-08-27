@@ -291,12 +291,12 @@ const resourcesMenu = (
     >
       Documentation
     </HeaderLink>
-    <HeaderLink
+    {/* <HeaderLink
       href="/transprancy"
       target="_blank"
     >
       Transprancy
-    </HeaderLink>
+    </HeaderLink> */}
   </HeaderMenuBox>
 );
 
