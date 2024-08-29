@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { Button, Typography, Box } from '@mui/material'
 
 import homeImg62 from "../../assets/images/home/home6-2.png"
-import section1 from '../../assets/images/soda/section1.png'
+import section1 from '../../assets/images/transprancy/s1.png'
 import m1 from "../../assets/images/transprancy/m1.png"
 import m2 from "../../assets/images/transprancy/m2.png"
 import section3 from '../../assets/images/home/Homepage6.png'
@@ -36,7 +36,8 @@ const Section1 = styled.div`
   background: url(${section1}) no-repeat;
   background-size: contain;
   background-position: center;
-  min-height: 520px;
+  min-height: 650px;
+  mix-blend-mode: luminosity;
   @media (max-width: 767px) {
     /* background-size: 980%; */
     background: none;
@@ -47,7 +48,7 @@ const Section1 = styled.div`
 const Section1Title = styled.div`
   width: 538px;
   margin: auto;
-  padding-top: 130px;
+  padding-top: 150px;
   font-family: Inter;
   font-size: 64px;
   font-weight: 600;
@@ -86,7 +87,7 @@ const Section2 = styled.div`
   gap: 14px;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0px auto 0  auto;
+  margin: -80px auto 0  auto;
   z-index: 9;
   @media (max-width: 767px) {
     margin-top: -20px;
