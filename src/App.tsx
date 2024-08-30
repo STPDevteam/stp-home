@@ -41,7 +41,7 @@ function App() {
                 <Route component={Soda} exact path="/cliqueSocial" />
                 <Route component={GamePortal} exact path="/gamePortal" /> */}
                 <Route component={Clique} exact path="/cliqueL3" />
-                <Route component={Transprancy} exact path="/transprancy" />
+                <Route component={Transprancy} exact path="/transparency" />
               </Switch>
             </Content>
           </Router>

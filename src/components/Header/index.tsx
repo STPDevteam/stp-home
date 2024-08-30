@@ -290,7 +290,7 @@ const resourcesMenu = (
       href="/transprancy"
       target="_blank"
     >
-      Transprancy
+      Transparency
     </HeaderLink> */}
   </HeaderMenuBox>
 );
@@ -363,8 +363,8 @@ export const MenuList: {
       subtitle: resourcesMenu,
     },
     {
-      title: "Transprancy",
-      link: "https://www.stp.network/transprancy",
+      title: "Transparency",
+      link: "https://www.stp.network/transparency",
       // subtitle: ecosystemMenu,
     },
     {
@@ -518,8 +518,8 @@ const Header: React.FC = () => {
             {/* <Link to="/ecosystem" className={location.pathname === "/ecosystem" ? "active" : ""}>
               Ecosystem
             </Link> */}
-            <a  href="https://www.stp.network/transprancy" target="_blank">
-            Transprancy
+            <a  href="https://www.stp.network/transparency" target="_blank">
+            Transparency
             </a>
             <a  href="https://www.stp.network/ecosystem" target="_blank">
             Ecosystem
