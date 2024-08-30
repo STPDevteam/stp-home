@@ -43,7 +43,7 @@ function App() {
                 <Route component={Awns} exact path="/awns" />
                 <Route component={Soda} exact path="/cliqueSocial" />
                 <Route component={GamePortal} exact path="/gamePortal" />
-                <Route component={Transprancy} exact path="/transprancy" />
+                <Route component={Transprancy} exact path="/Transparency" />
               </Switch>
             </Content>
             {

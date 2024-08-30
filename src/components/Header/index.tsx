@@ -295,7 +295,7 @@ const resourcesMenu = (
       href="/transprancy"
       target="_blank"
     >
-      Transprancy
+      Transparency
     </HeaderLink> */}
   </HeaderMenuBox>
 );
@@ -368,8 +368,8 @@ export const MenuList: {
     subtitle: resourcesMenu,
   },
   {
-    title: "Transprancy",
-    link: "/transprancy",
+    title: "Transparency",
+    link: "/transparency",
   },
   {
     title: "Ecosystem",
@@ -516,10 +516,10 @@ const Header: React.FC = () => {
               </a>
             </Dropdown>
             <Link
-              to="/transprancy"
-              className={location.pathname === "/transprancy" ? "active" : ""}
+              to="/transparency"
+              className={location.pathname === "/transparency" ? "active" : ""}
             >
-              Transprancy
+              Transparency
             </Link>
             <Link
               to="/ecosystem"

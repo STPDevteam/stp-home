@@ -9,6 +9,7 @@ import { Button, Typography, Box } from '@mui/material'
 
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import section1 from '../../assets/images/transprancy/s1.png'
+import m3 from "../../assets/images/transprancy/m3.png"
 import m1 from "../../assets/images/transprancy/m1.png"
 import m2 from "../../assets/images/transprancy/m2.png"
 import section3 from '../../assets/images/home/Homepage6.png'
@@ -160,11 +161,16 @@ export default function Soda() {
     <>
       <ContentWrapper>
         <Section1>
-          <Section1Title>Transprancy</Section1Title>
+          <Section1Title>Transparency</Section1Title>
           <Section1Subtitle>Transparency is a core value of the STP DAO, and we’re committed to keeping our community informed every step of the way.</Section1Subtitle>
           <Section1Subtitle>Here, you’ll find a collection of links and resources detailing our progress over the years and everything we’re working on right now. This includes quarterly updates, governance reports, annual reviews, and other key documents.</Section1Subtitle>
        </Section1>
         <Section2>
+        <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/kKAXpB9c3xoeExt4xP1dJyAvh-ujVnZDghRrqWvRsFM")}}>
+            <CardCover src={m3}></CardCover>
+            <CardTitle>STP August 2024 Update </CardTitle>
+            <CardDes>STP is thrilled to share its exciting developments from August 2024. Our focus remains on enhancing the gaming experience with AI and expanding our Clique L3 on Base along with supporting our flagship onchain game Eternal Legacy. Here’s a look at STP’s progress in August.</CardDes>
+          </Section2Card>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/KWf6Fwvv8Os54tPag1zpKf1hK27AGKSLN7H3RgKA2sA")}}>
             <CardCover src={m1}></CardCover>
             <CardTitle>STP Q2 2024 Progress: Clique Gaming Propels</CardTitle>
