@@ -58,10 +58,28 @@ import Openfort from '../../assets/images/ecosystem/openfort.png'
 import biconomy from '../../assets/images/ecosystem/biconomy.png'
 import aw from '../../assets/images/ecosystem/aw.jpeg'
 import daren from '../../assets/images/ecosystem/daren.svg'
+import gwyn from '../../assets/images/ecosystem/gwyn.png'
+import llc from '../../assets/images/ecosystem/llc.jpg'
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
 export const EcosystemDataList = [
+  {
+    img: gwyn,
+    website: 'https://gwyntoken.com/',
+    category: 'Partnership',
+    sector: 'Game',
+    desc: 'Gwyn',
+    name: 'Gwyn'
+  },
+  {
+    img: llc,
+    website: 'https://llcgame.io/',
+    category: 'Partnership',
+    sector: 'Game',
+    desc: 'Land, Labor and Capitol (LLC)',
+    name: 'Land, Labor and Capitol (LLC)'
+  },
   {
     img: hypr,
     website: 'https://www.hypr.network/',
