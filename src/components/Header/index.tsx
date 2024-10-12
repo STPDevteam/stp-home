@@ -160,8 +160,8 @@ export function ProductMenu({
     {
       icon: Icon3,
       iconA: Icon3A,
-      title: "Developer Engine (Coming Soon)",
-      link: "",
+      title: "Developer Engine",
+      link: "https://www.stp.network/developerEngine",
       text: "",
       newIcon: false,
 

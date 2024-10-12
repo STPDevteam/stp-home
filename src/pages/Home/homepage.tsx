@@ -3961,7 +3961,7 @@ export function Footer() {
       "Clique",
       "L3 on Base",
       "Game Portal",
-      "Developer Engine (Coming Soon)",
+      "Developer Engine",
       "Community",
       "NFT Free Mint",
       "NFT Market",
@@ -3977,7 +3977,7 @@ export function Footer() {
       "Clique",
       "https://clique.stp.network/",
       "https://games.stp.network/",
-      "",
+      "https://www.stp.network/developerEngine",
       "https://www.stp.network/cliqueSocial",
       "https://mint.myclique.io/",
       "https://nft.myclique.io/"

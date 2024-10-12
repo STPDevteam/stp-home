@@ -12,6 +12,7 @@ import Awns from "./pages/Awns/index";
 import Soda from "./pages/Soda/index";
 import GamePortal from "./pages/GamePortal/index";
 import Transprancy from "./pages/Transprancy/index";
+import DeveloperEngine from "./pages/DeveloperEngine/index";
 
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
@@ -44,6 +45,7 @@ function App() {
                 <Route component={Soda} exact path="/cliqueSocial" />
                 <Route component={GamePortal} exact path="/gamePortal" />
                 <Route component={Transprancy} exact path="/Transparency" />
+                <Route component={DeveloperEngine} exact path="/developerEngine" />
               </Switch>
             </Content>
             {
