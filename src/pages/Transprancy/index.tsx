@@ -9,6 +9,7 @@ import { Button, Typography, Box } from '@mui/material'
 
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import section1 from '../../assets/images/transprancy/s1.png'
+import m5 from "../../assets/images/transprancy/m5.jpeg"
 import m4 from "../../assets/images/transprancy/m4.jpeg"
 import m3 from "../../assets/images/transprancy/m3.png"
 import m1 from "../../assets/images/transprancy/m1.png"
@@ -167,6 +168,11 @@ export default function Soda() {
           <Section1Subtitle>Here, you’ll find a collection of links and resources detailing our progress over the years and everything we’re working on right now. This includes quarterly updates, governance reports, annual reviews, and other key documents.</Section1Subtitle>
        </Section1>
         <Section2>
+          <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/weqS1e7EGgW0Jwb3ZBozypY36312MkPa7rbm07aBbq8")}}>
+            <CardCover src={m5}></CardCover>
+            <CardTitle>STP October 2024 Update</CardTitle>
+            <CardDes>October was a breakthrough month for STP, highlighting bold expansions and innovative products that underscore our commitment to transforming the onchain gaming ecosystem. From strategic advancements on Base—recently leading all chains in stablecoin transaction volume—to new AI-powered tools for immersive gaming experiences, STP continues to push the boundaries of onchain engagement. </CardDes>
+          </Section2Card>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/WdSX1yAlHzistxK-7WPqPG4wiH3zBeSZb7raH_BrD2A")}}>
             <CardCover src={m4}></CardCover>
             <CardTitle>STP September 2024 Update </CardTitle>

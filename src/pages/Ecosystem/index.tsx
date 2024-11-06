@@ -60,10 +60,19 @@ import aw from '../../assets/images/ecosystem/aw.jpeg'
 import daren from '../../assets/images/ecosystem/daren.svg'
 import gwyn from '../../assets/images/ecosystem/gwyn.png'
 import llc from '../../assets/images/ecosystem/llc.jpg'
+import robots from '../../assets/images/ecosystem/robots.jpg'
 import './index.less'
 import { Button, Typography, Input } from 'antd'
 const { Paragraph } = Typography;
 export const EcosystemDataList = [
+  {
+    img: robots,
+    website: 'https://robots.farm',
+    category: 'Partnership',
+    sector: 'DeFi',
+    desc: 'Robots.Farm',
+    name: 'Robots.Farm'
+  },
   {
     img: gwyn,
     website: 'https://gwyntoken.com/',
