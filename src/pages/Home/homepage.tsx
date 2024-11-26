@@ -720,6 +720,7 @@ const HeadBtns = styled.div`
   align-items: center;
   gap: 24px;
   margin-top: 30px;
+  flex-wrap: wrap;
 `;
 const AwnsBtn = styled(GreenBtn)`
   text-align: center;
@@ -731,7 +732,7 @@ const AwnsBtn = styled(GreenBtn)`
   @media (max-width: 767px) {
     max-width: 280px;
     /* margin: 30px 0; */
-    order: 2;
+    /* order: 2; */
   }
 `;
 const AwnsBtn2 = styled(AwnsBtn)`
@@ -746,6 +747,13 @@ const BrH5 = styled.br`
   @media (max-width: 767px) {
     display: none;
   }
+`;
+const BetaIcon = styled.span`
+  font-size: 9px;
+  vertical-align: top;
+  position: relative;
+  top: -4px;
+
 `;
 
 function Head() {
@@ -777,6 +785,14 @@ function Head() {
           {" "}
           Create an AWNS{" "}
         </AwnsBtn2>
+        <GreenBtn
+          onClick={() => {
+            window.open("http://ai.stp.network/", "_blank");
+          }}
+        >
+          {" "}
+          AI Agent<BetaIcon>BETA</BetaIcon>{" "}
+        </GreenBtn>
       </HeadBtns>
     </HeadBox>
   );
