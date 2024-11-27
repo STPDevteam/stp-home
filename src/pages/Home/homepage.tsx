@@ -43,6 +43,8 @@ import LearnCreateDao from "../../assets/images/home/svg/learn-create-dao.svg";
 import LearnCreateToken from "../../assets/images/home/svg/learn-create-token.svg";
 import LearnOnChain from "../../assets/images/home/svg/learn-on-chian.svg";
 import ArrowUpRight from "../../assets/images/home/svg/arrow-up-right.svg";
+import aiIcon from "../../assets/images/home/svg/ai.svg";
+import betaIcon from "../../assets/images/home/svg/beta.svg";
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router";
 import useBreakpoint from "../../hooks/useBreakpoint";
@@ -706,6 +708,32 @@ export const GreenBtn = styled(Button)`
   }
 `;
 
+export const GreenAiBtn = styled(Button)`
+  display: flex;
+  border: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  height: 48px;
+  line-height: 24px;
+  gap: 8px;
+  background: #71FF00;
+  color: #01060E;
+  border-radius: 32px;
+  @media (max-width: 767px) {
+    height: 40px;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &:hover {
+    color: #01060E;
+  }
+`;
+
 export const YellowBtn = styled(GreenBtn)`
   width: 163px;
   font-size: 16px;
@@ -748,13 +776,6 @@ const BrH5 = styled.br`
     display: none;
   }
 `;
-const BetaIcon = styled.span`
-  font-size: 9px;
-  vertical-align: top;
-  position: relative;
-  top: -4px;
-
-`;
 
 function Head() {
   const history = useHistory();
@@ -785,14 +806,14 @@ function Head() {
           {" "}
           Create an AWNS{" "}
         </AwnsBtn2>
-        <GreenBtn
+        <GreenAiBtn
           onClick={() => {
             window.open("http://ai.stp.network/", "_blank");
           }}
         >
           {" "}
-          AI Agent<BetaIcon>BETA</BetaIcon>{" "}
-        </GreenBtn>
+          <img src={aiIcon} />AI Agent<img src={betaIcon} />{" "}
+        </GreenAiBtn>
       </HeadBtns>
     </HeadBox>
   );
