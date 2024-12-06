@@ -9,6 +9,7 @@ import { Button, Typography, Box } from '@mui/material'
 
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import section1 from '../../assets/images/transprancy/s1.png'
+import m6 from "../../assets/images/transprancy/m6.jpeg"
 import m5 from "../../assets/images/transprancy/m5.jpeg"
 import m4 from "../../assets/images/transprancy/m4.jpeg"
 import m3 from "../../assets/images/transprancy/m3.png"
@@ -168,6 +169,11 @@ export default function Soda() {
           <Section1Subtitle>Here, you’ll find a collection of links and resources detailing our progress over the years and everything we’re working on right now. This includes quarterly updates, governance reports, annual reviews, and other key documents.</Section1Subtitle>
        </Section1>
         <Section2>
+          <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/weqS1e7EGgW0Jwb3ZBozypY36312MkPa7rbm07aBbq8")}}>
+            <CardCover src={m6}></CardCover>
+            <CardTitle>STP November 2024 Update</CardTitle>
+            <CardDes>STP continues to impact the onchain gaming and agent landscape with new AI initiatives and infrastructure developments. From supporting exciting mini-game launches to AI agent development on Base, STP remains committed to delivering enhanced gaming experiences and an agentic ecosystem. Let’s dive into what’s shaping the future of onchain gaming and AI this month: </CardDes>
+          </Section2Card>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/weqS1e7EGgW0Jwb3ZBozypY36312MkPa7rbm07aBbq8")}}>
             <CardCover src={m5}></CardCover>
             <CardTitle>STP October 2024 Update</CardTitle>
