@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Box, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
+import { Box, colors, Grid, Stack, Tab, Tabs, Typography } from "@mui/material";
 import styled, { keyframes } from "styled-components";
 import { Button, Divider } from "antd";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -2273,13 +2273,13 @@ function CliqueContent2() {
       <CliqueBox2>
         {/* <CliqueBox2Logo src={section4Title}></CliqueBox2Logo> */}
         <CliqueBox2Title>Autonomous World Engine (AWE)</CliqueBox2Title>
-        <CliqueBox2H2>New Form of Play & Create</CliqueBox2H2>
+        <CliqueBox2H2>Enter Autonomous Worlds.</CliqueBox2H2>
         <CliqueBox2Txt>
-        AWE enables the creation and evolution of Autonomous Worlds—persistent, 
+        AWE enables the creation and evolution of <strong style={{color:'#fff'}}>Autonomous Worlds</strong>—persistent, 
         </CliqueBox2Txt>
         <CliqueBox2Txt>
           {" "}
-          dynamic ecosystems driven by AI agents that adapt, collaborate, and grow autonomously.
+          dynamic ecosystems driven by <strong style={{color:'#fff'}}>AI agents</strong> that adapt, collaborate, and grow autonomously.
         </CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
       </CliqueBox2>
@@ -2295,7 +2295,7 @@ function CliqueContent2() {
               src={s4Icon1}
             ></InfrastructureMainBox1IconN2>
           </InfrastructureMainBox2>
-          <InfrastructureMainBox3>
+          <InfrastructureMainBox2>
             <div>
               <InfrastructureMainBox1H>
               Agent Framework
@@ -2305,21 +2305,7 @@ function CliqueContent2() {
             <InfrastructureMainBox1IconN2
               src={s4Icon2}
             ></InfrastructureMainBox1IconN2>
-          </InfrastructureMainBox3>
-         
-        </CliqueInfrastructureMain>
-        <CliqueInfrastructureMain>
-          <InfrastructureMainBox3>
-            <div>
-              <InfrastructureMainBox1H>
-              Visualization Interface
-              </InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`A user-friendly interface for exploring, editing. and interacting with Autonomous Worlds in real time.`}</InfrastructureMainBox1T>
-            </div>
-            <InfrastructureMainBox1IconN2
-              src={s4Icon2}
-            ></InfrastructureMainBox1IconN2>
-          </InfrastructureMainBox3>
+          </InfrastructureMainBox2>
           <InfrastructureMainBox2>
             <div>
               <InfrastructureMainBox1H>Settlement Layer</InfrastructureMainBox1H>
@@ -3945,13 +3931,12 @@ const BuildContent = styled(Typography)`
 function BuildWithUs() {
   return (
     <BuildBox>
-      <BuildH1>Build with Us</BuildH1>
+      <BuildH1>Bring Autonomous Worlds to Life</BuildH1>
       <BuildContent>
-        Join us on the journey towards truly immersive, AI-driven worlds in the
-        next era of gaming.
+      Join us to create persistent, AI-driven ecosystems where agents adapt, collaborate, and evolve.
       </BuildContent>
-      <GreenBtn style={{ marginTop: "24px", marginBottom: "64px" }}>
-        <a
+      <GreenBtn style={{ marginTop: "24px", marginBottom: "64px" }} onClick={() => window.open('https://docs.stp.network/', "_blank")}>
+        {/* <a
           href="mailto:jeff@stp.network"
           target="_blank"
           style={{
@@ -3962,10 +3947,10 @@ function BuildWithUs() {
             fontSize: "14px",
             zIndex: 1,
           }}
-        >
-          Contact
+        > */}
+          Docs
           {/* <ArrowOutwardIcon style={{ marginLeft: "8px" }} /> */}
-        </a>
+        {/* </a> */}
       </GreenBtn>
       {/* <img
         style={{ position: "absolute", right: 0, bottom: 0 }}
@@ -4059,6 +4044,7 @@ export function Footer() {
     ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
     // ["STP Ecosystem", "Ecosystem"],
     ["Ecosystem", "News", "FAQ"],
+    ["Worlds", "Litepaper", "Docs", "AWNS"],
   ];
   const footListLink = [
     [
@@ -4082,6 +4068,12 @@ export function Footer() {
       "https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1",
       "https://stpdao.gitbook.io/whitepaper",
       // "https://www.stp.network/ecosystem",
+    ],
+    [
+      "Worlds",
+      "/Verse Network WP.pdf",
+      "https://docs.stp.network/",
+      "https://awns.stp.network/",
     ],
   ];
   return (
