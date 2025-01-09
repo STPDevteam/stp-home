@@ -669,6 +669,14 @@ const HeadH2 = styled(HeadH1)`
   width: 860px;
   font-size: 60px;
   padding-top: 0px;
+  @media (max-width: 767px) {
+    width: 100%;
+    margin: 0;
+    padding-top: 0px;
+    padding-left: 0px;
+    font-size: 26px;
+    line-height: 38px;
+  }
 
 `
 export const HeadText = styled(Typography)`
@@ -948,6 +956,7 @@ const IdentityIcons = styled.div`
   margin-top: 60px;
   margin-left: 20px;
   color: #fff;
+  
   @media (max-width: 767px) {
     width: 100%;
     /* flex-direction: column; */
@@ -1009,7 +1018,6 @@ const Identity2Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: #1b1aff; */
   /* background: url(${section3}) no-repeat; */
   background-size: cover;
   background-position: center;
@@ -1018,6 +1026,28 @@ const Identity2Box = styled.div`
     margin-top: 60px;
     background-size: 200%;
     background-position: center 60%;
+  }
+`;
+const Identity2BoxBg = styled.div`
+  max-width: 1440px;
+  width: 1440px;
+  margin: auto;
+  height: 500px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(${section3}) no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    margin-top: 0px;
+    background-size: 200%;
+    background-position: center 60%;
+    width: 100%;
+    height: 200px;
   }
 `;
 const Identity2Content = styled.div`
@@ -1113,6 +1143,7 @@ function Identity2() {
           <IconName>Explore Worlds & Run Simulations</IconName>
         </IconsBox>
       </IdentityIcons>
+      <Identity2BoxBg></Identity2BoxBg>
     </Identity2Box>
   );
 }
@@ -1444,7 +1475,7 @@ const CliqueContentBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 150px;
+  /* padding-top: 150px; */
   /* background: url(${homeImg4}) no-repeat; */
   background-position: 0% -5%;
   @media (max-width: 767px) {
