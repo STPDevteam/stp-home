@@ -638,10 +638,10 @@ const HeadStart = styled.img`
   opacity: 0.6;
 `;
 export const HeadH1 = styled(Typography)`
-  width: 660px;
+  width: 860px;
   margin: auto;
   font-family: Inter;
-  font-size: 64px;
+  font-size: 80px;
   font-weight: 600;
   line-height: 77px;
   letter-spacing: -0.04em;
@@ -665,6 +665,12 @@ export const HeadH1 = styled(Typography)`
     line-height: 38px;
   }
 `;
+const HeadH2 = styled(HeadH1)`
+  width: 860px;
+  font-size: 60px;
+  padding-top: 0px;
+
+`
 export const HeadText = styled(Typography)`
   font-family: Inter;
   font-size: 24px;
@@ -697,6 +703,7 @@ export const GreenBtn = styled(Button)`
   background: #0049c6;
   color: #fff;
   border-radius: 32px;
+  width: 160px;
   @media (max-width: 767px) {
     height: 40px;
     font-size: 14px;
@@ -783,9 +790,11 @@ function Head() {
     <HeadBox>
       {/* <HeadStart src={section1}></HeadStart> */}
       <HeadH1>
-      Autonomous Worlds: <HeadBr />
-      A New era for AI Agents
+      Autonomous Worlds:
       </HeadH1>
+      <HeadH2>
+      A New era for AI Agents
+      </HeadH2>
       <HeadText>
       Our mission is to open the portal to Autonomous Worlds
       </HeadText>
@@ -936,7 +945,7 @@ const IdentityIcons = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 60px;
   margin-left: 20px;
   color: #fff;
   @media (max-width: 767px) {
@@ -1001,7 +1010,7 @@ const Identity2Box = styled.div`
   justify-content: center;
   align-items: center;
   /* background: #1b1aff; */
-  background: url(${section3}) no-repeat;
+  /* background: url(${section3}) no-repeat; */
   background-size: cover;
   background-position: center;
   @media (max-width: 767px) {
@@ -1067,10 +1076,10 @@ function Identity() {
         <Section2Title>What are Autonomous Worlds? </Section2Title>
         <Section2Main>
           <IdentityText>
-          Autonomous Worlds are dynamic, self-sustaining digital ecosystems where AI agents interact, adapt, and evolve within persistent environments.
+          Autonomous Worlds are self-sustaining digital ecosystems where AI agents interact, adapt, and evolve.
           </IdentityText>
           <IdentityText>
-          These worlds enable AI agents to operate independently, collaborate with humans and each other, and solve complex problems.
+          These environments enable agents to operate independently, collaborate, and solve complex problems.
           </IdentityText>
         </Section2Main>
       </IdentityContent>
@@ -1086,15 +1095,9 @@ function Identity2() {
         <IdentityTitle>
         Enabling prompt based  <BrH5></BrH5>Autonomous World creation.{" "}
         </IdentityTitle>
-        <Identity2Text>
-        Use the AWE framework to conceptualise a world, populate it with AI agents, and run simulations in a few clicks.
-        </Identity2Text>
-        <Identity2Text>
-        Leverage AI agent models from our data base or plug-and-play your own agents built using any of the popular agent frameworks like Eliza or GAME.
-        </Identity2Text>
-        {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
+        {/* <Identity2Text>
+        </Identity2Text> */}
       </Identity2Content>
-      {/* <Identity2Img src={section3}></Identity2Img> */}
       <IdentityIcons>
         <IconsBox>
           <Icon src={section3Icon2}></Icon>
@@ -2161,8 +2164,8 @@ const CliqueInfrastructureTitle = styled.div`
   margin-bottom: 16px;
   padding-left: 30px;
   font-family: Inter;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 36px;
+  font-weight: 700;
   line-height: 29px;
   letter-spacing: -0.02em;
   color: #b2b2b2;
@@ -2273,7 +2276,7 @@ function CliqueContent2() {
       <CliqueBox2>
         {/* <CliqueBox2Logo src={section4Title}></CliqueBox2Logo> */}
         <CliqueBox2Title>Autonomous World Engine (AWE)</CliqueBox2Title>
-        <CliqueBox2H2>Enter Autonomous Worlds.</CliqueBox2H2>
+        {/* <CliqueBox2H2>Enter Autonomous Worlds.</CliqueBox2H2> */}
         <CliqueBox2Txt>
         AWE enables the creation and evolution of <strong style={{color:'#fff'}}>Autonomous Worlds</strong>—persistent, 
         </CliqueBox2Txt>
