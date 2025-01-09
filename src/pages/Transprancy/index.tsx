@@ -9,12 +9,14 @@ import { Button, Typography, Box } from '@mui/material'
 
 import homeImg62 from "../../assets/images/home/home6-2.png"
 import section1 from '../../assets/images/transprancy/s1.png'
+import m8 from "../../assets/images/transprancy/m8.jpeg"
+import m7 from "../../assets/images/transprancy/m7.jpeg"
 import m6 from "../../assets/images/transprancy/m6.jpeg"
 import m5 from "../../assets/images/transprancy/m5.jpeg"
 import m4 from "../../assets/images/transprancy/m4.jpeg"
 import m3 from "../../assets/images/transprancy/m3.png"
-import m1 from "../../assets/images/transprancy/m1.png"
-import m2 from "../../assets/images/transprancy/m2.png"
+import m2 from "../../assets/images/transprancy/m1.png"
+import m1 from "../../assets/images/transprancy/m2.png"
 import section3 from '../../assets/images/home/Homepage6.png'
 
 
@@ -156,6 +158,56 @@ const Section3 = styled.div`
     height: auto;
   }
 `
+const list = [
+  {
+    title:'STP 2024 Year End Recap',
+    des:'2024 was a pivotal year for STP Network, characterized by significant progress in developing infrastructure for AI-enhanced gaming and Onchain identity within Autonomous Worlds (AW). From expanding our game library and tools to introducing cutting-edge AI capabilities, STP cemented itself as a leader in this rapidly evolving space. Below, we reflect on the year’s achievements across product development, partnerships, and ecosystem growth, supplemented by links to detailed articles where possible.',
+    cover: m8,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/3n4y9BD1e90V4y7kiaM5xIwNAhnTwlcp0Xa3kVT_Gsw'
+  },
+  {
+    title:'STP December 2024 Update',
+    des:'STP continues to impact the onchain gaming and agent landscape with new AI initiatives and infrastructure developments. From supporting exciting mini-game launches to AI agent development on Base and the launch of a new AI Agent developer grant program, STP remains committed to delivering enhanced gaming experiences and an agentic ecosystem. A more comprehensive recap of 2024 will be released along with the 2025 roadmap, but first let’s dive into what’s shaping the future of onchain gaming and AI this month:',
+    cover: m7,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/j1p-U_VxOVppwCpXKPmjhh33KhllNJb38eXkQiCePlc'
+  },
+  {
+    title:'STP November 2024 Update',
+    des:'STP continues to impact the onchain gaming and agent landscape with new AI initiatives and infrastructure developments. From supporting exciting mini-game launches to AI agent development on Base, STP remains committed to delivering enhanced gaming experiences and an agentic ecosystem. Let’s dive into what’s shaping the future of onchain gaming and AI this month:',
+    cover: m6,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/no-s5GqkSwFsGV5LGDxKXFOyTrasMhC-HLIOvy_ijTM'
+  },
+  {
+    title:'STP October 2024 Update',
+    des:'October was a breakthrough month for STP, highlighting bold expansions and innovative products that underscore our commitment to transforming the onchain gaming ecosystem. From strategic advancements on Base—recently leading all chains in stablecoin transaction volume—to new AI-powered tools for immersive gaming experiences, STP continues to push the boundaries of onchain engagement.',
+    cover: m5,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/weqS1e7EGgW0Jwb3ZBozypY36312MkPa7rbm07aBbq8'
+  },
+  {
+    title:'STP September 2024 Update',
+    des:'STP is thrilled to share its exciting developments from September 2024. Our focus is on enhancing onchain games with AI while expanding the STP ecosystem globally. By leveraging our community and game library, we have attracted more builders, gamers and partners than ever before through live events and reward campaigns.',
+    cover: m4,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/WdSX1yAlHzistxK-7WPqPG4wiH3zBeSZb7raH_BrD2A'
+  },
+  {
+    title:'STP August 2024 Update ',
+    des:'STP is thrilled to share its exciting developments from August 2024. Our focus remains on enhancing the gaming experience with AI and expanding our Clique L3 on Base along with supporting our flagship onchain game Eternal Legacy. Here’s a look at STP’s progress in August.',
+    cover: m3,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/kKAXpB9c3xoeExt4xP1dJyAvh-ujVnZDghRrqWvRsFM'
+  },
+  {
+    title:'STP Q2 2024 Progress: Clique Gaming Propels',
+    des:'STP is thrilled to share its exciting developments from Q2 2024. Our focus remains on enhancing the gaming experience with AI and expanding our L3 Clique. Here’s a look at STP’s progress in Q2.',
+    cover: m2,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/KWf6Fwvv8Os54tPag1zpKf1hK27AGKSLN7H3RgKA2sA'
+  },
+  {
+    title:'STP 2023 Year End Recap',
+    des:'Throughout the last year STP greatly expanded its ecosystem optimized for DAOs by supporting over 500+ DAOs while enhancing its native DAO tools and infrastructure with Clique V3. Additionally, STP made the leap into Autonomous Worlds by expanding its infrastructure and tooling for on-chain games, communities and worlds starting with identity. This new initiative resulted in the release of AWNS (Autonomous Worlds Name Service) which leverages account abstraction to create an identity and wallet (ERC-6551) that is designed for all on-chain activity but specifically gaming. The initial version of this identity product was released at the end of Q3 and played a major part in STP’s 2023 development',
+    cover: m1,
+    link:'https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/OI6mpDTF98pzSOOEKKuPAI4Tm8KDuBaspbyLNC3pYRw'
+  },
+]
 
 export default function Soda() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -169,6 +221,20 @@ export default function Soda() {
           <Section1Subtitle>Here, you’ll find a collection of links and resources detailing our progress over the years and everything we’re working on right now. This includes quarterly updates, governance reports, annual reviews, and other key documents.</Section1Subtitle>
        </Section1>
         <Section2>
+          {
+            list.map(item =>(
+            <Section2Card key={item.title} onClick={()=>{window.open(item.link)}}>
+              <CardCover src={item.cover}></CardCover>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDes>{item.des} </CardDes>
+            </Section2Card>
+            ))
+          }
+          {/* <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/j1p-U_VxOVppwCpXKPmjhh33KhllNJb38eXkQiCePlc")}}>
+            <CardCover src={m7}></CardCover>
+            <CardTitle>STP December 2024 Update</CardTitle>
+            <CardDes>STP continues to impact the onchain gaming and agent landscape with new AI initiatives and infrastructure developments. From supporting exciting mini-game launches to AI agent development on Base and the launch of a new AI Agent developer grant program, STP remains committed to delivering enhanced gaming experiences and an agentic ecosystem. A more comprehensive recap of 2024 will be released along with the 2025 roadmap, but first let’s dive into what’s shaping the future of onchain gaming and AI this month: </CardDes>
+          </Section2Card>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/no-s5GqkSwFsGV5LGDxKXFOyTrasMhC-HLIOvy_ijTM")}}>
             <CardCover src={m6}></CardCover>
             <CardTitle>STP November 2024 Update</CardTitle>
@@ -190,15 +256,15 @@ export default function Soda() {
             <CardDes>STP is thrilled to share its exciting developments from August 2024. Our focus remains on enhancing the gaming experience with AI and expanding our Clique L3 on Base along with supporting our flagship onchain game Eternal Legacy. Here’s a look at STP’s progress in August.</CardDes>
           </Section2Card>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/KWf6Fwvv8Os54tPag1zpKf1hK27AGKSLN7H3RgKA2sA")}}>
-            <CardCover src={m1}></CardCover>
+            <CardCover src={m2}></CardCover>
             <CardTitle>STP Q2 2024 Progress: Clique Gaming Propels</CardTitle>
             <CardDes>STP is thrilled to share its exciting developments from Q2 2024. Our focus remains on enhancing the gaming experience with AI and expanding our L3 Clique. Here’s a look at STP’s progress in Q2.</CardDes>
           </Section2Card>
           <Section2Card onClick={()=>{window.open("https://mirror.xyz/0xB9d761AF53845D1F3C68f99c38f4dB6fcCfB66A1/OI6mpDTF98pzSOOEKKuPAI4Tm8KDuBaspbyLNC3pYRw")}}>
-            <CardCover src={m2}></CardCover>
+            <CardCover src={m1}></CardCover>
             <CardTitle>STP 2023 Year End Recap</CardTitle>
             <CardDes>Throughout the last year STP greatly expanded its ecosystem optimized for DAOs by supporting over 500+ DAOs while enhancing its native DAO tools and infrastructure with Clique V3. Additionally, STP made the leap into Autonomous Worlds by expanding its infrastructure and tooling for on-chain games, communities and worlds starting with identity. This new initiative resulted in the release of AWNS (Autonomous Worlds Name Service) which leverages account abstraction to create an identity and wallet (ERC-6551) that is designed for all on-chain activity but specifically gaming. The initial version of this identity product was released at the end of Q3 and played a major part in STP’s 2023 development</CardDes>
-          </Section2Card>
+          </Section2Card> */}
         </Section2>
         <Section3>
           <Section1Subtitle>We encourage our community to visit this page frequently to stay up-to-date on the latest developments within the STP ecosystem. </Section1Subtitle>

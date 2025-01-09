@@ -148,9 +148,9 @@ import section3 from "../../assets/images/home/Homepage3.png";
 import section4 from "../../assets/images/home/Homepage4.png";
 import section4H5 from "../../assets/images/home/section4H5.jpg";
 import section4Title from "../../assets/images/home/cliqueLogo.svg";
-import s4Icon1 from "../../assets/images/home/s4Icon1.jpg";
-import s4Icon2 from "../../assets/images/home/s4Icon2.jpg";
-import s4Icon3 from "../../assets/images/home/s4Icon3.jpg";
+import s4Icon1 from "../../assets/images/home/s4I1.jpg";
+import s4Icon2 from "../../assets/images/home/s4I2.jpg";
+import s4Icon3 from "../../assets/images/home/s4I3.jpg";
 import s4Icon4 from "../../assets/images/home/s4Icon4.jpg";
 import s4Icon5 from "../../assets/images/home/s4Icon5.jpg";
 import s4Icon6 from "../../assets/images/home/s4Icon6.jpg";
@@ -783,20 +783,20 @@ function Head() {
     <HeadBox>
       {/* <HeadStart src={section1}></HeadStart> */}
       <HeadH1>
-        Opening The Portal <HeadBr />
-        to Autonomous Worlds
+      Autonomous Worlds: <HeadBr />
+      A New era for AI Agents
       </HeadH1>
       <HeadText>
-        Our mission is to pioneer the advancement of AI in gaming
+      Our mission is to open the portal to Autonomous Worlds
       </HeadText>
       <HeadBtns>
         <GreenBtn
           onClick={() => {
-            window.open("https://explorer.myclique.io/", "_blank");
+            window.open("/Verse Network WP.pdf", "_blank");
           }}
         >
           {" "}
-          Build on Clique{" "}
+          Litepaper{" "}
         </GreenBtn>
         <AwnsBtn2
           onClick={() => {
@@ -806,14 +806,14 @@ function Head() {
           {" "}
           Create an AWNS{" "}
         </AwnsBtn2>
-        <GreenAiBtn
+        {/* <GreenAiBtn
           onClick={() => {
             window.open("http://ai.stp.network/", "_blank");
           }}
         >
           {" "}
           <img src={aiIcon} />AI Agent<img src={betaIcon} />{" "}
-        </GreenAiBtn>
+        </GreenAiBtn> */}
       </HeadBtns>
     </HeadBox>
   );
@@ -849,7 +849,7 @@ const IdentityContent = styled.div`
   height: 438px;
   margin: auto;
   font-family: Inter;
-  padding-top: 250px;
+  padding-top: 150px;
   color: #fff;
   text-align: center;
   background: url(${section2}) no-repeat;
@@ -858,14 +858,14 @@ const IdentityContent = styled.div`
   /* filter: hue-rotate(318deg); */
   @media (max-width: 767px) {
     width: 100%;
-    padding: 180px 24px 24px 24px;
+    padding: 140px 20px 0px 20px;
     order: 1;
     background-size: 200%;
     background-position: center 30%;
   }
 `;
 const Section2Title = styled.div`
-  width: 148px;
+  width: 238px;
   height: 32px;
   margin: auto;
   border-radius: 100px;
@@ -881,6 +881,9 @@ const Section2Main = styled.div`
   justify-content: space-between;
   width: 740px;
   margin: auto;
+  &> div {
+    flex: 1;
+  }
   @media (max-width: 767px) {
     width: 100%;
     /* flex-direction: column; */
@@ -919,8 +922,10 @@ const IdentityText = styled.div`
   align-items: center;
   color: #b2b2b2;
   @media (max-width: 767px) {
-    font-size: 16px;
+    margin-top: 20px;
+    font-size: 14px;
     line-height: 1.2;
+    letter-spacing: 1px;
   }
 `;
 const Identity2Img = styled.img`
@@ -944,7 +949,7 @@ const IdentityIcons = styled.div`
 `;
 const IconsBox = styled.div`
   position: relative;
-  width: 300px;
+  width: 330px;
   height: 170px;
   margin: 15px 0px;
   display: flex;
@@ -963,7 +968,7 @@ const IconsBox = styled.div`
     width: 220px;
     height: auto;
     margin: 6px auto;
-    padding: 20px 10px;
+    padding: 20px 0px;
     justify-content: flex-start;
   }
 `;
@@ -976,10 +981,14 @@ const Icon = styled.img`
 `;
 const IconName = styled.div`
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 16px;
   @media (max-width: 767px) {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
   }
 `;
@@ -1013,10 +1022,12 @@ const Identity2Content = styled.div`
   }
 `;
 const Identity2Text = styled.div`
+  max-width: 800px;
   margin-top: 10px;
   font-size: 24px;
   font-weight: 500;
   line-height: 40px;
+  text-align: center;
   /* letter-spacing: 2px; */
   align-items: center;
   display: flex;
@@ -1053,13 +1064,13 @@ function Identity() {
   return (
     <IdentityBox>
       <IdentityContent>
-        <Section2Title>AI Unites Gaming </Section2Title>
+        <Section2Title>What are Autonomous Worlds? </Section2Title>
         <Section2Main>
           <IdentityText>
-            We envision AI enhancing the utility and value of onchain gaming.
+          Autonomous Worlds are dynamic, self-sustaining digital ecosystems where AI agents interact, adapt, and evolve within persistent environments.
           </IdentityText>
           <IdentityText>
-            Redefining games with onchain agents and AI elevated gameplay.
+          These worlds enable AI agents to operate independently, collaborate with humans and each other, and solve complex problems.
           </IdentityText>
         </Section2Main>
       </IdentityContent>
@@ -1073,11 +1084,13 @@ function Identity2() {
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
         <IdentityTitle>
-          Empowering all gaming studios, <BrH5></BrH5>developers and users{" "}
+        Enabling prompt based  <BrH5></BrH5>Autonomous World creation.{" "}
         </IdentityTitle>
         <Identity2Text>
-          Leverage frontier technology in Autonomous Worlds, AI Agents, Account
-          Abstraction
+        Use the AWE framework to conceptualise a world, populate it with AI agents, and run simulations in a few clicks.
+        </Identity2Text>
+        <Identity2Text>
+        Leverage AI agent models from our data base or plug-and-play your own agents built using any of the popular agent frameworks like Eliza or GAME.
         </Identity2Text>
         {/* <HomeImg3 src={homeImg3}></HomeImg3> */}
       </Identity2Content>
@@ -1085,15 +1098,16 @@ function Identity2() {
       <IdentityIcons>
         <IconsBox>
           <Icon src={section3Icon2}></Icon>
-          <IconName>Autonomous Worlds</IconName>
+          <IconName>Create Autonomous Worlds</IconName>
         </IconsBox>
         <IconsBox>
           <Icon src={section3Icon3}></Icon>
-          <IconName>AI Agents</IconName>
+          <IconName>Populated By AI Agents
+          </IconName>
         </IconsBox>
         <IconsBox>
           <Icon src={section3Icon1}></Icon>
-          <IconName>Account Abstraction</IconName>
+          <IconName>Explore Worlds & Run Simulations</IconName>
         </IconsBox>
       </IdentityIcons>
     </Identity2Box>
@@ -2047,14 +2061,14 @@ function CliqueContent() {
 
 const CliqueBox2 = styled.div`
   width: 100%;
-  height: 884px;
-  background: url(${section4}) no-repeat;
+  height: 484px;
+  /* background: url(${section4}) no-repeat; */
   background-size: contain;
   background-position: center;
   text-align: center;
   @media (max-width: 767px) {
     height: auto;
-    background: url(${section4H5}) no-repeat;
+    /* background: url(${section4H5}) no-repeat; */
     background-size: cover;
     background-position: center 0%;
   }
@@ -2068,26 +2082,41 @@ const CliqueBox2Logo = styled.img`
   }
 `;
 const CliqueBox2Title = styled.div`
-  margin-top: 360px;
+  /* margin-top: 360px; */
   margin-bottom: 20px;
   font-family: Inter;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
   @media (max-width: 767px) {
-    margin-top: 150px;
     margin-bottom: 16px;
     font-size: 24px;
     line-height: 32px;
     padding: 0 24px;
   }
   @media screen and (min-width: 376px) and (max-width: 767px) {
-    margin-top: 180px;
+    /* margin-top: 180px; */
   }
 `;
+const CliqueBox2H2 = styled.div`
+  margin-bottom: 20px;
+  font-family: Inter;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+  @media (max-width: 767px) {
+    margin-bottom: 16px;
+    font-size: 22px;
+    line-height: 32px;
+    padding: 0 24px;
+  }
+`
 const CliqueBox2Txt = styled.div`
   font-family: Inter;
   font-size: 24px;
@@ -2139,6 +2168,7 @@ const CliqueInfrastructureTitle = styled.div`
   color: #b2b2b2;
   @media (max-width: 767px) {
     font-size: 16px;
+    padding-left: 24px;
   }
 `;
 const CliqueInfrastructureMain = styled.div`
@@ -2167,6 +2197,9 @@ const InfrastructureMainBox1 = styled.div`
     min-height: 300px;
   }
 `;
+const InfrastructureMainBox3 = styled(InfrastructureMainBox1)`
+  flex: 3;
+`
 const InfrastructureMainBox1H = styled.div`
   margin-bottom: 8px;
   padding: 0px 24px;
@@ -2199,6 +2232,10 @@ const InfrastructureMainBox1IconN = styled.img`
   width: 100%;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
+`;
+const InfrastructureMainBox1IconN2 = styled(InfrastructureMainBox1IconN)`
+  width: 70%;
+  margin: 0 auto;
 `;
 
 const InfrastructureMainBox2 = styled.div`
@@ -2234,59 +2271,73 @@ function CliqueContent2() {
   return (
     <CliqueContentBox>
       <CliqueBox2>
-        <CliqueBox2Logo src={section4Title}></CliqueBox2Logo>
-        <CliqueBox2Title>New Form of Play & Create</CliqueBox2Title>
+        {/* <CliqueBox2Logo src={section4Title}></CliqueBox2Logo> */}
+        <CliqueBox2Title>Autonomous World Engine (AWE)</CliqueBox2Title>
+        <CliqueBox2H2>New Form of Play & Create</CliqueBox2H2>
         <CliqueBox2Txt>
-          Clique is a blockchain for AI enhanced gaming.
+        AWE enables the creation and evolution of Autonomous Worlds—persistent, 
         </CliqueBox2Txt>
         <CliqueBox2Txt>
           {" "}
-          Our ecosystem empowers everyone to reinvent gaming experiences with
-          AI.
+          dynamic ecosystems driven by AI agents that adapt, collaborate, and grow autonomously.
         </CliqueBox2Txt>
         {/* <CliqueBox2TxtH5>Clique is a blockchain for AI enhanced gaming. Our ecosystem empowers everyone to  reinvent gaming experiences with AI.</CliqueBox2TxtH5> */}
       </CliqueBox2>
       <CliqueInfrastructure>
-        <CliqueInfrastructureTitle>Infrastructure</CliqueInfrastructureTitle>
+        <CliqueInfrastructureTitle>Core Components of the AWE Framework</CliqueInfrastructureTitle>
         <CliqueInfrastructureMain>
-          <InfrastructureMainBox1>
-            <div>
-              <InfrastructureMainBox1H>Celestia</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Modular DA with  >100x reduced cost for intense load of onchain gaming`}</InfrastructureMainBox1T>
-            </div>
-            <InfrastructureMainBox1IconN
-              src={s4Icon1}
-            ></InfrastructureMainBox1IconN>
-          </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
-              <InfrastructureMainBox1H>
-                OP Stack on Base
-              </InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`EVM equivalent with extremely low gas costs necessary for scaling and securing onchain gaming and its future AI demands`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>World File Framework</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`A decentralized repository storing all essential details, including agent roles, environment design, state management, and simulation parameters.`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN
-              src={s4Icon2}
-            ></InfrastructureMainBox1IconN>
+            <InfrastructureMainBox1IconN2
+              src={s4Icon1}
+            ></InfrastructureMainBox1IconN2>
           </InfrastructureMainBox2>
-          <InfrastructureMainBox1>
+          <InfrastructureMainBox3>
             <div>
-              <InfrastructureMainBox1H>Airstack</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Composable app chain data from Base, Farcaster, Lens with AI APIs`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>
+              Agent Framework
+              </InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Open-source tools for creating multimodal AI agents with memory, planning, and reflection capabilities, ensuring adaptive and collaborative behavior.`}</InfrastructureMainBox1T>
             </div>
-            <InfrastructureMainBox1IconN
+            <InfrastructureMainBox1IconN2
+              src={s4Icon2}
+            ></InfrastructureMainBox1IconN2>
+          </InfrastructureMainBox3>
+         
+        </CliqueInfrastructureMain>
+        <CliqueInfrastructureMain>
+          <InfrastructureMainBox3>
+            <div>
+              <InfrastructureMainBox1H>
+              Visualization Interface
+              </InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`A user-friendly interface for exploring, editing. and interacting with Autonomous Worlds in real time.`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1IconN2
+              src={s4Icon2}
+            ></InfrastructureMainBox1IconN2>
+          </InfrastructureMainBox3>
+          <InfrastructureMainBox2>
+            <div>
+              <InfrastructureMainBox1H>Settlement Layer</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Onchain logging of activities, decisions, and states for transparency, verifiability, and monetization within Autonomous Worlds.`}</InfrastructureMainBox1T>
+            </div>
+            <InfrastructureMainBox1IconN2
               src={s4Icon3}
-            ></InfrastructureMainBox1IconN>
-          </InfrastructureMainBox1>
+            ></InfrastructureMainBox1IconN2>
+          </InfrastructureMainBox2>
         </CliqueInfrastructureMain>
       </CliqueInfrastructure>
       <CliqueApplications>
-        <CliqueInfrastructureTitle>Applications</CliqueInfrastructureTitle>
+        <CliqueInfrastructureTitle>Key Features</CliqueInfrastructureTitle>
         <CliqueInfrastructureMain>
           <InfrastructureMainBox1>
             <div>
-              <InfrastructureMainBox1H>AWNS</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Autonomous onchain agent with a 6551-powered wallet to establish your onchain identity and interact with games and AI`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>AI Agent Frameworks</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Deploy intelligent agents with memory, planning, and reflection capabilities to drive dynamic interactions within Autonomous Worlds.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon4}
@@ -2294,8 +2345,8 @@ function CliqueContent2() {
           </InfrastructureMainBox1>
           <InfrastructureMainBox2>
             <div>
-              <InfrastructureMainBox1H>Game Portal</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`For everything on Clique. Traverse and play across a diverse console of AI-enhanced games and apps`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>World Portal</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Create, Access, and explore, Autonomous Worlds from a unified interface, fostering interaction and collaboration.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon5}
@@ -2305,8 +2356,8 @@ function CliqueContent2() {
         <CliqueInfrastructureMain>
           <InfrastructureMainBox2>
             <div>
-              <InfrastructureMainBox1H>Community</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Discover, mingle and contribute to fandom and governance across game and social communities among AI and gaming enthusiasts`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>Community Layer</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Facilitate collaboration, and innovation in Autonomous Worlds through user-driven communities.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon6}
@@ -2315,7 +2366,7 @@ function CliqueContent2() {
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Marketplace</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Trade and extract financial value from your onchain assets seamlessly impacting the respective games`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1T>{`Seamlessly manage and trade experiences within and across Autonomous Worlds.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon7}
@@ -2325,15 +2376,15 @@ function CliqueContent2() {
       </CliqueApplications>
       <CliqueApplications>
         <CliqueInfrastructureTitle>
-          Developer Resources
+        Empowering Builders
         </CliqueInfrastructureTitle>
         <CliqueInfrastructureMain>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>
-                Developer Engine
+              Development SDK
               </InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`All-in-one SDK to enhance games with AI along with social tooling for NFTs and DAOs on platforms like X, Telegram, Chrome, Farcaster`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1T>{`A comprehensive toolkit for building and enhancing Autonomous Worlds with AI-driven systems and integrations.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon8}
@@ -2342,9 +2393,9 @@ function CliqueContent2() {
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>
-                Ecosystem Support{" "}
+              Ecosystem Support{" "}
               </InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Collaborate in the builder community and apply for frequent project grants and developer support`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1T>{`Join a thriving community of builders with access to grants and collaborative resources.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon9}
@@ -3930,7 +3981,7 @@ const FooterBox = styled(Box)`
   padding: 80px 105px 80px;
   overflow-x: hidden;
   @media (max-width: 767px) {
-    padding: 68px 20px 318px 20px;
+    padding: 18px 20px 38px 20px;
   }
 `;
 
@@ -4044,11 +4095,11 @@ export function Footer() {
         gap={isDownSm ? "48px" : 0}
       >
         <img src={StpLogo} alt="" />
-        <BlueButton
+        {/* <BlueButton
           onClick={() => window.open("https://explorer.myclique.io/", "_blank")}
         >
           Build on Clique
-        </BlueButton>
+        </BlueButton> */}
       </Box>
       {!isDownSm ? (
         <>
@@ -4239,7 +4290,7 @@ export function Footer2() {
     // ],
     [
       "Resources",
-      "/Verse Network WP.pdf",
+      "/AWE.pdf",
       "https://github.com/STPDevteam",
       "https://stpdao.gitbook.io/whitepaper/stp-network/master",
       "/stp.zip",

@@ -465,7 +465,7 @@ const Header: React.FC = () => {
         isOpen={mobileMenuOpen}
         onDismiss={handleMobileMenueDismiss}
       />
-      {!isSmallScreen && <Notice />}
+      {/* {!isSmallScreen && <Notice />} */}
       <HeaderContent
         className="header"
         ref={headerRef}
@@ -534,13 +534,13 @@ const Header: React.FC = () => {
             </Dropdown> */}
           </nav>
         </CSSTransition>
-        <GreenBtn
+        <div></div>
+        {/* <GreenBtn
           className="BuildDao"
           onClick={() => window.open("https://explorer.myclique.io/", "_blank")}
         >
           Build on Clique
-          {/* <ArrowOutwardIcon style={{ color: "#23262F" }} /> */}
-        </GreenBtn>
+        </GreenBtn> */}
         <button
           onClick={() => {
             setMobileMenuOpen((prevState) => !prevState);

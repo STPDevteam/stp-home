@@ -49,7 +49,7 @@ function App() {
               </Switch>
             </Content>
             {
-              isSmallScreen && <Notice />
+              // isSmallScreen && <Notice />
             }
           </Router>
         </Suspense>
