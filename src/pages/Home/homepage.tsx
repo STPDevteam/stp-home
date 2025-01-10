@@ -4062,7 +4062,7 @@ export function Footer() {
     ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
-    ["Resources", "Github", "Wiki", "Media Kit"],
+    ["Resources", "Github", "Media Kit"],
     // ["STP Ecosystem", "Ecosystem"],
     ["Ecosystem", "News", "FAQ"],
     ["Worlds", "Litepaper", "Docs", "AWNS"],
@@ -4080,7 +4080,6 @@ export function Footer() {
     [
       "Resources",
       "https://github.com/STPDevteam",
-      "https://stpdao.gitbook.io/whitepaper/stp-network/master",
       "/stp.zip",
     ],
     [
@@ -4277,7 +4276,7 @@ export function Footer2() {
     ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["STP Ecosystem", "Ecosystem"],
-    ["Resources", "Github", "Wiki", "Media Kit"],
+    ["Resources", "Github", "Media Kit"],
     // ["Resources", "News", "Github", "Documentation"],
     // ["Ecosystem", "News","FAQ"],
   ];
@@ -4303,7 +4302,6 @@ export function Footer2() {
     [
       "Resources",
       "https://github.com/STPDevteam",
-      "https://stpdao.gitbook.io/whitepaper/stp-network/master",
       "/stp.zip",
     ],
     // [
