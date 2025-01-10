@@ -2075,7 +2075,7 @@ function CliqueContent() {
 const CliqueBox2 = styled.div`
   width: 100%;
   height: 484px;
-  margin-top: 20px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2363,8 +2363,8 @@ agent behaviors, and generates actionable outputs.`}</InfrastructureMainBox1T>
         <CliqueInfrastructureMain>
           <InfrastructureMainBox1>
             <div>
-              <InfrastructureMainBox1H>Community Layer</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Facilitate collaboration, and innovation in Autonomous Worlds through user-driven communities.`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>Simulations</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Researchers and developers can utilize multiagent simulations to test governance models, explore market dynamics, address challenges like UBI, and enhance AI to human collaboration.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon6}
@@ -2372,8 +2372,8 @@ agent behaviors, and generates actionable outputs.`}</InfrastructureMainBox1T>
           </InfrastructureMainBox1>
           <InfrastructureMainBox1>
             <div>
-              <InfrastructureMainBox1H>Marketplace</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Seamlessly manage and trade experiences within and across Autonomous Worlds.`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>Monetization</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Autonomous Worlds have multiple ways of being monetized via tokenized ownership, agent services, and in world tradeable assets enabling creators to build dynamic, revenue-generating models and economies.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN
               src={s4Icon7}
@@ -3255,7 +3255,7 @@ const EcoContent = styled.div`
   background-size: contain;
   background-position: center;
   width: 1440px;
-  margin: 20px auto 50 auto;
+  margin: 20px auto 60px auto;
 `;
 const EcoButton = styled(Button)`
   display: flex;
@@ -4062,7 +4062,7 @@ export function Footer() {
     ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["Resources", "News", "Github", "Documentation"],
-    ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
+    ["Resources", "Github", "Wiki", "Media Kit"],
     // ["STP Ecosystem", "Ecosystem"],
     ["Ecosystem", "News", "FAQ"],
     ["Worlds", "Litepaper", "Docs", "AWNS"],
@@ -4079,7 +4079,6 @@ export function Footer() {
     ],
     [
       "Resources",
-      "/AWE.pdf",
       "https://github.com/STPDevteam",
       "https://stpdao.gitbook.io/whitepaper/stp-network/master",
       "/stp.zip",
@@ -4278,7 +4277,7 @@ export function Footer2() {
     ],
     // ["Leading DAOs", "STP DAO", "Mighty Magic", "AGLD", "Paladins DAO"],
     // ["STP Ecosystem", "Ecosystem"],
-    ["Resources", "Whitepaper", "Github", "Wiki", "Media Kit"],
+    ["Resources", "Github", "Wiki", "Media Kit"],
     // ["Resources", "News", "Github", "Documentation"],
     // ["Ecosystem", "News","FAQ"],
   ];
@@ -4303,7 +4302,6 @@ export function Footer2() {
     // ],
     [
       "Resources",
-      "/AWE.pdf",
       "https://github.com/STPDevteam",
       "https://stpdao.gitbook.io/whitepaper/stp-network/master",
       "/stp.zip",
