@@ -134,12 +134,12 @@ function Head({
       </HeadText>
       <EcosystemHeadBox>
 
-        <GreenBtn
+        {/* <GreenBtn
           style={{ marginTop: "24px" }}
           onClick={() => history.push("/dao")}
         >
           Clique World Launchpad <ArrowOutwardIcon />
-        </GreenBtn>
+        </GreenBtn> */}
         <Stack spacing={"24px"} mt={"80px"}>
           <Row gap={"16px"} alignItems={"flex-start"}>
             <FilterTitle>Category</FilterTitle>
