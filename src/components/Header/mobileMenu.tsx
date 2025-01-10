@@ -87,7 +87,7 @@ export default function MobileMenu({
             </Typography>
           );
         })}
-        <GreenBtn
+        {/* <GreenBtn
           style={{ width: "191px" }}
           onClick={() =>
             // window.open("https://www.myclique.io/creator", "_blank")
@@ -95,8 +95,7 @@ export default function MobileMenu({
           }
         >
           Build on Clique
-          {/* <ArrowOutwardIcon /> */}
-        </GreenBtn>
+        </GreenBtn> */}
         <Box
           display={"flex"}
           gap={"40px"}

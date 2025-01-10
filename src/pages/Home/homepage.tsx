@@ -798,7 +798,7 @@ function Head() {
     <HeadBox>
       {/* <HeadStart src={section1}></HeadStart> */}
       <HeadH1>
-      Autonomous Worlds:
+      Autonomous Worlds
       </HeadH1>
       <HeadH2>
       A New era for AI Agents
@@ -809,7 +809,7 @@ function Head() {
       <HeadBtns>
         <GreenBtn
           onClick={() => {
-            window.open("/Verse Network WP.pdf", "_blank");
+            window.open("/AWE.pdf", "_blank");
           }}
         >
           {" "}
@@ -910,7 +910,7 @@ const IdentityTitle = styled.div`
   max-width: 950px;
   margin: auto;
   font-family: Inter;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.2px;
@@ -925,7 +925,7 @@ const IdentityTitle = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media (max-width: 767px) {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 38px;
   }
 `;
@@ -960,7 +960,7 @@ const IdentityIcons = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     /* flex-direction: column; */
-    margin-top: 80px;
+    margin-top: 10px;
     margin-left: 0px;
     padding: 0 20px;
   }
@@ -1023,33 +1023,12 @@ const Identity2Box = styled.div`
   background-position: center;
   @media (max-width: 767px) {
     flex-direction: column;
-    margin-top: 60px;
-    background-size: 200%;
-    background-position: center 60%;
-  }
-`;
-const Identity2BoxBg = styled.div`
-  max-width: 1440px;
-  width: 1440px;
-  margin: auto;
-  height: 500px;
-  padding-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url(${section3}) no-repeat;
-  background-size: cover;
-  background-position: center;
-  @media (max-width: 767px) {
-    flex-direction: column;
     margin-top: 0px;
     background-size: 200%;
     background-position: center 60%;
-    width: 100%;
-    height: 200px;
   }
 `;
+
 const Identity2Content = styled.div`
   position: relative;
   align-items: center;
@@ -1123,7 +1102,7 @@ function Identity2() {
       <Identity2Content>
         {/* <Identity2Star src={starWhite}></Identity2Star> */}
         <IdentityTitle>
-        Enabling prompt based  <BrH5></BrH5>Autonomous World creation.{" "}
+        Enabling prompt based  <BrH5></BrH5>Autonomous World creation{" "}
         </IdentityTitle>
         {/* <Identity2Text>
         </Identity2Text> */}
@@ -1143,7 +1122,7 @@ function Identity2() {
           <IconName>Explore Worlds & Run Simulations</IconName>
         </IconsBox>
       </IdentityIcons>
-      <Identity2BoxBg></Identity2BoxBg>
+      {/* <Identity2BoxBg></Identity2BoxBg> */}
     </Identity2Box>
   );
 }
@@ -2096,13 +2075,19 @@ function CliqueContent() {
 const CliqueBox2 = styled.div`
   width: 100%;
   height: 484px;
-  /* background: url(${section4}) no-repeat; */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(${section3}) no-repeat;
   background-size: contain;
   background-position: center;
   text-align: center;
   @media (max-width: 767px) {
     height: auto;
     /* background: url(${section4H5}) no-repeat; */
+    background: none;
     background-size: cover;
     background-position: center 0%;
   }
@@ -2116,17 +2101,17 @@ const CliqueBox2Logo = styled.img`
   }
 `;
 const CliqueBox2Title = styled.div`
-  /* margin-top: 360px; */
-  margin-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 60px;
   font-family: Inter;
   font-size: 60px;
   font-weight: 600;
-  line-height: 48px;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
   @media (max-width: 767px) {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     font-size: 24px;
     line-height: 32px;
     padding: 0 24px;
@@ -2158,12 +2143,13 @@ const CliqueBox2Txt = styled.div`
   line-height: 29px;
   letter-spacing: 0em;
   text-align: center;
-  color: #b2b2b2;
+  color: #949CB9;
   @media (max-width: 767px) {
     font-size: 16px;
     line-height: 1.3;
     padding: 0 0px;
-    width: 268px;
+    width: 100%;
+    padding: 0 24px;
     margin: auto;
   }
 `;
@@ -2184,7 +2170,7 @@ const CliqueBox2TxtH5 = styled.div`
 `;
 const CliqueInfrastructure = styled.div`
   width: 1000px;
-  margin: -150px auto 40px auto;
+  margin: 0px auto 50px auto;
   @media (max-width: 767px) {
     width: 100%;
     margin: 40px auto 40px auto;
@@ -2199,7 +2185,8 @@ const CliqueInfrastructureTitle = styled.div`
   font-weight: 700;
   line-height: 29px;
   letter-spacing: -0.02em;
-  color: #b2b2b2;
+  color: #fff;
+  text-align: center;
   @media (max-width: 767px) {
     font-size: 16px;
     padding-left: 24px;
@@ -2239,7 +2226,7 @@ const InfrastructureMainBox1H = styled.div`
   padding: 0px 24px;
   font-family: Inter;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 38px;
   letter-spacing: 0em;
   color: #fff;
@@ -2305,7 +2292,6 @@ function CliqueContent2() {
   return (
     <CliqueContentBox>
       <CliqueBox2>
-        {/* <CliqueBox2Logo src={section4Title}></CliqueBox2Logo> */}
         <CliqueBox2Title>Autonomous World Engine (AWE)</CliqueBox2Title>
         {/* <CliqueBox2H2>Enter Autonomous Worlds.</CliqueBox2H2> */}
         <CliqueBox2Txt>
@@ -2332,9 +2318,9 @@ function CliqueContent2() {
           <InfrastructureMainBox2>
             <div>
               <InfrastructureMainBox1H>
-              Agent Framework
+              Integrated Agent Framework
               </InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Open-source tools for creating multimodal AI agents with memory, planning, and reflection capabilities, ensuring adaptive and collaborative behavior.`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1T>{`Utilize various open-source AI Agent frameworks to create multimodal agents shared memory, planning, and reflection, fostering adaptive and collaborative behavior.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN2
               src={s4Icon2}
@@ -2363,7 +2349,7 @@ function CliqueContent2() {
               src={s4Icon4}
             ></InfrastructureMainBox1IconN>
           </InfrastructureMainBox1>
-          <InfrastructureMainBox2>
+          <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>World Portal</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Create, Access, and explore, Autonomous Worlds from a unified interface, fostering interaction and collaboration.`}</InfrastructureMainBox1T>
@@ -2371,10 +2357,10 @@ function CliqueContent2() {
             <InfrastructureMainBox1IconN
               src={s4Icon5}
             ></InfrastructureMainBox1IconN>
-          </InfrastructureMainBox2>
+          </InfrastructureMainBox1>
         </CliqueInfrastructureMain>
         <CliqueInfrastructureMain>
-          <InfrastructureMainBox2>
+          <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Community Layer</InfrastructureMainBox1H>
               <InfrastructureMainBox1T>{`Facilitate collaboration, and innovation in Autonomous Worlds through user-driven communities.`}</InfrastructureMainBox1T>
@@ -2382,7 +2368,7 @@ function CliqueContent2() {
             <InfrastructureMainBox1IconN
               src={s4Icon6}
             ></InfrastructureMainBox1IconN>
-          </InfrastructureMainBox2>
+          </InfrastructureMainBox1>
           <InfrastructureMainBox1>
             <div>
               <InfrastructureMainBox1H>Marketplace</InfrastructureMainBox1H>
@@ -3234,7 +3220,7 @@ const EcoH1 = styled(Typography)`
   color: #fff;
   font-family: Inter;
   font-size: 64px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 77px;
   letter-spacing: -0.02em;
   text-align: center;
@@ -3268,7 +3254,7 @@ const EcoContent = styled.div`
   background-size: contain;
   background-position: center;
   width: 1440px;
-  margin: 100px auto;
+  margin: 20px auto 50 auto;
 `;
 const EcoButton = styled(Button)`
   display: flex;
@@ -4092,7 +4078,7 @@ export function Footer() {
     ],
     [
       "Resources",
-      "/Verse Network WP.pdf",
+      "/AWE.pdf",
       "https://github.com/STPDevteam",
       "https://stpdao.gitbook.io/whitepaper/stp-network/master",
       "/stp.zip",
@@ -4105,7 +4091,7 @@ export function Footer() {
     ],
     [
       "Worlds",
-      "/Verse Network WP.pdf",
+      "/AWE.pdf",
       "https://docs.stp.network/",
       "https://awns.stp.network/",
     ],
