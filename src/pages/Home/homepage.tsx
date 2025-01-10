@@ -2328,8 +2328,9 @@ function CliqueContent2() {
           </InfrastructureMainBox2>
           <InfrastructureMainBox2>
             <div>
-              <InfrastructureMainBox1H>Settlement Layer</InfrastructureMainBox1H>
-              <InfrastructureMainBox1T>{`Onchain logging of activities, decisions, and states for transparency, verifiability, and monetization within Autonomous Worlds.`}</InfrastructureMainBox1T>
+              <InfrastructureMainBox1H>World Engine</InfrastructureMainBox1H>
+              <InfrastructureMainBox1T>{`Synthesizes the World by integrating elements from the World File and Character Files. Enables real-time simulations, tracks
+agent behaviors, and generates actionable outputs.`}</InfrastructureMainBox1T>
             </div>
             <InfrastructureMainBox1IconN2
               src={s4Icon3}
