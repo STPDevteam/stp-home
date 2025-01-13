@@ -42,7 +42,7 @@ const Developers: React.FC = () =>  {
                 </div>
                 <div className="tools content">
                     <div className="item">
-                        <button><a href="https://stp-dao.gitbook.io/verse-network/verse-network/master" target="_blank">Documentation</a></button>
+                        <button><a href="https://docs.stp.network" target="_blank">Documentation</a></button>
                         <p>Learn how it works with our document</p>
                     </div>
                     <div className="item">

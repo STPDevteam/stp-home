@@ -286,7 +286,7 @@ const resourcesMenu = (
       Github
     </HeaderLink>
     <HeaderLink
-      href="https://stp-dao.gitbook.io/verse-network/verse-network/master"
+      href="https://docs.stp.network"
       target="_blank"
     >
       Documentation
